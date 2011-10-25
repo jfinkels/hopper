@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+          
+<hibernate-mapping package="perseus.artarch">
+	
+	<class name="perseus.artarch.ArtifactKeyword" table="hib_artifact_keywords">
+	
+	<id name="id" type="int" column="id">
+	    <generator class="native" />
+	</id>
+	
+	<many-to-one name="artifact" column="artifact_id"/>
+	<property name="artifactType" column="artifact_type" type="string"/>
+	<property name="keyclass" column="keyclass" type="string"/>
+	<property name="keyword" column="keyword" type="string"/>
+	
+	</class>
+
+</hibernate-mapping>

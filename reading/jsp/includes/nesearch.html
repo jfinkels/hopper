@@ -1,0 +1,157 @@
+<div class="search_widget primary" id="places">
+<div class="header">
+<a class="toggle" href="javascript:toggle('places')" id="places-link">show</a>
+Search places
+</div>
+<div class="contents" id="places-contents" style="display:none">
+<form action="nebrowser" method="GET" onsubmit="return validate_form(this,keyword);">
+    <table>
+	<tr>
+	    <td>Search for places:</td>
+	    <td><input name="keyword" size="20" /></td>
+	    <td>
+		<select name="placetype">
+		    <option value="siteName" default="yes">matching this name</option>
+		    <option value="state">within this state</option>
+		    <option value="nation">within this country</option>
+		</select>
+	    </td>
+	    <td><input type="submit" value="Browse" /></td>
+	</tr>
+    </table>
+    <input type="hidden" name="type" value="place" />
+    <p class="description">Enter the name of a place, like "Springfield" or
+    "Athens", to find all locations matching the name, or enter a state
+    ("Illinois") or country ("Canada") to find all places within that state or
+    nation. You may also enter more than one of these to narrow your search
+    ("Athens, Greece" or "Springfield, Illinois, United States").</p>
+
+    <p class="description">Note that abbreviations ("USA", "Ill.") do
+    <em>not</em> work at present--please stick to full names!</p>
+</form>
+</div>
+</div>
+<br>
+<div class="search_widget primary" id="people">
+<div class="header">
+<a class="toggle" href="javascript:toggle('people')" id="people-link">show</a>
+Search people
+</div>
+<div class="contents" id="people-contents" style="display:none">
+<form action="nebrowser" method="GET" onsubmit="return validate_form(this,keyword);">
+    <table>
+	<tr>
+	    <td>Search for a person:</td>
+	    <td><input name="keyword" size="30" /></td>
+	    <td><input type="submit" value="Browse" /></td>
+	</tr>
+	<tr>
+	    <td style="text-align: right;">In:</td>
+	    <td colspan="2">
+		<input type="checkbox" name="first">Forenames</input>
+		<input type="checkbox" name="last">Surnames</input>
+		<input type="checkbox" name="full" checked="checked">Full name</input>
+	    </td>
+	</tr>
+    </table>
+    <p class="description">Searching for "Washington" in "Forenames" and
+    "Surnames" will return all people with Washington as a first or last name,
+    respectively. A full-name search will find anyone who matches the entire
+    search string ("Washington Irving").</p>
+    <input type="hidden" name="type" value="person" />
+</form>
+</div>
+</div>
+<br>
+<div class="search_widget primary" id="dates">
+<div class="header">
+<a class="toggle" href="javascript:toggle('dates')" id="dates-link">show</a>
+Search dates
+</div>
+<div class="contents" id="dates-contents" style="display:none">
+<form action="nebrowser" method="GET">
+    <table>
+	<tr style="text-align: right;">
+		<td>From:</td>
+	    <td>
+		<select name="month">
+		    <option value="">[any]</option>
+		    <option value="1">January</option>
+		    <option value="2">February</option>
+		    <option value="3">March</option>
+		    <option value="4">April</option>
+		    <option value="5">May</option>
+		    <option value="6">June</option>
+		    <option value="7">July</option>
+		    <option value="8">August</option>
+		    <option value="9">September</option>
+		    <option value="10">October</option>
+		    <option value="11">November</option>
+		    <option value="12">December</option>
+		</select>
+	    </td>
+	    <td>
+		<input type="text" name="day"
+			maxlength="4" size="2" />,
+	    </td>
+	    <td>
+		<input type="text" name="year"
+			maxlength="5" size="4" />
+	    </td>
+	    <td>
+		<select name="era">
+		    <option value="AD">A.D.</option>
+		    <option value="BC">B.C.</option>
+		</select>
+	    </td>
+	    <td><input type="submit" value="Browse" /></td>
+	</tr>
+	<tr class="date_field_desc">
+	    <td></td>
+	    <td>Month</td>
+	    <td>Day</td>
+	    <td>Year</td>
+	</tr>
+	<tr style="text-align: right;"><td>To:</td>
+	    <td>
+		<select name="endmonth">
+		    <option value="">[any]</option>
+		    <option value="1">January</option>
+		    <option value="2">February</option>
+		    <option value="3">March</option>
+		    <option value="4">April</option>
+		    <option value="5">May</option>
+		    <option value="6">June</option>
+		    <option value="7">July</option>
+		    <option value="8">August</option>
+		    <option value="9">September</option>
+		    <option value="10">October</option>
+		    <option value="11">November</option>
+		    <option value="12">December</option>
+		</select>
+	    </td>
+	    <td>
+		<input name="endday" size="2" />,
+	    </td>
+	    <td>
+		<input name="endyear" size="4" />
+	    </td>
+	    <td>
+		<select name="endera">
+		    <option value="AD">A.D.</option>
+		    <option value="BC">B.C.</option>
+		</select>
+	    </td>
+	    <td><input type="submit" value="Browse" /></td>
+	</tr>
+    </table>
+    <p>Enter a month, day and/or year to search for references to that date.
+    You do not need to fill out every field: searching only for "1863" will
+    find all references to the year 1863, while searching for "July 4" will
+    find all references to the 4th of July, regardless of year.</p>
+    <p>Enter a starting date and an ending date to find
+    all occurrences of dates in between.</p>
+    <input type="hidden" name="type" value="date" />
+</form>
+</div>
+</div>

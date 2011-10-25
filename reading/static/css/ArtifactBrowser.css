@@ -1,0 +1,52 @@
+/*
+@MPL@
+Last Modified: @TIME@
+
+Author: @gweave01@
+*/
+div#help {
+  float: right;
+} 
+
+
+/* A R T I F A C T  R E C O R D */
+
+/* TABLE VIEW */
+table.artifact-record {
+  background-color: #DDDDDD;
+  font-size: small;
+  border: thin solid black;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+table.artifact-record td.subject-list {
+  border-width: 0px;
+  width: 60%;
+}
+
+table.artifact-record td.subject-list div.artifact-record-title {
+  font-size:14px;
+  font-weight:bold;
+}
+
+table.artifact-record td.artifact-occurrence {		      
+  border-width: 0px;
+  width:40%;
+  text-align: center;
+}
+
+/* O B J E C T  P A G I N A T I O N */
+div#object-pagination {  
+  font-weight: light;
+  font-size:x-small;
+  float:right; 
+  clear:both;
+}
+
+div#object-pagination a {
+  text-decoration:none;
+}
+
+
+

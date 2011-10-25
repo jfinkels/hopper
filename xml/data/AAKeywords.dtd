@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT Keywords (artifactKeyword)+ >
+<!ELEMENT artifactKeyword (artifactName | artifactType | keyclass | keyword)+ >
+<!ELEMENT artifactName (#PCDATA) >
+<!ELEMENT artifactType (#PCDATA) >
+<!ELEMENT keyclass (#PCDATA) >
+<!ELEMENT keyword (#PCDATA) >
+
+<!-- Resolve any entities -->
+<!ENTITY % TEI.XML "INCLUDE">
+<!ENTITY % PersProse PUBLIC "-//Perseus P4//DTD Perseus Prose//EN" "http://www.perseus.tufts.edu/DTD/1.0/PersProse.dtd" >
+%PersProse;

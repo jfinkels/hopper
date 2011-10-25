@@ -1,0 +1,529 @@
+<!--
+perseus.web.xml
+
+Add any modifications that you make to web.xml to this file, then cut and paste
+them into web.xml. (This file exists because web.xml is a combination of
+auto-generated JSP servlet definitions (as outputted by ant to
+generated_web.xml) and our own manually-created directives, and we don't want
+to have to check a new version of web.xml into the repository every time one or
+the other gets modified.
+
+This file doesn't actually have to be valid XML (in fact, it's decidedly not!);
+it just has the .xml extension so that editors will highlight its syntax for
+us.
+-->
+
+<!-- web-app is the base tag for web.xml; everything should go inside it -->
+  <jsp-config>
+      <taglib>
+	<taglib-uri>http://java.sun.com/jsp/jstl/core</taglib-uri>
+	<taglib-location>/WEB-INF/taglib/c.tld</taglib-location>
+      </taglib>
+
+      <taglib>
+	<taglib-uri>http://java.sun.com/jsp/jstl/fmt</taglib-uri>
+	<taglib-location>/WEB-INF/taglib/fmt.tld</taglib-location>
+      </taglib>
+
+      <taglib>
+	<taglib-uri>http://java.sun.com/jsp/jstl/functions</taglib-uri>
+	<taglib-location>/WEB-INF/taglib/fn.tld</taglib-location>
+      </taglib>
+      
+       <taglib>
+    <taglib-uri>/spring</taglib-uri>
+    <taglib-location>/WEB-INF/taglib/spring.tld</taglib-location>
+  </taglib>
+  
+    <taglib>
+  <taglib-uri>http://jakarta.apache.org/taglibs/string-1.1</taglib-uri>
+  <taglib-location>/WEB-INF/taglib/string.tld</taglib-location>
+</taglib>
+  </jsp-config>
+
+  <description>NSDL SCALE Linking Service</description>
+  <resource-ref>
+      <description>DB Connection</description>
+      <res-ref-name>jdbc/PerseusDB</res-ref-name>
+      <res-type>javax.sql.DataSource</res-type>
+      <res-auth>Container</res-auth>
+  </resource-ref>
+
+  <display-name>Perseus Java Hopper</display-name>
+
+    <!-- File-not-found page -->
+    
+    <error-page>
+	<error-code>404</error-code>
+	<location>/404.jsp</location>
+    </error-page>
+    
+    <filter>
+	<filter-name>SessionCloserFilter</filter-name>
+	<filter-class>perseus.servlet.SessionCloserFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+	<filter-name>SessionCloserFilter</filter-name>
+	<url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
+
+    <!-- Generic page for code-related errors -->
+    <error-page>
+    	<exception-type>perseus.document.InvalidQueryException</exception-type>
+    	<location>/invalidquery.jsp</location>
+    </error-page>
+    <error-page>
+	<exception-type>java.lang.Exception</exception-type>
+	<location>/error.jsp</location>
+    </error-page>
+
+    <!-- Mappings to make the index-page URLs shorter -->
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.about_jsp</servlet-name>
+        <url-pattern>/about</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>org.apache.jsp.index.about.whoWeAre_jsp</servlet-name>
+    	<url-pattern>/about/who</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>org.apache.jsp.index.about.who.alisonBabeu_jsp</servlet-name>
+    	<url-pattern>/about/who/alisonBabeu</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+    	<servlet-name>org.apache.jsp.index.about.who.bridgetAlmas_jsp</servlet-name>
+    	<url-pattern>/about/who/bridgetAlmas</url-pattern>
+    </servlet-mapping>
+       <servlet-mapping>
+    	<servlet-name>org.apache.jsp.index.about.who.shawnDoughty_jsp</servlet-name>
+    	<url-pattern>/about/who/shawnDoughty</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>org.apache.jsp.index.about.who.davidBamman_jsp</servlet-name>
+    	<url-pattern>/about/who/davidBamman</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>org.apache.jsp.index.about.who.lisaCerrato_jsp</servlet-name>
+    	<url-pattern>/about/who/lisaCerrato</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>org.apache.jsp.index.about.who.gregoryCrane_jsp</servlet-name>
+    	<url-pattern>/about/who/gregoryCrane</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>org.apache.jsp.index.about.who.former_jsp</servlet-name>
+    	<url-pattern>/about/who/former</url-pattern>
+    </servlet-mapping>
+	<servlet-mapping>
+        <servlet-name>org.apache.jsp.index.about.jobOpportunities_jsp</servlet-name>
+        <url-pattern>/about/jobs</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.about.researchOpportunities_jsp</servlet-name>
+        <url-pattern>/about/research</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+    	<servlet-name>org.apache.jsp.index.research_jsp</servlet-name>
+    	<url-pattern>/research</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>org.apache.jsp.index.research.background_jsp</servlet-name>
+    	<url-pattern>/research/background</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+    	<servlet-name>org.apache.jsp.index.research.current_jsp</servlet-name>
+    	<url-pattern>/research/current</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+    	<servlet-name>org.apache.jsp.index.grants_jsp</servlet-name>
+    	<url-pattern>/grants</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.opensource_jsp</servlet-name>
+        <url-pattern>/opensource</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.opensource.download_jsp</servlet-name>
+        <url-pattern>/opensource/download</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.help_jsp</servlet-name>
+        <url-pattern>/help</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.copyright_jsp</servlet-name>
+        <url-pattern>/help/copyright</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.faq_jsp</servlet-name>
+        <url-pattern>/help/faq</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.quickstart_jsp</servlet-name>
+        <url-pattern>/help/quickstart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.texts_jsp</servlet-name>
+        <url-pattern>/help/texts</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.startingPoints_jsp</servlet-name>
+        <url-pattern>/help/startpoints</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.vocab_jsp</servlet-name>
+        <url-pattern>/help/vocab</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.searching_jsp</servlet-name>
+        <url-pattern>/help/searching</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.archived.helparchives_jsp</servlet-name>
+        <url-pattern>/help/archives</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.search_jsp</servlet-name>
+	<url-pattern>/search</url-pattern>
+    </servlet-mapping>
+
+    <!-- Description elements must come first. The schema is finicky. -->
+    <servlet>
+	<description>
+	    This servlet is responsible for serving downloads of entire
+	    XML texts.
+	</description>
+	<servlet-name>textDownload</servlet-name>
+	<servlet-class>perseus.servlet.TextDownloadServlet</servlet-class>
+	<load-on-startup>5</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+	<servlet-name>textDownload</servlet-name>
+	<url-pattern>/dltext</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+      <servlet-name>springHopper</servlet-name>
+      <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+      <load-on-startup>6</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/vocab.xml</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/vocab.wgt</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/stem.htm</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/stem.xml</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/ctsForm.htm</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/CTS</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+       <servlet-name>springHopper</servlet-name>
+       <url-pattern>/ptext</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+	<servlet-name>springHopper</servlet-name>
+	<url-pattern>/wordfreq</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+	<servlet-name>springHopper</servlet-name>
+	<url-pattern>/wordfreq.xml</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+	<servlet-name>springHopper</servlet-name>
+	<url-pattern>/wordfreq.html</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+	<servlet-name>springHopper</servlet-name>
+	<url-pattern>/wordfreq.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+	<servlet-name>springHopper</servlet-name>
+	<url-pattern>/wordfrequency</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+	<servlet-name>springHopper</servlet-name>
+	<url-pattern>/abbrevhelp.html</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+	<servlet-name>springHopper</servlet-name>
+	<url-pattern>/abbrevhelp.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+	<servlet-name>springHopper</servlet-name>
+	<url-pattern>/abbrevhelp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+	<servlet-name>springHopper</servlet-name>
+	<url-pattern>/searchresults.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+	<servlet-name>springHopper</servlet-name>
+	<url-pattern>/searchresults</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+	<servlet-name>springHopper</servlet-name>
+	<url-pattern>/searchresults.html</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+	<servlet-name>springHopper</servlet-name>
+        <url-pattern>/stopwords</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+	<servlet-name>springHopper</servlet-name>
+        <url-pattern>/definitionlookup</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/resolveform</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/entityvote</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/recordentityvote</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/createentity</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/vocablist</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/vocablist.jsp</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/morph</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/morph.jsp</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/loadquery</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/loadquery.jsp</url-pattern>
+    </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/text</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/text.jsp</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/submitvote</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/submitvote.jsp</url-pattern>
+    </servlet-mapping>
+    
+     <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/nebrowser</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/nebrowser.jsp</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/nedocs</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/nedocs.jsp</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/nekeyword</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/nekeyword.jsp</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/nequery</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/nequery.jsp</url-pattern>
+    </servlet-mapping>
+    
+	<servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/xmlchunk</url-pattern>
+    </servlet-mapping>
+    
+	<servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/xmlchunk.jsp</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/xmlmorph</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/xmlmorph.jsp</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/xmltoc</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+      <servlet-name>springHopper</servlet-name>
+      <url-pattern>/xmltoc.jsp</url-pattern>
+    </servlet-mapping>  
+  
+  <servlet>
+    <servlet-name>jstlHopper</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+  	<servlet-name>jstlHopper</servlet-name>
+  	<url-pattern>/search</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>jstlHopper</servlet-name>
+  	<url-pattern>/image</url-pattern>
+  </servlet-mapping>
+  
+    <servlet-mapping>
+  	<servlet-name>jstlHopper</servlet-name>
+  	<url-pattern>/imbrowser</url-pattern>
+  </servlet-mapping>
+  
+    <servlet-mapping>
+  	<servlet-name>jstlHopper</servlet-name>
+  	<url-pattern>/map</url-pattern>
+  </servlet-mapping>
+  
+    <servlet-mapping>
+      <servlet-name>jstlHopper</servlet-name>
+      <url-pattern>/collection</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>jstlHopper</servlet-name>
+        <url-pattern>/collections</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+    <servlet-name>jstlHopper</servlet-name>
+    <url-pattern>/artifact</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>jstlHopper</servlet-name>
+    <url-pattern>/artifactBrowser</url-pattern>
+  </servlet-mapping>
+  
+    <servlet-mapping>
+    <servlet-name>jstlHopper</servlet-name>
+    <url-pattern>/artifactSearch</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>jstlHopper</servlet-name>
+    <url-pattern>/browser</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>jstlHopper</servlet-name>
+    <url-pattern>/disppref</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>jstlHopper</servlet-name>
+    <url-pattern>/about/publications</url-pattern>
+  </servlet-mapping>
+
+    <locale-encoding-mapping-list>
+	<locale-encoding-mapping>
+	    <locale>en</locale>
+	    <encoding>UTF-8</encoding>
+	</locale-encoding-mapping>
+    </locale-encoding-mapping-list>

@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>Perseus Hopper Installation Directions</title>
+  <style type="text/css">
+  	body {font-size: 14px}
+  </style>
+</head>
+<body>
+
+<h2><b>Installing the Perseus Java Hopper on Linux and Mac OS X with provided data</b></h2>
+<h3><b>Initial setup</b></h3>
+
+<h4><b>Requirements/General Information</b></h4>
+<p>The requirements for the Perseus Java hopper are, at present:</p>
+<ol>
+<li><a href="http://java.sun.com/javase/downloads/index.jsp"><code>JDK 1.5</code></a> or higher</li>
+<li><a href="http://dev.mysql.com/downloads/"><code>MySQL 5.0</code></a> or higher</li>
+	<ul>
+	<li>In <code>/etc/my.cnf</code> (create it if you do not have it):</li>
+	<ul>
+      <li>Add the following lines under <code>[mysqld]</code> (add <code>[mysqld]</code> if it does not exist):</li>
+	<ul>
+	  <li><code>innodb_data_file_path=ibdata1:500M</code> (or any size of your choice)</li>
+	  <li><code>character_set_server=utf8</code></li>
+	</ul>
+      <li>Under <code>[mysql]</code> add the following line: <code>default-character-set=utf8</code>
+      <li>Comment out <code>skip-networking</code> and/or <code>collation_server=utf8_unicode_ci</code> if in the file</li>
+      <li>Login in to MySQL as <code>root</code> and type:</li>
+      <ul>
+        <li><code>SET GLOBAL wait_timeout = 86400, SESSION wait_timeout = 86400</code></li>
+        <li>You can verify by typing <code>SHOW VARIABLES;</code> and looking for <code>wait_timeout</code> (near the end).</li>
+      </ul>
+      </ul>
+  </ul>
+<li><a href="http://ant.apache.org/bindownload.cgi"><code>Ant 1.7</code></a> or higher</li>
+	<ul>
+	<li>Download <a href="http://sourceforge.net/projects/ant-contrib/"><code>ant-contrib</code></a> and copy the <code>ant-contrib.jar</code> to <code>$ANT_HOME/lib</code></li>
+	</ul>
+<li>A servlet engine capable of handling WARs, such as <a href="http://tomcat.apache.org/download-60.cgi"><code>Tomcat 
+6.0</code></a> (Tomcat 5.5 is no longer supported.)
+	<ul>
+	<li>By default, the hopper looks for Tomcat (in <code>properties/hopper.properties</code>) at <code>/usr/local/tomcat/</code>, though this can be changed in <code>hopper.properties</code></li>
+	<li>Copy <code>catalina-ant.jar</code>, located in <code>$CATALINA_HOME/lib</code>, to <code>$ANT_HOME/lib</code></li>
+	<li>Add (if you don't have it) Tomcat manager information in <code>$CATALINA_HOME/conf/tomcat-users.xml</code>.  Modify <code>properties/hosts/localhost.properties</code>: 
+	  <code>localhost.tomcat.manager.username</code> and <code>localhost.tomcat.manager.password</code> to match what is in tomcat-users.xml</li>
+	</ul>
+<li>A web server such as <a href="http://httpd.apache.org/download.cgi"><code>Apache</code></a></li>
+	<ul>
+	<li>Use the directions under <b>Displaying the Data</b> to set up the Apache server correctly</li>
+	</ul>
+<li>All required Java libraries are included in the <code>/sgml/reading/lib/</code> directory within the distribution.</li>
+<li>Estimate about 7 GB for the <code>sgml</code> directory and about 7 GB for the <code>sor</code> database. The <code>sgml</code> directory can be anywhere so long as it is symbolically linked to <code>/sgml</code></li>
+<li>Estimated run times <code>(ERT)</code> have been included. They refer to the amount of time needed to process all of the texts and collections.</li>
+</ol>
+
+<h4><b>Data</b></h4>
+<p>It is not necessary to have the original XML text files in this installation, since we provide all of the database data as well as the properly generated XML files. 
+However, if you want the original XML texts, you can download the text data <a href="http://www.perseus.tufts.edu/hopper/opensource/">here</a>.
+After untarring, move the <code>texts/</code> directory to <code>/sgml/</code>. The text metadata is already located in <code>/sgml/xml/</code>.</p>
+
+<h4><b>Java libraries (JAR files)</b></h4>
+<p>All the Java libraries you will need are inside <code>lib/</code> in this directory. Pay particular attention to the 
+files in <code>lib/endorsed/</code>; these contain more recent version of JARs that come with the JDK (the versions that 
+come with the JDK will not always work with the hopper or with Tomcat). These may need to be copied into 
+<code>$CATALINA_HOME/endorsed/</code> (you will need to create the diretory if it does not exist).</p>
+
+<h4><b>Database setup</b></h4>
+<p>The database retains the name of the old Perl hopper's database (<code>sor</code>), though the two have almost nothing in common by this point. At present, it requires <code>MySQL</code>, though this will hopefully change when all the tables have been reimplemented using Hibernate.</p>
+<p><code>mysql<br>
+mysql&gt; create database sor;<br>
+mysql&gt; grant all on sor.* to webuser identified by 'webuser';<br>
+mysql&gt; grant all on sor.* to 'webuser'@'localhost' identified by 'webuser';</code></p>
+<p>(If you want to use a different database name, or a different username/password, you can change the settings in the <span class="s3">hopper.properties</span> file and substitute your values for those used above.)</p>
+
+<h4><b>Configuring local settings</b></h4>
+<p>Edit and configure the <code>hopper.properties</code> file in the <code>properties/</code> directory. This sets a multitude of options, including database connection information and locations of various files. Hibernate-related properties are in the <code>hibernate.cfg.xml</code> file.</p>
+
+<h4><b>Compiling the hopper</b></h4>
+<p>To compile and distribute everything, run:</p>
+<p><code>ant build<br>
+(ERT: 1 minute)</code></p>
+<p>This will compile and archive the hopper source files and JSP files.</p>
+
+<h3><b>Loading the data</b></h3>
+<p>First, load the files in the <code>sql/</code> directory:</p>
+<p><code>cat sql/*.sql | mysql -uwebuser -p sor<br>
+(ERT: 1 minute)</code></p>
+
+<h4><b>Hibernate setup</b></h4>
+<p>Create the tables in the database that Hibernate will be using. There exists an Ant task to do this:</p>
+<p><code>ant schema-export<br>
+(ERT: 1 minute)</code></p>
+<p>This creates a file named <code>hibernate.sql</code> in the current directory. To load it:</p>
+<p><code>mysql -uwebuser -p sor &lt; hibernate.sql<br>
+(ERT: 1 minute)</code></p>
+
+<h4><b>MySQL dumps</b></h4>
+<p>Download the database dump files and untar them. You may want to remove the <code>.tar.gz</code> and <code>.sql</code> files as you use them if you are running out of disk space. 
+Load the data for each of the following tables (you can of course try to load all of the tables at once, though it will take a long time and could fail):</p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_artifact_keywords.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_artifacts.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_atomic_artifacts.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_building_artifacts.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_chunks.sql<br>
+(ERT: 3 hours)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_citations.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_coin_artifacts.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_date_ranges.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_dates.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_entities.sql<br>
+(ERT: 5 minutes)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_entity_occurrences.sql<br>
+(ERT: 5 minutes)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_frequencies.sql<br>
+(ERT: 2 hours)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_gem_artifacts.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_image_names.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_images.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser - sor &lt; hib_lang_abbrevs.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_languages.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_parses.sql<br>
+(ERT: 2 minutes)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_person_names.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_places.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_sculpture_artifacts.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_site_artifacts.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_toc_chunks.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_tocs.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_vase_artifacts.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; hib_word_counts.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; metadata.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; morph_frequencies.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; morph_votes.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; prior_frequencies.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; sense_votes.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p><code>mysql -uwebuser -p sor &lt; senses.sql<br>
+(ERT: 1 minute)</code></p>
+
+<p>If you decide to make changes to the code, refer to INSTALLEVERYTHING.html for documentation on how to reload data, etc.</p>
+
+<h4><b>Processed XML files</b></h4>
+<p>Download the processed texts data and untar the file. Move the resulting <code>texts/</code> directory to <code>/sgml/xml/</code>.</p>
+
+<h4><b>Generated Cache XML files</b></h4>
+<p>Download the cache data and untar the file. Move the resulting <code>cache/</code> directory to <code>/sgml/xml/</code>.</p>
+
+<h4><b>Lucene Indexes</b></h4>
+<p>Download the Lucene indexes and untar the file. Move the resulting <code>index/</code> directory to <code>/sgml/reading/</code>.</p>
+
+<h3><b>Displaying the Data</b></h3>
+<h4><b>XSL stylesheets</b></h4>
+<p>A stylesheet for Perseus TEI is provided, and there is preliminary support for EEBO document. Any customization or support for other DTDs is up to you!</p>
+
+<h4><b>Installing Apache with Tomcat</b></h4>
+<p>See the <a href="http://httpd.apache.org/docs/">Apache documentation</a> for full instructions to install 
+Apache on your machine. During <b>"Configuring the source tree"</b> step, you will need to enable the following 
+two modules (though you may choose to enable others):</p>
+<p><code>--enable-rewrite=shared<br>
+--enable-proxy=shared</code></p>
+<p>The <a href="http://tomcat.apache.org/tomcat-5.5-doc/proxy-howto.html">Tomcat documentation</a> provides 
+details on proxying from Apache to Tomcat. This allows you to drop the :8080 from the URL.</p>
+<p>Make sure all <code>LoadModule</code> directives for <code>mod_proxy</code> and <code>mod_rewrite</code> 
+	are in <code>httpd.conf</code> (this should automatically happen if you configured Apache to enable these 
+	modules during installation).
+	</p>
+<p>You then have to add some files to Apache's <code>DocumentRoot</code> and add a file with <code>ReWrite</code> rules.</p>
+<ol>
+  <li>Determine the location of <code>DocumentRoot</code> by looking for it in <code>httpd.conf</code> (e.g. 
+  <code>/var/www/html</code>). Make sure <code>DocumentRoot</code> is the same in both <code>localhost.conf</code> 
+  (provided with source) and <code>httpd.conf</code>.</li>
+  <li>Determine the location of <code>Virtual hosts</code> in your <code>httpd.conf</code> file and copy 
+  <code>localhost.conf</code> to that directory. You may need to add an <code>Include</code> directive in 
+  <code>httpd.conf</code> for <code>localhost.conf</code>.</li>
+  <li>In <code>DocumentRoot</code>, create symbolic links to <code>/sgml/reading/static/css</code>, 
+  <code>img</code>, <code>js</code>, and <code>xml</code>.</li>
+</ol>
+
+<h4><b>To view in a browser</b></h4>
+<ul>
+<li>Make sure Tomcat and the Apache server are running</li>
+<li><code>ant build</code></li>
+<li><code>ant build-release</code></li>
+<li><code>ant remove</code> (if a version of the hopper has already been deployed to Tomcat)</li>
+<li><code>ant install</code></li>
+<li>View <code>http://localhost/hopper/</code> in your browser</li>
+</ul>
+</body>
+</html>

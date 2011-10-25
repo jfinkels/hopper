@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <!--
+	Hibernate configuration file
+
+	Hibernate reads its settings from this file when the hopper is
+	deployed. Note that YOU CAN SPECIFY PROPERTIES in place of specific
+	values - Ant will expand them when it creates the WAR, or it copies
+	this file from src/ to build/ (which it does whenever we compile the
+	source). You can use any of the properties in hopper.properties or
+	in the host-property files.
+    -->
+
+    <!-- a SessionFactory instance listed as /jndi/name -->
+    <session-factory>
+
+        <!-- properties -->
+		<property name="connection.username">${hopper.database.username}</property>
+    <property name="connection.password">${hopper.database.password}</property>
+
+        <property name="connection.datasource">java:/comp/env/jdbc/PerseusDB</property>
+        <property name="dialect">${hibernate.dialect}</property>
+	<property name="cache.provider_class">
+	    org.hibernate.cache.EhCacheProvider
+	</property>
+	<property name="show_sql">false</property>
+	<property name="cache.use_query_cache">true</property>
+	<property name="connection.url">
+	    ${hibernate.connection.url}
+	</property>
+	<property name="connection.driver_class">
+	    ${hibernate.connection.driver_class}
+	</property>
+
+	<property name="jdbc.batch_size">30</property>
+	<property name="default_batch_fetch_size">30</property>
+	<property name="bytecode.use_reflection_optimizer">false</property>
+
+	<property name="connection.provider_class">
+      org.hibernate.connection.C3P0ConnectionProvider
+    </property>
+	<property name="c3p0.timeout">100</property> <!-- seconds --> 
+	<property name="c3p0.min_size">5</property> <!-- minimum pool size --> 
+
+        <!-- mapping files -->
+    <mapping resource="perseus/document/Chunk.hbm.xml" />
+	<mapping resource="perseus/document/TableOfContents.hbm.xml" />
+	<mapping resource="perseus/document/WordCount.hbm.xml" />
+      
+    <mapping resource="perseus/ie/Citation.hbm.xml" />
+    <mapping resource="perseus/ie/entity/Entity.hbm.xml" />
+    <mapping resource="perseus/ie/entity/EntityOccurrence.hbm.xml" />
+    <mapping resource="perseus/ie/freq/Frequency.hbm.xml" />
+
+    <mapping resource="perseus/morph/Parse.hbm.xml" />
+
+	<mapping resource="perseus/language/Language.hbm.xml" />
+	
+	<!--<mapping resource="perseus/visualizations/WordDocumentCount.hbm.xml" />
+	<mapping resource="perseus/visualizations/YearWordCount.hbm.xml" />-->
+	
+	<mapping resource="perseus/voting/Vote.hbm.xml" />
+	
+	<!-- artarch mapping files must be after ie/entity mapping files because they are subclasses -->
+	<mapping resource="perseus/artarch/Artifact.hbm.xml"/>
+	<mapping resource="perseus/artarch/ArtifactKeyword.hbm.xml"/>
+	<mapping resource="perseus/artarch/image/Img.hbm.xml" />
+	<mapping resource="perseus/artarch/image/ImageName.hbm.xml"/>
+	
+        <!-- cache settings -->
+	<!--<class-cache class="perseus.document.Chunk" usage="read-write" />-->
+
+	<class-cache class="perseus.document.TableOfContents"
+	    usage="read-write" />
+
+        <class-cache class="perseus.ie.entity.Entity"
+	    usage="read-write"/>
+
+        <class-cache class="perseus.ie.entity.EntityOccurrence"
+	    usage="read-write"/>
+
+	<class-cache class="perseus.language.Language"
+	    usage="read-write" />
+
+    </session-factory>
+</hibernate-configuration>

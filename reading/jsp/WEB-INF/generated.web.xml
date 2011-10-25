@@ -1,0 +1,672 @@
+
+<!--
+Automatically created by Apache Tomcat JspC.
+Place this fragment in the web.xml before all icon, display-name,
+description, distributable, and context-param elements.
+-->
+
+    <servlet>
+        <servlet-name>org.apache.jsp.error_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.error_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.artifact_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.artifact_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp._404_jsp</servlet-name>
+        <servlet-class>org.apache.jsp._404_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.imbrowser_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.imbrowser_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.artifactBrowser_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.artifactBrowser_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.reporterror_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.reporterror_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.index_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.index_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.map_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.map_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.image_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.image_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.timeplot_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.timeplot_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.artifactSearch_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.artifactSearch_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.cts_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.cts_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.search_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.search_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.collection_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.collection_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.invalidquery_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.invalidquery_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.ctsIndex_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.ctsIndex_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.google_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.google_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.index.grants_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.index.grants_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.index.research_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.index.research_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.index.about_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.index.about_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.index.collections_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.index.collections_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.index.opensource_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.index.opensource_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.index.help_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.index.help_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.index.opensource.download_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.index.opensource.download_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.index.about.researchOpportunities_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.index.about.researchOpportunities_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.index.about.whoWeAre_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.index.about.whoWeAre_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.index.about.jobOpportunities_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.index.about.jobOpportunities_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.index.about.publications_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.index.about.publications_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.index.about.who.lisaCerrato_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.index.about.who.lisaCerrato_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.index.about.who.bridgetAlmas_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.index.about.who.bridgetAlmas_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.index.about.who.davidBamman_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.index.about.who.davidBamman_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.index.about.who.gregoryCrane_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.index.about.who.gregoryCrane_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.index.about.who.shawnDoughty_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.index.about.who.shawnDoughty_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.index.about.who.former_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.index.about.who.former_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.index.about.who.alisonBabeu_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.index.about.who.alisonBabeu_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.index.research.current_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.index.research.current_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.index.research.background_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.index.research.background_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.grants.million_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.grants.million_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.help.copyright_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.help.copyright_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.help.faq_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.help.faq_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.help.support_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.help.support_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.help.quickstart_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.help.quickstart_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.help.startingPoints_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.help.startingPoints_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.help.searching_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.help.searching_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.help.ddbdp_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.help.ddbdp_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.help.versions_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.help.versions_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.help.vocab_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.help.vocab_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.help.texts_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.help.texts_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.help.oldannounce_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.help.oldannounce_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.help.archived.helparchives_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.help.archived.helparchives_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.help.archived.TextHelp_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.help.archived.TextHelp_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.help.archived.trans_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.help.archived.trans_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.help.archived.cds_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.help.archived.cds_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.help.archived.oldfaq_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.help.archived.oldfaq_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.help.archived.fonthelp_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.help.archived.fonthelp_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.help.archived.VocabHelp_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.help.archived.VocabHelp_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.includes.pager_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.includes.pager_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.includes.index.navigation_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.includes.index.navigation_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.includes.index.sidecol_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.includes.index.sidecol_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.includes.index.indexNav_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.includes.index.indexNav_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.includes.index.header_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.includes.index.header_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.includes.common.include_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.includes.common.include_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.about.publications.jact2000_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.about.publications.jact2000_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.about.publications.aem_005fasnt_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.about.publications.aem_005fasnt_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.about.publications.rpers_necj_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.about.publications.rpers_necj_jsp</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>org.apache.jsp.about.publications.MW2000_jsp</servlet-name>
+        <servlet-class>org.apache.jsp.about.publications.MW2000_jsp</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.error_jsp</servlet-name>
+        <url-pattern>/error.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.artifact_jsp</servlet-name>
+        <url-pattern>/artifact.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp._404_jsp</servlet-name>
+        <url-pattern>/404.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.imbrowser_jsp</servlet-name>
+        <url-pattern>/imbrowser.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.artifactBrowser_jsp</servlet-name>
+        <url-pattern>/artifactBrowser.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.reporterror_jsp</servlet-name>
+        <url-pattern>/reporterror.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index_jsp</servlet-name>
+        <url-pattern>/index.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.map_jsp</servlet-name>
+        <url-pattern>/map.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.image_jsp</servlet-name>
+        <url-pattern>/image.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.timeplot_jsp</servlet-name>
+        <url-pattern>/timeplot.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.artifactSearch_jsp</servlet-name>
+        <url-pattern>/artifactSearch.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.cts_jsp</servlet-name>
+        <url-pattern>/cts.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.search_jsp</servlet-name>
+        <url-pattern>/search.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.collection_jsp</servlet-name>
+        <url-pattern>/collection.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.invalidquery_jsp</servlet-name>
+        <url-pattern>/invalidquery.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.ctsIndex_jsp</servlet-name>
+        <url-pattern>/ctsIndex.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.google_jsp</servlet-name>
+        <url-pattern>/google.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.grants_jsp</servlet-name>
+        <url-pattern>/index/grants.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.research_jsp</servlet-name>
+        <url-pattern>/index/research.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.about_jsp</servlet-name>
+        <url-pattern>/index/about.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.collections_jsp</servlet-name>
+        <url-pattern>/index/collections.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.opensource_jsp</servlet-name>
+        <url-pattern>/index/opensource.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.help_jsp</servlet-name>
+        <url-pattern>/index/help.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.opensource.download_jsp</servlet-name>
+        <url-pattern>/index/opensource/download.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.about.researchOpportunities_jsp</servlet-name>
+        <url-pattern>/index/about/researchOpportunities.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.about.whoWeAre_jsp</servlet-name>
+        <url-pattern>/index/about/whoWeAre.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.about.jobOpportunities_jsp</servlet-name>
+        <url-pattern>/index/about/jobOpportunities.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.about.publications_jsp</servlet-name>
+        <url-pattern>/index/about/publications.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.about.who.lisaCerrato_jsp</servlet-name>
+        <url-pattern>/index/about/who/lisaCerrato.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.about.who.bridgetAlmas_jsp</servlet-name>
+        <url-pattern>/index/about/who/bridgetAlmas.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.about.who.davidBamman_jsp</servlet-name>
+        <url-pattern>/index/about/who/davidBamman.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.about.who.gregoryCrane_jsp</servlet-name>
+        <url-pattern>/index/about/who/gregoryCrane.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.about.who.shawnDoughty_jsp</servlet-name>
+        <url-pattern>/index/about/who/shawnDoughty.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.about.who.former_jsp</servlet-name>
+        <url-pattern>/index/about/who/former.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.about.who.alisonBabeu_jsp</servlet-name>
+        <url-pattern>/index/about/who/alisonBabeu.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.research.current_jsp</servlet-name>
+        <url-pattern>/index/research/current.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.index.research.background_jsp</servlet-name>
+        <url-pattern>/index/research/background.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.grants.million_jsp</servlet-name>
+        <url-pattern>/grants/million.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.copyright_jsp</servlet-name>
+        <url-pattern>/help/copyright.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.faq_jsp</servlet-name>
+        <url-pattern>/help/faq.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.support_jsp</servlet-name>
+        <url-pattern>/help/support.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.quickstart_jsp</servlet-name>
+        <url-pattern>/help/quickstart.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.startingPoints_jsp</servlet-name>
+        <url-pattern>/help/startingPoints.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.searching_jsp</servlet-name>
+        <url-pattern>/help/searching.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.ddbdp_jsp</servlet-name>
+        <url-pattern>/help/ddbdp.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.versions_jsp</servlet-name>
+        <url-pattern>/help/versions.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.vocab_jsp</servlet-name>
+        <url-pattern>/help/vocab.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.texts_jsp</servlet-name>
+        <url-pattern>/help/texts.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.oldannounce_jsp</servlet-name>
+        <url-pattern>/help/oldannounce.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.archived.helparchives_jsp</servlet-name>
+        <url-pattern>/help/archived/helparchives.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.archived.TextHelp_jsp</servlet-name>
+        <url-pattern>/help/archived/TextHelp.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.archived.trans_jsp</servlet-name>
+        <url-pattern>/help/archived/trans.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.archived.cds_jsp</servlet-name>
+        <url-pattern>/help/archived/cds.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.archived.oldfaq_jsp</servlet-name>
+        <url-pattern>/help/archived/oldfaq.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.archived.fonthelp_jsp</servlet-name>
+        <url-pattern>/help/archived/fonthelp.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.help.archived.VocabHelp_jsp</servlet-name>
+        <url-pattern>/help/archived/VocabHelp.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.includes.pager_jsp</servlet-name>
+        <url-pattern>/includes/pager.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.includes.index.navigation_jsp</servlet-name>
+        <url-pattern>/includes/index/navigation.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.includes.index.sidecol_jsp</servlet-name>
+        <url-pattern>/includes/index/sidecol.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.includes.index.indexNav_jsp</servlet-name>
+        <url-pattern>/includes/index/indexNav.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.includes.index.header_jsp</servlet-name>
+        <url-pattern>/includes/index/header.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.includes.common.include_jsp</servlet-name>
+        <url-pattern>/includes/common/include.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.about.publications.jact2000_jsp</servlet-name>
+        <url-pattern>/about/publications/jact2000.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.about.publications.aem_005fasnt_jsp</servlet-name>
+        <url-pattern>/about/publications/aem_asnt.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.about.publications.rpers_necj_jsp</servlet-name>
+        <url-pattern>/about/publications/rpers.necj.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>org.apache.jsp.about.publications.MW2000_jsp</servlet-name>
+        <url-pattern>/about/publications/MW2000.jsp</url-pattern>
+    </servlet-mapping>
+
+<!--
+All session-config, mime-mapping, welcome-file-list, error-page, taglib,
+resource-ref, security-constraint, login-config, security-role,
+env-entry, and ejb-ref elements should follow this fragment.
+-->

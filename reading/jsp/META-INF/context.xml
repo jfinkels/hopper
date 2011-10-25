@@ -1,0 +1,53 @@
+<Context path="${target.host.tomcat.webapp.path}" docBase="hopper.war"
+	debug="0" reloadable="true" crossContext="true" swallowOutput="true">
+
+    <Logger className="org.apache.catalina.logger.FileLogger"
+	     directory="${target.host.tomcat.log.directory}"
+	     prefix="${target.host.tomcat.log.prefix}"
+	     suffix="${target.host.tomcat.log.suffix}"
+	    timestamp="true"/>
+
+    <Resources className="org.apache.naming.resources.FileDirContext"
+	allowLinking="true" />
+
+    <Environment name="hopper.stylesheet.path" type="java.lang.String"
+	value="${target.host.stylesheet.path}"/>
+    <Environment name="hopper.search.index.path" type="java.lang.String"
+	value="${target.host.search.index.path}"/>
+    <Environment name="hopper.document.file.path" type="java.lang.String"
+	value="${target.host.document.file.path}" />
+    <Environment name="hopper.cache.path" type="java.lang.String"
+	value="${target.host.document.file.path}/tocs" />
+    <Environment name="hopper.cache.toc.dir" type="java.lang.String"
+	value="toc" />
+    <Environment name="hopper.cache.tokenlist.dir" type="java.lang.String"
+	value="tokenlist" />
+    <Environment name="hopper.cache.timeline.dir" type="java.lang.String"
+	value="timeline" />
+    <Environment name="hopper.stoplist.path" type="java.lang.String"
+	value="/web/cgi-bin/DBs" />
+
+    <Resource name="jdbc/PerseusWritableDB" auth="Container"
+	    type="javax.sql.DataSource"
+	    factory="org.apache.commons.dbcp.BasicDataSourceFactory"
+	    maxActive="100"
+	    maxIdle="30"
+	    maxWait="10000"
+	    username="webuser"
+	    password="webuser"
+	    driverClassName="com.mysql.jdbc.Driver"
+	    url="jdbc:${target.host.writable.database.url}?autoReconnect=true&amp;autoReconnectForPools=true&amp;characterEncoding=utf8"
+	/>
+
+    <Resource name="jdbc/PerseusDB" auth="Container"
+	    type="javax.sql.DataSource"
+	    factory="org.apache.commons.dbcp.BasicDataSourceFactory"
+	    maxActive="150"
+	    maxIdle="30"
+	    maxWait="10000"
+	    username="webuser"
+	    password="webuser"
+	    driverClassName="com.mysql.jdbc.Driver"
+	    url="jdbc:${target.host.database.url}?autoReconnect=true&amp;autoReconnectForPools=true&amp;characterEncoding=utf8"
+	/>
+</Context>

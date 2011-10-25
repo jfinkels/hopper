@@ -1,0 +1,1051 @@
+<html><head><!-- This document was created from RTF source by rtftohtml version
+2.7.5 --><title>Chapter 8, part 2</title></head><body><hr><A HREF="ch8.html"><IMG ALIGN=Left src="/img/help/la.gif" WIDTH=75 BORDER=3 ALT="Go Back"></A><A HREF="ch9.html"><IMG ALIGN=Right src="/img/help/ra.gif" WIDTH=75 BORDER=3 ALT="Go Forward"></A>
+<p><CENTER><h2>CHAPTER 8, part 2: PHILOLOGICAL TOOLS</h2></CENTER><HR><br><p><p>
+
+<UL>
+<li><a href="#8.4">Section 8.4: Philological Tools</a><UL>
+<li><a href="#8.4.1">Section 8.4.1: Key Terms: Words, Strings, Forms and Dictionary Entries</a>
+<li><a href="#8.4.2">Section 8.4.2: Description and Limitations of the Philological Tools</a>
+<li><a href="#8.4.3">Section 8.4.3: Calculating Frequencies</a>
+<li><a href="#8.4.4">Section 8.4.4: Related Tools Button</a>
+<li><a href="#8.4.5">Section 8.4.5: Overview of the Philological Tools</a>
+<li><a href="#8.4.6">Section 8.4.6: Morphological Analysis Tool</a>
+<li><a href="#8.4.7">Section 8.4.7: Greek-English Lexicon</a>
+<li><a href="#8.4.8">Section 8.4.8: Greek Word Search</a>
+<li><a href="#8.4.9">Section 8.4.9: Greek Words in Proximity</a>
+<li><a href="#8.4.10">Section 8.4.10: English-Greek Word Search</a>
+<li><a href="#8.4.11">Section 8.4.11: Greek Dictionary Entry Search</a>
+<li><a href="#8.4.12">Section 8.4.12 Greek Word Frequencies</a>
+</UL></UL>
+<HR>
+<h3><a name="8.4">8.4
+PHILOLOGICAL TOOLS
+</a></h3>
+Eight Philological Tools are available to explore the vocabulary, grammar,
+syntax, usage, and word frequencies in ancient Greek. They are: <p>
+* Morphological Analysis<br>
+* Greek-English Lexicon<br>
+* Greek Word Search<br>
+* Greek Words in Proximity<br>
+* English-Greek Word Search<br>
+* Greek Dictionary Entry Search<br>
+* Greek Word Frequencies -- Overview<br>
+* Greek Word Frequencies -- By Author
+<h4>
+<a name="8.4.1">8.4.1
+KEY TERMS: WORDS, STRINGS, FORMS AND DICTIONARY ENTRIES
+</a></h4>
+The Philological Tools provide support for quite powerful and sophisticated
+analysis of the source in Perseus. Before using these tools, it is important to
+distinguish between several different kinds of "word." <p>
+This paragraph contains 123 words. If you read through it from start to finish,
+counting each word as you read it, you would end up with a total of 123. In
+some contexts, however, we might mean that the entire paragraph contains only
+74 "unique" words: i.e., the English word "the" would count only once, no
+matter how often it showed up in the text. Again, we must take account of
+grammatically inflected forms. Do "went," "gone" and "going" all count as
+unique words or only as forms of the verb "to go"? In Perseus, word-count
+frequencies are a total of all words in the text, repeated and inflected. Words
+in the lexical tools are reached via the form given  in their dictionary entry
+headings, rather than their inflected forms. <p>
+The following  definitions will be useful:<p>
+<b>Strings:</b> Any collection of letters strung together is a "string." A
+string can be a full word (e.g., "philological") or a word fragment ("philol-",
+"-ologic-", "-ical") or both ("logic" is both a word in its own right and a
+<u>sub</u>string of "philological"). Virtually all of the tools developed for
+searching Greek texts (and many of those for English as well) search not for
+words, but for strings embedded in words. Thus "go" will retrieve "goes" and
+"gone" but not "went," and there is no convenient way to locate all forms of an
+irregular word (e.g., "is", "was", "be" etc.). While this problem may be a
+nuisance in English (which retains relatively few endings), in a highly
+inflected language such as classical Greek, string based searching can be
+especially frustrating. The remedy for this is Perseus's Morphological
+database, which has the ability to trace the irregular forms to their
+dictionary entry.<p>
+<b>Inflected Forms</b> <b>and</b> <b>Dictionary Entries</b>: The forms "goes",
+"going" and "gone" are all inflected forms that belong to the same word, "go."
+The philological tools distinguish sharply between inflected forms and their
+dictionary entries. One of the major achievements of the Perseus database is
+that it allows users to deal not only with strings and inflected forms but with
+dictionary entries as well: thus, you can perform the Greek equivalent of
+asking for "go" and retrieve "goes", "gone", and "went."<p>
+<b>A note on typing Greek:  </b>While cutting and pasting Greek text into a
+field may serve in most cases as a workaround, you will find that the ability
+to type correctly accented Greek is indispensible in making the most efficient
+use of the Philological Tools. Perseus supports the SMK GreekKeys font, which
+must be installed in your system. Information on ordering GreekKeys may be
+found in <A HREF="ch2.html#2.1.2">section 2.1.2</A>. The Greek characters generally correspond to the Roman
+ones, with <IMG src="/img/help/letters.gif">. The accents live "under" the numbers
+and are typed in combination with the Option key before the vowel is typed. The
+Greek alphabet, its transliteration into Roman characters, and its GreekKeys
+equivalents may be found in Online help under the Stack Topic, The Greek
+Alphabet.
+<h4>
+<a name="8.4.2">8.4.2
+DESCRIPTION AND LIMITATIONS OF THE PHILOLOGICAL TOOLS
+</a></h4>
+Underlying the Philological Tools is a morphological database that was created
+by parsing every Greek word in the Perseus Primary Texts and storing the
+results. In it there are 3.4 million words, but only 260,000 unique strings --
+in other words, each inflected form shows up on the average 13 times. Each of
+these forms has been processed by the morphological analysis system developed
+by the Perseus Project. Its tables of nominal and verbal stems are based upon
+those in the Liddell-Scott <i>Intermediate Greek-English Lexicon</i>. While we
+have added many words to our morphological database that are not in
+Liddell-Scott, there are still some words in Perseus 2.0 for which we do not
+have any morphological analysis. This will change in coming years as we extract
+morphological information from the larger Greek Lexicon, the ninth edition of
+Liddell-Scott-Jones. The table below shows the success rate for analyzing all
+forms in Perseus.<p>
+<CENTER><IMG src="/img/help/8.1t.gif"><p>
+<b>Table 8.1 Success rate for analyzing forms in Perseus.</b><p>
+</CENTER><b></b>The database provides a foundation for the Philological Tools and allows
+you to perform two strategic functions. First, you can analyze any word in a
+text (except all but 31% of proper nouns), and second, you can investigate all
+instances of a Greek word across the range of texts. Together, these two
+strategies allow you to investigate Greek words in Perseus texts with greater
+precision than has been possible heretofore, even with electronic tools.<p>
+The Morphological Analysis tool can only recognize forms. It is not aware of
+the syntax of a sentence. If a form has more than one possible analysis, the
+only thing that the morphological analyzer can do is to list all applicable
+parses. It is not able to identify the syntactically correct form. Therefore,
+several of the Philological Tools display two sets of statistical results: one
+that takes into account only unambiguous forms with one possible parse, and
+another that includes all forms, ambiguous and unambiguous. Thus, faced with a
+form such as <IMG src="/img/help/ais1.gif">, the Morphological Analysis tool simply
+reports that this could be <u>either</u> the dative singular of the noun
+<IMG src="/img/help/ais3.gif">, "shame," <u>or</u> one of several forms of the verb
+<IMG src="/img/help/ais2.gif">, "to cause shame." The English equivalent is to recognize "fly"
+as either a noun or a verb but to leave it to the user to sort out the
+ambiguity between these two choices by using the context. (For more information
+on this, see the discussion of the Morphological Analysis tool below.) It is
+important to keep this in mind when working with the Philological Tools.<p>
+All of the Philological Tools allow you to enter your own word or string, in
+Greek or English (as appropriate). Although the Philological Tools allow the
+user to enter a word or string, they are primarily used by selecting text
+within another Perseus resource (Greek or English text depending on the tool to
+be activated), then choosing the desired tool from the Links menu. If any text
+is selected when a tool is activated, that tool will try to act on the selected
+text. To type accented Greek text, you must have SMK GreekKeys 7.0 installed in
+your system (information on where to buy GreekKeys is in<A HREF="ch2.html#2.1.2"> chapter 2.1.2</A>). You
+must be precise in typing accents and diacritical marks for the morphological
+tools to recognize the word (unless otherwise specified).
+<h4>
+<a name="8.4.3">8.4.3
+CALCULATING FREQUENCIES
+</a></h4>
+Because the length of texts varies, a dictionary entry whose forms appear 100
+times in Demosthenes and 30 times in Lysias is actually <u>more common</u> in
+Lysias, because our corpus of Demosthenes is five times larger than that of
+Lysias (c. 300,000 vs. 60,000 words). For this reason, Perseus reports,
+wherever possible, not only the <u>instances</u> (i.e., the absolute frequency,
+how many times a dictionary entry appears in a given author, or 100 for
+Demosthenes and 30 for Lysias in the above example), but also the relative
+frequency (<u>frequencies/10,000 words)</u>. In other words, we take into
+consideration the differing sizes of the texts in Perseus 2.0 so that you can
+compare the frequency of words more effectively. For each dictionary entry in
+each text, we determine the rate at which it appears in for every 10,000 words
+in a given text. Thus, in the above example, the frequencies/10,000 words would
+be 3.33 for Demosthenes and 5 for Lysias.<p>
+Some inflected forms are, however, "lexically ambiguous," i.e., they can come
+from more than one dictionary entry (e.g., Greek <IMG src="/img/help/ais1.gif"> can
+be an inflected form of either the noun <IMG src="/img/help/ais3.gif">, "shame," or of the verb
+<IMG src="/img/help/ais2.gif">, "to cause shame"). Each frequency thus has both a maximum and a
+minimum. The <u>maximum</u> "instances" and "freqs/10,000 words" assumes that
+all possible inflected forms of a dictionary entry really do belong to that
+entry (if you are searching for the verb <IMG src="/img/help/ais2.gif">, assume that
+<IMG src="/img/help/ais1.gif"> is a verbal form). The <u>minimum</u> figure assumes
+that none of the lexically ambiguous inflected forms belong to the dictionary
+entry (if you are searching for the verb <IMG src="/img/help/ais2.gif">, assume that
+<IMG src="/img/help/ais1.gif"> is not an inflected form of this verb). If the
+maximum and minimum frequencies are the same, then all the possible forms of
+the dictionary entry are lexically unambiguous. On the other hand, if the
+maximum and minimum frequencies are different, then you will have to use your
+judgment to determine the true frequency of the dictionary entry.
+<h4>
+<a name="8.4.4">8.4.4
+RELATED TOOLS BUTTON
+</a></h4>
+Since the eight philological tools are all in the Links menu, they are
+available anywhere in Perseus. Some of these philological tools are, however,
+particularly useful in different positions, and each of the eight philological
+tools contains a Related Tools pop-up menu in the upper right hand corner of
+the screen. The Related Tools menu lists other philological tools which are
+particularly relevant to the tool that you are currently using.
+<h4>
+<a name="8.4.5">8.4.5
+OVERVIEW OF THE PHILOLOGICAL TOOLS
+</a></h4>
+The Philological Tools are functionally linked to each other for maximum
+flexibility.<p>
+The eight Philological Tools are described below. They divide into four basic
+groups:<p>
+1) <b>Morphological Analysis</b> <b>and</b> <b>Greek-English Lexicon</b>: When
+working with a text you can use the Morphological Analysis tool to find out the
+grammatical function of a form and the Greek-English Lexicon to find out its
+meaning.<p>
+2) <b>Greek Word Search</b> <b>and</b> <b>Greek Words in Proximity</b>: These
+tools allow you to locate passages in which one or more particular dictionary
+entries appear.<p>
+3) <b>English-Greek Word Search</b> <b>and</b> <b>Greek Dictionary Entry
+Search</b>: These tools allow you to locate Greek words (or groups of Greek
+words) for further study.<p>
+4) <b>Greek Word Freqs -- Overview</b> <b>and</b> <b>Greek Word Freqs -- by
+Author</b>:  These tools allow you to explore quantitative differences in usage
+between different authors, genres and periods.
+<h5>
+<a name="RTFToC11">Morphological
+Analysis
+</a></h5>
+Enter an inflected Greek form to find out its possible morphological analyses
+and what dictionary entries it might come from. <p>
+Not only will beginning and intermediate students of the Greek language find
+the morphological analysis helpful, but advanced students also will find this
+tool indispensible in determining the precise dictionary entry for a form: your
+can find out quickly whether LSJ list the words under <IMG src="/img/help/kata1.gif">  or
+<IMG src="/img/help/kata2.gif">, <IMG src="/img/help/kata3.gif"> or <IMG src="/img/help/kata4.gif">, or <IMG src="/img/help/ro1.gif"> or
+<IMG src="/img/help/ro2.gif">.<p>
+Selecting English text or proper nouns will result in a message that no
+analysis is offered for this word.
+<h5>
+<a name="RTFToC12">Greek-English
+Lexicon
+</a></h5>
+Enter a Greek word in its dictionary form to find its definitions. The Perseus
+Greek-English Lexicon is based on the Liddell-Scott <i>Intermediate
+Greek-English Lexicon</i>.<p>
+You must provide the exact spelling to locate an entry. You can use the
+Morphological Analysis tool or the Greek Dictionary Entry Search tool to help
+locate the right spelling.<p>
+Looking for an English word or an inflected Greek form in the Greek-English
+Lexicon will result in a message that the selected text is not in the
+dictionary.
+<h5>
+<a name="RTFToC13">Greek
+Word Search
+</a></h5>
+Enter a dictionary entry or a string to find the texts containing it in
+Perseus. Greek Word Search gives the citations for each word and links you
+directly with the passage. Thus, you can, for example, search for <IMG src="/img/help/fero.gif"> and
+retrieve <IMG src="/img/help/oiso.gif"> and <IMG src="/img/help/hneg.gif">, or you can search for <IMG src="/img/help/pemp.gif"> and
+retrieve <IMG src="/img/help/pemp2.gif">, <IMG src="/img/help/pemp3.gif">, <IMG src="/img/help/pemp4.gif">, etc. <p>
+Searching for English text will result in a message that the lemma is not used
+in the selected author's works. 
+<h5>
+<a name="RTFToC14">Greek
+Words in Proximity
+</a></h5>
+With this tool, you can make two lists of dictionary entries and identify all
+passages in which any possible form from list 1 appears within a given number
+of words of any possible form from list 2.
+<h5>
+<a name="RTFToC15">English-Greek
+Word Search
+</a></h5>
+ This tool allows you to search for words within a semantic category. For
+example, suppose you are interested in Greek words for "money" or "ship" or
+"statue." You can use this tool to locate probable equivalents and convert the
+Liddell-Scott <i>Intermediate Greek-English Lexicon</i> into a rough, but
+powerful, English-Greek lexicon.<p>
+The English-Greek Word Search searches in the Greek lexicon for words whose
+definition contains the selected word. Any italicized text in a dictionary
+entry from the Liddell-Scott <i>Intermediate Greek-English</i> <i>Lexicon</i>
+is treated as a definition, and in using this tool you are, in effect,
+consulting an index of English words from this lexicon.
+<h5>
+<a name="RTFToC16">Greek
+Dictionary Entry Search
+</a></h5>
+You can use the Greek Dictionary Entry Search to locate individual dictionary
+entries or groups of dictionary entries. Use the Greek Dictionary Entry Search
+to find out precisely how a Greek dictionary entry is spelled (<IMG src="/img/help/ss.gif"> or <IMG src="/img/help/tt.gif">,
+<IMG src="/img/help/ia.gif"> or <IMG src="/img/help/ih.gif">, for example). Again, you can locate all dictionary entries that
+contain a certain string: those ending in <IMG src="/img/help/frwn.gif"> or <IMG src="/img/help/sis.gif">, or that contain the
+string <IMG src="/img/help/olb.gif"> (e.g., <IMG src="/img/help/ano.gif"> or <IMG src="/img/help/euol.gif"> ), or <IMG src="/img/help/pemp.gif"> (e.g., <IMG src="/img/help/ant.gif">, <IMG src="/img/help/diapem.gif">, <IMG src="/img/help/duspemp.gif">). Finally, if you
+want to do a Greek Word Search, but lack a convenient way of typing accents
+because you do not have SMK GreekKeys installed, you can obtain the form with
+the Greek Dictionary Entry Search.<p>
+You can go from the Greek Dictionary Entry Search tool to any of the other
+Philological Tools. 
+<h5>
+<a name="RTFToC17">Greek
+Word Frequencies -- Overview
+</a></h5>
+The Greek Word Frequencies tool displays the statistical frequencies with which
+a particular Greek word is used among all the Greek authors in Perseus.  This
+tool will provide you with the totals for a list of words, often with
+interesting results: A search in the Greek Word Frequencies -- Overview for
+<IMG src="/img/help/ail.gif">, "cat" produces 7 instances for all of Greek within
+Perseus. Perhaps not unsurpringly, six fall in Herodotus 2, a book devoted to
+Egypt. The seventh is in Aristophanes; in what context will
+<IMG src="/img/help/ail.gif"> appear?
+<h5>
+<a name="RTFToC18">Greek
+Word Frequencies -- by Author
+</a></h5>
+The Greek-Word Frequencies -- by Author tool allows you to compose a list of
+words and then see which and how often these words occur in a particular
+author. Because Perseus keeps the word list in its memory, the query can be
+repeated for each author in the database. 
+<h4>
+<a name="8.4.6">8.4.6
+MORPHOLOGICAL ANALYSIS TOOL
+</a></h4>
+The Morphological Analysis tool parses Greek word forms, showing the dictionary
+form (lemma) and related analysis. The Morphological Analysis tool is available
+directly from Primary Text displays through the Analyze button, from the Links
+menu, and from the Gateway via the Tools &amp; References icon. <p>
+This tool retrieves a morphological analysis, not a syntactic analysis, of the
+Greek word. If the form you are analyzing could be formed from more than one
+word, the Morphological Analysis tool will display all possible lemmas and
+analyses. It does not indicate which one is correct for the particular form you
+selected.<p>
+If you have chosen Morphological Analysis from the Tools &amp; References Index
+or the Links menu, you must enter a word to analyze. If you are in a Primary
+Text and want to analyze a word, highlight it and click the Analyze button. The
+tool will automatically parse that word. <p>
+The examples used below will trace through the analysis of words selected from
+a Primary Text and from Philological Tools.<p>
+&gt;	Analyze forms from Pindar's <i>First Olympian Ode.</i><p>
+Go to Pindar First Olympian in the Primary Texts by releasing the mouse on the
+item  Lookup under the Links menu. Type <tt>Pind. O. 1.1</tt> into the box and
+press Return.<p>
+Highlight the Greek word <IMG src="/img/help/garu.gif">.<p>
+Click the button <tt>Analyze</tt>, upper right. The Morphological Analysis card
+appears with the form <IMG src="/img/help/garu.gif"> above, the lemma (dictionary form) in
+boldface type in the middle, and the grammatical analysis below (figure
+8.12).<p>
+        
+<CENTER><IMG src="/img/help/8.12.gif"><p>
+<b>Figure 8.12 Morphological Analysis showing Related Tools pop-up menu.</b><p>
+</CENTER><b></b>Explanation of the parse abbreviation "pres inf act epic doric" is given
+in Online help for Morphological Analysis.<p>
+To find the meaning of <IMG src="/img/help/ghru.gif">, highlight it. Then choose <tt>Greek-English
+Lexicon </tt>from the pop-up menu Related Tools. You may highlight the lemma
+and go to the other Philological Tools under the Related Tools pop-up menu,
+described below. These include Greek Word Search, Greek Word Frequencies --
+Overview and Greek Word Frequencies -- By Author. <p>
+To return to the text of Pindar, click the Go Back arrow on the Navigator
+Palette. <p>
+&gt;	Analyze a form directly from the Morphological Analysis card.<p>
+Type <IMG src="/img/help/boa.gif"> into the Form field, and click Analyze to parse the word
+(figure 8.13).<p>
+<CENTER><IMG src="/img/help/8.13.gif"><p>
+<b>Figure 8.13 Morphological Analysis tool.</b><p></CENTER>
+<b></b>To type Greek text, you must have SMK GreekKeys installed in your
+system. You must be precise in typing accents and diacritical marks using SMK
+GreekKeys.<p>
+Here the word analysis results in three lemmas. 
+<h5>
+<a name="RTFToC20">Related
+Tools
+</a></h5>
+The Related Tools button in the upper right hand corner relates the
+Morphological Analysis tool to other Philological Tools. If you select text
+from the morphological analysis before choosing another tool, the new tool will
+apply itself to the selection. Figure 8.13 illustrates the choices available
+here.<p>
+The four related tools are those which work with one or more dictionary
+entries. In the example above using <IMG src="/img/help/boa.gif">, if you select one of the three
+lemmas (dictionary entries) and then call up one of these four related tools,
+Perseus will automatically paste the selected dictionary entry into the
+selected tool. <p>
+If you do not select anything and call up the Greek-English Lexicon or the
+Greek Word Search tools, nothing will be pasted into them. <p>
+On the other hand, Greek Word Frequency tools will look up all lemmas listed if
+you do not select one of the lemmas, in this case, all three.
+<h5>
+<a name="RTFToC21">Limitations</a></h5>
+1) 	The Morphological Analysis Tool is not context sensitive. <p>
+* It makes no attempt to determine whether a form such as
+<IMG src="/img/help/ais1.gif"> is a substantive or a verb.<p>
+* If it sees a form such as <IMG src="/img/help/pemp5.gif">, it recognizes this as a possible
+present indicative or imperative, but it also reports that this could be an
+unaugmented Epic or Ionic. Even if you are reading an Attic author such as
+Demosthenes, it still reports the possible Epic and Ionic interpretation
+because you may, for example, be looking at a form from a piece of quoted
+poetry.<p>
+2)	The Morphological Analysis Tool seeks every possible morphological analysis
+for every form that it examines. With 30,000 stems, 10,000 inflections and
+rules for coping with several Greek dialects, some of the morphological
+analyses can be surprising.<p>
+3	The Mophological Analysis Tool does not systematically cover proper names.
+Its can recognize 22,000 of the 32,000 proper names in Perseus 2.0, a success
+rate of 69%.<p>
+Our morphological database is based on the morphological information from the
+Liddell-Scott <i>Intermediate Greek-English Lexicon</i>, a reference tool which
+covers only a small number of proper names. While we have added morphological
+information for over 10,000 additional words, we continue to systematically add
+proper names.<p>
+4)	The Morphological Analysis tool has been taught to recognize many words that
+are not in the <i>Intermediate Greek-English Lexicon</i>, but it still is not
+complete. It can recognize 223,000 out of the 228,000 unique strings in Perseus
+2.0, a success rate of 98%.<p>
+
+<a name="8.4.7">8.4.7
+GREEK-ENGLISH LEXICON
+</a></h4>
+The Greek-English Lexicon contains the Greek and English definitions from the
+Liddell-Scott <i>Intermediate Greek-English Lexicon</i>. The Greek-English
+Lexicon is entered from the Links menu, from the Gateway via the Tools &amp;
+References icon, and from the Related Tools pop-up menu in the various
+Philological Tools.<p>
+<CENTER><IMG src="/img/help/8.14.gif"><p>
+<b>Figure 8.14 Greek-English Lexicon.</b><p>
+</CENTER><b></b>&gt;	Look up the meaning of <IMG src="/img/help/aud1.gif"> in Pindar's First
+Olympian.<p>
+Go to Pindar First Olympian in the Primary Texts by choosing <tt>Lookup</tt>
+from the Links menu. Type <tt>Pind. O. 1.1</tt> into the box and press
+Return.<p>
+Highlight the Greek word <IMG src="/img/help/aud2.gif"> in line 7. Click
+<tt>Analyze</tt>. On the Morphological Analysis card, highlight the lemma
+<IMG src="/img/help/aud1.gif">, then choose <tt>Greek-English Lexicon</tt> from the
+Related Tools pop-up menu.<p>
+Alternatively you can look up lemmas by typing them directly into the Entry
+field if you have SMK GreekKeys 7.0 installed in your system. Click the "Entry"
+field to make the insertion point appear. Then click <tt>Look Up</tt> to see a
+definition of the word. You can paste in a Greek word (in its dictionary form).
+<p>
+The Greek-English Lexicon displays the entry for a word as it appears in the
+Liddell-Scott <i>Intermediate Greek-English Lexicon</i> (figure 8.11). The
+first field lists the definitions. <p>
+The buttons <tt>See Previous Entry</tt> and <tt>See Following Entry</tt> move
+backward and forward in the Lexicon.<p>
+The "Derived From" field lists explicit cross-references between dictionary
+entries. In practice, any word or brief phrase enclosed in parentheses at the
+beginning of a dictionary article in the lexicon will be placed in the Derived
+From entry. Thus in the following entry:<p>
+<CENTER><IMG src="/img/help/8.14b.gif"></CENTER>
+(<IMG src="/img/help/aud3.gif">) appears in Perseus thus (figure 8.15):<p>
+<CENTER><IMG src="/img/help/8.15.gif"><p>
+<b>Figure 8.15 <tt>Derived from:</tt> field.</b><p>
+</CENTER><b></b>Note that the Greek-English lexicon does not always include derivations
+in this parenthetical information. Consider, for example, the following entry
+in the print dictionary:<p>
+<CENTER><IMG src="/img/help/8.15b.gif"></CENTER>
+This entry defines a homonymous relationship, i.e., the verb <IMG src="/img/help/kun2.gif"> has
+the same meaning as <IMG src="/img/help/kun.gif">. In Perseus, the "=<IMG src="/img/help/kun.gif">"
+reference also appears in the Derived From field.<p>
+The other three fields on this card include information derived from, but not
+explicit in, the print version of the lexicon. These fields provide machine
+generated indexes to help you make connections between words.<p>
+The Source For field lists words produced by the Entry word. In the example
+above, <IMG src="/img/help/aud1.gif"> is given as derived from <IMG src="/img/help/aud3.gif">. If you
+call up the entry for <IMG src="/img/help/aud3.gif">, you will find <IMG src="/img/help/aud1.gif"> in
+the Source For field, along with <IMG src="/img/help/aud4.gif">, <<IMG src="/img/help/aud5.gif"> and
+<IMG src="/img/help/aud6.gif">, other words produced by <IMG src="/img/help/aud1.gif"> (figure
+8.16).<p>
+ 
+<CENTER><IMG src="/img/help/8.16.gif"><p>
+<b>Figure 8.16 <tt>Source for: </tt>field.</b><p></CENTER>
+<b></b>The field bottom left lists other possible forms of this dictionary
+entry that show up in other dictionary articles. Thus for <IMG src="/img/help/aud3.gif">,
+the other possible forms are<IMG src="/img/help/aud7.gif">, <IMG src="/img/help/aud3.gif"> and
+<IMG src="/img/help/aud8.gif"> (figure 8.14). Click <IMG src="/img/help/aud7.gif"> and the forms
+<IMG src="/img/help/aud9.gif"> and <IMG src="/img/help/prosf.gif"> are displayed in the field <tt>Appears In</tt> lower
+right. This means that the form <IMG src="/img/help/aud7.gif"> appears in the definitions,
+and is used in an idiomatic citation, under the entries for <IMG src="/img/help/aud9.gif"> and
+<IMG src="/img/help/prosf.gif">. Figure 8.17  below shows the results of clicking <IMG src="/img/help/aud3.gif">
+in the field <tt>Other possible forms in the lexicon</tt>: the forms
+<IMG src="/img/help/phrou.gif">, <IMG src="/img/help/omph.gif"> and <IMG src="/img/help/rew.gif"> are displayed in the field
+<tt>Appears In</tt>, lower right. To go to the dictionary entry, click a word
+from the <tt>Appears In</tt> field, then click the button <tt>Look Up</tt>.<p>
+<CENTER><IMG src="/img/help/8.17.gif"><p>
+<b>                               Figure 8.17 Other possible forms from the
+lemma <IMG src="/img/help/aud3.gif"> that appear in the definitions of other dictionary
+Entries.</b><p></CENTER>
+<b></b>&gt;	Find a citation for <IMG src="/img/help/aud8.gif"> in the definition for the
+entry <IMG src="/img/help/xew.gif">.<p>
+From the Greek-English Lexicon entry for <IMG src="/img/help/aud3.gif">, click
+<IMG src="/img/help/aud8.gif"> in the field <tt>Other possible forms in the lexicon</tt>,
+bottom left. Click <IMG src="/img/help/xew.gif">, then click <tt>Look Up</tt>. Perseus will highlight
+<IMG src="/img/help/aud8.gif"> in the definition for <IMG src="/img/help/xew.gif"> (figure 8.17).<p>
+<CENTER><IMG src="/img/help/8.18.gif"><p>
+<b>Figure 8.18</b>  <IMG src="/img/help/aud8.gif"> <b>in the definition of </b> <IMG src="/img/help/xew.gif">.<p>
+</CENTER><b></b>The computer is able to create a link between the entry for
+<IMG src="/img/help/aud3.gif"> and the appropriate citation in the article for <IMG src="/img/help/xew.gif">, and
+the user can thus study an idiomatic usage of <IMG src="/img/help/aud3.gif"> cited in
+another entry of the lexicon.
+<h5>
+<a name="RTFToC2">Related
+Tools
+</a></h5>
+<CENTER><IMG src="/img/help/8.19.gif"><p>
+<b>Figure 8.19  The Related Tools Menu</b><p>
+</CENTER><b></b>The Related Tools suggest the following options. (1) You can call up the
+Morphological Analysis tool to get the analysis for an inflected form in one of
+the definitions; (2) you can select an English word and use the "English-Greek
+Word Search" to see which other Greek dictionary articles contain this word in
+their definitions; (3) you can search for, or see the frequencies of, a given
+dictionary entry in Perseus authors.
+<h5>
+<a name="RTFToC3">Limitations</a></h5>
+The Greek-English Lexicon is based on the Liddell-Scott <i>Intermediate
+Greek-English Lexicon</i>. We have definitions for c. 35,000 words, but the
+Intermediate Greek-English Lexicon is not exhaustive and thus there are a
+number of words in Perseus for which the Lexicon has no definitions.
+<h4>
+<a name="8.4.8">8.4.8
+GREEK WORD SEARCH
+</a></h4>
+The Greek Word Search tool allows you to search for Greek words in Perseus
+texts. It contains features which represent a significant improvement over the
+basic string searching to which classicists have become accustomed, because it
+draws on the morphological database to give all inflected forms in the results,
+even those from a different stem. (For a definition of "strings" please see
+<A HREF="#8.4.1">section 8.4.1</A>.)<p>
+<CENTER><IMG src="/img/help/8.20.gif"><p>
+<b>Figure 8.20 Greek Word Search: <IMG src="/img/help/fero.gif"> in Aeschylus.</b><p>
+</CENTER><b></b>The Greek Word Search (figure 8.20)  displays citations for all forms of
+the selected Greek word in a particular author's works - in this case, <IMG src="/img/help/fero.gif">
+in Aeschylus. Note forms from the future and aorist stems appearing in the
+results field, left. <p>
+In the field <tt>Look for</tt>, paste or (if you have SMK GreekKeys installed)
+type in  a Greek word or string of characters to search for. (Strings are
+defined in <A HREF="#8.4.1">section 8.4.1</A>.)<p>
+Choose an author to search in by choosing any author from the pop-up menu
+(figure 8.21).<p>
+<CENTER><IMG src="/img/help/8.21.gif"><p>
+<b>Figure 8.21 Author pop-up menu in Greek Word Search.</b>
+</CENTER><h5>
+<a name="RTFToC5">Search
+Type
+</a></h5>
+There are several options for performing searches, obtained from the pop-up
+menu Search Type (figure 8.22). With the item <tt>All forms from a Dictionary
+Entry</tt>, which shows up by default as <tt>Dictionary Entry</tt>, you can
+search for all forms of a word in an author. The items <tt>Forms with these
+starting characters</tt> and <tt>Forms with these ending characters a</tt>llow
+you to perform searches for forms that match the beginning or ending strings of
+characters. With the item <tt>Forms with this substring</tt>, you can search
+for words sharing the matching string in any position in the word. <p>
+<CENTER><IMG src="/img/help/8.22.gif"><p>
+<b>Figure 8.22 Search Type pop-up menu.</b><p>
+</CENTER><b></b>To perform the search, click the button <tt>Do Search</tt>.
+<h5>
+<a name="RTFToC6">Options</a></h5>
+When the search is complete, the Options pop-up menu will appear, which
+presents you with a variety of ways to sort and classify the search results and
+author citations (figure 8.23).<p>
+<CENTER><IMG src="/img/help/8.23.gif"><p>
+<b>Figure 8.23 Options pop-up menu in Greek Word Search.</b><p>
+</CENTER><b></b>The item <tt>Citations for All Forms</tt> brings up a list of all
+citations in Perseus for the targeted word. To go to one of the cited passages,
+select it and click the button <tt>Go To Text</tt>, upper right.<p>
+To retrieve citations for just one form, select it and choose <tt>Citations for
+Selected Form</tt> from the Options pop-up menu. To go to one of the cited
+passages, select it and click the button <tt>Go To Text</tt>, upper right.<p>
+To parse a form, select it and choose <tt>Morphological Analysis for Selected
+Form</tt> from the Options pop-up menu. To return to Greek Word Search, click
+the Go Back arrow on the Navigator Palette.<p>
+The list of forms can be sorted alphabetically, by frequency or with the
+ambiguous forms at the top. Choose <tt>Sort Forms by Frequency, Sort Forms
+Alphabetically </tt>or<tt> Show Ambiguous Firms First</tt>.<p>
+To discard one of the forms from the list of results, select it and choose<tt>
+Delete Selected Form.</tt>
+<h5>
+<a name="RTFToC7">Statistical
+Information
+</a></h5>
+When a search has been performed, the Greek Word Search produces a line of
+statistics about the instances and frequency of the dictionary form of the word
+in the selected author's works. Figure 8.24 shows the statistics for <IMG src="/img/help/fero.gif"> in
+Aeschylus. <p>
+<CENTER><IMG src="/img/help/8.24.gif"><p>
+<b>Figure 8.24  Greek Word Search statistics.</b><p>
+</CENTER><b></b>There are 31 forms derived from <IMG src="/img/help/fero.gif"> in the works of Aeschylus. Words
+in Perseus represents the total number of words in Aeschylus in the Perseus
+database, 40,088. The Maximum Instances is the number of forms of <IMG src="/img/help/fero.gif">
+including ambiguous forms. The Minimum Instances is the number of forms of
+without ambiguous forms. (In the illustration above, both are 59 because there
+are no ambiguous forms.) Frequency is the number of instances per 10,000 words,
+14.71.<p>
+To see statistics of this type on a particular word among all the Primary Text
+authors, use the tool Greek Word Frequencies -- Overview, available under the
+pop-up menu Related Tools, upper right.
+<h5>
+<a name="RTFToC8">Related
+Philological Tools
+</a></h5>
+The Greek Word Search is linked with the other Philological Tools via the
+Related Tools pop-up menu in the upper right. If you select Greek text from the
+Greek Word Search, then choose <tt>Morphological Analysis, Greek-English
+Lexicon</tt> or <tt>Greek Word Frequencies -- Overview</tt> from the
+<tt>Related Tools</tt> pop-up menu, the new tool will apply itself to the
+selection.
+<h5>
+<a name="RTFToC9">Limitations</a></h5>
+1)	A search for a word in <i>all  </i>Perseus authors (global search) would
+often produce results far beyond the capabilities of HyperCard. Until the
+software is developed, we suggest that you use the Greek Word Frequencies --
+Overview feature to see in what authors a word shows up, then use Greek Word
+Search, proceding author by author.<p>
+2)	Some of the most common words in Greek are not indexed:<p>
+Neither Greek Word Search (nor the Greek Words in Proximity Search) search
+Greek texts directly. Instead, they rely upon indexes of the Perseus texts. To
+limit the size of the indexes, some of the most common words have not been
+included (see the table below). If you wish to study these words, you must use
+Pandora or some other search tool for the <i>Thesaurus Linguae Graecae.</i>
+
+<CENTER><IMG src="/img/help/8.2t.gif">
+<br><b>Table
+8.2 Forms not indexed, and thus not searchable, in Perseus.</b><p>
+</CENTER><b></b>Pandora 2.5.2 is available from Scholars' Press Software, c/o
+Professional Book Distributors, P.O. Box 6996, Alpharetta GA 30239-6996, (800)
+437-6692 or (404) 442-8633, (404) 442-9742 FAX.<p>
+For information on the TLG cd-rom, please contact Theodore F. Brunner,
+Director, Thesaurus Linguae Graecae, University of California Irvine, Irvine,
+CA 92717-5550 USA, (714) 824-7031, (714) 824-8434 FAX, Email
+tbrunner@uci.edu.<p>
+3)	Lexical Ambiguity<p>
+Remember that Perseus makes no attempt to determine whether a form such as
+<IMG src="/img/help/ais1.gif"> is from the noun <IMG src="/img/help/ais3.gif"> or the verb
+<IMG src="/img/help/ais2.gif">. Thus, the form <IMG src="/img/help/ais1.gif"> will show up in
+searches for both the noun <IMG src="/img/help/ais3.gif"> and the verb <IMG src="/img/help/ais2.gif">.<p>
+<a name="8.4.9">8.4.9 GREEK WORDS IN PROXIMITY</a></h4>
+This tool allows you to locate passages in which any form from one list of
+dictionary entries appears within a given number of words of a form from a
+second list of dictionary entries.<p>
+The Greek Words in Proximity tool is available from the Links menu and by
+clicking the Tools &amp; References icon in the Gateway. The tool itself is
+constructed on two cards: the card appearing first (figure 8.25) contains the
+author lists, operating buttons and results fields; the second card (figure
+8.26) contains fields for entering and editing search lists.<p>
+<CENTER><IMG src="/img/help/8.25.gif"><p>
+<b>Figure 8.25 Greek Words in Proximity</b><p>
+</CENTER><b></b>An overview of how to use the Greek Words in Proximity tool is given in
+this paragraph. Examples of searches are given below. From the first card, go
+to the Edit Lists card by clicking the button <tt>Enter/Edit Dictionary
+Lists</tt>. Type or paste in your choices into lists 1 and 2 (figure 8.26), and
+return to the first card by clicking  <tt>Done</tt>, upper right. <p>
+<CENTER><IMG src="/img/help/8.26.gif"><p>
+<b>Figure 8.26 Greek Words in Proximity: Edit Lists.</b><p>
+</CENTER><b></b>Now choose an author from the author list on the first card. To perform
+the search, click <tt>Do Search</tt>. Results appear in the field below, along
+with statistics. To go to a citation, select it and click the button <tt>Go To
+Text</tt>.<p>
+&gt;	Find the words <IMG src="/img/help/mh1.gif"> and <IMG src="/img/help/ti.gif"> within a proximity
+of 10 words in Homer.<p>
+Go to the Greek Words in Proximity tool by choosing this item from the Links
+menu. Or from the Gateway, click the Tools &amp; References icon, then click
+<tt>Greek Words in Proximity</tt> under the topic Philological Tools.<p>
+To bring up the Edit Lists card, click the button <tt>Enter/Edit Dictionary
+Lists</tt>. If Lists 1 and 2 contain words from a previous search, click the
+buttons <tt>Clear List 1</tt> and <tt>Clear List 2</tt>.<p>
+If you are equipped to type accented Greek, put the cursor into the field of
+List 1 and type  <IMG src="/img/help/mh1.gif">, then put the cursor into the field of List 2
+and type <IMG src="/img/help/ti.gif">. Enter the numbers of words in proximity of which
+the search will take place (10) in the box at the bottom. Click
+<tt>Done</tt>.<p>
+Note that this tool will only work with the properly accented dictionary entry
+(lemma) of the words to be searched. If you cannot type accented Greek with
+GreekKeys, or if you are unsure of the proper accent and spelling, click the
+button <tt>Greek Dictionary Entry Search</tt>. Locate the cursor in the Look Up
+field, type <IMG src="/img/help/mh2.gif"> (no accents, no final sigma), and release the mouse on the
+item <tt>Words with this Substring</tt> as the kind of Dictionary Entry Search
+to make (figure 8.27).<p>
+<CENTER><IMG src="/img/help/8.27.gif"><p>
+<b>Figure 8.27 Greek Dictionary Entry search with proper form of
+</b> <IMG src="/img/help/mh1.gif">.<p>
+</CENTER><b></b>Now select <IMG src="/img/help/mh1.gif"> in the results field below and choose the
+item <tt>Greek Words in Proximity</tt> from the pop-up menu Related Tools,
+upper right. A dialog window will ask you which list you want <IMG src="/img/help/mh1.gif">
+entered into (figure 8.28). Click <tt>List 1</tt>. If you wish to cancel the
+request, click <tt>Neither</tt>. A further dialog may appear asking whether to
+add or replace your selection to the list. In this case, click
+<tt>Replace</tt>; if you wish to accumulate a longer list for Perseus to
+search, click <tt>Add</tt>.<p>
+If you have just completed the task of accumulating a long list of words from
+all over Perseus, you can now alphabetize your list by clicking the buttons
+<tt>Sort List 1</tt> and <tt>Sort List 2.</tt><p>
+ 
+<CENTER><IMG src="/img/help/8.28.gif"><p>
+<b>Figure 8.28 Dialog window with queryfor word list.</b><p></CENTER>
+<b></b><IMG src="/img/help/mh1.gif"> will now be entered in List 1. Follow the same
+proceedure for <IMG src="/img/help/ti.gif"> in List 2.<p>
+If you have selected a form from one of the Primary Texts in Perseus,
+<IMG src="/img/help/mh3.gif"> for example, you can obtain the lemma by clicking the button
+<tt>Analyze</tt>. The Morphological Analysis tool will find the lemma for you.
+Now click the lemma (<IMG src="/img/help/mh1.gif">) and choose the item <tt>Greek Words in
+Proximity</tt> under the pop-up menu Related Tools. As above, a dialog window
+will ask which List you wish to add the word to. Make the choice and Perseus
+will return you to the Edit List card.<p>
+Now that your list of words to search is complete, type the number words in
+proximity, 10, into box at the bottom. Click <tt>Done</tt> to return to the
+first card. Alternatively, click Cancel to return to the first card without
+making any changes.<p>
+<IMG src="/img/help/mh1.gif"> and <IMG src="/img/help/ti.gif"> will now be displayed in the fields
+<tt>Dictionary Entries in List</tt>. Choose <tt>Homer</tt> fro the Choose
+Another Author pop-up menu. To perform the search, click the button <tt>Do
+Search</tt>. Perseus will find two citations for <IMG src="/img/help/mh1.gif"> in proximity
+with <IMG src="/img/help/ti.gif"> in Homer:<p>
+Hom. Il. 1.1 <IMG src="/img/help/mh3.gif">, <IMG src="/img/help/eth.gif"> range=10<p>
+Hom. Il. 21.523 <IMG src="/img/help/mh1.gif">, <IMG src="/img/help/eth.gif"> range=4<p>
+In the first citation, a form of <IMG src="/img/help/mh1.gif"> occurs within ten words of
+the form of <IMG src="/img/help/ti.gif"> in the second citation, they are within a range
+of four words. To go to one of the cited passages, select it and click <tt>Go
+To Text</tt>. In addition, Perseus displays a variety of statistics. In Greek,
+inflected forms may be ambiguous, deriving from one lemma or another (e.g., the
+form <IMG src="/img/help/mh5.gif"> could come from either <IMG src="/img/help/mh1.gif"> or the Ionic word
+<IMG src="/img/help/mh4.gif">, "moon.") Accordingly, the numbers 22 and 16 following
+<IMG src="/img/help/mh1.gif"> mean that forms of that word appear in Homer a maximum of
+twenty-two times (i.e., not counting ambiguities) and a minimum of sixteen
+times (i.e., eliminating ambiguous forms).<p>
+&gt;	Find a list of Greek words associated with the concept "revolt" and a list
+of words associated with the concept "persuade" within a proximity of 10 words
+in Thucydides.<p>
+From the first card of Greek Words in Proximity, go to the List Edit card by
+clicking the button <tt>Enter/Edit Dictionary Lists</tt>. If words from a
+previous search are in the fields, click <tt>Clear List 1</tt> and <tt>Clear
+List 2</tt>.<p>
+You will now use the English-Greek Word Search feature to generate lists of
+words to search. (This tool is described in greater detail below.) Choose the
+item <tt>English-Greek Word Search</tt> from the Links menu. Type "revolt" into
+the Look Up field and click the button <tt>Look Up</tt>, upper left. Choose the
+item <tt>Greek Words in Proximity</tt> from the Related Tools pop-up menu. A
+dialog window will ask you which list you want the "revolt" words entered into
+(figure 8.29). Click <tt>List 1</tt>. (If you wish to cancel the request, click
+<tt>Neither</tt>.) A further dialog may appear asking whether to add or replace
+your selection to the list. In this case, click <tt>Replace</tt>.<p>
+Follow the same procedure for the English-Greek Word List for "persuade," and
+enter the list of "persuade" words into List 2.<p>
+The Greek words in the two lists are drawn from entries in the Lexicon
+containing the English words "revolt" and "persuade" in their definitions.
+There will not always be a close connection between words on the list and the
+meaning targeted. In some cases, you may want to edit your lists.<p>
+Your Edit Lists card should now look like the illustration in figure 8.29.<p>
+<CENTER><IMG src="/img/help/8.29.gif"><p>
+<b>Figure 8.29 Greek Words in Proximity Edit Lists card. </b><p>
+</CENTER><b></b>Set the span of words to be searched to 10 in the box at the bottom, and
+click <tt>Done</tt> to return to the first Greek Words in Proximity card.
+Choose <tt>Thucydides</tt> from the pop-up menu <tt>Choose Another Author</tt>,
+and click <tt>Do Search</tt>. Ten citations will appear in the field below,
+which you can go to by selecting one and clicking <tt>Go To Text</tt>.
+<h5>
+<a name="RTFToC2">Statistics</a></h5>
+Statistics for the search described above are shown in figure 8.30. For List 1,
+there were 10 entries associated with "revolt." The asterisk to the right of
+word 1, list 1 directs you to the Format of the statistics, shown below the
+List 1 Totals. <p>
+<CENTER><IMG src="/img/help/8.30.gif"><p>
+<b>Figure 8.30 Greek Words in Proximity statistics.</b><p>
+</CENTER><b></b>Accordingly, <IMG src="/img/help/apo2.gif"> is a lemma (dictionary entry) and
+not an oblique form. <tt>30</tt> is the maximum number of occurrences in
+Thucydides (including ambiguous forms), and <tt>25</tt> is the minimum number
+of occurrences in Thucydides (subtracting ambiguous forms). <p>
+For List 1 Totals, <tt>Max=119</tt> means that for the 10 words associated with
+"revolt," the maximum number of forms found in Thucydides is 119 (disregarding
+ambiguous forms), and <tt>Min=84</tt> means that for the same list, the minimum
+number of forms is 84 (subtracting ambiguous forms).<p>
+Further statistics are in the lower left. <tt>Words in Perseus</tt> means that
+for the author Thucydides there are 150,116 words in the database. For the
+matches in this search, the maximum number is 4 (disregarding ambiguous forms),
+and the minimum is 2 (subtracting ambiguous forms).
+<h5>
+<a name="RTFToC3">Options</a></h5>
+When the search is completed, an Options pop-up menu appears lower left (figure
+8.31). They are various ways to sort the search results. <tt> </tt><p>
+<tt></tt>
+<CENTER><IMG src="/img/help/8.31.gif"><p>
+<b>Figure 8.31 Greek Words in Proximity Options.</b><p></CENTER>
+<b></b><tt>Show closest matches first</tt> will display the citations starting
+with those whose words are closest in proximity. <tt>Show ambiguous matches
+first</tt> will display the citations starting with those containing ambiguous
+forms. <tt>Show definite matches first</tt> will display the citations starting
+with those which are not ambiguous. <tt>Sort by Appearence in Author</tt> will
+display the citations by line, book or section from first to last in the
+Author.<p>
+Please be aware that search results are limited to 30,000 characters by the
+HyperCard software. Thus a search for words ending in <IMG src="/img/help/sis2.gif"> within a range of
+five words of those ending with <IMG src="/img/help/aw.gif"> (both over 600) will bring an error
+message. <p>
+Some of the most frequently occurring words in Greek have not been indexed.
+That means that the Greek Words in Proximity tool will not work with words such
+as <IMG src="/img/help/kai.gif"> and <IMG src="/img/help/alla.gif">. For a list of these words, see Table
+8.2 above.
+<h4>
+<a name="8.4.10">8.4.10
+ENGLISH-GREEK WORD SEARCH
+</a></h4>
+The English-Greek Word List (figure 8.32) is designed to search the Greek
+lexicon for words whose definitions contain a selected word or string. (Strings
+are defined in section 8.4.1.) Since you can use this tool to find Greek terms
+for English concepts, it, in effect, converts the Greek-English Lexicon into a
+rough but very powerful English-Greek lexicon. The tool is based on the entries
+in the Liddell-Scott <i>Intermediate Greek-English Lexicon</i>. <p>
+<CENTER><IMG src="/img/help/8.32.gif"><p>
+<b>Figure 8.32 English-Greek Word Search</b><p></CENTER>
+<b></b>Not every English word in each dictionary entry has been indexed. The
+English-Greek Word Search will find words only in the actual English
+definition--in practice, words that are italicized in the print dictionary.<p>
+If you choose the English-Greek Word Search via the Tools &amp; References
+Index from the Gateway or via the Links menu, you must enter a search string
+when the tool appears. If you choose English-Greek Word Search via the Related
+Tools pop-up menu within another Philological Tool and have already selected a
+word, that word will automatically activate the English-Greek Word Search.
+<h5>
+<a name="RTFToC5">Look
+Up field
+</a></h5>
+Use the field next to the <tt>Look Up</tt> button to enter the English word or
+string. If the English-Greek Word List is showing previous results, they will
+be cleared with the new search. Click <tt>Look Up</tt> to perform the search.<p>
+The string or word you type in must not include any spaces. The English-Greek
+Word List tool will only look up one-word strings.
+<h5>
+<a name="RTFToC6">Type
+of Search
+</a></h5>
+Items in this pop-up menu define the string to be searched. <tt>This word
+</tt><p>
+<CENTER><IMG src="/img/help/8.33.gif"><p>
+<b>Figure 8.33 Type of Search.</b><p></CENTER>
+<b></b><tt>only</tt> searches for precise words wherein the word and string are
+identical (e.g., "household"). <tt>Words with these starting characters</tt>
+searches for words that begin with a given string (e.g., "house-"). <tt>Words
+with these ending characters</tt> searches for words that end with a given
+string (e.g., "-hold"). <tt>Words with this substring</tt> searches for words
+that contain an embedded string (e.g., "-use-"). <p>
+&gt;	Look up several kinds of strings with the Englisk-Greek Word Search
+tool.<p>
+Type "household" in the String to Find field (if you haven't already done
+this). Choose the item <tt>This word only </tt>from<tt> </tt>the<tt> Type of
+Search pop-up menu, </tt>then click <tt>Look Up.</tt> (It will work to press
+Return here also.) The result of the search is displayed in the text field on
+the lower left of the screen. The word "household" appears in the definitions
+of 19 Greek words, which appear in the left column. The search does not find
+text that is a direct translation of the selected word; instead, the search
+identifies Greek words that contain the selected English text in their
+definitions. <p>
+Now try searching the English-Greek Word List for the string "house" (do not
+include a hyphen) with the Type of Search set to <tt>Words with these starting
+characters</tt>. The starting characters house- begin 12 English words, which
+occur in 187 dictionary entries.<p>
+Try searches for the ending strings -hold and -use-.<p>
+Searches for extremely common English strings will take longer. On a Macintosh
+Performa 636CD running Perseus at 5 MB the search for <tt>-use- </tt>took 53
+seconds.
+<h5>
+<a name="RTFToC7">Options</a></h5>
+When the search is completed, an Options pop-up menu appears (figure 8.34).<p>
+<CENTER><IMG src="/img/help/8.34.gif"><p>
+<b>Figure 8.34 Options pop-up menu.</b><p></CENTER>
+<b></b>Choose <tt>Resort List</tt> from the <tt>Options</tt> pop-up menu to put
+the list in Greek alphabetical order.<p>
+To condense the list, choose <tt>Resort List and Merge Duplicates.</tt><p>
+<tt></tt>These options will take a long time with lists containing many
+hundreds of words.<p>
+You can eliminate less interesting entries by editing the results. Since you
+can select dictionary entries and call up their English definitions from the
+Greek-English Lexicon, you can even use this tool with little or no knowledge
+of Greek.
+<h5>
+<a name="RTFToC8">Related
+Tools
+</a></h5>
+The Related Tools pop-up menu provides links with several other Philological
+Tools (figure 8.35).<p>
+<CENTER><IMG src="/img/help/8.35.gif"><p>
+<b>Figure 8.35</b><p>
+</CENTER><b></b>The English-Greek Word Search generates a list of Greek dictionary
+entries. From the Related Tools menu, you can access the definitions of
+individual Greek dictionary entries by selecting them and then calling up the
+Greek-English Lexicon, or you can find author-by-author citations with the
+Greek Word Search tool.<p>
+You can also work directly with the entire list of dictionary entries that you
+have generated. By going to either of the two Greek Word Frequency tools, you
+can see how often all of "household" words appear in different authors. You
+could thus begin to see whether this concept seems to be more or less common in
+different authors. (Words associated with "household" show up with twice the
+frequency in Aeschylus that they do in Sophocles, and 2 1/3 times as often in
+Euripides as they do in Sophocles.)<p>
+If you use the Related Tools to call up the Greek Words in Proximity Search,
+you can add the entire list of dictionary entries for "household" to one of the
+two lists (see the example in <A HREF="#8.4.9">section 8.4.9</A> above). You could thus use the
+English-Greek Word Search to set up a search for dictionary entries that
+contain "household" in their definition within 5 words of dictionary entries
+that contain "guest" in their definition.
+<h4>
+<a name="8.4.11">8.4.11
+GREEK DICTIONARY ENTRY SEARCH
+</a></h4>
+The Greek Word List (figure 8.36) searches the Entry headers of the
+Greek-English Lexicon for occurrences of a Greek character string as the
+starting or ending string of a word or anywhere within a word. (Strings are
+defined in <A HREF="#8.4.1">section 8.4.1</A>.) This tool is especially helpful in ascertaining the
+correct dictionary spelling and accentuation of a Greek form.<p>
+<CENTER><IMG src="/img/help/8.36.gif"><p>
+<b>Figure 8.36 Greek Dictionary Entry Search.</b>
+</CENTER><h5>
+<a name="RTFToC10">String
+to Find and Position
+</a></h5>
+Enter a string to use in the Look Up field, if a word is not currently showing.
+(The example in figure 8.32 shows a search for the string <IMG src="/img/help/lala.gif">.)<p>
+Note: it is not necessary to enter accents and breathings in order to use this
+tool.<p>
+Click <tt>Look Up </tt>to produce the list of words.<p>
+The results appear in the field lower left. A dictionary entry may be selected
+and pasted into a field where a lemma is required (in Greek Word Search, for
+example). You may also link with one of the related Philological Tools. <p>
+The pop-up menu right of the Look Up field gives you three ways to specify
+where in a word the string occurs: <tt>Words with these starting characters,
+Words with theese ending characters</tt>, and <tt>Words with this
+substring</tt>.
+<h5>
+<a name="RTFToC11">Related
+Philological Tools
+</a></h5>
+The Greek Dictionary Entry Search is linked with the other Philological Tools
+via the pop-up menu, upper right. If you select text from the list of
+dictionary Entries before choosing another tool, the new tool will apply itself
+to the selection. Thus you can copy over the dictionary form of a Greek word to
+the following tools: Greek Word Search, Greek English Lexicon, Greek Word
+Frequencies (Overview and By Author) and Greek Words in Proximity.<p>
+<h4><a name="8.4.12">8.4.12 GREEK WORD FREQUENCIES
+</a></h4>
+The Greek Word Frequencies -- Overview tool displays the frequencies with which
+a particular Greek word, or a list of words, is used among all the authors of
+Primary Texts. The Greek Word Frequencies -- By Author tool displays the
+frequencies with which a particular Greek word, or a list of words, is used in
+one Primary Text author. Both tools are accessed from the Links menu, from the
+Tools &amp; Resources icon in the Gateway, and from the Related Tools pop-up
+menu on the other Philological Tools. If you have opened this tool from another
+philological tool, the current list of Greek words is placed in a scrolling
+field at the left. Each Greek Word Frequencies tool applies itself to the first
+word in the list, which appears in the field at the top.
+<h5>
+<a name="RTFToC2">Greek Word Frequencies -- Overview
+</a></h5>
+The Greek Word Frequencies -- Overview tool is shown with a list of words
+associated with "horse" (figure 8.37).<p>
+<CENTER><IMG src="/img/help/8.37.gif"><p>
+<b>Figure 8.37 Greek Word Frequencies with scrolling window.</b><p>
+</CENTER><b></b>The list of words was produced by the English-Greek Word Search tool;
+for this procedure see <A HREF="#8.4.10">section 8.4.10</A> above. Use the scrolling window to move
+up or down the list (use of the scrolling window is described in <A HREF="ch4.html#4.1.3">section
+4.1.3</A>). Edit this list (or generate your own) by clicking on the button
+<tt>Edit List</tt> in the upper right corner of the word list field. A card
+Edit List of Dictionary Entries appears (figure 8.38).<p>
+<CENTER><IMG src="/img/help/8.38.gif"><p>
+<b>Figure 8.38 Edit List of Dictionary Entries card.</b><p></CENTER>
+<b></b>From the Edit List card you may type in your own dictionary entries
+(with correct accents and breathings), or paste in others from elsewhere in
+Perseus. You can find the dictionary entry with the Greek Dictionary Search
+tool, see above <A HREF="#8.4.11">8.4.11</A>. Sort the list alphabetically by clicking the
+<tt>Sort</tt> button; sort the list alphabetically and remove duplicates by
+clicking the button <tt>Sort</tt> and <tt>Remove Duplicates</tt>. When you are
+through editing your list, click <tt>Done</tt>. 
+<h6>
+<a name="RTFToC3">Do Calculation
+</a></h6>
+You can calculate frequencies for the whole list by choosing the item
+<tt>Calculate for All Entries in List</tt> from the pop-up menu Do Calculation.
+Calculate frequencies for a single word by choosing the item <tt>Calculate for
+Selected Entry.</tt>
+<h6>
+<a name="RTFToC4">View
+Data
+</a></h6>
+The pop-up menu View Data (figure 8.39) offers three ways in which to organize
+your results. The option <tt>Sort Authors Alphabetically</tt> is the default.
+<p>
+<CENTER><IMG src="/img/help/8.39.gif"><p>
+<b>Figure 8.39 View Data pop-up menu.</b><p>
+</CENTER><b></b>To group authors by literary type (Tragedy, Comedy, History, etc.),
+choose <tt>Sort Authors By Type of Literature</tt>. To see results
+chronologically by author, choose the item Sort Authors By Author Date.
+<h6>
+<a name="RTFToC5">Statistical
+Information
+</a></h6>
+The information for each author includes the total words in all works of the
+author catalogued in Perseus and the statistical reports for any possible use
+of the word (Maximum) and all definite uses of the word (Minimum). Instances
+are the number of times the word is used throughout the author's work.
+Frequency is the number of instances a word is used per 10,000 words.
+<h6>
+<a name="RTFToC6">Related
+Philological Tools
+</a></h6>
+The Greek Word Frequencies --Overview tool is linked with the other
+Philological Tools via the Related Tools pop-up menu, upper right. If you
+select text from the word list before choosing another tool, the new tool will
+apply itself to the selection. Select a word for which frequencies are
+displayed and choose Greek Word Search for citations in an author and
+Greek-English Lexicon for the definition. For Greek Word Frequencies -- By
+Author (described below), select a word or group of words to search them; if no
+selection is made, Perseus will copy the entire list to Greek Word Frequencies
+-- By Author. 
+<h5>
+<a name="RTFToC7">Greek
+Word Frequencies -- By Author
+</a></h5>
+The description Greek Word Frequencies -- By Author tool continues with the
+example of a list of words associated with "horse" (figure 8.40).<p>
+<CENTER><IMG src="/img/help/8.40.gif"><p>
+<b>Figure 8.40 Greek Word Frequencies -- By Author.</b><p>
+</CENTER><b></b>You can copy a list of Greek words associated with an English word (in
+this case, "horse") from the English-Greek Word Search into Greek Word
+Frequencies -- By Author by choosing this item from the <tt>Related Tools</tt>
+pop-up menu. For details on this proceedure, see <A HREF="#8.4.10">section 8.4.10</A> above. Edit
+this list (or generate your own) by clicking on the button <tt>Edit Full
+List</tt> to the right of the Calculate Frequencies pop-up menu. A card Edit
+List of Dictionary Entries appears (figure 8.41).<p>
+<CENTER><IMG src="/img/help/8.41.gif"><p>
+<b>Figure 8.41 Enter List of Dictionary Entries card, Greek Word Frequencies --
+By Author.</b><p>
+</CENTER><b></b>You can edit this list or type in a list of your own with correct
+accents and breathings. Sort alphabetically by clicking the button
+<tt>Sort</tt>. Remove duplicates by clicking the button <tt>Sort</tt> and
+<tt>Remove Duplicates</tt>. When you are through editing the list, click
+<tt>Done</tt> to return to the Greek Word Frequencies -- By Author card.<p>
+The current author is displayed in the upper left. Change authors by choosing
+an author from the list of authors under the pop-up menu <tt>Choose Another
+Author</tt>. The example will continue with words associated with "horse" in
+Demosthenes. (The orators as a group use a low frequency rate of "horse" words.)
+<h6>
+<a name="RTFToC8">Calculate
+Frequencies
+</a></h6>
+There are three ways to calculate word frequencies in an author. To see a list
+of only those words associated with "horse" which Demosthenes uses, choose the
+item <tt>Use Dictionary Entries Found in this Author</tt> from the
+<tt>Calculate Frequencies</tt> pop-up menu (figure 8.42).<p>
+<CENTER><IMG src="/img/help/8.42.gif"><p>
+<b>Figure 8.42 Ways to  calculate word frequencies by author.</b><p>
+</CENTER><b></b>The results of the calculation are shown in figure 8.43. The choice
+<tt>Use Dictionary Entries in Full List</tt> will include words from the list
+of words associated with "horse" not used by Demosthenes. Choose
+<tt>Precalculate Frequencies for All Authors</tt> in order for Perseus to work
+out the calculations for all authors in the database for your list. (Results
+are displayed alphabetically backwards, because the data for Xenophon is the
+last operated on by the computer.) Go from author to author via the <tt>Choose
+Another Author</tt> pop-up menu, or use the Forward and Backward arrows on the
+Navigator Palette.<p>
+<CENTER><IMG src="/img/help/8.43.gif"><p>
+<b>Figure 8.43 Frequency of words associated with "horse" in Demosthenes.</b>
+</CENTER><h6>
+<a name="RTFToC9">Options</a></h6>
+Four ways of sorting your results appear under the Options pop-up menu (figure
+8.44).<p>
+<CENTER><IMG src="/img/help/8.44.gif"><p>
+<b>Figure 8.44 Options pop-up menu.</b><p>
+</CENTER><b></b>To display the results in order from the most commonly used words to the
+least, choose <tt>Sort Most Common to Least</tt>. To display the results in
+reverse order, choose <tt>Sort Least Common to Most</tt>. To display the
+results alphabetically, choose <tt>Sort Alphabetically</tt>. To bring back the
+original list, <i>but remove the results of the search,</i> choose <tt>Restore
+Original List.</tt>
+<h6>
+<a name="RTFToC10">Related
+Philological Tools
+</a></h6>
+The Greek Word Frequencies -- By Author tool is linked with the other
+Philological Tools via the <tt>Related Tools</tt> pop-up menu, upper right. If
+you select text from the word list before choosing another tool, the new tool
+will apply itself to the selection. Select a word from the list and choose
+<tt>Greek Word Search</tt> for citations in an author and <tt>Greek English
+Lexicon</tt> for the definition. If you make no selection and choose Greek
+<tt>Word Frequencies -- Overview</tt>, Perseus will copy the full list to it.<p><p><p> <p><A HREF="ch8.html"><IMG ALIGN=Left src="/img/help/la.gif" WIDTH=75 BORDER=3 ALT="Go Back"></A><A HREF="ch9.html"><IMG ALIGN=Right src="/img/help/ra.gif" WIDTH=75 BORDER=3 ALT="Go Forward"></A><br>
+</body></html>

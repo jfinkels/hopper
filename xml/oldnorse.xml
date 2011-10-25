@@ -1,0 +1,535 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.perseus.org/meta/perseus.rdfs#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:dcterms="http://purl.org/dc/terms/"
+         xmlns:dctype="http://purl.org/dc/dcmitype/"
+         xmlns:perseus="http://www.perseus.org/meta/perseus.rdfs#"
+         xmlns:persq="http://www.perseus.org/meta/persq.rdfs#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:tufts="http://www.tufts.edu/"
+>
+ 
+<rdf:Description rdf:about="Perseus:corpus:germanic,Old Norse">
+<dc:language>non</dc:language>
+<dc:subject><persq:corpusType>conglomerate</persq:corpusType></dc:subject>
+<dc:title>Old Norse Texts</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:onc,0001">
+<dc:title xml:lang="en">Volsunga Saga</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0002">
+<dc:creator xml:lang="en"></dc:creator>
+<dc:title xml:lang="en">Zoega</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0003">
+<dc:title xml:lang="en">Grettis Saga</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0004">
+<dc:title xml:lang="en">Egils Saga</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0005">
+<dc:title xml:lang="en">Njals Saga</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0006">
+<dc:title xml:lang="non">Af Upplendinga konungum</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0007">
+<dc:title xml:lang="non">&#x00C1;ns saga bogsveigis</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0008">
+<dc:title xml:lang="non">&#x00C1;smundar saga kappabana</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0009">
+<dc:title xml:lang="non">B&#x00F3;sa saga ok Herrau&#x00F0;s</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0010">
+<dc:title xml:lang="non">Fr&#x00E1; Fornj&#x00F3;ti ok hans &#x00E6;ttm&#x00F6;nnum</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0011">
+<dc:title xml:lang="non">Fri&#x00F0;&#x00FE;j&#x00F3;fs saga ins fr&#x00E6;kna</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0012">
+<dc:title xml:lang="non">Gautreks Saga</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0013">
+<dc:title xml:lang="non">G&#x00F6;ngu-Hr&#x00F3;lfs saga</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0014">
+<dc:title xml:lang="non">Gr&#x00ED;ms saga lo&#x00F0;inkinna</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0015">
+<dc:title xml:lang="non">H&#x00E1;lfdanar saga Br&#x00F6;nuf&#x00F3;stra</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0016">
+<dc:title xml:lang="non">H&#x00E1;lfdanar saga Eysteinssonar</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0017">
+<dc:title xml:lang="non">H&#x00E1;lfs saga ok H&#x00E1;lfsrekka</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0018">
+<dc:title xml:lang="non">Helga &#x00FE;&#x00E1;ttr &#x00DE;&#x00F3;rissonar</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0019">
+<dc:title xml:lang="non">Hervarar saga ok Hei&#x00F0;reks</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0020">
+<dc:title xml:lang="non">Hj&#x00E1;lm&#x00FE;&#x00E9;s saga ok &#x00D6;lvis</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0021">
+<dc:title xml:lang="non">Hr&#x00F3;mundar saga Gripssonar</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0022">
+<dc:title xml:lang="non">Illuga saga Gr&#x00ED;&#x00F0;arf&#x00F3;stra</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0023">
+<dc:title xml:lang="non">Ketils saga h&#x00E6;ngs</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0024">
+<dc:title xml:lang="non">Norna-Gests &#x00FE;&#x00E1;ttr</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0025">
+<dc:title xml:lang="non">&#x00D6;rvar-Odds saga</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0026">
+<dc:title xml:lang="non">Ragnars saga lo&#x00F0;br&#x00F3;kar ok sona hans</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0027">
+<dc:title xml:lang="non">S&#x00F6;gubrot af nokkurum fornkonungum &#x00ED; Dana- ok Sv&#x00ED;aveldi</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0028">
+<dc:title xml:lang="non">S&#x00F6;rla saga sterka</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0029">
+<dc:title xml:lang="non">S&#x00F6;rla &#x00FE;&#x00E1;ttr e&#x00F0;a He&#x00F0;ins saga ok H&#x00F6;gna</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0030">
+<dc:title xml:lang="non">Sturlaugs saga starfsama</dc:title>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:abo:onc,0032">
+<dc:title xml:lang="non">&#x00DE;&#x00E1;ttr af Ragnars sonum</dc:title>
+</rdf:Description> 
+
+<rdf:Description rdf:about="Perseus:abo:onc,0033">
+<dc:title xml:lang="non">&#x00DE;orsteins &#x00FE;&#x00E1;ttr b&#x00E6;jarmagns</dc:title>
+</rdf:Description> 
+
+<rdf:Description rdf:about="Perseus:abo:onc,0034">
+<dc:title xml:lang="non">&#x00DE;orsteins saga V&#x00ED;kingssonar</dc:title>
+</rdf:Description> 
+
+<rdf:Description rdf:about="Perseus:abo:onc,0035">
+<dc:title xml:lang="non">T&#x00F3;ka &#x00FE;&#x00E1;ttr T&#x00F3;kasonar</dc:title>
+</rdf:Description> 
+
+<rdf:Description rdf:about="Perseus:abo:onc,0036">
+<dc:title xml:lang="non">Vi&#x00F0;b&#x00E6;tir</dc:title>
+</rdf:Description> 
+
+<rdf:Description rdf:about="Perseus:abo:onc,0037">
+<dc:title xml:lang="non">Yngvars saga v&#x00ED;&#x00F0;f&#x00F6;rla</dc:title>
+</rdf:Description> 
+
+<rdf:Description rdf:about="Perseus:abo:onc,0038">
+<dc:title xml:lang="non">Hr&#x00F3;lfs saga Gautrekssonar</dc:title>
+</rdf:Description> 
+
+<rdf:Description rdf:about="Perseus:abo:onc,0039">
+<dc:title xml:lang="non">Hr&#x00F3;lfs saga kraka ok kappa hans</dc:title>
+</rdf:Description> 
+
+<rdf:Description rdf:about="Perseus:text:2003.02.0001">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0001"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Volsunga_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0002">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:alternative xml:lang="en">Zoega</dcterms:alternative>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0002"/>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<dcterms:language>non</dcterms:language>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<persq:template>lexica.html</persq:template>
+<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/zoega.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0003">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0001"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/volsunga_eng.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0004">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0003"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/grettir_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0005">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0003"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/grettir_eng.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0006">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0006"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Af_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0007">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0007"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Ans_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0008">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0008"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Asmundar_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0009">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0009"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Bosa_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0010">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0004"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Egils_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0011">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0010"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Fra_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0012">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0011"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Friththjofs_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0013">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0012"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Gautreks_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0014">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0013"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Gongu-Hrolfs_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0015">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0014"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Grims_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0016">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0015"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/HalfdanarBronufostra_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0017">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0016"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/HalfdanarEysteinssonar_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0018">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0017"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Halfs_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0019">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0018"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Helga_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0020">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0019"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Hervarar_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0021">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0020"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Hjalmthes_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0022">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0038"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/HrolfsGautrekssonar_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0023">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0039"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Hrolfskraka_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0024">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0021"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Hromundar_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0025">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0022"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Illuga_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0026">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0023"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Ketils_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0027">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0024"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Norna_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0028">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0025"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Orvar_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0029">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0026"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Ragnarslothbrokar_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0030">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0027"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Sogubrot_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0031">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0028"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/SorlaSterka_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0032">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0029"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/SorlaThattr_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0033">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0030"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Sturlaugs_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0034">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0032"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/ThattrRagnars_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0035">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0033"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/ThorsteinsBaejarmagns_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0036">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0034"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/ThorsteinsVikingssonar_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0037">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0035"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Toka_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0038">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0036"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Vithbaetir_non.xml</text>
+</rdf:Description>
+ 
+<rdf:Description rdf:about="Perseus:text:2003.02.0039">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0037"/>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/Yngvars_non.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.02.0040">
+<dcterms:available>2005-03-12</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0011"/>
+<persq:stylesheet>driscollsaga.xsl</persq:stylesheet>
+	<dc:Rights>nodownload</dc:Rights>
+<text>Germanic/Saga/copyright/fridthjofssaga-perseus.xml</text>
+</rdf:Description>
+ 
+</rdf:RDF>

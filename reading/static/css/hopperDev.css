@@ -1,0 +1,267 @@
+/* OVERARCHING DOCUMENT STRUCTURE */
+
+body {
+    margin: 0;
+    min-width: 800px;
+}
+
+/*================ <div id="header"> Specific Markup =================*/
+div#header {
+    margin-top: 0;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    vertical-align: 40px;
+    width: 100%;
+    float: left;
+    border-bottom: solid black 1px;
+}
+
+div#header a#logo {
+    display: block;
+    background: url(/icons/new-rm-logo2.gif) no-repeat;
+    height: 80px;
+    width: 100px;
+    float: left;
+    margin: 5px;
+}
+
+div#header div#header_text {
+    display: block;
+    float: left;
+}
+
+div#header h1.title {
+    font-family: Garamond,Times,serif;
+    font-size: 18px;
+    margin: 2px auto;
+    float: left;
+
+    display: block;
+    margin-top: 10px;
+}
+
+div#header h4 {
+float: left;
+    font-family: "Lucida Grande",Verdana,Helvetica,sans-serif;
+    font-size: 12px;
+    margin-top: 2px;
+    clear: both;
+}
+
+div#header div#header_side {
+    float: right;
+    font-size: small;
+    margin-right: 20px;
+}
+
+div#header form#header_side p {
+    margin-bottom: 0;
+    margin-top: 0.3em;
+}
+
+
+/*================ Footer Specific Markup =================*/
+
+div#contact_info {
+    font-size: 12px;
+    font-family: Times,serif;
+    padding: 10px;
+}
+
+/*================ <div id="main"> Specific Markup =================*/
+
+div#main {
+    clear: both;
+    width: 100%;
+    padding: 0;
+    position: relative;
+}
+
+div#main_top {
+    display: block;
+    width: 97%;
+    margin: 0 0 12px 0;
+    padding: 0 0 0 3%;
+    float: left;
+    clear: both;
+    border-bottom: 2px solid #666;
+}
+
+div#content {
+    clear: both;
+    margin: 20px 1% 10px 1%;
+    position: relative;
+}
+
+div#main_col{
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 65%;
+
+    padding: 0;
+    border: 0;
+    margin: 0;
+    margin-left: 12px;
+}
+
+/*================ <div id="side_col"> Specific Markup =================*/
+
+div#side_col {
+    position: absolute;
+    top: 0;
+    left: 70%;
+    width: 28%;
+    clear: both;
+    padding: 0;
+    margin: 0;
+}
+
+div#side_col h3 {
+    font-size: medium;
+}
+
+div#side_col div {
+    margin-bottom: 12px;
+    background: #f1f2ea;
+}
+
+div#side_col h4 {
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+}
+
+div#side_col li {
+    font-size: small;
+}
+
+
+/*================ Tab Specific Markup =================*/
+
+div#main_top a.tab_active, div#main_top a.tab {
+    display: block;
+    float: left;
+    border: 1px solid black;
+    border-bottom: 0;
+    padding: 1px 6px 0 6px;
+    margin-right: 10px;
+    margin-top: 0;
+    margin-bottom: -2px;
+    text-decoration: none;
+    font-size: small;
+}
+
+div#main_top a.tab_active {
+    background-color: #FFF;
+    color: black;
+    border-bottom: 1px solid white;
+}
+
+div#main_top a.tab {
+    background-color: #666;
+    color: white;
+}
+
+/*=====================Word Count Markup ==========================*/
+div#word_count {
+    text-align: center;
+    font-family: "Lucida Grande",Verdana,Helvetica,Arial,sans-serif;
+    font-size: small;
+
+    background: #faf2ea;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    float: right;
+    width: 40%;
+}
+div#word_count table {
+    width: 100%;
+    font-size: x-small;
+}
+div#word_count th.coll {
+    width: 40%;
+    font-weight: normal;
+    text-align: left;
+}
+div#word_count td.graph {
+    width: 60%;
+    text-align: left;
+}
+
+div#word_count div.bar {
+    background-color: blue;
+}
+
+/*================IMAGES====================*/
+div.images h4 {
+	margin: 2px auto;
+	padding: 0;
+	font-family: Times,serif;
+	font-size: large;
+}
+
+div.images p{
+	font-family: Times, serif;
+	font-size: 14px;
+	margin-top: 0;
+}
+
+/*============ TOOLS ==============*/
+
+div.tool {
+    background-color: #ddd;
+    border: solid 1px black;
+    margin-bottom: 10px;
+    padding: 4px;
+    padding-left: 10px;
+}
+
+div.tool h4 {
+    margin: 2px auto 10px auto;
+}
+
+div.tool p {
+    font-size: small;
+    margin: 0 auto 4px auto;
+}
+
+/*===============Art Object ==================*/
+		div.artObjects{
+			position:relative;
+		}
+
+		div.artObject{
+			postion:absolute;
+			background-color: #cccccc;
+			margin:30px;			
+			padding: 5px;
+			border: solid black 1px;
+		}
+
+		div#margin{
+			margin-left: 7px;
+		}	
+		div.empty{
+			clear: both;
+			height:1px;
+		}
+		
+		div.image_box {
+			float: right;
+			width: 40%;
+		}
+		
+		div.thumbnail{
+			position:relative;
+			float:left;
+			width: 200px;
+		}
+
+		div.thumbnail p{
+			text-align: center;
+			font-family: "Lucida grande", Verdana, Arial, Helvetica;
+			font-size: small;
+		}

@@ -1,0 +1,470 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.perseus.org/meta/perseus.rdfs#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:dcterms="http://purl.org/dc/terms/"
+         xmlns:dctype="http://purl.org/dc/dcmitype/"
+         xmlns:perseus="http://www.perseus.org/meta/perseus.rdfs#"
+         xmlns:persq="http://www.perseus.org/meta/persq.rdfs#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:tufts="http://www.tufts.edu/"
+>
+<rdf:Description rdf:about="Perseus:collection:Arabic">
+<dc:description xml:lang="en">Arabic language documents</dc:description>
+<dc:title>Arabic Materials</dc:title>
+<dcterms:alternative xml:lang="en">Arabic</dcterms:alternative>
+<dc:subject>Arabic</dc:subject>
+<dc:type>collection</dc:type>
+<sort>99 Arabic</sort>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:corpus:perseus,Arabic">
+<dc:language>ar</dc:language>
+<dc:subject><persq:corpusType>conglomerate</persq:corpusType></dc:subject>
+<dc:title xml:lang="en">Arabic Texts</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2002.02.0006">
+<dc:title>The Quran</dc:title>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,Arabic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:2002.02.0001"/>
+<text>Arabic/Quran/opensource/arabic-translit.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2002.02.0002">
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:2002.02.0001"/>
+<text>Arabic/Quran/opensource/pickthal.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2002.02.0003">
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:2002.02.0001"/>
+<text>Arabic/Quran/opensource/shakir.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2002.02.0004">
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:2002.02.0001"/>
+<text>Arabic/Quran/opensource/yusufali.xml</text>
+</rdf:Description>
+         
+<rdf:Description rdf:about="Perseus:text:2002.02.0005">
+<dcterms:alternative>Salmone</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Salmone/opensource/salmone.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2002.02.0015">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/_A0.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2002.02.0016">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/b0.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2002.02.0017">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/t0.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2002.02.0018">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/v0.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2002.02.0019">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/j0.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2002.02.0020">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/_H0.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2002.02.0021">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/x0.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2002.02.0022">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/d0.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2002.02.0023">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/_0.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2002.02.0024">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/r0.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0025">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/z0.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0026">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/s0.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0027">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/$0.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0028">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/_S0.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0029">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/_D0.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0030">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/_T0.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0031">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/_Z0.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0032">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/_E0.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0033">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/g0.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0034">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/f0.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0035">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/q0.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0036">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/k0.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0037">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/l0.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0038">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/m0.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0039">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/n0.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0040">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/h0.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0041">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/w0.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0042">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/_Y0.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0043">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/q1.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0044">
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/k1.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0045">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/l1.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0046">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/m1.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0047">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/n1.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0048">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/h1.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0049">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/w1.xml</text>
+</rdf:Description>
+<rdf:Description rdf:about="Perseus:text:2002.02.0050">
+<dcterms:alternative>Lane</dcterms:alternative>
+<dc:subject><persq:arity>secondary</persq:arity></dc:subject>
+<persq:template>lexica.html</persq:template>
+<persq:stylesheet>lexica.spec</persq:stylesheet>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Arabic"/>
+<dcterms:isPartOf rdf:resource="Perseus:corpus:perseus,work,Lane, An Arabic-English Lexicon"/>
+<dcterms:language>ar</dcterms:language>
+<dc:type><persq:form>dictionary</persq:form></dc:type>
+<text>Arabic/Lane/opensource/_Y1.xml</text>
+</rdf:Description>
+
+</rdf:RDF>

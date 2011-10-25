@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="perseus.artarch.image">
+
+  <class name="Img" table="hib_images" discriminator-value="Img" batch-size="10">
+    <id name="id" column="id" type="int" unsaved-value="-1">
+      <generator class="native" />
+    </id>    
+    <discriminator column="type"/>
+    <property name="archiveNumber" column="archive_number" index="archive_number_idx"/>
+    <property name="caption" column="caption" type="text"/>
+    <property name="credits" column="credits" type="text"/>
+    <property name="date" column="date"/>
+    <property name="series" column="series"/>
+    <property name="seq" column="seq"/>
+    <property name="enteredBy"  column="entered_by"/>
+    <property name="lon" column="lon"/>
+    <property name="lat" column="lat"/>
+    <property name="status" column="status" type="int"/>
+    <property name="canonical" column="canonical"/>
+    <property name="sourceId" column="source_id"/>
+    <property name="format" column="format"/>
+    <property name="qtName" column="qt_name"/>
+    <property name="qtMovieName" column="qt_movieName"/>
+    <property name="qtController" column="qt_controller"/>
+    <property name="qtAutoplay" column="qt_autoplay"/>
+    <property name="vrBcolor" column="vr_bcolor"/>
+    <property name="playbackWidth" column="playback_width"/>
+    <property name="playbackHeight" column="playback_height"/>
+    <subclass name="SimpleImg" discriminator-value="SimpleImg"/>
+  </class>
+</hibernate-mapping>

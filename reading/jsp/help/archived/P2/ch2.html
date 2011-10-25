@@ -1,0 +1,809 @@
+<html><head><!-- This document was created from RTF source by rtftohtml version
+2.7.5 --><title>Chapter 2</title></head><body><hr>
+<A HREF="ch1.html"><IMG ALIGN=Left src="/img/help/la.gif" WIDTH=75 BORDER=3 ALT="Go Back"></A><A HREF="ch3.html"><IMG ALIGN=Right src="/img/help/ra.gif" WIDTH=75 BORDER=3 ALT="Go Forward"></A>
+<p><CENTER><h2>CHAPTER 2: EQUIPMENT REQUIREMENTS AND SETUP</h2></CENTER>
+<HR>
+<br><br><br><TABLE>
+<TR><TD>If you are...<TD> then be sure to read...</TR>                
+<TR><TD>Evaluating your equipment needs<TD><A HREF="#2.1">Section 2.1</A> on Hardware, Software, and <A HREF="#2.2">2.2</A> on Configurations </TR>              
+<TR><TD>Installing Perseus the first time<TD><A HREF="#2.4">Section 2.4</A> on Hardware Installation and Software Installation</TR>               
+<TR><TD>Installing Perseus 2.0 and are familiar with Perseus 1.0 <TD><A HREF="#2.3">Section 2.3</A> Quick Installation and Startup Instructions</TR>                    
+<TR><TD>Optimizing your Perseus configuration<TD><A HREF="#2.2">Section 2.2</A> on Configurations</TR>        
+<TR><TD>Changing your Perseus installation<TD><A HREF="#2.2">Section 2.2</A> on Configurations</TR>           
+<TR><TD>Having trouble starting up Perseus<TD>Section 2, entire; <A HREF="#2.6">2.6</A> Troubleshooting </TR>                        
+<TR><TD>Having trouble opening images<TD><A HREF="#2.6">Section 2.6</A> Troubleshooting </TR>            
+</TABLE>
+<P><UL><LI><A HREF="#2.1">Section 2.1: Hardware and Software Requirements</A>
+<UL><LI><A HREF="#2.1.1">Section 2.1.1: Hardware</A>
+<LI><A HREF="#2.1.2">Section 2.1.2: Software</A></UL>
+<LI><A HREF="#2.2">Section 2.2: Configurations for Perseus</A>
+<UL><LI><A HREF="#2.2.1">Section 2.2.1:  Using Perseus on a Single System</A>
+<LI><A HREF="#2.2.2">Section 2.2.2: Using Perseus on a Network</A></UL>
+<LI><A HREF="#2.3">Section 2.3: Quick Startup</A>
+<LI><A HREF="#2.4">Section 2.4: Detailed Installation and Startup</A>
+<UL><LI><A HREF="#2.4.1">Section 2.4.1: Hardware Installation</A>
+<LI><A HREF="#2.4.2">Section 2.4.2: Startup Procedure</A></UL>
+<LI><A HREF="#2.5">Section 2.5: Using Hypercard (TM)</A>
+<UL><LI><A HREF="#2.5.1">Section 2.5.1: Hypercard Issues That Affect Perseus</A>
+<LI><A HREF="#2.5.2">Section 2.5.2: Incompatibility of Hypercard with Other Applications</A>
+<LI><A HREF="#2.5.3">Section 2.5.3: Hypercard Search Paths (for System Administrators)</A></UL>
+<LI><A HREF="#2.6">Section 2.6:  Troubleshooting</A>
+<UL><LI><A HREF="#2.6.1">Section 2.6.1: Chart</A>
+<LI><A HREF="#2.6.2">Section 2.6.2: Check the Memory Partition of Perseus Player or Hypercard</A>
+<LI><A HREF="#2.6.3">Section 2.6.3: Hardware</A>
+<LI><A HREF="#2.6.4">Section 2.6.4: Software</A></UL></UL>
+<hr>
+
+
+<h3><A NAME="2.1">2.1 HARDWARE AND SOFTWARE REQUIREMENTS</A></h3>
+Perseus requires certain hardware and software elements. To some extent, the
+requirements vary according to technical resources and the primary use of
+Perseus in your configuration.<p>
+Users of Macintosh computers belonging to the PowerPC family, please take note.
+A problem with the most recent  PowerPC machines, i.e., those shipped as of
+Fall, 1995 with 8 MB of RAM installed, is that the system software eats up a
+tremendous amout of RAM, leaving only about 3.5 MB for Perseus. Thus, since
+Perseus 2.0 requires 5 MB of RAM to run well, you will need to add more memory.
+See the discussion on SIMMs chips in <A HREF="#2.2">section 2.2</A> below.
+<h4><A NAME="2.1.1">2.1.1 HARDWARE</A></h4>
+<h5><a name="RTFToC4">Macintosh computer  </a></h5>
+Perseus runs on Macintosh computers and is distributed as a set of HyperCard
+stacks. HyperCard is a software foundation for building computer applications.
+As a sophisticated tool with a large data base, Perseus is a high-end use of
+the HyperCard program. Formerly, Perseus required a fast computer to operate
+efficiently, but now you can achieve reasonable performance with almost any new
+Macintosh model.<p>
+Table 2.1 gives you a quick indication of the Macintosh models capable of
+running Perseus. You should also consult the more detailed technical
+requirements that follow.<p>
+
+
+<TABLE>
+<TR><TD>Macintosh Models<TD>Satisfactory Performance with Perseus<TD>Optimal Performance with Perseus</TR>
+<TR><TD>Mac LC family<TD>X<TD></TR>                      
+<TR><TD>Mac II family<TD>X<TD></TR>                      
+<TR><TD>Mac LC-based Performa family<TD>X<TD></TR>                      
+<TR><TD>Mac Quadra-based Performa family<TD><TD>X</TR>
+<TR><TD>Mac Centris family<TD><TD>X</TR>
+<TR><TD>Mac Quadra family<TD><TD>X</TR>
+<TR><TD>Mac PowerPC family<TD><TD>X</TR>
+</TABLE>            
+<CENTER><b>Table 2-1.  Macintosh Models for Using Perseus</b></CENTER><p>
+<b></b>Smaller and older Macintosh computers, such as the Mac Plus, Mac SE, and
+Mac Classic, are not recommended for use with Perseus because of their small
+9-inch screens and their inability to display color digital images. The
+Macintosh Color Classic can display color images but is slow and has a small
+screen. <p>
+The Macintosh computer you select must meet certain minimum technical demands.
+An optimum configuration is one with a Macintosh Quadra, Centris or PowerPC
+computer and 24-bit color display. Detailed requirements for Perseus are shown
+in Table 2-2, below.<p>
+
+
+<TABLE><TR><TD>Specification<TD>Minimum<TD>Optimum</TR>
+<TR><TD>Microprocessor<TD>68020<TD>68040</TR>
+<TR><TD>Hard disk<TD>7 MB minimum of free space available for hard disk files<TD>7 MB minimum of free space available for hard disk files</TR>    
+<TR><TD>RAM<TD>5 MB allotted to Perseus Player<TD>8 to 20 MB allotted to Perseus Player</TR>    
+<TR><TD>Color display<TD>8-bit color<TD>24-bit color</TR>        
+<TR><TD>Monitor size<TD>13- or 14-inch color monitor<TD>17-inch color monitor, or dual monitors (at least  one color)</TR></TABLE>   
+<CENTER><b>Table 2-2.  Computer Specifications for Using Perseus</b></CENTER>
+<h5>
+<a name="RTFToC5">Hard
+disk size 
+</a></h5>
+Perseus requires at least 7 MB of free space available on your hard disk to run
+in the most basic configuration. This space is taken up by the Local Stacks
+folder, copied over from the CD-ROM during installation, and containing
+operating instructions for your computer. The remaining Perseus information is
+stored on the CD-ROMs, so it requires relatively little other hard disk
+space.<p>
+More hard disk space is required if you modify the primary configuration of
+Perseus by relocating CD-ROM information to the hard disk. This step speeds up
+the performance of Perseus, but it also substantially increases the required
+hard disk space (see <A HREF="#2.2">section 2.2</A>).
+<h5>
+<a name="RTFToC6">Computer
+Monitor
+</a></h5>
+You need a color monitor to use Perseus. (Perseus will also run on a
+black-and-white monitor, but this configuration will not allow the display of
+any color images.) Most Macintosh computers with color monitors are configured
+to display 16-bit or 8-bit color. The display mode of the monitor can be
+verified and reset through the Monitors Control Panel, available from the Apple
+menu. Eight-bit mode displays 256 colors, 16-bit mode displays
+thousands of colors, and 24-bit mode displays millions of colors.
+<h6>
+<a name="RTFToC7">Color
+Depth
+</a></h6>
+Most color images in Perseus are 24-bit color images. Although the images look
+best when displayed in 24-bit color, they can be displayed in 8-bit and 16-bit
+color mode, with some corresponding degradation of image quality. <p>
+Many newer Macintosh models come with 16- or 24-bit color, e.g., the Performa
+636. Other recent Macintosh models use VRAM (video RAM) expansion kits to
+upgrade the display capability to 24-bit color. Older Macintosh models use
+display cards to upgrade the display capability to 24-bit color.<p>
+When you are evaluating the monitor and color display requirements for your
+Perseus configuration, consider the audience who will be using the program. If
+the main use of Perseus will be the primary texts and philological tools, you
+may not need the ability to display images using millions of colors. If the
+main use is for art history or archaeological inquiry, you should probably have
+a configuration that provides for thousands or millions of colors (16-bit or
+24-bit mode). 
+<h6>
+<a name="RTFToC8">Monitor
+Size
+</a></h6>
+Although a 14-inch color monitor will work well with Perseus, large monitors
+(16-21 inches) offer several advantages that may be appropriate for your needs.
+Large monitors allow many more windows to be simultaneously visible, and they
+are more convienent for the oversized images found in the Perseus Atlas and
+architectural site plans.<p>
+Another way to expand the available screen size is to use two monitors placed
+next to each other. The expanded screen size shows more windows and images
+simultaneously. In this configuration, one monitor can be color and one can be
+black and white. The computer treats the two monitors as one screen, where
+windows can be dragged from one screen to the other. 
+<h5>
+<a name="RTFToC9">Apple-compatible
+CD-ROM drive
+</a></h5>
+Both the Comprehensive and Concise Editions of Perseus 2.0 are CD-ROM-based
+programs, and a CD-ROM drive that is compatible with Apple Macintosh computers
+is necessary to read the Perseus compact discs. Various CD-ROM drives are
+available, including internal and external models. CD-ROM drives vary in their
+performance, which is measured by access speed (in milliseconds) and transfer
+rate (in kilobytes per second, or KBps). As Perseus 2.0 goes to press, some
+CD-ROM drives have achieved transfer rates greater than 300 KBps and average
+access times under 300 milliseconds. The faster the drive, the better Perseus
+will perform. There are also ways to make your CD-ROM drive work faster by
+using software enhancements (see <A HREF="#2.1.2">section 2.1.2</A>). <p>
+Although the Comprehensive Edition is a four-CD set, you do not need multiple
+CD-ROM drives to use it. Instead, the Perseus software keeps track of requests
+for data located on CD-ROMs other than the one currently in the drive, and it
+will prompt you to swap CD-ROMs (see <A HREF="ch5.html#5.4">chapter 5.4</A>). If you have more than one
+CD-ROM drive, however, you can use them to reduce the amount of CD-ROM swapping
+required. Multiple CD-ROM drives are "daisy-chained" together, with each one
+appearing as a separate drive on the Macintosh desktop.<p>
+To connect the CD-ROM drive to your computer, you need a SCSI (Small Computer
+System Interface) cable, which is normally provided with the CD-ROM drive. You
+may also need an SCSI terminator, if you do not already have a terminated SCSI
+device attached to your Macintosh. Consult the technical documentation for your
+CD-ROM drive for more information on connecting the drive to your computer.
+(See also CD-ROM software drivers and accelerators, below.)
+<h5>
+<a name="RTFToC10">Videodisc
+player and monitor (optional)
+</a></h5>
+A videodisc player is needed only if you wish to use the Perseus videodisc
+instead of or in addition to the digitized images available on the Perseus
+CD-ROMs. The videodisc contains almost all of the images available on the
+CD-ROM, and it contains a short sequence of motion video and narration.<p>
+Possible options for the player include: Pioneer 4200, Pioneer 6000A, Pioneer
+6010A, Sony LDP 1200, Sony 1500, Sony 2000, and Hitachi 9550. Any standard
+video or TV monitor will work, but models with video input jacks are much
+easier to use than models without such jacks. <p>
+You will need audiovisual cables to connect the videodisc player to the monitor
+and a computer interface cable to connect the player to the Macintosh. The
+player-to-monitor cable is a standard one if the monitor has built-in jacks,
+and the right connectors may be bought at any electronics store. The  computer
+interface cable should be purchased with the player. They can also be purchased
+from some specialized dealers<p>
+Each player is different, and cables are not interchangeable. For example, a
+cable made for a Pioneer videodisc player will not work with a Sony videodisc
+player.
+<h4><A NAME="2.1.2">2.1.2 SOFTWARE</A></h4>
+Perseus requires several software elements. Make sure you have each of these
+before you install Perseus.
+<h5>
+<a name="RTFToC12">System
+7
+</a></h5>
+Perseus 2.0 requires the Apple system softwre version 7.0 or later. Version 2.0
+of Perseus takes advantage of features specifically offered by System 7, such
+as QuickTime.
+<h5>
+<a name="RTFToC13">Perseus
+Player, HyperCard and HyperCard Player
+</a></h5>
+It is no longer necessary to run Perseus under the application HyperCard,
+because Perseus 2.0 is distributed along with a standalone Home stack, called
+Perseus Player. HyperCard 2.3 is still necessary for writing extensions to
+Perseus, and still must be used to run Perseus 1.0. In the past, Macintosh
+computers were distributed with the HyperCard application. More recently,
+Macintoshes were distributed with a limited version of HyperCard, called
+HyperCard Player. Stacks written as extensions of Perseus and Perseus 1.0 will
+not run under HyperCard Player, because it sets the user lever to Read Only. If
+HyperCard Player is on your Macintosh and you wish to run Perseus 1.0 or a
+Perseus extension, it is recommended that you archive or delete HyperCard
+Player and replace it with the full HyperCard 2.3 application. You can buy
+HyperCard from a software distributor.<p>
+The Perseus Installer software will automatically set the memory partition of
+Perseus Player to the minimum amount required for Perseus (see <A HREF="#2.3">section 2.3</A>).
+<h5>
+<a name="RTFToC14">GreekKeys
+7.0 (for typing accented Greek)
+</a></h5>
+Perseus supports the SMK GreekKeys 7.0 character set for displaying Greek
+characters on the screen. You can read, copy, and paste Greek text in Perseus
+without GreekKeys 7.0, but to type accented Greek the character set must be
+installed in your system. This is strongly recommended, because the ability to
+type accented Greek is necessary for accurate searches of parsed Greek words.<p>
+GreekKeys 7.0 is a keyboard program, designed for the Macintosh, that enables
+you to type accented Greek letter fonts with a standard Macintosh keyboard.
+Greek letters are paired with keys on the keyboard, and diacritics are created
+by pressing the Option key in combination with a letter key.<p>
+Perseus does not hold any rights to GreekKeys and therefore cannot distribute
+it. GreekKeys 7.0 may be purchased from Scholar's Press Customer Services, P.O.
+Box 6996, Alpharetta, GA 30239-6996, 1-800-437-6692.<p>
+There is a brief discussion on typing Greek in <A HREF="ch8b.html#8.4.1">section 8.4.1</A>. The Greek
+alphabet, its transliteration into Roman characters, and its GreekKeys
+equivalents may be found in Online help under the Stack Topic, The Greek
+Alphabet.
+<h5>
+<a name="RTFToC15">CD-ROM
+software drivers and accelerators
+</a></h5>
+Your computer needs a system software extension to read the CD-ROM drive. This
+software is normally provided with your CD-ROM drive. <p>
+System software enhancements can also be installed to accelerate the
+performance of the CD-ROM. These enhancements increase the access speed and/or
+transfer rate between the computer and the CD-ROM drive. Some enhancements can
+increase the speed by 50 percent or more. A list of some CD-acceleration
+utilities is presented below, although it should not be considered
+comprehensive. Investigate the availability of CD-ROM system enhancements
+through your system administrator or local software distributor.<p>
+The Perseus Project has not thoroughly tested these enhancements and does not
+guarantee their performance or reliability. Some software builds permanent
+files which must be discarded before upgrading from version 1.0.
+<h5>
+<a name="RTFToC16">QuickTime</a></h5>
+QuickTime(TM) is an Apple system extension that comes with the Apple System 7
+Software. It is a software architecture that defines ways in which digitized
+video is compressed, decompressed, and synchronized with sound. Perseus relies
+on QuickTime to display digitized images that have been compressed in the JPEG
+format. In most instances, QuickTime will already be installed in the
+Extensions folder of System 7. If QuickTime is not present in your Extensions
+folder, check your system diskettes for a copy and install it. The absence of
+QuickTime results in unusual image displays, showing the QuickTime symbol
+rather than the photograph. At the time of Perseus 2.0 publication, the current
+release of QuickTime is version 2.0 . 
+<hr><h3><A NAME="2.2">2.2 CONFIGURATIONS FOR PERSEUS</A></h3>
+Perseus is primarily meant to be used from the CD-ROMs on which it is
+published, but it can also be used in other system configurations, such as hard
+disks and networks. The factors that might influence your choice of Perseus
+configurations are the number of intended users, the resources available for
+hardware, and the technical skills to set up alternate configurations. Some
+alternate configurations and their strengths and limitations are listed
+below.<p>
+When you are using a single computer, there are several ways to optimize it for
+Perseus. The primary way is to select a fast computer (such as a Centris) and
+fast CD-ROM drive. As of this writing, the Apple CD-300S is a good choice for a
+CD-ROM drive, with an access speed of 300 KBps. <p>
+You can also add random-access memory (RAM) to the total available memory. More
+RAM will allow you to allocate a larger memory partition to Perseus Player, so
+that you can open more stacks and images at the same time. The preferred way to
+do this is to add Single Inline Memory Modules (SIMMs). Beyond 16 MB the
+computer will not run any faster; the advantage to expanding RAM above that
+level is the ability to run other applications simultaneously with Perseus. You
+can try using System 7's virtual memory facility to expand the total available
+RAM, although results produced by this method are significantly slower than
+adding hardware RAM. The RAM partition of virtual memory cannot exceed the
+amount of free space on the computer hard disk. <p>
+Another way to optimize your system is to place frequently-used parts of
+Perseus on the hard disk, which allows faster access than the CD-ROM drive. The
+size of the hard disk will determine how much information can be relocated. For
+more information on this option, see Installation below.<p>
+You may also use Perseus in a network configuration. The contents of the
+Perseus CD-ROMs or the CD-ROMs themselves can be placed on dedicated file
+servers accessed through workstations linked to the network. If you plan a
+network configuration for Perseus, be sure to have enough disk space to
+accommodate the information on all the CD-ROMs of Perseus, about 2 gigabytes.
+<p>
+Advantages of a network configuration are that several people can use Perseus
+at the same time, access time will likely be faster (depending on the network),
+and you might save money on hardware. (If you run Perseus on a network, you
+must have a network license.  Contact Yale University Press for network
+licensing information.) <p>
+The information below provides some detail on alternative configurations for
+Perseus. The most effective way to use the information is to skim it for an
+overall understanding, then read it in greater detail when you have become
+familiar with Perseus. If you are a novice computer user or a first-time user
+of Perseus, you should also read the rest of this chapter for more complete
+information. If you are an experienced computer/Perseus user, review this
+section for suggestions on ways to improve your configuration. 
+<h4><A NAME="2.2.1">2.2.1 USING PERSEUS ON A SINGLE SYSTEM</A></h4>
+<h5>
+<a name="RTFToC19">No Reconfiguration
+</a></h5>
+The simplest configuration of Perseus is when individuals or groups use the
+program at a single computer using the Perseus CD-ROMs. The advantages are that
+a large amount of information is accessible via a single workstation, a
+relatively small amount of hard disk space is required, and the system need not
+be dedicated to Perseus. The disadvantages are that CD-ROM access can be slower
+than optimized access on a hard disk, and only one person or group at a time
+can use Perseus. <p>
+This configuration requires a computer, color monitor, and CD-ROM drive, at
+minimum. In a typical configuration, an individual runs Perseus by using the
+minimum required files from the hard disk (about 7 MB) and drawing all other
+information and images from the CD-ROMs. <p>
+If this is your configuration, you should consider adding CD-ROM accelerator
+software to speed up performance of the CD-ROM drive. These enhancements are
+described in <A HREF="#2.1.2">section 2.1.2</A>.
+<h5>
+<a name="RTFToC20">Moderate
+Reconfiguration
+</a></h5>
+<h6>
+<a name="RTFToC21">Copying
+folders to the hard disk
+</a></h6>
+You can improve the speed and performance of Perseus on a single computer by
+relocating some folders beyond the minimum required from the CD-ROMs to the
+local hard disk. The advantage is faster operation, because a hard disk can be
+accessed more quickly than a CD-ROM. The disadvantage of relocating folders is
+that a large amount of space on the hard disk will be occupied by Perseus.<p>
+The Installer automatically decides which folders to copy to your hard disk.
+<h6>
+<a name="RTFToC22">Using
+multiple CD-ROM drives
+</a></h6>
+A different way to configure a single system is to use more than one CD-ROM
+drive. The advantage of adding drives is that you will spend less time swapping
+CD-ROMs, because more than one CD-ROM is available simultaneously. The
+disadvantages are continued slow access of the CD and the expense of adding
+another hardware item to your configuration. If your configuration uses
+multiple CD-ROM drives, consider adding the CD-acceleration utilities that
+speed up access to the CD-ROM (described in <A HREF="#2.1.2">section 2.1.2</A>).
+<h5>
+<a name="RTFToC23">Advanced
+Reconfiguration - for System Administrators
+</a></h5>
+Caveat: The Perseus Installer software will not do this procedure for you. We
+advise you not to attempt this reconfiguration unless you are sure that it is
+necessary.<p>
+An advanced reconfiguration of a Perseus system involves moving selected
+elements of Perseus to the hard disk based on the information that will be used
+most frequently. This step is like the previous suggestion for moderate
+reconfiguration but it requires a more selective process of relocating Perseus
+elements and a firm understanding of search paths. The advantage is faster
+operation. The disadvantages are a more demanding installation procedure and
+the need to know which parts of Perseus you will use most often. <p>
+Perseus files consist of HyperCard stacks, drawings, photographic images,
+QuickTime movies, and data base files. In the moderate reconfiguration
+described above, you move entire folders containing Perseus elements. In the
+more advanced reconfiguration, you go through a more selective process to
+identify stacks, images, and data base files to copy from the CD-ROM to the
+hard disk. <p>
+If you call the same images repeatedly in your use of Perseus, you may want to
+copy some image folders to the hard disk. Images are grouped in folders
+according to their collection, and must be copied only one folder at a time.
+Section A.1 of the appendix contains a list of folder names and their contents.
+Identify the image folders you want to relocate and copy them to the hard disk.
+Copying folders from the CD-ROMs to the hard disk requires an adjustment to the
+Home stack to change the search paths. Read the subsequent section in this
+chapter for information on the Home stack and search paths. <p>
+Folders containing images may be copied to the hard disk, but do not remove
+images from their folders or rename them, or else Perseus will be unable to
+find them.<p>
+If you use the same elements of Perseus repeatedly, for example, selected
+authors, you may want to move the pertinent data base file from the Text
+Databases folder on the CD-ROM to the hard disk. This step will speed up access
+to the selected elements of Perseus. Just as you must change the Home stack
+search paths when you relocate an image folder, you must also change a special
+Perseus search path when you relocate a database file. <A HREF="ch10.html#10.5.4">Section 10.5.4</A>, Detailed
+Configuration, offers more information on how to change the file data base.
+This type of modification should be undertaken only after you are comfortable
+with file names, disk locations, and search paths.<p>
+These configuration strategies are best suited to the single-user,
+single-computer model. In many cases, particularly in instructional settings,
+more than one person or group will need to use Perseus at the same time. For
+solutions, read the network configuration descriptions below.
+<h4><a name="2.2.2">2.2.2 USING PERSEUS ON A NETWORK
+</a></h4>
+The purpose of a network is to share applications and data among several users
+at several workstations. File servers store the information, and local
+computers provide access to the shared information. Perseus can be used on a
+network to centralize access to the Perseus data and eliminate the need for
+redundant set-ups. Remember that network use of Perseus requires a network
+license from Yale University Press.<p>
+There are two main types of network protocols: LocalTalk and Ethernet.
+LocalTalk is an inexpensive network option, but it is slow. Ethernet is much
+faster, and many recent Macintosh models have built-in Ethernet cabability, but
+it requires more expensive cabling. Ethernet can support many more simultaneous
+users than LocalTalk.<p>
+Several CD-ROM drives can be placed on a network as servers. This is of
+advantage only if you already own the CD-ROM drives. With the price of ROM
+falling, it is cheaper and faster to copy the contents of the CD-ROMs onto
+large hard disks that will be file server(s).  (A 2.0 gigabyte drive can be
+bought for around $1000, 4.0 gigabytes for around $1700.) You must have hard
+disk space for approximately 1.8 gigabytes (2,000 megabytes) of data from the
+CD-ROMs. <p>
+A combination of CD-ROM drives and hard disks may be used. Just make sure that
+there are enough CD-ROM drives and/or hard disk space to provide access to all
+information in Perseus at the same time. <p>
+When you copy Perseus from the CD-ROMs to the file server disks, make sure the
+folders retain their original names. List the disk name and folder locations in
+the local Home stacks. All HyperCard stacks that are originally locked should
+remain locked. <p>
+The Home stack on each computer must list the image folders, the Atlas folder
+and Local Stacks. Everything elso is listed in the Gateway. The most efficient
+method of ensuring an accurate Home stack is to modify one Home stack with all
+the appropriate search paths for the file server folders. Copy that Home stack
+on each local computer, and make the appropriate changes to each local Home
+stack to reflect the name of the local hard drive.<p>
+A common challenge in network configurations is the security and stability of
+the data. Network administrators will be aware of software that protects the
+data from unintended modification and intentional tampering. For Perseus to
+work, however, it is essential that the stacks in the folder Local Stacks
+remain unlocked. 
+<hr><h3>
+<a name="2.3">2.3
+ QUICK STARTUP
+</a></h3>
+NOTE: Perseus users who are updating Perseus from version 1.0 to 2.0 should
+archive or delete all Perseus 1.0 files from the hard disk upon converting
+their version 1.0 Paths to version 2.0 (Path conversion is discussed in <A HREF="ch10.html#10.2.8">chapter
+10.2.8</A>).  Some files have duplicate names. The version 1.0 files may create
+problems if they remain on the hard disk when you use version 2.0. <i></i><p>
+<i></i>Follow these instructions to get Perseus 2.0 running right away. More
+detailed installation and startup instructions are given in <A HREF="#2.4">section 2.4</A> .<p>
+The following steps assume a familiarity with Macintosh hardware and operating
+system. Also, these instructions apply only if you are using Perseus on a
+single system, not networked. If you are using a videodisc player, follow the
+hardware instructions in <A HREF="#2.4.1">section 2.4.1</A> and the Settings intructions in 
+ <A HREF="#2.4.2">section 2.4.2</A>.<p>
+* Switch on the CD-ROM drive (if it is an external one) and the videodisc
+player (if using one), boot up the computer and load the CD-ROM Perseus Disk 1
+(or the Concise Edition Disk).<p>
+<p>
+Be sure to turn on the CD-ROM drive and videodisc player before turning on the
+Macintosh.<p>
+NOTE: If you will be swapping CD-ROMs, please be sure to turn off File Sharing
+in the Control Panels of your Macintosh. Otherwise the Mac will not eject the
+cd.<p>
+* Create a new folder on your hard disk to contain Perseus software to be
+copied to your disk. Name it <tt>Perseus 2.0.</tt>(or whatever else you want,
+but it is so named herein).<tt></tt><p>
+<tt></tt><p>
+* When the Perseus Disk 1 icon appears on the desktop, open it.<p>
+<p>
+* Double-click the stack Perseus Installer.<p>
+<p>
+* When the Perseus Installer appears (figure 2.1), click the button appropriate
+to the amount of free space in your hard disk.<p>
+<CENTER><IMG src="/img/help/2.1.gif"><p>
+<b>Figure 2.1 Perseus Installer</b><p>
+</CENTER><b></b>If you do not have enough ROM for the installation choice, the Installer
+will tell you. <p>
+The two Big Installations may take over an hour, depending upon your
+equipment.<p>
+* A dialog window appears asking <tt>Do you want to create a new folder for
+Perseus?</tt> If you click <tt>Yes</tt>, you will be asked to type in a folder
+name after the next step. If you click <tt>No</tt>, the Installer will copy a
+folder called Local Stacks to your machine.<p>
+
+<CENTER><IMG src="/img/help/2.2.gif"><P><b>Figure
+2.2 Installer dialog window.</b><p>
+</CENTER>* A second dialog window appears asking <tt>Where do you want to install
+Perseus? </tt>(figure 2.2).  Choose your hard drive from the dialog window
+click the button <tt>Select "Your Hard Drive" </tt>at the bottom.<p>
+<p>
+* A third dialog window appears asking <tt>Name of new folder</tt>. The default
+name is Perseus 2.0, or you can type in a name of your choice, then click
+<tt>OK</tt>.<p>
+<p>
+* When the installation is complete, the Installer will automatically quit.<p>
+
+<h4>
+<a name="RTFToC26">CUSTOM
+INSTALLATION
+</a></h4>
+Custom Installation is available on the second card of the Installer stack for
+System Administrators putting all or some of Perseus on a server. All of
+Perseus requires 1.8 GB on a hard disk. This procedure configures the Gateway
+to find the various Perseus resources. All copying from cd to hard disk must be
+done by the user.<p>
+* Make sure you have copied the folder <tt>Local Stacks</tt> from Perseus CD 1
+to your hard drive.<p>
+* Click on one of the eight fields for non-image resources at the top and
+choose the installation location from the dialog window.<p>
+* Click <tt>Choose</tt>, select the image folders you wish to copy, then choose
+the locations from the dialog window. Do not remove individual images from the
+folders.<p>
+* When you have finished relocating resources, click <tt>Set up Gateway</tt>.<p>
+* Click <tt>Reset</tt> to return the settings to the cds.<p>
+* Do not name any of the partitions <tt>Perseus Disk 1</tt>, etc. This is
+because of software limitations.<p>
+To start up Perseus 2.0, do the following:<p>
+* Open the folder you have designated for Perseus. <p>
+* Open the folder <tt>Local Stacks</tt>.<p>
+* Double-click the stack <tt>Perseus Player</tt>. <p>
+THIS PROCEDURE IS NEW FOR PERSEUS 2.0. DO NOT START UP BY DOUBLE-CLICKING THE
+PERSEUS GATEWAY.<p>
+After an interval, the Gateway and Navigator Palette will appear (figure
+2.3).<p>
+<CENTER><IMG src="/img/help/2.3.gif"><p>
+<b>Figure 2.3 Perseus Gateway with Navigator Palette, lower left.</b></CENTER><p>
+<b></b>While working in Perseus, you only need to single-click the mouse.<p>
+Perseus 2.0 is now ready to use. The Navigator Palette may be dragged out of
+the way. Please remember that you can always return to the Gateway by clicking
+the Gateway (temple) icon on the Navigator Palette.<p>
+To quit Perseus, choose the item <tt>Quit</tt> from the File menu, or press the
+keys <tt>command-q.</tt><p>
+Here are two tasks you may want to complete before exploring Perseus 2.0.<p>
+&gt; Duplicate the Paths, Notebook and CD Swapper stacks and personalize them
+by renaming them, for example, "Elli's Paths" and "Elli's Notebook."<p>
+By renaming these stacks, you can distinguish your Paths and Notebooks from
+those of other users. When you start Perseus, you will need to identify the
+location of these stacks through the Settings option, available from the
+Gateway. More information on Settings is in <A HREF="#2.4">section 2.4</A>, detailed descriptions
+of Path, Notebook and CD Swapper procedures may be found in <A HREF="ch10.html">chapter 10</A>, Saving
+your Work.<p>
+&gt; Make an alias of the Perseus Player and keep it in a convenient place in
+your computer.<p>
+For more detailed instructions on installation of hardware and startup, read
+the following sections.
+<hr><h3>
+<a name="2.4">2.4
+ DETAILED INSTALLATION AND STARTUP
+</a></h3>
+<h4>
+<a name="2.4.1">2.4.1
+HARDWARE INSTALLATION
+</a></h4>
+&gt; Connect the CD-ROM drive to the Macintosh. <p>
+If your CD-ROM drive is external, it will be attached to the computer with a
+SCSI cable. A number of hardware devices (hard disk drives, scanners, etc.) may
+be linked together in a SCSI cable chain. One of the ports of the device at the
+end of the chain must have a terminator plugged into it. The CD-ROM drive
+documentation should describe proper cabling. In some cases, the terminator
+must be plugged into the same port as the cable, in others into the  top or
+bottom port. If you have difficulties, consult your hardware documentation and
+try altering the configuration.<p>
+&gt; Install the proper CD-ROM software drivers on your Macintosh system.<p>
+Your CD-ROM drive documentation should explain how to install this software. <p>
+CD-ROM drivers are not universal. If an Apple CD-ROM machine has been replaced
+with one built by another manufacturer, it will be necessary to install the
+proper driver software.<p>
+&gt; Connect the videodisc player to the video monitor (if the videodisc is
+used). <p>
+If you are using a video monitor, this equipment is connected through
+audiovisual RCA cables. Other cable configurations are required for monitors
+without RCA input jacks.<p>
+When you put the videodisc into the player, you should see the color test bars
+on the monitor screen. If the player has front-panel controls, you should be
+able to check the connection by stepping through some images on the
+videodisc.<p>
+&gt; Connect the videodisc player to the Macintosh (if the videodisc is used).
+<p>
+Use the correct cable to connect the communications port of the videodisc
+player to the appropriate port on the Macintosh. The appropriate cable is often
+provided with the videodisc player; if it is not, consult your local dealer.
+Check the baud rate setting on the videodisc player. The correct setting for
+computer interface should be specified in your videodisc player documentation.
+<h4>
+<a name="2.4.2">2.4.2
+STARTUP PROCEDURE
+</a></h4>
+After setting up the hardware and installing the software, you are ready to
+start up Perseus. If you encounter any hardware or software problems, see
+<A HREF="#2.6">Section 2.6</A>, Troubleshooting. <p>
+NOTE: If you will be swapping CD-ROMs, please be sure to turn off File Sharing
+in the Control Panels of your Macintosh. Otherwise the Mac will not eject the
+cd.<p>
+&gt; Double-click the Perseus Player icon in the Perseus/Local Stacks folders
+you installed on your hard drive. <p>
+Never double-click the Perseus Gateway if you are starting up from the Perseus
+Player. Do not start up by clicking on another stack, or else Perseus will not
+operate properly. If you encounter problems, start up using the System 7
+procedure of dropping the the Gateway onto the HyperCard application.<p>
+As Perseus initializes, the cursor changes to a watch, the Home card flashes on
+the screen, and the Perseus Gateway  appears on your screen along with a small
+floating window, the Navigator Palette. Once the cursor becomes the hand or the
+arrow, Perseus is ready for use. You can move the Navigator Palette out of the
+way by holding the mouse down on its title bar and dragging it to a convenient
+part of the screen.<p>
+The Navigator Palette contains eight buttons which issue commands to help you
+make your way around the Pereus environment. Because the Navigator Palette is a
+floating window, it remains on screen and active although another window may
+also be active. <p>
+If the Navigator Palette disappears, you can select <tt>Navigator</tt> from the
+Perseus menu to reactivate it.<p>
+In addition to the menu bar items that normally appear in HyperCard (File,
+Edit, Go, Tools, Font and Style), two new items appear in the menu bar, Links
+and Perseus. The resources and databases contained in Perseus are accessed both
+through the Gateway icons and through the Links menus.<p>
+You can always return to the Gateway by clicking the Gateway (temple) icon on
+the Navigator Palette.<p>
+To quit Perseus, release the mouse on the item Quit under the File menu, or
+press command-q.
+<h5>
+<a name="RTFToC30">Videodisc
+instructions
+</a></h5>
+With the videodisc hardware installed and switched on, and Perseus 2.0 running,
+click the Settings button on the lower left of the Gateway, and when the
+settings card appears (figure 2.4), perform these steps:<p>
+<CENTER><IMG src="/img/help/2.4.gif"><p>
+<b>Figure 2.4 Settings Card.</b></CENTER><p>
+<b></b>	* Select a player type by releasing the mouse on the item under 	the
+pop-up menu corresponding to your model of videodisc 	player.<p>
+	* Click the button Use Video Images, to the right.<p>
+	* Return to the Gateway by clicking the Gateway (temple) icon 	on the
+Navigator Palette. <p>
+A general overview of Settings may be found in <A HREF="ch4.html#4.2.2">chapter 4.2.2</A>. For detailed
+instructions on Settings, please see <A HREF="ch10.html#10.5">chapter 10.5</A>.<p>
+NOTE: We can recommend only the videodisc players listed in <A HREF="ch4.html#4.2.2">chapter 4.2.2</A> and
+on the Settings card. Other models may not be compatible with Perseus. <p>
+To learn the basics of Perseus, please turn to the <A HREF="ch3.html">next chapter</A>, where a number
+of illustrative exercises in all facets of the database are given.<p>
+If you encounter problems with starting up Perseus, please see below on
+HyperCard issues and <A HREF="#2.6">section 2.6</A>, Troubleshooting.
+<hr><h3>
+<a name="2.5">2.5
+ USING HYPERCARD(TM)
+</a></h3>
+This section is meant for users who are not familiar with HyperCard(TM), or who
+are having problems related to the use of HyperCard and the Home stack. <p>
+The Perseus database is built upon HyperCard, a Macintosh application that
+stores and accesses data through an interface analogous to a "stack" of note
+cards. HyperCard launches itself from the "Home" stack each time the
+application is opened. You need to know almost nothing further about HyperCard
+to use the Perseus program, but you might need to learn a few things to set up
+your configuration. 
+<h4>
+<a name="2.5.1">2.5.1
+ HYPERCARD ISSUES THAT AFFECT PERSEUS 
+</a></h4>
+To use Perseus 2.0, it is no longer necessary to have the HyperCard application
+installed on your computer, because Pereus 2.0 is distributed with a fully
+compiled, standalone Home stack called Perseus Player. Thus conflicts
+encountered between HyperCard and Perseus 1.0 have been eliminated.<p>
+Perseus Player should remain permanently in the Local Stacks folder on the hard
+disk. The Player stack does many things, but one of them is especially
+important for Perseus: establishing the search paths. The search paths make it
+possible for Perseus to locate specific pieces of information from the large
+universe of data, and they provide a prioritized structure for data searches.
+Thus, for example, search paths in the Perseus Player stack tell HyperCard
+where to find the image folders that contain the digitized photographs. <p>
+Do not place a HyperCard Home stack or stacks from Perseus 1.0 inside the
+Perseus Local Stacks folder. This will impair or prevent the successful use of
+Perseus, because Perseus may begin to use inappropriate search paths from the
+other Home stack.<p>
+The default memory partition of Perseus Player has been set at the minimum
+amount of memory required to use Perseus. If you have not already done so, go
+to the Finder, select Perseus Player (but don't double-click), then choose  Get
+Info from the File menu. Check the memory partition of Perseus Player in the
+Get Info box and if necessary update it to at least 5 MB, if that much is
+available.
+<h4>
+<a name="2.5.2">2.5.2
+ INCOMPATIBILITY OF HYPERCARD WITH OTHER APPLICATIONS 
+</a></h4>
+You may have HyperCard installed on your hard disk in order to run other
+applications or to write Perseus extensions. Problems encountered by beta
+testers of version 2.0 with the Audio Help stack have been resolved by the
+standalone Perseus Player software.
+<h4>
+<a name="2.5.3">2.5.3
+ HYPERCARD SEARCH PATHS (FOR SYSTEM ADMINISTRATORS)
+</a></h4>
+If you change the configuration of the system running Perseus 2.0, such as
+relocating some image folders on a hard disk, you must change the search paths
+manually by opening the Perseus Player stack in the folder Local Stacks.
+Similarly, if you change the configuration of your computer, such as renaming
+the hard disk drive or placing Perseus within another folder, you must also
+change the search paths because they specify device and folder names. <p>
+Open the Perseus Player stack by double-clicking it. The stack
+contains 6 cards. You can go forward in the stack by clicking on the arrow in
+the lower right corner and backward by clicking on the arrow in the lower left.
+Click forward to the fifth card of the stack to see the search paths for
+documents (a button called "Documents" on this card will be highlighted). <p>
+You will see a long list of Perseus image folder names listed
+in the document search paths. If you have changed your configuration, change
+the pertinent part of the search path here. Note that each line in the list of
+search paths ends with a colon. An example of this procedure is as follows,
+assuming that the Atlas and two image folders previously have been copied to a
+folder named Perseus 2.0 on a hard disk named Elli's Hard Disk:<p>
+Default search paths for documents:<p>
+Perseus Disk 1:Atlas:<p>
+Perseus Disk 2:1987.01.1s:<p>
+Perseus Disk 2:1987.01.1t:<p>
+<p>
+Renamed search paths for documents:<p>
+Elli's Hard Disk:Perseus 2.0:Atlas:<p>
+Elli's Hard Disk:Perseus 2.0:1987.01.1s:<p>
+Elli's Hard Disk:Perseus 2.0:1987.01.1t:<p>
+The original search paths for documents can always be restored by repeating the
+installation proceedure.
+<hr><h3>
+<a name="2.6">2.6
+ TROUBLESHOOTING
+</a></h3>
+<h4>
+<a name="2.6.1">2.6.1
+CHART
+</a></h4>
+Table 2.3 summarizes troubles and their most common causes.
+<P><TABLE>
+<TR><TD>Symptom<TD>Possible Cause(s) </TR>                
+<TR><TD>Start up messages about inability to find files, asking "Where is ..." or error messages reporting "This operation has failed because an error has occurred." <TD>Drop Gateway onto Perseus Player or HyperCard application<br>Multiple copies of Home stack exist on hard disk, and Perseus is using one with inappropriate search paths<br>Home stack search paths are not listed correctly<br>    
+Computer configuration changed without updating the Home stack search paths<br>Perseus 2.0 folder missing necessary files</TR>           
+<TR><TD>Path or Notebook not accessible<TD>   Location of Path or Notebook stack not yet identified through the Settings option </TR>      
+<TR><TD>Path stack locked<TD>Paths stack being used from CD-ROM instead of hard disk </TR>      
+<TR><TD>Memory message or spontaneous quitting of application      <TD>HyperCard memory partition set too low </TR>                          
+<TR><TD>No digital images found<TD>CD-ROM not properly connected to computer<BR>Home stack does not have correct paths to images</TR>     
+<TR><TD>Cd will not eject<TD>Turn off file sharing in control panel</TR>                     
+<TR><TD>Quadra system crashes<TD>Font problem </TR>                     
+<TR><TD>Greek type font is very small or missing the lower dots<TD>Font problem                      
+</TR></TABLE>
+
+<CENTER><b>Table
+2.3. Troubleshooting </b><p></CENTER>
+<b></b>If you encounter problems as you set up Perseus, follow the
+recommendations below.
+<h4>
+<a name="2.6.2">2.6.2
+CHECK THE MEMORY PARTITION OF PERSEUS PLAYER OR HYPERCARD
+</a></h4>
+System 7 requires 3-3.5 MB of your computer's RAM to run. The remaining RAM is
+available for applications. Perseus needs at least 5 MB of memory to run
+properly. You must set the "application memory size" of Perseus Player to at
+least 5000. If you have more than 8 MB of RAM on your Macintosh, Perseus will
+perform even better if you allot increased memory to Perseus Player. Even if
+your computer has 20 MB of memory, Perseus Player will not capitalize on the
+excess memory until you set the application memory size to a higher setting.
+More memory allotted to Perseus Player means that more Perseus stacks and
+images can be opened simultaneously, and they will work more quickly.<p>
+In the Perseus 2.0 folder, click the Perseus Player icon once while the
+application is not in use and choose Get Info from the File Menu. The lower
+right-hand corner of the dialog box contains a number that reflects the current
+memory setting. Type "5000" into the box, or type a larger number if your
+computer has sufficient available RAM, as described above.
+<h4>
+<a name="2.6.3">2.6.3
+HARDWARE
+</a></h4>
+If something is wrong with the CD-ROM drive, it may just spin, and the little
+red light either will stay lit and not flash or will flash constantly at
+regular intervals. If this continues for more than two minutes, press the
+button on the front of the CD-ROM drive, hold it for a few seconds, and then
+release. The disk should eject. Check all connections and software
+installations. Check SCSI terminators, and check that you have the correct
+CD-ROM drivers. <p>
+If the Perseus Disk 1 icon does not appear on your desk top, try restarting all
+hardware, taking care to turn on the CD-ROM drive <i>without</i> the disk in
+it, then turn on the computer and when it is finished booting up, insert
+Perseus Disk 1 into the CD-ROM drive. If the icon still does not appear, try
+switching places of the SCSI connector and the terminator in the CD-ROM ports.
+Finally, check the Extensions folder in your System folder to make sure that
+the Apple CD-ROM extension is there for an Apple CD-ROM player, or that the
+appropriate extension is there for another manufacturer's CD-ROM player.<p>
+If you are using a videodisc player and cannot display images from the
+videodisc, check the cable connections and confirm that you are using the
+appropriate cable. Check the baud rate setting on your videodisc player
+(specified in the player documentation).
+<h4>
+<a name="2.6.4">2.6.4
+SOFTWARE
+</a></h4>
+If extensions to Perseus are being used, check whether the hard disk contains
+other versions of HyperCard earlier than 2.1; check whether other Home stacks
+and Perseus 1.0 stacks are in the Perseus 2.0 folder. <p>
+A related problem may be the existence of multiple copies of the Perseus Player
+stack. The Perseus Player is very important in using Perseus, because the
+Perseus Player stack specifies the location of files and instructs HyperCard
+where on your hard drive to look for Perseus data. Double-click the Perseus
+Player icon from the Macintosh desktop and move forward in this stack (by
+clicking the lower right hand arrow) until you see the list of search paths for
+stacks, applications, and documents. Check that the search paths are specified
+correctly in relation to your software configuration.<p>
+If you see the error message "Cannot open MDB Index," check the path names in
+the correct version of the Perseus Player documents card.<p>
+If you are unable to type accented Greek, check that SMK GreekKeys 7.0 has been
+installed in your system.  The Greek fonts Symbol and Super Greek are
+incompatible with GreekKeys and Perseus 2.0.<p><p>
+<A HREF="ch1.html"><IMG ALIGN=Left src="/img/help/la.gif" WIDTH=75 BORDER=3 ALT="Go Back"></A><A HREF="ch3.html"><IMG ALIGN=Right src="/img/help/ra.gif" WIDTH=75 BORDER=3 ALT="Go Forward"></A><br>
+
+</body></html>

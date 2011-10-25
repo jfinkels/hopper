@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="ctsForm" class="perseus.cts.CTSFormController"/>
+    <bean id="cts" class="perseus.cts.CTSController"/>
+
+    <bean id="abbrevHelp" class="perseus.controllers.document.AbbrevHelpController" />
+	<bean id="textController" class="perseus.controllers.document.TextController"/>
+    <bean id="wordFreq" class="perseus.controllers.document.WordFreqController" />
+ 	<bean id="xmlChunkController" class="perseus.controllers.document.XmlChunkController"/>
+	<bean id="xmlMorphController" class="perseus.controllers.document.XmlMorphController"/>
+	<bean id="xmlTocController" class="perseus.controllers.document.XmlTocController"/>
+	
+	<bean id="createEntity" class="perseus.controllers.ie.entity.CreateEntityController" />
+    <bean id="entityVote" class="perseus.controllers.ie.entity.EntityVoteController" />
+	<bean id="nebrowserController" class="perseus.controllers.ie.entity.NamedEntityBrowserController"/>
+	<bean id="nedocsController" class="perseus.controllers.ie.entity.NamedEntityDocsController"/>
+	<bean id="nekeywordController" class="perseus.controllers.ie.entity.NamedEntityKeywordController"/>	
+	<bean id="nequeryController" class="perseus.controllers.ie.entity.NamedEntityQueryController"/>
+    <bean id="recordEntityVote" class="perseus.controllers.ie.entity.RecordEntityVoteController" />	
+	
+	<bean id="loadQueryController" class="perseus.controllers.morph.LoadQueryController"/>
+	<bean id="morphController" class="perseus.controllers.morph.MorphController"/>
+    <bean id="resolveForm" class="perseus.controllers.morph.ResolveFormController" />
+	<bean id="submitVoteController" class="perseus.controllers.morph.SubmitVoteController"/>
+
+    <bean id="definitionLookup" class="perseus.controllers.search.DefinitionLookupController" />
+    <bean id="searchResults" class="perseus.controllers.search.SearchResultsController" />
+    <bean id="stopWords" class="perseus.controllers.search.StopWordsController" />
+	
+    <bean id="vocabListController" class="perseus.controllers.vocab.VocabListController"/>
+
+    <bean id="viewNameTranslator" class="org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator"/>	
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+
+    <bean id="urlMapping"
+	class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	<property name="mappings">
+	    <props>
+		<!-- <prop key="/vocab.xml">vocabListController</prop> -->
+		<prop key="/vocab.wgt">vocabListController</prop>
+		<prop key="/vocablist">vocabListController</prop>
+		<prop key="/vocablist.jsp">vocabListController</prop>
+		
+		<prop key="/ctsForm.htm">ctsForm</prop>
+		<prop key="/CTS">cts</prop>
+		
+        <prop key="/searchresults.jsp">searchResults</prop>
+        <prop key="/searchresults.html">searchResults</prop>
+
+        <prop key="/wordfreq.jsp">wordFreq</prop>
+        <prop key="/text.jsp">textController</prop>
+		<prop key="/ptext">textController</prop>
+		<prop key="/xmlchunk.jsp">xmlChunkController</prop>
+        <prop key="/xmlmorph.jsp">xmlMorphController</prop>
+        <prop key="/xmltoc.jsp">xmlTocController</prop>
+                
+        <prop key="/morph.jsp">morphController</prop>
+        <prop key="/loadquery.jsp">loadQueryController</prop>
+        <prop key="/submitvote.jsp">submitVoteController</prop>
+        
+        <prop key="/nebrowser">nebrowserController</prop>
+        <prop key="/nebrowser.jsp">nebrowserController</prop>
+        <prop key="/nedocs">nedocsController</prop>
+        <prop key="/nedocs.jsp">nedocsController</prop>
+        <prop key="/nekeyword">nekeywordController</prop>
+        <prop key="/nekeyword.jsp">nekeywordController</prop>
+        <prop key="/nequery">nequeryController</prop>
+        <prop key="/nequery.jsp">nequeryController</prop>
+
+	    </props>
+	</property>
+    </bean>  
+
+<!-- freemarker config -->
+    <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+	<property name="templateLoaderPath" value="/WEB-INF/freemarker/"/>
+	<property name="freemarkerSettings">
+	    <props>
+		<prop key="default_encoding">UTF-8</prop>
+		<prop key="url_escaping_charset">utf-8</prop>
+	    </props>
+	</property>
+    </bean>
+
+<!-- 
+
+  View resolvers can also be configured with ResourceBundles or XML files. If you need
+  different view resolving based on Locale, you have to use the resource bundle resolver.
+
+-->
+    <bean id="freemarkerResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+	<property name="cache" value="true"/>
+	<property name="prefix" value=""/>
+	<property name="suffix" value=".ftl"/>
+	<property name="contentType"><value>text/html; charset=UTF-8</value></property> 
+
+	<!-- if you want to use the Spring FreeMarker macros, set this property to true -->
+	<property name="exposeSpringMacroHelpers" value="true"/>
+
+    </bean>
+
+    <bean id="viewResolver"
+	class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+	<property name="basename" value="views"/>
+    </bean>
+</beans>

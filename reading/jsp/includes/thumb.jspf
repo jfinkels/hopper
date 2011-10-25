@@ -1,0 +1,32 @@
+<%@ include file="common/include.jsp"%>
+
+<div class="thumbnail">
+		<p>
+		<c:choose>
+		<c:when test="${img.status == 5}">
+			<i>[Image not available]</i>
+		</c:when>
+		<c:otherwise>
+			<c:choose>
+			<c:when test="${img.isRestricted}">
+				<img class="thumb_img" src="${img.thumbURL}">
+			</c:when>
+			<c:otherwise>
+				<a href="/hopper/image?img=${img.archiveNumber}"><img class="thumb_img" src="${img.thumbURL}"></a>
+			</c:otherwise>
+			</c:choose>
+		</c:otherwise>
+		</c:choose>
+		</p>
+		<div class="caption">
+		<c:if test="${img.isRestricted}">
+		<a href="/hopper/help/copyright.jsp#images">Image access restricted</a><br>
+		</c:if>
+		<c:set var="imgCaption" value="${img.caption}"/>
+		<c:set var="captionLength" value="${75}"/>
+		<c:if test="${fn:length(imgCaption) > captionLength}">
+			<c:set var="imgCaption" value="${fn:substring(imgCaption, 0, captionLength-1)}..."/>
+		</c:if>
+		${imgCaption}
+		</div> <%-- caption --%>
+</div><%-- thumbnail --%>

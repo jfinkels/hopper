@@ -1,0 +1,9 @@
+<!ELEMENT id (#PCDATA) >
+<!ELEMENT name (#PCDATA) >
+<!ELEMENT cname (#PCDATA) >
+<!ELEMENT nation (#PCDATA) >
+<!ELEMENT state (#PCDATA) >
+<!ELEMENT lon (#PCDATA) >
+<!ELEMENT lat (#PCDATA) >
+<!ELEMENT row (id | name | cname | nation | state | lon | lat)+ >
+<!ELEMENT TGN (row)+ >

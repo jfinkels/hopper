@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="perseus.document">
+    <class name="TableOfContents" table="hib_tocs" discriminator-value="T">
+	<id name="id" type="int" column="id" unsaved-value="null">
+	    <generator class="native" />
+	</id>
+
+	<discriminator type="character" column="class" />
+
+        <natural-id>
+            <component name="query" class="perseus.document.Query">
+                <property name="documentID"
+                            column="document_id"
+                            type="string"
+                            length="50"
+                            index="query_idx query_scheme_idx doc_idx doc_scheme_idx" />
+                <property name="query" column="subquery" type="string"
+                    length="200"
+                    index="query_idx query_scheme_idx"
+                    />
+            </component>
+            <property name="scheme" type="string" length="75" column="scheme"
+                index="query_scheme_idx doc_scheme_idx" />
+        </natural-id>
+
+	<set name="chunks" lazy="extra" table="hib_toc_chunks">
+	    <key column="toc_id" />
+	    <composite-element
+		class="perseus.document.TableOfContents$ChunkNode">
+
+		<parent name="parent" />
+		<many-to-one name="chunk" column="chunk_id"
+		    class="perseus.document.dao.HibernateChunkDAO$ChunkRow" />
+		<property name="subquery" column="subquery" type="string" />
+	    </composite-element>
+	</set>
+
+	<subclass name="ContextTableOfContents" discriminator-value="C">
+	    <property name="workingScheme" type="string" length="75"
+		column="working_scheme" />
+	</subclass>
+
+	<subclass name="DocumentTableOfContents" discriminator-value="D">
+	</subclass>
+
+    </class>
+
+</hibernate-mapping>

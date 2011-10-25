@@ -1,0 +1,50 @@
+<%@ include file="common/include.jsp"%>
+
+<c:forEach var="artifact" items="${artifacts}">	
+	<table class="artifact-record">      
+	<tr>
+	<td class="subject-list">
+	<div style="margin-left:2%">
+		<div class="artifact-record-title">
+			<c:url value="artifact" var="artifactURL">
+				<c:param name="name" value="${artifact.name}"/>
+				<c:param name="object" value="${object}"/>
+			</c:url>
+			<a href="<c:out value="${artifactURL}"/>"><c:out value="${artifact.name}" escapeXml="false"/></a>
+		</div> <%-- artifact-record-table --%>
+	      
+		<c:set var="number_occurrences" value="${fn:length(artifactOccs[artifact])}"/>
+
+		<c:if test="${number_occurrences > 0}">
+	    	<br/>
+	    	<form action="/hopper/imbrowser" method="POST">
+	    	<c:forEach var="occurrence" items="${artifactOccs[artifact]}">
+ 			<input type="hidden" name="archiveNumber" value="${occurrence.image.archiveNumber}"/>
+	    	</c:forEach>
+			<input type="hidden" name="name" value="<c:out value="${artifact.name}"/>"/>
+	    	<input type="submit" value="View Thumbnails (<c:out value="${number_occurrences}"/>)"/>
+	    	</form>
+	    </c:if>
+	</div>
+	</td> <%-- subject-list --%>
+
+	<td class="artifact-occurrence">
+	<c:choose>
+		<c:when test="${not empty artifactOccs[artifact]}">
+			<table align="center" style="font-size: small; text-align: center" cellpadding="5">
+			<tr>
+			<c:forEach begin="0" end="1" step="1" var="occurrence" items="${artifactOccs[artifact]}">
+			<c:set var="img" value="${occurrence.image}"/>
+			<td><%@ include file="/includes/thumb.jspf" %></td>
+		    </c:forEach>
+  			</tr>
+   			</table>
+		</c:when>
+		<c:otherwise>
+   			<i>[No images available]</i>
+		</c:otherwise>
+	</c:choose>
+	</td> <%-- artifact-occurrence --%>
+	</tr>
+	</table>
+</c:forEach>

@@ -1,0 +1,42 @@
+/* Stylesheet with everything needed to display bar graphs for voting */
+
+table.vote_results {
+    width: 100%;
+}
+
+table.vote_results th {
+	border-bottom: 1px solid black;
+}
+
+table.vote_results tr.odd td {
+    background: #ffffff;
+}
+
+table.vote_results tr td {
+    background: #dddddd;
+}
+
+table.vote_results tr.total {
+    font-weight: bold;
+}
+
+table.vote_results tr.total th {
+	border-top: 1px solid black;
+}
+
+table.vote_results td.meaning {
+    width: 60%;
+    min-width: 100px;
+    font-size: small;
+}
+
+table.vote_results td.graph {
+    width: 40%;
+    font-size: small;
+}
+
+table.vote_results td.graph div.bar {
+    float: left;
+    background-color: blue;
+    text-align: center;
+}

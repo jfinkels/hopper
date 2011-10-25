@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="perseus.voting">
+    <class name="Vote" table="hib_votes" batch-size="10"
+        discriminator-value="V">
+
+	<id name="id" column="id" type="int" unsaved-value="-1">
+	    <generator class="native" />
+	</id>
+	<discriminator column="type" type="character" />
+
+        <property name="timestamp" column="time" update="false" insert="false"
+            type="timestamp" generated="insert" />
+
+        <many-to-one name="occurrence" column="occurrence_id" not-null="true"
+            />
+
+        <!-- a null selection counts as "none of the above" -->
+        <many-to-one name="selection" column="entity_id" />
+
+        <!-- keep track of voters? nah, not right now -->
+        <!--
+        <property name="timestamp" column="time"
+            type="timestamp" not-null="true" />
+        -->
+
+        <subclass name="NamedEntityVote" discriminator-value="E">
+        </subclass>
+    </class>
+</hibernate-mapping>

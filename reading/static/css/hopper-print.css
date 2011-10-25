@@ -1,0 +1,82 @@
+/* The following is largely copied from hopper.css */
+div#header {
+    background: 0 0 url(/icons/new-rm-logo2.gif) no-repeat;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+    border: 0px solid red;
+    padding-bottom: 10px;
+    /*border-width: 75%; */
+    height: 80px;
+}
+
+div#main {
+    border: blue solid 0px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    margin-top: 15px;
+    position: absolute;
+}
+
+/* End copied stuff */
+
+div#left_col {
+    display: none;
+}
+
+div#text_nav {
+    display: none;
+}
+
+p.help_note {
+    display: none;
+}
+
+div#text_col {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 42%;
+    border-right: 2px solid black;
+    padding-right: 4%;
+}
+
+div#text_col a {
+    text-decoration: none;
+}
+
+div#text_col hr {
+    visibility: hidden;
+}
+
+div#foot_nav {
+    display: none;
+}
+
+div#right_col {
+    position: absolute;
+    top: 0;
+    left: 54%;
+    right: 0;
+}
+
+div.rbox div.header {
+    display: none;
+}
+
+div.rbox hr {
+    display: none;
+}
+
+div#search {
+    display: none;
+}
+
+div#disppref {
+    display: none;
+}
+
+div#cits {
+    display: none;
+}

@@ -1,0 +1,673 @@
+<html><head><!-- This document was created from RTF source by rtftohtml version
+2.7.5 --><title>Chapter 7</title></head><body><hr><A HREF="ch6.html"><IMG ALIGN=Left src="/img/help/la.gif" WIDTH=75 BORDER=3 ALT="Go Back"></A><A HREF="ch8.html"><IMG ALIGN=Right src="/img/help/ra.gif" WIDTH=75 BORDER=3 ALT="Go Forward"></A>
+<p><CENTER><h2>CHAPTER 7: ATLAS</h2></CENTER><HR><br>
+<br>
+<p>
+
+The Atlas is an interactive tool for investigating the geography of the Greek
+world and the surrounding Mediterranean region. The Atlas has graphic drawings,
+digital elevation models, satellite images, and three-dimensional topography
+views. Various functions in the Atlas allow you to locate and plot sites,
+compute distances between sites, identify sites within a region, examine
+elevation and drainage, and zoom in and out to see maps of different scales. As
+a geographic reference, the Atlas can be used in traditional ways, but its
+content and design encourage more complex and interactive uses. 
+<HR>
+<UL><li><a href="#7.1">Section 7.1: Introduction to the Atlas</a><UL>
+<li><a href="#7.1.1">Section 7.1.1: A Definition of Terms</a>
+<li><a href="#7.1.2">Section 7.1.2: Map Themes</a>
+<li><a href="#7.1.3">Section 7.1.3: Color Atlas Features</a></UL>
+<li><a href="#7.2">Section 7.2: Navigating the Atlas</a><UL>
+<li><a href="#7.2.1">Section 7.2.1: Graphic Maps, Graphic Map Indexes, and Detailed Maps</a>
+<li><a href="#7.2.2">Section 7.2.2: Atlas Tools</a>
+<li><a href="#7.2.3">Section 7.2.3: Atlas Menu</a>
+<li><a href="#7.2.4">Section 7.2.4: Scroll Window</a></UL>
+<li><a href="#7.3">Section 7.3: Black and White Atlas Features</a><UL>
+<li><a href="#7.3.1">Section 7.3.1: Outline Maps</a>
+<li><a href="#7.3.2">Section 7.3.2: Black and White Ccontour Maps</a></UL>
+<li><a href="#7.4">Section 7.4: The Atlas and Memory Issues</a></UL></UL>
+<HR>
+<h3>
+<a name="7.1">7.1 INTRODUCTION TO THE ATLAS
+</a></h3>
+<h4><a name="7.1.1">7.1.1 A DEFINITION OF TERMS
+</a></h4>
+The Atlas is a complex tool with several unique features. Here are some terms
+used to describe the Atlas. <p>
+"Projection" refers to the system used to translate locations on a (nearly)
+spherical earth into the plane of a map. The large scale longitude-latitude
+(lon-lat) map uses a Plate Carree projection. The other maps use the Universal
+Transverse Mercator (UTM) projection system.<p>
+<p>
+"Coordinate system" refers to the system by which points on the current map are
+located. In Perseus, all geographic data are recorded in longitude and latitude
+coordinates, expressed in degrees (minutes, seconds) east of Greenwich, England
+and north of the Equator. The large scale lon-lat map works directly with these
+coordinates in a Plate Carree projection. The other maps use the UTM coordinate
+system expressed in integers in a UTM projection. <p>
+<p>
+"Graphic Map Index" refers to the black and white line drawings that serve as
+pointers and gateways to detailed maps. Typically, a map index shows a line
+drawing of the Greek world overlaid with numerous rectangles. The rectangles
+are active areas that, when clicked, open the respective detailed map in the
+selected scale and theme (defined below).<p>
+<p>
+"Scale" refers to the meters-per-pixel ratio of the maps. Depending on the
+current map, the scale may be 1300, 1000, 500, 250, 125, or 60 meters per
+pixel. (A pixel is the unit of measure for a computer monitor.)<p>
+<p>
+"Theme" refers to the type of map selected, such as a color topography map. The
+map themes are defined below. <p>
+<p>
+"Detailed maps" are the color maps and the black and white topography maps. <p>
+
+<h4>
+<a name="7.1.2">7.1.2 MAP THEMES
+</a></h4>
+Four map themes are used in the Atlas.<p>
+<p>
+Outline  maps: Large and small scale  black and white line drawings show an
+outline of the coastline of the Greek world from Sicily and Magna Graecia to
+Asia Minor. <p>
+<p>
+Black and white topography: This black and white line drawing shows elevation,
+and resembles a standard paper topographic map, with contour lines showing 1000
+foot intervals in elevation.<p>
+<p>
+Satellite images: These maps show a conventional representation in false-color
+of satellite data and cover the Greek mainland. The three bands of satellite
+data are shown in red, green, and blue.<p>
+<p>
+Color elevation maps with rivers: These maps have been created from digital
+information on land elevation. A range of colors, from yellow to dark brown, is
+used to describe elevation. These maps show streams and lakes overlaid on
+topography.<p>
+
+<h4>
+<a name="7.1.3">7.1.3
+COLOR ATLAS FEATURES
+</a></h4>
+The Graphic Map Index of the Greek world is the gateway to all color Atlas
+features. The Graphic Map Index contains active rectangles superimposed on the
+Greek world map. Each rectangle represents the size and location of a map in
+the selected theme and scale. <p>
+To see a map, choose an item from one of the pop-up tiles on the Graphic Map
+Index. (The procedure is described in detail in <A HREF="#7.2">section 7.2</A>.) To return to the
+Index, click <tt>Graphic index of maps</tt> on the Atlas Tools Palette. To move
+to an adjacent topography map to the north, south, east, or west, click the
+directional arrows around the magnifying glass icon. To move to the next
+highest scale map in a theme, click once in one of the map's quadrants. To move
+to the next lowest scale map in a theme, click on the minus sign inside the
+magnifying glass icon.<p>
+When you are viewing a topography map, you can plot sites, plot sites within a
+region, and compute distances between points.<p>
+A summary of features found in the color maps is shown in the table below:
+<P><TABLE>
+<TR><TD>Map Theme<TD>Scales (meters per pixel)<TD>Plot Sites<TD>Plot Sites in Region<TD>Compute Distances</TR>
+<TR><TD>False-color Infrared<TD>500, 250, 125, 60<TD>Yes<TD>No<TD>Yes</TR>
+<TR><TD>Color Topography &amp; hydrography<TD>500, 250, 125<TD>Yes<TD>Yes<TD>Yes</TR>
+</TABLE>
+      
+Coverages
+in Perseus 2.0 of the Greek world by the various theme sources are shown in the
+map below:<p>
+<CENTER><IMG src="/img/help/7.1.gif"><br><IMG src="/img/help/7.1b.gif"><p>
+<b>Figure 7.1 Coverages in Perseus 2.0 of the Greek world by the various theme
+sources.</b></CENTER>
+<h5>
+<a name="RTFToC6">Satellite
+Images (False-Color Infrared)
+</a></h5>
+The satellite photography, shown as false-color infrared maps, covers the Greek
+mainland and are available in four scales: 500, 250, 125, and 60 meters per
+pixel. The maps show a standard coloration of three bands of satellite data
+using red, green, and blue. Bright red areas reflect heavy vegetation, and blue
+to gray areas indicate heavily urbanized areas.<p>
+The false-color infrared maps are based on five regions in mainland Greece: <p>
+Epirus (Albania/Illyria)<br>
+NW Greece (Acarnania, Phocis, Aetolia, etc.)<br>
+SE Greece (Attica, Boeotia, Euboea, Thessaly, etc.)<br>
+Peloponnese, including Attica<br>
+Macedonia/Thrace
+<h5>
+<a name="RTFToC7">Color
+Elevation Maps with Rivers
+</a></h5>
+These color topography maps are based on the 15 regions used to divide the
+black and white topography maps. The maps are digital elevation models that use
+color to indicate topography. Topographic data in the black and white
+topographic maps were used to interpolate values for the areas between the
+contour lines, so that every point on the map has an elevation value. <p>
+The key used to read elevations from the color elevation maps is available by
+clicking <tt>Show DEM Key</tt> on the Atlas Tools Palette, lower right. A small
+floating window with the color key and elevation scale appears. Hide the window
+by clicking the close button on the Key.<p>
+The color topography maps are available in three scales, 500, 250 and 125
+meters per pixel. <p>
+
+<h5>
+<a name="RTFToC8">Sources
+for Atlas Images
+</a></h5>
+The Atlas includes information from three kinds of sources:  the Digital Chart
+of the World (DCW), the Landsat Multispectral Scanner (MSS), and printed
+materials of varying quality.<p>
+The DCW offers worldwide coverage of a variety of themes represented as vectors
+in the Vector Product Format. For the Perseus Atlas, the most important themes
+are topography and hydrography. The published accuracy of the DCW is roughly
+1:1 million, but according to the developers of the DCW, the accuracy will be
+substantially better in many parts of the world.<p>
+The Landsat MSS sensors measure electromagnetic radiation at four different
+points in the spectrum:  0.5-0.6 micrometers (blue); 0.6-0.7 mm (green);
+0.7-0.8 mm (infrared); 0.8-1.1 mm (infrared).  Because different materials
+reflect and absorb radiation in characteristic ways, these data provide
+evidence of land cover. <p>
+The Atlas includes a database of approximately 1900 sites, based on maps
+published by the Greek Statistical Service, and on printed gazetteers.  The
+Greek maps can be used reliably to within 30 seconds of longitude or latitude.
+(At 39 degrees of latitude, very near the center of our core area, 30 seconds
+of longitude represents about 720 meters on the ground.)
+<HR>
+<h3>
+<a name="7.2">7.2 NAVIGATING THE ATLAS
+</a></h3>
+The Atlas comprises more than 1,000 map images. To navigate among them and find
+the ones most useful to you, spend some time learning how the Atlas works. 
+<h4>
+<a name="7.2.1">7.2.1
+GRAPHIC MAPS, GRAPHIC MAP INDEXES, AND DETAILED MAPS
+</a></h4>
+In broad terms, the Atlas maps can be categorized in three ways: as graphic
+outline maps, Graphic Map Indexes, and detailed maps. There are two graphic
+outline maps, the large- and small-scale lon-lat maps of the Greek world. Sites
+can be plotted on both maps. <p>
+The Graphic Map Indexes are gateways to detailed maps; they are analogous to
+the map keys found in traditional print atlases (figure 7.1). The detailed maps
+- color elevation, satellite image and black and white contour maps - come in
+up to four scales. You choose which scale you want from the Graphic Map Index
+(see below).<p>
+<CENTER><IMG src="/img/help/7.2.gif"><p>
+<b>                         Figure 7.2 Map Key from a print atlas showing pages
+containing detailed maps.</b><p></CENTER>
+<b></b>Use of a print atlas map key is intuitive; you find the tile
+corresponding to the part of the world you want a detailed map of, and then
+turn to the atlas page indicated by the number in the upper corner. Similarly,
+each tile in the Perseus Graphic Map Index takes you to a detailed map, but
+instead of turning pages, you choose the desired item from a pop-up menu. <p>
+The following examples are arranged to show first how to display the various
+map themes, then how to use the specialized map tools.<p>
+&gt;	Enter the Perseus Atlas environment.<p>
+From the Gateway, click the Atlas icon. Or from anywhere in Perseus, choose
+<tt>Atlas</tt> from the Links menu. Your point of entry into the Atlas is the
+Small outline map of the Greek world (figure 7.3).<p>
+<CENTER><IMG src="/img/help/7.3.gif"><p>
+<b>Figure 7.3 Small Outline Map of the Greek World with Atlas Tools Palette,
+Scrolling Window, and Navigator Palette.</b><p></CENTER>
+<b></b>Notice that a new floating window appears, the Atlas Tools Palette
+(figure 7.3), and that a new menu, Atlas, appears on the menu bar.<p>
+&gt;	Go to the Large outline map of the Greek world. <p>
+On the Atlas Tools Palette a magnifying glass, with plus and minus signs in the
+lens. To bring up the Large outline map of the Greek world, click the plus sign
+on the magnifying glass icon. You can toggle from Small to Large outline maps
+by clicking the plus and minus signs.<p>
+&gt;	Go to the Graphic Map Indexes. <p>
+From either the Small or Large outline map of the Greek world, click the button
+<tt>Graphic Index</tt> of<tt> Maps </tt>on the Atlas Tools Palette. An outline
+map appears with active rectangles, or tiles, overlaid (figure 7.4). The title
+field of the Atlas Tools Palette now reads <tt>Map Index.</tt>Note that as you
+move the mouse over the tiles they become highlighted.<p>
+<CENTER><IMG src="/img/help/7.4.gif"><p>
+<b>Figure 7.4 Index of Maps with tile pop-up menu.</b><p></CENTER>
+<b></b>&gt;	Go to the detailed maps. <p>
+Move the mouse to the tile over the Attic peninsula (middle row, third from
+left). Hold the mouse down to bring up a pop-up menu. To see a detailed map,
+choose one of the pop-up menu items. The items available are Color Elevation
+Map with Rivers, Satellite Image and Black-and-white Contour Map. The
+interpretation of the detailed maps is explained below.<p>
+You can toggle between Satellite Image maps and Color Elevation maps by
+clicking the button on the Atlas Tools Palette. This action will preserve sites
+plotted on one of the color maps. However, it is necessary to return to the
+Graphic Map Index to go to a Black-and-whicte Contour map. Any plotted sites
+will be lost unless you first save them by clicking the Search Saver icon on
+the Navigator Palette. To replot the sites, choose <tt>Plot Sites in Search
+Saver</tt> from the Atlas menu. To return to the Graphic Map Index, click the
+button <tt>Graphic Index of Maps</tt> the Atlas Tools Palette (figure 7.5). <p>
+             
+<CENTER><IMG src="/img/help/7.5.gif"><p>
+<b>Figure 7.5 Toggle buttons on Atlas Tools Palette.</b><p></CENTER>
+<b></b>Note that some tiles do not have Satellite Image maps. 
+<h4>
+<a name="7.2.2">7.2.2
+ATLAS TOOLS
+</a></h4>
+The Atlas has unique tools for navigating among the themes, scales, and maps.
+The tool set includes the Atlas Tools Palette with its special tools, the Atlas
+menu, which includes the Atlas Browser and the various customizing settings.
+<h5>
+<a name="RTFToC12">Atlas
+Tools Palette
+</a></h5>
+The Atlas Tools Palette (figure 7.6) is a floating window that provides
+controls to navigate the Atlas. It also gives information about the current
+map. Sites for the current map, their coordinates and distance computation
+between sites are reported in the Atlas Tools Palette (described below). <p>
+The scale bar shows the distance taken up by one hundred pixels of the
+monitor's  screen. The distance represented by the scale is shown above it in
+kilometers and changes depending on the scale of the map.<p>
+The Atlas Tools Palette has an information field at the top that reports the
+theme of the map you are viewing, and below it a button to go directly to the
+Graphic  Map Index.<p>
+<CENTER>          
+<IMG src="/img/help/7.6.gif"><p>
+<b>Figure 7.6 Atlas Tools Palette</b><p></CENTER>
+<b></b>The directional reference on the map is indicated by the arrow labeled
+"N" for north. This orientation is constant.<p>
+The small magnifying glass surrounded by directional arrows is a navigation
+tool for moving among maps in the current theme. To change the scale of a map
+within a theme, click the plus sign (+) in the magnifying glass and you will
+zoom in to the next larger scale of the current map, if one is available. Click
+the minus sign (-) and you will zoom out to the next smaller scale of the
+current map, if one is available. <p>
+The detailed maps come in four scales: 500 meters per pixel, 250 meters per
+pixel, 125  meters per pixel and 60 meters per pixel. A pixel is a dot on the
+monitor of your computer. Since monitors vary from workstation to workstation,
+the representation of a geographical distance will also vary. However, you can
+readily get a sense of distance in the Atlas from the kilometer scale on the
+Atlas Tools Palette; its length is always 100 pixels, and the equivalent of 100
+pixels in kilometers is displayed above the scale for each map.<p>
+Not every theme is available in each of the four scales. Satellite images are
+the only theme coming in the 60 meter/pixel resolution.<p>
+&gt;	See the four map scales available from the Graphic Map Index.<p>
+Enter the Graphic Map Index. There will be 15 tiles imposed upon regions
+covered by detailed maps. By default the scale displayed is the smallest, 500
+meters per pixel, shown on the title bar (and on Atlas Tools Palette when the
+detailed map is displayed). The figure 260 km which you see currently displayed
+on the Atlas Tools Palette is the scale for the entire outline map.<p>
+Increase the scale by clicking the plus sign of the magnifying glass icon on
+the Atlas Tools Palette once. There will now be 56 tiles imposed upon regions
+covered by detailed maps. Each tile represents a detailed map at a scale of 250
+meters per pixel.<p>
+Note that each of the former tiles is now subdivided into four tiles, with the
+exception of the tile over the upper Bosphoros (250 meter/pixel resolution is
+not available for that region).<p>
+Increase the scale to 125, then 60 meters per pixel by clicking on the plus
+sign of the magnifying glass icon. Note that the number of tiles on the Graphic
+Map Index again  increases by a factor of four. <p>
+You can decrease the scale back to 125, 250 and 500 meters/pixel by clicking on
+the minus sign on the magnifying glass.<p>
+&gt;	See detailed maps in the four available scales. This example will use the
+Satellite image theme and zoom in on the Isthmus of Corinth.<p>
+Not all themes are available for each scale. The pop-up menu for each tile of
+the Graphic Map Index displays the themes available.<p>
+From the Graphic Map index at 500 meters/pixel scale, move the mouse to the
+tile over the Corinthiad (second row from top, third tile from left). Choose
+<tt>Satellite image</tt> from the pop-up menu. The satellite image will appear.
+The Isthmus of Corinth is the neck of land in the lower left quadrant
+connecting the Attic peninsula above with the Peloponnesus below. <p>
+To zoom in to the 250 meters/pixel scale, click the + sign on the magnifying
+glass icon on the Atlas Tools Palette. The cursor will now change to a
+magnifying glass. Now move the cursor over the Isthmus of Corinth and click it.
+The 250 meter/pixel satellite image will appear, with the Isthmus of Corinth in
+the lower right quadrant. <p>
+Zoom in to 125 meters/pixel by clicking the Isthmus; click the Isthmus again to
+reach the 60 meters/pixel map. <p>
+You can decrease the scale by clicking on the minus sign in the magnifying
+glass on the Atlas Tools Palette.<p>
+&gt;	Use the directional arrows on the Atlas Tools Palette to go to adjacent
+maps in the same theme.<p>
+Four arrows at 90 degree intervals surround the magnifying glass. These
+directional arrows, when clicked, move you to an adjacent map in the current
+scale (north, south, east, and west, respectively, for up, down, right, left).
+By using the directional arrows, you can skip the step of returning to the
+index to see an adjacent map. 
+<h5>
+<a name="RTFToC13">Show/Hide
+Tools toggle
+</a></h5>
+For the following examples, use the Small Outline Map of the Greek World. If
+you are already inside the Atlas, click the button <tt>Graphic Index of
+Maps</tt> on the Atlas Tools Palette, then click the button <tt>Outline
+Map</tt>. Else, from the Gateway, click the Atlas icon; from anywhere in
+Perseus, choose <tt>Atlas</tt> from the Links menu. <p>
+The Show tools/Hide tools toggle switch alternately shows and hides three
+additional map tools, Plot Sites, Plot Sites in Area and Compute Distances.
+These tools appear in the interface as round buttons. When the map tools are
+showing, they are attached to the lower part of the Atlas Tools Palette. <p>
+&gt;	Click the Show tools toggle on the Atlas Tools Palette. <p>
+The Palette will expand to show the three buttons that operate the tools
+(figure 7.6).
+<h6>
+<a name="RTFToC14">Plot
+Sites 
+</a></h6>
+Maps in Perseus appear without political boundaries or other indications of
+human settlement. The Plot Sites tool allows you to plot sites on a map by
+selecting sites from the scrolling field Select Sites, lower left. The Select
+Site list shows in alphabetical order the sites that can be plotted on the
+current map. The list of sites ranges from more than 2,000 sites that can be
+plotted on the large scale lon-lat map to 2 or 3 sites on some detailed maps of
+sparsely populated areas.<p>
+&gt;	Plot the site of Delphi.<p>
+Make sure that the Atlas Tools Palette is toggled to <tt>Show Tools</tt>, and
+click the button <tt>Plot Sites</tt>.<p>
+The scroll bar at the right side of the Select Sites list provides a quick way
+to move through the list. (Remember that you can drag the scroll indicator up
+or down to move quickly in a list, rather than moving line by line.)<p>
+Click <tt>Delphi</tt> in the Select Site list, then click the button <tt>Plot
+selected sites</tt>. The site is marked with a dot; the site name may be
+dragged to another location on the map. You may need to drag the Atlas Tools
+Palette out of the way in order to see the plotted sites. <p>
+If you want to plot a number of sites -<p>
+- shift-click (click while holding down the shift key) to select a continuous
+range of sites.<p>
+- command-click (click while holding down the command key) to select a
+discontinuous range of sites.<p>
+When your selection is ready, click the button <tt>Plot selected sites.</tt><p>
+<tt></tt>The limit on the number of sites that may be displayed at one time is
+fifty.<p>
+The site coordinates appear in the scrolling field on the right and are given
+either in lon-lat degrees or UTM (explained in Atlas Settings, below).
+<h6>
+<a name="RTFToC15">Plot
+Sites in Area 
+</a></h6>
+This feature plots all known sites within a rectangular region that you define.
+<p>
+&gt;	Define an area in Thrace for the Atlas to plot sites.<p>
+If you have been following the previous example, first clear old sites from the
+map by choosing <tt>Clear plotted sites on this map </tt>from the Atlas menu.
+Please be sure that the Atlas Tools Palette is toggled to <tt>Show
+Tools</tt>.<p>
+Click the button <tt>Plot sites in Area</tt>. <p>
+Three changes now take place in the Atlas Tools Palette: the scrolling field
+lower left becomes Sites in This Area; a new array of buttons appears lower
+right; and a message appears to the right of the radio buttons prompting you to
+click the button Define Area (figure 7.7).<p>
+                         
+<CENTER><IMG src="/img/help/7.7.gif"><p>
+<b>Figure 7.7 Atlas Tools Palette showing changes accompanying Plot sites in
+area.</b><p></CENTER>
+<b></b>Click the button <tt>Define Area</tt>. You will now receive the
+following prompt: "Click and drag on map to define area." <p>
+For this exercise, a sparsely populated region was chosen because on a small
+scale map, the plotted sites tend to get overcrowded. For best results,
+therefore, use the Plot sites in area feature on a larger scale map, and be
+careful not to choose too big or densely populated an area, because the maximum
+number of sites that the Atlas can plot is fifty.<p>
+Select approximately the area shown in figure 7.8.<p>
+<CENTER><IMG src="/img/help/7.8.gif"><p>
+<b>Figure 7.8 Thrace with area selected.</b><p></CENTER>
+<b></b>When you release the mouse, the Sites in this area field, lower left,
+lists the sites in the area (figure 7.9). <p>
+        
+<CENTER><IMG src="/img/help/7.9.gif"><p>
+<b>Figure 7.9 Sites in Thraceward area.</b><p></CENTER>
+<b></b>To plot the entire list of sites, click Plot Listed Sites. To plot a
+particular site, click a site on the list, then click Plot Highlighted Sites.<p>
+KNOWN BUG: You cannot scroll down the Sites in area field, though the Atlas
+sites will plot them all.
+<h6>
+<a name="RTFToC16">Compute
+Distance
+</a></h6>
+This feature allows you to compute the distance in straight lines between two
+or more points on a map. It is available on both the black and white and color
+maps.<p>
+&gt;	Compute the distance of the paraplous from Iapygeum to Syracuse, via
+Kroton, Locri and Rhegion.<p>
+From the Small outline map, plot the sites Iapygeum, Kroton, Locri, Rhegion and
+Syracuse according to the instructions above (figure 7.10).<p>
+    
+<CENTER><IMG src="/img/help/7.10.gif"><p>
+<b>Figure 7.10 Small outline map with sites plotted.</b><p></CENTER>
+<b></b>Click the  button <tt>Compute Distances</tt>.<p>
+Three changes now take place in the Atlas Tools Palette: the scrolling field
+lower left becomes Travel log; a new array of buttons appears lower right; and
+a message appears to the right of the buttons prompting you to click the button
+Start route (figure 7.11). <p>
+                    
+<CENTER><IMG src="/img/help/7.11.gif">
+<p>
+<b>Figure 7.11 Atlas Tools Palette showing changes accompanying  Compute
+distances.</b><p>
+</CENTER><b></b>When you click Start Route, you are enabling a distance computation
+feature that measures the distance along a series of points. These points are
+wherever you click the mouse, whether plotted sites or white space.<p>
+Click Start Route. The first point you click on the map will be the starting
+point. Click on the site of Iapygeum; it is now marked with an X.<p>
+Click again on the sight of Kroton, and the new leg will be connected with a
+straight line. Repeat for each site along the journey, making a dog-leg around
+the toe of Italy, until you are ready to end the route.<p>
+A running total with distance of each leg of the journey is kept in the field
+middle right.<p>
+When you have reached Syracuse, click the button Stop Route to end the trip.
+The total distance, 441 km., is computed for each trip in the Travel Log field,
+left (figure 7.12). <p>
+   
+<CENTER><IMG src="/img/help/7.12.gif"><p>
+<b>Figure 7.12 Paraplous from Iapygeum to Syracuse, with total distance
+computed.</b><p></CENTER>
+<b></b>You can compute the distance of a journey with any number of legs,
+limited only by the amount of available memory.<p>
+&gt;	 Save the results in your Travel Log to a Perseus Notebook page by
+clicking the button <tt>Save Routes to NB</tt>. Please read about Notebooks in
+<A HREF="ch10.html#10.3">chapter 10.3</A>. <p>
+NOTE: If the distance computation feature is enabled, you cannot interrupt it
+to choose a map from a map index or plot sites from the site list.
+<h5>
+<a name="RTFToC17">Show
+DEM Key
+</a></h5>
+This feature appears in the Atlas Tools Palette with the Color Elevation maps.
+The Digital Elevation Model (DEM) Key applies to the Color Elevation (color
+topography and hydrography) maps. It shows the range of colors used in these
+maps and their associated values of elevation. Click the button <tt>Show DEM
+Key</tt>, lower right, to show a floating window with a color bar corresponding
+to elevations in the color elevation maps. Click the close button on the DEM
+Key to hide it.
+<h4>
+<a name="7.2.3">7.2.3
+ATLAS MENU
+</a></h4>
+The Atlas menu has six items, which become active or inactive depending on the
+part of the Atlas you are using. Menu items that are shown in light gray type
+are inactive, while those shown in black type are active.<p>
+<CENTER><IMG src="/img/help/7.13.gif"><p>
+<b>Figure 7.13 Atlas menu.</b></CENTER>
+<h5>
+<a name="RTFToC19">Settings</a></h5>
+Choose <tt>Settings</tt> from the Atlas menu to customize the environment of
+the Perseus Atlas. A dialog window with Current Atlas Settings appears (figure
+7.14).<p>
+There are four Map display options. The <tt>Show site names</tt> box is turned
+on (X-ed) by default, and instructs Perseus to display the name of the selected
+site. To make the site names disappear, click the <tt>Show site names</tt> box
+off. A dot will remain indicating the location of the site. <p>
+    
+<CENTER><IMG src="/img/help/7.14.gif"><p>
+<b>Figure 7.14  Atlas Settings options.</b><p></CENTER>
+<b></b>Click the <tt>Center on plotted site</tt> box to make Perseus center the
+Atlas around a site which is off-screen. This feature applies to black and
+white maps only.<p>
+Click the <tt>Coordinates in longitude-latitude</tt> button to display site
+coordinates in degrees of latitude and longitude in the Site Information field
+on the Atlas Tools Palette. Alternately, click the <tt>Coordinates in UTMs
+</tt>button to display the site location in Universal Transverse Mercator
+coordinates.<p>
+There are two Map actions options. With the <tt>Zoom when map clicked</tt> box
+selected, you can zoom in on a map by clicking  it. <p>
+The <tt>Always replot sites</tt> feature saves sites you have plotted while you
+to go to another stack in Perseus. The sites will not be saved upon quitting
+Perseus, however. Note also that this option will slow Perseus down.
+<h5>
+<a name="RTFToC20">Save
+Settings
+</a></h5>
+You can save your Atlas Settings for the next Perseus session by clicking
+<tt>Save Settings</tt> from the Atlas menu, and selecting the desired settings
+as described in the section above. 
+<h5>
+<a name="RTFToC21">Map
+Index (by Site and Region)
+</a></h5>
+This tool finds all maps in Perseus containing a given site, and then goes to
+the desired map. It also plots all sites in the Perseus database associated
+with a given region. Release the mouse on the item <tt>Map Index</tt> under the
+Atlas menu to go to it.
+<h6>
+<a name="RTFToC22">Map
+Index (By Site)
+</a></h6>
+To plot a site, choose <tt>Site</tt> from the pop-up menu <tt>Index Type</tt>,
+upper right (figure 7.15). Type the name of the site you wish to locate in the
+field <tt>Look for</tt> and click <tt>Look up</tt>. Or, click the site from the
+scrolling field, lower left.<p>
+Figure 7.15 shows the results of an inquiry for Phaleron. Select a theme at the
+right to go to that map.<p>
+<CENTER><IMG src="/img/help/7.15.gif"><p>
+<b>Figure 7.15 Map Index (By Site).</b></CENTER>
+<h6>
+<a name="RTFToC23">Map
+Index (By Region)
+</a></h6>
+To plot sites in a region of the Greek world, choose <tt>Region</tt> from the
+pop-up menu <tt>Index Type</tt>, upper right. In the field <tt>Look for</tt>,
+type the name of the region you wish to locate, and click <tt>Look up</tt>. Or,
+click a region from the scrolling field, lower left. On the right, Perseus will
+give you a choice of the Small or Large outline map. Click either one, and
+Perseus will plot the sites in the desired region without showing site names.<p>
+To show the site names for a plotted region, choose the option <tt>Show Site
+Names When Plotting</tt> from the Atlas Settings.
+<h5>
+<a name="RTFToC24">Clear
+Plotted Sites on this Map
+</a></h5>
+This feature clears the current map of all plotted sites. 
+<h5>
+<a name="RTFToC25">Plot
+Sites in Search Saver
+</a></h5>
+This feature plots a list of the sites which you have stored in the Perseus
+Search Saver. Please read about the Search Saver, <A HREF="ch5.html#5.4">chapter 5.4</A>.<p>
+&gt;	Plot the Mint locations for coins in Perseus from the Archaic period.<p>
+Get a list of Mint locations by making a Browser search (the Browser is
+described thoroughly in <A HREF="ch5.html#5.1">chapter 5.1</A>). In the Browser, click the button
+<tt>Coins</tt> and choose the Search topic <tt>Period</tt> from the pop-up
+menu, top center. The pop-up menu now reads <tt>Period is ... </tt>Further
+refine your search by clicking <tt>Archaic</tt>. Set the left column of results
+to <tt>Mint</tt> (figure 7.16) Put your results into the Search Saver by
+clicking its icon on the Navigator Palette.<p>
+<CENTER><IMG src="/img/help/7.16.gif"><p>
+<b>Figure 7.16 Browser serarch for coins of the Archaic period by mint.</b><p>
+</CENTER><b></b>Now bring up the Small outline map by choosing <tt>Atlas</tt> from the
+Links menu. Choose <tt>Plot Sites in Search Saver</tt> from the Atlas menu.
+Note where the sites are concentrated.
+<h5>
+<a name="RTFToC26">Save
+Plotted Sites to Notebook
+</a></h5>
+This feature stores a list of sites you have plotted on a Map in a Notebook
+card. Notebook cards can be used to keep data from session to session. To go to
+a site saved in the Notebook, highlight it, then choose <tt>Atlas</tt> from the
+Links menu. Perseus will plot this site for you in the Small outline map.
+<h4>
+<a name="7.2.4">7.2.4
+SCROLL WINDOW
+</a></h4>
+The scroll window is a floating window with a rectangle inside it. The
+rectangle represents the screen size of the current HyperCard stack. This tool
+is useful when a HyperCard stack is larger than the current monitor size, such
+as the black and white line drawings in the Atlas. When you place the cursor in
+the center of the rectangle, it changes to a hand icon. By dragging the
+rectangle within the constraints of the floating window, you can see the other
+parts of the card that were previously off the screen. You can also drag the
+sides of the rectangle to make the current stack wider or narrower, and you can
+drag the top or bottom of the rectangle to make the current stack taller or
+shorter. <p>
+If you need the scroll window to move around the graphic index or other black
+and white map, choose <tt>Scroll</tt> from the Go menu, or press Command-e.
+Press Command-e again to make the scroll window disappear. More detailed
+instructions for using the scroll window are presented in <A HREF="ch4.html#4.1.3">chapter 4.1.3</A>.
+<HR>
+<h3>
+<a name="7.3">7.3
+BLACK AND WHITE ATLAS FEATURES
+</a></h3>
+The Atlas uses black and white drawings to provide an overall glance at the
+geography of the Greek world and to serve as indexes to color maps. 
+<h4>
+<a name="7.3.1">7.3.1
+OUTLINE MAPS
+</a></h4>
+The Small and Large Outline maps enclose the coastline of the Greek world, from
+Sicily to Western Asia Minor, and from Campania to Crete, in a black and white
+line drawing. The site list has approximately 1,600 entries, which can be
+plotted on the outline map. <p>
+The Small outline  map is the default selection when you open the Atlas.
+Plotting sites on it is a fast way to locate sites in their geographical
+context. <p>
+When you are viewing the Small and Large outline maps, you can plot sites, plot
+sites within a region within a region which you define, and compute distances
+between points. 
+<h4>
+<a name="7.3.2">7.3.2
+BLACK AND WHITE CONTOUR MAPS
+</a></h4>
+The black and white contour (topography) maps are offered in one scale, 250
+meters per pixel. Each one shows a region approximately the size of Sicily or
+the Peloponnese. Lines represent topographic contours at an interval of 1,000
+feet.<p>
+The black and white topography maps cover 15 regions of roughly 200 by 300
+kilometers each:<br>
+Campania<br>
+Apulia<br>
+Bruttium (Calabria)<br>
+Sicily<br>
+Epirus (Albania/Illyria)<br>
+NW Greece (Acarnania, Phocis, Aetolia, etc.)<br>
+SE Greece (Attica, Boeotia, Euboea, Thessaly, etc.)<br>
+Peloponnese, including Attica<br>
+Cyclades<br>
+Macedonia/Thrace<br>
+Marmara Sea<br>
+Troad<br>
+Ionia/Lydia<br>
+Caria/Lycia<br>
+Crete<br>
+This same division of regions is also used for the color maps. <p>
+The Black and White Contour Maps are available from Graphic Map Index only when
+it is set at the 260 km. scale. To see a topography map, choose <tt>Black and
+White Contour Maps</tt> from one of the pop-up tiles on the Graphic Map Index.
+To return to the Index, click <tt>Graphic index of maps</tt> on the Atlas Tools
+Navigator. To move to an adjacent topography map to the north, south, east, or
+west, click the directional arrows around the magnifying glass icon.<p>
+When you are viewing a topography map, you can plot sites, plot sites within a
+region, and compute distances between points.
+<HR>
+<h3>
+<a name="7.4">7.4
+THE ATLAS AND MEMORY ISSUES
+</a></h3>
+Your ability to use the full features of the Atlas depends on the amount of
+random access memory (RAM) in your computer and the memory partition allocated
+to HyperCard. Color images and color windows require more memory than textual
+resources and black and white graphics. With a color-intensive resource such as
+the Atlas, more RAM and a fast computer will enhance its performance.<p>
+Every Macintosh with 5 MB RAM alloted to the Perseus Player can run the basic
+Atlas, meaning the color/black and white Atlas features, though it is
+preferable to have at least 8 MB RAM. The Computing Distances feature uses
+memory quickly, and users with less than 3 MB RAM who try to compute distances
+will get an error message, "Not enough memory to use the Painting Tools."
+(Consult <A HREF="ch2.html">chapter 2</A>, "Setup," for a more detailed description of hardware and
+software requirements and memory issues.) <p>
+Black and white outline maps are part of a HyperCard stack. Color maps are
+drawn on the screen in a separate window. To achieve efficiency in memory and
+speed, leave the color window open only for as long as you are using color
+views in the Atlas, because the current color image will be replaced by your
+next selection. You can click another window to bring that window to the
+foreground, leaving the color map in the background. When you are finished with
+the Atlas, you must close the color map window by clicking the close box in the
+upper left corner. To avoid memory shortages, however, close all color windows
+when you no longer need them.<p> <p><A HREF="ch6.html"><IMG ALIGN=Left src="/img/help/la.gif" WIDTH=75 BORDER=3 ALT="Go Back"></A><A HREF="ch8.html"><IMG ALIGN=Right src="/img/help/ra.gif" WIDTH=75 BORDER=3 ALT="Go Forward"></A><br>
+<p>
+</body></html>

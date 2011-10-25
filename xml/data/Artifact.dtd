@@ -1,0 +1,122 @@
+<!ELEMENT name (#PCDATA) >
+<!ELEMENT type (#PCDATA) >
+<!ELEMENT location (#PCDATA) >
+<!ELEMENT summary (#PCDATA) >
+<!ELEMENT perseus_version (#PCDATA) >
+<!ELEMENT entered_by (#PCDATA) >
+<!ELEMENT sources_used (#PCDATA) >
+<!ELEMENT other_bibliography (#PCDATA) >
+<!ELEMENT documentary_references (#PCDATA) >
+<!ELEMENT accession_number (#PCDATA) >
+<!ELEMENT region (#PCDATA) >
+<!ELEMENT extent (#PCDATA) >
+<!ELEMENT human_name (#PCDATA) >
+<!ELEMENT site_type (#PCDATA) >
+<!ELEMENT description (#PCDATA) >
+<!ELEMENT exploration (#PCDATA) >
+<!ELEMENT periods (#PCDATA) >
+<!ELEMENT physical (#PCDATA) >
+<!ELEMENT dimensions (#PCDATA) >
+<!ELEMENT start_date (#PCDATA) >
+<!ELEMENT start_mod (#PCDATA) >
+<!ELEMENT end_date (#PCDATA) >
+<!ELEMENT end_mod (#PCDATA) >
+<!ELEMENT unitary_date (#PCDATA) >
+<!ELEMENT unitary_mod (#PCDATA) >
+<!ELEMENT date_for_sort (#PCDATA) >
+<!ELEMENT period (#PCDATA) >
+<!ELEMENT period_for_sort (#PCDATA) >
+<!ELEMENT culture (#PCDATA) >
+<!ELEMENT context (#PCDATA) >
+<!ELEMENT context_mod (#PCDATA) >
+<!ELEMENT findspot (#PCDATA) >
+<!ELEMENT findspot_mod (#PCDATA) >
+<!ELEMENT collection (#PCDATA) >
+<!ELEMENT date_description (#PCDATA) >
+<!ELEMENT collection_history (#PCDATA) >
+<!ELEMENT donor (#PCDATA) >
+<!ELEMENT condit (#PCDATA) >
+<!ELEMENT condition_description (#PCDATA) >
+<!ELEMENT comparanda (#PCDATA) >
+<!ELEMENT material (#PCDATA) >
+<!ELEMENT material_description (#PCDATA) >
+<!ELEMENT other_notes (#PCDATA) >
+<!ELEMENT architectural_order (#PCDATA) >
+<!ELEMENT building_type (#PCDATA) >
+<!ELEMENT history (#PCDATA) >
+<!ELEMENT plan (#PCDATA) >
+<!ELEMENT see_also (#PCDATA) >
+<!ELEMENT architect (#PCDATA) >
+<!ELEMENT architect_evidence (#PCDATA) >
+<!ELEMENT actual_weight (#PCDATA) >
+<!ELEMENT commentary (#PCDATA) >
+<!ELEMENT denomination (#PCDATA) >
+<!ELEMENT die_axis (#PCDATA) >
+<!ELEMENT issuing_authority (#PCDATA) >
+<!ELEMENT obverse_legend (#PCDATA) >
+<!ELEMENT obverse_type (#PCDATA) >
+<!ELEMENT reverse_legend (#PCDATA) >
+<!ELEMENT reverse_type (#PCDATA) >
+<!ELEMENT category (#PCDATA) >
+<!ELEMENT object_function (#PCDATA) >
+<!ELEMENT graffiti (#PCDATA) >
+<!ELEMENT inscription (#PCDATA) >
+<!ELEMENT inscription_bibliography (#PCDATA) >
+<!ELEMENT original (#PCDATA) >
+<!ELEMENT original_or_copy (#PCDATA) >
+<!ELEMENT placement (#PCDATA) >
+<!ELEMENT primary_citation (#PCDATA) >
+<!ELEMENT scale (#PCDATA) >
+<!ELEMENT scale_for_sort (#PCDATA) >
+<!ELEMENT sculptor (#PCDATA) >
+<!ELEMENT sculptor_mod (#PCDATA) >
+<!ELEMENT style (#PCDATA) >
+<!ELEMENT form_style_description (#PCDATA) >
+<!ELEMENT subject_description (#PCDATA) >
+<!ELEMENT technique (#PCDATA) >
+<!ELEMENT technique_description (#PCDATA) >
+<!ELEMENT title (#PCDATA) >
+<!ELEMENT sculpture_type (#PCDATA) >
+<!ELEMENT in_group (#PCDATA) >
+<!ELEMENT in_whole (#PCDATA) >
+<!ELEMENT assoc_building (#PCDATA) >
+<!ELEMENT ceramic_phase (#PCDATA) >
+<!ELEMENT decoration_description (#PCDATA) >
+<!ELEMENT essay_number (#PCDATA) >
+<!ELEMENT essay_text (#PCDATA) >
+<!ELEMENT inscriptions (#PCDATA) >
+<!ELEMENT painter (#PCDATA) >
+<!ELEMENT painter_mod (#PCDATA) >
+<!ELEMENT attributed_by (#PCDATA) >
+<!ELEMENT potter (#PCDATA) >
+<!ELEMENT potter_mod (#PCDATA) >
+<!ELEMENT beazley_number (#PCDATA) >
+<!ELEMENT relief (#PCDATA) >
+<!ELEMENT shape (#PCDATA) >
+<!ELEMENT shape_description (#PCDATA) >
+<!ELEMENT ware (#PCDATA) >
+<!ELEMENT artifact (name | type | location | summary | perseus_version | entered_by | sources_used | 
+    other_bibliography | documentary_references | accession_number | region | extent | human_name | 
+    site_type | description | exploration | periods | physical | dimensions | start_date | start_mod | 
+    end_date | end_mod | unitary_date | unitary_mod | date_for_sort | period | period_for_sort | culture | 
+    context | context_mod | findspot | findspot_mod | collection | date_description | collection_history |
+    donor | condit | condition_description | comparanda | material | material_description | other_notes |
+    architectural_order | architect | architect_evidence | building_type | history | plan | see_also |
+    architect | architect_evidence | actual_weight | commentary | denomination | die_axis | issuing_authority |
+    obverse_legend | obverse_type | reverse_legend | reverse_type | category | object_function | 
+    graffiti | inscription | inscription_bibliography | original | original_or_copy | placement | primary_citation |
+    scale | scale_for_sort | sculptor | sculptor_mod | style | form_style_description | subject_description |
+    technique | technique_description | title | sculpture_type | in_group | in_whole | assoc_building |
+    ceramic_phase | decoration_description | essay_number | essay_text | inscriptions | painter | painter_mod |
+    attributed_by | potter | potter_mod | beazley_number | relief | shape | shape_description | ware)+ >
+<!ELEMENT Building (artifact)+ >
+<!ELEMENT Coin (artifact)+ >
+<!ELEMENT Gem (artifact)+ >
+<!ELEMENT Sculpture (artifact)+ >
+<!ELEMENT Site (artifact)+ >
+<!ELEMENT Vase (artifact)+ >
+
+<!-- Resolve any entities -->
+<!ENTITY % TEI.XML "INCLUDE">
+<!ENTITY % PersProse PUBLIC "-//Perseus P4//DTD Perseus Prose//EN" "http://www.perseus.tufts.edu/DTD/1.0/PersProse.dtd" >
+%PersProse;

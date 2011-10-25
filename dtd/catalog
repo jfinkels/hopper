@@ -1,0 +1,640 @@
+-- TEI DTD Entity Fragment Catalog File                     --
+ 
+-- This file defines two sets of formal public              --
+-- identifiers for TEI DTD fragments:  The first, with no   --
+-- version information, is intended for use when the        --
+-- reference is not to any particular version of the file   --
+-- in question; normally this should map to the most        --
+-- recent version of the element or entity set in           --
+-- question.  The second, with the date of the particular   --
+-- version, is intended to map only to the particular       --
+-- version indicated; it is for systems in which it is      --
+-- important for some reason to retain multiple versions    --
+-- of the TEI DTDs.                                         --
+ 
+-- This catalog file may be modified as part of the         --
+-- installation of the TEI DTDs on a system, in order to    --
+-- show the actual location of the DTD fragments on the     --
+-- system.                                                  --
+ 
+-- Revisions:                                               --
+-- 1996-05-13 : CMSMcQ : prepare for release                --
+-- 1995-09-09 : CMSMcQ : made file after long discussion    --
+
+-- Catalog entries override system identifier in doctype    --
+OVERRIDE YES
+ 
+-- Top Level Entities and Special Auxiliary Entities        --
+PUBLIC "-//TEI P3//DTD Main Document Type 1996-05//EN"
+       "tei/teifpi2.dtd"
+PUBLIC "-//TEI P3//DTD Main Document Type//EN"
+       "tei/teifpi2.dtd"
+PUBLIC "-//TEI//ENTITIES Formal Public Identifiers 
+        for TEI DTD Fragments 1996-05//EN"
+       "tei/teifpi2.ent"
+PUBLIC "-//TEI//ENTITIES Formal Public Identifiers 
+        for TEI DTD Fragments//EN"
+       "tei/teifpi2.ent"
+
+PUBLIC "-//W3C//DTD HTML 3.2//EN"
+	"html/html32.dtd"
+
+PUBLIC "-//TEI//DTD TEI Lite 1.0//EN"
+	"tei/teilite.dtd"
+PUBLIC "-//TEI U5-1995//DTD TEI Lite//EN"
+	"tei/teilite.dtd"
+PUBLIC "-//TEI U5-1995//DTD TEI Lite 1.0 Extensions//EN"
+	"empty.dtd"
+ 
+-- The TEI Main DTD, Top Level --
+--     %TEI.main.driver.dtd --
+PUBLIC "-//TEI P3//DTD Main DTD Driver File//EN"
+       "tei/tei2.dtd"
+PUBLIC "-//TEI P3//DTD Main DTD Driver File 1994-05//EN"
+       "tei/tei2.dtd"
+ 
+-- Special Entities for TEI Main DTD --
+--     %TEI.elementNames --
+PUBLIC "-//TEI P3//ENTITIES Generic Identifiers//EN"
+       "tei/teigis2.ent"
+PUBLIC "-//TEI P3//ENTITIES Generic Identifiers 1994-05//EN"
+       "tei/teigis2.ent"
+ 
+--     %TEI.keywords.ent --
+PUBLIC "-//TEI P3//ENTITIES TEI Keywords//EN"
+       "tei/teikey2.ent"
+PUBLIC "-//TEI P3//ENTITIES TEI Keywords 1994-05//EN"
+       "tei/teikey2.ent"
+ 
+--     %TEI.elementClasses --
+PUBLIC "-//TEI P3//ENTITIES TEI Element Classes//EN"
+       "tei/teiclas2.ent"
+PUBLIC "-//TEI P3//ENTITIES TEI Element Classes 1994-05//EN"
+       "tei/teiclas2.ent"
+ 
+ 
+-- TEI Core Element Sets --
+--     %TEI.header.dtd --
+PUBLIC "-//TEI P3//ELEMENTS TEI Header//EN"
+       "tei/teihdr2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS TEI Header 1994-05//EN"
+       "tei/teihdr2.dtd"
+ 
+--     %TEI.core.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Core Elements//EN"
+       "tei/teicore2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Core Elements 1994-05//EN"
+       "tei/teicore2.dtd"
+ 
+ 
+-- Default Text Structure --
+--     %TEI.structure.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Default Text Structure//EN"
+       "tei/teistr2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Default Text Structure 1994-05//EN"
+       "tei/teistr2.dtd"
+ 
+--     %TEI.front.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Front Matter//EN"
+       "tei/teifron2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Front Matter 1994-05//EN"
+       "tei/teifron2.dtd"
+ 
+--     %TEI.back.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Back Matter//EN"
+       "tei/teiback2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Back Matter 1994-05//EN"
+       "tei/teiback2.dtd"
+ 
+ 
+-- Base Element Sets --
+--     %TEI.prose.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Base Element Set for Prose//EN"
+       "tei/teipros2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Base Element Set for Prose 1994-05//EN"
+       "tei/teipros2.dtd"
+ 
+--     %TEI.verse.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Base Element Set for Verse//EN"
+       "tei/teivers2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Base Element Set for Verse 1994-05//EN"
+       "tei/teivers2.dtd"
+ 
+--     %TEI.verse.ent --
+PUBLIC "-//TEI P3//ENTITIES Element Classes for Verse//EN"
+       "tei/teivers2.ent"
+PUBLIC "-//TEI P3//ENTITIES Element Classes for Verse 1994-05//EN"
+       "tei/teivers2.ent"
+ 
+--     %TEI.drama.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Base Element Set for Drama//EN"
+       "tei/teidram2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Base Element Set for Drama 1994-05//EN"
+       "tei/teidram2.dtd"
+ 
+--     %TEI.drama.ent --
+PUBLIC "-//TEI P3//ENTITIES Element Classes for Drama//EN"
+       "tei/teidram2.ent"
+PUBLIC "-//TEI P3//ENTITIES Element Classes for Drama 1994-05//EN"
+       "tei/teidram2.ent"
+ 
+--     %TEI.spoken.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Base Element Set for 
+        Transcriptions of Speech//EN"
+       "tei/teispok2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Base Element Set for 
+        Transcriptions of Speech 1994-05//EN"
+       "tei/teispok2.dtd"
+ 
+--     %TEI.spoken.ent --
+PUBLIC "-//TEI P3//ENTITIES Element Classes
+        for Transcriptions of Speech//EN"
+       "tei/teispok2.ent"
+PUBLIC "-//TEI P3//ENTITIES Element Classes
+        for Transcriptions of Speech 1994-05//EN"
+       "tei/teispok2.ent"
+ 
+--     %TEI.dictionaries.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Base Element Set for Print Dictionaries//EN"
+       "tei/teidict2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Base Element Set
+        for Print Dictionaries 1994-05//EN"
+       "tei/teidict2.dtd"
+ 
+--     %TEI.dictionaries.ent --
+PUBLIC "-//TEI P3//ENTITIES Element Classes
+        for Print Dictionaries//EN"
+       "tei/teidict2.ent"
+PUBLIC "-//TEI P3//ENTITIES Element Classes
+        for Print Dictionaries 1994-05//EN"
+       "tei/teidict2.ent"
+ 
+--     %TEI.terminology.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Base Element Set
+        for Terminological Data//EN"
+       "tei/teiterm2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Base Element Set
+        for Terminological Data 1994-05//EN"
+       "tei/teiterm2.dtd"
+ 
+--     %TEI.terminology.ent --
+PUBLIC "-//TEI P3//ENTITIES Element Classes for Terminological Data//EN"
+       "tei/teiterm2.ent"
+
+PUBLIC "-//TEI P3//ENTITIES Element Classes
+        for Terminological Data 1994-05//EN"
+       "tei/teiterm2.ent"
+ 
+--     %termtags --
+PUBLIC "-//TEI P3//ELEMENTS Terminological Data
+        (Nested)//EN"
+       "tei/teite2n.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Terminological Data
+        (Nested) 1994-05//EN"
+       "tei/teite2n.dtd"
+ 
+--     %TEI.terminology.nested.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Terminological Data
+        (Nested)//EN"
+       "tei/teite2n.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Terminological Data
+        (Nested) 1994-05//EN"
+       "tei/teite2n.dtd"
+ 
+--     %TEI.terminology.flat.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Terminological Data
+        (Flat)//EN"
+       "tei/teite2f.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Terminological Data
+        (Flat) 1994-05//EN"
+       "tei/teite2f.dtd"
+ 
+--     %TEI.general.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Base Element Set for Texts (General)//EN"
+       "tei/teigen2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS General Base Element Set 1994-05//EN"
+       "tei/teigen2.dtd"
+ 
+--     %TEI.mixed.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Base Element Set for Mixed Text Types//EN"
+       "tei/teimix2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Base Element Set for Mixed Text Types 1994-05//EN"
+       "tei/teimix2.dtd"
+ 
+ 
+-- Additional Element Sets --
+ 
+--     %TEI.linking.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Additional Element Set
+        for Linking, Segmentation, and Alignment//EN"
+       "tei/teilink2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Additional Element Set
+        for Linking, Segmentation, and Alignment 1994-05//EN"
+       "tei/teilink2.dtd"
+ 
+--     %TEI.linking.ent --
+PUBLIC "-//TEI P3//ENTITIES Element Classes
+        for Linking, Segmentation, and Alignment//EN"
+       "tei/teilink2.ent"
+PUBLIC "-//TEI P3//ENTITIES Element Classes
+        for Linking, Segmentation, and Alignment 1994-05//EN"
+       "tei/teilink2.ent"
+ 
+--     %TEI.analysis.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Additional Element Set
+        for Simple Analysis//EN"
+       "tei/teiana2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Additional Element Set
+        for Simple Analysis 1994-05//EN"
+       "tei/teiana2.dtd"
+ 
+--     %TEI.analysis.ent --
+PUBLIC "-//TEI P3//ENTITIES Element Classes
+        for Simple Analysis//EN"
+       "tei/teiana2.ent"
+PUBLIC "-//TEI P3//ENTITIES Element Classes
+        for Simple Analysis 1994-05//EN"
+       "tei/teiana2.ent"
+ 
+--     %TEI.fs.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Additional Element Set
+        for Feature Structures//EN"
+       "tei/teifs2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Additional Element Set
+        for Feature Structures 1994-05//EN"
+       "tei/teifs2.dtd"
+ 
+--     %TEI.certainty.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Additional Element Set
+        for Certainty and Responsibility//EN"
+       "tei/teicert2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Additional Element Set
+        for Certainty and Responsibility 1994-05//EN"
+       "tei/teicert2.dtd"
+ 
+--     %TEI.transcr.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Additional Element Set
+        for Transcription of Primary Sources//EN"
+       "tei/teitran2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Additional Element Set
+        for Transcription of Primary Sources 1994-05//EN"
+       "tei/teitran2.dtd"
+ 
+--     %TEI.transcr.ent --
+PUBLIC "-//TEI P3//ENTITIES Element Classes
+        for Transcription of Primary Sources//EN"
+       "tei/teitran2.ent"
+PUBLIC "-//TEI P3//ENTITIES Element Classes
+        for Transcription of Primary Sources 1994-05//EN"
+       "tei/teitran2.ent"
+ 
+--     %TEI.textcrit.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Additional Element Set
+        for Critical Apparatus//EN"
+       "tei/teitc2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Additional Element Set
+        for Critical Apparatus 1994-05//EN"
+       "tei/teitc2.dtd"
+ 
+--     %TEI.textcrit.ent --
+PUBLIC "-//TEI P3//ENTITIES Element Classes
+        for Critical Apparatus//EN"
+       "tei/teitc2.ent"
+PUBLIC "-//TEI P3//ENTITIES Element Classes
+        for Critical Apparatus 1994-05//EN"
+       "tei/teitc2.ent"
+ 
+--     %TEI.names.dates.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Additional Element Set
+        for Names and Dates//EN"
+       "tei/teind2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Additional Element Set
+        for Names and Dates 1994-05//EN"
+       "tei/teind2.dtd"
+ 
+--     %TEI.names.dates.ent --
+PUBLIC "-//TEI P3//ENTITIES Element Classes
+        for Names and Dates//EN"
+       "tei/teind2.ent"
+PUBLIC "-//TEI P3//ENTITIES Element Classes
+        for Names and Dates 1994-05//EN"
+       "tei/teind2.ent"
+ 
+--     %TEI.nets.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Additional Element Set
+        for Graphs, Networks, and Trees//EN"
+       "tei/teinet2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Additional Element Set
+        for Graphs, Networks, and Trees 1994-05//EN"
+       "tei/teinet2.dtd"
+ 
+--     %TEI.figures.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Additional Element Set
+        for Tables, Formulae, and Graphics//EN"
+       "tei/teifig2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Additional Element Set
+        for Tables, Formulae, and Graphics 1994-05//EN"
+       "tei/teifig2.dtd"
+ 
+--     %TEI.figures.ent --
+PUBLIC "-//TEI P3//ENTITIES Formulae Notations and Contents//EN"
+       "tei/teifig2.ent"
+PUBLIC "-//TEI P3//ENTITIES Formulae Notations and Contents 1994-05//EN"
+       "tei/teifig2.ent"
+ 
+--     %TEI.corpus.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Additional Element Set
+        for Language Corpora//EN"
+       "tei/teicorp2.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Additional Element Set
+        for Language Corpora 1994-05//EN"
+       "tei/teicorp2.dtd"
+ 
+ 
+ 
+-- Auxiliary Document Types --
+--     %TEI.independent.header.dtd --
+PUBLIC "-//TEI P3//DTD Auxiliary Document Type:  
+        Independent TEI Header//EN"
+       "tei/teishd2.dtd"
+PUBLIC "-//TEI P3//DTD Auxiliary Document Type:  
+        Independent TEI Header 1994-05//EN"
+       "tei/teishd2.dtd"
+ 
+--     %TEI.writing.system.declaration.dtd --
+PUBLIC "-//TEI P3//DTD Auxiliary Document Type:  
+        Writing System Declaration//EN"
+       "tei/teiwsd2.dtd"
+PUBLIC "-//TEI P3//DTD Auxiliary Document Type:  
+        Writing System Declaration 1994-05//EN"
+       "tei/teiwsd2.dtd"
+ 
+--     %TEI.wsdNames --
+PUBLIC "-//TEI P3//ENTITIES Generic Identifiers 
+        for Writing System Declaration//EN"
+       "tei/wdgis2.ent"
+PUBLIC "-//TEI P3//ENTITIES Generic Identifiers 
+        for Writing System Declaration 1994-05//EN"
+       "tei/wdgis2.ent"
+ 
+--     %TEI.feature.system.declaration.dtd --
+PUBLIC "-//TEI P3//DTD Auxiliary Document Type:  
+        Feature System Declaration//EN"
+       "tei/teifsd2.dtd"
+PUBLIC "-//TEI P3//DTD Auxiliary Document Type:  
+        Feature System Declaration 1994-05//EN"
+       "tei/teifsd2.dtd"
+ 
+--     %TEI.tag.set.documentation.dtd --
+PUBLIC "-//TEI P3//DTD Auxiliary Document Type:  
+        Tag Set Documentation//EN"
+       "tei/teitsd2.dtd"
+PUBLIC "-//TEI P3//DTD Auxiliary Document Type:  
+        Tag Set Documentation 1994-05//EN"
+       "tei/teitsd2.dtd"
+ 
+--     %TEI.tsd.fragment.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Tag Set Documentation//EN"
+       "tei/teitsd2b.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Tag Set Documentation 1994-05//EN"
+       "tei/teitsd2b.dtd"
+ 
+--     %TEI.pages.lines.dtd --
+PUBLIC "-//TEI P3//DTD Concurrent Document Type:  
+        Pages and Lines//EN"
+       "tei/teipl2.dtd"
+PUBLIC "-//TEI P3//DTD Concurrent Document Type:  
+        Pages and Lines 1994-05//EN"
+       "tei/teipl2.dtd"
+ 
+ 
+-- Applications and Extensions --
+--     %TEI.P3.extensions.dtd --
+PUBLIC "-//TEI P3//DTD Extensions for TEI P3//EN"
+       "tei/p3x.dtd"
+PUBLIC "-//TEI P3//DTD Extensions for TEI P3 1994-05//EN"
+       "tei/p3x.dtd"
+ 
+--     %TEI.P3.extensions.ent --
+PUBLIC "-//TEI P3//ENTITIES Extensions for TEI P3//EN"
+       "tei/p3x.dtd"
+PUBLIC "-//TEI P3//ENTITIES Extensions for TEI P3 1994-05//EN"
+       "tei/p3x.dtd"
+ 
+ 
+-- p3x.dtd embeds part of the Tag Set Documentation DTD: --
+--     %TEI.tsd.fragment.dtd --
+PUBLIC "-//TEI P3//ELEMENTS Tag Set Documentation//EN"
+       "tei/teitsd2b.dtd"
+PUBLIC "-//TEI P3//ELEMENTS Tag Set Documentation 1994-05//EN"
+       "tei/teitsd2b.dtd"
+ 
+
+-- ISO SGML standard entities --
+
+PUBLIC "ISO 8879:1986//ENTITIES Added Latin 1//EN" 
+	"charent/sgml/isolat1.ent"
+PUBLIC "ISO 8879:1986//ENTITIES Added Latin 2//EN" 
+	"charent/sgml/isolat2.ent"
+PUBLIC "ISO 8879:1986//ENTITIES Numeric and Special Graphic//EN" 
+	"charent/sgml/isonum.ent"
+PUBLIC "ISO 8879:1986//ENTITIES Publishing//EN" 
+	"charent/sgml/isopub.ent"
+PUBLIC "ISO 8879:1986//ENTITIES Russian Cyrillic/EN" 
+	"charent/sgml/isocyr1.ent"
+PUBLIC "ISO 8879:1986//ENTITIES Non-Russian Cyrillic//EN" 
+	"charent/sgml/isocyr2.ent"
+PUBLIC "ISO 8879:1986//ENTITIES Diacritical Marks//EN" 
+	"charent/sgml/isodia.ent"
+PUBLIC "ISO 8879:1986//ENTITIES Greek Letters//EN" 
+	"charent/sgml/isogrk1.ent"
+PUBLIC "ISO 8879:1986//ENTITIES Monotoniko Greek//EN" 
+	"charent/sgml/isogrk2.ent"
+PUBLIC "ISO 8879:1986//ENTITIES Greek Symbols//EN" 
+	"charent/sgml/isogrk3.ent"
+PUBLIC "ISO 8879:1986//ENTITIES Alternative Greek Symbols//EN" 
+	"charent/sgml/isogrk4.ent"
+PUBLIC "ISO 8879:1986//ENTITIES General Technical//EN" 
+	"charent/sgml/isotech.ent"
+PUBLIC "-//TEI TR1 W4:1992//ENTITIES Basic Arabic Letters//EN" 
+	"charent/sgml/teiarb.ent"
+PUBLIC "-//TEI TR1 W4:1992//ENTITIES Coptic Letters//EN" 
+	"charent/sgml/teicop.ent"
+PUBLIC "-//TEI TR1 W4:1992//ENTITIES Extra Classial Greek Letters//EN" 
+	"charent/sgml/teigrk.ent"
+PUBLIC "-//TEI TR1 W4:1992//ENTITIES IPA symbols for interchange//EN" 
+	"charent/sgml/teiipa.ent"
+
+PUBLIC "ISO 8879-1986//ENTITIES Added Latin 1//EN" 
+	"charent/sgml/isolat1.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Added Latin 2//EN" 
+	"charent/sgml/isolat2.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Numeric and Special Graphic//EN" 
+	"charent/sgml/isonum.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Publishing//EN" 
+	"charent/sgml/isopub.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Russian Cyrillic/EN" 
+	"charent/sgml/isocyr1.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Non-Russian Cyrillic//EN" 
+	"charent/sgml/isocyr2.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Diacritical Marks//EN" 
+	"charent/sgml/isodia.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Greek Letters//EN" 
+	"charent/sgml/isogrk1.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Monotoniko Greek//EN" 
+	"charent/sgml/isogrk2.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Greek Symbols//EN" 
+	"charent/sgml/isogrk3.ent"
+PUBLIC "ISO 8879-1986//ENTITIES Alternative Greek Symbols//EN" 
+	"charent/sgml/isogrk4.ent"
+PUBLIC "ISO 8879-1986//ENTITIES General Technical//EN" 
+	"charent/sgml/isotech.ent" 
+
+-- Perseus SGML character entities --
+
+PUBLIC "-//Perseus P4//ENTITIES Perseus Character Entities//EN"
+        "charent/sgml/perseus.ent"
+
+-- ISO XML Standard entities --
+
+PUBLIC "ISO 8879:1986//ENTITIES Added Latin 1//EN//XML" 
+	"charent/xml/iso-lat1.ent"
+PUBLIC "ISO 8879:1986//ENTITIES Added Latin 2//EN//XML" 
+	"charent/xml/iso-lat2.ent"
+PUBLIC "ISO 8879:1986//ENTITIES Numeric and Special Graphic//EN//XML" 
+	"charent/xml/iso-num.ent"
+PUBLIC "ISO 8879:1986//ENTITIES Publishing//EN//XML" 
+	"charent/xml/iso-pub.ent"
+PUBLIC "ISO 8879:1986//ENTITIES General Technical//EN//XML" 
+	"charent/xml/iso-tech.ent"
+PUBLIC "ISO 8879:1986//ENTITIES Diacritical Marks//EN//XML" 
+	"charent/xml/iso-dia.ent"
+
+-- Perseus XML character entities --
+
+PUBLIC "-//Perseus P4//ENTITIES Perseus Character Entities//EN//XML"
+	"charent/xml/perseus.ent"
+
+-- Old Perseus DTD's --
+
+PUBLIC "-//Perseus//DTD Old Perseus English Epic//EN"
+	"perseus/epic.e.dtd"
+PUBLIC "-//Perseus//DTD Old Perseus Greek Epic//EN"
+	"perseus/epic.g.dtd"
+PUBLIC "-//Perseus//DTD Old Perseus English Ode//EN"
+	"perseus/ode.e.dtd"
+PUBLIC "-//Perseus//DTD Old Perseus Greek Ode//EN"
+	"perseus/ode.g.dtd"
+PUBLIC "-//Perseus//DTD Old Perseus English Oratory//EN"
+	"perseus/orator.e.dtd"
+PUBLIC "-//Perseus//DTD Old Perseus Greek Oratory//EN"
+	"perseus/orator.g.dtd"
+PUBLIC "-//Perseus//DTD Old Perseus English Prose//EN"
+	"perseus/prose.e.dtd"
+PUBLIC "-//Perseus//DTD Old Perseus Greek Prose//EN"
+	"perseus/prose.g.dtd"
+
+-- Perseus P3 extensions --
+
+PUBLIC "-//Perseus//DTD Perseus Drama//EN"
+	"perseus/PersDrama.dtd"
+PUBLIC "-//Perseus//DTD Perseus Prose//EN"
+	"perseus/PersProse.dtd"
+PUBLIC "-//Perseus//DTD Perseus Verse//EN"
+	"perseus/PersVerse.dtd"
+PUBLIC "-//Perseus//ENTITIES Perseus Verse//EN"
+	"perseus/PersVerse.ent"
+PUBLIC "-//Perseus//DTD Perseus Shakespeare//EN"
+	"perseus/shake.dtd"
+PUBLIC "-//Perseus//DTD Perseus Dictionaries//EN"
+	"perseus/PersDict.dtd"
+PUBLIC "-//Perseus//DTD Perseus TEI header//EN"
+	"perseus/PersTeiHead.dtd"
+PUBLIC "-//Perseus//ENTITIES Perseus TEI extensions//EN"
+	"perseus/PersTeiExt.ent"
+PUBLIC "-//Perseus//DTD Perseus TEI extensions//EN"
+	"perseus/PersTeiExt.dtd"
+PUBLIC "-//Perseus//DTD Perseus TEI Common Declarations//EN"
+	"perseus/PersTeiCommon.dtd"
+PUBLIC "-//Perseus//ENTITIES Perseus Information Extraction//EN"
+	"perseus/PersTemplates.ent"
+
+-- Library of Congress --
+
+PUBLIC "-//Library of Congress - Historical Collections (American Memory)//DTD ammem.dtd//EN"
+	"ext/ammem2p.dtd"
+
+-- TEI Lite --
+
+PUBLIC	"-//TEI//DTD TEI Lite XML ver. 1//EN"
+	"xml/teixlite.dtd"
+
+-- Perseus P4 extensions --
+
+PUBLIC "-//Perseus P4//DTD Perseus Drama//EN"
+	"perseusp4/PersDrama.dtd"
+PUBLIC "-//Perseus P4//DTD Perseus Prose//EN"
+	"perseusp4/PersProse.dtd"
+PUBLIC "-//Perseus P4//DTD Perseus Verse//EN"
+	"perseusp4/PersVerse.dtd"
+PUBLIC "-//Perseus P4//DTD Perseus Dictionaries//EN"
+	"perseusp4/PersDict.dtd"
+PUBLIC "-//Perseus P4//DTD Perseus TEI header//EN"
+	"perseusp4/PersTeiHead.dtd"
+PUBLIC "-//Perseus P4//ENTITIES Perseus TEI extensions//EN"
+	"perseusp4/PersTeiExt.ent"
+PUBLIC "-//Perseus P4//DTD Perseus TEI extensions//EN"
+	"perseusp4/PersTeiExt.dtd"
+PUBLIC "-//Perseus P4//DTD Perseus TEI Common Declarations//EN"
+	"perseusp4/PersTeiCommon.dtd"
+PUBLIC "-//Perseus P4//ENTITIES Perseus Information Extraction//EN"
+	"perseusp4/PersTemplates.ent"
+
+-- TEI P4 public identifiers --
+
+PUBLIC "-//TEI P4//ELEMENTS Additional Element Set for Simple Analysis//EN" "teip4/teiana2.dtd"
+PUBLIC "-//TEI P4//ENTITIES Element Classes for Simple Analysis//EN" "teip4/teiana2.ent"
+PUBLIC "-//TEI P4//ELEMENTS Back Matter//EN" "teip4/teiback2.dtd"
+PUBLIC "-//TEI P4//ENTITIES TEI ElementClasses//EN" "teip4/teiclas2.ent"
+PUBLIC "-//TEI P4//ELEMENTS Core Elements//EN" "teip4/teicore2.dtd"
+PUBLIC "-//TEI P4//ELEMENTS Front Matter//EN" "teip4/teifron2.dtd"
+PUBLIC "-//TEI P4//ELEMENTS TEI Header//EN" "teip4/teihdr2.dtd"
+PUBLIC "-//TEI P4//ELEMENTS Default Text Structure//EN" "teip4/teistr2.dtd"
+PUBLIC "-//TEI P4//ELEMENTS Additional Element Set for Certainty and Responsibility//EN" "teip4/teicert2.dtd"
+PUBLIC "-//TEI P4//ELEMENTS Additional Element Set for Language Corpora//EN" "teip4/teicorp2.dtd"
+PUBLIC "-//TEI P4//ELEMENTS Base Element Set for Print Dictionaries//EN" "teip4/teidict2.dtd"
+PUBLIC "-//TEI P4//ENTITIES Element Classes for Print Dictionaries//EN" "teip4/teidict2.ent"
+PUBLIC "-//TEI P4//ELEMENTS Base Element Set for Drama 2001-12//EN" "teip4/teidram2.dtd"
+PUBLIC "-//TEI P4//ENTITIES Element Classes for Drama//EN" "teip4/teidram2.ent"
+PUBLIC "-//TEI P4//ELEMENTS Additional Element Set for Tables, Formulae, and Graphics//EN" "teip4/teifig2.dtd"
+PUBLIC "-//TEI P4//ENTITIES Formulae Notations and Contents//EN" "teip4/teifig2.ent"
+PUBLIC "-//TEI P4//DTD Auxiliary Document Type:  Feature System Declaration//EN" "teip4/teifsd2.dtd"
+PUBLIC "-//TEI P4//ELEMENTS Additional Element Set for Feature Structure Annotation//EN" "teip4/teifs2.dtd"
+PUBLIC "-//TEI P4//ELEMENTS General Base Element Set//EN" "teip4/teigen2.dtd"
+PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN" "teip4/tei2.dtd"
+PUBLIC "-//TEI P4//ENTITIES Generic Identifiers//EN" "teip4/teigis2.ent"
+PUBLIC "-//TEI P4//ENTITIES TEI Keywords//EN" "teip4/teikey2.ent"
+PUBLIC "-//TEI P4//ELEMENTS Additional Element Set for Linking, Segmentation, and Alignment//EN" "teip4/teilink2.dtd"
+PUBLIC "-//TEI P4//ENTITIES Element Classes for Linking, Segmentation, and Alignment//EN" "teip4/teilink2.ent"
+PUBLIC "-//TEI P4//ELEMENTS Base Element Set for Mixed Text Types//EN" "teip4/teimix2.dtd"
+PUBLIC "-//TEI P4//ELEMENTS Additional Element Set for Names and Dates//EN" "teip4/teind2.dtd"
+PUBLIC "-//TEI P4//ENTITIES Element Classes for Names and Dates//EN" "teip4/teind2.ent"
+PUBLIC "-//TEI P4//ELEMENTS Additional Element Set for Graphs, Networks, and Trees//EN" "teip4/teinet2.dtd"
+PUBLIC "-//TEI P4//ELEMENTS Base Element Set for Prose//EN" "teip4/teipros2.dtd"
+PUBLIC "-//TEI P4//DTD Auxiliary Document Type: Independent TEI Header//EN" "teip4/teishd2.dtd"
+PUBLIC "-//TEI P4//ELEMENTS Base Element Set for Transcriptions of Speech//EN" "teip4/teispok2.dtd"
+PUBLIC "-//TEI P4//ENTITIES Element Classes for Transcriptions of Speech//EN" "teip4/teispok2.ent"
+PUBLIC "-//TEI P4//ELEMENTS Additional Element Set for Text-Critical Apparatus//EN" "teip4/teitc2.dtd"
+PUBLIC "-//TEI P4//ENTITIES Element Classes for Critical Apparatus//EN" "teip4/teitc2.ent"
+PUBLIC "-//TEI P4//ELEMENTS Base Element Set for Terminological Data//EN" "teip4/teiterm2.dtd"
+PUBLIC "-//TEI P4//ENTITIES Element Classes for Terminological Data//EN" "teip4/teiterm2.ent"
+PUBLIC "-//TEI P4//ELEMENTS Terminological Databases (Flat)//EN" "teip4/teite2f.dtd"
+PUBLIC "-//TEI P4//ELEMENTS Terminological Databases (Nested)//EN" "teip4/teite2n.dtd"
+PUBLIC "-//TEI P4//ELEMENTS Additional Element Set for Transcription of Primary Sources//EN" "teip4/teitran2.dtd"
+PUBLIC "-//TEI P4//ENTITIES Element Classes for Transcription of Primary Sources//EN" "teip4/teitran2.ent"
+PUBLIC "-//TEI P4//DTD Auxiliary Document Type: Tag Set Documentation//EN" "teip4/teitsd2.dtd"
+PUBLIC "-//TEI P4//ELEMENTS Base Element Set for Verse//EN" "teip4/teivers2.dtd"
+PUBLIC "-//TEI P4//ENTITIES Element Classes for Verse//EN" "teip4/teivers2.ent"
+PUBLIC "-//TEI P4//DTD Auxiliary Document Type: Writing System Declaration//EN" "teip4/teiwsd2.dtd"
+PUBLIC "-//TEI P4//DTD Concurrent Document Type: Pages and Lines//EN" "teip4/teipl2.dtd"
+

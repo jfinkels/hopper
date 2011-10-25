@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="perseus.morph">
+    <class name="Parse" table="hib_parses" batch-size="10">
+	<id name="id" type="int" column="id" unsaved-value="null">
+	    <generator class="native" />
+	</id>
+
+            <many-to-one name="lemma" column="lemma_id" not-null="true"
+                index="form_lemma lemma_id" />
+
+            <!-- When we have more time, replace this with a map! -->
+
+            <property name="morphCode" column="morph_code" type="string"
+                length="13" index="lemma_id" />
+            <property name="expandedForm" column="expanded_form" type="string"
+                length="75" index="lemma_id" />
+	
+	<property name="form" type="string" length="75" not-null="true"
+            index="form_idx form_lemma lemma_id" />
+
+	<property name="bareForm" column="bare_form" type="string"
+	    length="75" index="bare_form_idx" />
+
+	<!-- these need to be handled differently from the rest of the
+	     features, since they may contain multiple values -->
+	<property name="dialects" column="dialects" type="string" length="50" />
+	<property name="miscellaneousFeatures" column="misc_features"
+	    type="string" length="50" />
+    </class>
+</hibernate-mapping>

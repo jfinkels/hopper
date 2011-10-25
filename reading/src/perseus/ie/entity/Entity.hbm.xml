@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="perseus.ie.entity">
+
+    <class name="Entity" table="hib_entities" batch-size="10" lazy="true">
+	<id name="id" type="int" column="id">
+	    <generator class="native" />
+	</id>
+	<discriminator column="entity_type" type="string" />
+
+	  <property name="authorityName" type="string"
+	      index="auth_name_idx" column="auth_name" length="75"/>
+
+	<property name="displayName" type="string" column="display_name"
+	    index="display_name_idx" length="150" />
+	<property name="sortableString" type="string" column="sort_string"
+	    index="sort_string_idx" length="150" />
+
+        <property name="maxOccurrenceCount" type="long" column="max_occ" />
+        <property name="minOccurrenceCount" type="long" column="min_occ" />
+
+        <property name="documentCount" type="int" column="doc_count" />
+        <property name="inverseDocumentFrequency" type="double" column="idf" />
+
+        <set name="votes" inverse="true">
+            <key column="entity_id" on-delete="cascade" />
+            <one-to-many class="perseus.voting.Vote" />
+        </set>
+
+        <set name="frequencies" inverse="true">
+            <key column="entity_id" on-delete="cascade" />
+            <one-to-many class="perseus.ie.freq.Frequency" />
+        </set>
+
+        <subclass name="AbstractEntity">
+        
+            <subclass name="Place" discriminator-value="Place">
+            <join table="hib_places">
+                <key column="place_id" />
+                <property name="longitude" column="place_longitude"
+                    type="double" index="long_idx loc_idx" />
+                <property name="latitude" column="place_latitude"
+                    type="double" index="lat_idx loc_idx" />
+
+                <property name="siteName" column="place_site_name" type="string"
+                    index="site_idx" length="80" />
+                <property name="state" column="place_state" type="string"
+                    index="state_idx" length="60" />
+                <property name="nation" column="place_nation" type="string"
+                    index="nation_idx" length="60" />
+            </join>
+            </subclass>
+
+            <subclass name="Person" discriminator-value="Person">
+                 <list name="names" table="hib_person_names" batch-size="10">
+                    <key column="person_id" not-null="true" />
+                    <index column="position" />
+                    <composite-element class="Person$PersonName">
+                        <property name="nameType" type="string" length="15" index="nameType_name nameType_initial"/>
+                        <property name="name" type="string" length="50" index="nameType_name name "/>
+                        <property name="initial" type="string" length="1" index="nameType_initial" />
+                    </composite-element>
+                </list>
+            </subclass>
+
+            <subclass name="Date" discriminator-value="Date">
+            <join table="hib_dates">
+               <key column="date_id" />
+
+                <property name="year" column="date_year" type="int"
+                    index="year_idx y_m_idx y_m_d_idx" />
+                <property name="month" column="date_month" type="int"
+                    index="month_idx y_m_idx m_d_idx y_m_d_idx" />
+                <property name="day" column="date_day" type="int"
+                    index="day_idx m_d_idx y_m_d_idx" />
+                <property name="hour" column="date_hour" type="int"
+                    index="hour_idx" />
+                <property name="minute" column="date_minute" type="int"
+                    index="minute_idx" />
+                <property name="second" column="date_second" type="int"
+                    index="second_idx" />
+                <property name="secondFraction" column="date_sec_fraction"
+                        type="double" index="second_frac_idx" />
+              </join>
+            </subclass>
+            
+            <subclass name="DateRange" discriminator-value="DateRange">
+            <join table="hib_date_ranges">
+                <key column="date_range_id" />
+
+                <!-- These would be declared not-null if we were using a different
+                    mapping strategy. We'll be extra careful to ensure that they
+                    don't end up null somehow. -->
+                <many-to-one name="startDate" column="date_range_start_date_id"
+                             class="perseus.ie.entity.Date"
+                             cascade="all" />
+                <many-to-one name="endDate" column="date_range_end_date_id"
+                             class="perseus.ie.entity.Date"
+                             cascade="all" />
+             </join>
+            </subclass>
+        </subclass>
+
+		<subclass name="perseus.morph.Lemma" discriminator-value="Lemma">
+		    <set name="lexiconChunks" table="hib_chunks" lazy="false" inverse="true">
+				<key column="lemma_id" />
+				<one-to-many class="perseus.document.dao.HibernateChunkDAO$ChunkRow" />
+	    	</set>
+
+            <set name="parses" inverse="true" cascade="all" lazy="true">
+                <key column="lemma_id" on-delete="cascade" />
+                <one-to-many class="perseus.morph.Parse" />
+            </set>
+			<join table="hib_lemmas">
+				<key column="lemma_id" />
+	    		<property name="headword" column="lemma_text" type="string"
+					index="lemma_idx" length="100" />
+				<property name="bareHeadword" column="bare_headword" type="string" length="100"
+					index="bare_idx" />
+	   			<property name="sequenceNumber"
+		    		column="lemma_sequence_number"
+		    		index="lemma_idx"
+		    		type="int" />
+	    		<many-to-one name="language" column="lemma_lang_id"
+		    		index="lemma_idx" />
+	    		<property name="shortDefinition"
+		    		column="lemma_short_def" type="string" />
+			</join>
+		</subclass>
+
+        <!--
+        <subclass name="perseus.voting.Sense">
+            <many-to-one name="lexiconEntry" column="chunk_id"
+                     index="senseChunkID" />
+
+            <property name="indicator" type="string" length="10" />
+            <property name="level" type="int" />
+            <property name="shortDefinition" column="short_def"
+                type="string" length="150" />
+        </subclass>
+        -->
+
+    </class>
+
+    <database-object>
+        <create>create index type_idx on hib_entities (entity_type)</create>
+        <drop></drop>
+    </database-object>
+</hibernate-mapping>

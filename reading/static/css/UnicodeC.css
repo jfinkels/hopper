@@ -1,0 +1,12 @@
+/* intentionally left blank; placeholder for future customization */
+.greek {
+  font-family: "New Athena Unicode", Gentium, "Palatino Linotype", "Lucida Grande", Galilee, "Arial Unicode MS", sans-serif;
+}
+
+.greek #side_toc {
+    font-size: 110%;
+}
+
+.serif .greek {
+    font-family: Gentium, Cardo, serif;
+}

@@ -1,0 +1,1139 @@
+/* OVERARCHING DOCUMENT STRUCTURE */
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+body {
+    margin: 0;
+    font-family: "Lucida Grande",Verdana,Helvetica,Arial,sans-serif;
+}
+
+div#header {
+    margin: 0;
+    vertical-align: 40px;
+    float: left;
+    width: 100%;
+}
+
+/* HEADER-SPECIFIC MARKUP */
+
+div#header a#logo {
+    display: block;
+    background: url(/img/new-rm-logo2.gif) no-repeat;
+    height: 80px;
+    width: 100px;
+    float: left;
+    margin: 3px;
+}
+
+div#header a#banner {
+    background: url(/img/newbanner.png) no-repeat;
+    height: 75px;
+    width: 425px;
+    float: left;
+    margin: 3px;
+}
+
+div#header div#header_text {
+    display: block;
+    float: left;
+    width: 50%;
+}
+
+div#header h1 {
+    font-family: Garamond,Times,serif;
+    font-size: 18px;
+    margin: 2px auto;
+    float: left;
+
+    display: block;
+    margin-top: 10px;
+}
+
+div#header h4 {
+    float: left;
+    font-size: 12px;
+    margin-top: 2px;
+    clear: both;
+}
+
+/* RIGHT SIDE of header */
+
+div#header_side {
+    float: right;
+    font-size: small;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+
+div#header_side p {
+    margin-bottom: 0;
+    margin-top: 0.3em;
+}
+
+div#main {
+    clear: both;
+}
+
+/* This is used for tabs, the navigational bar in texts, etc. */
+div#main_top {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 6px;
+    float: left;
+    width: 100%;
+    clear: both;
+}
+
+div#content {
+    margin-top: 0px;
+    clear: both;
+    padding: 0;
+
+    margin-left: 5px;
+    margin-right: 5px;
+
+    position: relative;
+}
+
+div#navbar_wrapper {
+    background-color: #fff;
+}
+
+#navbar_help, #navbar_help * {
+    margin-top: 0;
+}
+
+/* THREE-COLUMN LAYOUT */
+div#left_col {
+    float: left;
+    width: 12%;
+}
+
+div#center_col {
+    float: left;
+    margin-left: 1%;
+    width: 44%;
+}
+
+div#right_col {
+    float: left;
+    margin-left: 1%;
+    width: 41%;
+}
+
+/* TWO-COLUMN LAYOUT */
+div#main_col, div#index_main_col {
+    float: left;
+    margin-left: 1%;
+}
+
+div#main_col {
+    width: 58%;
+}
+
+div#index_main_col {
+	width: 74%;
+}
+
+div#side_col, div#img_side_col {
+    float: right;
+    margin-left: 1%;
+}
+
+div#side_col {
+    width: 38%;
+}
+
+div#img_side_col {
+	width: 24%;
+	text-align: center;
+}
+
+div#enter_greek {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* TRAILING MATTER */
+
+div#contact_info {
+    font-size: small;
+}
+
+/* REDIRECT LAYER */
+div#redirect {
+	position:absolute;
+	width: 500px;
+	margin-right:auto;
+	margin-left:-250px;
+	text-align: center;
+	border: medium solid #C56352; 
+	background-color: #F1F1F1;
+	padding: 5px;
+	top: 50%;
+	left: 50%;
+}
+
+#redirect p.close {
+	font-size:x-small;
+}
+
+#redirect p.greek {
+	font-size:small;
+}
+
+div#jumphelp {
+	position:absolute;
+	width: 120px;
+	text-align: center;
+	border: thin solid; 
+	background-color: paleGoldenRod;
+	padding: 3px;
+	left: 50%;
+	font-size:x-small;
+}
+
+/* SEARCHING */
+
+div.search_result {
+    background-color: #eee;
+    margin-bottom: 10px;
+    padding: 2px;
+}
+
+div.search_field {
+	margin-bottom: 10px;
+}
+
+span.expand {
+	font-size:x-small;
+}
+
+form#header_jump_form {
+    float: right;
+}
+
+/* LIST DOCUMENTS (ie on collection page) */
+div#documents {
+    font-size: 13px;
+}
+
+ul.subdoc {
+    margin-bottom: 0.2em;
+    margin-top: 0.2em;
+}
+
+/* BOXES (contain data but are larger than sideboxes */
+
+div.box {
+    padding: 3px;
+    margin: 15px 8px;
+
+    background-color: #f1f2ea;
+    border: 2px groove #d1d2ba;
+}
+
+div.box h4 {
+    text-align: center;
+    margin-top: 5px;
+    font-family: Times,serif;
+}
+
+div.box li {
+    font-size: small;
+}
+
+/* TABS */
+
+div#tabs, div#subtabs {
+    border-top: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+div#tabs {
+	background-color: #888;
+}
+
+div#subtabs {
+    background-color: #AAA;
+}
+
+div#tabs a.tab_active, div#tabs a.tab, div#subtabs a.tab_active, div#subtabs a.tab  {
+    display: block;
+    float: left;
+    padding: 1px 6px 0 6px;
+    margin-left: 25px;
+    margin-bottom: 0;
+    text-decoration: none;
+    font-size: small;
+}
+
+div#tabs a.tab_active, div#subtabs a.tab_active {
+    background-color: #FFF;
+    color: black;
+}
+
+div#tabs a.tab, div#subtabs a.tab {
+    color: #eee;
+}
+
+form {
+    font-size: small;
+}
+
+/* EXHIBITS (only on front page) */
+
+div#exhibits {
+    text-align: center;
+}
+
+div#exhibits img {
+    border-width: 0;
+    width: 180px;
+}
+
+/* INSET BOXES (word count, e.g.) */
+div.box_inset {
+    clear: right;
+    text-align: center;
+    font-size: small;
+
+    border: 4px groove #666;
+    background-color: #eee;
+    padding: 5px;
+    margin: 20px 10px;
+}
+
+div.box_inset table {
+    width: 100%;
+    font-size: x-small;
+}
+div.box_inset th.coll {
+    width: 40%;
+    font-weight: normal;
+    text-align: left;
+}
+
+div.box_inset td.graph {
+    width: 60%;
+    text-align: left;
+}
+
+div.box_inset div.bar {
+    background-color: blue;
+}
+
+
+/* CITATION LISTS */
+
+ul.cits, ul.cits_sub {
+    list-style-type: none;
+    margin-left: 10px;
+    padding-left: 0;
+}
+
+ul.cits > li {
+    margin-bottom: 10px;
+    padding-bottom: 0;
+}
+
+img.logo {
+    border: 0;
+    margin-right: 20%;
+}
+
+/* PUBLICATIONS */
+ul.publications {
+	list-style-type: none;
+	font-size: 14px;
+}
+
+ul.publications li {
+	padding-bottom: 10px;
+}
+
+/* SIDE-BOXES (left column of text page) */
+
+div.sidebox {
+    margin-bottom: 20px;
+    padding: 5px;
+    background-color: #ccc;
+    font-size: x-small;
+}
+
+div.sidebox h5 {
+    font-size: 11px;
+    font-weight: bold;
+
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+div.sidebox ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+div.sidebox li {
+    margin: 4px 0;
+    padding: 0;
+}
+
+/* CENTER COLUMN of text page */
+
+div#header_nav h5 {
+    margin: 0;
+    float: left;
+    width: auto;
+    font-size: small;
+    font-weight: bold;
+}
+
+div#header_nav h5 a {
+    text-decoration: none;
+}
+
+div#text_nav {
+    border: 0px solid yellow;
+    width: 100%;
+}
+
+div#text_main {
+    clear: both;
+}
+
+div#text_footer {
+    font-size: small;
+}
+
+div.rights_info {
+    clear: both;
+    font-size: x-small;
+    background-color: #eee;
+    padding: 2px;
+    margin-top: 1em;
+}
+
+p.cc_rights img {
+    float: left;
+    margin-right: 4px;
+}
+
+ul.rights {
+    margin-left: -10px;
+    padding-left: -10px;
+    list-style-type: none;
+}
+
+div#foot_nav {
+    vertical-align: bottom;
+}
+
+/** Larger Table **/
+/* DATA-TABLE DISPLAY (word frequencies, vocab, etc.) */
+
+table.large-data {
+  width: 90%;	
+  font-size: large;
+  border-spacing: 1px;
+  margin-bottom: 10px;
+}
+table.large-data th {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+  padding: 0 8px;
+}
+
+table.large-data th a {
+    color: black;
+    text-decoration: none;
+}
+table.large-data th a:hover {
+    text-decoration: underline;
+}
+
+table.large-data tr td {
+  padding: 3px 8px;
+  background-color: #cccccc;
+}
+table.large-data tr.odd td {
+  background-color: #ffffff;
+}
+
+table.large-data td {
+    text-align: right;
+}
+
+table.large-data td.work {
+    text-align: left;
+}
+
+
+/* NAVIGATION FRILLS (arrows, XML image) */
+
+.arrow {
+    display: block;
+    float: left;
+    margin: 2px 0 2px 4px;
+    border: 0px solid purple;
+    width: 16px;
+    height: 15px;
+}
+
+.prev {
+    background: top left url(/img/prev.gif) no-repeat;
+}
+
+.next {
+    background: top left url(/img/next.gif) no-repeat;
+}
+
+.xml img {
+    float: left;
+}
+
+/* ACTUAL TEXT DISPLAY */
+a.text {
+    color: black;
+    text-decoration: none;
+}
+
+a.text:hover {
+    text-decoration: underline;
+}
+
+a.text:visited {
+    color: black;
+    text-decoration: none;
+}
+
+a.text:active {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* WIDGETS (right column of text page) */
+
+div.widget, div.search_widget {
+    clear: both;
+    margin-top: 10px;
+    width: 100%;
+}
+
+div.widget:first-child {
+    margin-top: 0;
+}
+
+div.widget div.header, div.search_widget div.header, div.search_widget div.neheader {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    background-color: #cccccc;
+    padding: 5px 3px;
+    margin: auto 0;
+}
+
+div.widget div.header {
+    font-size: x-small;
+}
+
+div.search_widget div.header {
+	font-size: small;
+}
+
+div.widget div.header a, div.search_widget div.header a {
+    display: block;
+    float: right;
+    padding-left: 3px;
+}
+
+div.widget div.contents, div.search_widget div.contents {
+    padding: 4px;
+    background-color: #eeeeee;
+}
+
+/* PRIMARY widgets are translations and commentaries. */
+div.primary {
+    font-size: small;
+}
+
+/* SECONDARY widgets are everything else. */
+div.secondary {
+    font-size: x-small;
+}
+
+div.widget form {
+    font-size: x-small;
+}
+
+/* TIMELINES */
+
+table.timeline {
+    border-spacing: 0;
+}
+
+table.timeline * {
+    text-align: right;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+table.timeline td {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    padding-right: 5px;
+    line-height: 1em;
+}
+
+table.timeline td.work {
+    width: 20%;
+    max-height: 30px;
+    min-width: 100px;
+    overflow: hidden;
+}
+
+td.timeline_row input, td.row_header input {
+    float: left;
+}
+
+table.timeline a {
+    color: black;
+    text-decoration: none;
+}
+
+/* DATA-TABLE DISPLAY (word frequencies, vocab, etc.) */
+
+table.data {
+  font-size: x-small;
+  margin-bottom: 10px;
+  border-spacing: 0;
+  width: 100%;
+}
+table.data th {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+  padding: 0 8px;
+  border-spacing: 0;
+}
+
+table.data th a {
+    color: black;
+    text-decoration: none;
+}
+table.data th a:hover {
+    text-decoration: underline;
+}
+
+table.data tr td {
+  padding: 3px 8px;
+  background-color: #dddddd;
+}
+table.data tr.odd td {
+  background-color: #ffffff;
+}
+
+table.data td {
+    text-align: right;
+}
+
+table.data td.work {
+    text-align: left;
+}
+    
+/* LEMMAS IN MORPHOLOGICAL ANALYSES */
+
+div.analysis {
+    border: 1px solid #bbb;
+    padding: 5px;
+}
+
+div.lemma .lemma_header {
+    width: 100%;
+}
+
+div.lemma h4 {
+    float: left;
+    margin: 0;
+    font-size: small;
+}
+
+div.lemma .lemma_definition {
+    float: right;
+    text-align: right;
+    font-size: small;
+    font-weight: normal;
+}
+
+div.lemma p {
+    font-size: small;
+    clear: both;
+    margin: 6px 0;
+}
+
+div.lemma table {
+    background-color: #ccc;
+    border-spacing: 0;
+    border-top: 1px solid black;
+    width: 100%;
+}
+
+div.lemma table td {
+    background-color: white;
+    font-size: small;
+}
+
+h6.word_freq {
+    margin-bottom: 0.5em;
+    font-weight: normal;
+}
+
+div.note {
+    font-size: x-small;
+    padding: 3px 8px;
+    margin-bottom: 10px;
+    background-color: #ccc;
+    border: 1px solid black;
+}
+
+div.lexicon_entry p.new_window_link {
+    font-family: serif;
+}
+
+/* SENSES */
+
+div.lex_sense {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+div.lex_sense1 {
+    margin: 10px auto;
+}
+
+div.lex_sense2 { margin-left: 50px; }
+div.lex_sense3 { margin-left: 100px; }
+div.lex_sense4 { margin-left: 150px; }
+
+/* SPAN-LEVEL STYLES */
+
+.title {
+    font-style: italic;
+}
+
+.warning {
+    font-weight: bold;
+}
+
+.form_count {
+    font-weight: bold;
+}
+
+.linked_term {
+    text-decoration: underline;
+}
+
+/* Note the existence of a separate div.search_result rule;
+    the <span> is intended to be used on the specific tokens
+    that match the search, not the entire search result
+    */
+span.search_result, span.match {
+    background-color: #9999ff;
+}
+
+span.more_results {
+    font-style: italic;
+}
+
+.help_note {
+  font-size: x-small;
+  font-weight: bold;
+}
+
+/* TOOLS */
+
+.tool {
+    background-color: #eee;
+    border: solid 1px #f6f6f6;
+    margin-bottom: 10px;
+    padding: 4px;
+    padding-left: 10px;
+
+    width: 100%;
+}
+
+.tool h4 {
+    margin: 2px auto 10px auto;
+}
+
+.tool p, .tool td {
+    font-size: small;
+    margin: 0 auto 4px auto;
+}
+/* MORPHOLOGICAL DISAMBIGUATION */
+div.lemma tr.winner td, tr.winner td {
+    background-color: #ecc;
+}
+
+div#votes * {
+    font-size: x-small;
+}
+
+div#votes th {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+div#votes td {
+    border-bottom: 1px solid black;
+}
+
+div#votes {
+    display: none;
+}
+/* IMAGE COLLECTION THUMBNAILS */
+
+div.thumbnail {
+  float: left;
+  width: 200px;
+  height: 180px;
+  margin: 2px;
+  text-align: center;
+}
+
+img.thumb_img {
+    border: 1px solid black;
+}
+
+img.standard_img {
+ border: 1px solid black;
+ margin: 5px;
+ float: right;
+ width: 100%;
+ height: auto;
+}
+
+div.caption {
+  font-size: small;
+}
+
+/* NAMED-ENTITY STUFF */
+
+.list_element {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.linenumber {
+  font-size: small;
+}
+
+.place:hover {
+  /* background-color: #aaaaee; */
+}
+
+.ship:hover {
+  /* background-color: #aaeeee; */
+  /* text-decoration: underline; */
+}
+
+.person:hover {
+  /* background-color: #eeaaaa; */
+}
+
+.surname:hover {
+  /* font-weight: bold; */
+}
+
+.forename:hover {
+  /* font-style: italic; */
+}
+
+.date:hover {
+  /* background-color: #aaeeaa; */
+}
+
+.ref:hover {
+  /* background-color: #ffa500; */
+}
+
+.orgname:hover {
+  /* background-color: yellow; */
+}
+
+div.embeddedtext {
+  padding: 5px;
+  background-color: #eeeeee;
+}
+
+/* Holinshed styles */
+
+span.note.margin.old
+{
+	float: right;
+	width: 20%;
+	text-align: left;
+	padding: 1em;
+	color: #003;
+	border: solid black 0px;
+	border-width: 0 1px 0px 0;
+	margin: -1px 0.5em 0.2em -1px;
+	clear: both;
+	background-color: #FFC;
+	font-size: x-small;
+	line-height: 15px;
+}
+
+span.note.margin
+{
+	float: right;
+	clear: both;
+	width: 20%;
+	text-align: left;
+	padding: 1em;
+	font-size: x-small;
+}
+
+span.note.margin.rubric
+{
+	color: red;
+}
+
+h1.div.head
+{
+	font-size: small;
+	font-weight: bold;
+}
+
+h1.list.head
+{
+	font-size: x-small;
+	font-weight: bold;
+}
+
+/* Marlowe */
+span.lem { color: green; }
+
+div.textual_note ul, div.textual_note li {
+        display: inline;
+        margin: 0;
+        padding: 0;
+         }
+
+div.textual_note span.rdg {
+
+}
+
+
+div.textual_note span.witlist
+{
+	font-variant: small-caps;
+	font-size: x-small;
+}
+
+span.text_note {display: none;}
+
+span.app_inline a:hover span {display: block;}
+
+/* PAPYRI */
+span.papy_line_num {
+    float: left;
+    text-align: left;
+    width: 40px;
+}
+
+span.papy_app_crit {
+    margin-right: 30px;
+}
+
+/* MISCELLANEOUS */
+
+/* this is for radio buttons governed by "Limit collections to:", so that they
+    appear reasonably indented */
+gloss {
+    font-style: italic;
+}
+
+input.search_doc {
+    margin-left: 16px;
+}
+
+.noshow {
+    visibility: hidden;
+}
+
+.nodisplay {
+    display: none;
+}
+
+/* for grammar sections */
+a.permalink {
+    text-decoration: none;
+    color: black;
+}
+
+div.la, div.text_container span.la,
+div.en, div.text_container span.en,
+div.non, div.text_container span.non,
+div.ang, div.text_container span.ang,
+.serif {
+    font-family: Georgia,Times,serif;
+}
+
+/* SEARCH RESULTS - not tested yet commented out */
+
+
+div.pager {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+/*
+div#matching_docs {
+    float: right;
+    width: 30%;
+}
+*/
+
+/* Metrical Homer - should eventually go in its own separate file - commented
+out until we actually have it up and running 
+
+div.text {
+    line-height: 250%;
+}
+
+span.l, span.s, span.anc {
+    padding-top: 5px;
+}
+
+span.l {
+    background: url(/images/macron.png) no-repeat;
+    background-position: top center;
+}
+
+span.s {
+    background: url(/images/breve.png) no-repeat;
+    background-position: top center;
+}
+
+span.anc {
+    background: url(/images/anceps.png) no-repeat;
+    background-position: top center;
+}
+
+span.sz {
+    background: url(/images/synizesis.png) no-repeat;
+    background-position: bottom center;
+}
+*/
+
+table.tResults {
+	text-align: left;
+	cell-spacing:20;
+}
+
+tr.trHiddenResults {
+	padding:15;
+}
+tr.trResultTitleBar {
+	background-color: #cccccc;
+	font-size:14px
+}
+tr.trResultEditorBar {
+	background-color: #eeeeee;
+	font-size: 12px;
+}
+tr.trSearchResults {
+	background-color: #eeeeee;
+	font-size: 12px;
+	padding:5px;
+}
+tr.trHiddenSearchResults {
+	width:750px;
+	background-color: #eeeeee;
+	font-size: 12px;
+}
+tr.trBottom {
+	height: 15px;
+	background-color: #eeeeee;
+}
+td.tdSpacer {
+	height:5px;
+}
+td.tdResultsHeader {
+	text-align:center;
+	text-decoration:none;
+}
+td.tdResultsHeader:hover {
+	text-decoration: underline;
+}
+td.tdTitle {
+	width:250px;
+}
+td.tdLanguage {
+	text-align:center;
+	width: 75px;
+}
+td.tdEditor {
+	text-align:center;
+	width: 75px;
+}
+td.tdCitation {
+	text-align:center;
+	width:125px;
+}
+span.spanExpander { 
+	color:#0000ff;
+}
+td.tdExpand {
+	width:15px;
+}
+
+/*===============Art Object ==================*/
+		div.artObjects{
+			position:relative;
+		}
+
+		div.artObject{
+			postion:absolute;
+			background-color: #cccccc;
+			margin:30px;			
+			padding: 5px;
+			border: solid black 1px;
+		}
+
+		div.empty{
+			clear: both;
+			height:1px;
+		}
+		
+		div.artObject div.image_box {
+			float: right;
+			width: 40%;
+		}
+		
+		div.artObject div.image_box div.thumbnail{
+			position:relative;
+			float:left;
+			width: 200px;
+			height: 25%;
+		}
+
+		div.artObject div.image_box div.thumbnail p{
+			text-align: center;
+			font-size: small;
+		}

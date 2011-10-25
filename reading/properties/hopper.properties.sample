@@ -1,0 +1,118 @@
+# hopper.properties SAMPLE file
+#
+# This file serves only as an example of the properties available to be
+# configured, and should NOT be customized by individual users, except to add
+# new properties. The actual system properties are acquired from
+# hopper.properties.
+
+# DATABASE PROPERTIES
+#
+# You shouldn't need to change these unless you really want to use something
+# other than the default settings.
+hopper.database.driver=com.mysql.jdbc.Driver
+hopper.database.url=jdbc:mysql://localhost:3306/sor
+hopper.database.username=webuser
+hopper.database.password=webuser
+
+# HOPPER SETTINGS
+#
+# The location of our XSLT stylesheets.
+hopper.stylesheet.path=/sgml/reading/xslt/
+
+# The location of our search indices.
+hopper.search.index.path=/sgml/reading/index/
+
+# The directory where our source texts (like Aeschines/aeschin_eng.xml) live.
+hopper.source.texts.path=/sgml/texts/
+
+# The directory where we our processed texts (like 1999.01.0001.xml) end up.
+hopper.document.file.path=/sgml/xml/texts/
+
+# The directory where our static files live.
+hopper.static.files.path=/sgml/reading/static/
+
+# Directories for caching things--not currently used!
+hopper.cache.path=/sgml/xml/cache/
+hopper.cache.toc.dir=/sgml/xml/toc
+hopper.cache.tokenlist.dir=/sgml/xml/tokenlist/
+hopper.stopList.path=/web/cgi-bin/DBw
+hopper.rng.path=/sgml/rng/
+hopper.stemlib.path=/sgml/morph/stemlib/
+
+# The directory where our Dublin Core catalogs live.
+hopper.catalog.path=/sgml/xml
+
+# The paths of catalog files from which we gather metadata from by default.
+# They can be relative, in which case they'll be treated as being in the
+# directory denoted by hopper.catalog.path, or absolute.
+hopper.catalog.files=classics.xml,corpora.xml,cwar.xml,oldenglish.xml,oldnorse.xml,RichTimes.xml,/usr/sgml/texts/DDBDP/collection.xml
+
+# The collections to display on the "collections" JSP page.
+hopper.primary.collections=Perseus:collection:Greco-Roman,Perseus:collection:DDBDP,Perseus:collection:Germanic,Perseus:collection:cwar,Perseus:collection:RichTimes,Perseus:collection:Renaissance
+
+# HIBERNATE SETTINGS
+#
+# Again, you probably don't need to changes these unless you really want to.
+hibernate.dialect=org.hibernate.dialect.MySQLMyISAMDialect
+hibernate.connection.driver_class=${hopper.database.driver}
+hibernate.connection.url=${hopper.database.url}
+
+# Leave these two properties commented out unless you really know what you're
+# doing! If they're not commented out and we're running in Tomcat, Hibernate
+# will try to call a method in a DBCP class that isn't actually supported and
+# you'll get an UnsupportedOperationException. If we're running offline, we set
+# them when we first initialize Hibernate, which is what we want.
+#hibernate.connection.username=${hopper.database.username}
+#hibernate.connection.password=${hopper.database.password}
+hibernate.connection.pool_size=150
+
+# MISCELLANEOUS SETTINGS
+#
+# This is here so that Hibernate doesn't spit out errors about not finding
+# a naming factory.
+java.naming.factory.initial=javax.naming.spi.InitialContextFactory
+
+# The default SAX parser to use.
+org.xml.sax.driver=org.apache.xerces.parsers.SAXParser
+
+# The location to use as Java's Endorsed directory--the XML-related JARs
+# should go here. (NOTE: you may need to copy some of these JARs, like the
+# XML-related ones, to Tomcat's common/endorsed/ directory to allow Tomcat to
+# deal with parsing and stylesheets properly.
+java.endorsed.dirs=/sgml/reading/lib/endorsed/
+java.xml.transform.TransformerFactory=org.apache.xalan.xsltc.trax.TransformerFactoryImpl
+
+# ABBREVIATION FILES
+#
+# Add any .abb files here.
+hopper.abbrev.path=bible.abb
+hopper.abbrev.path=papyri.abb
+hopper.abbrev.path=perseus.abb
+hopper.abbrev.path=shakespeare.abb
+hopper.abbrev.path=old.abb
+
+# VALIDATION SETTINGS
+#
+# The directory that holds our DTDs. This doesn't seem to be used, currently.
+perseus.dtd.path=/sgml/dtd
+
+# CRUNCHER SETTINGS
+perseus.cruncher.path=/morph/bin/cruncher
+perseus.morphlib.path=/morph/stemlib
+
+# The location of our DTD catalog. This is used.
+xml.catalog.files=/sgml/dtd/catalog
+
+# JYTHON
+#
+# If you're using Jython, set this to the directory where you installed it.
+python.home=jython-2.1
+
+# TOMCAT
+# The location of Tomcat
+tomcat.home=/usr/local/tomcat
+
+### RELEASE PROPERTIES (unimportant for a development machine)
+hopper.release.path=/sgml/release/
+hopper.release.application.dir=application/
+hopper.release.key.dir=/sgml/release/sshkeys

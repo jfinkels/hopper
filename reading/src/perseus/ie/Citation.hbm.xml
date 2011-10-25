@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="perseus.ie.dao">
+
+    <class name="HibernateCitationDAO$CitationInternal" table="hib_citations"
+	    batch-size="10" lazy="true">
+	<id name="id" type="int" column="id" unsaved-value="null">
+	    <generator class="native" />
+	</id>
+
+	<property name="sourceDocumentID" type="string"
+	    index="source_idx" column="source_document_id" length="45" />
+	<property name="sourceSubquery" type="string"
+	    index="source_idx" column="source_subquery" length="255" />
+	    
+	<property name="destinationDocumentID" type="string" column="destination_doc_id"
+		    length="50"/>
+	<property name="destinationSubquery" type="string"
+	    column="destination_subquery"
+	    length="255" />
+
+	<!-- The "resolved" query is the original destination query,
+	     instantiated as a chunk and then turned back into a query,
+	     so that we can match it up with a chunk of text (this is
+	     important in the case of anything using line numbers).
+	-->
+	<property name="resolvedDestinationDocumentID" type="string"
+	    index="resolved_destination_idx"
+	    column="resolved_destination_document_id"
+	    length="60" />
+	<property name="resolvedDestinationSubquery" type="string"
+	    index="resolved_destination_idx"
+	    column="resolved_destination_subquery"
+	    length="255" />
+
+	<property name="linkTypeCode" type="integer"
+	    column="link_type_code" />
+
+	<!--
+	    This represents the most recent header in the source document;
+	    it makes the citations look slightly nicer when displayed on
+	    screen.
+	-->
+	<property name="sourceHeader" type="text" column="source_header" />
+
+    </class>
+</hibernate-mapping>
+

@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- 
+     @MPL@
+     Last Modified: @TIME@
+     
+     Author: @gweave01@
+     Based upon work by the following: @apacke01@
+  -->
+<hibernate-mapping package="perseus.ie.entity">
+  
+  <subclass name="perseus.artarch.Artifact" extends="Entity" discriminator-value="Artifact">
+      
+      <join table="hib_artifacts">
+      <key column="artifact_id" not-null="true" />    
+      <property name="name" column="name" index="name_idx"/>
+      <property name="type" column="type" index="artifact_type_idx"/>
+      <property name="location" column="location"/>
+      <property name="summary" column="summary" type="text"/>
+      <property name="perseusVersion" column="perseus_version"/>
+      <property name="enteredBy" column="entered_by" type="text"/>
+      <property name="sourcesUsed" column="sources_used" type="text"/>
+      <property name="otherBibliography" column="other_bibliography" type="text"/>
+      <property name="documentaryReferences" column="documentary_references" type="text"/>
+      </join>
+      
+      <subclass name="perseus.artarch.AtomicArtifact"
+		discriminator-value="AtomicArtifact">
+	
+	<join table="hib_atomic_artifacts">
+	<key column="atomic_artifact_id" not-null="true" />
+	  <property name="accessionNumber" column="accession_number"/>
+	  <property name="dimensions" column="dimensions" type="text"/>
+	  <property name="region" column="region" index="region_idx"/>
+	  <property name="startDate" column="start_date"/>
+	  <property name="startMod" column="start_mod"/>
+	  <property name="endDate" column="end_date"/>
+	  <property name="endMod"	column="end_mod"/>
+	  <property name="unitaryDate" column="unitary_date"/>
+	  <property name="unitaryMod" column="unitary_mod"/>
+	  <property name="dateForSort" column="date_for_sort"/>
+	  <property name="period" column="period" index="period_idx"/>
+	  <property name="periodForSort" column="period_for_sort"/>
+	  <property name="culture" column="culture" type="text"/>
+	  <property name="context" column="context" index="context_idx" length="100"/>
+	  <property name="contextMod" column="context_mod"/>
+	  <property name="findspot" column="findspot" type="text"/>
+	  <property name="findspotMod" column="findspot_mod"/>
+	  <property name="collection" column="collection" index="collection_idx"/>
+	  <property name="dateDescription" column="date_description" type="text"/>
+	  <property name="collectionHistory" column="collection_history" type="text"/>
+	  <property name="donor" column="donor"/>
+	  <property name="condition" column="condit" type="text"/>
+	  <property name="conditionDescription" column="condition_description" type="text"/>
+	  <property name="comparanda" column="comparanda" type="text"/>
+	  <property name="material" column="material" index="material_idx"/>
+	  <property name="materialDescription" column="material_description" type="text"/>
+	  <property name="otherNotes" column="other_notes" type="text"/>
+	  </join>
+	  
+	  <subclass name="perseus.artarch.CoinArtifact"
+		    discriminator-value="Coin">
+	    
+	    <join table="hib_coin_artifacts">
+	      <key column="coin_id" not-null="true"/>
+	      <property name="actualWeight" column="actual_weight"/>
+	      <property name="commentary" column="commentary" type="text"/>
+	      <property name="denomination" column="denomination" index="denomination_idx" length="50"/>
+	      <property name="dieAxis" column="die_axis"/>
+	      <property name="issuingAuthority" column="issuing_authority" index="issuing_authority_idx"/>
+	      <property name="obverseLegend" column="obverse_legend" type="text"/>
+	      <property name="obverseType" column="obverse_type" type="text"/>
+	      <property name="reverseLegend" column="reverse_legend" type="text"/>
+	      <property name="reverseType" column="reverse_type" type="text"/>	
+	    </join>
+	  </subclass>
+	  
+	  <subclass name="perseus.artarch.GemArtifact"
+		    discriminator-value="Gem">
+	    
+	    <join table="hib_gem_artifacts">
+	      <key column="gem_id" not-null="true"/>
+	      
+	      <property name="category" column="category"/>
+	      <property name="objectFunction" column="object_function"/>
+	      <property name="graffiti" column="graffiti" type="text"/>
+	      <property name="inscription" column="inscription" type="text"/>
+	      <property name="inscriptionBibliography" column="inscription_bibliography" type="text"/>
+	      <property name="original" column="original"/>
+	      <property name="originalOrCopy" column="original_or_copy"/>
+	      <property name="placement" column="placement"/>
+	      <property name="primaryCitation" column="primary_citation" type="text"/>
+	      <property name="scale" column="scale"/>
+	      <property name="scaleForSort" column="scale_for_sort"/>
+	      <property name="sculptor" column="sculptor"/>
+	      <property name="sculptorMod" column="sculptor_mod"/>
+	      <property name="style" column="style"/>
+	      <property name="formStyleDescription" column="form_style_description" type="text"/>
+	      <property name="subjectDescription" column="subject_description" type="text"/>
+	      <property name="technique" column="technique"/>
+	      <property name="techniqueDescription"
+			column="technique_description" type="text"/>
+	      <property name="title" column="title"/>
+	      <property name="sculptureType"
+			column="sculpture_type" index="sculpture_type_idx"/>
+	      <property name="inGroup" column="in_group"/>
+	      <property name="inWhole" column="in_whole"/>
+	    </join>
+	  </subclass>
+	  
+	  <subclass name="perseus.artarch.SculptureArtifact"
+		    discriminator-value="Sculpture">
+	    
+	    <join table="hib_sculpture_artifacts">
+	      <key column="sculpture_id" not-null="true"/>
+	      
+	      <property name="associatedBuilding"
+			column="assoc_building" index="assoc_building_idx"/>
+	      <property name="category" column="category" index="category_idx"/>
+	      <property name="objectFunction"
+			column="object_function" index="object_function_idx"/>
+	      <property name="graffiti"
+			column="graffiti" type="text"/>
+	      <property name="inscription"
+			column="inscription" type="text"/>
+	      <property name="inscriptionBibliography"
+			column="inscription_bibliography" type="text"/>
+	      <property name="original" column="original"/>
+	      <property name="originalOrCopy" column="original_or_copy"/>
+	      <property name="placement" column="placement"/>
+	      <property name="primaryCitation"
+			column="primary_citation" type="text"/>
+	      <property name="scale" column="scale" index="scale_idx"/>
+	      <property name="scaleForSort" column="scale_for_sort"/>
+	      <property name="sculptor" column="sculptor" index="sculptor_idx"/>
+	      <property name="sculptorMod" column="sculptor_mod"/>
+	      <property name="style" column="style"/>
+	      <property name="formStyleDescription"
+			column="form_style_description" type="text"/>
+	      <property name="subjectDescription" column="subject_description" type="text"/>
+	      <property name="technique" column="technique"/>
+	      <property name="techniqueDescription"
+			column="technique_description" type="text"/>
+	      <property name="title" column="title"/>
+	      <property name="sculptureType" column="sculpture_type"/>
+	      <property name="inGroup" column="in_group"/>
+	      <property name="inWhole" column="in_whole"/>
+	    </join>
+	  </subclass>  
+	  
+	  <subclass name="perseus.artarch.VaseArtifact"
+        	    discriminator-value="Vase">
+	    
+	    <join table="hib_vase_artifacts">
+	      <key column="vase_id" not-null="true"/>
+	      
+	      <property name="ceramicPhase" column="ceramic_phase"/>
+	      <property name="decorationDescription"
+			column="decoration_description" type="text"/>
+	      <property name="essayNumber" column="essay_number"/>
+	      <property name="essayText" column="essay_text" type="text"/>
+	      <property name="graffiti" column="graffiti"/>
+	      <property name="inscriptions"
+			column="inscriptions" type="text"/>
+	      <property name="painter" column="painter" index="painter_idx"/>
+	      <property name="painterMod" column="painter_mod"/>
+	      <property name="attributedBy" column="attributed_by"/>
+	      <property name="potter" column="potter" index="potter_idx"/>
+	      <property name="potterMod" column="potter_mod"/>
+	      <property name="primaryCitation"
+			column="primary_citation" type="text"/>
+	      <property name="beazleyNumber" column="beazley_number"/>
+	      <property name="relief" column="relief"/>
+	      <property name="shape" column="shape" index="shape_idx"/>
+	      <property name="shapeDescription"
+			column="shape_description" type="text"/>
+	      <property name="ware" column="ware" index="ware_idx"/>
+	    </join>
+	  </subclass>
+	  
+	  <subclass name="perseus.artarch.BuildingArtifact" 
+		    discriminator-value="Building">
+	    
+	    <join table="hib_building_artifacts">
+	      <key column="building_id" not-null="true"/>
+	      
+	      <property name="architecturalOrder" column="architectural_order" type="text"/>
+	      <property name="architect" column="architect" index="architect_idx"/>
+	      <property name="architectEvidence"
+			column="architect_evidence" type="text"/>
+	      <property name="buildingType" column="building_type"
+			index="building_type_idx"/>
+	      <property name="history" column="history" type="text"/>
+	      <property name="plan" column="plan" type="text"/>
+	      <property name="seeAlso" column="see_also" type="text"/>
+	    </join>
+	  </subclass>
+	  
+	</subclass> 
+    
+      <subclass name="perseus.artarch.SiteArtifact"
+		discriminator-value="Site">
+	
+	<join table="hib_site_artifacts">
+	  <key column="site_id" not-null="true"/>
+	  
+	  <property name="extent" column="extent"/>
+	  <property name="humanName" column="human_name"/>
+	  <property name="region" column="region"/>
+	  <property name="siteType" column="site_type"/>
+	  <property name="description" column="description" type="text"/>
+	  <property name="exploration" column="exploration" type="text"/>
+	  <property name="periods" column="periods"/>
+	  <property name="physical" column="physical" type="text"/>
+	</join>
+      </subclass>
+  </subclass> 
+</hibernate-mapping>

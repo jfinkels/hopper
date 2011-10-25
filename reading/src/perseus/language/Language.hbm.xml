@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="perseus.language">
+
+    <class name="Language" table="hib_languages" batch-size="10">
+	<id name="id" column="id" type="int">
+	    <generator class="assigned" />
+	</id>
+
+        <natural-id>
+            <property name="name" column="display_name" type="string"
+                length="30" not-null="true" />
+        </natural-id>
+	<property name="hasMorphData" column="has_morph_data"
+	    type="boolean" />
+
+        <property name="adapterClassName" column="adapter_class_name"
+            type="string" />
+
+	<list name="abbreviations" table="hib_lang_abbrevs" lazy="false">
+	    <key column="language_id" />
+	    <list-index column="idx" />
+	    <element column="abbreviation"
+		type="string" length="10" not-null="true" />
+	</list>
+	
+    </class>
+</hibernate-mapping>
+

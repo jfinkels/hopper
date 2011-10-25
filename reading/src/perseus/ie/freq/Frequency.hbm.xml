@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="perseus.ie.freq">
+    <class name="Frequency" batch-size="10" abstract="true"
+        table="hib_frequencies" discriminator-value="A">
+        
+	<id name="id" type="int" column="id">
+	    <generator class="native" />
+	</id>
+        <discriminator column="type" type="character" />
+
+	<property name="maxFrequency" column="max_freq"
+		    type="int" node="maxFrequency" />
+	<property name="minFrequency" column="min_freq"
+		    type="int" node="minFrequency" />
+	<property name="weightedFrequency" column="weighted_freq"
+		    type="double" node="weightedFrequency" />
+	<property name="keywordScore" column="keyword_score"
+		    type="double" node="keywordScore" />
+    <property name="firstPosition" column="first_pos" type="int" />
+    <property name="termFreq" column="tf" type="double"/>
+    <property name="tfidf" column="tf_idf" type="double"/>
+
+        <subclass name="ChunkFrequency" abstract="true"
+            discriminator-value="Z">
+            	<many-to-one name="chunkRow" column="chunk_id"
+                	index="entID_chunkID" />
+            <subclass name="EntityTuple" discriminator-value="T">
+                <property name="snippet" column="snippet" type="text" />
+                <many-to-one name="entity" column="entity_id"
+                    index="entID_chunkID" />
+            </subclass>
+
+		<!-- not used -->
+            <!--<subclass name="FormChunkFrequency" discriminator-value="C">
+                <property name="form" type="string" length="80" />
+                <many-to-one name="language" column="language_id" />
+            </subclass>-->
+        </subclass>
+
+
+        <subclass name="DocumentFrequency" abstract="true"
+            discriminator-value="Y">
+                <property name="documentID" column="document_id"
+                	index="docID docID_entID" />            
+            <subclass name="EntityDocumentFrequency" discriminator-value="E">
+                <many-to-one name="entity" column="entity_id"
+                    index="docID_entID" />
+            </subclass>
+
+			<!-- not used -->
+            <!--<subclass name="FormDocumentFrequency" discriminator-value="D">
+                <property name="form" type="string" length="80" />
+                <many-to-one name="language" column="language_id" />
+            </subclass>-->
+        </subclass>
+    </class>
+
+    <!-- since the "type" tag can't have an "index" attribute... -->
+    <!-- <database-object>
+        <create>create index entID_type_docID on hib_document_frequencies (entity_id, type, document_id)</create>
+        <drop></drop>
+    </database-object>
+
+    <database-object>
+        <create>create index entID_type_chunkID on hib_chunk_frequencies (entity_id, type, chunk_id)</create> 
+        <drop></drop> 
+    </database-object>
+
+    <database-object>
+        <create>create index type_chunkID on hib_chunk_frequencies (type, chunk_id)</create> 
+        <drop></drop> 
+    </database-object>
+
+    <database-object>
+        <create>create index type_docID on hib_document_frequencies (type, document_id)</create> 
+        <drop></drop> 
+    </database-object> -->
+</hibernate-mapping>

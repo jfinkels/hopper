@@ -1,0 +1,12 @@
+<!ELEMENT archive_number (#PCDATA) >
+<!ELEMENT name (#PCDATA) >
+<!ELEMENT secondary_name (#PCDATA) >
+<!ELEMENT tertiary_name (#PCDATA) >
+<!ELEMENT image_schema (#PCDATA) >
+<!ELEMENT image (archive_number | name | secondary_name | tertiary_name | image_schema)+ >
+<!ELEMENT ImageNames (image)+ >
+
+<!-- Resolve any entities -->
+<!ENTITY % TEI.XML "INCLUDE">
+<!ENTITY % PersProse PUBLIC "-//Perseus P4//DTD Perseus Prose//EN" "http://www.perseus.tufts.edu/DTD/1.0/PersProse.dtd" >
+%PersProse;

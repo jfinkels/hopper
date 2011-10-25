@@ -1,0 +1,52 @@
+/*
+@MPL@
+Last Modified: @TIME@
+
+Author: @gweave01@
+*/
+
+
+
+div#help {
+  float: right;
+} 
+
+div#catalog-properties {
+  font-size: small;
+  clear:right;
+}
+
+div#properties-left {
+  float: left;
+  width: 90%;
+  clear:none;
+}
+
+div#properties-right {
+  width: 10%;
+  float:right;
+}
+
+/* Artifact Record */
+div.artifact-record {
+  float:left;
+}
+
+div.artifact-record tr.artifact-occurrence td {
+  width:100%;
+}
+
+div.artifact-record tr.artifact td.field {
+  width:50%;
+  align:left;
+}
+
+div.artifact-record tr.artifact td.field-value {
+  width:50%;
+  align:right;		   
+}
+
+div.form_view_button {
+  float:right;
+  font-size: x-small;
+}

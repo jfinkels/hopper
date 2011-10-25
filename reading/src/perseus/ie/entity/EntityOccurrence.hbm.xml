@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="perseus.ie.entity">
+
+    <class name="EntityOccurrence" table="hib_entity_occurrences" batch-size="10">
+	<id name="id" column="id" type="int" unsaved-value="-1">
+	    <generator class="native" />
+	</id>
+
+	<many-to-one name="entity" column="entity_id" not-null="true" 
+	    index="entity_doc_idx entity_doc_pos_idx" />
+
+	<component name="location" class="perseus.ie.Location">
+	    <component name="query" class="perseus.document.Query">
+		<property name="documentID"
+			    index="doc_idx entity_doc_pos_idx
+				    entity_doc_idx"
+			    column="document_id"
+			    type="string"
+			    length="50" />
+		<property name="query" column="subquery" type="string"
+			    length="200" />
+	    </component>
+	    <property name="position" column="position" type="int"
+		index="entity_doc_pos_idx" />
+	</component>
+
+	<property name="displayText" column="display_text" type="text" />
+
+	<map name="parameters" table="hib_entity_occurrence_params">
+	    <key column="param_id" />
+	    <index column="param_name" type="string" />
+	    <element column="param_value" type="string" not-null="true" />
+	</map>
+
+        <set name="votes" inverse="true" lazy="true">
+            <key column="occurrence_id" on-delete="cascade" />
+            <one-to-many class="perseus.voting.Vote" />
+        </set>
+    </class>
+</hibernate-mapping>

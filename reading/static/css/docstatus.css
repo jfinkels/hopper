@@ -1,0 +1,44 @@
+table {
+    border-spacing: 4px;
+}
+
+div.error {
+    background-color: #ccc;
+}
+
+.ok, .failed, .child_failed {
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+.ok {
+    color: green;
+}
+
+.failed {
+    color: red;
+}
+
+.child_failed {
+    color: purple;
+}
+
+table tr {
+    background-color: #ddd;
+}
+
+td.query, td.work {
+    width: 20%;
+}
+
+td.errorlink {
+    width: 60%;
+}
+
+table.children {
+    width: 100%;
+}
+
+table.children div.error {
+    background-color: #bbb;
+}

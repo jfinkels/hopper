@@ -1,0 +1,2447 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.perseus.org/meta/perseus.rdfs#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:dcterms="http://purl.org/dc/terms/"
+         xmlns:dctype="http://purl.org/dc/dcmitype/"
+         xmlns:perseus="http://www.perseus.org/meta/perseus.rdfs#"
+         xmlns:persq="http://www.perseus.org/meta/persq.rdfs#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:tufts="http://www.tufts.edu/"
+>
+<rdf:Description rdf:about="Perseus:collection:cwar">
+<dc:description xml:lang="en">Sources on the history of the 19th-century United States.</dc:description>
+<dc:title>19th-Century American</dc:title>
+<dcterms:alternative>19c. Am.</dcterms:alternative>
+<dc:subject>US History</dc:subject>
+<dc:type>collection</dc:type>
+<persq:stylesheet>cwar.spec</persq:stylesheet>
+<persq:template>cwar.html</persq:template>
+<sort>65 cwar</sort>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0055">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/porter.navy.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/porter.navy/pages</pages>
+	<dcterms:issued>1886</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0116">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/alcott.hosp.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/alcott.hosp/pages</pages>
+	<dcterms:issued>1863</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0002">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/andrews.journal.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/andrews.journal</pages>
+	<dcterms:created>1864-1865</dcterms:created>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0003">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/asjohnst.bio.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/asjohnst.bio</pages>
+	<dcterms:issued>1879</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0004">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/batt.south.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/batt.south</pages>
+	<dcterms:issued>1864</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0005">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/beatty.citsold.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/beatty.citsold</pages>
+	<dcterms:issued>1879</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0006">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/billings.hard.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/billings.hard</pages>
+	<dcterms:issued>1888</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0007">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<figures>/typhon/00CivilWar/5pageparsing/blcw01/figures</figures>
+<pages>/typhon/00CivilWar/5pageparsing/blcw01/pages</pages>
+	<dcterms:issued>1887</dcterms:issued>
+<status>2</status>
+<text>cwar/xml/blcw01.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0008">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1866</dcterms:issued>
+<text>cwar/xml/borcke.mem.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0009">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/britton.mem.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/britton.mem</pages>
+	<dcterms:issued>1882</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0010">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/chamb.pass.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/chamb.pass</pages>
+<figures>/typhon/00CivilWar/5pageparsing/chamb.pass/figures</figures>
+	<dcterms:issued>1915</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0011">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/cooke.mem.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/cooke.mem</pages>
+	<dcterms:issued>1867</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0012">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/cwar.mem.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/cwar.mem</pages>
+	<dcterms:issued>1878</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0013">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/dabney.jackson.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/dabney.jackson/pages</pages>
+	<dcterms:issued>1866</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0014">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/deleon.capitals.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/deleon.capitals/pages</pages>
+	<dcterms:issued>1890</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0015">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/early.mem.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/early.mem/pages</pages>
+	<dcterms:issued>1912</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0016">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/fitzhugh.lee.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/fitzhugh.lee/pages</pages>
+	<dcterms:issued>1894</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0017">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/fremantle.three.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/fremantle.three/pages</pages>
+	<dcterms:issued>1864</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0018">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/geer.lines.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/geer.lines/pages</pages>
+	<dcterms:issued>1864</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0019">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1885</dcterms:issued>
+<text>cwar/xml/grant.mem.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0020">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/hague.block.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/hague.block/pages</pages>
+	<dcterms:issued>1888</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0021">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/higg.black.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/higg.black/pages</pages>
+	<dcterms:issued>1870</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0022">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/jones.diary.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/jones.diary/pages</pages>
+	<dcterms:issued>1866</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0023">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/linc.carp.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/linc.carp/pages</pages>
+	<dcterms:issued>1866</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0024">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1860</dcterms:issued>
+<text>cwar/xml/linc.doug.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0025">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1888</dcterms:issued>
+<text>cwar/xml/linc.hern.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0026">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/logan.wife.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/logan.wife/pages</pages>
+	<dcterms:issued>1913</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0027">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1895</dcterms:issued>
+<text>cwar/xml/long.mem.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0028">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/mcguire.diary.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/mcguire.diary/pages</pages>
+	<dcterms:issued>1867</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0029">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1902</dcterms:issued>
+<text>cwar/xml/nicol.linc.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0030">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/nicol.outbreak.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/nicol.outbreak/pages</pages>
+	<dcterms:issued>1881</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0031">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/oats.prison.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/oats.prison/pages</pages>
+	<dcterms:issued>1880</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0032">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/or1.38.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/or1.38/pages</pages>
+	<dcterms:created>1864</dcterms:created>
+</rdf:Description>
+
+<!--<rdf:Description rdf:about="Perseus:text:2001.05.0033">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+</rdf:Description>-->
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0034">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1897</dcterms:issued>
+<text>cwar/xml/porter.mem.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0035">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/sheridan.mem.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/sheridan.mem/pages</pages>
+	<dcterms:issued>1888</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0036">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/stiles.robert.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/stiles.robert/pages</pages>
+	<dcterms:issued>1903</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0037">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1890</dcterms:issued>
+<text>cwar/xml/vdav.mem.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0038">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1890</dcterms:issued>
+<text>cwar/xml/vdav.mem2.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0039">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/shs04.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/shs04/pages</pages>
+	<dcterms:issued>1877</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0040">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/shs05.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/shs05/pages</pages>
+	<dcterms:issued>1878</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0041">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:created>1860-1864</dcterms:created>
+<text>cwar/xml/rebrec.diary.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0042">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1862</dcterms:issued>
+<text>cwar/xml/rebrec.07.docs.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0043">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1862</dcterms:issued>
+<text>cwar/xml/rebrec.07.poetry.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0044">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<figures>/typhon/00CivilWar/5pageparsing/blcw02/figures</figures>
+<pages>/typhon/00CivilWar/5pageparsing/blcw02/pages</pages>
+<status>2</status>
+	<dcterms:issued>1887</dcterms:issued>
+<text>cwar/xml/blcw02.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0045">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<figures>/typhon/00CivilWar/5pageparsing/blcw03/figures</figures>
+<pages>/typhon/00CivilWar/5pageparsing/blcw03/pages</pages>
+<status>2</status>
+	<dcterms:issued>1887</dcterms:issued>
+<text>cwar/xml/blcw03.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0046">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<figures>/typhon/00CivilWar/5pageparsing/blcw04/figures</figures>
+<pages>/typhon/00CivilWar/5pageparsing/blcw04/pages</pages>
+<status>2</status>
+	<dcterms:issued>1887</dcterms:issued>
+<text>cwar/xml/blcw04.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0047">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1887</dcterms:issued>
+<text>cwar/xml/blcw.index.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0048">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/lossing.field.01.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/lossing.field.01/pages</pages>
+	<dcterms:issued>1876</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0049">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/lossing.field.02.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/lossing.field.02/pages</pages>
+	<dcterms:issued>1870</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0050">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/lossing.field.03.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/lossing.field.03/pages</pages>
+	<dcterms:issued>1874</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0051">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/jomini.war.ie.xml</text>
+	<dcterms:issued>1854</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0052">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1862</dcterms:issued>
+<text>cwar/xml/schalk.war.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0053">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1846</dcterms:issued>
+<text>cwar/xml/halleck.mil.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0054">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1869</dcterms:issued>
+<text>cwar/xml/congdon.trib.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0056">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1880</dcterms:issued>
+<text>cwar/xml/hood.mem.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/hood.mem/pages</pages>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0057">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/or10.1.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/or10.1/pages</pages>
+	<dcterms:created>1862</dcterms:created>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0058">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+<text>cwar/xml/or10.2.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/or10.2/pages</pages>
+	<dcterms:created>1862</dcterms:created>
+</rdf:Description>
+
+<!--<rdf:Description rdf:about="Perseus:text:2001.05.0059">
+<dcterms:available>2001-08-30</dcterms:available>
+</rdf:Description>-->
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0060">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1859</dcterms:issued>
+<text>cwar/xml/redpath.slaves.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0061">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1901</dcterms:issued>
+<text>cwar/xml/wister.grant.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0062">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1857</dcterms:issued>
+<text>cwar/xml/smith.lectures.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0063">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1868</dcterms:issued>
+<text>cwar/xml/crafts.grant.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0064">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1888</dcterms:issued>
+<text>cwar/xml/arnold.civ.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0065">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1864</dcterms:issued>
+<text>cwar/xml/hillard.mcclell.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0066">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<figures>/typhon/00CivilWar/5pageparsing/greeley.cwar.01/figures</figures>
+<status>2</status>
+	<dcterms:issued>1866</dcterms:issued>
+<text>cwar/xml/greeley.cwar.01.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/greeley.cwar.01/pages</pages>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0067">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<figures>/typhon/00CivilWar/5pageparsing/greeley.cwar.02/figures</figures>
+<status>2</status>
+	<dcterms:issued>1866</dcterms:issued>
+<text>cwar/xml/greeley.cwar.02.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/greeley.cwar.02/pages</pages>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0068">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1888</dcterms:issued>
+<text>cwar/xml/fox.regloss.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0069">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<status>2</status>
+	<dcterms:issued>1922</dcterms:issued>
+<text>cwar/xml/lyman.grant.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0070">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-17</dcterms:available>
+	<dcterms:issued>1874</dcterms:issued>
+<text>cwar/xml/johns.mem.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0072">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-17</dcterms:available>
+	<dcterms:issued>1862</dcterms:issued>
+<text>cwar/xml/rebrec.02.docs.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0073">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-17</dcterms:available>
+	<dcterms:issued>1862</dcterms:issued>
+<text>cwar/xml/rebrec.02.poetry.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0074">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-17</dcterms:available>
+	<dcterms:issued>1862</dcterms:issued>
+<text>cwar/xml/rebrec.02.index.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0076">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-17</dcterms:available>
+	<dcterms:issued>1862</dcterms:issued>
+<text>cwar/xml/rebrec.03.docs.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0077">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-17</dcterms:available>
+	<dcterms:issued>1862</dcterms:issued>
+<text>cwar/xml/rebrec.03.poetry.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0078">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-17</dcterms:available>
+	<dcterms:issued>1862</dcterms:issued>
+<text>cwar/xml/rebrec.03.index.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0079">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-17</dcterms:available>
+<text>cwar/xml/butler.mem.ie.xml</text>
+	<dcterms:issued>1892</dcterms:issued>
+<pages>/typhon/00CivilWar/5pageparsing/butler.mem/pages</pages>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0080">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-17</dcterms:available>
+	<dcterms:issued>1875</dcterms:issued>
+<text>cwar/xml/sherman.mem.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0082">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-17</dcterms:available>
+	<dcterms:issued>1862</dcterms:issued>
+<text>cwar/xml/rebrec.01.intro.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0084">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-17</dcterms:available>
+	<dcterms:issued>1862</dcterms:issued>
+<text>cwar/xml/rebrec.01.poetry.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0085">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-17</dcterms:available>
+	<dcterms:issued>1862</dcterms:issued>
+<text>cwar/xml/rebrec.01.index.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0087">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-17</dcterms:available>
+	<dcterms:issued>1862</dcterms:issued>
+<text>cwar/xml/rebrec.04.docs.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0088">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-17</dcterms:available>
+	<dcterms:issued>1862</dcterms:issued>
+<text>cwar/xml/rebrec.04.poetry.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0090">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-17</dcterms:available>
+	<dcterms:issued>1862</dcterms:issued>
+<text>cwar/xml/rebrec.05.docs.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0091">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-17</dcterms:available>
+	<dcterms:issued>1862</dcterms:issued>
+<text>cwar/xml/rebrec.05.poetry.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0092">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-17</dcterms:available>
+	<dcterms:issued>1862</dcterms:issued>
+<text>cwar/xml/rebrec.08.poetry.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0093">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-17</dcterms:available>
+	<dcterms:issued>1862</dcterms:issued>
+<text>cwar/xml/rebrec.08.docs.ie.xml</text>
+</rdf:Description>
+
+<!--<rdf:Description rdf:about="Perseus:text:2001.05.0094">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-17</dcterms:available>
+</rdf:Description>-->
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0096">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-30</dcterms:available>
+	<dcterms:issued>1862</dcterms:issued>
+<text>cwar/xml/rebrec.06.docs.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0097">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-30</dcterms:available>
+	<dcterms:issued>1862</dcterms:issued>
+<text>cwar/xml/rebrec.06.poetry.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0099">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-30</dcterms:available>
+	<dcterms:issued>1866</dcterms:issued>
+<text>cwar/xml/rebrec.09.docs.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0100">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-30</dcterms:available>
+	<dcterms:issued>1866</dcterms:issued>
+<text>cwar/xml/rebrec.09.poetry.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0101">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-30</dcterms:available>
+	<dcterms:issued>1866</dcterms:issued>
+<text>cwar/xml/rebrec.10.docs.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0102">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-30</dcterms:available>
+	<dcterms:issued>1887</dcterms:issued>
+<text>cwar/xml/mcclellan.story.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0103">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-30</dcterms:available>
+	<dcterms:issued>1909</dcterms:issued>
+<text>cwar/xml/stanley.life.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/stanley.life/pages</pages>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0104">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+	<dcterms:issued>1855</dcterms:issued>
+<text>cwar/xml/brooks.medford.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/brooks.medford/pages</pages>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0106">
+<figures>/typhon/00CivilWar/3deskandocrd/phcw01/figures</figures>
+<pages>/typhon/00CivilWar/3deskandocrd/phcw01/pages</pages>
+	<dcterms:issued>1912</dcterms:issued>
+<text>cwar/xml/phcw01.ie.xml</text>
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0107">
+<figures>/typhon/00CivilWar/3deskandocrd/phcw02/figures</figures>
+<pages>/typhon/00CivilWar/3deskandocrd/phcw02/pages</pages>
+	<dcterms:issued>1912</dcterms:issued>
+<text>cwar/xml/phcw02.ie.xml</text>
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0108">
+<figures>/typhon/00CivilWar/3deskandocrd/phcw03/figures</figures>
+<pages>/typhon/00CivilWar/3deskandocrd/phcw03/pages</pages>
+	<dcterms:issued>1912</dcterms:issued>
+<text>cwar/xml/phcw03.ie.xml</text>
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0109">
+<figures>/typhon/00CivilWar/3deskandocrd/phcw04/figures</figures>
+<pages>/typhon/00CivilWar/3deskandocrd/phcw04/pages</pages>
+	<dcterms:issued>1912</dcterms:issued>
+<text>cwar/xml/phcw04.ie.xml</text>
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0110">
+<figures>/typhon/00CivilWar/3deskandocrd/phcw05/figures</figures>
+<pages>/typhon/00CivilWar/3deskandocrd/phcw05/pages</pages>
+	<dcterms:issued>1912</dcterms:issued>
+<text>cwar/xml/phcw05.ie.xml</text>
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0111">
+<figures>/typhon/00CivilWar/3deskandocrd/phcw06/figures</figures>
+<pages>/typhon/00CivilWar/3deskandocrd/phcw06/pages</pages>
+	<dcterms:issued>1912</dcterms:issued>
+<text>cwar/xml/phcw06.ie.xml</text>
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0112">
+<figures>/typhon/00CivilWar/3deskandocrd/phcw07/figures</figures>
+<pages>/typhon/00CivilWar/3deskandocrd/phcw07/pages</pages>
+	<dcterms:issued>1912</dcterms:issued>
+<text>cwar/xml/phcw07.ie.xml</text>
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0113">
+<figures>/typhon/00CivilWar/3deskandocrd/phcw08/figures</figures>
+<pages>/typhon/00CivilWar/3deskandocrd/phcw08/pages</pages>
+	<dcterms:issued>1912</dcterms:issued>
+<text>cwar/xml/phcw08.ie.xml</text>
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0114">
+<figures>/typhon/00CivilWar/3deskandocrd/phcw09/figures</figures>
+<pages>/typhon/00CivilWar/3deskandocrd/phcw09/pages</pages>
+	<dcterms:issued>1912</dcterms:issued>
+<text>cwar/xml/phcw09.ie.xml</text>
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0115">
+<figures>/typhon/00CivilWar/3deskandocrd/phcw10/figures</figures>
+<pages>/typhon/00CivilWar/3deskandocrd/phcw10/pages</pages>
+	<dcterms:issued>1912</dcterms:issued>
+<text>cwar/xml/phcw10.ie.xml</text>
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0001">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<text>cwar/xml/shs01.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/shs01/pages</pages>
+	<dcterms:issued>1876</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0117">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<text>cwar/xml/shs02.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/shs02/pages</pages>
+	<dcterms:issued>1876</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0118">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<text>cwar/xml/shs03.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/shs03/pages</pages>
+	<dcterms:issued>1877</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0119">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<text>cwar/xml/shs06.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/shs06/pages</pages>
+	<dcterms:issued>1878</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0120">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<pages>/typhon/00CivilWar/5pageparsing/shs07/pages</pages>
+	<dcterms:issued>1878</dcterms:issued>
+<text>cwar/xml/shs07.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0121">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<text>cwar/xml/shs08.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/shs08/pages</pages>
+	<dcterms:issued>1880</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0122">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<text>cwar/xml/shs09.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/shs09/pages</pages>
+	<dcterms:issued>1881</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0123">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<text>cwar/xml/shs10.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/shs10/pages</pages>
+	<dcterms:issued>1882</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0124">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<text>cwar/xml/rowell.paper.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/rowell/pages</pages>
+	<dcterms:issued>1869</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0125">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<text>cwar/xml/davis.mem.01.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/davis.mem.01/pages</pages>
+	<dcterms:issued>1881</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0128">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+	<dcterms:issued>1875</dcterms:issued>
+<text>cwar/xml/boynton.sherman.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0129">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<text>cwar/xml/davis.mem.02.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/davis.mem.02/pages</pages>
+	<dcterms:issued>1881</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0130">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<text>cwar/xml/alexander.mem.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/alexander.mem/pages</pages>
+	<dcterms:issued>1907</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0131">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<text>cwar/xml/schofield.army.ie.xml</text>
+<pages>/typhon/00CivilWar/5pageparsing/schofield.army/pages</pages>
+	<dcterms:issued>1897</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0132">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<figures>/typhon/00CivilWar/3deskandocrd/heush/figures</figures>
+	<dcterms:issued>1902</dcterms:issued>
+<text>cwar/xml/heush.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0133">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<text>cwar/xml/semmes.mem.ie.xml</text>
+<pages>/typhon/00CivilWar/3deskandocrd/semmes.alab/pages</pages>
+	<dcterms:issued>1868</dcterms:issued>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0134">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<text>cwar/xml/meade.let.ie.xml</text>
+<pages>/typhon/00CivilWar/3deskandocrd/meadelet/pages</pages>
+	<dcterms:issued>1913</dcterms:issued>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0135">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-17</dcterms:available>
+	<dcterms:issued>1862</dcterms:issued>
+<text>cwar/xml/rebrec.01.docs.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0136">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-17</dcterms:available>
+	<dcterms:issued>1883</dcterms:issued>
+<text>cwar/xml/roman.beau1.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0137">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2001-08-17</dcterms:available>
+	<dcterms:issued>1883</dcterms:issued>
+<text>cwar/xml/roman.beau2.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0138">
+<figures>/typhon/00CivilWar/2deskocr/knight.mech/figures</figures>
+<pages>/typhon/00CivilWar/2deskocr/knight.mech/pages</pages>
+	<dcterms:issued>1877</dcterms:issued>
+<text>cwar/xml/knight.mech.ie.xml</text>
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0140">
+<pages>/typhon/00CivilWar/3deskandocrd/dyer.cwar/pages</pages>
+	<dcterms:issued>1908</dcterms:issued>
+<text>cwar/xml/dyer.battles.xml</text>
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0143">
+<pages>/typhon/00CivilWar/3deskandocrd/dyer.cwar/pages</pages>
+	<dcterms:issued>1908</dcterms:issued>
+<text>cwar/xml/dyer.commands.namind.ie.xml</text>
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0144">
+<pages>/typhon/00CivilWar/3deskandocrd/dyer.cwar/pages</pages>
+	<dcterms:issued>1876</dcterms:issued>
+<text>cwar/xml/shs_rost.ie.xml</text>
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0145">
+<pages>/typhon/00CivilWar/3deskandocrd/dyer.cwar/pages</pages>
+	<dcterms:issued>1876</dcterms:issued>
+<text>cwar/xml/shs.commands.ie.xml</text>
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0146">
+<pages>/typhon/00CivilWar/3deskandocrd/dyer.cwar/pages</pages>
+	<dcterms:issued>1908</dcterms:issued>
+<text>cwar/xml/dyer.regiments.ie.xml</text>
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0149">
+	<dcterms:issued>1870</dcterms:issued>
+<text>cwar/xml/camcwar.mem.ie.xml</text>
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0150">
+	<dcterms:issued>1874</dcterms:issued>
+<text>cwar/xml/nason.sumner.ie.xml</text>
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0151">
+<text>cwar/xml/emilio.54th.ie.xml</text>
+<pages>/typhon/00CivilWar/3deskandocrd/emilio.black/pages</pages>
+	<dcterms:issued>1894</dcterms:issued>
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0152">
+<text>cwar/xml/schouler.mass01.ie.xml</text>
+<pages>/typhon/00CivilWar/2newwork/schouler01/pages</pages>
+	<dcterms:issued>1868</dcterms:issued>
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0153">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2002-12-25</dcterms:available>
+	<dcterms:issued>1868</dcterms:issued>
+<text>cwar/xml/rebrec.11.docs.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0155">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2002-12-26</dcterms:available>
+	<dcterms:issued>1905</dcterms:issued>
+<text>cwar/xml/stearns.camb.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0156">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-01-01</dcterms:available>
+	<dcterms:issued>1860</dcterms:issued>
+<text>cwar/xml/redpath.brown.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0157">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-01-02</dcterms:available>
+	<dcterms:issued>1900</dcterms:issued>
+<text>cwar/xml/higg.camb.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0158">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-01-02</dcterms:available>
+	<dcterms:issued>1921</dcterms:issued>
+<text>cwar/xml/chapman.garrison.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0159">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-01-04</dcterms:available>
+	<dcterms:issued>1905</dcterms:issued>
+<text>cwar/xml/crosby.garrison.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0160">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-01-04</dcterms:available>
+	<dcterms:issued>1875</dcterms:issued>
+<text>cwar/xml/dixon.conq1.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0161">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-01-04</dcterms:available>
+	<dcterms:issued>1875</dcterms:issued>
+<text>cwar/xml/dixon.conq2.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0162">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-01-07</dcterms:available>
+	<dcterms:issued>1866</dcterms:issued>
+<text>cwar/xml/brockett.camp.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0163">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-01-19</dcterms:available>
+	<dcterms:issued>1887</dcterms:issued>
+<text>cwar/xml/jones.christ.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0164">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-01-19</dcterms:available>
+	<dcterms:issued>1905</dcterms:issued>
+<text>cwar/xml/hume.abolitionist.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0165">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-01-20</dcterms:available>
+	<dcterms:issued>1889</dcterms:issued>
+<text>cwar/xml/martyn.garrison.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0166">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-01-26</dcterms:available>
+	<dcterms:issued>1877</dcterms:issued>
+<text>cwar/xml/bennett.revival.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0167">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-02-01</dcterms:available>
+	<dcterms:issued>1867</dcterms:issued>
+<text>cwar/xml/brockett.women.ie.xml</text>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0168">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-02-02</dcterms:available>
+	<dcterms:issued>1899</dcterms:issued>
+<text>cwar/xml/adams.mass19.ie.xml</text>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0169">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-02-02</dcterms:available>
+	<dcterms:issued>1871</dcterms:issued>
+<text>cwar/xml/schouler.mass02.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0170">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-02-02</dcterms:available>
+	<dcterms:issued>1906</dcterms:issued>
+<text>cwar/xml/waitt.mass19.ie.xml</text>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0171">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-02-06</dcterms:available>
+	<dcterms:issued>1921</dcterms:issued>
+<text>cwar/xml/best.ny121.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0172">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-02-07</dcterms:available>
+	<dcterms:issued>1883</dcterms:issued>
+<text>cwar/xml/pinkerton.spy.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0173">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-02-12</dcterms:available>
+	<dcterms:issued>1908</dcterms:issued>
+<text>cwar/xml/howard.auto1.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0174">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-02-12</dcterms:available>
+	<dcterms:issued>1908</dcterms:issued>
+<text>cwar/xml/howard.auto2.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0177">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-03-02</dcterms:available>
+	<dcterms:issued>1883</dcterms:issued>
+<text>cwar/xml/gordon.brook.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0178">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-03-02</dcterms:available>
+	<dcterms:issued>1897</dcterms:issued>
+<text>cwar/xml/higg.book.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0179">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-03-04</dcterms:available>
+	<dcterms:issued>1907</dcterms:issued>
+<text>cwar/xml/wilson.dana.ie.xml</text>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0180">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-03-05</dcterms:available>
+	<dcterms:issued>1903</dcterms:issued>
+<text>cwar/xml/linn.greeley.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0181">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-03-13</dcterms:available>
+	<dcterms:issued>1889</dcterms:issued>
+<text>cwar/xml/stowe.stowe.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0182">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-03-13</dcterms:available>
+	<dcterms:issued>1890</dcterms:issued>
+<text>cwar/xml/higg.fuller.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0183">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-03-19</dcterms:available>
+	<dcterms:issued>1866</dcterms:issued>
+<text>cwar/xml/pollard.lostcause.ie.xml</text>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0184">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-03-21</dcterms:available>
+	<dcterms:issued>1874</dcterms:issued>
+<text>cwar/xml/lester.sumner.ie.xml</text>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0185">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-03-23</dcterms:available>
+	<dcterms:issued>1896</dcterms:issued>
+<text>cwar/xml/cambridge.1896.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0186">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-03-23</dcterms:available>
+	<dcterms:issued>1885-1889</dcterms:issued>
+<text>cwar/xml/garrison.garrison2.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0187">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-03-30</dcterms:available>
+	<dcterms:issued>1917-1921</dcterms:issued>
+<text>cwar/xml/cam.amlit01.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0188">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-03-30</dcterms:available>
+	<dcterms:issued>1891</dcterms:issued>
+<text>cwar/xml/phillips.speeches01.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0189">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-03-30</dcterms:available>
+	<dcterms:issued>1891</dcterms:issued>
+<text>cwar/xml/phillips.speeches02.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0190">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-03-30</dcterms:available>
+	<dcterms:issued>1884</dcterms:issued>
+<text>cwar/xml/child.letters.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0191">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-03-30</dcterms:available>
+	<dcterms:issued>1898</dcterms:issued>
+<text>cwar/xml/higg.cheer.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0192">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-03-30</dcterms:available>
+	<dcterms:issued>1888</dcterms:issued>
+<text>cwar/xml/higg.women.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0193">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-03-30</dcterms:available>
+	<dcterms:issued>1886</dcterms:issued>
+<text>cwar/xml/bennett.massliart.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0194">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-03-30</dcterms:available>
+	<dcterms:issued>1912</dcterms:issued>
+<text>cwar/xml/whitcomb.maliart2.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0195">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-05-1</dcterms:available>
+	<dcterms:issued>1921</dcterms:issued>
+<text>cwar/xml/higg.lett.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0196">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-05-4</dcterms:available>
+	<dcterms:issued>1885-1889</dcterms:issued>
+<text>cwar/xml/garrison.garrison1.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0197">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-05-6</dcterms:available>
+	<dcterms:issued>1914</dcterms:issued>
+<text>cwar/xml/higg.higg2.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0198">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-05-7</dcterms:available>
+	<dcterms:issued>1903</dcterms:issued>
+<text>cwar/xml/higg.amlit.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0199">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-05-9</dcterms:available>
+	<dcterms:issued>1917-1921</dcterms:issued>
+<text>cwar/xml/cam.amlit02.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0200">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-05-9</dcterms:available>
+	<dcterms:issued>1921</dcterms:issued>
+<text>cwar/xml/perry.amlit.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0201">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-05-9</dcterms:available>
+	<dcterms:issued>1885-1889</dcterms:issued>
+<text>cwar/xml/garrison.garrison3.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0202">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-05-14</dcterms:available>
+	<dcterms:issued>1871</dcterms:issued>
+<text>cwar/xml/higg.women2.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0203">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-05-15</dcterms:available>
+	<dcterms:issued>1889</dcterms:issued>
+<text>cwar/xml/higg.afternoon.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0204">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-05-17</dcterms:available>
+	<dcterms:issued>1902</dcterms:issued>
+<text>cwar/xml/higg.whittier.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0205">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-05-17</dcterms:available>
+	<dcterms:issued>1885-1889</dcterms:issued>
+<text>cwar/xml/garrison.garrison4.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0206">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-05-20</dcterms:available>
+	<dcterms:issued>1877</dcterms:issued>
+<text>cwar/xml/pierce.sumner1.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0207">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-05-20</dcterms:available>
+	<dcterms:issued>1877</dcterms:issued>
+<text>cwar/xml/pierce.sumner2.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0208">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-05-21</dcterms:available>
+	<dcterms:issued>1877</dcterms:issued>
+<text>cwar/xml/pierce.sumner3.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0210">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-05-21</dcterms:available>
+	<dcterms:issued>1857</dcterms:issued>
+<text>cwar/Cambridge/camb1857.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0211">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-05-21</dcterms:available>
+	<dcterms:issued>1839</dcterms:issued>
+<text>cwar/xml/mtauburn.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0212">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-05-22</dcterms:available>
+	<dcterms:issued>1917-1921</dcterms:issued>
+<text>cwar/xml/cam.amlit03.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0213">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-05-23</dcterms:available>
+	<dcterms:issued>1905</dcterms:issued>
+<text>cwar/xml/somerville.universalist.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0214">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-05-31</dcterms:available>
+	<dcterms:issued>1874</dcterms:issued>
+<text>cwar/xml/higg.atlantic.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0215">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-05-31</dcterms:available>
+	<dcterms:issued>1909</dcterms:issued>
+<text>cwar/xml/higg.carlyle.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0216">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-05-31</dcterms:available>
+	<dcterms:issued>1880</dcterms:issued>
+<text>cwar/xml/higg.amauthors.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0217">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-06-01</dcterms:available>
+	<dcterms:issued>1877</dcterms:issued>
+<text>cwar/xml/pierce.sumner4.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0218">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-06-01</dcterms:available>
+	<dcterms:issued>1855</dcterms:issued>
+<text>cwar/xml/parton.greeley.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0219">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-06-04</dcterms:available>
+	<dcterms:issued>1895-1896</dcterms:issued>
+<text>cwar/xml/higg.masscw1.narr.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0220">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-06-05</dcterms:available>
+	<dcterms:issued>1873</dcterms:issued>
+<text>cwar/xml/higg.oldport.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0221">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-06-06</dcterms:available>
+	<dcterms:issued>1916</dcterms:issued>
+<text>cwar/xml/richards.howe.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0222">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-06-07</dcterms:available>
+	<dcterms:issued>1895-1896</dcterms:issued>
+<text>cwar/xml/higg.masscw1.reg.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0223">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-06-08</dcterms:available>
+	<dcterms:created>1861-1865</dcterms:created>
+<text>cwar/xml/higg.masscw1.dead.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0224">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-06-12</dcterms:available>
+	<dcterms:issued>1896</dcterms:issued>
+<text>cwar/xml/merrill.camb.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0225">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-06-12</dcterms:available>
+	<dcterms:issued>1890</dcterms:issued>
+<text>cwar/xml/higg.fair.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0226">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-06-12</dcterms:available>
+	<dcterms:issued>1877</dcterms:issued>
+<text>cwar/xml/higg.explorer.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0227">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-06-30</dcterms:available>
+	<dcterms:issued>1866</dcterms:issued>
+<text>cwar/xml/swinton.army.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0228">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-07-25</dcterms:available>
+	<dcterms:issued>1877</dcterms:issued>
+<text>cwar/xml/paige.cambridge.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0229">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2003-09-06</dcterms:available>
+	<dcterms:issued>1866</dcterms:issued>
+<text>cwar/xml/higg.harvmem1.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0230">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-03-15</dcterms:available>
+	<dcterms:issued>1876</dcterms:issued>
+<text>cwar/xml/ticknor.letters1.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0231">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-03-16</dcterms:available>
+<text>cwar/xml/ticknor.letters2.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0232">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-03-26</dcterms:available>
+	<dcterms:issued>1876</dcterms:issued>
+<text>cwar/xml/lowell.books.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0233">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-04-18</dcterms:available>
+	<dcterms:issued>1895-1896</dcterms:issued>
+<text>cwar/xml/higg.masscw2.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0234">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-04-19</dcterms:available>
+	<dcterms:issued>1852</dcterms:issued>
+<text>cwar/xml/fuller.mem.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0235">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-04-23</dcterms:available>
+	<dcterms:issued>1884</dcterms:issued>
+<text>cwar/xml/savage.bostevent.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0236">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-04-23</dcterms:available>
+	<dcterms:issued>1903</dcterms:issued>
+<text>cwar/xml/ewer.masscav3.rost.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0239">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-04-30</dcterms:available>
+	<dcterms:issued>1899</dcterms:issued>
+<text>cwar/xml/cmh01.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0240">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-05-01</dcterms:available>
+	<dcterms:issued>1899</dcterms:issued>
+<text>cwar/xml/cmh02.1.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0241">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-05-01</dcterms:available>
+	<dcterms:issued>1899</dcterms:issued>
+<text>cwar/xml/cmh02.2.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0242">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-05-01</dcterms:available>
+	<dcterms:issued>1888</dcterms:issued>
+<text>cwar/xml/beers.mem.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0243">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-05-01</dcterms:available>
+	<dcterms:issued>1899</dcterms:issued>
+<text>cwar/xml/cmh03.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0244">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-05-01</dcterms:available>
+	<dcterms:issued>1866</dcterms:issued>
+<text>cwar/xml/buchanan.admin.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0245">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-05-02</dcterms:available>
+	<dcterms:issued>1909</dcterms:issued>
+<text>cwar/xml/billings.mass10.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0246">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-05-02</dcterms:available>
+	<dcterms:issued>1899</dcterms:issued>
+<text>cwar/xml/cmh04.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0247">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-05-02</dcterms:available>
+	<dcterms:issued>1899</dcterms:issued>
+<text>cwar/xml/cmh05.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0248">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-05-02</dcterms:available>
+	<dcterms:issued>1899</dcterms:issued>
+<text>cwar/xml/cmh06.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0249">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-05-12</dcterms:available>
+	<dcterms:issued>1899</dcterms:issued>
+<text>cwar/xml/cmh07.1.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0250">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-05-12</dcterms:available>
+	<dcterms:issued>1899</dcterms:issued>
+<text>cwar/xml/cmh07.2.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0251">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-05-12</dcterms:available>
+	<dcterms:issued>1899</dcterms:issued>
+<text>cwar/xml/cmh09.1.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0252">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-05-12</dcterms:available>
+	<dcterms:issued>1899</dcterms:issued>
+<text>cwar/xml/cmh09.2.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0253">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-05-12</dcterms:available>
+	<dcterms:issued>1899</dcterms:issued>
+<text>cwar/xml/cmh10.1.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0254">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-05-12</dcterms:available>
+	<dcterms:issued>1899</dcterms:issued>
+<text>cwar/xml/cmh10.2.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0255">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-05-12</dcterms:available>
+	<dcterms:issued>1899</dcterms:issued>
+<text>cwar/xml/cmh11.1.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0256">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-05-12</dcterms:available>
+	<dcterms:issued>1899</dcterms:issued>
+<text>cwar/xml/cmh11.2.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0257">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-05-29</dcterms:available>
+	<dcterms:issued>1891-1895</dcterms:issued>
+<text>cwar/xml/atlas.index.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0258">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-06-11</dcterms:available>
+	<dcterms:issued>1885</dcterms:issued>
+<text>cwar/xml/agassiz.life.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0259">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-06-15</dcterms:available>
+	<dcterms:issued>1885</dcterms:issued>
+<text>cwar/xml/badeau.grant1.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0260">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-06-15</dcterms:available>
+	<dcterms:issued>1885</dcterms:issued>
+<text>cwar/xml/badeau.grant2.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0262">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-06-15</dcterms:available>
+	<dcterms:issued>1887</dcterms:issued>
+<text>cwar/xml/badeau.grantp.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0263">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-06-17</dcterms:available>
+	<dcterms:issued>1899</dcterms:issued>
+<text>cwar/xml/cmh12.1.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0264">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-06-17</dcterms:available>
+	<dcterms:issued>1899</dcterms:issued>
+<text>cwar/xml/cmh12.2.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0265">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-06-17</dcterms:available>
+	<dcterms:issued>1899</dcterms:issued>
+<text>cwar/xml/cmh08.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0266">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-06-17</dcterms:available>
+	<dcterms:issued>1854</dcterms:issued>
+<text>cwar/xml/child.hopper.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0267">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-06-29</dcterms:available>
+	<dcterms:issued>1892</dcterms:issued>
+<text>cwar/xml/higg.newworld.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0268">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-08-23</dcterms:available>
+	<dcterms:issued>1883</dcterms:issued>
+<text>cwar/xml/shs11.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0269">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-08-23</dcterms:available>
+	<dcterms:issued>1884</dcterms:issued>
+<text>cwar/xml/shs12.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0270">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-08-29</dcterms:available>
+	<dcterms:issued>1885</dcterms:issued>
+<text>cwar/xml/shs13.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0271">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-08-29</dcterms:available>
+	<dcterms:issued>1886</dcterms:issued>
+<text>cwar/xml/shs14.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0272">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-08-29</dcterms:available>
+	<dcterms:issued>1887</dcterms:issued>
+<text>cwar/xml/shs15.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0273">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-08-29</dcterms:available>
+	<dcterms:issued>1888</dcterms:issued>
+<text>cwar/xml/shs16.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0274">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-08-29</dcterms:available>
+	<dcterms:issued>1889</dcterms:issued>
+<text>cwar/xml/shs17.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0276">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-03</dcterms:available>
+	<dcterms:issued>1890</dcterms:issued>
+<text>cwar/xml/shs18.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0277">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-03</dcterms:available>
+	<dcterms:issued>1891</dcterms:issued>
+<text>cwar/xml/shs19.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0278">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-03</dcterms:available>
+	<dcterms:issued>1892</dcterms:issued>
+<text>cwar/xml/shs20.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0279">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-11</dcterms:available>
+	<dcterms:issued>1893</dcterms:issued>
+<text>cwar/xml/shs21.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0280">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-11</dcterms:available>
+	<dcterms:issued>1894</dcterms:issued>
+<text>cwar/xml/shs22.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0281">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-11</dcterms:available>
+	<dcterms:issued>1895</dcterms:issued>
+<text>cwar/xml/shs23.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0282">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-11</dcterms:available>
+	<dcterms:issued>1896</dcterms:issued>
+<text>cwar/xml/shs24.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0283">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-11</dcterms:available>
+	<dcterms:issued>1897</dcterms:issued>
+<text>cwar/xml/shs25.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0284">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-11</dcterms:available>
+	<dcterms:issued>1898</dcterms:issued>
+<text>cwar/xml/shs26.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0285">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-11</dcterms:available>
+	<dcterms:issued>1899</dcterms:issued>
+<text>cwar/xml/shs27.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0286">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-11</dcterms:available>
+	<dcterms:issued>1900</dcterms:issued>
+<text>cwar/xml/shs28.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0287">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-11</dcterms:available>
+	<dcterms:issued>1901</dcterms:issued>
+<text>cwar/xml/shs29.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0288">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-11</dcterms:available>
+	<dcterms:issued>1902</dcterms:issued>
+<text>cwar/xml/shs30.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0289">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-11</dcterms:available>
+	<dcterms:issued>1903</dcterms:issued>
+<text>cwar/xml/shs31.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0290">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-11</dcterms:available>
+	<dcterms:issued>1904</dcterms:issued>
+<text>cwar/xml/shs32.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0291">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-11</dcterms:available>
+	<dcterms:issued>1905</dcterms:issued>
+<text>cwar/xml/shs33.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0292">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-11</dcterms:available>
+	<dcterms:issued>1906</dcterms:issued>
+<text>cwar/xml/shs34.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0293">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-11</dcterms:available>
+	<dcterms:issued>1907</dcterms:issued>
+<text>cwar/xml/shs35.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0294">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-11</dcterms:available>
+	<dcterms:issued>1908</dcterms:issued>
+<text>cwar/xml/shs36.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0295">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-11</dcterms:available>
+	<dcterms:issued>1909</dcterms:issued>
+<text>cwar/xml/shs37.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0297">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-12</dcterms:available>
+	<dcterms:issued>1885</dcterms:issued>
+<text>cwar/xml/badeau.grant3.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0298">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-25</dcterms:available>
+	<dcterms:issued>1899</dcterms:issued>
+<text>cwar/xml/howe.rem.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0300">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2004-09-27</dcterms:available>
+	<dcterms:issued>1840</dcterms:issued>
+<text>cwar/xml/turner.unit.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0301">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-01-13</dcterms:available>
+	<dcterms:issued>1869</dcterms:issued>
+<text>cwar/xml/rowell.cities.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0302">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-04-21</dcterms:available>
+	<dcterms:issued>1904</dcterms:issued>
+<text>cwar/xml/somerville.leaves02.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0303">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-04-21</dcterms:available>
+	<dcterms:issued>1905</dcterms:issued>
+<text>cwar/xml/somerville.leaves03.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0304">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-04-21</dcterms:available>
+	<dcterms:issued>1906</dcterms:issued>
+<text>cwar/xml/somerville.leaves04.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0305">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-04-21</dcterms:available>
+	<dcterms:issued>1907</dcterms:issued>
+<text>cwar/xml/somerville.leaves05.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0306">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-04-21</dcterms:available>
+	<dcterms:issued>1908</dcterms:issued>
+<text>cwar/xml/somerville.leaves06.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0307">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-04-21</dcterms:available>
+	<dcterms:issued>1909</dcterms:issued>
+<text>cwar/xml/somerville.leaves07.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0308">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-04-21</dcterms:available>
+	<dcterms:issued>1910</dcterms:issued>
+<text>cwar/xml/somerville.leaves08.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0309">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-04-21</dcterms:available>
+	<dcterms:issued>1903</dcterms:issued>
+<text>cwar/xml/somerville.leaves01.ie.xml</text>
+</rdf:Description>
+
+<!--
+<rdf:Description rdf:about="Perseus:text:2001.05.0310">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-04-21</dcterms:available>
+<text>cwar/xml/harpgaz.1855.ie.xml</text>
+</rdf:Description>
+-->
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0311">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-05-29</dcterms:available>
+	<dcterms:issued>1912</dcterms:issued>
+<text>cwar/xml/phcw.index.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0312">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-04-25</dcterms:available>
+	<dcterms:issued>1888-1889</dcterms:issued>
+<text>cwar/xml/whitt01.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0313">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1888-1889</dcterms:issued>
+<text>cwar/xml/whitt02.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0314">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1888-1889</dcterms:issued>
+<text>cwar/xml/whitt03.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0315">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1888-1889</dcterms:issued>
+<text>cwar/xml/whitt04.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0316">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1888-1889</dcterms:issued>
+<text>cwar/xml/whitt05.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0317">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1888-1889</dcterms:issued>
+<text>cwar/xml/whitt06.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0318">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1888-1889</dcterms:issued>
+<text>cwar/xml/whitt07.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0319">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-21</dcterms:available>
+	<dcterms:issued>1902</dcterms:issued>
+<text>cwar/xml/higg.longfell.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0320">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-23</dcterms:available>
+	<dcterms:issued>1880</dcterms:issued>
+<text>cwar/xml/cutter.arlington.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0321">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-23</dcterms:available>
+	<dcterms:issued>1876</dcterms:issued>
+<text>cwar/xml/comte.cwar.01.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0322">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-23</dcterms:available>
+	<dcterms:issued>1876</dcterms:issued>
+<text>cwar/xml/comte.cwar.02.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0323">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-23</dcterms:available>
+	<dcterms:issued>1883</dcterms:issued>
+<text>cwar/xml/comte.cwar.03.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0324">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-23</dcterms:available>
+	<dcterms:issued>1888</dcterms:issued>
+<text>cwar/xml/comte.cwar.04.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0325">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-23</dcterms:available>
+	<dcterms:issued>1879</dcterms:issued>
+<text>cwar/xml/nelson.waltham.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0326">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-23</dcterms:available>
+	<dcterms:issued>1859</dcterms:issued>
+<text>cwar/xml/bancroft01.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0327">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-23</dcterms:available>
+	<dcterms:issued>1859</dcterms:issued>
+<text>cwar/xml/bancroft02.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0328">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-23</dcterms:available>
+	<dcterms:issued>1860</dcterms:issued>
+<text>cwar/xml/bancroft03.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0329">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-23</dcterms:available>
+	<dcterms:issued>1859</dcterms:issued>
+<text>cwar/xml/bancroft04.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0330">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-23</dcterms:available>
+	<dcterms:issued>1860</dcterms:issued>
+<text>cwar/xml/bancroft05.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0331">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-23</dcterms:available>
+	<dcterms:issued>1859</dcterms:issued>
+<text>cwar/xml/bancroft06.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0332">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-23</dcterms:available>
+	<dcterms:issued>1860</dcterms:issued>
+<text>cwar/xml/bancroft07.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0333">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-23</dcterms:available>
+	<dcterms:issued>1860</dcterms:issued>
+<text>cwar/xml/bancroft08.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2001.05.0334">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-23</dcterms:available>
+	<dcterms:issued>1874</dcterms:issued>
+<text>cwar/xml/bancroft10.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0001">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1898</dcterms:issued>
+<text>cwar/xml/mhs01.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0002">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1900</dcterms:issued>
+<text>cwar/xml/mhs02.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0003">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1899</dcterms:issued>
+<text>cwar/xml/mhs03.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0004">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1901</dcterms:issued>
+<text>cwar/xml/mhs04.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0005">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1902</dcterms:issued>
+<text>cwar/xml/mhs05.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0006">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1903</dcterms:issued>
+<text>cwar/xml/mhs06.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0007">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1904</dcterms:issued>
+<text>cwar/xml/mhs07.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0008">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1905</dcterms:issued>
+<text>cwar/xml/mhs08.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0009">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1906</dcterms:issued>
+<text>cwar/xml/mhs09.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0010">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1907</dcterms:issued>
+<text>cwar/xml/mhs10.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0011">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1908</dcterms:issued>
+<text>cwar/xml/mhs11.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0012">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1909</dcterms:issued>
+<text>cwar/xml/mhs12.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0013">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1910</dcterms:issued>
+<text>cwar/xml/mhs13.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0014">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1911</dcterms:issued>
+<text>cwar/xml/mhs14.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0015">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1912</dcterms:issued>
+<text>cwar/xml/mhs15.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0016">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1913</dcterms:issued>
+<text>cwar/xml/mhs16.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0017">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1914</dcterms:issued>
+<text>cwar/xml/mhs17.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0018">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1915</dcterms:issued>
+<text>cwar/xml/mhs18.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0019">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1912</dcterms:issued>
+<text>cwar/xml/mhs19.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0020">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1917</dcterms:issued>
+<text>cwar/xml/mhs20.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0021">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1919</dcterms:issued>
+<text>cwar/xml/mhs21.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0022">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1919</dcterms:issued>
+<text>cwar/xml/mhs22.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0023">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1920</dcterms:issued>
+<text>cwar/xml/mhs23.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0024">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1921</dcterms:issued>
+<text>cwar/xml/mhs24.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0025">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1922</dcterms:issued>
+<text>cwar/xml/mhs25.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0026">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1922</dcterms:issued>
+<text>cwar/xml/mhs26.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0027">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1923</dcterms:issued>
+<text>cwar/xml/mhs27.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0028">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1925</dcterms:issued>
+<text>cwar/xml/mhs28.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0029">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1926</dcterms:issued>
+<text>cwar/xml/mhs29.ie.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2005.05.0030">
+<dcterms:isPartOf rdf:resource="Perseus:collection:cwar"/>
+<dcterms:available>2005-07-18</dcterms:available>
+	<dcterms:issued>1927</dcterms:issued>
+<text>cwar/xml/mhs30.ie.xml</text>
+</rdf:Description>
+
+</rdf:RDF>

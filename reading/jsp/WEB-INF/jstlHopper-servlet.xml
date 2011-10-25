@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="searchController" class="perseus.controllers.search.SearchController"/>
+
+    <bean id="imageController" class="perseus.controllers.image.ImageController"/>
+    <bean id="imageBrowserController" class="perseus.controllers.image.ImageBrowserController"/>
+
+    <bean id="mapController" class="perseus.controllers.visualizations.MapController"/>
+
+	<bean id="indexCollectionsController" class="perseus.controllers.document.IndexCollectionsController"/>
+	<bean id="collectionController" class="perseus.controllers.document.CollectionController"/>
+	<bean id="publicationsController" class="perseus.controllers.document.PublicationsController"/>
+	<bean id="displayPreferencesController" class="perseus.controllers.document.DisplayPreferencesController"/>
+	
+	<bean id="artifactBrowserController" class="perseus.controllers.artarch.ArtifactBrowserController"/>
+    <bean id="artifactViewerController" class="perseus.controllers.artarch.ArtifactViewerController"/>
+	<bean id="artifactSearchController" class="perseus.controllers.artarch.ArtifactSearchController"/>
+	
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>	    
+	        <prop key="/search">searchController</prop>
+	        <prop key="/image">imageController</prop>
+	        <prop key="/imbrowser">imageBrowserController</prop>
+	        
+	        <prop key="/map">mapController</prop>
+	        
+        	<prop key="/collection">collectionController</prop>
+        	<prop key="/collections">indexCollectionsController</prop>
+        	<prop key="/disppref">displayPreferencesController</prop>
+        	
+        	<prop key="/browser">artifactBrowserController</prop>
+			<prop key="/artifactBrowser">artifactBrowserController</prop>
+			<prop key="/artifact">artifactViewerController</prop>
+			<prop key="/artifactSearch">artifactSearchController</prop>
+			
+			<prop key="/about/publications">publicationsController</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    	<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+      	<property name="prefix" value="/"/>
+      	<property name="suffix" value=".jsp"/>
+    </bean>
+
+</beans>

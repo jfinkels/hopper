@@ -1,0 +1,12 @@
+<!ELEMENT archive_number (#PCDATA) >
+<!ELEMENT caption (#PCDATA) >
+<!ELEMENT credits (#PCDATA) >
+<!ELEMENT status (#PCDATA) >
+<!ELEMENT source_id (#PCDATA) >
+<!ELEMENT img (archive_number | caption | credits | status | source_id)+ >
+<!ELEMENT Image (img)+ >
+
+<!-- Resolve any entities -->
+<!ENTITY % TEI.XML "INCLUDE">
+<!ENTITY % PersProse PUBLIC "-//Perseus P4//DTD Perseus Prose//EN" "http://www.perseus.tufts.edu/DTD/1.0/PersProse.dtd" >
+%PersProse;

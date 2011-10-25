@@ -1,0 +1,29 @@
+<!ELEMENT archive_number (#PCDATA) >
+<!ELEMENT caption (#PCDATA) >
+<!ELEMENT credits (#PCDATA) >
+<!ELEMENT date (#PCDATA) >
+<!ELEMENT series (#PCDATA) >
+<!ELEMENT seq (#PCDATA) >
+<!ELEMENT entered_by (#PCDATA) >
+<!ELEMENT lon (#PCDATA) >
+<!ELEMENT lat (#PCDATA) >
+<!ELEMENT status (#PCDATA) >
+<!ELEMENT canonical (#PCDATA) >
+<!ELEMENT source_id (#PCDATA) >
+<!ELEMENT format (#PCDATA) >
+<!ELEMENT qt_name (#PCDATA) >
+<!ELEMENT qt_movieName (#PCDATA) >
+<!ELEMENT qt_controller (#PCDATA) >
+<!ELEMENT qt_autoplay (#PCDATA) >
+<!ELEMENT vr_bcolor (#PCDATA) >
+<!ELEMENT playback_width (#PCDATA) >
+<!ELEMENT playback_height (#PCDATA) >
+<!ELEMENT img (archive_number | caption | credits | date | series | seq | entered_by | lon | lat
+               | status | canonical | source_id | format | qt_name | qt_movieName | qt_controller
+               | qt_autoplay | vr_bcolor | playback_width | playback_height)+ >
+<!ELEMENT ArtifactImg (img)+ >
+
+<!-- Resolve any entities -->
+<!ENTITY % TEI.XML "INCLUDE">
+<!ENTITY % PersProse PUBLIC "-//Perseus P4//DTD Perseus Prose//EN" "http://www.perseus.tufts.edu/DTD/1.0/PersProse.dtd" >
+%PersProse;

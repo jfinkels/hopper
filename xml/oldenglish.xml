@@ -1,0 +1,949 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.perseus.org/meta/perseus.rdfs#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:dcterms="http://purl.org/dc/terms/"
+         xmlns:dctype="http://purl.org/dc/dcmitype/"
+         xmlns:perseus="http://www.perseus.org/meta/perseus.rdfs#"
+         xmlns:persq="http://www.perseus.org/meta/persq.rdfs#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:tufts="http://www.tufts.edu/"
+>
+
+<rdf:Description rdf:about="Perseus:abo:oec,0001">
+<dc:title xml:lang="en">Beowulf</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:collection:Germanic">
+<dc:description xml:lang="en">Materials for the study of the Germanic Peoples</dc:description>
+<dc:title xml:lang="en">Germanic Materials</dc:title>
+<dcterms:alternative>Germanic</dcterms:alternative>
+<dc:subject>germanic</dc:subject>
+<dc:type>collection</dc:type>
+<persq:template>germanic.html</persq:template>
+<sort>10 Germanic</sort>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0003">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:oec,0001"/>
+<text>Germanic/Beowulf/opensource/garnett.beowulf_eng.xml</text>
+</rdf:Description>
+
+<!--
+<rdf:Description rdf:about="Perseus:abo:aspr,a35">
+<dc:title xml:lang="en">Latin-English Proverbs</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0100">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a35"/>
+<text>ASPR/a35.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a10,5">
+<dc:title xml:lang="en">The Death of Alfred</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0101">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a10,5"/>
+<text>ASPR/a10.5.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a31">
+<dc:title xml:lang="en">The Seasons for Fasting</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0102">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a31"/>
+<text>ASPR/a31.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a10,2">
+<dc:title xml:lang="en">The Capture of the Five Boroughs</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0103">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a10,2"/>
+<text>ASPR/a10.2.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a2,3">
+<dc:title xml:lang="en">Soul and Body I</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0104">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a2,3"/>
+<text>ASPR/a2.3.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a1,3">
+<dc:title xml:lang="en">Daniel</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0105">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a1,3"/>
+<text>ASPR/a1.3.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a2,4">
+<dc:title xml:lang="en">Homiletic Fragment I</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0106">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a2,4"/>
+<text>ASPR/a2.4.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a15">
+<dc:title xml:lang="en">Maxims II</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0107">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a15"/>
+<text>ASPR/a15.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a2,5">
+<dc:title xml:lang="en">Dream of the Rood</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0108">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a2,5"/>
+<text>ASPR/a2.5.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a23">
+<dc:title xml:lang="en">The Creed</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0109">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a23"/>
+<text>ASPR/a23.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a10,1">
+<dc:title xml:lang="en">The Battle of Brunanburh</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0110">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a10,1"/>
+<text>ASPR/a10.1.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a34">
+<dc:title xml:lang="en">The Leiden Riddle</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0111">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a34"/>
+<text>ASPR/a34.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a14">
+<dc:title xml:lang="en">The Mologium</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0112">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a14"/>
+<text>ASPR/a14.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a1,4">
+<dc:title xml:lang="en">Christ and Satan</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0113">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a1,4"/>
+<text>ASPR/a1.4.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a30">
+<dc:title xml:lang="en">Aldhelm</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0114">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a30"/>
+<text>ASPR/a30.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a32,1">
+<dc:title xml:lang="en">Caedmon's Hymn: Northumbrian Version</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0115">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a32,1"/>
+<text>ASPR/a32.1.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a22">
+<dc:title xml:lang="en">The Lord's Prayer III</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0116">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a22"/>
+<text>ASPR/a22.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a33,1">
+<dc:title xml:lang="en">Bede's Death Song: Northumbrian Version</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0117">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a33,1"/>
+<text>ASPR/a33.1.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a28">
+<dc:title xml:lang="en">A Prayer</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0118">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a28"/>
+<text>ASPR/a28.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a20">
+<dc:title xml:lang="en">The Lord's Prayer II</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0119">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a20"/>
+<text>ASPR/a20.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a2,6">
+<dc:title xml:lang="en">Elene</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0120">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a2,6"/>
+<text>ASPR/a2.6.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a2,2">
+<dc:title xml:lang="en">The Fates of the Apostles</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0121">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a2,2"/>
+<text>ASPR/a2.2.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a27">
+<dc:title xml:lang="en">The Gloria II</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0122">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a27"/>
+<text>ASPR/a27.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a1,1">
+<dc:title xml:lang="en">Genesis A, B</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0123">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a1,1"/>
+<text>ASPR/a1.1.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a32,2">
+<dc:title xml:lang="en">Caedmon's Hymn: West Saxon Version</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0124">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a32,2"/>
+<text>ASPR/a32.2.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a10,4">
+<dc:title xml:lang="en">The Death of Edgar</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0125">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a10,4"/>
+<text>ASPR/a10.4.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a2,1">
+<dc:title xml:lang="en">Andreas</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0126">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a2,1"/>
+<text>ASPR/a2.1.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a41">
+<dc:title xml:lang="en">Unknown</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0127">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a41"/>
+<text>ASPR/a41.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a13">
+<dc:title xml:lang="en">Solomon and Saturn</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0128">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a13"/>
+<text>ASPR/a13.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a16">
+<dc:title xml:lang="en">A Proverb from Winfrid's Time</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0129">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a16"/>
+<text>ASPR/a16.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a37">
+<dc:title xml:lang="en">Metrical Epilogue to the Pastoral Care</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0130">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a37"/>
+<text>ASPR/a37.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a39">
+<dc:title xml:lang="en">The Metrical Epilogue to MS 41, Corpus Christi College, Cambridge</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0131">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a39"/>
+<text>ASPR/a39.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a29">
+<dc:title xml:lang="en">Thureth</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0132">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a29"/>
+<text>ASPR/a29.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a25">
+<dc:title xml:lang="en">The Kentish Hymn</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0133">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a25"/>
+<text>ASPR/a25.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a9">
+<dc:title xml:lang="en">The Battle of Maldon</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0134">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a9"/>
+<text>ASPR/a9.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a33,2">
+<dc:title xml:lang="en">Bede's Death Song: The Hague Version</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0135">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a33,2"/>
+<text>ASPR/a33.2.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a19">
+<dc:title xml:lang="en">A Summons to Prayer</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0136">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a19"/>
+<text>ASPR/a19.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a7">
+<dc:title xml:lang="en">The Battle of Finnsburh</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0137">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a7"/>
+<text>ASPR/a7.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a10,3">
+<dc:title xml:lang="en">The Coronation of Edgar</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0138">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a10,3"/>
+<text>ASPR/a10.3.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a26">
+<dc:title xml:lang="en">Psalm 50</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0139">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a26"/>
+<text>ASPR/a26.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a18">
+<dc:title xml:lang="en">An Exhortation to Christian Living</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0140">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a18"/>
+<text>ASPR/a18.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a10,6">
+<dc:title xml:lang="en">The Death of Edward</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0141">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a10,6"/>
+<text>ASPR/a10.6.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a17">
+<dc:title xml:lang="en">The Judgment Day II</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0142">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a17"/>
+<text>ASPR/a17.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a38">
+<dc:title xml:lang="en">The Metrical Preface to Waerferth's Translation of Gregory's Dialogues</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0143">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a38"/>
+<text>ASPR/a38.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a21">
+<dc:title xml:lang="en">The Gloria I</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0144">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a21"/>
+<text>ASPR/a21.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a12">
+<dc:title xml:lang="en">The Rune Poem</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0145">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a12"/>
+<text>ASPR/a12.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a1,2">
+<dc:title xml:lang="en">Exodus</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0146">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a1,2"/>
+<text>ASPR/a1.2.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a11">
+<dc:title xml:lang="en">Durham</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0147">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a11"/>
+<text>ASPR/a11.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a33,3">
+<dc:title xml:lang="en">Bede's Death Song: West Saxon Version</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0148">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a33,3"/>
+<text>ASPR/a33.3.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a8,2">
+<dc:title xml:lang="en">Waldere B</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0149">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a8,2"/>
+<text>ASPR/a8.2.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a8,1">
+<dc:title xml:lang="en">Waldere A</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0150">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a8,1"/>
+<text>ASPR/a8.1.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a36">
+<dc:title xml:lang="en">Metrical Preface to the Pastoral Car</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0151">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a36"/>
+<text>ASPR/a36.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,10">
+<dc:title xml:lang="en">Vainglory</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0152">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,10"/>
+<text>ASPR/a3.10.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,3">
+<dc:title xml:lang="en">Azarias</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0153">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,3"/>
+<text>ASPR/a3.3.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,15">
+<dc:title xml:lang="en">The Riming Poem</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0154">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,15"/>
+<text>ASPR/a3.15.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,29">
+<dc:title xml:lang="en">The Lord's Prayer I</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0155">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,29"/>
+<text>ASPR/a3.29.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,19">
+<dc:title xml:lang="en">Soul and Body II</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0156">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,19"/>
+<text>ASPR/a3.19.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,32">
+<dc:title xml:lang="en">The Husband's Message</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0157">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,32"/>
+<text>ASPR/a3.32.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,5">
+<dc:title xml:lang="en">Juliana</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0158">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,5"/>
+<text>ASPR/a3.5.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,9">
+<dc:title xml:lang="en">The Seafarer</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0159">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,9"/>
+<text>ASPR/a3.9.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,25">
+<dc:title xml:lang="en">Resignation</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0160">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,25"/>
+<text>ASPR/a3.25.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,4">
+<dc:title xml:lang="en">The Phoenix</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0161">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,4"/>
+<text>ASPR/a3.4.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,17">
+<dc:title xml:lang="en">The Whale</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0162">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,17"/>
+<text>ASPR/a3.17.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,21">
+<dc:title xml:lang="en">Wulf and Eadwacer</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0163">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,21"/>
+<text>ASPR/a3.21.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,13">
+<dc:title xml:lang="en">Maxims I</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0164">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,13"/>
+<text>ASPR/a3.13.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,20">
+<dc:title xml:lang="en">Deor</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0165">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,20"/>
+<text>ASPR/a3.20.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,18">
+<dc:title xml:lang="en">The Partridge</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0166">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,18"/>
+<text>ASPR/a3.18.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,33">
+<dc:title xml:lang="en">The Ruin</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0167">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,33"/>
+<text>ASPR/a3.33.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,8">
+<dc:title xml:lang="en">Precepts</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0168">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,8"/>
+<text>ASPR/a3.8.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,1">
+<dc:title xml:lang="en">Christ A, B, C</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0169">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,1"/>
+<text>ASPR/a3.1.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,14">
+<dc:title xml:lang="en">The Order of the World</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0170">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,14"/>
+<text>ASPR/a3.14.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,12">
+<dc:title xml:lang="en">The Fortunes of Men</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0171">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,12"/>
+<text>ASPR/a3.12.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,30">
+<dc:title xml:lang="en">Homiletic Fragment II</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0172">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,30"/>
+<text>ASPR/a3.30.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,2">
+<dc:title xml:lang="en">Guthlac A, B</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0173">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,2"/>
+<text>ASPR/a3.2.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,24">
+<dc:title xml:lang="en">The Judgment Day I</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0174">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,24"/>
+<text>ASPR/a3.24.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,28">
+<dc:title xml:lang="en">Pharaoh</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0175">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,28"/>
+<text>ASPR/a3.28.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,16">
+<dc:title xml:lang="en">The Panther</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0176">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,16"/>
+<text>ASPR/a3.16.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,7">
+<dc:title xml:lang="en">The Gifts of Men</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0177">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,7"/>
+<text>ASPR/a3.7.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,23">
+<dc:title xml:lang="en">The Wife's Lament</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0178">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,23"/>
+<text>ASPR/a3.23.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,27">
+<dc:title xml:lang="en">Alms-Giving</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0179">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,27"/>
+<text>ASPR/a3.27.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,11">
+<dc:title xml:lang="en">Widsith</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0180">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,11"/>
+<text>ASPR/a3.11.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,6">
+<dc:title xml:lang="en">The Wanderer</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0181">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,6"/>
+<text>ASPR/a3.6.xml</text>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:abo:aspr,a3,26">
+<dc:title xml:lang="en">The Descent into Hell</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="Perseus:text:2003.01.0182">
+<dcterms:available>2003-07-01</dcterms:available>
+<dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
+<dcterms:isVersionOf rdf:resource="Perseus:abo:aspr,a3,26"/>
+<text>ASPR/a3.26.xml</text>
+</rdf:Description>
+-->
+
+
+</rdf:RDF>

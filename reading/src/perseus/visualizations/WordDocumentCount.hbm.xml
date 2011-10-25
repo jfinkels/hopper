@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="perseus.visualizations">
+	<class name="WordDocumentCount" table="hib_word_document_counts" batch-size="10">
+	
+	<id name="id" type="int" column="id">
+	    <generator class="native" />
+	</id>
+	
+	<property name="word" column="word" type="string" length="30" index="word_year_idx"/>
+	<property name="year" column="year" type="int" index="word_year_idx"/>
+	<property name="documentCount" column="document_count" type="long" />
+	<many-to-one name="lang" column="language_id" />
+	
+	</class>
+
+</hibernate-mapping>

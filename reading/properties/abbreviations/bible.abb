@@ -1,0 +1,106 @@
+genesis	Genesis	abo:tlg,0527,001
+exodus	Exodus	abo:tlg,0527,002
+leviticus	Leviticus	abo:tlg,0527,003
+numbers	Numbers	abo:tlg,0527,004
+deuteronomy	Deuteronomy	abo:tlg,0527,005
+joshua	Joshua	abo:tlg,0527,006
+judges	Judges	abo:tlg,0527,008
+ruth	Ruth	abo:tlg,0527,010
+1|samuel	1 Samuel	abo:tlg,0527,011
+i|samuel	1 Samuel	abo:tlg,0527,011
+2|samuel	2 Samuel	abo:tlg,0527,012
+ii|samuel	2 Samuel	abo:tlg,0527,012
+1|kings	1 Kings	abo:tlg,0527,013
+i|kings	1 Kings	abo:tlg,0527,013
+2|kings	2 Kings	abo:tlg,0527,014
+ii|kings	2 Kings	abo:tlg,0527,014
+1|chronicles	1 Chronicles	abo:tlg,0527,015
+i|chronicles	1 Chronicles	abo:tlg,0527,015
+2|chronicles	2 Chronicles	abo:tlg,0527,016
+ii|chronicles	2 Chronicles	abo:tlg,0527,016
+ezra	Ezra	abo:tlg,0527,018
+nehemiah	Nehemiah	abo:tlg,0527,018
+esther	Esther	abo:tlg,0527,019
+job	Job	abo:tlg,0527,032
+psalm	Psalm	abo:tlg,0527,027
+proverbs	Proverbs	abo:tlg,0527,029
+ecclesiastes	Ecclesiastes	abo:tlg,0527,030
+canticles	Canticles	abo:tlg,0527,031
+song	Song	abo:tlg,0527,031
+isaiah	Isaiah	abo:tlg,0527,048
+jeremiah	Jeremiah	abo:tlg,0527,049
+lamentations	Lamentations	abo:tlg,0527,051
+ezekiel	Ezekiel	abo:tlg,0527,053
+daniel	Daniel	abo:tlg,0527,056
+hosea	Hosea	abo:tlg,0527,036
+joel	Joel	abo:tlg,0527,039
+amos	Amos	abo:tlg,0527,037
+obadiah	Obadiah	abo:tlg,0527,040
+jonah	Jonah	abo:tlg,0527,041
+micah	Micah	abo:tlg,0527,038
+nahum	Nahum	abo:tlg,0527,042
+habakkuk	Habakkuk	abo:tlg,0527,043
+zephaniah	Zephaniah	abo:tlg,0527,044
+haggai	Haggai	abo:tlg,0527,045
+zechariah	Zechariah	abo:tlg,0527,046
+malachi	Malachi	abo:tlg,0527,047
+1|esdras	1 Esdras	abo:tlg,0527,017
+2|esdras	2 Esdras	abo:tlg,0527,018
+tobit	Tobit	abo:tlg,0527,021
+judith	Judith	abo:tlg,0527,020
+additions|to|esther	Additions to Esther	abo:tlg,0527,
+wisdom	Wisdom	abo:tlg,0527,033
+sirach	Sirach	abo:tlg,0527,034
+ecclesiasticus	Ecclesiasticus	abo:tlg,0527,034
+baruch	Baruch	abo:tlg,0527,050
+letter|of|jeremiah	Letter of Jeremiah	abo:tlg,0527,052
+prayer|of|azariah	Prayer of Azariah	abo:tlg,0527,
+susanna	Susanna	abo:tlg,0527,055
+bel|and|the|dragon	Bel and the Dragon	abo:tlg,0527,058
+prayer|of|manasseh	Prayer of Manasseh	abo:tlg,0527,
+1|maccabees	1 Maccabees	abo:tlg,0527,023
+i|maccabees	1 Maccabees	abo:tlg,0527,023
+2|maccabees	2 Maccabees	abo:tlg,0527,024
+ii|maccabees	2 Maccabees	abo:tlg,0527,024
+3|maccabees	3 Maccabees	abo:tlg,0527,025
+iii|maccabees	3 Maccabees	abo:tlg,0527,025
+4|maccabees	4 Maccabees	abo:tlg,0527,026
+iv|maccabees	4 Maccabees	abo:tlg,0527,026
+matthew	Matthew	abo:tlg,0031,001
+mark	Mark	abo:tlg,0031,002
+luke	Luke	abo:tlg,0031,003
+john	John	abo:tlg,0031,004
+acts	Acts	abo:tlg,0031,005
+romans	Romans	abo:tlg,0031,006
+1|corinthians	1 Corinthians	abo:tlg,0031,007
+i|corinthians	1 Corinthians	abo:tlg,0031,007
+2|corinthians	2 Corinthians	abo:tlg,0031,008
+ii|corinthians	2 Corinthians	abo:tlg,0031,008
+galatians	Galatians	abo:tlg,0031,009
+ephesians	Ephesians	abo:tlg,0031,010
+philippians	Philippians	abo:tlg,0031,011
+colossians	Colossians	abo:tlg,0031,012
+1|thessalonians	1 Thessalonians	abo:tlg,0031,013
+i|thessalonians	1 Thessalonians	abo:tlg,0031,013
+2|thessalonians	2 Thessalonians	abo:tlg,0031,014
+ii|thessalonians	2 Thessalonians	abo:tlg,0031,014
+1|timothy	1 Timothy	abo:tlg,0031,015
+i|timothy	1 Timothy	abo:tlg,0031,015
+2|timothy	2 Timothy	abo:tlg,0031,016
+ii|timothy	2 Timothy	abo:tlg,0031,016
+titus	Titus	abo:tlg,0031,017
+philemon	Philemon	abo:tlg,0031,018
+hebrews	Hebrews	abo:tlg,0031,019
+james	James	abo:tlg,0031,020
+1|peter	1 Peter	abo:tlg,0031,021
+i|peter	1 Peter	abo:tlg,0031,021
+2|peter	2 Peter	abo:tlg,0031,022
+ii|peter	2 Peter	abo:tlg,0031,022
+1|john	1 John	abo:tlg,0031,023
+i|john	1 John	abo:tlg,0031,023
+2|john	2 John	abo:tlg,0031,024
+ii|john	2 John	abo:tlg,0031,024
+3|john	3 John	abo:tlg,0031,025
+iii|john	3 John	abo:tlg,0031,025
+jude	Jude	abo:tlg,0031,026
+revelation	Revelation	abo:tlg,0031,027

@@ -1,0 +1,184 @@
+<project name="hopper" default="build" basedir=".">
+    <description>
+	Hopper build file
+    </description>
+    <target name="init">
+	<!-- Create the time stamp -->
+	<tstamp/>
+	<!-- Create the build directory structure used by compile -->
+	<mkdir dir="${build}"/>
+    </target>
+
+    <target name="all" depends="dist,jsp,junit"/>
+	
+	<target name="build" depends="dist,jsp"/>
+
+    <target name="compile" depends="init" description="compile the source">
+	<!-- Compile the java code from ${src} into ${build} -->
+	<javac srcdir="${src}" destdir="${build}" debug="on" source="1.5" target="1.5" deprecation="on" excludes="**/*.xml">
+	    <classpath>
+		<fileset dir="${tomcat.home}/lib">
+		    <include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="lib">
+		    <include name="**/*.jar" />
+		</fileset>
+	    </classpath>
+
+	</javac>
+
+	<copy todir="${build}">
+	    <fileset dir="${src}">
+		<include name="**/*.hbm.xml" />
+	    </fileset>
+
+	    <fileset dir="static/xml">
+		<include name="*.xml" />
+	    <exclude name="*places.xml"/>
+	    </fileset>
+	    <fileset dir="properties">
+		<!-- Don't copy release stuff, but do copy everything else -->
+		<exclude name="hosts" />
+		<exclude name="hosttypes" />
+		<exclude name="release.properties" />
+
+		<include name="**/*" />
+	    </fileset>
+	    <filterchain>
+		<expandproperties />
+		<expandproperties />
+	    </filterchain>
+	</copy>
+    </target>
+
+    <target name="jar" depends="compile" description="generate the hopper JAR" >
+	<!-- Create the distribution directory -->
+	<mkdir dir="${dist}/lib"/>
+
+	<!-- Uncomment Exclude when building hopper core for standalone modules
+	<exclude name="**/hibernate.cfg.xml"/>
+	<exclude name="ehcache.xml"/> -->
+	<antcall target="create-jar">
+	    <param name="jarfile" value="${dist}/lib/hopper.jar" />
+	</antcall>
+	<copy todir="${dist}/classes">
+	    <fileset dir="${build}">
+		<include name="*.xml" />
+	    </fileset>    
+	    <fileset dir="static/xml">
+		<include name="*.xml" />
+	    <exclude name="*places.xml"/>
+	    </fileset>
+	</copy>
+    </target>
+
+    <target name="jspc" description="convert the JSPs to classes">
+
+	<taskdef classname="org.apache.jasper.JspC" name="jasper2" > 
+	    <classpath id="jspc.classpath"> 
+		<pathelement location="${java.home}/../lib/tools.jar"/> 
+		<fileset dir="${tomcat.home}/bin"> 
+		    <include name="*.jar"/> 
+		</fileset> 
+		<fileset dir="${tomcat.home}/lib"> 
+		    <include name="*.jar"/> 
+		</fileset>
+	    </classpath> 
+	</taskdef> 
+
+	<jasper2 validateXml="false" 
+	         uriroot="${webapp.path}" 
+		 webXmlFragment="${webapp.path}/WEB-INF/generated.web.xml" 
+		 outputDir="${webapp.path}/WEB-INF/src" /> 
+
+	<!-- Now create web.xml, which should be composed of the auto-generated
+	file from the above task and our own settings -->
+	<loadfile property="generated.web.content"
+	    srcFile="${webapp.path}/WEB-INF/generated.web.xml" />
+	<loadfile property="perseus.web.content"
+	    srcFile="${webapp.path}/WEB-INF/perseus.web.xml" />
+	<copy file="${webapp.path}/WEB-INF/skeleton.web.xml"
+	    tofile="${webapp.path}/WEB-INF/web.xml"
+	    overwrite="true">
+
+	    <filterchain>
+		<replacetokens>
+		    <token key="generated.web.xml"
+			value="${generated.web.content}" />
+		    <token key="perseus.web.xml"
+			value="${perseus.web.content}" />
+		</replacetokens>
+	    </filterchain>
+	</copy>
+    </target>
+
+    <target name="jsp" depends="jspc" description="compile the JSPs">
+
+	<mkdir dir="${webapp.path}/WEB-INF/classes"/>
+	<mkdir dir="${webapp.path}/WEB-INF/lib"/>
+
+	<javac destdir="${webapp.path}/WEB-INF/classes"
+	    optimize="off"
+	    debug="on" failonerror="false"
+	    srcdir="${webapp.path}/WEB-INF/src" 
+	    excludes="**/*.smap">
+	    <classpath>
+		<pathelement location="${webapp.path}/WEB-INF/classes"/>
+		<fileset dir="${webapp.path}/WEB-INF/lib">
+		    <include name="*.jar"/>
+		</fileset>
+		<fileset dir="${tomcat.home}/lib">
+		    <include name="*.jar"/>
+		</fileset>
+		<fileset dir="${tomcat.home}/bin"> 
+		    <include name="*.jar"/> 
+		</fileset> 
+	    </classpath>
+	    <include name="**" />
+	    <exclude name="tags/**" />
+	</javac>
+
+    </target>
+
+    <target name="copy-jars">
+	<copy todir="${webapp.path}/WEB-INF/lib" flatten="true">
+	    <fileset dir="lib">
+		<exclude name="endorsed/*" />
+		<include name="**/*.jar" />
+	    </fileset>
+	</copy>
+    </target>
+
+    <target name="copy-xslt">
+	<copy todir="${webapp.path}/WEB-INF/xslt">
+	    <fileset dir="xslt" />
+	</copy>
+    </target>
+
+    <target name="dist" depends="jar, copy-jars, copy-xslt">
+    </target>
+
+    <target name="clean" description="clean up">
+	    <!-- Delete the ${build} and ${dist} directory trees -->
+	<delete dir="${build}"/>
+	<!-- don't delete the {dist} directory entirely, because it could have
+	     important files (like web.xml) inside -->
+	<delete dir="${dist}/lib"/>
+	<delete dir="${dist}/src"/>
+	<delete dir="${dist}/xslt"/>
+	<delete includeEmptyDirs="true">
+		<fileset dir="${dist}/classes">
+			<exclude name="views.properties"/>
+		</fileset>
+	</delete>
+	<delete file="${dist}/generated.web.xml"/>
+    </target>
+
+	<import file="buildFiles/artarch.xml" />
+    <import file="buildFiles/texts.xml" />
+    <import file="buildFiles/common.xml" />
+    <import file="buildFiles/release.xml" />
+    <import file="buildFiles/hibernate.xml" />
+    <import file="buildFiles/junit.test.build.xml"/>
+
+</project>

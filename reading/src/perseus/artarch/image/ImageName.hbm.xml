@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="perseus.artarch.image">
+
+  <class name="ImageName" table="hib_image_names">
+    <id name="id" column="id" type="int" unsaved-value="-1">
+      <generator class="native" />
+    </id>
+
+    <property name="archiveNumber" column="archive_number" index="archive_number_idx"/>
+    <property name="primaryName" column="name"/>
+    <property name="secondaryName" column="secondary_name"/>
+    <property name="tertiaryName" column="tertiary_name"/>
+    <property name="schema" column="image_schema"/>
+  </class>
+
+</hibernate-mapping>

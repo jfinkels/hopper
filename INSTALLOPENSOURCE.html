@@ -1,0 +1,408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>Perseus Hopper Installation Directions</title>
+  <style type="text/css">
+  	body {font-size: 14px}
+  </style>
+</head>
+<body>
+<h2><b>Installing the Perseus Java Hopper on Linux and Mac OS X by generating the data</b></h2>
+<h3><b>Initial setup</b></h3>
+
+<h4><b>Requirements/General Information</b></h4>
+<p>The requirements for the Perseus Java hopper are, at present:</p>
+<ol>
+<li><a href="http://java.sun.com/javase/downloads/index.jsp"><code>JDK 1.5</code></a> or higher</li>
+<li><a href="http://dev.mysql.com/downloads/"><code>MySQL 5.0</code></a> or higher</li>
+	<ul>
+	<li>In <code>/etc/my.cnf</code> (create it if you do not have it):</li>
+	<ul>
+      <li>Add the following lines under <code>[mysqld]</code> (add <code>[mysqld]</code> if it does not exist):</li>
+	<ul>
+	  <li><code>innodb_data_file_path=ibdata1:500M</code> (or any size of your choice)</li>
+	  <li><code>character_set_server=utf8</code></li>
+	</ul>
+      <li>Under <code>[mysql]</code> add the following line: <code>default-character-set=utf8</code>
+      <li>Comment out <code>skip-networking</code> and/or <code>collation_server=utf8_unicode_ci</code> if in the file</li>
+      <li>Login in to MySQL as <code>root</code> and type:</li>
+      <ul>
+        <li><code>SET GLOBAL wait_timeout = 86400, SESSION wait_timeout = 86400</code></li>
+        <li>You can verify by typing <code>SHOW VARIABLES;</code> and looking for <code>wait_timeout</code> (near the end).</li>
+      </ul>
+      </ul>
+  </ul>
+<li><a href="http://ant.apache.org/bindownload.cgi"><code>Ant 1.7</code></a> or higher</li>
+	<ul>
+	<li>Download <a href="http://sourceforge.net/projects/ant-contrib/"><code>ant-contrib</code></a> and copy the <code>ant-contrib.jar</code> to <code>$ANT_HOME/lib</code></li>
+	</ul>
+<li>A servlet engine capable of handling WARs, such as <a href="http://tomcat.apache.org/download-60.cgi"><code>Tomcat 
+6.0</code></a> (Tomcat 5.5 is no longer supported.)
+	<ul>
+	<li>By default, the hopper looks for Tomcat (in <code>properties/hopper.properties</code>) at <code>/usr/local/tomcat/</code>, though this can be changed in <code>hopper.properties</code></li>
+	<li>Copy <code>catalina-ant.jar</code>, located in <code>$CATALINA_HOME/lib</code>, to <code>$ANT_HOME/lib</code></li>
+	<li>Add (if you don't have it) Tomcat manager information in <code>$CATALINA_HOME/conf/tomcat-users.xml</code>.  Modify <code>properties/hosts/localhost.properties</code>: 
+	  <code>localhost.tomcat.manager.username</code> and <code>localhost.tomcat.manager.password</code> to match what is in tomcat-users.xml</li>
+	</ul>
+<li>A web server such as <a href="http://httpd.apache.org/download.cgi"><code>Apache</code></a></li>
+	<ul>
+	<li>Use the directions under <b>Displaying the Data</b> to set up the Apache server correctly</li>
+	</ul>
+<li>All required Java libraries are included in the <code>/sgml/reading/lib/</code> directory within the distribution.</li>
+<li>Estimate about 7 GB for the <code>sgml</code> directory and about 7 GB for the <code>sor</code> database. The <code>sgml</code> directory can be anywhere so long as it is symbolically linked to <code>/sgml</code></li>
+<li>Estimated run times <code>(ERT)</code> have been included. They refer to the amount of time needed to process all of the texts and collections.</li>
+<li>Every directory referenced is located in <code>/sgml/reading/</code> unless otherwise specified.</li>
+<li>If you want to change the size of the heap, open <code>buildFiles/texts.xml</code>.  Change the property <code>maxmem</code> to the size of your choice.</li>
+</ol>
+
+<h4><b>Data</b></h4>
+<p>If you have not done so already, please download the text data <a href="http://www.perseus.tufts.edu/hopper/opensource/">here</a>.  After untarring, move the <code>texts/</code> directory to <code>/sgml/</code>.  The text metadata is already located in <code>/sgml/xml/</code>.</p>
+
+<p><b>Collections</b></p>
+<p>The default settings install all of the collections included in this release.  If you do not want a specific collection to be installed, remove it's name from <code>hopper.primary.collections</code> and it's associated <code>.xml</code> filename in <code>hopper.catalog.files</code> in <code>properties/hopper.properties</code>:</p>
+<table cellspacing="1" cellpadding="1" border="1">
+  <tbody>
+    <tr>
+      <th valign="middle">
+        <b>Collection</b>
+      </th>
+      <th valign="middle">
+        <b>Description</b>
+      </th>
+      <th valign="middle">
+        <b>Associated xml file(s)</b>
+      </th>
+    </tr>
+    <tr>
+      <td valign="middle">
+        Perseus:collection:Greco-Roman
+      </td>
+      <td valign="middle">
+       	Greek and Roman Materials
+      </td>
+      <td valign="middle">
+        classics.xml, corpora.xml
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle">
+        Perseus:collection:DDBDP
+      </td>
+      <td valign="middle">
+       	Duke Databank of Documentary Papyri
+      </td>
+      <td valign="middle">
+        /sgml/texts/DDBDP/collection.xml
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle">
+       	Perseus:collection:Germanic
+      </td>
+      <td valign="middle">
+        Germanic Materials
+      </td>
+      <td valign="middle">
+        oldenglish.xml, oldnorse.xml
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle">
+        Perseus:collection:cwar
+      </td>
+      <td valign="middle">
+        American History
+      </td>
+      <td valign="middle">
+        cwar.xml
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle">
+        Perseus:collection:RichTimes
+      </td>
+      <td valign="middle">
+        Richmond Times Dispatch
+      </td>
+      <td valign="middle">
+        RichTimes.xml
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle">
+       	Perseus:collection:Renaissance
+      </td>
+      <td valign="middle">
+        Renaissance Materials
+      </td>
+      <td valign="middle">
+        earlymod.xml
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle">
+       	Perseus:collection:Arabic
+      </td>
+      <td valign="middle">
+        Arabic Materials
+      </td>
+      <td valign="middle">
+        arabic.xml
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p><b>Texts</b></p>
+<p>Only loading certain texts requires a bit more effort, but can drastically reduce installation time. In order to 
+do this, you must remove the directories of texts you do not want in <code>/sgml/texts/</code>, or the individual 
+files within the directories. Doing this may cause warning messages to appear while you are installing the hopper, 
+but should not cause any errors that prevent successful installation.</p>
+
+<h4><b>Java libraries (JAR files)</b></h4>
+<p>All the Java libraries you will need are inside <code>lib/</code> in this directory. Pay particular attention to the 
+files in <code>lib/endorsed/</code>; these contain more recent version of JARs that come with the JDK (the versions that 
+come with the JDK will not always work with the hopper or with Tomcat). These may need to be copied into 
+<code>$CATALINA_HOME/endorsed/</code> (you will need to create the diretory if it does not exist).</p>
+
+<h4><b>Database setup</b></h4>
+<p>The database retains the name of the old Perl hopper's database (<code>sor</code>), though the two have almost nothing in common by this point. At present, it requires <code>MySQL</code>, though this will hopefully change when all the tables have been reimplemented using Hibernate.</p>
+<p><code>mysql<br>
+mysql&gt; create database sor;<br>
+mysql&gt; grant all on sor.* to webuser identified by 'webuser';<br>
+mysql&gt; grant all on sor.* to 'webuser'@'localhost' identified by 'webuser';</code></p>
+<p>(If you want to use a different database name, or a different username/password, you can change the settings in the <span class="s3">hopper.properties</span> file and substitute your values for those used above.)</p>
+<p>Then load the tables in the <code>sql/</code> directory:</p>
+<p><code>cat sql/*.sql | mysql -u (username) -p sor<br>
+(ERT: 1 minute)</code></p>
+
+<h4><b>Configuring local settings</b></h4>
+<p>Edit and configure the <code>hopper.properties</code> file in the <code>properties/</code> directory. This sets a multitude of options, including database connection information and locations of various files. Hibernate-related properties are in the <code>hibernate.cfg.xml</code> file.</p>
+
+<h4><b>Compiling the hopper</b></h4>
+<p>To compile and distribute everything, run:</p>
+<p><code>ant build<br>
+(ERT: 1 minute)</code></p>
+<p>This will compile and archive the hopper source files and JSP files.</p>
+
+<h4><b>Hibernate setup</b></h4>
+<p>Before loading any actual data, you need to create the tables in the database that Hibernate will be using. There exists an Ant task to do this:</p>
+<p><code>ant schema-export
+(ERT: 1 minute)</code></p>
+<p>This creates a file named <code>hibernate.sql</code> in the current directory. To load it:</p>
+<p><code>cat hibernate.sql | mysql -u (username) -p sor<br>
+(ERT: 1 minute)</code></p>
+<p>(We output the table information to a file rather than sending it directly to the database so that, if you've made changes to a single table/class/schema, you don’t have to reload the all the other ones.)</p>
+
+<h3><b>Loading the data</b></h3>
+<h4><b>Loading languages</b></h4>
+<p>The <code>languages.properties</code> file contains information on the languages recognized by the hopper, including display names and abbreviations. It loads data into <code>hib_languages</code> and <code>hib_lang_abbrevs</code>. To load it, run</p>
+<p><code>ant load-languages<br>
+(ERT: 1 minute)</code></p>
+
+<h4><b>Loading metadata</b></h4>
+<p>Before loading any documents, we need to load the Dublin Core catalog files describing the documents. This loads data into the <code>metadata</code> table. Make sure the <code>hopper.catalog.files</code> property is set to whatever catalog files you want to use, and then run</p>
+<p><code>ant load-metadata<br>
+(ERT: 6 minutes)<br>
+</code><br>
+You will get errors about files that cannot be found; ignore these as they are related to the texts that we cannot release due to copyright restrictions.
+</p>
+
+<h4><b>Adding texts</b></h4>
+<p>When an XML file is loaded into the hopper, the system records information on individual chunks of text and 
+their starting and ending byte offsets within the file. It also outputs the processed XML file with its entities 
+resolved and expanded. The destination of this processed file depends on the file's series and ID number: a 
+file with document ID "Perseus:text:1999.01.0001" would be written to <code>1999.01/1999.01.0001.xml</code> inside 
+the <code>hopper.document.file.path</code> directory.</p>
+
+<p>To load ("chunkify") the XML files, run (which loads data into <code>hib_chunks</code>, 
+<code>hib_toc_chunks</code>, and<code> hib_tocs</code>):</p>
+<p><code>ant chunkify {processable}<br>
+(ERT: 4-5 hours for everything)<br>
+</code></p>
+<p>This will load all files that have not already been chunkified, or that have changed since last being 
+chunkified. To chunkify files regardless of whether they’ve been modified, add the <code>-Doptions=--force</code> switch.</p>
+<p>You can restrict the chunkifier to certain texts by specifying them as arguments. The following will all 
+work, in any combination:</p>
+<p><code>ant chunkify -Ddocuments="Perseus:text:1999.01.0001 Perseus:text:1999.01.0002" # chunkify the two texts with 
+these IDs<br>
+ant chunkify -Ddocuments=Aeschines/aeschin_eng.xml # chunkify the text at the given location in the 
+hopper.source.texts.path directory<br>
+ant chunkify -Ddocuments=/sgml/texts/Aeschines/aeschin_gk.xml # chunkify a text at an absolute path<br>
+ant chunkify -Ddocuments=Perseus:collection:Greco-Roman # chunkify all texts in the given collection</code></p>
+<p>Note that due to a bug in the loading code, for documents which have subdocuments defined in the catalog.xml (subdocuments are any which
+have a query following the document id, such as "Perseus:text:1999.01.0021:text=Library"), you may need to rerun the
+chunkify step a second time, with the -f option to force the subdocument to be processed.
+
+<h4><b>Lexicon links</b></h4>
+<p>Assuming you have loaded one or more lexica, the next step is to link lexicon entries to their corresponding 
+lemmas, creating the lemmas in the process if necessary (loading into <code>hib_entities</code> and updating 
+<code>hib_chunks</code>):</p>
+<p><code>ant lexicon-entries -Ddocuments={lexicon ID}</code></p>
+<p>Relevant lexica included with the hopper have the following IDs:</p>
+<p>  <code>Perseus:text:1999.04.0058 (Middle Liddell) (ERT: 4 minutes)</code><br>
+  <code>Perseus:text:1999.04.0060 (Elem. Lewis) (ERT: 2 minutes)</code><br>
+  <code>Perseus:text:2002.02.0005 (Salmon&eacute;) (ERT: 5 minutes)</code><br> 
+  <code>Perseus:text:2002.02.0015 - Perseus:text:2002.02.0050 (Lane) (ERT: 13 minutes)</code><br>
+</p>
+
+<h4><b>Morphology</b></h4>
+<p>Now that we have lemmas, we can load parses from morphology XML files into the database 
+(<code>hib_parses</code>):</p>
+<p><code>ant load-parses<br>
+(ERT: 1-2 hours)</code>
+</p>
+<p>This loads parses for all languages.  To load parses for an individual language, do:</p>
+<p><code>ant load-{language}-parses</code><br>
+where <em>language</em> can be <code>greek</code>, <code>latin</code>, <code>non</code>, or <code>arabic</code></p>
+
+<h4><b>Word Counts</b></h4>
+<p>We can now load the word counts into <code>hib_word_counts</code> for every document ID and collection:</p>
+<p><code>ant load-wordcounts<br>
+(ERT: 2 hours)<br/><br/>
+ant load-wordcounts -Doptions=--aggregate<br/>
+(ERT: 1 minute)
+</code></p>
+
+<h3><b>Loading more data</b></h3>
+<h4><b>Lucene indexes</b></h4>
+<p>The Lucene search engine creates a set of indexes in <code>index/</code> based on the chunkified files. There is currently one index per language. To build them:</p>
+<p><code>ant build-indexes {processable}<br>
+(ERT: 3-4 hours for everything)</code></p>
+<p>(See <b>Adding texts</b>, above, for possible values of "processable," or omit it entirely to process everything.)</p>
+<p>Then, optimize the indexes to make searching faster.</p>
+<p><code>ant optimize-indexes<br>
+(ERT: 2 minutes)</code></p>
+<p>You then have to build a set of indexes for the definition lookup. To build them:</p>
+<p><code>ant lexicon-indexes [-Dlanguage={language}]<br>
+(ERT: 4 minutes for all languages)</code></p>
+<p>Including a language is optional, it will build indexes for all languages unless you specify one of the following: <code>ang</code>, <code>de</code>, <code>en</code>, <code>greek</code>, <code>la</code>, or <code>non</code>.</p>
+
+<h4><b>Word frequencies</b></h4>
+<p>To calculate frequencies into <code>hib_frequencies</code> for the documents loaded thus far, run</p>
+<p><code>ant load-wordfrequencies {processable}<br>
+(ERT: 1 day)</code></p>
+<p>Now that you've calculated frequencies, you can load some other stats into <code>hib_entities</code>, including IDF and document count:</p>
+<p><code>ant load-documentcounts -Doptions=--lemmas<br>
+(ERT: 4 minutes)</code></p>
+
+<h4><b>Citations</b></h4>
+<p>To extract links into <code>hib_citations</code> between our documents from &lt;cit&gt; tags, run</p>
+<p><code>ant extract-citations {processable}<br>
+(ERT: 4-5 hours)</code></p>
+
+<h4><b>Dictionary senses</b></h4>
+<p>The new hopper's voting functionality needs to know all possible senses for each dictionary entry to enable sense-voting. To load the senses (into the <code>senses</code> table) for a given document, run</p>
+<p><code>ant load-senses -Ddocument={document ID}</code></p>
+<p>with the following IDs:</p>
+<p><code>
+Perseus:text:1999.04.0058 (ERT: 1 minute)<br>
+Perseus:text:1999.04.0060 (ERT: 1 minute)<br>
+</code></p>
+
+<h4><b>Morphological frequencies for the automatic analyzer</b></h4>
+<p><b>FIXME</b>: these need to be redone to work with the Hibernate-based Parse and Lemma objects.</p>
+<p>The automatic morphological evaluator relies on tables of prior frequencies and feature frequencies. To load them into <code>morph_frequencies</code> and <code>prior_frequencies</code>, run</p>
+<p><code>ant aggregate-morphcode<br>
+(ERT: 1-2 days)</code></p>
+
+<h3><b>Named entity extraction</b></h3>
+<p>The hopper allows users to browse occurrences of named entities (people, places and dates) in all documents with the entities tagged.</p>
+<h4><b>Loading places</b></h4>
+<p>While people and dates are generated as they appear in the documents, places are not; instead, we use records from the TGN.  To load them into <code>hib_entities</code>, run</p>
+<p><code>ant load-places<br>
+(ERT: 45 minutes)</code></p>
+<p>To create the XML files used by the Google Maps API:<br/>
+<code>ant create-places-xml<br/>
+(ERT: 45 minutes)</code></p>
+
+<h4><b>Extracting the entities</b></h4>
+<p>Now we can actually extract the entities into <code>hib_entities</code>, <code>hib_frequencies</code> and <code>hib_entity_occurrences</code>:</p>
+<p><code>ant extract-entities {processable}<br>
+(ERT: 10-11 hours)</code></p>
+<p>And then we can calculate IDF and document count into <code>hib_entities</code>:</p>
+<p><code>ant load-documentcounts -Doptions=--entities<br>
+(ERT: 3 minutes)</code></p>
+
+<h3>Images and Art &amp; Archaeology Data</h3>
+
+<h4>Loading the Different Types of Artifacts</h4>
+<p>There are six artifact types in the Perseus Art and Archaeology
+data model:  Building, Coin, Gem, Sculpture, Site, Vase.  To load the artifact data:</p>
+<p><code>ant load-artifacts<br>
+(ERT: 1 minute)</code>
+</p>
+
+<h4>Loading the Artifact Keywords</h4>
+<p>Next, we need to load keywords about the artifacts.</p>
+<p><code>ant load-keywords<br>
+(ERT: 2 minutes)</code>
+</p>
+
+<h4>Loading the Images</h4>
+<p>We need to load all of the image data.</p>
+<p><code>ant load-images<br>
+(ERT: 10 minutes)</code>
+</p>
+
+<h4>Loading the Image Names</h4>
+<p>We then need to load all of the names associated with a particular image
+so we can generate the Artifact Occurrences in the next step.</p>
+<p><code>ant load-image-names<br>
+(ERT: 1 minute)</code>
+</p>
+
+<h4>Loading the Artifact Occurrences</h4>
+<p>Now that you have loaded the Artifacts, we want to load information
+of the images in which the artifact is referenced.</p>
+<p><code>ant load-artifact-occurrences<br>
+(ERT: 6 minutes)</code>
+</p>
+
+<h4>Indexing the Image and Artifact Data</h4>
+<p>Lastly, we need to index the data loaded so it can be searched.</p>
+<p><code>ant index-artifacts<br>
+(ERT: 1 minute)<br>
+ant index-images<br>
+(ERT: 1 minute)</code></p>
+
+<h3><b>Displaying the Data</b></h3>
+<h4><b>XSL stylesheets</b></h4>
+<p>A stylesheet for Perseus TEI is provided, and there is preliminary support for EEBO document. Any customization or support for other DTDs is up to you!</p>
+
+<h4><b>Installing Apache with Tomcat</b></h4>
+<p>See the <a href="http://httpd.apache.org/docs/">Apache documentation</a> for full instructions to install 
+Apache on your machine. During <b>"Configuring the source tree"</b> step, you will need to enable the following 
+two modules (though you may choose to enable others):</p>
+<p><code>--enable-rewrite=shared<br>
+--enable-proxy=shared</code></p>
+<p>The <a href="http://tomcat.apache.org/tomcat-5.5-doc/proxy-howto.html">Tomcat documentation</a> provides 
+details on proxying from Apache to Tomcat. This allows you to drop the :8080 from the URL.</p>
+<p>Make sure all <code>LoadModule</code> directives for <code>mod_proxy</code> and <code>mod_rewrite</code> 
+	are in <code>httpd.conf</code> (this should automatically happen if you configured Apache to enable these 
+	modules during installation).
+	</p>
+<p>You then have to add some files to Apache's <code>DocumentRoot</code> and add a file with <code>ReWrite</code> rules.</p>
+<ol>
+  <li>Determine the location of <code>DocumentRoot</code> by looking for it in <code>httpd.conf</code> (e.g. 
+  <code>/var/www/html</code>). Make sure <code>DocumentRoot</code> is the same in both <code>localhost.conf</code> 
+  (provided with source) and <code>httpd.conf</code>.</li>
+  <li>Determine the location of <code>Virtual hosts</code> in your <code>httpd.conf</code> file and copy 
+  <code>localhost.conf</code> to that directory. You may need to add an <code>Include</code> directive in 
+  <code>httpd.conf</code> for <code>localhost.conf</code>.</li>
+  <li>In <code>DocumentRoot</code>, create symbolic links to <code>/sgml/reading/static/css</code>, 
+  <code>img</code>, <code>js</code>, and <code>xml</code>.</li>
+</ol>
+
+<h4><b>To view in a browser</b></h4>
+<ul>
+<li>Make sure Tomcat and the Apache server are running</li>
+<li><code>ant build</code></li>
+<li><code>ant build-release</code></li>
+<li><code>ant remove</code> (if a version of the hopper has already been deployed to Tomcat)</li>
+<li><code>ant install</code></li>
+<li>View <code>http://localhost/hopper/</code> in your browser</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,28 @@
+div#side_toc {
+}
+div.sidetoc {
+}
+
+div.ind1 {
+    margin-left: 5px;
+}
+
+div.ind2 {
+    margin-left: 5px;
+}
+
+div.ind3 {
+    margin-left: 5px;
+}
+
+div.mtop {
+    margin-top: 5px;
+}
+
+div.mbot {
+    margin-bottom: 5px;
+}
+
+.noshow {
+    display: none;
+}

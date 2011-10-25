@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="perseus.document.dao">
+    <class name="HibernateChunkDAO$ChunkRow" table="hib_chunks" batch-size="10">
+
+	<id name="id" type="int" column="id" unsaved-value="null">
+	    <generator class="native" />
+	</id>
+
+	<property name="documentID" column="document_id" type="string"
+	    length="50" index="doc_idx doc_type_idx doc_type_value_idx
+	    doc_cid_idx doc_so_eo_idx doc_so_eo_type_idx doc_dq_idx
+	    doc_so_eo_type_val_idx" />
+
+	<property name="elementName" column="element" type="string"
+	    length="20" />
+	<property name="type" column="type" type="string" length="30"
+	    index="doc_type_idx doc_type_value_idx doc_so_eo_type_idx
+	    doc_so_eo_type_val_idx" />
+	<property name="value" column="value" type="string" length="250"
+	    index="doc_type_value_idx doc_so_eo_type_val_idx" />
+
+	<property name="position" column="position" type="int" />
+	<property name="absolutePosition" column="abs_position" type="int" />
+
+	<property name="chunkID" column="chunk_id" type="string"
+	    length="255" index="doc_cid_idx" />
+
+	<property name="openTags" column="open_tags" type="text" />
+	<property name="closeTags" column="close_tags" type="text" />
+
+	<property name="startOffset" column="start_offset" type="int"
+	    index="doc_so_eo_idx doc_so_eo_type_idx doc_so_eo_type_val_idx" />
+	<property name="endOffset" column="end_offset" type="int"
+	    index="doc_so_eo_idx doc_so_eo_type_idx doc_so_eo_type_val_idx" />
+
+	<property name="displayQuery" column="display_query" type="string"
+	    length="100" index="doc_dq_idx" />
+	<property name="head" column="head" type="text" />
+	<property name="headLanguage" column="head_lang" type="string"
+	    length="10" />
+	<property name="hasCustomHead" column="custom_head" type="boolean" />
+
+        <set name="frequencies" inverse="true" cascade="all-delete-orphan"
+            lazy="true" batch-size="30">
+            <key column="chunk_id" on-delete="cascade" />
+            <one-to-many class="perseus.ie.freq.Frequency" />
+        </set>
+
+        <many-to-one name="lemma" column="lemma_id" cascade="all" lazy="false" />
+
+		<!--
+        <list name="senses" inverse="false" cascade="all-delete-orphan"
+			lazy="false" batch-size="30">
+            <key column="chunk_id" />
+			<list-index column="position" />
+            <one-to-many class="perseus.voting.Sense" />
+        </list>
+-->
+    </class>
+</hibernate-mapping>

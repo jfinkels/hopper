@@ -1,0 +1,202 @@
+<markers>
+<marker lat="41.9" lon="12.4833" site="Rome (Italy)"/>
+<marker lat="42.833" lon="12.833" site="Italy (Italy)"/>
+<marker lat="36.8667" lon="10.3333" site="Carthage (Tunisia)"/>
+<marker lat="39.0" lon="22.0" site="Greece (Greece)"/>
+<marker lat="40.0" lon="-4.0" site="Spain (Spain)"/>
+<marker lat="37.5" lon="14.0" site="Sicily (Italy)"/>
+<marker lat="41.833" lon="22.0" site="Macedonia (Macedonia)"/>
+<marker lat="37.5" lon="22.0" site="Peloponnesus (Greece)"/>
+<marker lat="25.0" lon="17.0" site="Libya (Libya)"/>
+<marker lat="37.0667" lon="15.3" site="Syracuse (Italy)"/>
+<marker lat="37.4083" lon="22.1417" site="Megalopolis (Greece)"/>
+<marker lat="37.175" lon="21.9333" site="Messene (Greece)"/>
+<marker lat="37.8" lon="12.45" site="Lilybaeum (Italy)"/>
+<marker lat="42.0" lon="38.0" site="Pontus"/>
+<marker lat="40.0" lon="9.0" site="Sardinia (Italy)"/>
+<marker lat="39.5" lon="22.25" site="Thessaly (Greece)"/>
+<marker lat="41.0333" lon="28.95" site="Byzantium (Turkey)"/>
+<marker lat="37.25" lon="21.833" site="Messenia (Greece)"/>
+<marker lat="37.6167" lon="22.3833" site="Mantinea (Greece)"/>
+<marker lat="39.666" lon="-0.266" site="Saguntum (Spain)"/>
+<marker lat="39.666" lon="20.833" site="Epirus (Greece)"/>
+<marker lat="37.5" lon="22.4" site="Tegea"/>
+<marker lat="37.9083" lon="22.9083" site="Corinth (Greece)"/>
+<marker lat="37.8833" lon="21.4" site="Elis (Greece)"/>
+<marker lat="36.9" lon="-103.866" site="Alps (New Mexico, United States)"/>
+<marker lat="44.966" lon="12.5" site="Padus (Italy)"/>
+<marker lat="41.0833" lon="14.25" site="Capua (Italy)"/>
+<marker lat="38.25" lon="21.75" site="Achaia (Greece)"/>
+<marker lat="37.316" lon="13.566" site="Agrigentum (Italy)"/>
+<marker lat="36.166" lon="28.0" site="Rhodes (Greece)"/>
+<marker lat="38.1" lon="15.65" site="Rhegium (Italy)"/>
+<marker lat="37.5" lon="10.66" site="Utica (Tunisia)"/>
+<marker lat="38.1" lon="21.5833" site="Dyme (Greece)"/>
+<marker lat="40.466" lon="17.216" site="Tarentum (Italy)"/>
+<marker lat="27.0" lon="30.0" site="Egypt (Egypt)"/>
+<marker lat="37.966" lon="22.716" site="Sicyon (Greece)"/>
+<marker lat="31.2" lon="29.9" site="Alexandria (Egypt)"/>
+<marker lat="38.233" lon="21.733" site="Patrae (Greece)"/>
+<marker lat="35.0" lon="38.0" site="Syria (Syria)"/>
+<marker lat="37.3833" lon="27.2167" site="Panormus (Turkey)"/>
+<marker lat="37.0" lon="22.583" site="Laconia (Greece)"/>
+<marker lat="38.0333" lon="12.5833" site="Eryx (Italy)"/>
+<marker lat="38.325" lon="23.3333" site="Thebes (Greece)"/>
+<marker lat="41.2833" lon="16.1333" site="Cannae (Italy)"/>
+<marker lat="37.583" lon="22.25" site="Arcadia (Greece)"/>
+<marker lat="38.0167" lon="12.4833" site="Drepana"/>
+<marker lat="43.3" lon="5.366" site="Marseilles (France)"/>
+<marker lat="35.166" lon="25.0" site="Crete (Greece)"/>
+<marker lat="43.333" lon="4.833" site="Rhone"/>
+<marker lat="44.0667" lon="12.5667" site="Ariminum (Italy)"/>
+<marker lat="46.0" lon="2.0" site="France (France)"/>
+<marker lat="38.716" lon="20.65" site="Leucas (Greece)"/>
+<marker lat="37.9667" lon="23.7333" site="Athens (Greece)"/>
+<marker lat="38.0167" lon="14.5833" site="Apollonia (Libya)"/>
+<marker lat="41.783" lon="19.65" site="Lissus (Albania)"/>
+<marker lat="31.0" lon="47.416" site="Tigris"/>
+<marker lat="43.0" lon="13.0" site="Apennines (Italy)"/>
+<marker lat="37.983" lon="-77.166" site="Alps (Virginia, United States)"/>
+<marker lat="42.666" lon="1.0" site="Pyrenees"/>
+<marker lat="37.875" lon="21.9167" site="Psophis"/>
+<marker lat="38.475" lon="28.0167" site="Sardis (Turkey)"/>
+<marker lat="32.0" lon="53.0" site="Persia (Iran)"/>
+<marker lat="42.0" lon="12.5" site="Latium (Italy)"/>
+<marker lat="45.0167" lon="9.66667" site="Placentia (Italy)"/>
+<marker lat="37.65" lon="21.6333" site="Olympia (Greece)"/>
+<marker lat="38.4917" lon="22.5167" site="Delphi (Greece)"/>
+<marker lat="32.45" lon="-106.483" site="Tiberius (New Mexico, United States)"/>
+<marker lat="38.4667" lon="23.6083" site="Chalcis (Greece)"/>
+<marker lat="39.55" lon="20.8" site="Dodona (Greece)"/>
+<marker lat="37.2167" lon="31.1333" site="Selge"/>
+<marker lat="32.7" lon="20.916" site="Ptolemais (Libya)"/>
+<marker lat="41.116" lon="1.25" site="Tarraco (Spain)"/>
+<marker lat="41.333" lon="26.75" site="Thrace (Greece)"/>
+<marker lat="37.6333" lon="21.8833" site="Heraea"/>
+<marker lat="35.2167" lon="25.4167" site="Lyttos"/>
+<marker lat="38.83" lon="30.15" site="Apameia (Turkey)"/>
+<marker lat="37.3" lon="9.866" site="Hippo Zarytus (Tunisia)"/>
+<marker lat="38.05" lon="22.5583" site="Pellene"/>
+<marker lat="33.0" lon="65.0" site="Bactria (Afghanistan)"/>
+<marker lat="41.3" lon="19.466" site="Epidamnus (Albania)"/>
+<marker lat="37.1667" lon="22.4167" site="Sellasia (Greece)"/>
+<marker lat="44.5" lon="8.833" site="Liguria (Italy)"/>
+<marker lat="40.9667" lon="15.8167" site="Venusia (Italy)"/>
+<marker lat="38.1333" lon="22.3833" site="Aegira"/>
+<marker lat="39.0833" lon="17.1333" site="Croton (Italy)"/>
+<marker lat="35.0667" lon="24.9583" site="Gortyn (Greece)"/>
+<marker lat="34.216" lon="-77.933" site="Wilmington, N. C. (North Carolina, United States)"/>
+<marker lat="43.7167" lon="10.3833" site="Pisae (Italy)"/>
+<marker lat="46.333" lon="8.75" site="Ticinus (Switzerland)"/>
+<marker lat="42.366" lon="-71.1" site="Cambridge (Massachusetts, United States)"/>
+<marker lat="39.0" lon="16.5" site="Bruttium (Italy)"/>
+<marker lat="38.566" lon="23.833" site="Euboea (Greece)"/>
+<marker lat="48.4" lon="6.983" site="Senones (France)"/>
+<marker lat="45.483" lon="-88.65" site="Padus (Wisconsin, United States)"/>
+<marker lat="39.3417" lon="22.9417" site="Demetrias"/>
+<marker lat="39.633" lon="22.416" site="Larisa (Greece)"/>
+<marker lat="39.15" lon="20.9833" site="Ambracia (Greece)"/>
+<marker lat="35.95" lon="39.5" site="Nicephorium (Syria)"/>
+<marker lat="29.85" lon="31.25" site="Memphis (Egypt)"/>
+<marker lat="37.9833" lon="22.1333" site="Lusi"/>
+<marker lat="38.216" lon="15.233" site="Mylae (Italy)"/>
+<marker lat="30.166" lon="31.1" site="Nile"/>
+<marker lat="45.4667" lon="9.2" site="Mediolanum (Italy)"/>
+<marker lat="41.0" lon="23.0" site="Macedon (Greece)"/>
+<marker lat="43.4167" lon="11.8833" site="Arretium (Italy)"/>
+<marker lat="33.266" lon="35.183" site="Tyre (Lebanon)"/>
+<marker lat="38.5" lon="14.95" site="Lipara (Italy)"/>
+<marker lat="33.883" lon="35.5" site="Berytus (Lebanon)"/>
+<marker lat="34.75" lon="40.716" site="Dura (Syria)"/>
+<marker lat="43.316" lon="11.316" site="Siena (Italy)"/>
+<marker lat="37.5333" lon="21.8833" site="Alipheira"/>
+<marker lat="38.0" lon="23.35" site="Megara (Greece)"/>
+<marker lat="37.133" lon="31.2" site="Aspendus (Turkey)"/>
+<marker lat="39.25" lon="22.75" site="Magnesia (Greece)"/>
+<marker lat="32.55" lon="44.4" site="Babylon (Iraq)"/>
+<marker lat="38.883" lon="-77.33" site="Washington (United States)"/>
+<marker lat="45.133" lon="10.16" site="Cenomani (Italy)"/>
+<marker lat="33.866" lon="-117.866" site="Placentia (California, United States)"/>
+<marker lat="35.2833" lon="24.3333" site="Lappa"/>
+<marker lat="39.95" lon="26.25" site="Ilium (Turkey)"/>
+<marker lat="35.0" lon="59.0" site="Parthia (Iran)"/>
+<marker lat="32.116" lon="20.66" site="Berenice (Libya)"/>
+<marker lat="38.2333" lon="16.25" site="Locri (Italy)"/>
+<marker lat="37.6333" lon="22.1667" site="Methydrium"/>
+<marker lat="31.416" lon="34.333" site="Gaza (Israel)"/>
+<marker lat="38.9" lon="22.7333" site="Echinus"/>
+<marker lat="40.616" lon="17.95" site="Brundisium (Italy)"/>
+<marker lat="32.833" lon="21.866" site="Cyrene (Libya)"/>
+<marker lat="40.7583" lon="22.5333" site="Pella (Greece)"/>
+<marker lat="37.6" lon="21.3167" site="Pheia"/>
+<marker lat="35.0" lon="33.0" site="Cyprus (Cyprus)"/>
+<marker lat="38.1333" lon="15.0333" site="Tyndaris (Italy)"/>
+<marker lat="39.133" lon="27.166" site="Pergamus (Turkey)"/>
+<marker lat="34.766" lon="48.583" site="Ecbatana (Iran)"/>
+<marker lat="36.85" lon="10.333" site="Carthage (Tunisia)"/>
+<marker lat="37.783" lon="20.783" site="Zacynthus (Greece)"/>
+<marker lat="41.35" lon="16.216" site="Aufidus (Italy)"/>
+<marker lat="37.0" lon="31.0" site="Pamphylia (Turkey)"/>
+<marker lat="36.766" lon="22.566" site="Gythium (Greece)"/>
+<marker lat="36.7833" lon="22.3333" site="Thalamae"/>
+<marker lat="31.0" lon="49.0" site="Susiana (Iran)"/>
+<marker lat="45.0" lon="9.11667" site="Clastidium"/>
+<marker lat="38.15" lon="22.2167" site="Bura"/>
+<marker lat="37.666" lon="22.833" site="Argolis (Greece)"/>
+<marker lat="35.3" lon="25.166" site="Cnossus (Greece)"/>
+<marker lat="47.5" lon="39.283" site="Tanais (Russia)"/>
+<marker lat="37.916" lon="27.316" site="Ephesus (Turkey)"/>
+<marker lat="36.8333" lon="22.6833" site="Helos"/>
+<marker lat="38.5" lon="36.0" site="Cappadocia (Turkey)"/>
+<marker lat="31.83" lon="47.5" site="Euphrates"/>
+<marker lat="26.75" lon="56.0" site="Persian Gulf (Iran)"/>
+<marker lat="37.633" lon="22.383" site="Mantineia (Greece)"/>
+<marker lat="42.0" lon="43.5" site="Georgia (Georgia)"/>
+<marker lat="38.333" lon="41.416" site="Sason (Turkey)"/>
+<marker lat="43.0" lon="12.5" site="Umbria (Italy)"/>
+<marker lat="41.45" lon="12.6167" site="Antium (Italy)"/>
+<marker lat="42.0" lon="46.833" site="Caucasus"/>
+<marker lat="35.0" lon="25.6333" site="Pyrgos (Greece)"/>
+<marker lat="40.833" lon="14.25" site="Naples (Italy)"/>
+<marker lat="41.2833" lon="13.25" site="Tarracina (Italy)"/>
+<marker lat="43.8" lon="11.2833" site="Faesulae (Italy)"/>
+<marker lat="33.0" lon="44.0" site="Mesopotamia (Iraq)"/>
+<marker lat="43.183" lon="3.0" site="Narbonne (France)"/>
+<marker lat="37.5333" lon="22.0583" site="Gortys"/>
+<marker lat="45.533" lon="9.916" site="Clarium (Italy)"/>
+<marker lat="43.75" lon="59.0" site="Oxus"/>
+<marker lat="43.683" lon="10.283" site="Arno (Italy)"/>
+<marker lat="44.6667" lon="10.9167" site="Mutina (Italy)"/>
+<marker lat="32.5" lon="35.5" site="Scythopolis (Israel)"/>
+<marker lat="42.183" lon="41.683" site="Phasis (Georgia)"/>
+<marker lat="39.75" lon="16.4833" site="Sybaris"/>
+<marker lat="33.55" lon="35.366" site="Sidon (Lebanon)"/>
+<marker lat="39.0" lon="19.0" site="Ionian Sea"/>
+<marker lat="43.0167" lon="11.95" site="Clusium (Italy)"/>
+<marker lat="38.4167" lon="27.1667" site="Smyrna (Turkey)"/>
+<marker lat="37.66" lon="14.9" site="Acrae (Italy)"/>
+<marker lat="37.65" lon="21.65" site="Pisa"/>
+<marker lat="25.0" lon="45.0" site="Arabia"/>
+<marker lat="35.66" lon="24.933" site="Gortyna (Greece)"/>
+<marker lat="40.7833" lon="14.0833" site="Cumae (Italy)"/>
+<marker lat="37.75" lon="23.433" site="Aegina (Greece)"/>
+<marker lat="40.3" lon="23.3667" site="Olynthus"/>
+<marker lat="38.83" lon="23.5" site="Attica (Greece)"/>
+<marker lat="38.8" lon="22.5583" site="Thermopylae"/>
+<marker lat="40.8667" lon="16.0167" site="Bantia"/>
+<marker lat="37.6" lon="-4.5" site="Baetica (Spain)"/>
+<marker lat="42.1333" lon="24.75" site="Philippopolis (Bulgaria)"/>
+<marker lat="41.233" lon="13.83" site="Circeii (Italy)"/>
+<marker lat="40.216" lon="16.666" site="Heraclea (Italy)"/>
+<marker lat="37.83" lon="22.416" site="Lacedaemon (Greece)"/>
+<marker lat="40.9167" lon="14.55" site="Nola (Italy)"/>
+<marker lat="40.166" lon="30.25" site="Bithynia (Turkey)"/>
+<marker lat="41.1833" lon="14.1667" site="Cales"/>
+<marker lat="45.1167" lon="10.0333" site="Cremona (Italy)"/>
+<marker lat="37.6167" lon="21.7" site="Phrixa"/>
+<marker lat="41.25" lon="16.25" site="Apulia (Italy)"/>
+<marker lat="39.116" lon="-108.666" site="Rhone (Colorado, United States)"/>
+<marker lat="38.16" lon="22.75" site="Sicyon (Greece)"/>
+<marker lat="40.2833" lon="26.4" site="Sestos"/>
+<marker lat="34.8" lon="35.9" site="Marathus (Syria)"/>
+</markers>

@@ -1,0 +1,4 @@
+# A simple script to run ant with a our own endorsed directory/ies.
+# Also sets the maximum heap size reasonably high.
+
+ANT_OPTS="-Djava.endorsed.dirs=lib/endorsed -Xmx896m" ant $*

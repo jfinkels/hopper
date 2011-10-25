@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>Perseus Hopper Opensource README</title>
+  <style type="text/css">
+  	body {font-size: 14px}
+  </style>
+</head>
+<body>
+<h1><b>The Perseus Digital Library 4.0</b></h1>
+<h2><b>Introduction</b></h2>
+<p>This package represents a Java reimplementation of much the older Perl Perseus Digital Library hopper web 
+application. It does not aim to replicate every last bit of the Perl hopper&rsquo;s functionality, but instead 
+concentrates on the features that were most commonly used: displaying of text and associated resources, 
+searching, morphological analysis and statistical information, to name a few.</p>
+
+<h2>Installation</h2>
+<p>If you want to generate all of the data yourself, please use INSTALLEVERYTHING.html. If you want to install 
+the hopper with the provided database dumps and processed XML files, please use INSTALLWITHDATA.html. The 
+hopper can only be installed on Linux and Mac OS X. It currently will not work on any Windows operating 
+systems.</p>
+
+<h2>Design Goals</h2>
+<p>In designing this package, the following served as guidelines:</p>
+<ul>
+  <li>Keep everything in Java. This has various advantages. Operating system becomes more of a choice. 
+  Installation is simpler &mdash; basically a matter of collecting JAR files.</li>
+  <li>Move data from flat files to RDBMS. Much work has been put into making relational databases fast and 
+  useful. Our data is inherently relational, so it can be most clearly organized and retrieved in table 
+  format.</li>
+  <li>Provide a clear API. The Perl hopper is an incredibly powerful tool for creating text processing 
+  applications. But the amount of detailed, often confusing, knowledge required to program with it is 
+  daunting. A combination of more modular object design and Java&rsquo;s self-documentation abilities should 
+  make it much simpler to build novel applications from existing code.</li>
+</ul>
+
+<h2>Status</h2>
+<p>The Java hopper began as a front-end replacement for the old hopper, using old files and databases to 
+power a JSP-based web interface that aimed for a newer and generally &ldquo;cleaner&rdquo; look. Since then, more and 
+more front-end and back-end features of the Perl system have been replicated in Java; as of now, the Java 
+system can function entirely on its own.</p>
+<p>At present, almost all the texts from the old hopper behave as expected in the new hopper. The exceptions 
+are generally texts with interesting layouts and subdocument configurations, such as some of the 
+commentaries. Also, the new hopper does not support the TEI&rsquo;s step-based citation schemes (these appear in 
+only a few texts, such as Butler&rsquo;s <i>Iliad</i> translation).</p>
+<p>There is still a great deal of work that could be done to replicate the Perl hopper&rsquo;s features, although 
+it is not certain whether such work would be worth the effort; a great many specialized features, such as 
+the the TLG and DDBDP searching tools and the Perseus Atlas, have not been reimplemented.</p>
+<p>The Java hopper does include one piece of functionality not present in the Perl hopper: the named-entity 
+browser, which provides several new mechanisms for browsing and searching places, people and dates in the 
+collection.</p>
+
+<h2>Java Dependencies and Supporting Technologies</h2>
+<p>The Java hopper uses a host of third-party frameworks to simplify many of its tasks. To interact with 
+the database, it initially used JDBC and raw SQL queries; most of these interactions have since been 
+rewritten, along with the corresponding model objects, in Hibernate, an object-relational management 
+(ORM) system. The front-end began its existence as a collection of JSP pages, and, while in large part 
+it remains as such, most newer functionality is backed by the Spring framework and uses either FreeMarker 
+or JSP templates with controller classes. Searching is handled by the Lucene library, and XML processing 
+is handled by a great many libraries including Xalan, Xerces and JDOM. Ant serves as a build tool, and 
+Tomcat (or an alternate servlet container) powers the front-end functionality.</p>
+<p>Here follows a list of used third-party libraries, all of which are either included in the lib directory 
+or readily downloadable. Note that this is <i>not</i> a comprehensive list; in particular, third-party 
+libraries that need only be installed because another third-party library depends on them may not be listed 
+here.</p>
+<ul>
+  <li>Commons CLI (<code>commons-cli.jar</code>) &mdash; a library for parsing command-line arguments</li>
+  <li>Commons Collections (<code>commons-collections.jar</code>) &mdash; adds some additional useful collections</li>
+  <li>Commons Configuration (<code>commons-configuration.jar</code>) &mdash; simplifies reading configuration 
+  files</li>
+  <li>Commons DBCP (<code>commons-dbcp.jar</code>) &mdash; database connection/datasource libraries</li>
+  <li>Commons DBUtils (<code>commons-dbutils.jar</code>) &mdash; provides some wrappers to simplify SQL/JDBC 
+  interactions</li>
+  <li>Commons Digester (<code>commons-digester.jar</code>) &mdash; simplifies reading XML files</li>
+  <li>Commons Lang (<code>commons-lang.jar</code>) &mdash; provides some additional functionality for core 
+  classes</li>
+  <li>Commons Logging (<code>commons-logging.jar</code>) &mdash; a logging wrapper used by lots of frameworks</li>
+  <li>Commons Pool (<code>commons-pool.jar</code>) &mdash; database connection pooling</li>
+  <li>DOM4J (<code>dom4j-1.6.jar</code>) &mdash; DOM parsing library used by Hibernate</li>
+  <li>FreeMarker (<code>freemarker.jar</code>) &mdash; a templating system used by many of the Spring pages</li>
+  <li>Hibernate and supporting libraries (<code>hib/*.jar</code>) &mdash; Hibernate, the ORM framework, and various 
+  supporting JARs</li>
+  <li>Java Mail libraries (<code>mail/*.jar</code>) &mdash; Mail libraries used for sending error reports</li>
+  <li>JDBC MySQL Connector (<code>jdbc-mysql.jar</code>) &mdash; MySQL connection adapter for JDBC</li>
+  <li>JDOM (<code>jdom.jar</code>) &mdash; DOM parsing library used by much of the Hopper code</li>
+  <li>JUnit (<code>junit.jar</code>) &mdash; Java unit testing framework</li>
+  <li>JSP/tag library files (<code>jstl.jar, standard.jar</code>) &mdash; JSP tag libraries</li>
+  <li>Log4J (<code>log4j.jar</code>) &mdash; logging library used for most of the Hopper&rsquo;s logging</li>
+  <li>Lucene (<code>lucene/*.jar</code>) &mdash; Java search framework</li>
+  <li>Spring (<code>spring*.jar</code>) &mdash; Spring web framework and various support libraries</li>
+  <li>UNC Greek Transcoder (<code>transcoder.jar</code>) &mdash; library for transcoding ancient Greek</li>
+  <li>Xalan (various) &mdash; Apache XSL transform library</li>
+  <li>Xerces (various) &mdash; Apache XML parsing library</li>
+  <li>XML Commons Resolver (<code>resolver.jar</code>) &mdash; XML catalog resolver</li>
+</ul>
+
+<h2>A Tour of the <code>reading</code> Package</h2>
+<p>The following is an attempt to explain the various directories that the Java hopper contains and their 
+functionality. Note that this list ignores directories that are generated by the hopper in the course of 
+loading data (e.g., the directories containing the Lucene indices and the Java class files), as they can 
+theoretically go anywhere, depending on configuration.</p>
+<dl>
+
+<dt><code>reading/</code></dt>
+
+<dd>
+<dl>
+<dt><code>jsp/</code> -- various display and support files</dt>
+<dd><code>includes/</code> -- headers and other page fragments used by JSP files</dd>
+<dd><code>index/</code> -- JSP files for the front page</dd>
+<dd>
+<dl>
+<dt><code>META-INF/</code> -- additional support files</dt>
+<dd><code>context.xml</code> -- Tomcat context configuration file</dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><code>WEB-INF/</code> -- suport files of various sorts</dt>
+<dd><code>freemarker/</code> -- FreeMarker display files</dd>
+<dd><code>taglib/</code> -- JSP tag library description files</dd>
+<dd><code>xsl/</code> -- various display/CTS-related XSL stylesheets</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+
+<dd>
+<dl>
+<dt><code>lib/</code> -- supporting libraries</dt>
+<dd><code>endorsed/</code> -- libraries that should be placed in a Java and/or Tomcat endorsed directory</dd>
+</dl>
+</dd>
+
+<dd>
+<dl>
+<dt><code>properties/</code> -- configuration files for the hopper</dt>
+<dd><code>abbreviations/</code> -- abbreviation files</dd>
+</dl>
+</dd>
+
+<dd><code>sql/</code> -- MySQL table description files</dd>
+
+<dd>
+<dl>
+<dt><code>src/</code></dt>
+<dd>
+<dl>
+<dt><code>perseus/</code></dt>
+<dd>
+<dl>
+<dt><code>artarch/</code> -- art/archaeology functionality</dt>
+<dd><code>image/</code> -- image functionality</dd>
+</dl>
+</dd><dd><code>chunking/</code> -- classes for loading XML texts</dd>
+<dd><code>controllers/</code> -- controllers for the views (follows same structure as src/perseus directory)</dd>
+<dd><code>cts/</code> -- Canonical Text Services implementations</dd>
+<dd><code>display/</code> -- display-related helper classes</dd>
+<dd><code>document/</code> -- lots of classes that relate to documents in some way</dd>
+<dd>
+<dl>
+<dt><code>eval/</code> -- classes for voting/evaluation</dt>
+<dd><code>morph/</code> --- morphological form evaluation</dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><code>ie/</code> -- information extraction code</dt>
+<dd>
+<dl>
+<dt><code>entity/</code> -- named entity functionality</dt>
+<dd><code>adapters/</code></dd>
+<dd><code>service/</code></dd>
+</dl>
+</dd>
+<dd><code>freq/</code> -- frequencies of every sort</dd>
+</dl>
+</dd>
+<dd><code>language/</code> -- classes relating to languages</dd>
+<dd><code>morph/</code> -- lots of classes relating to morphology in some way</dd>
+<dd><code>qa/</code> -- some testing classes</dd>
+<dd>
+<dl>
+<dt><code>search/</code> -- searching functionality (the current version is in the nu/ subdirectory)</dt>
+<dd><code>greek/</code></dd>
+<dd><code>latin/</code></dd>
+<dd><code>nu/</code></dd>
+</dl>
+</dd>
+<dd><code>servlet/</code> -- some servlets</dd>
+<dd><code>sharing/</code> -- some code for playing nice with others</dd>
+<dd><code>util/</code> -- lots of utility classes</dd>
+<dd><code>visualizations/</code> -- classes relating to the different types of visualization APIs used</dd>
+<dd><code>vocab/</code> -- vocabulary list functionality</dd>
+<dd><code>voting/</code> -- sense/morph/entity voting functionality</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+
+<dd>
+<dl>
+<dt><code>static/</code> -- static files (if setting up a developement server, this represents the webserver's "docroot" 
+directory)</dt>
+<dd><code>css/</code> -- CSS files</dd>
+<dd><code>img/</code> -- images</dd>
+<dd><code>js/</code> -- JavaScript</dd>
+<dd><code>xml/</code> -- static XML files</dd>
+</dl>
+</dd>
+<dd>
+<dl>
+<dt><code>xslt/</code> -- various XSL stylesheets</dt>
+<dd>
+<dl>
+<dt><code>build/</code> -- stylesheets used in loading data</dt>
+<dd><code>document/</code></dd>
+<dd><code>ie/</code></dd>
+</dl>
+</dd>
+<dd><code>services/</code> -- miscellaneous</dd>
+</dl>
+</dd>
+</dl>
+
+<h2><b>Weaknesses</b></h2>
+<ul>
+  <li>Although the Java rewrite was a great improvement on the Perl hopper, it has inherited some of the 
+  Perl code&rsquo;s problems, thanks to its relying on old database tables for so long. In particular, the code 
+  to handle texts with subdocuments is confusing and requires the relevant objects to be far more self-aware 
+  than they should be.</li>
+  <li>The current codebase is not very modular; the code for the back-end and the web application, and all 
+  the support files, is currently compiled to a single JAR. Ideally, it would compile into several different 
+  modules that could be substituted in and out as the system&rsquo;s needs dictated. In general, the separation 
+  between display and content could be greatly improved&mdash;many of the JSP pages could be broken out into 
+  controllers and view templates, which would make it far easier for other digital libraries to implement 
+  a different interface based on the Perseus back-end.</li>
+  <li>The Java rewrite required itself a prohibitive amount of rewriting as the developers gained more 
+  familiarity with available third-party libraries. Much of the functionality began as raw SQL code embedded 
+  within model objects and was rewritten over time in Hibernate, with Data Access Objects (DAOs) used to 
+  separate the objects from the database code. This rewriting represented a great deal of time that could 
+  have been used to add more features. Of course, none of the development staff could have been expected 
+  to be acquainted with the full breadth of Java libraries, but more up-front planning and research would 
+  have saved a great deal of time later on.</li>
+</ul>
+
+<h2><b>Some Known Issues</b></h2>
+<ul>
+  <li>When running the hopper, Tomcat tends to crash periodically with an OutOfMemoryError, at which point 
+  it needs to be restarted. (It is not clear whether the fault is in the hopper, or in Spring, Hibernate or 
+  the Java virtual machine; a Google search on the subject produces various forum discussions that establish 
+  little for certain.)</li>
+  <li>Tomcat&rsquo;s logs, if left unchecked, will keep growing and growing (in particular, the catalina.out file) 
+  and may eventually need to be deleted to reclaim disk space. Much of this can probably be solved with some 
+  tweaks to Tomcat&rsquo;s logging configuration.</li>
+  <li>Some texts could not be released with the source code because they cannot be freely distributed. 
+  However, these texts are always available on the <a href="http://www.perseus.tufts.edu/">Perseus website</a>.</li>
+  <li>Certain chunks of texts are known to be very large.In most cases,a truncated form of the chunk is 
+  shown with the option to view the entire chunk. However, some chunks are simply too large for the system 
+  to handle and currently cannot be displayed. These include: </li>
+  <ul>
+    <li>Duke Databank of Documentary Papyri collection</li>
+    <ul>
+      <li>Michigan Papyri (1999.05.0163): documents 223, 224, and 225</li>
+      <li>Papyrus de la Sorbonne (1999.05.0203): document 69</li>
+    </ul>
+    <li>American History collection</li>
+  </ul>
+  <ul>
+    <ul>
+      <li>Harper's Encyclopedia of US History (2001.05.0132): Christopher Columbus and Abraham Lincoln entries</li>
+      <li>Knight's Mechanical Encyclopedia (2001.05.0138): firearm entry</li>
+    </ul>
+    <li>Renaissance collection</li>
+  </ul>
+  <ul>
+    <ul>
+      <li>The History of England After the Conquest, An Electronic Edition (1999.03.0085): year 1585 and Queen Elizabeth regnal year 18</li>
+    </ul>
+  </ul>
+</ul>
+</body>
+</html>

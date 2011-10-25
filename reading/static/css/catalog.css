@@ -1,0 +1,67 @@
+div.sidebar {
+    float: right;
+    width: 20%;
+    background-color: #cccccc;
+    margin: 20px;
+    padding: 10px;
+}
+
+div.sidebar_header {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+div.sidebar_list_element {
+    padding-left: 10px;
+    text-indent: -10px;
+}
+
+div.works {
+    float: left;
+    width: 60%;
+    margin: 10px;
+    padding: 10px;
+}
+
+div.record {
+    background-color: #cccccc;
+    margin: 20px;
+    padding: 10px;
+}
+
+div.related-host {
+    background-color: #ffffff;
+    margin: 10px;
+    padding: 10px;
+    border: solid black 1px;
+}
+
+div.subjects {
+    margin: 8px;
+}
+
+div.text_links {
+    margin-top: 10px;
+}
+
+div.expression {
+    background-color: #e0e0e0;
+    padding: 3px;
+    margin-bottom: 10px;
+}
+
+div.classification {
+    float: right;
+    background-color: #ffffff;
+    margin: 3px;
+    padding: 2px;
+    border: solid black 1px;
+}
+
+div.tableOfContents {
+    font-size: small;
+}
+
+div.xml_button {
+    float: right;
+}
