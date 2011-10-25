@@ -30,10 +30,10 @@ public class Date extends AbstractEntity {
     private double secondFraction = 0.0;
 
     static {
-	DateFormatSymbols symbols = new DateFormatSymbols();
-	monthNames = symbols.getMonths();
-	eraNames = symbols.getEras();
-	amPmStrings = symbols.getAmPmStrings();
+    DateFormatSymbols symbols = new DateFormatSymbols();
+    monthNames = symbols.getMonths();
+    eraNames = symbols.getEras();
+    amPmStrings = symbols.getAmPmStrings();
     }
 
     public Date() {}
@@ -50,13 +50,13 @@ public class Date extends AbstractEntity {
 
     public Date(int year, int month, int day, int hour, int minute,
             int second, double secondFraction) {
-	setYear(year);
-	setMonth(month);
-	setDay(day);
-	setHour(hour);
-	setMinute(minute);
-	setSecond(second);
-	setSecondFraction(secondFraction);
+    setYear(year);
+    setMonth(month);
+    setDay(day);
+    setHour(hour);
+    setMinute(minute);
+    setSecond(second);
+    setSecondFraction(secondFraction);
     }
 
     public int hashCode() {
@@ -79,48 +79,48 @@ public class Date extends AbstractEntity {
 
     public void setYear(int y) { year = y; clearNames(); }
     public void setMonth(int m) {
-	if (m < 0 || m > monthNames.length) {
-	    reportError("month", m);
-	}
+    if (m < 0 || m > monthNames.length) {
+        reportError("month", m);
+    }
 
-	month = m; clearNames();
+    month = m; clearNames();
     }
 
     public void setDay(int d) {
-	// TODO be less lazy about this; check max day by month
-	if (d < 0 || d > 31) {
-	    reportError("day", d);
-	}
-	day = d; clearNames();
+    // TODO be less lazy about this; check max day by month
+    if (d < 0 || d > 31) {
+        reportError("day", d);
+    }
+    day = d; clearNames();
     }
     public void setHour(int h) {
-	if (h < -1 || h > 24) {
-	    reportError("hour", h);
-	}
-	hour = h; clearNames();
+    if (h < -1 || h > 24) {
+        reportError("hour", h);
+    }
+    hour = h; clearNames();
     }
     public void setMinute(int m) {
-	if (m < -1 || m > 60) {
-	    reportError("minute", m);
-	}
-	minute = m; clearNames();
+    if (m < -1 || m > 60) {
+        reportError("minute", m);
+    }
+    minute = m; clearNames();
     }
     public void setSecond(int s) {
-	if (s < -1 || s > 60) {
-	    reportError("second", s);
-	}
-	second = s; clearNames();
+    if (s < -1 || s > 60) {
+        reportError("second", s);
+    }
+    second = s; clearNames();
     }
     public void setSecondFraction(double sf) {
-	if (sf < 0.0 || sf > 1.0) {
-	    reportError("second fraction", sf);
-	}
-	secondFraction = sf; clearNames();
+    if (sf < 0.0 || sf > 1.0) {
+        reportError("second fraction", sf);
+    }
+    secondFraction = sf; clearNames();
     }
 
     private void reportError(String field, Number quantity) {
-	throw new IllegalArgumentException(
-	    "Illegal " + field + " for date: " + quantity);
+    throw new IllegalArgumentException(
+        "Illegal " + field + " for date: " + quantity);
     }
 
     public boolean hasYear() { return (year != 0); }
@@ -367,6 +367,6 @@ public class Date extends AbstractEntity {
     }
     
     public String toString() {
-	return getDisplayName();
+    return getDisplayName();
     }
 }

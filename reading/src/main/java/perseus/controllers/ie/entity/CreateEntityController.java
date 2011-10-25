@@ -22,62 +22,62 @@ import perseus.voting.dao.HibernateVoteDAO;
 
 public class CreateEntityController implements Controller {
 
-	private static final Map<String,Class<? extends Entity>> typeClasses =
-		new HashMap<String,Class<? extends Entity>>() {{
-			put("Place", Place.class);
-			put("Date", Date.class);
-			put("Person", Person.class);
-			put("DateRange", DateRange.class);
-		}
-	};
+    private static final Map<String,Class<? extends Entity>> typeClasses =
+        new HashMap<String,Class<? extends Entity>>() {{
+            put("Place", Place.class);
+            put("Date", Date.class);
+            put("Person", Person.class);
+            put("DateRange", DateRange.class);
+        }
+    };
 
-	public ModelAndView handleRequest(HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
+    public ModelAndView handleRequest(HttpServletRequest request,
+            HttpServletResponse response) throws Exception {
 
-		String authParam = request.getParameter("auth");
-		String numParam = request.getParameter("n");
-		String queryParam = request.getParameter("doc");
+        String authParam = request.getParameter("auth");
+        String numParam = request.getParameter("n");
+        String queryParam = request.getParameter("doc");
 
-		String occIDParam = request.getParameter("occurrence_id");
-		String entityName = request.getParameter("name");
-		String type = request.getParameter("type");
+        String occIDParam = request.getParameter("occurrence_id");
+        String entityName = request.getParameter("name");
+        String type = request.getParameter("type");
 
-		String baseURL = String.format(
-				"redirect:entityvote?auth=%s&n=%s&doc=%s",
-				authParam, numParam, queryParam);
+        String baseURL = String.format(
+                "redirect:entityvote?auth=%s&n=%s&doc=%s",
+                authParam, numParam, queryParam);
 
-		HibernateEntityManager manager = new HibernateEntityManager();
-		manager.beginWrite();
+        HibernateEntityManager manager = new HibernateEntityManager();
+        manager.beginWrite();
 
-		Entity entity = null;
-		if (type.equalsIgnoreCase("place")) {
-			entity = Place.parseDisplayName(entityName);
-		} else if (type.equalsIgnoreCase("person")) {
-			entity = Person.parseDisplayName(entityName);
-		}
+        Entity entity = null;
+        if (type.equalsIgnoreCase("place")) {
+            entity = Place.parseDisplayName(entityName);
+        } else if (type.equalsIgnoreCase("person")) {
+            entity = Person.parseDisplayName(entityName);
+        }
 
-		if (entity != null) {
-			manager.registerEntity(entity);
+        if (entity != null) {
+            manager.registerEntity(entity);
 
-			if (occIDParam != null) {
-				int occID = Integer.parseInt(occIDParam);
+            if (occIDParam != null) {
+                int occID = Integer.parseInt(occIDParam);
 
-				Vote<Entity> vote = new Vote<Entity>();
-				EntityOccurrence occurrence = (EntityOccurrence)
-				HibernateUtil.getById(EntityOccurrence.class, occID);
+                Vote<Entity> vote = new Vote<Entity>();
+                EntityOccurrence occurrence = (EntityOccurrence)
+                HibernateUtil.getById(EntityOccurrence.class, occID);
 
-				vote.setOccurrence(occurrence);
+                vote.setOccurrence(occurrence);
 
-				vote.setSelection(entity);
+                vote.setSelection(entity);
 
-				new HibernateVoteDAO().save(vote);
-			}
-			manager.endWrite();
+                new HibernateVoteDAO().save(vote);
+            }
+            manager.endWrite();
 
-			return new ModelAndView(baseURL + "&voted=" + entity.getAuthorityName());
-		} else {
-			return new ModelAndView(baseURL);
-		}
-	}
+            return new ModelAndView(baseURL + "&voted=" + entity.getAuthorityName());
+        } else {
+            return new ModelAndView(baseURL);
+        }
+    }
 
 }

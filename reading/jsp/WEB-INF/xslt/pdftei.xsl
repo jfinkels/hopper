@@ -35,24 +35,24 @@
 
   <xsl:template match="text">
       <xsl:choose>
-	  <xsl:when test="group or not (descendant::text)">
+      <xsl:when test="group or not (descendant::text)">
 \begin{document}
 \maketitle
 <xsl:apply-templates />
 \end{document}
-	  </xsl:when>
-	  <xsl:when test="descendant::head">
-	      \chapter*{<xsl:value-of select="descendant::head[1]" />}
-	      <xsl:apply-templates />
-	  </xsl:when>
-	  <xsl:when test="@n">
-	      \chapter*{<xsl:value-of select="@n" />}
+      </xsl:when>
+      <xsl:when test="descendant::head">
+          \chapter*{<xsl:value-of select="descendant::head[1]" />}
+          <xsl:apply-templates />
+      </xsl:when>
+      <xsl:when test="@n">
+          \chapter*{<xsl:value-of select="@n" />}
 
-	      <xsl:apply-templates />
-	  </xsl:when>
-	  <xsl:otherwise>
-	      <xsl:apply-templates />
-	  </xsl:otherwise>
+          <xsl:apply-templates />
+      </xsl:when>
+      <xsl:otherwise>
+          <xsl:apply-templates />
+      </xsl:otherwise>
       </xsl:choose>
   </xsl:template>
 
@@ -197,7 +197,7 @@
 \textbf{Cast.}
 \begin{itemize}
       <xsl:for-each select="castItem">
-	  \item <xsl:value-of select="role"/><xsl:if test="roleDesc"><xsl:value-of select="roleDesc" /></xsl:if>
+      \item <xsl:value-of select="role"/><xsl:if test="roleDesc"><xsl:value-of select="roleDesc" /></xsl:if>
       </xsl:for-each>
 \end{itemize}
   </xsl:template>

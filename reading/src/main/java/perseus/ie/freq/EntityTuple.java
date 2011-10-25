@@ -16,21 +16,21 @@ public class EntityTuple extends ChunkFrequency implements EntityBased {
     public EntityTuple() {}
 
     public EntityTuple(Entity e) {
-	super();
-	entity = e;
+    super();
+    entity = e;
     }
 
     public EntityTuple(Entity e, Chunk chunk) {
-	this(e);
-	setChunk(chunk);
+    this(e);
+    setChunk(chunk);
     }
 
     public Entity getEntity() {
-	return entity;
+    return entity;
     }
 
     public void setEntity(Entity e) {
-	entity = e;
+    entity = e;
     }
     
     public String getSnippet() {
@@ -41,17 +41,17 @@ public class EntityTuple extends ChunkFrequency implements EntityBased {
     }
     
     public String getForm() {
-	return entity.getAuthorityName();
+    return entity.getAuthorityName();
     }
 
     @Override
     public String getDocumentID() {
-	return getChunk().getDocumentID();
+    return getChunk().getDocumentID();
     }
 
-	@Override
-	public String toXML() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public String toXML() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }

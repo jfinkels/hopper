@@ -42,7 +42,7 @@ public final class navigation_jsp extends org.apache.jasper.runtime.HttpJspBase
     try {
       response.setContentType("text/html;charset=utf-8");
       pageContext = _jspxFactory.getPageContext(this, request, response,
-      			null, true, 8192, true);
+                null, true, 8192, true);
       _jspx_page_context = pageContext;
       application = pageContext.getServletContext();
       config = pageContext.getServletConfig();
@@ -63,20 +63,20 @@ String url = request.getParameter("url");
 String[] tabs = tabNames.split(",");
 String[] disp = new String[tabs.length];
 if(dispNames == null){		
-	for(int i=0; i < tabs.length; i++){
-		String tab = tabs[i];
-		String end = tab.substring(1);
-		String begin = tab.substring(0,1);
-		begin = begin.toUpperCase();
-		String displayTab = begin + end;
-		disp[i] = displayTab;
-	}
+    for(int i=0; i < tabs.length; i++){
+        String tab = tabs[i];
+        String end = tab.substring(1);
+        String begin = tab.substring(0,1);
+        begin = begin.toUpperCase();
+        String displayTab = begin + end;
+        disp[i] = displayTab;
+    }
 }else{
-	disp = dispNames.split(",");
+    disp = dispNames.split(",");
 }
 for(int i=0; i < tabs.length; i++){
-	String tab = tabs[i];
-	String dispName = disp[i];
+    String tab = tabs[i];
+    String dispName = disp[i];
 
       out.write("\n\t\t<a class=");
       out.print(tab.equals(tabActive) ? "tab_active" : "tab" );

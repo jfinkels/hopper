@@ -26,9 +26,9 @@ public class Unparseable {
      */
     public static TokenList getUnparseable(Chunk chunk){
 
-	String languageCode = chunk.getMetadata().get(Metadata.LANGUAGE_KEY);
-	TokenList textTokens = chunk.getTokens();
-	return getUnparseable(textTokens, languageCode);	
+    String languageCode = chunk.getMetadata().get(Metadata.LANGUAGE_KEY);
+    TokenList textTokens = chunk.getTokens();
+    return getUnparseable(textTokens, languageCode);	
 
     }
 
@@ -40,27 +40,27 @@ public class Unparseable {
      * @return a list of words in the chunk that are unparseable
      */
     public static TokenList getUnparseable(TokenList textTokens, String languageCode){
-	Iterator tokenIterator = textTokens.iterator();
-	TokenList unparseable = new TokenList();
-	while(tokenIterator.hasNext()){
-	    Token token = (Token) tokenIterator.next();
-	    if (token.getType() == Token.Type.WORD && 
-		LanguageCode.hasMorphData(token.getLanguageCode())){
+    Iterator tokenIterator = textTokens.iterator();
+    TokenList unparseable = new TokenList();
+    while(tokenIterator.hasNext()){
+        Token token = (Token) tokenIterator.next();
+        if (token.getType() == Token.Type.WORD && 
+        LanguageCode.hasMorphData(token.getLanguageCode())){
 
-		String word = token.getOriginalText();
-		Map lemmaParses = Parse.getParses(word, token.getLanguageCode());
+        String word = token.getOriginalText();
+        Map lemmaParses = Parse.getParses(word, token.getLanguageCode());
 
-		if (lemmaParses == null || lemmaParses.keySet().size() == 0){
-		    //try lowercase
-		    String lowercaseWord = word.toLowerCase();
-		    lemmaParses = Parse.getParses(lowercaseWord, languageCode);
-		    if(lemmaParses == null || lemmaParses.keySet().size() == 0){
-			//definately nothing
-			unparseable.add(token);
-		    }
-		}		
-	    }
-	}
-	return unparseable;
+        if (lemmaParses == null || lemmaParses.keySet().size() == 0){
+            //try lowercase
+            String lowercaseWord = word.toLowerCase();
+            lemmaParses = Parse.getParses(lowercaseWord, languageCode);
+            if(lemmaParses == null || lemmaParses.keySet().size() == 0){
+            //definately nothing
+            unparseable.add(token);
+            }
+        }		
+        }
+    }
+    return unparseable;
     }
 }

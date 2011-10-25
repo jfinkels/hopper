@@ -7,7 +7,7 @@
 
 <div id="main">
     <jsp:include page="/includes/index/indexNav.jsp">
-	<jsp:param name="tabActive" value=""/>
+    <jsp:param name="tabActive" value=""/>
     </jsp:include>
     
     <div id="content" class="1column">

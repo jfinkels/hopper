@@ -25,7 +25,7 @@ public interface MetadataDAO {
     public List<Query> getDocuments(String keyName, String value, String valueID, boolean ignoreSubdocs) throws MetadataAccessException;
     public List<Query> getDocuments(String keyName, List<String> values, boolean ignoreSubdocs) throws MetadataAccessException;
     public List<String> getDistinctValues(String keyName)
-	throws MetadataAccessException;
+    throws MetadataAccessException;
     public List<String> getDistinctValueIDs(String keyName)
-	throws MetadataAccessException;
+    throws MetadataAccessException;
 }

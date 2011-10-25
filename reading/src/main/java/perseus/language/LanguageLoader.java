@@ -18,76 +18,76 @@ import perseus.util.Stringifier;
  * Loads language settings from a properties file.
  */
 public class LanguageLoader {
-	private static Logger logger = Logger.getLogger(LanguageLoader.class);
+    private static Logger logger = Logger.getLogger(LanguageLoader.class);
 
-	public void load(String path) throws ConfigurationException {
-		Configuration config = new PropertiesConfiguration(new File(path));
+    public void load(String path) throws ConfigurationException {
+        Configuration config = new PropertiesConfiguration(new File(path));
 
-		Language language = null;
-		List<Language> languages = new ArrayList<Language>();
+        Language language = null;
+        List<Language> languages = new ArrayList<Language>();
 
-		HibernateLanguageDAO dao = new HibernateLanguageDAO();
-		dao.clear();
-		dao.beginTransaction();
+        HibernateLanguageDAO dao = new HibernateLanguageDAO();
+        dao.clear();
+        dao.beginTransaction();
 
-		Iterator it = config.getKeys();
-		while (it.hasNext()) {
-			String key = (String) it.next();
-			String[] tokens = key.split("\\.");
-			if (tokens.length == 3) {
-				// okay, this is a language and its display name
-				String abbreviation = tokens[2];
+        Iterator it = config.getKeys();
+        while (it.hasNext()) {
+            String key = (String) it.next();
+            String[] tokens = key.split("\\.");
+            if (tokens.length == 3) {
+                // okay, this is a language and its display name
+                String abbreviation = tokens[2];
 
-				int id = config.getInteger(key + ".id", -1);
-				if (id != -1) {
-					language = dao.getById(id);
-					if (language == null) {
-						language = new Language(abbreviation, config.getString(key));			
-					}
-				}
+                int id = config.getInteger(key + ".id", -1);
+                if (id != -1) {
+                    language = dao.getById(id);
+                    if (language == null) {
+                        language = new Language(abbreviation, config.getString(key));			
+                    }
+                }
 
-				languages.add(language);
+                languages.add(language);
 
-				language.addAbbreviations(new ArrayList<String>(config.getList(key + ".abbrev",
-						Collections.emptyList())));
+                language.addAbbreviations(new ArrayList<String>(config.getList(key + ".abbrev",
+                        Collections.emptyList())));
 
-				language.setHasMorphData(config.getBoolean(key + ".morph_data", false));
+                language.setHasMorphData(config.getBoolean(key + ".morph_data", false));
 
-				language.setId(config.getInteger(key + ".id", -1));
-				if (config.getString(key + ".adapter") != null) {
-					language.setAdapterClassName(
-							config.getString(key + ".adapter"));
-				}
-				if (language.getId() == -1) {
-					throw new IllegalArgumentException("Bad ID for language: " +
-							language.getName());
-				}
-				logger.info(Stringifier.toString(language));
-			}
-		}
+                language.setId(config.getInteger(key + ".id", -1));
+                if (config.getString(key + ".adapter") != null) {
+                    language.setAdapterClassName(
+                            config.getString(key + ".adapter"));
+                }
+                if (language.getId() == -1) {
+                    throw new IllegalArgumentException("Bad ID for language: " +
+                            language.getName());
+                }
+                logger.info(Stringifier.toString(language));
+            }
+        }
 
-		for (Language l : languages) {
-			dao.saveOrUpdate(l);
-		}
-		dao.endTransaction();
-	}
+        for (Language l : languages) {
+            dao.saveOrUpdate(l);
+        }
+        dao.endTransaction();
+    }
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		if (args.length == 0) {
-			logger.error("Usage: LanguageLoader <language file>+");
-			System.exit(1);
-		}
+        if (args.length == 0) {
+            logger.error("Usage: LanguageLoader <language file>+");
+            System.exit(1);
+        }
 
-		LanguageLoader loader = new LanguageLoader();
+        LanguageLoader loader = new LanguageLoader();
 
-		for (String arg : args) {
-			try {
-				loader.load(arg);
-			} catch (ConfigurationException ce) {
-				logger.fatal("Problem loading languages!", ce);
-				System.exit(1);
-			}
-		}
-	}
+        for (String arg : args) {
+            try {
+                loader.load(arg);
+            } catch (ConfigurationException ce) {
+                logger.fatal("Problem loading languages!", ce);
+                System.exit(1);
+            }
+        }
+    }
 }

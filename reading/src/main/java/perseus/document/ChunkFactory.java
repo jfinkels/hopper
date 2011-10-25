@@ -24,11 +24,11 @@ public class ChunkFactory implements Iterable<Chunk> {
     private static Logger logger = Logger.getLogger(ChunkFactory.class);
     
     public static ChunkFactory forDocument(Query query, String scheme) {
-	ChunkFactory factory = new ChunkFactory();
-	factory.scheme = scheme;
-	factory.documentQuery = query;
-	
-	return factory;
+    ChunkFactory factory = new ChunkFactory();
+    factory.scheme = scheme;
+    factory.documentQuery = query;
+    
+    return factory;
     }
     
     /**
@@ -54,34 +54,34 @@ public class ChunkFactory implements Iterable<Chunk> {
      * @return a ListIterator that can move through all such chunks
      */    
     public Iterator<Chunk> iterator() {
-	HibernateTableOfContentsDAO tocDAO = new HibernateTableOfContentsDAO();
-	String possibleType = documentQuery.getMetadata().getDefaultChunk();
-	String tocType = possibleType;
-	if (possibleType.equals("entry")) {
-	    // a TOC may not exist for "entry" types if there are lots of
-	    // entries, and if one does, there will be no chunks to match from,
-	    // so just grab anything
-	    tocType = null;
-	}
-	
-	TableOfContents toc = tocDAO.getTOCForQuery(documentQuery, tocType);
-	if (toc != null) {
-	    return toc.getChunks(possibleType);
-	}
+    HibernateTableOfContentsDAO tocDAO = new HibernateTableOfContentsDAO();
+    String possibleType = documentQuery.getMetadata().getDefaultChunk();
+    String tocType = possibleType;
+    if (possibleType.equals("entry")) {
+        // a TOC may not exist for "entry" types if there are lots of
+        // entries, and if one does, there will be no chunks to match from,
+        // so just grab anything
+        tocType = null;
+    }
+    
+    TableOfContents toc = tocDAO.getTOCForQuery(documentQuery, tocType);
+    if (toc != null) {
+        return toc.getChunks(possibleType);
+    }
 
-	// if that didn't work, try again with the default chunk for the
-	// default scheme, which can sometimes be different from the
-	// "default chunk" as returned by the metadata method
-	tocType = ChunkSchemes.defaultTypeForScheme(
-	    documentQuery.getMetadata().getChunkSchemes().getDefaultScheme());
-	toc = tocDAO.getTOCForQuery(documentQuery, tocType);
-	if (toc != null) {
-	    return toc.getChunks(tocType);
-	}
+    // if that didn't work, try again with the default chunk for the
+    // default scheme, which can sometimes be different from the
+    // "default chunk" as returned by the metadata method
+    tocType = ChunkSchemes.defaultTypeForScheme(
+        documentQuery.getMetadata().getChunkSchemes().getDefaultScheme());
+    toc = tocDAO.getTOCForQuery(documentQuery, tocType);
+    if (toc != null) {
+        return toc.getChunks(tocType);
+    }
 
-	logger.error("No TOC found for " + documentQuery +
-			", type " + tocType);
-	return new ArrayList<Chunk>().iterator();
+    logger.error("No TOC found for " + documentQuery +
+            ", type " + tocType);
+    return new ArrayList<Chunk>().iterator();
     }
     
 }

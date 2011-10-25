@@ -39,9 +39,9 @@
     <tag-class>org.apache.taglibs.standard.tag.common.core.ChooseTag</tag-class>
     <body-content>JSP</body-content>
     <description>
-	Simple conditional tag that establishes a context for
-	mutually exclusive conditional operations, marked by
-	&lt;when&gt; and &lt;otherwise&gt;
+    Simple conditional tag that establishes a context for
+    mutually exclusive conditional operations, marked by
+    &lt;when&gt; and &lt;otherwise&gt;
     </description>
   </tag>
 
@@ -50,15 +50,15 @@
     <tag-class>org.apache.taglibs.standard.tag.rt.core.IfTag</tag-class>
     <body-content>JSP</body-content>
     <description>
-	Simple conditional tag, which evalutes its body if the
-	supplied condition is true and optionally exposes a Boolean
-	scripting variable representing the evaluation of this condition
+    Simple conditional tag, which evalutes its body if the
+    supplied condition is true and optionally exposes a Boolean
+    scripting variable representing the evaluation of this condition
     </description>
     <attribute>
         <name>test</name>
         <required>true</required>
         <rtexprvalue>true</rtexprvalue>
-	<type>boolean</type>
+    <type>boolean</type>
     </attribute>
     <attribute>
         <name>var</name>
@@ -119,43 +119,43 @@
     <tei-class>org.apache.taglibs.standard.tei.ForEachTEI</tei-class>
     <body-content>JSP</body-content>
     <description>
-	The basic iteration tag, accepting many different
+    The basic iteration tag, accepting many different
         collection types and supporting subsetting and other
         functionality
     </description>
     <attribute>
-	<name>items</name>
-	<required>false</required>
-	<rtexprvalue>true</rtexprvalue>
-	<type>java.lang.Object</type>
+    <name>items</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+    <type>java.lang.Object</type>
     </attribute>
     <attribute>
-	<name>begin</name>
-	<required>false</required>
-	<rtexprvalue>true</rtexprvalue>
-	<type>int</type>
+    <name>begin</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+    <type>int</type>
     </attribute>
     <attribute>
-	<name>end</name>
-	<required>false</required>
-	<rtexprvalue>true</rtexprvalue>
-	<type>int</type>
+    <name>end</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+    <type>int</type>
     </attribute>
     <attribute>
-	<name>step</name>
-	<required>false</required>
-	<rtexprvalue>true</rtexprvalue>
-	<type>int</type>
+    <name>step</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+    <type>int</type>
     </attribute>
     <attribute>
-	<name>var</name>
-	<required>false</required>
-	<rtexprvalue>false</rtexprvalue>
+    <name>var</name>
+    <required>false</required>
+    <rtexprvalue>false</rtexprvalue>
     </attribute>
     <attribute>
-	<name>varStatus</name>
-	<required>false</required>
-	<rtexprvalue>false</rtexprvalue>
+    <name>varStatus</name>
+    <required>false</required>
+    <rtexprvalue>false</rtexprvalue>
     </attribute>
   </tag>
 
@@ -164,47 +164,47 @@
     <tag-class>org.apache.taglibs.standard.tag.rt.core.ForTokensTag</tag-class>
     <body-content>JSP</body-content>
     <description>
-	Iterates over tokens, separated by the supplied delimeters
+    Iterates over tokens, separated by the supplied delimeters
     </description>
     <attribute>
-	<name>items</name>
-	<required>true</required>
-	<rtexprvalue>true</rtexprvalue>
-	<type>java.lang.String</type>
+    <name>items</name>
+    <required>true</required>
+    <rtexprvalue>true</rtexprvalue>
+    <type>java.lang.String</type>
     </attribute>
     <attribute>
-	<name>delims</name>
-	<required>true</required>
-	<rtexprvalue>true</rtexprvalue>
-	<type>java.lang.String</type>
+    <name>delims</name>
+    <required>true</required>
+    <rtexprvalue>true</rtexprvalue>
+    <type>java.lang.String</type>
     </attribute>
     <attribute>
-	<name>begin</name>
-	<required>false</required>
-	<rtexprvalue>true</rtexprvalue>
-	<type>int</type>
+    <name>begin</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+    <type>int</type>
     </attribute>
     <attribute>
-	<name>end</name>
-	<required>false</required>
-	<rtexprvalue>true</rtexprvalue>
-	<type>int</type>
+    <name>end</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+    <type>int</type>
     </attribute>
     <attribute>
-	<name>step</name>
-	<required>false</required>
-	<rtexprvalue>true</rtexprvalue>
-	<type>int</type>
+    <name>step</name>
+    <required>false</required>
+    <rtexprvalue>true</rtexprvalue>
+    <type>int</type>
     </attribute>
     <attribute>
-	<name>var</name>
-	<required>false</required>
-	<rtexprvalue>false</rtexprvalue>
+    <name>var</name>
+    <required>false</required>
+    <rtexprvalue>false</rtexprvalue>
     </attribute>
     <attribute>
-	<name>varStatus</name>
-	<required>false</required>
-	<rtexprvalue>false</rtexprvalue>
+    <name>varStatus</name>
+    <required>false</required>
+    <rtexprvalue>false</rtexprvalue>
     </attribute>
   </tag>
 
@@ -379,14 +379,14 @@
     <tag-class>org.apache.taglibs.standard.tag.rt.core.WhenTag</tag-class>
     <body-content>JSP</body-content>
     <description>
-	Subtag of &lt;choose&gt; that includes its body if its
-	condition evalutes to 'true'
+    Subtag of &lt;choose&gt; that includes its body if its
+    condition evalutes to 'true'
     </description>
     <attribute>
         <name>test</name>
         <required>true</required>
         <rtexprvalue>true</rtexprvalue>
-	<type>boolean</type>
+    <type>boolean</type>
     </attribute>
   </tag>
 

@@ -34,330 +34,330 @@ import perseus.util.ObjectCounter;
  */
 public class TokenizingParser {
 
-	private TokenList output;
-	private ObjectCounter<String> formsSeen = new ObjectCounter<String>();
+    private TokenList output;
+    private ObjectCounter<String> formsSeen = new ObjectCounter<String>();
 
-	private InputSource input;
-	private String originalText;
-	private Language defaultLanguage;
+    private InputSource input;
+    private String originalText;
+    private Language defaultLanguage;
 
-	private Logger logger = Logger.getLogger(getClass());
+    private Logger logger = Logger.getLogger(getClass());
 
-	public TokenizingParser(String in, Language defaultLanguage) {
-		init(defaultLanguage);
+    public TokenizingParser(String in, Language defaultLanguage) {
+        init(defaultLanguage);
 
-		originalText = in;
-		input = new InputSource(new StringReader(in));
-	}
+        originalText = in;
+        input = new InputSource(new StringReader(in));
+    }
 
-	public TokenizingParser(InputStream in, Language defaultLanguage) {
-		init(defaultLanguage);
+    public TokenizingParser(InputStream in, Language defaultLanguage) {
+        init(defaultLanguage);
 
-		originalText = null;
-		input = new InputSource(in);
-	}
+        originalText = null;
+        input = new InputSource(in);
+    }
 
-	/** This is a special-purpose version of the TokenizingParser designed
-	for transcoding whole files from disk. As a result, it requires that
-	we take into account XML catalogs and entities.
-	 */
-	public TokenizingParser(File inputFile, Language defaultLanguage) throws Exception {
-		init(defaultLanguage);
+    /** This is a special-purpose version of the TokenizingParser designed
+    for transcoding whole files from disk. As a result, it requires that
+    we take into account XML catalogs and entities.
+     */
+    public TokenizingParser(File inputFile, Language defaultLanguage) throws Exception {
+        init(defaultLanguage);
 
-		CatalogResolver cr = new CatalogResolver();
-		XMLReader parser = XMLReaderFactory.createXMLReader();
-		parser.setContentHandler(new TokenizingHandler(defaultLanguage));
-		parser.setEntityResolver(cr);
+        CatalogResolver cr = new CatalogResolver();
+        XMLReader parser = XMLReaderFactory.createXMLReader();
+        parser.setContentHandler(new TokenizingHandler(defaultLanguage));
+        parser.setEntityResolver(cr);
 
-		output = new TokenList();
-		parser.parse(new InputSource(new FileInputStream(inputFile)));
-	}
+        output = new TokenList();
+        parser.parse(new InputSource(new FileInputStream(inputFile)));
+    }
 
-	private void init(Language defaultLanguage) {
-		this.defaultLanguage = defaultLanguage;
-		output = null;
-	}
+    private void init(Language defaultLanguage) {
+        this.defaultLanguage = defaultLanguage;
+        output = null;
+    }
 
-	private void parse() throws SAXException {
-		SAXParserFactory factory = SAXParserFactory.newInstance();
-		SAXParser parser;
+    private void parse() throws SAXException {
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+        SAXParser parser;
 
-		output = new TokenList();
+        output = new TokenList();
 
-		try {
-			parser = factory.newSAXParser();
-			parser.parse(input, new TokenizingHandler(defaultLanguage));
-		} catch (Exception e) {
-			// For all practical purposes, this is a SAX exception to the
-			// calling code
-			throw new SAXException(e);
-		}
-	}
+        try {
+            parser = factory.newSAXParser();
+            parser.parse(input, new TokenizingHandler(defaultLanguage));
+        } catch (Exception e) {
+            // For all practical purposes, this is a SAX exception to the
+            // calling code
+            throw new SAXException(e);
+        }
+    }
 
-	/**
-	 * Returns the input string as a TokenList, regardless of its
-	 * well-formedness.
-	 */
-	public TokenList getOutput() {
-		try {
-			output = getOutputFromXML();
-		} catch (SAXException se) {
-			Tokenizer tokenizer =
-				new Tokenizer(getText(), defaultLanguage);
-			output = tokenizer.getTokens();
-		}
+    /**
+     * Returns the input string as a TokenList, regardless of its
+     * well-formedness.
+     */
+    public TokenList getOutput() {
+        try {
+            output = getOutputFromXML();
+        } catch (SAXException se) {
+            Tokenizer tokenizer =
+                new Tokenizer(getText(), defaultLanguage);
+            output = tokenizer.getTokens();
+        }
 
-		return output;
-	}
+        return output;
+    }
 
-	/**
-	 * Returns the input string, which is required to be well-formed XML, as
-	 * a TokenList.
-	 */
-	public TokenList getOutputFromXML() throws SAXException {
-		if (output == null) {
-			parse();
-		}
-		return output;
-	}
+    /**
+     * Returns the input string, which is required to be well-formed XML, as
+     * a TokenList.
+     */
+    public TokenList getOutputFromXML() throws SAXException {
+        if (output == null) {
+            parse();
+        }
+        return output;
+    }
 
-	private String getText() {
-		if (originalText != null) {
-			return originalText;
-		}
+    private String getText() {
+        if (originalText != null) {
+            return originalText;
+        }
 
-		BufferedReader reader = new BufferedReader(input.getCharacterStream());
+        BufferedReader reader = new BufferedReader(input.getCharacterStream());
 
-		StringBuffer buffer = new StringBuffer();
-		char[] ch = new char[1000];
-		int charsRead;
+        StringBuffer buffer = new StringBuffer();
+        char[] ch = new char[1000];
+        int charsRead;
 
-		try {
-			while ((charsRead = reader.read(ch, 0, ch.length)) != -1) {
-				buffer.append(ch, 0, charsRead);
-			}
-		} catch (IOException ioe) {
-			logger.warn("Problem reading data from Reader: " + ioe);
-		} finally {
-			try {
-				reader.close();
-			} catch (IOException ioe) {
-				logger.warn("Problem closing reader: " + ioe);
-			}
-		}
+        try {
+            while ((charsRead = reader.read(ch, 0, ch.length)) != -1) {
+                buffer.append(ch, 0, charsRead);
+            }
+        } catch (IOException ioe) {
+            logger.warn("Problem reading data from Reader: " + ioe);
+        } finally {
+            try {
+                reader.close();
+            } catch (IOException ioe) {
+                logger.warn("Problem closing reader: " + ioe);
+            }
+        }
 
-		return buffer.toString();
-	}
+        return buffer.toString();
+    }
 
-	private class TokenizingHandler extends DefaultHandler {
+    private class TokenizingHandler extends DefaultHandler {
 
-		StringBuffer charData;
-		Stack<Language> languageStack = new Stack<Language>();
+        StringBuffer charData;
+        Stack<Language> languageStack = new Stack<Language>();
 
-		String openTagQName;
-		String openTagText;
+        String openTagQName;
+        String openTagText;
 
-		Language defaultLanguage;
+        Language defaultLanguage;
 
-		public TokenizingHandler(Language defLang) {
-			charData = new StringBuffer();
+        public TokenizingHandler(Language defLang) {
+            charData = new StringBuffer();
 
-			this.defaultLanguage = defLang;
+            this.defaultLanguage = defLang;
 
-			languageStack.push(defaultLanguage);
+            languageStack.push(defaultLanguage);
 
-			openTagQName = null;
-			openTagText = null;
-		}
+            openTagQName = null;
+            openTagText = null;
+        }
 
-		public void startElement(String uri,
-				String localName,
-				String qName,
-				Attributes attributes) throws SAXException {
+        public void startElement(String uri,
+                String localName,
+                String qName,
+                Attributes attributes) throws SAXException {
 
-			handleOpenTag();
+            handleOpenTag();
 
-			// Escape entities in the attributes if necessary. Believe it or
-			// not, this actually does come up once in a while.
-			AttributesImpl escapedAttributes = new AttributesImpl(attributes);
-			for (int i = 0, n = escapedAttributes.getLength(); i < n; i++) {
-				if (escapedAttributes.getValue(i).equals("&")) {
-					escapedAttributes.setValue(i, "&amp;");
-				} else if (escapedAttributes.getValue(i).equals("<")) {
-					escapedAttributes.setValue(i, "&lt;");
-				}
-			}
+            // Escape entities in the attributes if necessary. Believe it or
+            // not, this actually does come up once in a while.
+            AttributesImpl escapedAttributes = new AttributesImpl(attributes);
+            for (int i = 0, n = escapedAttributes.getLength(); i < n; i++) {
+                if (escapedAttributes.getValue(i).equals("&")) {
+                    escapedAttributes.setValue(i, "&amp;");
+                } else if (escapedAttributes.getValue(i).equals("<")) {
+                    escapedAttributes.setValue(i, "&lt;");
+                }
+            }
 
-			if (charData.length() > 0) {
-				processCharacters();
-			}
+            if (charData.length() > 0) {
+                processCharacters();
+            }
 
-			if (escapedAttributes.getValue("lang") != null) {
-				languageStack.push(Language.forCode(escapedAttributes.getValue("lang")));
-			} else if (qName.equalsIgnoreCase("teiheader")) {
-				// When transcoding whole documents, the TEI header is always
-				// in English, but may not be marked any differently from
-				// the rest of the text. This is a hack, but should be safe:
-				languageStack.push(Language.ENGLISH);
-			}
-			else {
-				// Check for language attributes generated by the stylesheet
-				Language currentLanguage = languageStack.peek();
+            if (escapedAttributes.getValue("lang") != null) {
+                languageStack.push(Language.forCode(escapedAttributes.getValue("lang")));
+            } else if (qName.equalsIgnoreCase("teiheader")) {
+                // When transcoding whole documents, the TEI header is always
+                // in English, but may not be marked any differently from
+                // the rest of the text. This is a hack, but should be safe:
+                languageStack.push(Language.ENGLISH);
+            }
+            else {
+                // Check for language attributes generated by the stylesheet
+                Language currentLanguage = languageStack.peek();
 
-				String tagClass = escapedAttributes.getValue("class");
-				if (tagClass != null) {
-					String[] classes = tagClass.split("\\s+");
+                String tagClass = escapedAttributes.getValue("class");
+                if (tagClass != null) {
+                    String[] classes = tagClass.split("\\s+");
 
-					for (String classPart : classes) {
-						if (Language.forCode(classPart) != Language.UNKNOWN) {
-							currentLanguage = Language.forCode(classPart);
-							break;
-						}				
-					}
-				}
+                    for (String classPart : classes) {
+                        if (Language.forCode(classPart) != Language.UNKNOWN) {
+                            currentLanguage = Language.forCode(classPart);
+                            break;
+                        }				
+                    }
+                }
 
-				languageStack.push(currentLanguage);
-			}
+                languageStack.push(currentLanguage);
+            }
 
-			openTagQName = qName;
+            openTagQName = qName;
 
-			StringBuilder tag = new StringBuilder();
-			tag.append(qName);
+            StringBuilder tag = new StringBuilder();
+            tag.append(qName);
 
-			if (escapedAttributes != null) {
-				for (int i = 0, n = escapedAttributes.getLength(); i < n; i++) {
-					tag.append(String.format(" %s=\"%s\"",
-							escapedAttributes.getQName(i),
-							escapedAttributes.getValue(i)));				
-				}
-			}
+            if (escapedAttributes != null) {
+                for (int i = 0, n = escapedAttributes.getLength(); i < n; i++) {
+                    tag.append(String.format(" %s=\"%s\"",
+                            escapedAttributes.getQName(i),
+                            escapedAttributes.getValue(i)));				
+                }
+            }
 
-			openTagText = tag.toString();
-		}
+            openTagText = tag.toString();
+        }
 
-		public void endElement(String uri, String localName, String qName)
-		throws SAXException {
+        public void endElement(String uri, String localName, String qName)
+        throws SAXException {
 
-			if (charData.length() > 0) {
-				processCharacters();
-			}
+            if (charData.length() > 0) {
+                processCharacters();
+            }
 
-			if (openTagQName != null &&
-					openTagQName.equals(qName)) {
+            if (openTagQName != null &&
+                    openTagQName.equals(qName)) {
 
-				if (openTagQName.equalsIgnoreCase("a")) {
-					addToken("<" + openTagText + " />", Token.Type.LINK_START);
-				} else {
-					addToken("<" + openTagText + " />", Token.Type.TAG);
-				}
+                if (openTagQName.equalsIgnoreCase("a")) {
+                    addToken("<" + openTagText + " />", Token.Type.LINK_START);
+                } else {
+                    addToken("<" + openTagText + " />", Token.Type.TAG);
+                }
 
-				openTagQName = null;
-				openTagText = null;
-			}
-			else {
-				// clean up any open tag that isn't coordinate with this one,
-				// which isn't really possible...
-				handleOpenTag();
+                openTagQName = null;
+                openTagText = null;
+            }
+            else {
+                // clean up any open tag that isn't coordinate with this one,
+                // which isn't really possible...
+                handleOpenTag();
 
-				if (qName.equalsIgnoreCase("a")) {
-					addToken("</" + qName + ">", Token.Type.LINK_END);
-				} else {
-					addToken("</" + qName + ">", Token.Type.TAG);
-				}
-			}
+                if (qName.equalsIgnoreCase("a")) {
+                    addToken("</" + qName + ">", Token.Type.LINK_END);
+                } else {
+                    addToken("</" + qName + ">", Token.Type.TAG);
+                }
+            }
 
-			/*if (qName.equalsIgnoreCase("g")
-		    || qName.equalsIgnoreCase("l")
-		    || qName.equalsIgnoreCase("e")) {
-			 */
-			languageStack.pop();
+            /*if (qName.equalsIgnoreCase("g")
+            || qName.equalsIgnoreCase("l")
+            || qName.equalsIgnoreCase("e")) {
+             */
+            languageStack.pop();
 
-			//}
+            //}
 
-		}
+        }
 
-		/** This method allows us to hold open tag events in reserve until
-	    we're sure they aren't part of an empty tag */
-		private void handleOpenTag() throws SAXException {
-			if (openTagQName == null) {
-				// No pending open tag
-				return;
-			}
+        /** This method allows us to hold open tag events in reserve until
+        we're sure they aren't part of an empty tag */
+        private void handleOpenTag() throws SAXException {
+            if (openTagQName == null) {
+                // No pending open tag
+                return;
+            }
 
-			if (openTagQName.equalsIgnoreCase("a")) {
-				addToken("<" + openTagText + ">", Token.Type.LINK_START);
-			} else {
-				addToken("<" + openTagText + ">", Token.Type.TAG);
-			}
+            if (openTagQName.equalsIgnoreCase("a")) {
+                addToken("<" + openTagText + ">", Token.Type.LINK_START);
+            } else {
+                addToken("<" + openTagText + ">", Token.Type.TAG);
+            }
 
-			openTagQName = null;
-			openTagText = null;
-		}
+            openTagQName = null;
+            openTagText = null;
+        }
 
-		/**
-		 * Sends the given string of character data to a Tokenizer for
-		 * processing and adds the result to the parser's output list.
-		 */
-		private void processCharacters() {
+        /**
+         * Sends the given string of character data to a Tokenizer for
+         * processing and adds the result to the parser's output list.
+         */
+        private void processCharacters() {
 //			Tokenizer tokenizer = Tokenizer.taglessTokenizer(
 //			charData.toString(), getCurrentLanguage());
-			Tokenizer tokenizer = new Tokenizer(charData.toString(),
-					getCurrentLanguage());
-			tokenizer.useFormCounts(formsSeen);
-			TokenList tokens = tokenizer.getTokens();
+            Tokenizer tokenizer = new Tokenizer(charData.toString(),
+                    getCurrentLanguage());
+            tokenizer.useFormCounts(formsSeen);
+            TokenList tokens = tokenizer.getTokens();
 
-			updateFormCounts(tokenizer);
+            updateFormCounts(tokenizer);
 
-			output.addAll(tokens);
+            output.addAll(tokens);
 
-			charData = new StringBuffer();
-			tokenizer.clearFormCounts();
-		}
+            charData = new StringBuffer();
+            tokenizer.clearFormCounts();
+        }
 
-		public void characters(char[] ch, int start, int length)
-		throws SAXException {
+        public void characters(char[] ch, int start, int length)
+        throws SAXException {
 
-			handleOpenTag();
+            handleOpenTag();
 
-			if (length == 1) {
-				// Rescue certain character entities from being mangled
-				if (ch[start] == 160) {
-					charData.append("&#160;");
-				} else if (ch[start] == 60) {
-					charData.append("&lt;");
-				} else if (ch[start] == 62) {
-					charData.append("&gt;");
-				} else if (ch[start] == 38) {
-					charData.append("&amp;");
-				} else {
-					charData.append(ch, start, length);
-				}
-			} else {
-				charData.append(ch, start, length);
-			}
+            if (length == 1) {
+                // Rescue certain character entities from being mangled
+                if (ch[start] == 160) {
+                    charData.append("&#160;");
+                } else if (ch[start] == 60) {
+                    charData.append("&lt;");
+                } else if (ch[start] == 62) {
+                    charData.append("&gt;");
+                } else if (ch[start] == 38) {
+                    charData.append("&amp;");
+                } else {
+                    charData.append(ch, start, length);
+                }
+            } else {
+                charData.append(ch, start, length);
+            }
 
-		}
+        }
 
-		/**
-		 * Creates a token in the current language with the specified text and
-		 * token type. This allows us to avoid the overhead of creating a
-		 * Tokenizer, except when we're dealing with actual character data that
-		 * must be split up.
-		 */
-		private void addToken(String data, Token.Type tokenType) {
-			Token token = new Token(getCurrentLanguage(), data, tokenType);
-			output.add(token);
-		}
+        /**
+         * Creates a token in the current language with the specified text and
+         * token type. This allows us to avoid the overhead of creating a
+         * Tokenizer, except when we're dealing with actual character data that
+         * must be split up.
+         */
+        private void addToken(String data, Token.Type tokenType) {
+            Token token = new Token(getCurrentLanguage(), data, tokenType);
+            output.add(token);
+        }
 
-		public Language getCurrentLanguage() {
-			return languageStack.peek();
-		}
+        public Language getCurrentLanguage() {
+            return languageStack.peek();
+        }
 
-		public void updateFormCounts(Tokenizer tokenizer) {
-			ObjectCounter<String> formsFromTokenizer = tokenizer.getFormCounts();
+        public void updateFormCounts(Tokenizer tokenizer) {
+            ObjectCounter<String> formsFromTokenizer = tokenizer.getFormCounts();
 
-			formsSeen.putAll(formsFromTokenizer);
-			tokenizer.clearFormCounts();
-		}
-	}
+            formsSeen.putAll(formsFromTokenizer);
+            tokenizer.clearFormCounts();
+        }
+    }
 }

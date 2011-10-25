@@ -115,14 +115,14 @@ public class Metadata implements Comparable<Metadata> {
     public static final String SEGMENTATION_KEY = "perseus:Segmentation";
 
     public static final String CORRECTION_LEVEL_KEY =
-	"perseus:CorrectionLevel";
+    "perseus:CorrectionLevel";
     
     public static final String SOURCE_FIGURES_KEY = "perseus:SourceFigures";
     public static final String SOURCE_PAGES_KEY = "perseus:SourcePages";
     
     public static final String SUMMARY_KEY = "perseus:IsSummaryOf";
     public static final String SUMMARY_COMMENTARY_KEY =
-	"perseus:isCommentaryOnSummary";
+    "perseus:isCommentaryOnSummary";
     
     public static final String SUBJECT_LANGUAGE_KEY = "dc:Subject:Language";
     
@@ -155,20 +155,20 @@ public class Metadata implements Comparable<Metadata> {
     }
 
     public Metadata (String initialQuery) {
-	this(new Query(initialQuery));
+    this(new Query(initialQuery));
     }
     
     public Metadata (Query initialQuery) {
-	this(initialQuery.getDocumentID(), initialQuery.getQuery());
+    this(initialQuery.getDocumentID(), initialQuery.getQuery());
     }
 
     /** Version for use by the metadata cache */
     public Metadata (String documentID, String subquery) {
-	addField(DOCUMENT_ID_KEY, documentID);
-	
-	if (subquery != null) {
-	    addField(SUBDOC_QUERY_KEY, subquery);
-	}
+    addField(DOCUMENT_ID_KEY, documentID);
+    
+    if (subquery != null) {
+        addField(SUBDOC_QUERY_KEY, subquery);
+    }
     }
 
     /**
@@ -177,7 +177,7 @@ public class Metadata implements Comparable<Metadata> {
      * for each key.
      */
     public Set<String> getKeys() {
-	return fields.keySet();
+    return fields.keySet();
     }
     
     /**
@@ -190,8 +190,8 @@ public class Metadata implements Comparable<Metadata> {
      * @return a ordered list of NodeValue objects containing the key's values
      */
     public List<NodeValue> getNodeValues(String key) {
-	Set<NodeValue> values = fields.get(key);
-	return new ArrayList<NodeValue>(values);
+    Set<NodeValue> values = fields.get(key);
+    return new ArrayList<NodeValue>(values);
     }
     
     /**
@@ -207,85 +207,85 @@ public class Metadata implements Comparable<Metadata> {
      * the SOURCE_TEXT_PATH_KEY attribute.
      */
     public File getSourceFile() {
-	if (!has(SOURCE_TEXT_PATH_KEY)) return null;
-	
-	File sourceFile = null;
+    if (!has(SOURCE_TEXT_PATH_KEY)) return null;
+    
+    File sourceFile = null;
 
-	File specifiedPath = new File(get(SOURCE_TEXT_PATH_KEY));
-	if (!specifiedPath.isAbsolute()) {
-	    File baseDirectory = new File(Config.getSourceTextsPath());
-	    sourceFile = new File(baseDirectory, specifiedPath.getPath());
-	} else {
-	    sourceFile = specifiedPath;
-	}
-	
-	// Kludge for SGML files--hope that they've been passed through
-	// something like osx, and so have an XML version available.
-	if (sourceFile.getAbsolutePath().endsWith(".sgml")) {
-	    String xmlFile = sourceFile.getName().replaceAll("\\.sgml$", ".xml");
-	    File xmlDirectory = new File(sourceFile.getParent(), "xml");
-	    sourceFile = new File(xmlDirectory, xmlFile);
-	}
-	
-	if (!sourceFile.exists()) {
-	    logger.error("Unable to locate source file " + sourceFile
-		    + " for document " + getDocumentID());
-	    return null;
-	}
-	
-	return sourceFile;
+    File specifiedPath = new File(get(SOURCE_TEXT_PATH_KEY));
+    if (!specifiedPath.isAbsolute()) {
+        File baseDirectory = new File(Config.getSourceTextsPath());
+        sourceFile = new File(baseDirectory, specifiedPath.getPath());
+    } else {
+        sourceFile = specifiedPath;
+    }
+    
+    // Kludge for SGML files--hope that they've been passed through
+    // something like osx, and so have an XML version available.
+    if (sourceFile.getAbsolutePath().endsWith(".sgml")) {
+        String xmlFile = sourceFile.getName().replaceAll("\\.sgml$", ".xml");
+        File xmlDirectory = new File(sourceFile.getParent(), "xml");
+        sourceFile = new File(xmlDirectory, xmlFile);
+    }
+    
+    if (!sourceFile.exists()) {
+        logger.error("Unable to locate source file " + sourceFile
+            + " for document " + getDocumentID());
+        return null;
+    }
+    
+    return sourceFile;
     }
     
     /**
      * Returns true if the full text document may be offered for download.
      */
     public boolean isDownloadable() {
-    	//our way of preventing certain texts from being downloaded even if
-    	//they may be in the public domain
-    	if ("nodownload".equals(get(RIGHTS_KEY))) return false;
-    	
-    	if (has(STATUS_KEY)) {
-    		String status = get(STATUS_KEY);
-    		if (status.equals("1") || status.equals("3")) return false;
-    	}
-    	if (!has(DATE_COPYRIGHTED_KEY)) return true;
+        //our way of preventing certain texts from being downloaded even if
+        //they may be in the public domain
+        if ("nodownload".equals(get(RIGHTS_KEY))) return false;
+        
+        if (has(STATUS_KEY)) {
+            String status = get(STATUS_KEY);
+            if (status.equals("1") || status.equals("3")) return false;
+        }
+        if (!has(DATE_COPYRIGHTED_KEY)) return true;
 
-    	int date;
-    	try {
-    		date = Integer.parseInt(get(DATE_COPYRIGHTED_KEY));
-    	} catch (NumberFormatException nfe) {
-    		return false;
-    	}
+        int date;
+        try {
+            date = Integer.parseInt(get(DATE_COPYRIGHTED_KEY));
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
 
-    	//all texts published in 1922 or earlier are in public domain
-    	if (date <= 1922) {
-    		return true;
-    	}
+        //all texts published in 1922 or earlier are in public domain
+        if (date <= 1922) {
+            return true;
+        }
 
-    	//some texts published after 1922 don't have copyright and are downloadable
-    	if (date > 1922 && "download".equals(get(RIGHTS_KEY))) {
-    		return true;
-    	}
+        //some texts published after 1922 don't have copyright and are downloadable
+        if (date > 1922 && "download".equals(get(RIGHTS_KEY))) {
+            return true;
+        }
 
-    	//at this point, don't let it be downloaded
-    	return false;
+        //at this point, don't let it be downloaded
+        return false;
     }
     
     public boolean hasCreationOrIssueDate() {
-    	if (this.hasSubdocs()) {
-    		
-    	}
-    	return has(DATE_CREATED_KEY) || has(DATE_ISSUED_KEY);
+        if (this.hasSubdocs()) {
+            
+        }
+        return has(DATE_CREATED_KEY) || has(DATE_ISSUED_KEY);
     }
     
     public String getCreationOrIssueDate() {
-    	if (has(DATE_CREATED_KEY)) {
-    		return getDateCreated();
-    	}
-    	if (has(DATE_ISSUED_KEY)) {
-    		return getDateIssued();
-    	}
-    	return null;
+        if (has(DATE_CREATED_KEY)) {
+            return getDateCreated();
+        }
+        if (has(DATE_ISSUED_KEY)) {
+            return getDateIssued();
+        }
+        return null;
     }
     
     /**
@@ -298,78 +298,78 @@ public class Metadata implements Comparable<Metadata> {
      * come upon.
      */
     public String getDefaultStylesheet() {
-	if (has(STYLESHEET_KEY)) {
-	    return get(STYLESHEET_KEY);
-	} else if (has(CORPUS_KEY)) {
-	    for (String corpus : getList(CORPUS_KEY)) {
-		Query collection = new Query(corpus);
-		
-		Metadata collMetadata = collection.getMetadata();
-		if (collMetadata.has(Metadata.STYLESHEET_KEY)) {
-		    return collMetadata.get(Metadata.STYLESHEET_KEY);
-		}
-	    }
-	}
-	
-	return StyleTransformer.DEFAULT_STYLESHEET;
+    if (has(STYLESHEET_KEY)) {
+        return get(STYLESHEET_KEY);
+    } else if (has(CORPUS_KEY)) {
+        for (String corpus : getList(CORPUS_KEY)) {
+        Query collection = new Query(corpus);
+        
+        Metadata collMetadata = collection.getMetadata();
+        if (collMetadata.has(Metadata.STYLESHEET_KEY)) {
+            return collMetadata.get(Metadata.STYLESHEET_KEY);
+        }
+        }
+    }
+    
+    return StyleTransformer.DEFAULT_STYLESHEET;
     }
     
     public void addField(String key, String value) {
-	addField(key, value, null);
+    addField(key, value, null);
     }
     
     public void addField(String key, String value, String valueID) {
-	addField(key, new NodeValue(value, valueID));
+    addField(key, new NodeValue(value, valueID));
     }
     
     public void addField(String key, String val, String valID, Language lang) {
-	addField(key, new NodeValue(val, valID, lang));
+    addField(key, new NodeValue(val, valID, lang));
     }
     
     private void addField(String key, NodeValue nodeValue) {
-	if (key.equals(CITATION_SCHEME_KEY)) {
-	    addChunkScheme(nodeValue.getValue());
-	}
-	
-	Set<NodeValue> fieldValues;
-	if (fields.containsKey(key)) {
-	    fieldValues = fields.get(key);
-	} else {
-	    fieldValues = new ListOrderedSet();
-	    fields.put(key, fieldValues);
-	}
-	fieldValues.add(nodeValue);
+    if (key.equals(CITATION_SCHEME_KEY)) {
+        addChunkScheme(nodeValue.getValue());
+    }
+    
+    Set<NodeValue> fieldValues;
+    if (fields.containsKey(key)) {
+        fieldValues = fields.get(key);
+    } else {
+        fieldValues = new ListOrderedSet();
+        fields.put(key, fieldValues);
+    }
+    fieldValues.add(nodeValue);
     }
     
     public void addField(String key, List<String> values) {
-	Set<NodeValue> set = null;
-	
-	if (fields.containsKey(key)) {
-	    set = fields.get(key);
-	}
-	else {
-	    set = new ListOrderedSet();
-	    fields.put(key, set);
-	}
-	
-	for (String value : values) {
-	    if (key.equals(CITATION_SCHEME_KEY)) {
-		addChunkScheme(value);
-	    }
-	    set.add(new NodeValue(value, null));
-	}
-	
+    Set<NodeValue> set = null;
+    
+    if (fields.containsKey(key)) {
+        set = fields.get(key);
+    }
+    else {
+        set = new ListOrderedSet();
+        fields.put(key, set);
+    }
+    
+    for (String value : values) {
+        if (key.equals(CITATION_SCHEME_KEY)) {
+        addChunkScheme(value);
+        }
+        set.add(new NodeValue(value, null));
+    }
+    
     }
     
     public Object remove(String key) {
-	if (CITATION_SCHEME_KEY.equals(key)) {
-	    chunkSchemes.clearSchemes();
-	}
-	return fields.remove(key);
+    if (CITATION_SCHEME_KEY.equals(key)) {
+        chunkSchemes.clearSchemes();
+    }
+    return fields.remove(key);
     }
     
     public String getDocumentID() {
-	return get(DOCUMENT_ID_KEY);
+    return get(DOCUMENT_ID_KEY);
     }
     
     /**
@@ -379,29 +379,29 @@ public class Metadata implements Comparable<Metadata> {
      * @return a string containing all values for `key`
      */ 
     public String get(String key) {
-	if (key == null) {
-	    return null;
-	}
-	
-	if (fields.containsKey(key)) {
-	    Set<NodeValue> values = fields.get(key);
-	    if (values.size() == 0) {
-		return null;
-	    } else {
-		return StringUtil.join(values, ", ");
-	    }
-	}
-	
-	return null;
+    if (key == null) {
+        return null;
+    }
+    
+    if (fields.containsKey(key)) {
+        Set<NodeValue> values = fields.get(key);
+        if (values.size() == 0) {
+        return null;
+        } else {
+        return StringUtil.join(values, ", ");
+        }
+    }
+    
+    return null;
     }
     
     /**
      * Returns true if this Metadata object contains any values for `key`.
      */
     public boolean has(String key) {
-	if (key == null) { return false; }
-	
-	return fields.containsKey(key);
+    if (key == null) { return false; }
+    
+    return fields.containsKey(key);
     }
 
     /**
@@ -409,23 +409,23 @@ public class Metadata implements Comparable<Metadata> {
      * (for back-compatibility).
      */
     public List<String> getList(String key) {
-	List<String> output = new ArrayList<String>();
-	
-	if (fields.containsKey(key)) {
-	    Set<NodeValue> values = fields.get(key);
-	    for (NodeValue value : values) {
-		if (value.hasValue()) {
-		    output.add(value.getValue());
-		}
-		if (value.hasValueID()) {
-		    output.add(value.getValueID());
-		}
-	    }
-	    
-	    return output;
-	}
-	
-	return Collections.emptyList();
+    List<String> output = new ArrayList<String>();
+    
+    if (fields.containsKey(key)) {
+        Set<NodeValue> values = fields.get(key);
+        for (NodeValue value : values) {
+        if (value.hasValue()) {
+            output.add(value.getValue());
+        }
+        if (value.hasValueID()) {
+            output.add(value.getValueID());
+        }
+        }
+        
+        return output;
+    }
+    
+    return Collections.emptyList();
     }
     
     /**
@@ -436,31 +436,31 @@ public class Metadata implements Comparable<Metadata> {
      * @return a new object containing data from this object and `other`
      */
     public Metadata merge(Metadata other) {
-	Metadata mergedData = new Metadata();
-	
-	// First copy everything from this instance
-	for (String key : fields.keySet()) {
-	    Set<NodeValue> nodeValues = fields.get(key);
-	    for (NodeValue nodeValue : nodeValues) {
-		mergedData.addField(key, nodeValue);
-	    }
-	}
-	
-	// ...and now copy from the other guy
-	for (String key : other.fields.keySet()) {
-	    // (but don't touch any internal keys, which we definitely don't
-	    //  want to copy)
-	    if (key.startsWith("internal:")) {
-		continue;
-	    }
-	    
-	    Set<NodeValue> nodeValues = other.fields.get(key);
-	    for (NodeValue nodeValue : nodeValues) {
-		mergedData.addField(key, nodeValue);
-	    }
-	}
-	
-	return mergedData;
+    Metadata mergedData = new Metadata();
+    
+    // First copy everything from this instance
+    for (String key : fields.keySet()) {
+        Set<NodeValue> nodeValues = fields.get(key);
+        for (NodeValue nodeValue : nodeValues) {
+        mergedData.addField(key, nodeValue);
+        }
+    }
+    
+    // ...and now copy from the other guy
+    for (String key : other.fields.keySet()) {
+        // (but don't touch any internal keys, which we definitely don't
+        //  want to copy)
+        if (key.startsWith("internal:")) {
+        continue;
+        }
+        
+        Set<NodeValue> nodeValues = other.fields.get(key);
+        for (NodeValue nodeValue : nodeValues) {
+        mergedData.addField(key, nodeValue);
+        }
+    }
+    
+    return mergedData;
     }
     
     /**
@@ -473,44 +473,44 @@ public class Metadata implements Comparable<Metadata> {
      * @return true if the objects overlap
      */
     public boolean overlaps(Metadata other, String key) {
-	
-	if ((!has(key)) || (!other.has(key))) {
-	    return false;
-	}
-	
-	Set<NodeValue> myValues = fields.get(key);
-	Set<NodeValue> otherValues = other.fields.get(key);
-	
-	Iterator valuesIterator = myValues.iterator();
-	while (valuesIterator.hasNext()) {
-	    if (otherValues.contains(valuesIterator.next())) {
-		return true;
-	    }
-	}
-	
-	return false;
+    
+    if ((!has(key)) || (!other.has(key))) {
+        return false;
+    }
+    
+    Set<NodeValue> myValues = fields.get(key);
+    Set<NodeValue> otherValues = other.fields.get(key);
+    
+    Iterator valuesIterator = myValues.iterator();
+    while (valuesIterator.hasNext()) {
+        if (otherValues.contains(valuesIterator.next())) {
+        return true;
+        }
+    }
+    
+    return false;
     }
     
     public String toString() {
-	StringBuilder output = new StringBuilder();
-	
-	for (String key : fields.keySet()) {
-	    Set nodeValueSet = fields.get(key);
-	    List nodeValueList = new ArrayList();
-	    nodeValueList.addAll(nodeValueSet);
-	    NodeValue firstNodeValue = (NodeValue)nodeValueList.get(0);
+    StringBuilder output = new StringBuilder();
+    
+    for (String key : fields.keySet()) {
+        Set nodeValueSet = fields.get(key);
+        List nodeValueList = new ArrayList();
+        nodeValueList.addAll(nodeValueSet);
+        NodeValue firstNodeValue = (NodeValue)nodeValueList.get(0);
 
-	    output.append(key)
-		.append(" -> ")
-		.append(fields.get(key))
-		.append("\n");
-	}
-	
-	return output.toString();
+        output.append(key)
+        .append(" -> ")
+        .append(fields.get(key))
+        .append("\n");
+    }
+    
+    return output.toString();
     }
     
     public ChunkSchemes getChunkSchemes() {
-	return chunkSchemes;
+    return chunkSchemes;
     }
     
     /**
@@ -518,56 +518,56 @@ public class Metadata implements Comparable<Metadata> {
      * {@link ChunkSchemes} object.
      */
     public String getDefaultChunk() {
-	return chunkSchemes.getDefaultChunk();
+    return chunkSchemes.getDefaultChunk();
     }
     
     public void initChunkSchemes() {
-	chunkSchemes = new ChunkSchemes();
-	List<String> citationSchemes = getList(Metadata.CITATION_SCHEME_KEY);
-	
-	for (String scheme : citationSchemes) {
-	    addChunkScheme(scheme);
-	}
-	
-	// If there are no chunk schemes available for the document proper and
-	// this document has subdocuments, use the schemes for the first
-	// subdoc. This can happen if the source text has refsDecl elements
-	// defined for subdocuments but not for the main document.
-	if (chunkSchemes.getSchemeCount() == 0 && has(SUBDOC_REF_KEY)) {
-	    String firstSubdoc = getList(SUBDOC_REF_KEY).get(0);
-	    Query subdocQuery = new Query(getDocumentID(), firstSubdoc);
-	    Metadata subdocMetadata = subdocQuery.getMetadata();
-	    
-	    List<String> subdocSchemes = new ArrayList<String>(
-		    subdocMetadata.getChunkSchemes().getSchemes());
-	    
-	    for (String scheme : subdocSchemes) {
-		addChunkScheme(scheme);
-	    }
-	}
+    chunkSchemes = new ChunkSchemes();
+    List<String> citationSchemes = getList(Metadata.CITATION_SCHEME_KEY);
+    
+    for (String scheme : citationSchemes) {
+        addChunkScheme(scheme);
+    }
+    
+    // If there are no chunk schemes available for the document proper and
+    // this document has subdocuments, use the schemes for the first
+    // subdoc. This can happen if the source text has refsDecl elements
+    // defined for subdocuments but not for the main document.
+    if (chunkSchemes.getSchemeCount() == 0 && has(SUBDOC_REF_KEY)) {
+        String firstSubdoc = getList(SUBDOC_REF_KEY).get(0);
+        Query subdocQuery = new Query(getDocumentID(), firstSubdoc);
+        Metadata subdocMetadata = subdocQuery.getMetadata();
+        
+        List<String> subdocSchemes = new ArrayList<String>(
+            subdocMetadata.getChunkSchemes().getSchemes());
+        
+        for (String scheme : subdocSchemes) {
+        addChunkScheme(scheme);
+        }
+    }
     }
     
     public void addChunkScheme(String scheme) {
-	chunkSchemes.addScheme(scheme);
+    chunkSchemes.addScheme(scheme);
     }
     
     public Query getQuery() {
-	return new Query(getDocumentID(), get(SUBDOC_QUERY_KEY));
+    return new Query(getDocumentID(), get(SUBDOC_QUERY_KEY));
     }
     
     public String getComparand() {
         for (String comparand : COMPARAND_KEYS) {
-	    String sortValue = get(comparand);
+        String sortValue = get(comparand);
             if (sortValue != null) {
                 return sortValue;
             }
         }
-	
+    
         return "zzzzzzz";
     }
     
     public int compareTo(Metadata m) {
-	return getComparand().compareTo(m.getComparand());
+    return getComparand().compareTo(m.getComparand());
     }
     
     /**
@@ -579,102 +579,102 @@ public class Metadata implements Comparable<Metadata> {
      * out only documents in English.
      */
     public boolean matches(Metadata m) {
-	if (m == null) { 
-	    return false;
-	}
-	
-	for (String key : fields.keySet()) {
-	    String myValue = get(key);
-	    
-	    if (! m.has(key)) {
-		return false;
-	    }
-	    
-	    // Loop through all values for this metadata field, and if none
-	    // of the values matches our value, this metadata doesn't match.
-	    
-	    List<String> otherValues = m.getList(key);
-	    boolean foundMatch = false;
-	    for (String otherValue : otherValues) {
-		if (myValue.equals(otherValue)) {
-		    foundMatch = true;
-		    break;
-		}
-	    }
-	    if (! foundMatch) {
-		return false;
-	    }
-	}
-	
-	// We've looped through all our metadata fields without NOT finding a
-	// match so we must have a match.
-	return true;
+    if (m == null) { 
+        return false;
+    }
+    
+    for (String key : fields.keySet()) {
+        String myValue = get(key);
+        
+        if (! m.has(key)) {
+        return false;
+        }
+        
+        // Loop through all values for this metadata field, and if none
+        // of the values matches our value, this metadata doesn't match.
+        
+        List<String> otherValues = m.getList(key);
+        boolean foundMatch = false;
+        for (String otherValue : otherValues) {
+        if (myValue.equals(otherValue)) {
+            foundMatch = true;
+            break;
+        }
+        }
+        if (! foundMatch) {
+        return false;
+        }
+    }
+    
+    // We've looped through all our metadata fields without NOT finding a
+    // match so we must have a match.
+    return true;
     }
     
     public String toXML() {
-	return toXML(null);
+    return toXML(null);
     }
     
     public org.jdom.Document toXMLDocument() {
-	return toXMLDocument(null);
+    return toXMLDocument(null);
     }
     
     public org.jdom.Document toXMLDocument(String schema) {
-	Element root = new Element("document")
+    Element root = new Element("document")
             .setAttribute("id", getQuery().toString());
-	
-	root.addContent(dataAsElements());
-	
-	return new org.jdom.Document(root);
+    
+    root.addContent(dataAsElements());
+    
+    return new org.jdom.Document(root);
     }
     
     public String toXML(String schema) {
-	// do something with stylesheets based on schema
-	return new XMLOutputter().outputString(
-		toXMLDocument(schema).detachRootElement());
+    // do something with stylesheets based on schema
+    return new XMLOutputter().outputString(
+        toXMLDocument(schema).detachRootElement());
     }
     
     private List<Element> dataAsElements() {
-	// By default, this returns a list of elements of the form
-	//
-	// <datum key="dcterms:IsPartOf" valueid="Perseus:collection:" />
-	// <datum key="dc:Relation:IsPartOf"
-	//     valueid="Perseus:corpus:perseus,Greek Prose" />
-	// <datum key="dc:Language">greek</datum>
-	//
-	// (We do this mostly so we won't have to deal with the
-	// double namespaces in some of the elements (dc:Date:Modified),
-	// which no sensible XML parser will be willing to deal with.
-	List<Element> data = new ArrayList<Element>();
-	
-	for (String key : fields.keySet()) {
-	    Set<NodeValue> values = fields.get(key);
-	    
-	    // Don't print out tags that aren't actually part of any
-	    // scheme
-	    if (key.startsWith("internal:")) continue;
-	    
-	    for (NodeValue nodeValue : values) {
-		String value = nodeValue.getValue();
-		String valueID = nodeValue.getValueID();
-		Language language = nodeValue.getLanguage();
-		
-		Element datum = new Element("datum").setAttribute("key", key);
-		if (valueID != null) {
-		    datum.setAttribute("valueid", valueID);
-		}
-		if (language != null) {
-		    datum.setAttribute("lang", language.getCode());
-		}
-		if (value != null) {
-		    datum.addContent(value);
-		}
-		
-		data.add(datum);
-	    }
-	}
-	
-	return data;
+    // By default, this returns a list of elements of the form
+    //
+    // <datum key="dcterms:IsPartOf" valueid="Perseus:collection:" />
+    // <datum key="dc:Relation:IsPartOf"
+    //     valueid="Perseus:corpus:perseus,Greek Prose" />
+    // <datum key="dc:Language">greek</datum>
+    //
+    // (We do this mostly so we won't have to deal with the
+    // double namespaces in some of the elements (dc:Date:Modified),
+    // which no sensible XML parser will be willing to deal with.
+    List<Element> data = new ArrayList<Element>();
+    
+    for (String key : fields.keySet()) {
+        Set<NodeValue> values = fields.get(key);
+        
+        // Don't print out tags that aren't actually part of any
+        // scheme
+        if (key.startsWith("internal:")) continue;
+        
+        for (NodeValue nodeValue : values) {
+        String value = nodeValue.getValue();
+        String valueID = nodeValue.getValueID();
+        Language language = nodeValue.getLanguage();
+        
+        Element datum = new Element("datum").setAttribute("key", key);
+        if (valueID != null) {
+            datum.setAttribute("valueid", valueID);
+        }
+        if (language != null) {
+            datum.setAttribute("lang", language.getCode());
+        }
+        if (value != null) {
+            datum.addContent(value);
+        }
+        
+        data.add(datum);
+        }
+    }
+    
+    return data;
     }
     
     /** Convenient helper methods. Add more if you feel like it. */
@@ -698,20 +698,20 @@ public class Metadata implements Comparable<Metadata> {
     public List<String> getSourceList() { return getList(SOURCE_KEY); }
     
     public String getISBN() {
-	if (has(SOURCE_KEY)) {
-	    String source = get(SOURCE_KEY);
-	    String isbn = null;
-	    String[] sourceSplit = source.split("isbn,");
-	    if (sourceSplit.length > 1) {
-		isbn = sourceSplit[1];
-		sourceSplit = isbn.split(",");
-		if (sourceSplit.length > 0) {
-		    isbn = sourceSplit[0];
-		}
-	    }
-	    return isbn;
-	}
-	else return null;
+    if (has(SOURCE_KEY)) {
+        String source = get(SOURCE_KEY);
+        String isbn = null;
+        String[] sourceSplit = source.split("isbn,");
+        if (sourceSplit.length > 1) {
+        isbn = sourceSplit[1];
+        sourceSplit = isbn.split(",");
+        if (sourceSplit.length > 0) {
+            isbn = sourceSplit[0];
+        }
+        }
+        return isbn;
+    }
+    else return null;
     }
 
     public boolean hasSubdocs() { return has(SUBDOC_REF_KEY); }
@@ -720,80 +720,80 @@ public class Metadata implements Comparable<Metadata> {
 
     // TODO this should be replaced by a stylesheet!
     public String toRDF() {
-	StringBuffer output = new StringBuffer();
-	
-	output.append("<rdf:Description xmlns=\"http://www.perseus.org/meta/perseus.rdfs#\" ")
-	.append("xmlns:dc=\"http://purl.org/dc/elements/1.1/\" ")
-	.append("xmlns:dcterms=\"http://purl.org/dc/terms/\" ")
-	.append("xmlns:dctype=\"http://purl.org/dc/dcmitype/\" ")
-	.append("xmlns:perseus=\"http://www.perseus.org/meta/perseus.rdfs#\" ")
-	.append("xmlns:persq=\"http://www.perseus.org/meta/persq.rdfs#\" ")
-	.append("xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" ")
-	.append("xmlns:tufts=\"http://www.tufts.edu/\" ")
-	.append("rdf:about=\"")
-	.append(get(DOCUMENT_ID_KEY));
-	if (has(SUBDOC_QUERY_KEY)) {
-	    output.append(":" + get(SUBDOC_QUERY_KEY));
-	}
-	output.append("\">\n");
-	
-	output.append(getXMLData());
-	
-	output.append("</rdf:Description>");
-	
-	return output.toString();
+    StringBuffer output = new StringBuffer();
+    
+    output.append("<rdf:Description xmlns=\"http://www.perseus.org/meta/perseus.rdfs#\" ")
+    .append("xmlns:dc=\"http://purl.org/dc/elements/1.1/\" ")
+    .append("xmlns:dcterms=\"http://purl.org/dc/terms/\" ")
+    .append("xmlns:dctype=\"http://purl.org/dc/dcmitype/\" ")
+    .append("xmlns:perseus=\"http://www.perseus.org/meta/perseus.rdfs#\" ")
+    .append("xmlns:persq=\"http://www.perseus.org/meta/persq.rdfs#\" ")
+    .append("xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" ")
+    .append("xmlns:tufts=\"http://www.tufts.edu/\" ")
+    .append("rdf:about=\"")
+    .append(get(DOCUMENT_ID_KEY));
+    if (has(SUBDOC_QUERY_KEY)) {
+        output.append(":" + get(SUBDOC_QUERY_KEY));
+    }
+    output.append("\">\n");
+    
+    output.append(getXMLData());
+    
+    output.append("</rdf:Description>");
+    
+    return output.toString();
     }
     
     // TODO this should be replaced by a stylesheet, too!
     public String toOAI() {
-	StringBuffer output = new StringBuffer();
-	
-	output.append("<oai_dc:dc xmlns:oai_dc=\"http://www.openarchives.org/OAI/2.0/oai_dc/\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:dcterms=\"http://purl.org/dc/terms/\">\n");
-	
-	output.append(getXMLData());
-	
-	output.append("</oai_dc:dc>");
-	
-	return output.toString();
+    StringBuffer output = new StringBuffer();
+    
+    output.append("<oai_dc:dc xmlns:oai_dc=\"http://www.openarchives.org/OAI/2.0/oai_dc/\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:dcterms=\"http://purl.org/dc/terms/\">\n");
+    
+    output.append(getXMLData());
+    
+    output.append("</oai_dc:dc>");
+    
+    return output.toString();
     }
     
     private String getXMLData() {
-	StringBuffer output = new StringBuffer();
-	
-	for (String key : fields.keySet()) {
-	    Set<NodeValue> values = fields.get(key);
-	    
-	    // Don't print out tags that aren't actually part of any
-	    // scheme
-	    if (key.startsWith("internal:")) {
-		continue;
-	    }
-	    
-	    for (NodeValue nodeValue : values) {
-		String value = StringUtil.xmlEscape(nodeValue.getValue());
-		String valueID = StringUtil.xmlEscape(nodeValue.getValueID());
-		String language = StringUtil.xmlEscape(
-			nodeValue.getLanguage().getCode());
-		
-		output.append("<").append(key);
-		if (valueID != null) {
-		    output.append(" valueid=\"").append(valueID).append("\"");
-		}
-		if (language != null) {
-		    output.append(" lang=\"").append(language).append("\"");
-		}
-		if (value != null) {
-		    output.append(">").append(value)
-		    .append("</").append(key).append(">");
-		} else {
-		    output.append("/>");
-		}
-		
-		output.append("\n");
-	    }
-	}
-	
-	return output.toString();
+    StringBuffer output = new StringBuffer();
+    
+    for (String key : fields.keySet()) {
+        Set<NodeValue> values = fields.get(key);
+        
+        // Don't print out tags that aren't actually part of any
+        // scheme
+        if (key.startsWith("internal:")) {
+        continue;
+        }
+        
+        for (NodeValue nodeValue : values) {
+        String value = StringUtil.xmlEscape(nodeValue.getValue());
+        String valueID = StringUtil.xmlEscape(nodeValue.getValueID());
+        String language = StringUtil.xmlEscape(
+            nodeValue.getLanguage().getCode());
+        
+        output.append("<").append(key);
+        if (valueID != null) {
+            output.append(" valueid=\"").append(valueID).append("\"");
+        }
+        if (language != null) {
+            output.append(" lang=\"").append(language).append("\"");
+        }
+        if (value != null) {
+            output.append(">").append(value)
+            .append("</").append(key).append(">");
+        } else {
+            output.append("/>");
+        }
+        
+        output.append("\n");
+        }
+    }
+    
+    return output.toString();
     }
     
     /**
@@ -805,80 +805,80 @@ public class Metadata implements Comparable<Metadata> {
      * to all fields.
      */
     public class NodeValue {
-	String value;
-	String valueID;
-	Language language;
-	
-	public NodeValue(String val, String valID) {
-	    value = val;
-	    valueID = valID;
-	}
-	
-	public NodeValue(String val, String valID, Language lang) {
-	    this(val, valID);
-	    language = lang;
-	}
-	
-	public String getValue() { return value; }
-	public boolean hasValue() { return (value != null); }
-	
-	public String getValueID() { return valueID; }
-	public boolean hasValueID() { return (valueID != null); }
-	
-	public Language getLanguage() { return language; }
-	public boolean hasLanguage() { return (language != null); }
-	
-	public String toString() {
-	    if (hasValue()) {
-		if (hasValueID()) {
-		    return value + ", " + valueID;
-		} else {
-		    return value;
-		}
-	    }
-	    return valueID;
-	}
-	
-	public boolean equals(Object o) {
-	    if (this == o) return true;
-	    if (!(o instanceof NodeValue)) return false;
-	    NodeValue nv = (NodeValue) o;
-	    
-	    if (!hasValue()) {
-		if (nv.hasValue()) { return false; }
-	    } else {
-		if (!getValue().equals(nv.getValue())) {
-		    return false;
-		}
-	    }
-	    
-	    if (!hasValueID()) {
-		if (nv.hasValueID()) { return false; }
-	    } else {
-		if (!getValueID().equals(nv.getValueID())) {
-		    return false;
-		}
-	    }
-	    
-	    if (!hasLanguage()) {
-		if (nv.hasLanguage()) { return false; }
-	    } else {
-		if (!getLanguage().equals(nv.getLanguage())) {
-		    return false;
-		}
-	    }
-	    
-	    return true;
-	}
-	
-	public int hashCode() {
-	    int result = 17;
-	    
-	    if (hasValue()) result = 37*result + getValue().hashCode();
-	    if (hasValueID()) result = 37*result + getValueID().hashCode();
-	    if (hasLanguage()) result = 37*result + getLanguage().hashCode();
-	    
-	    return result;
-	}
+    String value;
+    String valueID;
+    Language language;
+    
+    public NodeValue(String val, String valID) {
+        value = val;
+        valueID = valID;
+    }
+    
+    public NodeValue(String val, String valID, Language lang) {
+        this(val, valID);
+        language = lang;
+    }
+    
+    public String getValue() { return value; }
+    public boolean hasValue() { return (value != null); }
+    
+    public String getValueID() { return valueID; }
+    public boolean hasValueID() { return (valueID != null); }
+    
+    public Language getLanguage() { return language; }
+    public boolean hasLanguage() { return (language != null); }
+    
+    public String toString() {
+        if (hasValue()) {
+        if (hasValueID()) {
+            return value + ", " + valueID;
+        } else {
+            return value;
+        }
+        }
+        return valueID;
+    }
+    
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof NodeValue)) return false;
+        NodeValue nv = (NodeValue) o;
+        
+        if (!hasValue()) {
+        if (nv.hasValue()) { return false; }
+        } else {
+        if (!getValue().equals(nv.getValue())) {
+            return false;
+        }
+        }
+        
+        if (!hasValueID()) {
+        if (nv.hasValueID()) { return false; }
+        } else {
+        if (!getValueID().equals(nv.getValueID())) {
+            return false;
+        }
+        }
+        
+        if (!hasLanguage()) {
+        if (nv.hasLanguage()) { return false; }
+        } else {
+        if (!getLanguage().equals(nv.getLanguage())) {
+            return false;
+        }
+        }
+        
+        return true;
+    }
+    
+    public int hashCode() {
+        int result = 17;
+        
+        if (hasValue()) result = 37*result + getValue().hashCode();
+        if (hasValueID()) result = 37*result + getValueID().hashCode();
+        if (hasLanguage()) result = 37*result + getLanguage().hashCode();
+        
+        return result;
+    }
     }
 }

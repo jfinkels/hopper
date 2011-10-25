@@ -3,11 +3,11 @@ package perseus.document;
 public abstract class TokenFilter {
     
     public void filter(TokenList tokens) {
-	for (Token token : tokens) {
-	    process(token);
-	}
-	
-	cleanup();
+    for (Token token : tokens) {
+        process(token);
+    }
+    
+    cleanup();
     }
     
     public abstract void process(Token token);
@@ -15,7 +15,7 @@ public abstract class TokenFilter {
     /** empty callback method that allows subclasses to close resources
      as necessary */
     public void cleanup() {
-	
+    
     }
     
     /**
@@ -24,6 +24,6 @@ public abstract class TokenFilter {
      * Renderer to avoid tokenizing strings if it's not necessary to.
      */
     public boolean willFilter(String text, String defaultLanguage) {
-	return true;
+    return true;
     }
 }

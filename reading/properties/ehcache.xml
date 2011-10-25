@@ -68,18 +68,18 @@
         -->
     <cache name="perseus.document.Chunk"
         maxElementsInMemory="3000"
-	eternal="false"
-	timeToIdleSeconds="450"
-	timeToLiveSeconds="10000"
-	overflowToDisk="false"
-	/> 
+    eternal="false"
+    timeToIdleSeconds="450"
+    timeToLiveSeconds="10000"
+    overflowToDisk="false"
+    /> 
     <cache name="perseus.document.TableOfContents"
-	maxElementsInMemory="400"
-	eternal="false"
-	timeToIdleSeconds="450"
-	timeToLiveSeconds="20000"
-	overflowToDisk="true"
-	/>
+    maxElementsInMemory="400"
+    eternal="false"
+    timeToIdleSeconds="450"
+    timeToLiveSeconds="20000"
+    overflowToDisk="true"
+    />
     <cache name="perseus.ie.entity.Entity"
         maxElementsInMemory="8000"
         eternal="false"
@@ -88,24 +88,24 @@
         overflowToDisk="false"
         />
     <cache name="perseus.ie.entity.EntityFrequency"
-	maxElementsInMemory="2000"
-	eternal="false"
-	timeToIdleSeconds="450"
-	timeToLiveSeconds="10000"
-	overflowToDisk="false"
-	/>
+    maxElementsInMemory="2000"
+    eternal="false"
+    timeToIdleSeconds="450"
+    timeToLiveSeconds="10000"
+    overflowToDisk="false"
+    />
     <cache name="perseus.ie.entity.EntityOccurrence"
-	maxElementsInMemory="10000"
-	eternal="false"
-	timeToIdleSeconds="450"
-	timeToLiveSeconds="10000"
-	overflowToDisk="false"
-	/>
+    maxElementsInMemory="10000"
+    eternal="false"
+    timeToIdleSeconds="450"
+    timeToLiveSeconds="10000"
+    overflowToDisk="false"
+    />
     <cache name="perseus.language.Language"
         maxElementsInMemory="100"
-	eternal="true"
-	timeToIdleSeconds="0"
-	timeToLiveSeconds="0"
-	overflowToDisk="false"
-	/>
+    eternal="true"
+    timeToIdleSeconds="0"
+    timeToLiveSeconds="0"
+    overflowToDisk="false"
+    />
 </ehcache>

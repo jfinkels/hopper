@@ -20,17 +20,17 @@
     </div>
 </div>
 <div id="main">
-	  <#include "includes/indexNav.ftl">
-	  <div id="content" class="2column">
+      <#include "includes/indexNav.ftl">
+      <div id="content" class="2column">
     <div id="side_col">
     <@c.widget id="search" title="Search">
     <form id="deflookup" action="" onsubmit="return validate_form(this,q,2);">
     <#assign types = ["begin", "end","exact", "substring"]>
-	<#assign typeTitles = ["words beginning with", "words ending with", "the exact word", "words containing"]>
+    <#assign typeTitles = ["words beginning with", "words ending with", "the exact word", "words containing"]>
         Search for <select name="type">
         <#list types as typeVal>
-		  		<option value="${typeVal}"<#if typeVal == searchType> selected="selected"</#if>>${typeTitles[typeVal_index]}</option>
-		  	</#list>
+                <option value="${typeVal}"<#if typeVal == searchType> selected="selected"</#if>>${typeTitles[typeVal_index]}</option>
+            </#list>
         </select>
         <input name="q" value="${term!""}">
          in 
@@ -38,8 +38,8 @@
         <input type="submit" value="Search" />
     </form>
     </@c.widget>
-   	
-   	<@c.preferences prefs=prefs prefsStatics=prefsStatics url=url/>
+    
+    <@c.preferences prefs=prefs prefsStatics=prefsStatics url=url/>
     </div>
     <div id="main_col">
     <#if results??>
@@ -48,9 +48,9 @@
                 <p>Your search for <strong>${term}</strong> returned no results.</p>
             <#else>
                 <p>Your search returned ${results.totalHitCount} matching entries.</p>
-		    <@c.pager hits=pager.totalHits curpage=pager.currentPage pagesize=pager.pageSize ; thispage, text>
-			<#if pager.currentPage != thispage><a href="${builder.withParameter("page", thispage).toString()}"></#if>${text}<#if pager.currentPage != thispage></a></#if>
-		    </@c.pager>
+            <@c.pager hits=pager.totalHits curpage=pager.currentPage pagesize=pager.pageSize ; thispage, text>
+            <#if pager.currentPage != thispage><a href="${builder.withParameter("page", thispage).toString()}"></#if>${text}<#if pager.currentPage != thispage></a></#if>
+            </@c.pager>
                 <table class="data">
                     <tr>
                         <#assign lang = language.code>
@@ -64,16 +64,16 @@
                     <#list results.hits as result>
                         <#assign lemma = result.content>
                         <#if (lemma.sequenceNumber > 1)>
-							<#assign seq=lemma.sequenceNumber>
-						<#else>
-							<#assign seq="">
-						</#if>
+                            <#assign seq=lemma.sequenceNumber>
+                        <#else>
+                            <#assign seq="">
+                        </#if>
                         <tr <#if result_index % 2 != 0>class="odd"</#if>>
                             <td>${renderer.renderText(lemma.headword+seq)}</td>
                             <td><#list result.content.lexiconQueries as lexQuery><a href="text?doc=${lexQuery?url}&amp;highlight=${term}">${lexQuery.metadata.alternativeTitle}</a><#if lexQuery_has_next>, </#if></#list></td>
-			    			<td><a href="searchresults?all_words=${lemma.displayForm?url}&amp;all_words_expand=yes&amp;la=${lemma.language.code?url}">${lemma.maxOccurrenceCount}</a></td>
-			    			<td>${lemma.minOccurrenceCount}</td>
-			    			<td>${lemma.documentCount}</td>
+                            <td><a href="searchresults?all_words=${lemma.displayForm?url}&amp;all_words_expand=yes&amp;la=${lemma.language.code?url}">${lemma.maxOccurrenceCount}</a></td>
+                            <td>${lemma.minOccurrenceCount}</td>
+                            <td>${lemma.documentCount}</td>
                             <td>${result.content.shortDefinition!"<em>[unavailable]</em>"}</td>
                         </tr>
                     </#list>

@@ -14,33 +14,33 @@ public class XMLChunkHandler extends DefaultHandler {
     Stack openTags;
     
     public XMLChunkHandler () {
-	openTags = new Stack();
+    openTags = new Stack();
     }
     
     public void startElement(String namespaceURI,
-			     String sName,
-			     String qName,
-			     Attributes attrs) throws SAXException {
-	openTags.push(qName);
+                 String sName,
+                 String qName,
+                 Attributes attrs) throws SAXException {
+    openTags.push(qName);
     }
     
     public void endElement(String namespaceURI,
-			   String sName,
-			   String qName) throws SAXException {
-	if (qName.equals(openTags.peek())) {
-	    openTags.pop();
-	}
+               String sName,
+               String qName) throws SAXException {
+    if (qName.equals(openTags.peek())) {
+        openTags.pop();
+    }
     }
     
     public String getCloseTags() {
-	StringBuffer tags = new StringBuffer();
-	
-	while (! openTags.empty()) {
-	    tags.append("</")
-		.append(openTags.pop())
-		.append(">");
-	}
-	
-	return tags.toString();
+    StringBuffer tags = new StringBuffer();
+    
+    while (! openTags.empty()) {
+        tags.append("</")
+        .append(openTags.pop())
+        .append(">");
+    }
+    
+    return tags.toString();
     }
 }

@@ -35,59 +35,59 @@ public class CTSGetPassage extends AbstractXsltView {
     public CTSGetPassage(){}
 
     public CTSGetPassage(Chunk chunk, Map requestMap) {
-	this.chunk = chunk;
-	this.requestMap = requestMap;
+    this.chunk = chunk;
+    this.requestMap = requestMap;
     }
 
     public String getContentType() {
-	return "text/xml; charset=UTF-8";
+    return "text/xml; charset=UTF-8";
     }
 
     public Element toXML() {
-	Element getPassage = new Element("GetPassage");
+    Element getPassage = new Element("GetPassage");
 
-	Element requestElet = new Element("request");
-	Iterator requestMapIter = requestMap.keySet().iterator();
-	while (requestMapIter.hasNext()) {
-	    String param = (String)requestMapIter.next();
-	    String value = (String)requestMap.get(param);
-	    Element paramElet = new Element(param);
-	    paramElet.addContent(value);
-	    requestElet.addContent(paramElet);
-	}
-	getPassage.addContent(requestElet);
-	
+    Element requestElet = new Element("request");
+    Iterator requestMapIter = requestMap.keySet().iterator();
+    while (requestMapIter.hasNext()) {
+        String param = (String)requestMapIter.next();
+        String value = (String)requestMap.get(param);
+        Element paramElet = new Element(param);
+        paramElet.addContent(value);
+        requestElet.addContent(paramElet);
+    }
+    getPassage.addContent(requestElet);
+    
 
-	StringReader chunkReader = new StringReader(chunk.getText());
-	
-	try {
-	    SAXBuilder builder = new SAXBuilder();
-	    Document chunkDoc = 
-		builder.build(chunkReader);
-	    Element chunkRoot = chunkDoc.detachRootElement();
-	    getPassage.addContent(chunkRoot);
-	} catch(JDOMException e) {
-	    e.printStackTrace();
-	} catch(NullPointerException e) {
-	    e.printStackTrace();
-	} catch(IOException ioe) {
-	    ioe.printStackTrace();
-	}
-	
-	return getPassage;
+    StringReader chunkReader = new StringReader(chunk.getText());
+    
+    try {
+        SAXBuilder builder = new SAXBuilder();
+        Document chunkDoc = 
+        builder.build(chunkReader);
+        Element chunkRoot = chunkDoc.detachRootElement();
+        getPassage.addContent(chunkRoot);
+    } catch(JDOMException e) {
+        e.printStackTrace();
+    } catch(NullPointerException e) {
+        e.printStackTrace();
+    } catch(IOException ioe) {
+        ioe.printStackTrace();
+    }
+    
+    return getPassage;
     }
 
     protected Source createXsltSource(Map model, String rootName, HttpServletRequest req,
-				 HttpServletResponse res) throws Exception {
-	org.jdom.Document doc = new org.jdom.Document();
-	CTSGetPassage gp = (CTSGetPassage)((Map)model.get("model")).get("gp");
-	Node gpXML = new DOMOutputter().output(new org.jdom.Document(gp.toXML()));
-	return new DOMSource(gpXML);
+                 HttpServletResponse res) throws Exception {
+    org.jdom.Document doc = new org.jdom.Document();
+    CTSGetPassage gp = (CTSGetPassage)((Map)model.get("model")).get("gp");
+    Node gpXML = new DOMOutputter().output(new org.jdom.Document(gp.toXML()));
+    return new DOMSource(gpXML);
     }
 
     public Node toXML(Map model, String rootName, HttpServletRequest req, HttpServletResponse res)
-	throws Exception {
-	return ((DOMSource) createXsltSource(model, rootName, req, res)).getNode();
+    throws Exception {
+    return ((DOMSource) createXsltSource(model, rootName, req, res)).getNode();
     }
 
 

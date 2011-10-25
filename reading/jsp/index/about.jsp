@@ -8,13 +8,13 @@
 
 <div id="main">
     <jsp:include page="/includes/index/indexNav.jsp">
-	<jsp:param name="tabActive" value="about"/>
+    <jsp:param name="tabActive" value="about"/>
     </jsp:include> 	
     
     <div id="content" class="2column">
         <div id="index_main_col">
-		<div id="about">
-			
+        <div id="about">
+            
 <p>
 Since planning began in 1985, the Perseus Digital Library Project has explored what happens 
 when libraries move online. Two decades later, as new forms of publication emerge and millions 
@@ -37,8 +37,8 @@ subjects within the humanities and beyond. We have studied many problems over th
 decades, but our <a href="/hopper/research/current">current research</a> centers on personalization: 
 organizing what you see to meet your needs.
 </p>
-		</div> <!-- about div -->
-	</div> <!-- main_col div -->
+        </div> <!-- about div -->
+    </div> <!-- main_col div -->
         
     </div> <!-- 2column div -->
 </div> <!-- main div -->

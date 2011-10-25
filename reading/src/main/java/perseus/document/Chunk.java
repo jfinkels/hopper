@@ -104,19 +104,19 @@ import perseus.util.Config;
 public class Chunk implements Comparable<Chunk> {
     
     private static final Pattern TYPE_VALUE_PATTERN =
-	Pattern.compile("([^=]*)=([^:]*):?");
+    Pattern.compile("([^=]*)=([^:]*):?");
     
     // This comparator is used in getSubTexts() to sort the subtexts by
     // offset
     public static final Comparator<Chunk> offsetComparator =
-	new Comparator<Chunk>() {
-	public int compare(Chunk c1, Chunk c2) {
-	    return c1.getStartOffset() - c2.getStartOffset();
-	}
+    new Comparator<Chunk>() {
+    public int compare(Chunk c1, Chunk c2) {
+        return c1.getStartOffset() - c2.getStartOffset();
+    }
     };
 
     private static final Pattern EFFECTIVE_LANGUAGE_PATTERN =
-	Pattern.compile("lang=\"(\\w*)\"");
+    Pattern.compile("lang=\"(\\w*)\"");
 
     private static Logger logger = Logger.getLogger(Chunk.class);
     
@@ -250,19 +250,19 @@ public class Chunk implements Comparable<Chunk> {
      * @param q the referring query
      */
     public Chunk(Query q) {
-	query = q;
-	setDocumentID(q.getDocumentID());
-	setType(q.getLastElementType());
-	setValue(q.getLastElementValue());
-	
-	metadata = q.getMetadata();
+    query = q;
+    setDocumentID(q.getDocumentID());
+    setType(q.getLastElementType());
+    setValue(q.getLastElementValue());
+    
+    metadata = q.getMetadata();
     }
     
     public Chunk(String type, String value, int start, int end) {
-	setType(type);
-	setValue(value);
-	setStartOffset(start);
-	setEndOffset(end);
+    setType(type);
+    setValue(value);
+    setStartOffset(start);
+    setEndOffset(end);
     }
 
     /**
@@ -276,17 +276,17 @@ public class Chunk implements Comparable<Chunk> {
      * @return a chunk representing the query
      */
     public static Chunk getInitialChunk(Query q) {
-	if (q.isJustDocumentID()) {
-	    return new Chunk(q);
-	} else if (q.isSubDocument()) {
-	    return Chunk.getInitialSubdocChunk(q);
-	} else if (q.getMetadata().has(Metadata.SUBDOC_QUERY_KEY)) {
-	    Query subdocQuery = new Query(q.getInnermostDocumentID());
-	    return getInitialSubdocChunk(subdocQuery);
-	} else {
-	    Query documentIDQuery = new Query(q.getDocumentID());
-	    return new Chunk(documentIDQuery);
-	}
+    if (q.isJustDocumentID()) {
+        return new Chunk(q);
+    } else if (q.isSubDocument()) {
+        return Chunk.getInitialSubdocChunk(q);
+    } else if (q.getMetadata().has(Metadata.SUBDOC_QUERY_KEY)) {
+        Query subdocQuery = new Query(q.getInnermostDocumentID());
+        return getInitialSubdocChunk(subdocQuery);
+    } else {
+        Query documentIDQuery = new Query(q.getDocumentID());
+        return new Chunk(documentIDQuery);
+    }
     }
     
     /**
@@ -302,22 +302,22 @@ public class Chunk implements Comparable<Chunk> {
      * @return a Chunk that can be used to call {@link TableOfContents.forChunk()}
      */
     public static Chunk getTOCChunk(Query q) {
-	Chunk chunk = getInitialChunk(q);
-	
-	// If we've been given a query like "Perseus:text:1999.01.0001",
-	// for a document with subtexts, don't return the TOC for the
-	// document itself; return the TOC for the first of its subdocuments.
-	if (q.isJustDocumentID() &&
-		q.getMetadata().has(Metadata.SUBDOC_REF_KEY)) {
-	    List<Chunk> subtexts = chunk.getSubTexts();
-	    if (!subtexts.isEmpty()) {
-		return subtexts.get(0);
-	    } else {
-		logger.warn("Expected subtexts for " + q  + " but found none");
-	    }
-	}
-	
-	return chunk;
+    Chunk chunk = getInitialChunk(q);
+    
+    // If we've been given a query like "Perseus:text:1999.01.0001",
+    // for a document with subtexts, don't return the TOC for the
+    // document itself; return the TOC for the first of its subdocuments.
+    if (q.isJustDocumentID() &&
+        q.getMetadata().has(Metadata.SUBDOC_REF_KEY)) {
+        List<Chunk> subtexts = chunk.getSubTexts();
+        if (!subtexts.isEmpty()) {
+        return subtexts.get(0);
+        } else {
+        logger.warn("Expected subtexts for " + q  + " but found none");
+        }
+    }
+    
+    return chunk;
     }
     
     /**
@@ -338,43 +338,43 @@ public class Chunk implements Comparable<Chunk> {
      * @return a chunk for the query, with offset information loaded
      */
     public static Chunk getInitialSubdocChunk(Query q) {
-	
-	String queryString = q.getQuery();
+    
+    String queryString = q.getQuery();
 
-	Matcher matcher = TYPE_VALUE_PATTERN.matcher(queryString);
-	
-	String type = null;
-	String value = null;
-	
-	String defaultType = q.getMetadata().getChunkSchemes().getDefaultChunk();
+    Matcher matcher = TYPE_VALUE_PATTERN.matcher(queryString);
+    
+    String type = null;
+    String value = null;
+    
+    String defaultType = q.getMetadata().getChunkSchemes().getDefaultChunk();
 
-	Query documentIDQuery = new Query(q.getDocumentID());
-	
-	Chunk parentChunk = new Chunk(documentIDQuery);
-	Chunk childChunk = null;
-	
-	while (matcher.find() && parentChunk != null) {
-	    type = matcher.group(1);
-	    value = matcher.group(2);
+    Query documentIDQuery = new Query(q.getDocumentID());
+    
+    Chunk parentChunk = new Chunk(documentIDQuery);
+    Chunk childChunk = null;
+    
+    while (matcher.find() && parentChunk != null) {
+        type = matcher.group(1);
+        value = matcher.group(2);
 
-	    childChunk = parentChunk.getContainedChunk(type, value);
-	    if (childChunk == null) {
-		logger.warn("NULL chunk in getInitialSubdocChunk: "
-			+ " type " + type + ", value " + value);
-	    }
-	    parentChunk = childChunk;
-	    
-	    if (type.equals(defaultType)) {
-		break;
-	    }
-	    
-	}
-	
-	if (childChunk != null) {
-	    childChunk.setQuery(q);
-	}
-	
-	return childChunk;
+        childChunk = parentChunk.getContainedChunk(type, value);
+        if (childChunk == null) {
+        logger.warn("NULL chunk in getInitialSubdocChunk: "
+            + " type " + type + ", value " + value);
+        }
+        parentChunk = childChunk;
+        
+        if (type.equals(defaultType)) {
+        break;
+        }
+        
+    }
+    
+    if (childChunk != null) {
+        childChunk.setQuery(q);
+    }
+    
+    return childChunk;
     }
     
     /**
@@ -389,40 +389,40 @@ public class Chunk implements Comparable<Chunk> {
      * @return the text at the given points from the given document
      */
     public static String getText(String documentID, int startOffset,
-	    int endOffset) {
-	String output = null;
-	
-	//Charset cs = Charset.forName("ISO-8859-1");
-	Charset cs = Charset.forName("UTF-8");
-	CharsetDecoder decoder = cs.newDecoder();
-	FileInputStream stream = null;
-	
-	// open the xml file and prepare our stream
-	File xmlFile = new File(getFilename(documentID));
-	try {
-	    stream = new FileInputStream(xmlFile);
-	    
-	    // set up our character buffers
-	    FileChannel channel = stream.getChannel();
-	    MappedByteBuffer byteBuf =
-		channel.map(FileChannel.MapMode.READ_ONLY, startOffset,
-			(endOffset - startOffset));
-	    CharBuffer cBuf = decoder.decode(byteBuf);
-	    
-	    output = cBuf.toString();
-	    
-	    // close our FileInputStream
-	    stream.close();
-	    
-	} catch (FileNotFoundException fnf) {
-	    logger.error("Couldn't find file with chunk text", fnf);
-	} catch (CharacterCodingException cce) {
-	    logger.error("character coding wrong in getText()", cce);
-	} catch (IOException ioe) {
-	    logger.error("Problem retrieving chunk text", ioe);
-	} 	
-	
-	return output;
+        int endOffset) {
+    String output = null;
+    
+    //Charset cs = Charset.forName("ISO-8859-1");
+    Charset cs = Charset.forName("UTF-8");
+    CharsetDecoder decoder = cs.newDecoder();
+    FileInputStream stream = null;
+    
+    // open the xml file and prepare our stream
+    File xmlFile = new File(getFilename(documentID));
+    try {
+        stream = new FileInputStream(xmlFile);
+        
+        // set up our character buffers
+        FileChannel channel = stream.getChannel();
+        MappedByteBuffer byteBuf =
+        channel.map(FileChannel.MapMode.READ_ONLY, startOffset,
+            (endOffset - startOffset));
+        CharBuffer cBuf = decoder.decode(byteBuf);
+        
+        output = cBuf.toString();
+        
+        // close our FileInputStream
+        stream.close();
+        
+    } catch (FileNotFoundException fnf) {
+        logger.error("Couldn't find file with chunk text", fnf);
+    } catch (CharacterCodingException cce) {
+        logger.error("character coding wrong in getText()", cce);
+    } catch (IOException ioe) {
+        logger.error("Problem retrieving chunk text", ioe);
+    } 	
+    
+    return output;
     }
     
     /**
@@ -432,8 +432,8 @@ public class Chunk implements Comparable<Chunk> {
      * @return the absolute path to the file represented by the chunk
      */
     public static String getFilename(Chunk chunk) {
-	String documentID = chunk.getQuery().getDocumentID();
-	return getFilename(documentID);
+    String documentID = chunk.getQuery().getDocumentID();
+    return getFilename(documentID);
     }
     
     /**
@@ -444,10 +444,10 @@ public class Chunk implements Comparable<Chunk> {
      * @return the absolute path
      */
     public static String getFilename(String documentID) {
-	String filePath = Config.getFilePath();
-	
-	return new File(filePath, getPathToText(documentID))
-	.getAbsolutePath();
+    String filePath = Config.getFilePath();
+    
+    return new File(filePath, getPathToText(documentID))
+    .getAbsolutePath();
     }
     
     /**
@@ -459,44 +459,44 @@ public class Chunk implements Comparable<Chunk> {
      * @return a relative path to the document
      */
     public static String getPathToText(String documentID) {
-	String[] documentIDFields = documentID.split(":");
-	
-	if (documentIDFields.length < 3) {
-	    throw new IllegalArgumentException("Bad documentID: " + documentID);
-	}
-	
-	documentID = documentIDFields[2];
-	
-	String[] numericIDFields = documentID.split("\\.");
-	
-	if (numericIDFields.length < 3) {
-	    throw new IllegalArgumentException("Bad documentID: " + documentID);
-	}
-	
-	StringBuffer filename = new StringBuffer();
-	
-	// For texts from other providers, like the Stoa, use a separate
-	// namespace in the texts directory: Stoa/text/2001.01.0001.xml
-	if (!documentIDFields[0].equals("Perseus")) {
-	    filename.append(documentIDFields[0]);
-	    filename.append(File.separator);
-	    filename.append(documentIDFields[1]);
-	} else {
-	    // Otherwise, use the normal directory: 1999.01/1999.01.0001.xml
-	    filename.append(numericIDFields[0]);
-	    filename.append(".");
-	    filename.append(numericIDFields[1]);
-	}
-	
-	filename.append(File.separator);
-	filename.append(numericIDFields[0]);
-	filename.append(".");
-	filename.append(numericIDFields[1]);
-	filename.append(".");
-	filename.append(numericIDFields[2]);
-	filename.append(".xml");
-	
-	return filename.toString();
+    String[] documentIDFields = documentID.split(":");
+    
+    if (documentIDFields.length < 3) {
+        throw new IllegalArgumentException("Bad documentID: " + documentID);
+    }
+    
+    documentID = documentIDFields[2];
+    
+    String[] numericIDFields = documentID.split("\\.");
+    
+    if (numericIDFields.length < 3) {
+        throw new IllegalArgumentException("Bad documentID: " + documentID);
+    }
+    
+    StringBuffer filename = new StringBuffer();
+    
+    // For texts from other providers, like the Stoa, use a separate
+    // namespace in the texts directory: Stoa/text/2001.01.0001.xml
+    if (!documentIDFields[0].equals("Perseus")) {
+        filename.append(documentIDFields[0]);
+        filename.append(File.separator);
+        filename.append(documentIDFields[1]);
+    } else {
+        // Otherwise, use the normal directory: 1999.01/1999.01.0001.xml
+        filename.append(numericIDFields[0]);
+        filename.append(".");
+        filename.append(numericIDFields[1]);
+    }
+    
+    filename.append(File.separator);
+    filename.append(numericIDFields[0]);
+    filename.append(".");
+    filename.append(numericIDFields[1]);
+    filename.append(".");
+    filename.append(numericIDFields[2]);
+    filename.append(".xml");
+    
+    return filename.toString();
     }
     
     /**
@@ -505,61 +505,61 @@ public class Chunk implements Comparable<Chunk> {
      * @return our text as a list of tokens
      */
     public TokenList getTokens() {
-	if (tokens == null) {
-	    tokens = TokenList.getTokensFromXML(this);
-	}
-	return tokens;
+    if (tokens == null) {
+        tokens = TokenList.getTokensFromXML(this);
+    }
+    return tokens;
     }
     
     /** set the tokens of this chunk to a tokenized version of a string.
      This is useful if we want to tokenize the styled text rather than 
      */
     public void setTokens(String text) {
-	tokens = TokenList.getTokens(text, getMetadata().getLanguage());
+    tokens = TokenList.getTokens(text, getMetadata().getLanguage());
     }
     
     public void setTokens(TokenList tokens) {
-	this.tokens = tokens;
+    this.tokens = tokens;
     }
     
     /**
      * Returns the Metadata object owned by this chunk's Query.
      */
     public Metadata getMetadata() {
-	if (metadata == null) {
-	    metadata = getQuery().getMetadata();
-	}
-	
-	return metadata;
+    if (metadata == null) {
+        metadata = getQuery().getMetadata();
+    }
+    
+    return metadata;
     }
     
     public Integer getId() { return idNumber; }
     public void setId(Integer i) { idNumber = i; }
     
     public String getDocumentID() {
-	if (query == null) return null;
-	return query.getDocumentID();
+    if (query == null) return null;
+    return query.getDocumentID();
     }
     public void setDocumentID(String id) {
-	query = new Query(id);
+    query = new Query(id);
     }
     
     public Query getQuery() {
-	// Fallback for chunks that don't have queries, or don't have them
-	// properly set
-	if (query == null ||
-		(getStartOffset() != -1 && query.isJustDocumentID())) {
-	    query = buildQuery();
-	}
-	
-	return query;
+    // Fallback for chunks that don't have queries, or don't have them
+    // properly set
+    if (query == null ||
+        (getStartOffset() != -1 && query.isJustDocumentID())) {
+        query = buildQuery();
+    }
+    
+    return query;
     }
     
     public void setQuery(Query q) {
-	query = q;
-	for (Chunk child : getContainedChunks()) {
-	    child.refreshQuery();
-	}
+    query = q;
+    for (Chunk child : getContainedChunks()) {
+        child.refreshQuery();
+    }
     }
     
     public Chunk getNext() { return next; }
@@ -623,16 +623,16 @@ public class Chunk implements Comparable<Chunk> {
      * @return the text of the chunk
      */
     public String getText() {
-	// Check for cached text, like from the style() method
-	if (cachedText != null) {
-	    return cachedText;
-	}
-	
-	if (innerText == null) {
-	    loadText();
-	}
+    // Check for cached text, like from the style() method
+    if (cachedText != null) {
+        return cachedText;
+    }
+    
+    if (innerText == null) {
+        loadText();
+    }
 
-	return getOpenTags() + innerText + getCloseTags();
+    return getOpenTags() + innerText + getCloseTags();
     }
 
     /**
@@ -642,40 +642,40 @@ public class Chunk implements Comparable<Chunk> {
      * @return a truncated version of cached text
      */
     public String truncateText() {
-	int maxChunkSize = 25000;
-	String shortCachedText;
-	if (cachedText != null && cachedText.length() > maxChunkSize) {
-	    shortCachedText = cachedText.substring(0, maxChunkSize);
-	    
-	    Pattern divOpenPattern = Pattern.compile("<div");
-	    Pattern divClosePattern = Pattern.compile("</div>");
+    int maxChunkSize = 25000;
+    String shortCachedText;
+    if (cachedText != null && cachedText.length() > maxChunkSize) {
+        shortCachedText = cachedText.substring(0, maxChunkSize);
+        
+        Pattern divOpenPattern = Pattern.compile("<div");
+        Pattern divClosePattern = Pattern.compile("</div>");
 
-	    String reverseShortCachedText = new StringBuffer(shortCachedText).reverse().toString();
-	    String[] reverseSplit = reverseShortCachedText.split(".*<", 2);
+        String reverseShortCachedText = new StringBuffer(shortCachedText).reverse().toString();
+        String[] reverseSplit = reverseShortCachedText.split(".*<", 2);
 
-	    if (reverseSplit.length == 2) {
-		reverseShortCachedText = reverseSplit[1];
-		shortCachedText = new StringBuffer(reverseShortCachedText).reverse().toString();
-	    }
+        if (reverseSplit.length == 2) {
+        reverseShortCachedText = reverseSplit[1];
+        shortCachedText = new StringBuffer(reverseShortCachedText).reverse().toString();
+        }
 
-	    if (shortCachedText.indexOf("<p><table") >= 0 
-		&& shortCachedText.indexOf("</table></p>") == -1) {
-		shortCachedText = shortCachedText.concat("</table></p>");
-	    }
+        if (shortCachedText.indexOf("<p><table") >= 0 
+        && shortCachedText.indexOf("</table></p>") == -1) {
+        shortCachedText = shortCachedText.concat("</table></p>");
+        }
 
-	    Matcher divOpenMatcher = divOpenPattern.matcher(shortCachedText);
-	    Matcher divCloseMatcher = divClosePattern.matcher(shortCachedText);
+        Matcher divOpenMatcher = divOpenPattern.matcher(shortCachedText);
+        Matcher divCloseMatcher = divClosePattern.matcher(shortCachedText);
 
-	    int divCount = 0;
-	    while (divOpenMatcher.find()) divCount++;
-	    while (divCloseMatcher.find()) divCount--;
+        int divCount = 0;
+        while (divOpenMatcher.find()) divCount++;
+        while (divCloseMatcher.find()) divCount--;
 
-	    for (int i = 1; i <= divCount; i++) {
-		shortCachedText = shortCachedText.concat("</div>");
-	    }
-	    return shortCachedText;
-	}
-	else return getText();
+        for (int i = 1; i <= divCount; i++) {
+        shortCachedText = shortCachedText.concat("</div>");
+        }
+        return shortCachedText;
+    }
+    else return getText();
     }
 
     public void setText(String tx) { cachedText = tx; }
@@ -688,11 +688,11 @@ public class Chunk implements Comparable<Chunk> {
      * @return the size of this chunk's text
      */
     public int getSize() {
-	if (getEndOffset() != -1 && getStartOffset() != -1) {
-	    return getEndOffset() - getStartOffset();
-	}
-	
-	return -1;
+    if (getEndOffset() != -1 && getStartOffset() != -1) {
+        return getEndOffset() - getStartOffset();
+    }
+    
+    return -1;
     }
     
     /**
@@ -702,43 +702,43 @@ public class Chunk implements Comparable<Chunk> {
      * @return a list of subdocuments as chunks
      */
     public List<Chunk> getSubTexts() {
-	
-	if (subtextChunks != null) {
-	    return subtextChunks;
-	}
-	
-	// Does the given document have any subtexts defined?
-	List<String> subtextQueries = getMetadata().getList(Metadata.SUBDOC_REF_KEY);
-	
-	if (subtextQueries == null || subtextQueries.isEmpty()) {
-	    subtextChunks = Collections.emptyList();
-	    return subtextChunks;
-	}
-	
-	subtextChunks = new ArrayList<Chunk>();
-	
-	// If so, step through them and grab the chunk that corresponds to
-	// each subtext query.
-	for (String ref : subtextQueries) {
-	    Query query = new Query(getQuery().getDocumentID(), ref);
-	    
-	    Chunk currentChunk = getInitialSubdocChunk(query);
-	    
-	    // If getInitialSubdocChunk returned null, something went wrong;
-	    // just forget about this subtext for now
-	    if (currentChunk == null) {
-		logger.warn("Error accessing subtext " + query
-			+ "; skipping");
-	    } else {
-		subtextChunks.add(currentChunk);
-	    }
-	}
-	
-	// Sort our chunks, so that the caller sees the subdocuments in a
-	// predictable order.
-	Collections.sort(subtextChunks, offsetComparator);
+    
+    if (subtextChunks != null) {
+        return subtextChunks;
+    }
+    
+    // Does the given document have any subtexts defined?
+    List<String> subtextQueries = getMetadata().getList(Metadata.SUBDOC_REF_KEY);
+    
+    if (subtextQueries == null || subtextQueries.isEmpty()) {
+        subtextChunks = Collections.emptyList();
+        return subtextChunks;
+    }
+    
+    subtextChunks = new ArrayList<Chunk>();
+    
+    // If so, step through them and grab the chunk that corresponds to
+    // each subtext query.
+    for (String ref : subtextQueries) {
+        Query query = new Query(getQuery().getDocumentID(), ref);
+        
+        Chunk currentChunk = getInitialSubdocChunk(query);
+        
+        // If getInitialSubdocChunk returned null, something went wrong;
+        // just forget about this subtext for now
+        if (currentChunk == null) {
+        logger.warn("Error accessing subtext " + query
+            + "; skipping");
+        } else {
+        subtextChunks.add(currentChunk);
+        }
+    }
+    
+    // Sort our chunks, so that the caller sees the subdocuments in a
+    // predictable order.
+    Collections.sort(subtextChunks, offsetComparator);
 
-	return subtextChunks;
+    return subtextChunks;
     }
     
     /**
@@ -746,11 +746,11 @@ public class Chunk implements Comparable<Chunk> {
      * contains subdocuments.
      */
     public boolean hasSubTexts() {
-	if (subtextChunks == null) {
-	    getSubTexts();
-	}
-	
-	return !subtextChunks.isEmpty();
+    if (subtextChunks == null) {
+        getSubTexts();
+    }
+    
+    return !subtextChunks.isEmpty();
     }
     
     /**
@@ -758,12 +758,12 @@ public class Chunk implements Comparable<Chunk> {
      * back-compatibility.
      */
     public static Chunk getChunkByDisplayQuery(String documentID,
-	    String displayQuery) {
-	ChunkDAO dao = new HibernateChunkDAO();
-	Chunk chunk = dao.getByDisplayQuery(documentID, displayQuery);
-	dao.cleanup();
-	
-	return chunk;
+        String displayQuery) {
+    ChunkDAO dao = new HibernateChunkDAO();
+    Chunk chunk = dao.getByDisplayQuery(documentID, displayQuery);
+    dao.cleanup();
+    
+    return chunk;
     }
     
     /**
@@ -771,11 +771,11 @@ public class Chunk implements Comparable<Chunk> {
      * back-compatibility.
      */
     public static Chunk getChunkByID(String documentID, String chunkID) {
-	ChunkDAO dao = new HibernateChunkDAO();
-	Chunk chunk = dao.getByChunkID(documentID, chunkID);
-	dao.cleanup();
-	
-	return chunk;
+    ChunkDAO dao = new HibernateChunkDAO();
+    Chunk chunk = dao.getByChunkID(documentID, chunkID);
+    dao.cleanup();
+    
+    return chunk;
     }
     
     /**
@@ -783,9 +783,9 @@ public class Chunk implements Comparable<Chunk> {
      * back-compatibility.
      */
     public List<Chunk> getAllChunks(String type) {
-	List<String> types = new ArrayList<String>();
-	types.add(type);
-	return getAllChunks(types);
+    List<String> types = new ArrayList<String>();
+    types.add(type);
+    return getAllChunks(types);
     }
     
     /**
@@ -804,29 +804,29 @@ public class Chunk implements Comparable<Chunk> {
      * @return the code for the language in which to render the chunk
      */
     public String getEffectiveLanguage() {
-	loadText();
-	
-	// 1. Check the first tag of the actual text, which may have a
-	// "lang" attribute.
-	String firstTag = innerText.substring(0, innerText.indexOf(">"));
-	Matcher tagMatcher = EFFECTIVE_LANGUAGE_PATTERN.matcher(firstTag);
-	if (tagMatcher.find()) {
-	    return tagMatcher.group(1);
-	}
-	
-	// 2. If not, check the open tags, using the innermost tag with an
-	// appropriate attribute.
-	if (getOpenTags() != null) {
-	    String openTagLanguage = null;
-	    Matcher matcher = EFFECTIVE_LANGUAGE_PATTERN.matcher(getOpenTags());
-	    while (matcher.find()) {
-		openTagLanguage = matcher.group(1);
-	    }
-	    if (openTagLanguage != null) return openTagLanguage;
-	}
-	
-	// 3. If that didn't work, just return the document language.
-	return getMetadata().get(Metadata.LANGUAGE_KEY);
+    loadText();
+    
+    // 1. Check the first tag of the actual text, which may have a
+    // "lang" attribute.
+    String firstTag = innerText.substring(0, innerText.indexOf(">"));
+    Matcher tagMatcher = EFFECTIVE_LANGUAGE_PATTERN.matcher(firstTag);
+    if (tagMatcher.find()) {
+        return tagMatcher.group(1);
+    }
+    
+    // 2. If not, check the open tags, using the innermost tag with an
+    // appropriate attribute.
+    if (getOpenTags() != null) {
+        String openTagLanguage = null;
+        Matcher matcher = EFFECTIVE_LANGUAGE_PATTERN.matcher(getOpenTags());
+        while (matcher.find()) {
+        openTagLanguage = matcher.group(1);
+        }
+        if (openTagLanguage != null) return openTagLanguage;
+    }
+    
+    // 3. If that didn't work, just return the document language.
+    return getMetadata().get(Metadata.LANGUAGE_KEY);
     }
     
     /**
@@ -834,7 +834,7 @@ public class Chunk implements Comparable<Chunk> {
      * back-compatibility.
      */
     public List<Chunk> getAllChunks(List<String> types) {
-	return getAllChunks(types, false);
+    return getAllChunks(types, false);
     }
     
     /**
@@ -842,9 +842,9 @@ public class Chunk implements Comparable<Chunk> {
      * back-compatibility.
      */
     public List<Chunk> getAllChunks(String type, boolean includeOverlapping) {
-	List<String> types = new ArrayList<String>();
-	types.add(type);
-	return getAllChunks(types, includeOverlapping);
+    List<String> types = new ArrayList<String>();
+    types.add(type);
+    return getAllChunks(types, includeOverlapping);
     }
     
     /**
@@ -852,11 +852,11 @@ public class Chunk implements Comparable<Chunk> {
      * back-compatibility.
      */
     public List<Chunk> getAllChunks(List<String> types, boolean includeOverlapping) {
-	
-	ChunkDAO dao = new HibernateChunkDAO();
-	List<Chunk> results =
-	    dao.getContainedChunks(this, types, includeOverlapping);
-	return results;
+    
+    ChunkDAO dao = new HibernateChunkDAO();
+    List<Chunk> results =
+        dao.getContainedChunks(this, types, includeOverlapping);
+    return results;
     }
     
     /**
@@ -864,10 +864,10 @@ public class Chunk implements Comparable<Chunk> {
      * back-compatibility.
      */
     public Chunk getContainedChunk(String type, String value) {
-	ChunkDAO dao = new HibernateChunkDAO();
-	Chunk chunk = dao.getFirstContainedChunk(this, type, value);
-	
-	return chunk;
+    ChunkDAO dao = new HibernateChunkDAO();
+    Chunk chunk = dao.getFirstContainedChunk(this, type, value);
+    
+    return chunk;
     }
     
     /**
@@ -875,7 +875,7 @@ public class Chunk implements Comparable<Chunk> {
      * back-compatibility.
      */
     public Chunk getFirstContainedChunk(String type) {
-	return getContainedChunk(type, null);
+    return getContainedChunk(type, null);
     }
     
     
@@ -885,7 +885,7 @@ public class Chunk implements Comparable<Chunk> {
      * @return a set of chunks
      */
     public Set<Chunk> getContainedChunks() {
-	return containedChunks;
+    return containedChunks;
     }
     
     /**
@@ -893,9 +893,9 @@ public class Chunk implements Comparable<Chunk> {
      * @param chunks the chunks to add
      */
     public void addContainedChunks(Collection<Chunk> chunks) {
-	for (Chunk c : chunks) {
-	    addContainedChunk(c);
-	}
+    for (Chunk c : chunks) {
+        addContainedChunk(c);
+    }
     }
     
     /**
@@ -905,15 +905,15 @@ public class Chunk implements Comparable<Chunk> {
      * @param c the chunk to add
      */
     public void addContainedChunk(Chunk c) {
-	c.setParent(this);
-	
-	// It's possible, however unlikely, that we could have multiple chunks
-	// with the same type and value in the same part of the hierarchy,
-	// depending on the markup of the source document. If we do, update
-	// this chunk's query to use its absolute position.
-	// (Leave the value property alone--otherwise any open Hibernate
-	// sessions will attempt to write it back to the database on closing!)
-	
+    c.setParent(this);
+    
+    // It's possible, however unlikely, that we could have multiple chunks
+    // with the same type and value in the same part of the hierarchy,
+    // depending on the markup of the source document. If we do, update
+    // this chunk's query to use its absolute position.
+    // (Leave the value property alone--otherwise any open Hibernate
+    // sessions will attempt to write it back to the database on closing!)
+    
 //	for (Chunk child : containedChunks) {
 //	    if (child.getType().equals(c.getType()) &&
 //		    child.getValue().equals(c.getValue()) &&
@@ -926,9 +926,9 @@ public class Chunk implements Comparable<Chunk> {
 //		break;
 //	    }
 //	}
-	
-	containedChunks.add(c);
-	
+    
+    containedChunks.add(c);
+    
 //	if (!c.hasDisplayQuery()) {
 //	    c.refreshQuery();
 //	}
@@ -939,18 +939,18 @@ public class Chunk implements Comparable<Chunk> {
      * null).
      */
     public void clearContainedChunks() {
-	for (Chunk child : containedChunks) {
-	    child.setParent(null);
-	}
-	
-	containedChunks.clear();
+    for (Chunk child : containedChunks) {
+        child.setParent(null);
+    }
+    
+    containedChunks.clear();
     }
     
     /**
      * Returns true if this chunk contains any children.
      */
     public boolean hasContainedChunks() {
-	return !containedChunks.isEmpty();
+    return !containedChunks.isEmpty();
     }
     
     /**
@@ -959,29 +959,29 @@ public class Chunk implements Comparable<Chunk> {
      * the text has not yet been loaded.
      */
     public void loadText() {
-	if (innerText != null) return;
-	
-	innerText = Chunk.getText(
-		getQuery().getDocumentID(),
-		getStartOffset(),
-		getEndOffset());
+    if (innerText != null) return;
+    
+    innerText = Chunk.getText(
+        getQuery().getDocumentID(),
+        getStartOffset(),
+        getEndOffset());
     }    
     
     /** Individual chunk heads can be very uninformative, like "chapter 4".
      This method looks at a query and combines the heads of all containing
      chunks, to create something like "book 7, chapter 4". */
     public void loadContainingHeads() {
-	Query containingQuery = query.getContainingQuery();
-	try {
-	    while (! containingQuery.isJustDocumentID()) {
-		Chunk containingChunk = containingQuery.getChunk();
-		head = containingChunk.getHead() + " " + head;
-		
-		containingQuery = containingQuery.getContainingQuery();
-	    }
-	} catch (InvalidQueryException iqe) {
-	    logger.warn("Invalid query in containing heads", iqe);
-	}
+    Query containingQuery = query.getContainingQuery();
+    try {
+        while (! containingQuery.isJustDocumentID()) {
+        Chunk containingChunk = containingQuery.getChunk();
+        head = containingChunk.getHead() + " " + head;
+        
+        containingQuery = containingQuery.getContainingQuery();
+        }
+    } catch (InvalidQueryException iqe) {
+        logger.warn("Invalid query in containing heads", iqe);
+    }
     }
     
     /**
@@ -993,18 +993,18 @@ public class Chunk implements Comparable<Chunk> {
      * chunks, to create something like "book 7, chapter 4".
      */
     public String getContainingHeads() {
-    	String head = getHead();
-    	Query containingQuery = query.getContainingQuery();
-    	try {
-    		while (!containingQuery.isJustDocumentID() && !containingQuery.isSubDocument()) {
-    			Chunk containingChunk = containingQuery.getChunk();
-    			head = containingChunk.getHead() + ", " + head;
-    			containingQuery = containingQuery.getContainingQuery();
-    		}
-    	} catch (InvalidQueryException iqe) {
-    		logger.warn("Invalid query in containing heads", iqe);
-    	}
-    	return head;
+        String head = getHead();
+        Query containingQuery = query.getContainingQuery();
+        try {
+            while (!containingQuery.isJustDocumentID() && !containingQuery.isSubDocument()) {
+                Chunk containingChunk = containingQuery.getChunk();
+                head = containingChunk.getHead() + ", " + head;
+                containingQuery = containingQuery.getContainingQuery();
+            }
+        } catch (InvalidQueryException iqe) {
+            logger.warn("Invalid query in containing heads", iqe);
+        }
+        return head;
     }
 
     /**
@@ -1012,8 +1012,8 @@ public class Chunk implements Comparable<Chunk> {
      * chunk (probably tei.xsl).
      */
     public void style() {
-	Map<String,String> map = Collections.emptyMap();
-	style(map);
+    Map<String,String> map = Collections.emptyMap();
+    style(map);
     }
     
     /**
@@ -1024,8 +1024,8 @@ public class Chunk implements Comparable<Chunk> {
      * configuration)
      */
     public void style(String stylesheet) {
-	Map<String,String> map = Collections.emptyMap();
-	style(stylesheet, map);
+    Map<String,String> map = Collections.emptyMap();
+    style(stylesheet, map);
     }
     
     /**
@@ -1035,7 +1035,7 @@ public class Chunk implements Comparable<Chunk> {
      * @param parameters the parameters to pass to the transformer
      */
     public void style(Map<String,String> parameters) {
-	style(null, parameters);
+    style(null, parameters);
     }
     
     /**
@@ -1046,52 +1046,52 @@ public class Chunk implements Comparable<Chunk> {
      * @param parameters parameters to be passed to the transformer
      */
     public void style(String stylesheetName, Map<String,String> parameters) {
-	if (stylesheetName == null) {
-	    stylesheetName = getMetadata().getDefaultStylesheet();
-	}
-	
-	if (innerText == null) {
-	    loadText();
-	}
+    if (stylesheetName == null) {
+        stylesheetName = getMetadata().getDefaultStylesheet();
+    }
+    
+    if (innerText == null) {
+        loadText();
+    }
 
-	String language = getEffectiveLanguage();
-	if (language == null) {
-	    language = LanguageCode.ENGLISH;
-	}
+    String language = getEffectiveLanguage();
+    if (language == null) {
+        language = LanguageCode.ENGLISH;
+    }
 
-	Map<String,String> workingParams = new HashMap<String,String>(parameters);
-	if (!workingParams.containsKey("lang")) {
-	    workingParams.put("lang", language);
-	}
-	if (!workingParams.containsKey("query")) {
-	    workingParams.put("query", getQuery().toString());
-	}
-	
-	cachedText = StyleTransformer.transform(getText(), stylesheetName, 
-		getQuery().getDocumentID(), workingParams);
+    Map<String,String> workingParams = new HashMap<String,String>(parameters);
+    if (!workingParams.containsKey("lang")) {
+        workingParams.put("lang", language);
+    }
+    if (!workingParams.containsKey("query")) {
+        workingParams.put("query", getQuery().toString());
+    }
+    
+    cachedText = StyleTransformer.transform(getText(), stylesheetName, 
+        getQuery().getDocumentID(), workingParams);
     }
     
     public boolean equals (Object o) {
-	if (o instanceof Chunk) {
-	    Chunk c = (Chunk) o;
-	    return
-		this.getDocumentID().equals(c.getDocumentID()) &&
-		this.getType().equals(c.getType()) &&
-		this.getStartOffset() == c.getStartOffset() &&
-		this.getEndOffset() == c.getEndOffset();
-	}
-	return false;
+    if (o instanceof Chunk) {
+        Chunk c = (Chunk) o;
+        return
+        this.getDocumentID().equals(c.getDocumentID()) &&
+        this.getType().equals(c.getType()) &&
+        this.getStartOffset() == c.getStartOffset() &&
+        this.getEndOffset() == c.getEndOffset();
+    }
+    return false;
     }
     
     public int hashCode() {
-	int result = 17;
-	
-	result = 37*result + getDocumentID().hashCode();
-	result = 37*result + getType().hashCode();
-	result = 37*result + getStartOffset();
-	result = 37*result + getEndOffset();
-	
-	return result;
+    int result = 17;
+    
+    result = 37*result + getDocumentID().hashCode();
+    result = 37*result + getType().hashCode();
+    result = 37*result + getStartOffset();
+    result = 37*result + getEndOffset();
+    
+    return result;
     }
     
     /**
@@ -1102,21 +1102,21 @@ public class Chunk implements Comparable<Chunk> {
      * equal; 1 if <code>c</code> comes first
      */
     public int compareTo (Chunk c) {
-	if (this.getDocumentID().compareTo(c.getDocumentID()) != 0) {
-	    return this.getDocumentID().compareTo(c.getDocumentID());
-	}
+    if (this.getDocumentID().compareTo(c.getDocumentID()) != 0) {
+        return this.getDocumentID().compareTo(c.getDocumentID());
+    }
 
-	if (this.getStartOffset() - c.getStartOffset() != 0) {
-	    return this.getStartOffset() - c.getStartOffset();
-	}
-	
-	// If two chunks start at the exact same point, the *larger* one should
-	// come first. This is what the hierarchy-building methods expect.
-	if (c.getEndOffset() - this.getEndOffset() != 0) {
-	    return c.getEndOffset() - this.getEndOffset();
-	}
+    if (this.getStartOffset() - c.getStartOffset() != 0) {
+        return this.getStartOffset() - c.getStartOffset();
+    }
+    
+    // If two chunks start at the exact same point, the *larger* one should
+    // come first. This is what the hierarchy-building methods expect.
+    if (c.getEndOffset() - this.getEndOffset() != 0) {
+        return c.getEndOffset() - this.getEndOffset();
+    }
 
-	return 0;
+    return 0;
     }
     
     /**
@@ -1127,47 +1127,47 @@ public class Chunk implements Comparable<Chunk> {
      * @return true if this chunk could contain c, otherwise false
      */
     public boolean contains(Chunk c) {
-	return this.getStartOffset() <= c.getStartOffset() &&
-	this.getEndOffset() >= c.getEndOffset() &&
-	this.getSize() != c.getSize();
-	// (identical chunks don't contain one another)
+    return this.getStartOffset() <= c.getStartOffset() &&
+    this.getEndOffset() >= c.getEndOffset() &&
+    this.getSize() != c.getSize();
+    // (identical chunks don't contain one another)
     }
     
     /** Helper method used with contained chunks. */
     private void refreshQuery() {
-	
-	String workingValue = getValue();
-	// If we've renamed the query to avoid a collision, make sure to
-	// retain the query value
-	if (!getQuery().getLastElementType().equals("document_id") &&
-		!getQuery().getLastElementValue().equals(getValue())) {
-	    workingValue = getQuery().getLastElementValue();
-	}
-	
-	/*
-	 * 1999.02.0022 (Shuckburgh) is a difficult text. It has values that
-	 * are like text=A:book=1:letter=1. The hopper doesn't like it when you
-	 * add the type and value so that it is: letter=text=A:book=1:letter=1.
-	 * So we set the query so it's Perseus:text:1999.02.0022:text=A:book=1:letter=1
-	 * which actually work.  Unfortunately this needs to happen multiple times
-	 * in this class (see buildQuery) and also needs a tweak in TableOfContentsFactory
-	 * assembleTree()
-	 */
-	if (parent != null) {
-	    if (parent.getDocumentID().equals("Perseus:text:1999.02.0022")) {
-		if (workingValue.startsWith("text=")) {
-		    Query q = new Query(parent.getDocumentID()+":"+workingValue);
-		    setQuery(q);
-		}
-	    }
-	    else {
-		setQuery(parent.getQuery().appendSubquery(getType(), workingValue));
-	    }
-	}
+    
+    String workingValue = getValue();
+    // If we've renamed the query to avoid a collision, make sure to
+    // retain the query value
+    if (!getQuery().getLastElementType().equals("document_id") &&
+        !getQuery().getLastElementValue().equals(getValue())) {
+        workingValue = getQuery().getLastElementValue();
+    }
+    
+    /*
+     * 1999.02.0022 (Shuckburgh) is a difficult text. It has values that
+     * are like text=A:book=1:letter=1. The hopper doesn't like it when you
+     * add the type and value so that it is: letter=text=A:book=1:letter=1.
+     * So we set the query so it's Perseus:text:1999.02.0022:text=A:book=1:letter=1
+     * which actually work.  Unfortunately this needs to happen multiple times
+     * in this class (see buildQuery) and also needs a tweak in TableOfContentsFactory
+     * assembleTree()
+     */
+    if (parent != null) {
+        if (parent.getDocumentID().equals("Perseus:text:1999.02.0022")) {
+        if (workingValue.startsWith("text=")) {
+            Query q = new Query(parent.getDocumentID()+":"+workingValue);
+            setQuery(q);
+        }
+        }
+        else {
+        setQuery(parent.getQuery().appendSubquery(getType(), workingValue));
+        }
+    }
     }
     
     public String toString() {
-	return String.format("[CHUNK %s %s %s pos=%d abs=%d %d-%d]",
+    return String.format("[CHUNK %s %s %s pos=%d abs=%d %d-%d]",
                 getQuery().toString(),
                 getType(),
                 getValue(),
@@ -1178,48 +1178,48 @@ public class Chunk implements Comparable<Chunk> {
     }
 
     public Element toXML() {
-	Element topElement = new Element("chunk")
+    Element topElement = new Element("chunk")
         .setAttribute("pos", Integer.toString(getPosition()))
-	    .setAttribute("start",
-		Integer.toString(getStartOffset()))
-	    .setAttribute("end",
-		Integer.toString(getEndOffset()))
-	    .setAttribute("type",
-		getType())
-	    .setAttribute("n", getValue())
-	    .addContent(renderHead());
+        .setAttribute("start",
+        Integer.toString(getStartOffset()))
+        .setAttribute("end",
+        Integer.toString(getEndOffset()))
+        .setAttribute("type",
+        getType())
+        .setAttribute("n", getValue())
+        .addContent(renderHead());
 
-	String type = getType();
-	if (type.equals("alphabetic letter") || 
-		type.equals("entry group") ||
-		getMetadata().has(Metadata.SUBDOC_QUERY_KEY)) {
-	    topElement.setAttribute("isParent", "1");
-	}
-	
-	if (getChunkID() != null) {
-	    topElement.setAttribute("id", getChunkID());
-	}
-	
-	if (getDisplayQuery() != null) {
-	    topElement.setAttribute("display", getDisplayQuery());
-	}
-	
-	if (getQuery() != null) {
-	    topElement.setAttribute("ref", getQuery().toString());
-	}
-	
-	for (Chunk child : getContainedChunks()) {
-	    topElement.addContent(child.toXML());
-	}
-	
-	return topElement;
+    String type = getType();
+    if (type.equals("alphabetic letter") || 
+        type.equals("entry group") ||
+        getMetadata().has(Metadata.SUBDOC_QUERY_KEY)) {
+        topElement.setAttribute("isParent", "1");
+    }
+    
+    if (getChunkID() != null) {
+        topElement.setAttribute("id", getChunkID());
+    }
+    
+    if (getDisplayQuery() != null) {
+        topElement.setAttribute("display", getDisplayQuery());
+    }
+    
+    if (getQuery() != null) {
+        topElement.setAttribute("ref", getQuery().toString());
+    }
+    
+    for (Chunk child : getContainedChunks()) {
+        topElement.addContent(child.toXML());
+    }
+    
+    return topElement;
     }
 
     public void resetQuery(boolean cascade) {
-	setQuery(buildQuery());
-	if (cascade) {
-	    resetChildQueries(true);
-	}
+    setQuery(buildQuery());
+    if (cascade) {
+        resetChildQueries(true);
+    }
     }
 
     /**
@@ -1228,101 +1228,101 @@ public class Chunk implements Comparable<Chunk> {
      * the same type and value), and differentiates the queries if necessary.
      */
     public void resetChildQueries(boolean cascade) {
-	if (!getContainedChunks().isEmpty()) {
-	    logger.debug(this + ": RESETTING CHILD QUERIES");
-	}
-	Query myQuery = getQuery();
-	
-	Set<String> valuesSeen = new HashSet<String>();
-	for (Chunk child : getContainedChunks()) {
-	    Query childQuery = myQuery.appendSubquery(child.getType(), child.getValue());
+    if (!getContainedChunks().isEmpty()) {
+        logger.debug(this + ": RESETTING CHILD QUERIES");
+    }
+    Query myQuery = getQuery();
+    
+    Set<String> valuesSeen = new HashSet<String>();
+    for (Chunk child : getContainedChunks()) {
+        Query childQuery = myQuery.appendSubquery(child.getType(), child.getValue());
 
-	    if (valuesSeen.contains(child.getValue())) {
-		childQuery = myQuery.appendSubquery(
-		    child.getType(),
-		    "pos=" + String.valueOf(child.getPosition()));
-		logger.debug("Collision: " + child.getValue());
-	    }
+        if (valuesSeen.contains(child.getValue())) {
+        childQuery = myQuery.appendSubquery(
+            child.getType(),
+            "pos=" + String.valueOf(child.getPosition()));
+        logger.debug("Collision: " + child.getValue());
+        }
 
-	    valuesSeen.add(child.getValue());
-	    child.setQuery(childQuery);
-	    if (cascade) {
-		child.resetChildQueries(cascade);
-	    }
+        valuesSeen.add(child.getValue());
+        child.setQuery(childQuery);
+        if (cascade) {
+        child.resetChildQueries(cascade);
+        }
 
-	}
-	if (!getContainedChunks().isEmpty()) {
-	    logger.debug(this + " DONE reset cqueries");
-	}
+    }
+    if (!getContainedChunks().isEmpty()) {
+        logger.debug(this + " DONE reset cqueries");
+    }
     }
 
     private Query buildQuery() {
-	String workingValue = getValue();
-	if (getParent() == null) {
-	    return new Query(getDocumentID())
-	    	.appendSubquery(getType(), getValue());
-	}
-	
-	for (Chunk collisionCandidate : getParent().getContainedChunks()) {
-	    if (this.equals(collisionCandidate)) break;
-	    
-	    if (collisionCandidate.getType().equals(getType()) &&
-		    collisionCandidate.getValue().equals(getValue())) {
-		workingValue = "pos=" + getPosition();
-		break;
-	    }
-	}
-	Query parent = getParent().getQuery();
+    String workingValue = getValue();
+    if (getParent() == null) {
+        return new Query(getDocumentID())
+            .appendSubquery(getType(), getValue());
+    }
+    
+    for (Chunk collisionCandidate : getParent().getContainedChunks()) {
+        if (this.equals(collisionCandidate)) break;
+        
+        if (collisionCandidate.getType().equals(getType()) &&
+            collisionCandidate.getValue().equals(getValue())) {
+        workingValue = "pos=" + getPosition();
+        break;
+        }
+    }
+    Query parent = getParent().getQuery();
 
-	/*
-	 * 1999.02.0022 (Shuckburgh) is a difficult text. It has values that
-	 * are like text=A:book=1:letter=1. The hopper doesn't like it when you
-	 * add the type and value so that it is: letter=text=A:book=1:letter=1.
-	 * So we set the query so it's Perseus:text:1999.02.0022:text=A:book=1:letter=1
-	 * which actually work.  Unfortunately this class is not well written and this fix 
-	 * needs to happen multiple times in this class (see refreshQuery) and also needs 
-	 * a tweak in TableOfContentsFactory assembleTree()
-	 */
-	if (parent.getDocumentID().equals("Perseus:text:1999.02.0022")) {
-	    if (workingValue.startsWith("text=")) {
-		return new Query(parent.getDocumentID()+":"+workingValue);
-	    }
-	}
-	return parent.appendSubquery(getType(), workingValue);
+    /*
+     * 1999.02.0022 (Shuckburgh) is a difficult text. It has values that
+     * are like text=A:book=1:letter=1. The hopper doesn't like it when you
+     * add the type and value so that it is: letter=text=A:book=1:letter=1.
+     * So we set the query so it's Perseus:text:1999.02.0022:text=A:book=1:letter=1
+     * which actually work.  Unfortunately this class is not well written and this fix 
+     * needs to happen multiple times in this class (see refreshQuery) and also needs 
+     * a tweak in TableOfContentsFactory assembleTree()
+     */
+    if (parent.getDocumentID().equals("Perseus:text:1999.02.0022")) {
+        if (workingValue.startsWith("text=")) {
+        return new Query(parent.getDocumentID()+":"+workingValue);
+        }
+    }
+    return parent.appendSubquery(getType(), workingValue);
     }
     
     private Element renderHead() {
-	Element headElement = new Element("head");
-	
-	String displayType = ChunkSchemes.getDisplayName(getType());
-	String defaultHead = displayType.equals("line") ?
-		getLineHead() :
-		ChunkSchemes.getDisplayName(getType()) + " " + getValue();
+    Element headElement = new Element("head");
+    
+    String displayType = ChunkSchemes.getDisplayName(getType());
+    String defaultHead = displayType.equals("line") ?
+        getLineHead() :
+        ChunkSchemes.getDisplayName(getType()) + " " + getValue();
 
-	if (getHasCustomHead()) {
-	    if (getHeadLanguage() != null) {
-		headElement.setAttribute("lang", getHeadLanguage());
-	    } else {
-		headElement.setAttribute("lang",
-			getMetadata().getLanguage().getCode());
-	    }
-	    
-	    try {
-		String headText = "<head>" + getHead() + "</head>";
-		if (getHead().length() > 255) {
-			logger.debug("length of head for chunk "+this.toString()+" is greater than 255");
-		}
-		headElement.addContent(new SAXBuilder().build(
-			new StringReader(headText)).detachRootElement());
-	    } catch (Exception e) {
-		logger.warn("Problem rendering chunk header for TOC", e);
-		headElement.addContent(defaultHead);
-	    }
-	} else {
-	    headElement.addContent(defaultHead);
-	}
-	
-	return headElement;
+    if (getHasCustomHead()) {
+        if (getHeadLanguage() != null) {
+        headElement.setAttribute("lang", getHeadLanguage());
+        } else {
+        headElement.setAttribute("lang",
+            getMetadata().getLanguage().getCode());
+        }
+        
+        try {
+        String headText = "<head>" + getHead() + "</head>";
+        if (getHead().length() > 255) {
+            logger.debug("length of head for chunk "+this.toString()+" is greater than 255");
+        }
+        headElement.addContent(new SAXBuilder().build(
+            new StringReader(headText)).detachRootElement());
+        } catch (Exception e) {
+        logger.warn("Problem rendering chunk header for TOC", e);
+        headElement.addContent(defaultHead);
+        }
+    } else {
+        headElement.addContent(defaultHead);
+    }
+    
+    return headElement;
     }
 
     /**
@@ -1330,39 +1330,39 @@ public class Chunk implements Comparable<Chunk> {
      * "lines 225ff."
      */
     private String getLineHead() {
-	String myValue = getValue();
+    String myValue = getValue();
 
-	// Some chunks have values of, e.g., "4-6"; return them as they are
-	if (myValue.indexOf("-") != -1) return "lines " + myValue;
-	if (getParent() == null) return "line " + myValue;
-	
-	// Otherwise, find this chunk's siblings; if it has none following it,
-	// it probably represents the last card of a book, so return something
-	// line "200ff." If it does have some following it, return something of
-	// the form "lines A-B", where A is this chunk's value and B is the next
-	// chunk's value minus one.
-	
-	Set<Chunk> siblings = getParent().getContainedChunks();
-	Iterator<Chunk> it = siblings.iterator();
-	
-	// First we need to traverse the list until we find ourself.
-	while (it.hasNext()) { if (it.next().equals(this)) break; }
+    // Some chunks have values of, e.g., "4-6"; return them as they are
+    if (myValue.indexOf("-") != -1) return "lines " + myValue;
+    if (getParent() == null) return "line " + myValue;
+    
+    // Otherwise, find this chunk's siblings; if it has none following it,
+    // it probably represents the last card of a book, so return something
+    // line "200ff." If it does have some following it, return something of
+    // the form "lines A-B", where A is this chunk's value and B is the next
+    // chunk's value minus one.
+    
+    Set<Chunk> siblings = getParent().getContainedChunks();
+    Iterator<Chunk> it = siblings.iterator();
+    
+    // First we need to traverse the list until we find ourself.
+    while (it.hasNext()) { if (it.next().equals(this)) break; }
 
-	if (!it.hasNext()) {
-	    return "lines " + myValue + "ff.";
-	} else {
-	    Chunk nextSibling = it.next();
-	    String nextLineNumber = nextSibling.getValue().replaceAll("-.*", "");
-	    try {
-		if (!myValue.equals(nextLineNumber)) {
-		    int nextValue = Integer.parseInt(nextLineNumber);
-		    return "lines " + myValue + "-" + (nextValue-1);
-		}
-	    } catch (NumberFormatException nfe) {
-		// *shrug*
-	    }
-	    return "line " + myValue;
-	}
+    if (!it.hasNext()) {
+        return "lines " + myValue + "ff.";
+    } else {
+        Chunk nextSibling = it.next();
+        String nextLineNumber = nextSibling.getValue().replaceAll("-.*", "");
+        try {
+        if (!myValue.equals(nextLineNumber)) {
+            int nextValue = Integer.parseInt(nextLineNumber);
+            return "lines " + myValue + "-" + (nextValue-1);
+        }
+        } catch (NumberFormatException nfe) {
+        // *shrug*
+        }
+        return "line " + myValue;
+    }
     }
 
     public Lemma getLemma() {
@@ -1373,13 +1373,13 @@ public class Chunk implements Comparable<Chunk> {
         this.lemma = lemma;
     }
 
-	
+    
 /*	public void setSenses(List<Sense> newSenses) {
-	    senses = newSenses;
-	}
+        senses = newSenses;
+    }
 
-	public List<Sense> getSenses() {
-	    return senses;
-	}
+    public List<Sense> getSenses() {
+        return senses;
+    }
 */
 }

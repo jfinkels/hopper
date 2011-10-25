@@ -355,7 +355,7 @@
 <dcterms:available>2000-11-15</dcterms:available>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Renaissance"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Renaissance_Secondary"/>
-	<dcterms:issued>2001</dcterms:issued>
+    <dcterms:issued>2001</dcterms:issued>
 <text>Renaissance/Overviews/opensource/ov_ren.xml</text>
 </rdf:Description>
 
@@ -376,7 +376,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,coriolanus"/>
-	<dcterms:created>1608</dcterms:created>
+    <dcterms:created>1608</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/cor.xml</text>
 </rdf:Description>
@@ -387,7 +387,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,julius caesar"/>
-	<dcterms:created>1601</dcterms:created>
+    <dcterms:created>1601</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/jc.xml</text>
 </rdf:Description>
@@ -398,7 +398,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,macbeth"/>
-	<dcterms:created>1606</dcterms:created>
+    <dcterms:created>1606</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/mac.xml</text>
 </rdf:Description>
@@ -409,7 +409,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,lear"/>
-	<dcterms:created>1605</dcterms:created>
+    <dcterms:created>1605</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/lr.xml</text>
 </rdf:Description>
@@ -420,7 +420,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,pericles"/>
-	<dcterms:created>1608</dcterms:created>
+    <dcterms:created>1608</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/per.xml</text>
 </rdf:Description>
@@ -431,7 +431,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,hamlet"/>
-	<dcterms:created>1602</dcterms:created>
+    <dcterms:created>1602</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/ham.xml</text>
 </rdf:Description>
@@ -442,7 +442,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,two gentlemen of verona"/>
-	<dcterms:created>1592-1593</dcterms:created>
+    <dcterms:created>1592-1593</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/tgv.xml</text>
 </rdf:Description>
@@ -453,7 +453,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,john"/>
-	<dcterms:created>1595</dcterms:created>
+    <dcterms:created>1595</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/jn.xml</text>
 </rdf:Description>
@@ -464,7 +464,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,othello"/>
-	<dcterms:created>1604</dcterms:created>
+    <dcterms:created>1604</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/oth.xml</text>
 </rdf:Description>
@@ -475,7 +475,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,richard iii"/>
-	<dcterms:created>1593</dcterms:created>
+    <dcterms:created>1593</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/r3.xml</text>
 </rdf:Description>
@@ -486,7 +486,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,alls well"/>
-	<dcterms:created>1602</dcterms:created>
+    <dcterms:created>1602</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/aww.xml</text>
 </rdf:Description>
@@ -508,7 +508,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,as you like it"/>
-	<dcterms:created>1599</dcterms:created>
+    <dcterms:created>1599</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/ayl.xml</text>
 </rdf:Description>
@@ -519,7 +519,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,comedy of errors"/>
-	<dcterms:created>1591</dcterms:created>
+    <dcterms:created>1591</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/err.xml</text>
 </rdf:Description>
@@ -530,7 +530,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,cymbeline"/>
-	<dcterms:created>1609</dcterms:created>
+    <dcterms:created>1609</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/cym.xml</text>
 </rdf:Description>
@@ -541,7 +541,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,1 henry iv"/>
-	<dcterms:created>1597-1598</dcterms:created>
+    <dcterms:created>1597-1598</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/1h4.xml</text>
 </rdf:Description>
@@ -552,7 +552,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,2 henry iv"/>
-	<dcterms:created>1597-1598</dcterms:created>
+    <dcterms:created>1597-1598</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/2h4.xml</text>
 </rdf:Description>
@@ -563,7 +563,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,henry v"/>
-	<dcterms:created>1599</dcterms:created>
+    <dcterms:created>1599</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/h5.xml</text>
 </rdf:Description>
@@ -585,7 +585,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,2 henry vi"/>
-	<dcterms:created>1591-1592</dcterms:created>
+    <dcterms:created>1591-1592</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/2h6.xml</text>
 </rdf:Description>
@@ -596,7 +596,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,3 henry vi"/>
-	<dcterms:created>1591-1592</dcterms:created>
+    <dcterms:created>1591-1592</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/3h6.xml</text>
 </rdf:Description>
@@ -607,7 +607,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,much ado"/>
-	<dcterms:created>1598</dcterms:created>
+    <dcterms:created>1598</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/ado.xml</text>
 </rdf:Description>
@@ -618,7 +618,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,loves labours lost"/>
-	<dcterms:created>1590</dcterms:created>
+    <dcterms:created>1590</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/lll.xml</text>
 </rdf:Description>
@@ -629,7 +629,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,measure for measure"/>
-	<dcterms:created>1603</dcterms:created>
+    <dcterms:created>1603</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/mm.xml</text>
 </rdf:Description>
@@ -640,7 +640,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,merchant of venice"/>
-	<dcterms:created>1596</dcterms:created>
+    <dcterms:created>1596</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/mv.xml</text>
 </rdf:Description>
@@ -651,7 +651,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,midsummer nights dream"/>
-	<dcterms:created>1593-1594</dcterms:created>
+    <dcterms:created>1593-1594</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/mnd.xml</text>
 </rdf:Description>
@@ -662,7 +662,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,richard ii"/>
-	<dcterms:created>1594</dcterms:created>
+    <dcterms:created>1594</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/r2.xml</text>
 </rdf:Description>
@@ -674,7 +674,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,romeo and juliet"/>
 <persq:stylesheet>globe.spec</persq:stylesheet>
-	<dcterms:created>1591-1597</dcterms:created>
+    <dcterms:created>1591-1597</dcterms:created>
 <text>Renaissance/Shakespeare/opensource/rom.xml</text>
 </rdf:Description>
 
@@ -684,7 +684,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,taming of the shrew"/>
-	<dcterms:created>1597</dcterms:created>
+    <dcterms:created>1597</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/shr.xml</text>
 </rdf:Description>
@@ -695,7 +695,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,timon"/>
-	<dcterms:created>1607-1608</dcterms:created>
+    <dcterms:created>1607-1608</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/tim.xml</text>
 </rdf:Description>
@@ -706,7 +706,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,tempest"/>
-	<dcterms:created>1610</dcterms:created>
+    <dcterms:created>1610</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/tmp.xml</text>
 </rdf:Description>
@@ -717,7 +717,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,twelfth night"/>
-	<dcterms:created>1600-1601</dcterms:created>
+    <dcterms:created>1600-1601</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/tn.xml</text>
 </rdf:Description>
@@ -728,7 +728,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,troilus and cressida"/>
-	<dcterms:created>1603</dcterms:created>
+    <dcterms:created>1603</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/tro.xml</text>
 </rdf:Description>
@@ -739,7 +739,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,merry wives of windsor"/>
-	<dcterms:created>1598</dcterms:created>
+    <dcterms:created>1598</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/wiv.xml</text>
 </rdf:Description>
@@ -750,7 +750,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,winters tale"/>
-	<dcterms:created>1610-1611</dcterms:created>
+    <dcterms:created>1610-1611</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/wt.xml</text>
 </rdf:Description>
@@ -761,7 +761,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,venus and adonis"/>
-	<dcterms:created>1592</dcterms:created>
+    <dcterms:created>1592</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/ven.xml</text>
 </rdf:Description>
@@ -772,7 +772,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,rape of lucrece"/>
-	<dcterms:created>1593-1594</dcterms:created>
+    <dcterms:created>1593-1594</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/luc.xml</text>
 </rdf:Description>
@@ -783,7 +783,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,passionate pilgrim"/>
-	<dcterms:issued>1599</dcterms:issued>
+    <dcterms:issued>1599</dcterms:issued>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/pp.xml</text>
 </rdf:Description>
@@ -794,7 +794,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,sonnets"/>
-	<dcterms:created>1595-1605</dcterms:created>
+    <dcterms:created>1595-1605</dcterms:created>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/son.xml</text>
 </rdf:Description>
@@ -805,7 +805,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,lovers complaint"/>
-	<dcterms:issued>1609</dcterms:issued>
+    <dcterms:issued>1609</dcterms:issued>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/lc.xml</text>
 </rdf:Description>
@@ -816,7 +816,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,phoenix and turtle"/>
-	<dcterms:issued>1601</dcterms:issued>
+    <dcterms:issued>1601</dcterms:issued>
 <persq:stylesheet>globe.spec</persq:stylesheet>
 <text>Renaissance/Shakespeare/opensource/pht.xml</text>
 </rdf:Description>
@@ -826,15 +826,15 @@
 <dc:description xml:lang="en">This is Mungo William MacCallum's landmark study of Shakespeare's Roman plays: Julius Caesar, Antony and Cleopatra, and Coriolanus.  MacCallum (1854-1942), an eminent turn-of-the-century scholar, examines the plays, their relations to each other, and their development from classical and contemporary sources.</dc:description>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Renaissance"/>
 <dc:subject><persq:arity>secondary</persq:arity></dc:subject>
-	<dcterms:issued>1910</dcterms:issued>
-	<text>Renaissance/MacCallum/opensource/macc.rplays.xml</text>
+    <dcterms:issued>1910</dcterms:issued>
+    <text>Renaissance/MacCallum/opensource/macc.rplays.xml</text>
 </rdf:Description>
 
 <rdf:Description rdf:about="Perseus:text:1999.03.0070">
 <dcterms:available>2001-04-12</dcterms:available>
 <dc:description xml:lang="en">Richard Hakluyt's Principal Navigations comprises a startlingly thorough and vivid record of English commerce, travel, and international politics through the Sixteenth Century.  Hakluyt (1552?-1616) spent years putting together a compendium of all major English journeys "made by sea or overland to the remote &amp; farthest distant quarters of the Earth at any time within the compasse of these 1600 yeares," resulting in this treasure-trove of primary sources.  The Principal Navigations includes first-hand accounts of voyages to the New World, the Holy Land, Russia, Africa, and Asia; a lengthy description of the English fleet's encounter with the Spanish Armada; correspondence, patents, and passports written by English monarchs and their foreign counterparts (including the Sophy of Persia, the Emperor of Russia, and the "Great Turke"); ship manifestos; trade documents (including ordinances and instructions on how to conduct trade in foreign ports); personal letters; and much more.  This is both an invaluable scholarly resource and an excellent choice for casual browsing.</dc:description>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Renaissance"/>
-	<dcterms:issued>1598-1600</dcterms:issued>
+    <dcterms:issued>1598-1600</dcterms:issued>
 <text>Renaissance/Hakluyt/opensource/hakluyt.xml</text>
 </rdf:Description>
 
@@ -842,7 +842,7 @@
 <dcterms:available>2001-04-12</dcterms:available>
 <dc:description xml:lang="en">When King James VI of Scotland took the English throne in 1603, a range of political possibilities and challenges erupted.  Facing urgent questions about a changing national identity, the role of religion in the nation-state, and the proper derivation of kingly authority, James had to negotiate between dangerous extremes.  These writings lend valuable insight into English politics during the period between the height of the Renaissance and the devastating Civil Wars only forty years later.  This collection of James's most important political works includes Basilikon Doron, James's letter to his son instructing him in the art of kingship, as well as a number of texts in which James vigorously asserts his views on the role of religion in the life of the nation; speeches here include James's comments on the potential unification of England and Scotland and his response to the Guy Fawkes Rebellion.  Editor Charles Howard McIlwain also provides a lengthy introduction which contextualizes and summarizes many of the period's most important political debates.</dc:description>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Renaissance"/>
-	<dcterms:issued>1918</dcterms:issued>
+    <dcterms:issued>1918</dcterms:issued>
 <text>Renaissance/JamesI/opensource/james1.xml</text>
 </rdf:Description>
 
@@ -855,14 +855,14 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Shakespeare_Globe"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:shak,henry viii"/>
-	<dcterms:created>1612-1613</dcterms:created>
+    <dcterms:created>1612-1613</dcterms:created>
 <text>Renaissance/Shakespeare/opensource/h8.xml</text>
 </rdf:Description>
 
 <rdf:Description rdf:about="Perseus:text:1999.03.0075">
 <dcterms:available>2001-04-19</dcterms:available>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Renaissance"/>
-	<dcterms:created>1581-1582</dcterms:created>
+    <dcterms:created>1581-1582</dcterms:created>
 <text>Renaissance/Sidney/opensource/defense.xml</text>
 </rdf:Description>
 
@@ -876,32 +876,32 @@
 
 <rdf:Description rdf:about="Perseus:text:1999.03.0078:text=Alc.">
 <dcterms:isVersionOf rdf:resource="Perseus:abo:tlg,0007,015"/>
-	<dcterms:issued>1875</dcterms:issued>
+    <dcterms:issued>1875</dcterms:issued>
 </rdf:Description>
 
 <rdf:Description rdf:about="Perseus:text:1999.03.0078:text=Ant.">
 <dcterms:isVersionOf rdf:resource="Perseus:abo:tlg,0007,058"/>
-	<dcterms:issued>1875</dcterms:issued>
+    <dcterms:issued>1875</dcterms:issued>
 </rdf:Description>
 
 <rdf:Description rdf:about="Perseus:text:1999.03.0078:text=Brut.">
 <dcterms:isVersionOf rdf:resource="Perseus:abo:tlg,0007,061"/>
-	<dcterms:issued>1875</dcterms:issued>
+    <dcterms:issued>1875</dcterms:issued>
 </rdf:Description>
 
 <rdf:Description rdf:about="Perseus:text:1999.03.0078:text=Caes.">
 <dcterms:isVersionOf rdf:resource="Perseus:abo:tlg,0007,048"/>
-	<dcterms:issued>1875</dcterms:issued>
+    <dcterms:issued>1875</dcterms:issued>
 </rdf:Description>
 
 <rdf:Description rdf:about="Perseus:text:1999.03.0078:text=Cor.">
 <dcterms:isVersionOf rdf:resource="Perseus:abo:tlg,0007,016"/>
-	<dcterms:issued>1875</dcterms:issued>
+    <dcterms:issued>1875</dcterms:issued>
 </rdf:Description>
 
 <rdf:Description rdf:about="Perseus:text:1999.03.0078:text=Thes.">
 <dcterms:isVersionOf rdf:resource="Perseus:abo:tlg,0007,001"/>
-	<dcterms:issued>1875</dcterms:issued>
+    <dcterms:issued>1875</dcterms:issued>
 </rdf:Description>
 
 <rdf:Description rdf:about="Perseus:text:1999.03.0080">
@@ -913,14 +913,14 @@
 <dc:subject><persq:arity>secondary</persq:arity></dc:subject>
 <dcterms:alternative xml:lang="en">Abbott</dcterms:alternative>
 <dc:type><persq:form>dictionary</persq:form></dc:type>
-	<dcterms:issued>1870</dcterms:issued>
+    <dcterms:issued>1870</dcterms:issued>
 <text>Renaissance/Abbott/opensource/abbott.xml</text>
 </rdf:Description>
 
 <rdf:Description rdf:about="Perseus:text:1999.03.0081">
 <dcterms:isPartOf rdf:resource="Perseus:collection:Renaissance"/>
 <dcterms:alternative xml:lang="en">Wilson</dcterms:alternative>
-	<dcterms:created>1560</dcterms:created>
+    <dcterms:created>1560</dcterms:created>
 <text>Renaissance/Wilson/opensource/arte.xml</text>
 </rdf:Description>
 
@@ -928,8 +928,8 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Renaissance"/>
 <dcterms:alternative xml:lang="en">Peachum</dcterms:alternative>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Peachum_Garden"/>
-	<dcterms:created>1593</dcterms:created>
-	<dc:Rights>download</dc:Rights>
+    <dcterms:created>1593</dcterms:created>
+    <dc:Rights>download</dc:Rights>
 <text>Renaissance/Peachum/opensource/gardena.xml</text>
 </rdf:Description>
 
@@ -937,18 +937,18 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Renaissance"/>
 <dcterms:alternative xml:lang="en">Peachum</dcterms:alternative>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Peachum_Garden"/>
-	<dcterms:created>1593</dcterms:created>
-	<dc:Rights>download</dc:Rights>
-	<text>Renaissance/Peachum/opensource/gardenb.xml</text>
+    <dcterms:created>1593</dcterms:created>
+    <dc:Rights>download</dc:Rights>
+    <text>Renaissance/Peachum/opensource/gardenb.xml</text>
 </rdf:Description>
 
 <rdf:Description rdf:about="Perseus:text:1999.03.0098">
 <dcterms:isPartOf rdf:resource="Perseus:collection:Renaissance"/>
 <dcterms:alternative xml:lang="en">Peachum</dcterms:alternative>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Peachum_Garden"/>
-	<dcterms:created>1593</dcterms:created>
-	<dc:Rights>download</dc:Rights>
-	<text>Renaissance/Peachum/opensource/gardenfront.xml</text>
+    <dcterms:created>1593</dcterms:created>
+    <dc:Rights>download</dc:Rights>
+    <text>Renaissance/Peachum/opensource/gardenfront.xml</text>
 </rdf:Description>
 
 <!-- Holinshed's Chronicles -->
@@ -961,7 +961,7 @@ be Found in the Same.  Comprehended in Three Bookes.</dc:description>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_Chronicles"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_England"/>
 <persq:stylesheet>holinshed.xsl</persq:stylesheet>
-	<dcterms:issued>1587</dcterms:issued>
+    <dcterms:issued>1587</dcterms:issued>
 <status>2</status>
 <text>Renaissance/Holinshed/england/opensource/description.xml</text>
 </rdf:Description>
@@ -973,9 +973,9 @@ State Vnder Forren People Is Declared; And Other Manifold Obseruations Remembred
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_Chronicles"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_England"/>
 <persq:stylesheet>holinshed.xsl</persq:stylesheet>
-	<dcterms:issued>1587</dcterms:issued>
+    <dcterms:issued>1587</dcterms:issued>
 <status>2</status>
-	<text>Renaissance/Holinshed/england/opensource/history1.xml</text>
+    <text>Renaissance/Holinshed/england/opensource/history1.xml</text>
 </rdf:Description>
 
 <rdf:Description rdf:about="Perseus:text:1999.03.0085">
@@ -983,9 +983,9 @@ State Vnder Forren People Is Declared; And Other Manifold Obseruations Remembred
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_Chronicles"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_England"/>
 <persq:stylesheet>holinshed.xsl</persq:stylesheet>
-	<dcterms:issued>1587</dcterms:issued>
+    <dcterms:issued>1587</dcterms:issued>
 <status>2</status>
-	<text>Renaissance/Holinshed/england/opensource/history2.xml</text>
+    <text>Renaissance/Holinshed/england/opensource/history2.xml</text>
 </rdf:Description>
 
 <rdf:Description rdf:about="Perseus:text:1999.03.0086">
@@ -994,7 +994,7 @@ State Vnder Forren People Is Declared; And Other Manifold Obseruations Remembred
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_Chronicles"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_Scotland"/>
 <persq:stylesheet>holinshed.xsl</persq:stylesheet>
-	<dcterms:issued>1587</dcterms:issued>
+    <dcterms:issued>1587</dcterms:issued>
 <status>2</status>
 <text>Renaissance/Holinshed/scotland/opensource/description.xml</text>
 </rdf:Description>
@@ -1005,9 +1005,9 @@ State Vnder Forren People Is Declared; And Other Manifold Obseruations Remembred
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_Chronicles"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_Scotland"/>
 <persq:stylesheet>holinshed.xsl</persq:stylesheet>
-	<dcterms:issued>1587</dcterms:issued>
+    <dcterms:issued>1587</dcterms:issued>
 <status>2</status>
-	<text>Renaissance/Holinshed/scotland/opensource/history.xml</text>
+    <text>Renaissance/Holinshed/scotland/opensource/history.xml</text>
 </rdf:Description>
 
 <rdf:Description rdf:about="Perseus:text:1999.03.0088">
@@ -1017,9 +1017,9 @@ Which Holinshed Left, Being the Yeare of our Lord 1571, Vntill the Yeare of our 
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_Chronicles"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_Scotland"/>
 <persq:stylesheet>holinshed.xsl</persq:stylesheet>
-	<dcterms:issued>1587</dcterms:issued>
+    <dcterms:issued>1587</dcterms:issued>
 <status>2</status>
-	<text>Renaissance/Holinshed/scotland/opensource/annals.xml</text>
+    <text>Renaissance/Holinshed/scotland/opensource/annals.xml</text>
 </rdf:Description>
 
 <rdf:Description rdf:about="Perseus:text:1999.03.0089">
@@ -1027,7 +1027,7 @@ Which Holinshed Left, Being the Yeare of our Lord 1571, Vntill the Yeare of our 
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_Chronicles"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_Ireland"/>
 <persq:stylesheet>holinshed.xsl</persq:stylesheet>
-	<dcterms:issued>1587</dcterms:issued>
+    <dcterms:issued>1587</dcterms:issued>
 <status>2</status>
 <text>Renaissance/Holinshed/ireland/opensource/description.xml</text>
 </rdf:Description>
@@ -1039,9 +1039,9 @@ by Whome it was Instructed in the Faith, with the Seuerall Inuasions of the Same
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_Chronicles"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_Ireland"/>
 <persq:stylesheet>holinshed.xsl</persq:stylesheet>
-	<dcterms:issued>1587</dcterms:issued>
+    <dcterms:issued>1587</dcterms:issued>
 <status>2</status>
-	<text>Renaissance/Holinshed/ireland/opensource/inhabitation.xml</text>
+    <text>Renaissance/Holinshed/ireland/opensource/inhabitation.xml</text>
 </rdf:Description>
 
 <rdf:Description rdf:about="Perseus:text:1999.03.0091">
@@ -1052,9 +1052,9 @@ By Iohn Hooker Of The Citie Of Excester Gentleman</dc:description>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_Chronicles"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_Ireland"/>
 <persq:stylesheet>holinshed.xsl</persq:stylesheet>
-	<dcterms:issued>1587</dcterms:issued>
+    <dcterms:issued>1587</dcterms:issued>
 <status>2</status>
-	<text>Renaissance/Holinshed/ireland/opensource/cambrensis.xml</text>
+    <text>Renaissance/Holinshed/ireland/opensource/cambrensis.xml</text>
 </rdf:Description>
 
 <rdf:Description rdf:about="Perseus:text:1999.03.0092">
@@ -1065,9 +1065,9 @@ Witnesse Of Sundrie Things As Yet Fresh In Memorie: Which Processe From Hensefor
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_Chronicles"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_Ireland"/>
 <persq:stylesheet>holinshed.xsl</persq:stylesheet>
-	<dcterms:issued>1587</dcterms:issued>
+    <dcterms:issued>1587</dcterms:issued>
 <status>2</status>
-	<text>Renaissance/Holinshed/ireland/opensource/processe.xml</text>
+    <text>Renaissance/Holinshed/ireland/opensource/processe.xml</text>
 </rdf:Description>
 
 <rdf:Description rdf:about="Perseus:text:1999.03.0093">
@@ -1077,9 +1077,9 @@ Ireland, Comprising the Reigne of King Henrie the Eight.</dc:description>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_Chronicles"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_Ireland"/>
 <persq:stylesheet>holinshed.xsl</persq:stylesheet>
-	<dcterms:issued>1587</dcterms:issued>
+    <dcterms:issued>1587</dcterms:issued>
 <status>2</status>
-	<text>Renaissance/Holinshed/ireland/opensource/continuation.xml</text>
+    <text>Renaissance/Holinshed/ireland/opensource/continuation.xml</text>
 </rdf:Description>
 
 <rdf:Description rdf:about="Perseus:text:1999.03.0094">
@@ -1088,9 +1088,9 @@ Ireland, Comprising the Reigne of King Henrie the Eight.</dc:description>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_Chronicles"/>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Holinshed_Ireland"/>
 <persq:stylesheet>holinshed.xsl</persq:stylesheet>
-	<dcterms:issued>1587</dcterms:issued>
+    <dcterms:issued>1587</dcterms:issued>
 <status>2</status>
-	<text>Renaissance/Holinshed/ireland/opensource/supplie.xml</text>
+    <text>Renaissance/Holinshed/ireland/opensource/supplie.xml</text>
 </rdf:Description>
 
 <!--

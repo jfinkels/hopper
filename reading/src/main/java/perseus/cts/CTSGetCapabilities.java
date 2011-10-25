@@ -29,44 +29,44 @@ public class CTSGetCapabilities extends AbstractXsltView {
     public CTSGetCapabilities() {}
 
     public String getContentType() {
-	return "text/xml; charset=UTF-8";
+    return "text/xml; charset=UTF-8";
     }
 
     public Element toXML() {
-	/* Need to feed this in via properties */
-	/* Use this path name if pushing a release to a different machine */
-	//String getCapsFilePath = "/usr/local/perseus/docroot/xml/GetCapabilities.xml";  
+    /* Need to feed this in via properties */
+    /* Use this path name if pushing a release to a different machine */
+    //String getCapsFilePath = "/usr/local/perseus/docroot/xml/GetCapabilities.xml";  
 
-	/* Use this path name if NOT pushing a release to a different machine */
-	String getCapsFilePath = "/sgml/reading/static/xml/GetCapabilities.xml";
+    /* Use this path name if NOT pushing a release to a different machine */
+    String getCapsFilePath = "/sgml/reading/static/xml/GetCapabilities.xml";
 
-	File getCapsFile = new File(getCapsFilePath);
-	Element result = new Element("GetCapabilities");
-	try {
-	    SAXBuilder builder = new SAXBuilder();
-	    Document capsDoc = builder.build(getCapsFile);
-	    result = capsDoc.detachRootElement();
-	} catch (JDOMException e) {
-	    e.printStackTrace();
-	} catch (NullPointerException e) {
-	    e.printStackTrace();
-	} catch (IOException ioe) {
-	    ioe.printStackTrace();
-	}
-	return result;
+    File getCapsFile = new File(getCapsFilePath);
+    Element result = new Element("GetCapabilities");
+    try {
+        SAXBuilder builder = new SAXBuilder();
+        Document capsDoc = builder.build(getCapsFile);
+        result = capsDoc.detachRootElement();
+    } catch (JDOMException e) {
+        e.printStackTrace();
+    } catch (NullPointerException e) {
+        e.printStackTrace();
+    } catch (IOException ioe) {
+        ioe.printStackTrace();
+    }
+    return result;
     }
 
     protected Source createXsltSource(Map model, String rootName, HttpServletRequest req,
                                       HttpServletResponse res) throws Exception {
-	org.jdom.Document doc = new org.jdom.Document();
+    org.jdom.Document doc = new org.jdom.Document();
         CTSGetCapabilities gc = (CTSGetCapabilities)((Map)model.get("model")).get("gc");
         Node gcXML = new DOMOutputter().output(new org.jdom.Document(gc.toXML()));
         return new DOMSource(gcXML);
     }
 
     public Node toXML(Map model, String rootName, HttpServletRequest req, HttpServletResponse res) 
-	throws Exception {
-	return ((DOMSource) createXsltSource(model, rootName, req, res)).getNode();
+    throws Exception {
+    return ((DOMSource) createXsltSource(model, rootName, req, res)).getNode();
     }
     
 }

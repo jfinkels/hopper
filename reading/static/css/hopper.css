@@ -1,11 +1,11 @@
 /* OVERARCHING DOCUMENT STRUCTURE */
 
 a {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 a:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 body {
@@ -141,7 +141,7 @@ div#main_col {
 }
 
 div#index_main_col {
-	width: 74%;
+    width: 74%;
 }
 
 div#side_col, div#img_side_col {
@@ -154,8 +154,8 @@ div#side_col {
 }
 
 div#img_side_col {
-	width: 24%;
-	text-align: center;
+    width: 24%;
+    text-align: center;
 }
 
 div#enter_greek {
@@ -171,35 +171,35 @@ div#contact_info {
 
 /* REDIRECT LAYER */
 div#redirect {
-	position:absolute;
-	width: 500px;
-	margin-right:auto;
-	margin-left:-250px;
-	text-align: center;
-	border: medium solid #C56352; 
-	background-color: #F1F1F1;
-	padding: 5px;
-	top: 50%;
-	left: 50%;
+    position:absolute;
+    width: 500px;
+    margin-right:auto;
+    margin-left:-250px;
+    text-align: center;
+    border: medium solid #C56352; 
+    background-color: #F1F1F1;
+    padding: 5px;
+    top: 50%;
+    left: 50%;
 }
 
 #redirect p.close {
-	font-size:x-small;
+    font-size:x-small;
 }
 
 #redirect p.greek {
-	font-size:small;
+    font-size:small;
 }
 
 div#jumphelp {
-	position:absolute;
-	width: 120px;
-	text-align: center;
-	border: thin solid; 
-	background-color: paleGoldenRod;
-	padding: 3px;
-	left: 50%;
-	font-size:x-small;
+    position:absolute;
+    width: 120px;
+    text-align: center;
+    border: thin solid; 
+    background-color: paleGoldenRod;
+    padding: 3px;
+    left: 50%;
+    font-size:x-small;
 }
 
 /* SEARCHING */
@@ -211,11 +211,11 @@ div.search_result {
 }
 
 div.search_field {
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 span.expand {
-	font-size:x-small;
+    font-size:x-small;
 }
 
 form#header_jump_form {
@@ -264,7 +264,7 @@ div#tabs, div#subtabs {
 }
 
 div#tabs {
-	background-color: #888;
+    background-color: #888;
 }
 
 div#subtabs {
@@ -357,12 +357,12 @@ img.logo {
 
 /* PUBLICATIONS */
 ul.publications {
-	list-style-type: none;
-	font-size: 14px;
+    list-style-type: none;
+    font-size: 14px;
 }
 
 ul.publications li {
-	padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 /* SIDE-BOXES (left column of text page) */
@@ -552,7 +552,7 @@ div.widget div.header {
 }
 
 div.search_widget div.header {
-	font-size: small;
+    font-size: small;
 }
 
 div.widget div.header a, div.search_widget div.header a {
@@ -884,45 +884,45 @@ div.embeddedtext {
 
 span.note.margin.old
 {
-	float: right;
-	width: 20%;
-	text-align: left;
-	padding: 1em;
-	color: #003;
-	border: solid black 0px;
-	border-width: 0 1px 0px 0;
-	margin: -1px 0.5em 0.2em -1px;
-	clear: both;
-	background-color: #FFC;
-	font-size: x-small;
-	line-height: 15px;
+    float: right;
+    width: 20%;
+    text-align: left;
+    padding: 1em;
+    color: #003;
+    border: solid black 0px;
+    border-width: 0 1px 0px 0;
+    margin: -1px 0.5em 0.2em -1px;
+    clear: both;
+    background-color: #FFC;
+    font-size: x-small;
+    line-height: 15px;
 }
 
 span.note.margin
 {
-	float: right;
-	clear: both;
-	width: 20%;
-	text-align: left;
-	padding: 1em;
-	font-size: x-small;
+    float: right;
+    clear: both;
+    width: 20%;
+    text-align: left;
+    padding: 1em;
+    font-size: x-small;
 }
 
 span.note.margin.rubric
 {
-	color: red;
+    color: red;
 }
 
 h1.div.head
 {
-	font-size: small;
-	font-weight: bold;
+    font-size: small;
+    font-weight: bold;
 }
 
 h1.list.head
 {
-	font-size: x-small;
-	font-weight: bold;
+    font-size: x-small;
+    font-weight: bold;
 }
 
 /* Marlowe */
@@ -941,8 +941,8 @@ div.textual_note span.rdg {
 
 div.textual_note span.witlist
 {
-	font-variant: small-caps;
-	font-size: x-small;
+    font-variant: small-caps;
+    font-size: x-small;
 }
 
 span.text_note {display: none;}
@@ -1042,98 +1042,98 @@ span.sz {
 */
 
 table.tResults {
-	text-align: left;
-	cell-spacing:20;
+    text-align: left;
+    cell-spacing:20;
 }
 
 tr.trHiddenResults {
-	padding:15;
+    padding:15;
 }
 tr.trResultTitleBar {
-	background-color: #cccccc;
-	font-size:14px
+    background-color: #cccccc;
+    font-size:14px
 }
 tr.trResultEditorBar {
-	background-color: #eeeeee;
-	font-size: 12px;
+    background-color: #eeeeee;
+    font-size: 12px;
 }
 tr.trSearchResults {
-	background-color: #eeeeee;
-	font-size: 12px;
-	padding:5px;
+    background-color: #eeeeee;
+    font-size: 12px;
+    padding:5px;
 }
 tr.trHiddenSearchResults {
-	width:750px;
-	background-color: #eeeeee;
-	font-size: 12px;
+    width:750px;
+    background-color: #eeeeee;
+    font-size: 12px;
 }
 tr.trBottom {
-	height: 15px;
-	background-color: #eeeeee;
+    height: 15px;
+    background-color: #eeeeee;
 }
 td.tdSpacer {
-	height:5px;
+    height:5px;
 }
 td.tdResultsHeader {
-	text-align:center;
-	text-decoration:none;
+    text-align:center;
+    text-decoration:none;
 }
 td.tdResultsHeader:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 td.tdTitle {
-	width:250px;
+    width:250px;
 }
 td.tdLanguage {
-	text-align:center;
-	width: 75px;
+    text-align:center;
+    width: 75px;
 }
 td.tdEditor {
-	text-align:center;
-	width: 75px;
+    text-align:center;
+    width: 75px;
 }
 td.tdCitation {
-	text-align:center;
-	width:125px;
+    text-align:center;
+    width:125px;
 }
 span.spanExpander { 
-	color:#0000ff;
+    color:#0000ff;
 }
 td.tdExpand {
-	width:15px;
+    width:15px;
 }
 
 /*===============Art Object ==================*/
-		div.artObjects{
-			position:relative;
-		}
+        div.artObjects{
+            position:relative;
+        }
 
-		div.artObject{
-			postion:absolute;
-			background-color: #cccccc;
-			margin:30px;			
-			padding: 5px;
-			border: solid black 1px;
-		}
+        div.artObject{
+            postion:absolute;
+            background-color: #cccccc;
+            margin:30px;			
+            padding: 5px;
+            border: solid black 1px;
+        }
 
-		div.empty{
-			clear: both;
-			height:1px;
-		}
-		
-		div.artObject div.image_box {
-			float: right;
-			width: 40%;
-		}
-		
-		div.artObject div.image_box div.thumbnail{
-			position:relative;
-			float:left;
-			width: 200px;
-			height: 25%;
-		}
+        div.empty{
+            clear: both;
+            height:1px;
+        }
+        
+        div.artObject div.image_box {
+            float: right;
+            width: 40%;
+        }
+        
+        div.artObject div.image_box div.thumbnail{
+            position:relative;
+            float:left;
+            width: 200px;
+            height: 25%;
+        }
 
-		div.artObject div.image_box div.thumbnail p{
-			text-align: center;
-			font-size: small;
-		}
+        div.artObject div.image_box div.thumbnail p{
+            text-align: center;
+            font-size: small;
+        }

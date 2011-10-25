@@ -19,25 +19,25 @@ public class RecordEntityVoteController implements Controller {
     private HibernateEntityManager manager = new HibernateEntityManager();
 
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-	String authParam = request.getParameter("auth");
-	String numParam = request.getParameter("n");
-	String queryParam = request.getParameter("doc");
+    String authParam = request.getParameter("auth");
+    String numParam = request.getParameter("n");
+    String queryParam = request.getParameter("doc");
 
         String selectionParam = request.getParameter("selection");
         String occIDParam = request.getParameter("occurrence_id");
         
         String baseURL = String.format(
-        	"redirect:entityvote?auth=%s&n=%s&doc=%s",
-		    authParam, numParam, queryParam);
+            "redirect:entityvote?auth=%s&n=%s&doc=%s",
+            authParam, numParam, queryParam);
 
         if (selectionParam != null && occIDParam != null) {
             int occID = Integer.parseInt(occIDParam);
             
             Entity matchingEntity;
             if (selectionParam.equals(Vote.NONE_OF_THE_ABOVE)) {
-        	matchingEntity = Vote.NONE_OF_THE_ABOVE;
+            matchingEntity = Vote.NONE_OF_THE_ABOVE;
             } else {
-        	matchingEntity = manager.getEntityByAuthName(selectionParam);
+            matchingEntity = manager.getEntityByAuthName(selectionParam);
             }
             
             EntityOccurrence matchingOccurrence = (EntityOccurrence)
@@ -50,7 +50,7 @@ public class RecordEntityVoteController implements Controller {
             voteDAO.endTransaction();
             
             return new ModelAndView(
-        	    baseURL + String.format("&voted=%s", selectionParam));
+                baseURL + String.format("&voted=%s", selectionParam));
         } else {
             return new ModelAndView(baseURL);
         }

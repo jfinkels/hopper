@@ -10,14 +10,14 @@ public abstract class AbstractDateParser implements DateParser {
     public abstract DateRange parseRange(String rangeString);
 
     public Object getParameter(String key) {
-	return parameters.get(key);
+    return parameters.get(key);
     }
 
     public void setParameter(String key, Object value) {
-	parameters.put(key, value);
+    parameters.put(key, value);
     }
 
     public boolean hasParameter(String key) {
-	return parameters.containsKey(key);
+    return parameters.containsKey(key);
     }
 }

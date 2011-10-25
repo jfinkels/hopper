@@ -25,7 +25,7 @@ import perseus.util.StringUtil;
  * the source of the form.
  */
 public class Parse implements Comparable<Parse> {
-	    
+        
     /**
      * Note that this does not correspond to the index of the morphcode,
      * only to each feature's relative position with respect to the others
@@ -34,45 +34,45 @@ public class Parse implements Comparable<Parse> {
      */
      
     private static String[] orderedFeatures = new String[] {
-	MorphCode.PREFIX,
-	MorphCode.POSSESSIVE,
-	MorphCode.DEFINITE,
-	MorphCode.PART_OF_SPEECH,
-	MorphCode.PERSON,
-	MorphCode.NUMBER,
-	MorphCode.TENSE,
-	MorphCode.MOOD,
-	MorphCode.VOICE,
-	MorphCode.GENDER,
-	MorphCode.CASE,
-	MorphCode.DEGREE,
-	MorphCode.DIALECT,
-	MorphCode.OTHER,
-	MorphCode.OBJ
+    MorphCode.PREFIX,
+    MorphCode.POSSESSIVE,
+    MorphCode.DEFINITE,
+    MorphCode.PART_OF_SPEECH,
+    MorphCode.PERSON,
+    MorphCode.NUMBER,
+    MorphCode.TENSE,
+    MorphCode.MOOD,
+    MorphCode.VOICE,
+    MorphCode.GENDER,
+    MorphCode.CASE,
+    MorphCode.DEGREE,
+    MorphCode.DIALECT,
+    MorphCode.OTHER,
+    MorphCode.OBJ
     };
     
     private static Map<String,Integer> featureOrder =
-	new HashMap<String,Integer>();
+    new HashMap<String,Integer>();
     
     static {
-	for (int i = 0; i < orderedFeatures.length; i++) {
-	    featureOrder.put(orderedFeatures[i], i);
-	}
+    for (int i = 0; i < orderedFeatures.length; i++) {
+        featureOrder.put(orderedFeatures[i], i);
+    }
     }
     
     private static Comparator<String> featureOrderComparator =
-	new Comparator<String>() {
-	
-	public int compare(String a, String b) {
-	    if (!(featureOrder.containsKey(a))) {
-		throw new IllegalArgumentException("Unknown feature " + a);
-	    }
-	    if (!(featureOrder.containsKey(b))) {
-		throw new IllegalArgumentException("Unknown feature " + b);
-	    }
-	    
-	    return featureOrder.get(a).compareTo(featureOrder.get(b));
-	}
+    new Comparator<String>() {
+    
+    public int compare(String a, String b) {
+        if (!(featureOrder.containsKey(a))) {
+        throw new IllegalArgumentException("Unknown feature " + a);
+        }
+        if (!(featureOrder.containsKey(b))) {
+        throw new IllegalArgumentException("Unknown feature " + b);
+        }
+        
+        return featureOrder.get(a).compareTo(featureOrder.get(b));
+    }
     };
     
     /** The form represented by this parse */
@@ -96,7 +96,7 @@ public class Parse implements Comparable<Parse> {
     
     /** A hash representing this parse's morphological features */
     private Map<String,String> features =
-	new TreeMap<String,String>(featureOrderComparator);
+    new TreeMap<String,String>(featureOrderComparator);
     
     public Parse() {
     }
@@ -106,18 +106,18 @@ public class Parse implements Comparable<Parse> {
      * @param f the form 
      */
     public Parse (String lc, String f) {
-	/*
-	languageCode = lc;
-	*/
-	form = f;
+    /*
+    languageCode = lc;
+    */
+    form = f;
     }
 
     public Integer getId() {
-	return id;
+    return id;
     }
 
     public void setId(Integer i) {
-	id = i;
+    id = i;
     }
     
     /**
@@ -125,9 +125,9 @@ public class Parse implements Comparable<Parse> {
      * @param p Parse to copy
      */
     public Parse(Parse p) {
-    	this.form = p.getForm();
-    	this.lemma = p.getLemma();
-    	this.features.putAll(p.getFeatures());
+        this.form = p.getForm();
+        this.lemma = p.getLemma();
+        this.features.putAll(p.getFeatures());
     }
     
     /**
@@ -139,7 +139,7 @@ public class Parse implements Comparable<Parse> {
      * @param languageCode the language of the word
      */
     public static Map<Lemma,List<Parse>> getParses(String word, String languageCode) {
-	return getParses(word, languageCode, false, false);
+    return getParses(word, languageCode, false, false);
     }
 
     /**
@@ -153,27 +153,27 @@ public class Parse implements Comparable<Parse> {
      * @param matchCase true if we should strictly match `word`'s case
      */
     public static Map<Lemma,List<Parse>> getParses(String word,
-	String languageCode, boolean ignoreAccents, boolean matchCase) {
+    String languageCode, boolean ignoreAccents, boolean matchCase) {
 
-	ParseDAO dao = new HibernateParseDAO();
-	Map<Lemma,List<Parse>> parses = new TreeMap<Lemma,List<Parse>>();
+    ParseDAO dao = new HibernateParseDAO();
+    Map<Lemma,List<Parse>> parses = new TreeMap<Lemma,List<Parse>>();
 
-	List<Parse> parsesFound =
-	    dao.getByForm(word, languageCode, ignoreAccents, matchCase);
-	for (Parse parse : parsesFound) {
-	    Lemma lemma = parse.getLemma();
+    List<Parse> parsesFound =
+        dao.getByForm(word, languageCode, ignoreAccents, matchCase);
+    for (Parse parse : parsesFound) {
+        Lemma lemma = parse.getLemma();
 
-	    List<Parse> parsesWithLemma;
-	    if (parses.containsKey(lemma)) {
-		parsesWithLemma = parses.get(lemma);
-	    } else {
-		parsesWithLemma = new ArrayList<Parse>();
-		parses.put(lemma, parsesWithLemma);
-	    }
-	    parsesWithLemma.add(parse);
-	}
+        List<Parse> parsesWithLemma;
+        if (parses.containsKey(lemma)) {
+        parsesWithLemma = parses.get(lemma);
+        } else {
+        parsesWithLemma = new ArrayList<Parse>();
+        parses.put(lemma, parsesWithLemma);
+        }
+        parsesWithLemma.add(parse);
+    }
 
-	return parses;
+    return parses;
     }
     
     /**
@@ -188,31 +188,31 @@ public class Parse implements Comparable<Parse> {
      * @deprecated not used
      */
     public static String getXMLParses(String word, String languageCode) {
-	List<Parse> parses = getFlatParses(word, languageCode);
-	StringBuffer output = new StringBuffer();
-	
-	Set<Lemma> uniqueLemmas = new HashSet<Lemma>();
-	
-	// We'll output (1) the list of matching parses, and (2) the lemmas
-	// referenced by those parses. This is a little clunky, but we want
-	// to leave the current parse XML output--which is used by at least
-	// one third party--as is.
-	output.append("<parseResults>\n");
-	output.append("<analysis>\n");
-	for (Parse parse : parses) {
-	    output.append(parse.toXML());
-	    //uniqueLemmas.add(parse.getLemma());
-	}
-	output.append("</analysis>\n");
-	
-	output.append("<lemmata>\n");
-	for (Lemma lemma : uniqueLemmas) {
-	    output.append(lemma.toXML());
-	}
-	output.append("</lemmata>\n");
-	output.append("</parseResults>\n");
-	
-	return output.toString();
+    List<Parse> parses = getFlatParses(word, languageCode);
+    StringBuffer output = new StringBuffer();
+    
+    Set<Lemma> uniqueLemmas = new HashSet<Lemma>();
+    
+    // We'll output (1) the list of matching parses, and (2) the lemmas
+    // referenced by those parses. This is a little clunky, but we want
+    // to leave the current parse XML output--which is used by at least
+    // one third party--as is.
+    output.append("<parseResults>\n");
+    output.append("<analysis>\n");
+    for (Parse parse : parses) {
+        output.append(parse.toXML());
+        //uniqueLemmas.add(parse.getLemma());
+    }
+    output.append("</analysis>\n");
+    
+    output.append("<lemmata>\n");
+    for (Lemma lemma : uniqueLemmas) {
+        output.append(lemma.toXML());
+    }
+    output.append("</lemmata>\n");
+    output.append("</parseResults>\n");
+    
+    return output.toString();
     }
     
     /**
@@ -224,14 +224,14 @@ public class Parse implements Comparable<Parse> {
      * @return a list of parses for the specified word
      */
     public static List<Parse> getFlatParses(String word, String languageCode) {
-	List<Parse> output = new ArrayList<Parse>();
-	
-	Map<Lemma,List<Parse>> parses = getParses(word, languageCode, true, false);
-	for (List<Parse> parseList : parses.values()) {
-	    output.addAll(parseList);
-	}
-	
-	return output;
+    List<Parse> output = new ArrayList<Parse>();
+    
+    Map<Lemma,List<Parse>> parses = getParses(word, languageCode, true, false);
+    for (List<Parse> parseList : parses.values()) {
+        output.addAll(parseList);
+    }
+    
+    return output;
     }
     
     /**
@@ -240,15 +240,15 @@ public class Parse implements Comparable<Parse> {
      * @param f the morphological code as it appears in the database
      */
     public void setMorphCode(String f) {
-	morphCode = f;
-	buildFeatures();
+    morphCode = f;
+    buildFeatures();
     }
 
     private void buildFeatures() {
-	// use putAll() instead of = to avoid clobbering dialect/misc features
-	features.putAll(
-	    MorphCode.getFeatures(morphCode,
-		    Language.forCode(getLemma().getLanguageCode())));
+    // use putAll() instead of = to avoid clobbering dialect/misc features
+    features.putAll(
+        MorphCode.getFeatures(morphCode,
+            Language.forCode(getLemma().getLanguageCode())));
     }
 
     /**
@@ -258,11 +258,11 @@ public class Parse implements Comparable<Parse> {
      */
     public void setFeatures(String morphCode) {
     features = new TreeMap<String, String>(featureOrderComparator);
-	setMorphCode(morphCode);
+    setMorphCode(morphCode);
     }
 
     public void setFeatures(Map<String,String> m) {
-	features = m;
+    features = m;
     }
     
     /**
@@ -273,7 +273,7 @@ public class Parse implements Comparable<Parse> {
      * @param value the value of this feature
      */
     public void setFeature(String key, String value) {
-	features.put(key, value);
+    features.put(key, value);
     }
     
     /**
@@ -284,9 +284,9 @@ public class Parse implements Comparable<Parse> {
      * @return true if this parse has the morph feature of key
      */
     public boolean hasFeature(String key) {
-	if (features.isEmpty()) buildFeatures();
+    if (features.isEmpty()) buildFeatures();
 
-	return features.containsKey(key);
+    return features.containsKey(key);
     }
     
     /**
@@ -296,16 +296,16 @@ public class Parse implements Comparable<Parse> {
      * @return the value of this feature
      */
     public String getFeature(String key) {
-	if (features.isEmpty()) buildFeatures();
+    if (features.isEmpty()) buildFeatures();
 
-	if (! features.containsKey(key)) {
-	    return " ";
-	}
-	return (String) features.get(key);
+    if (! features.containsKey(key)) {
+        return " ";
+    }
+    return (String) features.get(key);
     }
     
     public Map<String, String> getFeatures() {
-    	return features;
+        return features;
     }
     
     /**
@@ -315,33 +315,33 @@ public class Parse implements Comparable<Parse> {
      */
     public String getCode() { return getMorphCode(); }
     public String getMorphCode() {
-	if (features.isEmpty()) buildFeatures();
-	
-	if (lemma != null && !features.isEmpty()) {
-	    morphCode = MorphCode.getCode(
-		    features, Language.forCode(getLanguageCode()));
-	}
+    if (features.isEmpty()) buildFeatures();
+    
+    if (lemma != null && !features.isEmpty()) {
+        morphCode = MorphCode.getCode(
+            features, Language.forCode(getLanguageCode()));
+    }
 
-	return morphCode;
+    return morphCode;
     }
 
     // "Dialect" and "miscellaneous features" may contain more than one value
     // each ("attic epic doric ionic", for example), and are not handled by
     // the MorphCodeGenerator routines, so expose them separately.
     public String getDialects() {
-	return features.get(MorphCode.DIALECT);
+    return features.get(MorphCode.DIALECT);
     }
 
     public void setDialects(String dialect) {
-	features.put(MorphCode.DIALECT, dialect);
+    features.put(MorphCode.DIALECT, dialect);
     }
 
     public String getMiscellaneousFeatures() {
-	return features.get(MorphCode.OTHER);
+    return features.get(MorphCode.OTHER);
     }
 
     public void setMiscellaneousFeatures(String mf) {
-	features.put(MorphCode.OTHER, mf);
+    features.put(MorphCode.OTHER, mf);
     }
     
     /**
@@ -350,16 +350,16 @@ public class Parse implements Comparable<Parse> {
      *  @return A String containing parse information for the given Parse object
      */
     public String toString () {
-	if (features.isEmpty()) buildFeatures();
-	List<String> output = new ArrayList<String>();
+    if (features.isEmpty()) buildFeatures();
+    List<String> output = new ArrayList<String>();
 
-	for (int i = 0; i < orderedFeatures.length; i++) {
-	    if (features.containsKey(orderedFeatures[i]) && features.get(orderedFeatures[i]) != null) {
-		output.add(features.get(orderedFeatures[i]));
-	    }
-	}
-	
-	return StringUtil.join(output, " ");
+    for (int i = 0; i < orderedFeatures.length; i++) {
+        if (features.containsKey(orderedFeatures[i]) && features.get(orderedFeatures[i]) != null) {
+        output.add(features.get(orderedFeatures[i]));
+        }
+    }
+    
+    return StringUtil.join(output, " ");
     }
 
     /**
@@ -371,29 +371,29 @@ public class Parse implements Comparable<Parse> {
      *  Parse object.
      */
     public Element toXMLElement(DisplayPreferences dp) {
-	Renderer renderer = new Renderer(getLemma().getLanguageCode());
-	renderer.addLanguageTokenFilters(dp);
+    Renderer renderer = new Renderer(getLemma().getLanguageCode());
+    renderer.addLanguageTokenFilters(dp);
 
-	Element root = new Element("analysis")
-	    .addContent(
-		new Element("form")
-		    .setAttribute("lang", getLemma().getLanguageCode())
-		    .addContent(renderer.render(form)))
-	    .addContent(
-		new Element("lemma").addContent(renderer.render(lemma.getDisplayForm())))
-	    .addContent(
-		new Element("expandedForm").addContent(renderer.render(getExpandedForm())));
-	
-	for (String featureName : features.keySet()) {
-	    root.addContent(
-		new Element(featureName).addContent(features.get(featureName)));
-	}
-	
-	return root;
+    Element root = new Element("analysis")
+        .addContent(
+        new Element("form")
+            .setAttribute("lang", getLemma().getLanguageCode())
+            .addContent(renderer.render(form)))
+        .addContent(
+        new Element("lemma").addContent(renderer.render(lemma.getDisplayForm())))
+        .addContent(
+        new Element("expandedForm").addContent(renderer.render(getExpandedForm())));
+    
+    for (String featureName : features.keySet()) {
+        root.addContent(
+        new Element(featureName).addContent(features.get(featureName)));
+    }
+    
+    return root;
     }
 
     public String toXML(DisplayPreferences dp) {
-	return new XMLOutputter().outputString(toXMLElement(dp));
+    return new XMLOutputter().outputString(toXMLElement(dp));
     }
 
     /**
@@ -402,10 +402,10 @@ public class Parse implements Comparable<Parse> {
      *  @return An XML fragment containing parse information for the given Parse object
      */
     public String toXML() {
-    	DisplayPreferences dp = new DisplayPreferences();
-    	dp.put(DisplayPreferences.ARABIC_DISPLAY_KEY, "Buckwalter");
-    	dp.put(DisplayPreferences.GREEK_DISPLAY_KEY, "PerseusBetaCode");
-	return toXML(dp);
+        DisplayPreferences dp = new DisplayPreferences();
+        dp.put(DisplayPreferences.ARABIC_DISPLAY_KEY, "Buckwalter");
+        dp.put(DisplayPreferences.GREEK_DISPLAY_KEY, "PerseusBetaCode");
+    return toXML(dp);
     }
     
     /**
@@ -414,7 +414,7 @@ public class Parse implements Comparable<Parse> {
      * @param s the new form
      */
     public void setForm(String s) {
-	form = s;
+    form = s;
     }
     
     /**
@@ -423,11 +423,11 @@ public class Parse implements Comparable<Parse> {
      * @param s the value to set expandedForm to
      */
     public void setExpandedForm(String s) {
-	expandedForm = s;
+    expandedForm = s;
     }
 
     public void setBareForm(String bf) {
-	bareForm = bf;
+    bareForm = bf;
     }
     
     /**
@@ -436,9 +436,9 @@ public class Parse implements Comparable<Parse> {
      * @param s the value to set the lemma attribute to
      */
     public void setLemma(Lemma l) {
-	lemma = l;
+    lemma = l;
 
-	if (morphCode != null) buildFeatures();
+    if (morphCode != null) buildFeatures();
     }
     
     /**
@@ -448,7 +448,7 @@ public class Parse implements Comparable<Parse> {
      * @return the form represented by this Parse
      */
     public String getForm() {
-	return form;
+    return form;
     }
     
     /**
@@ -458,12 +458,12 @@ public class Parse implements Comparable<Parse> {
      */
     public String getOrth() { return getExpandedForm(); }
     public String getExpandedForm() {
-	if (expandedForm == null) return form;
-	return expandedForm;
+    if (expandedForm == null) return form;
+    return expandedForm;
     }
     
     public String getBareForm() {
-	return bareForm;
+    return bareForm;
     }
 
     /**
@@ -472,11 +472,11 @@ public class Parse implements Comparable<Parse> {
      * @return the lemma for this object instance
      */
     public Lemma getLemma() {
-	return lemma;
+    return lemma;
     }
 
     public String getLanguageCode() {
-	return lemma == null ? null : getLemma().getLanguageCode();
+    return lemma == null ? null : getLemma().getLanguageCode();
     }
     
     /**
@@ -486,17 +486,17 @@ public class Parse implements Comparable<Parse> {
      * @return true if Parse object o equals this instance of Parse
      */
     public boolean equals (Object o) {
-	
-	if (!(o instanceof Parse)) {
-	    return false;
-	}
-	
-	Parse p = (Parse) o;
-	
-	return (getLanguageCode().equals(p.getLanguageCode())
-		&& getForm().equals(p.getForm())
-		&& getLemma().equals(p.getLemma())
-		&& getMorphCode().equals(p.getMorphCode()));
+    
+    if (!(o instanceof Parse)) {
+        return false;
+    }
+    
+    Parse p = (Parse) o;
+    
+    return (getLanguageCode().equals(p.getLanguageCode())
+        && getForm().equals(p.getForm())
+        && getLemma().equals(p.getLemma())
+        && getMorphCode().equals(p.getMorphCode()));
     }
     
     /**
@@ -506,29 +506,29 @@ public class Parse implements Comparable<Parse> {
      * @return -1,0,1 if this object is less than, equal to, or greater than the specified object
      */
     public int compareTo(Parse p) throws ClassCastException {
-	return getLemma().compareTo(p.getLemma());
+    return getLemma().compareTo(p.getLemma());
     }
 
     public int hashCode() {
-	
-	int result = 17;
-	
-	if (form != null) {
-	    result = 37*result + form.hashCode();
-	}
-	
-	if (expandedForm != null) {
-	    result = 37*result + expandedForm.hashCode();
-	}
-	
-	if (bareForm != null) {
-	    result = 37*result + bareForm.hashCode();
-	}
-	
-	if (morphCode != null) {
-	    result = 37*result + morphCode.hashCode();
-	}
-	
-	return result;
+    
+    int result = 17;
+    
+    if (form != null) {
+        result = 37*result + form.hashCode();
+    }
+    
+    if (expandedForm != null) {
+        result = 37*result + expandedForm.hashCode();
+    }
+    
+    if (bareForm != null) {
+        result = 37*result + bareForm.hashCode();
+    }
+    
+    if (morphCode != null) {
+        result = 37*result + morphCode.hashCode();
+    }
+    
+    return result;
     }
 }

@@ -20,22 +20,22 @@ public class Pager {
     private int pageRadius = 5;
     
     public Pager(int hits) {
-	totalHits = hits;
+    totalHits = hits;
     }
     
     public Pager(int hits, int size) {
-	this(hits);
-	pageSize = size;
+    this(hits);
+    pageSize = size;
     }
     
     public Pager(int hits, int size, int page) {
-	this(hits, size);
-	currentPage = page;
+    this(hits, size);
+    currentPage = page;
     }
     
     public Pager(int hits, int size, int page, int thresh) {
-	this(hits, size, page);
-	pageRadius = thresh;
+    this(hits, size, page);
+    pageRadius = thresh;
     }
     
     public int getCurrentPage() {

@@ -11,17 +11,17 @@ import perseus.ie.entity.EntityOccurrence;
 public class NamedEntityVotingTokenFilter extends TokenFilter {
     
     Set<EntityOccurrence> occurrences =
-	new TreeSet<EntityOccurrence>(EntityOccurrence.LOCATION_COMPARATOR);
+    new TreeSet<EntityOccurrence>(EntityOccurrence.LOCATION_COMPARATOR);
     
     public NamedEntityVotingTokenFilter(Collection<EntityOccurrence> occs) {
-	occurrences.addAll(occs);
+    occurrences.addAll(occs);
     }
     
     @Override
     public void process(Token token) {
-	// just here to fulfill the API
-	if (token.getType() != Token.Type.WORD) return;
-	if (occurrences.isEmpty()) return;
+    // just here to fulfill the API
+    if (token.getType() != Token.Type.WORD) return;
+    if (occurrences.isEmpty()) return;
     }
 
 }

@@ -17,10 +17,10 @@ public class FilterState {
      * Class constructor.
      */
     public FilterState (String s) {
-	input = new StringBuffer(s);
-	output = new StringBuffer(input.length());
+    input = new StringBuffer(s);
+    output = new StringBuffer(input.length());
 
-	currentToken = null;
+    currentToken = null;
     }
 
     /**
@@ -29,7 +29,7 @@ public class FilterState {
      * @return true if more text to process
      */
     public boolean hasMore() {
-	return input.length() > 0;
+    return input.length() > 0;
     }
 
     /**
@@ -39,13 +39,13 @@ public class FilterState {
      * @return true if the current token contains text
      */
     public boolean hasCurrentToken() {
-	if (currentToken == null) {
-	    return false;
-	}
-	if (currentToken.length() == 0) {
-	    return false;
-	}
-	return true;
+    if (currentToken == null) {
+        return false;
+    }
+    if (currentToken.length() == 0) {
+        return false;
+    }
+    return true;
     }
 
     /** 
@@ -55,8 +55,8 @@ public class FilterState {
      * The current token is cleared.
      */
     public void proceed() {
-	output.append(currentToken);
-	currentToken = null;
+    output.append(currentToken);
+    currentToken = null;
     }
 
     /**
@@ -68,15 +68,15 @@ public class FilterState {
      * @param remainder the rest of the token string not in s
      */
     public void proceed(String s, String remainder) {
-	output.append(s);
-	currentToken = remainder;
+    output.append(s);
+    currentToken = remainder;
     }
 
     /**
      * This method drops the current token.
      */
     public void ignore() {
-	currentToken = null;
+    currentToken = null;
     }
 
     /**
@@ -87,7 +87,7 @@ public class FilterState {
      * @param remainder the string to be set as the entire token
      */
     public void ignore(String remainder) {
-	currentToken = remainder;
+    currentToken = remainder;
     }
 
     /**
@@ -100,10 +100,10 @@ public class FilterState {
      * @param rightText right context for the token
      */
     public void link(String leftText, String rightText) {
-	output.append(leftText)
-	    .append(currentToken)
-	    .append(rightText);
-	currentToken = null;
+    output.append(leftText)
+        .append(currentToken)
+        .append(rightText);
+    currentToken = null;
     }
 
     /**
@@ -117,11 +117,11 @@ public class FilterState {
      * @param remainder whatever is left of the current token
      */
     public void link(String leftText, String linkText,
-		     String rightText, String remainder) {
-	output.append(leftText)
-	    .append(linkText)
-	    .append(rightText);
-	currentToken = remainder;
+             String rightText, String remainder) {
+    output.append(leftText)
+        .append(linkText)
+        .append(rightText);
+    currentToken = remainder;
     }
 
 
@@ -131,7 +131,7 @@ public class FilterState {
      * @return currentToken
      */
     public String getCurrentToken() {
-	return currentToken;
+    return currentToken;
     }
 
     /**
@@ -141,14 +141,14 @@ public class FilterState {
      * @return true if the input matches the pattern
      */
     public boolean matches(Pattern pattern) {
-	Matcher matcher = pattern.matcher(input);
+    Matcher matcher = pattern.matcher(input);
 
-	if (matcher.lookingAt()) {
-	    setCurrentToken(matcher.group(), matcher.end());
+    if (matcher.lookingAt()) {
+        setCurrentToken(matcher.group(), matcher.end());
 
-	    return true;
-	}
-	return false;
+        return true;
+    }
+    return false;
     }
 
     /**
@@ -158,17 +158,17 @@ public class FilterState {
      * @return true if the current token matches the pattern
     */
     public boolean matchesCurrentToken(Pattern pattern) {
-	Matcher matcher = pattern.matcher(currentToken);
+    Matcher matcher = pattern.matcher(currentToken);
 
-	if (matcher.lookingAt()) {
-	    setCurrentToken(matcher.group(), matcher.end());
+    if (matcher.lookingAt()) {
+        setCurrentToken(matcher.group(), matcher.end());
 
-	    return true;
-	}
-	return false;
+        return true;
+    }
+    return false;
     }
 
-	
+    
 
     /**
      * This method is called by the tokenizer to advance the
@@ -182,13 +182,13 @@ public class FilterState {
      * @param end
      */
     public void setCurrentToken(String s, int end) {
-	// Make sure the current token is flushed to output
-	if (currentToken != null) {
-	    proceed();
-	}
-	currentToken = s;
+    // Make sure the current token is flushed to output
+    if (currentToken != null) {
+        proceed();
+    }
+    currentToken = s;
 
-	input.delete(0, end);
+    input.delete(0, end);
     }
 
     /**
@@ -197,7 +197,7 @@ public class FilterState {
      * @return the value of output
     */
     public String toString() {
-	return output.toString();
+    return output.toString();
     }
     
 }

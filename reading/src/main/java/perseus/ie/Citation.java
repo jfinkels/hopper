@@ -62,13 +62,13 @@ public class Citation {
     /** Keep track of all the link-types we know. */
     private static Set<String> knownLinkTypes = new HashSet<String>();
     static {
-	knownLinkTypes.add(REF_CITATION);
-	knownLinkTypes.add(REF_COMMENTARY);
-	knownLinkTypes.add(REF_DEFAULT);
-	knownLinkTypes.add(REF_NOTES);
-	knownLinkTypes.add(REF_LEXICON);
-	knownLinkTypes.add(REF_INDEX);
-	knownLinkTypes.add(REF_SPECIFIC_LEXICON);
+    knownLinkTypes.add(REF_CITATION);
+    knownLinkTypes.add(REF_COMMENTARY);
+    knownLinkTypes.add(REF_DEFAULT);
+    knownLinkTypes.add(REF_NOTES);
+    knownLinkTypes.add(REF_LEXICON);
+    knownLinkTypes.add(REF_INDEX);
+    knownLinkTypes.add(REF_SPECIFIC_LEXICON);
     }
 
     /** The query that spawned the citation. */
@@ -111,23 +111,23 @@ public class Citation {
      * @param ltype the link type
      */
     public Citation(Query src, Query dest, String ltype) {
-	source = src;
-	destination = dest;
-	linkType = ltype;
+    source = src;
+    destination = dest;
+    linkType = ltype;
     }
 
     public Query getSource() { return source; }
     public Query getDestination() { return destination; }
     public Query getResolvedDestination() {
-	if (resolvedDestination == null) {
-	    try {
-		resolvedDestination =
-		    destination.getChunk().getQuery();
-	    } catch (InvalidQueryException iqe) {
-		logger.warn("Unable to resolve destination in citation " + this);
-	    }
-	}
-	return resolvedDestination;
+    if (resolvedDestination == null) {
+        try {
+        resolvedDestination =
+            destination.getChunk().getQuery();
+        } catch (InvalidQueryException iqe) {
+        logger.warn("Unable to resolve destination in citation " + this);
+        }
+    }
+    return resolvedDestination;
     }
 
     public String getLinkType() { return linkType; }
@@ -136,28 +136,28 @@ public class Citation {
     public void setSource(Query src) { source = src; }
     public void setDestination(Query dest) { destination = dest; }
     public void setResolvedDestination(Query rDest) {
-	resolvedDestination = rDest;
+    resolvedDestination = rDest;
     }
 
     public void setLinkType(String lnkTyp) {
-	if (!knownLinkTypes.contains(lnkTyp)) {
-	    throw new IllegalArgumentException(
-		    "Unrecognized link type: " + lnkTyp);
-	}
-	linkType = lnkTyp;
+    if (!knownLinkTypes.contains(lnkTyp)) {
+        throw new IllegalArgumentException(
+            "Unrecognized link type: " + lnkTyp);
+    }
+    linkType = lnkTyp;
     }
     public void setSourceHeader(String sh) { sourceHeader = sh; }
 
     public String toString() {
-	StringBuffer buf = new StringBuffer();
+    StringBuffer buf = new StringBuffer();
 
-	buf.append(source).append(" -> ").append(destination);
-	if (resolvedDestination != null) {
-	    buf.append(" [").append(resolvedDestination).append("]");
-	}
-	buf.append(" {").append(linkType).append("}");
+    buf.append(source).append(" -> ").append(destination);
+    if (resolvedDestination != null) {
+        buf.append(" [").append(resolvedDestination).append("]");
+    }
+    buf.append(" {").append(linkType).append("}");
 
-	return buf.toString();
+    return buf.toString();
     }
 
     /**
@@ -166,37 +166,37 @@ public class Citation {
      * queries (title, creator, etc and so on).
      */
     public String toXML() {
-	StringBuffer xml = new StringBuffer();
+    StringBuffer xml = new StringBuffer();
 
-	xml.append("<citation>");
+    xml.append("<citation>");
 
-	xml.append("<source>");
-	xml.append(queryToXML(source));
-	if (sourceHeader != null) {
-	    xml.append("<header>")
-		.append(sourceHeader)
-		.append("</header>");
-	}
-	xml.append("</source>\n");
+    xml.append("<source>");
+    xml.append(queryToXML(source));
+    if (sourceHeader != null) {
+        xml.append("<header>")
+        .append(sourceHeader)
+        .append("</header>");
+    }
+    xml.append("</source>\n");
 
-	xml.append("<destination>");
-	xml.append(queryToXML(destination));
-	xml.append("<header>")
-	    .append(destination.getDisplaySubqueryCitation())
-	    .append("</header>");
-	xml.append("</destination>\n");
+    xml.append("<destination>");
+    xml.append(queryToXML(destination));
+    xml.append("<header>")
+        .append(destination.getDisplaySubqueryCitation())
+        .append("</header>");
+    xml.append("</destination>\n");
 
-	xml.append("<resolvedDestination>")
-	    .append(queryToXML(resolvedDestination))
-	    .append("</resolvedDestination>\n");
+    xml.append("<resolvedDestination>")
+        .append(queryToXML(resolvedDestination))
+        .append("</resolvedDestination>\n");
 
-	xml.append("<linkType>");
-	xml.append(linkType);
-	xml.append("</linkType>\n");
+    xml.append("<linkType>");
+    xml.append(linkType);
+    xml.append("</linkType>\n");
 
-	xml.append("</citation>\n");
+    xml.append("</citation>\n");
 
-	return xml.toString();
+    return xml.toString();
     }
 
     /**
@@ -204,29 +204,29 @@ public class Citation {
      */
     private String queryToXML(Query query) {
 
-	StringBuffer xml = new StringBuffer();
-	Metadata metadata = query.getMetadata();
+    StringBuffer xml = new StringBuffer();
+    Metadata metadata = query.getMetadata();
 
-	if (metadata.has(Metadata.ALTERNATIVE_TITLE_KEY)) {
-	    xml.append("<title>");
-	    xml.append(metadata.get(Metadata.ALTERNATIVE_TITLE_KEY));
-	    xml.append("</title>");
-	} else {
-	    xml.append("<title>");
-	    xml.append(metadata.get(Metadata.TITLE_KEY));
-	    xml.append("</title>");
+    if (metadata.has(Metadata.ALTERNATIVE_TITLE_KEY)) {
+        xml.append("<title>");
+        xml.append(metadata.get(Metadata.ALTERNATIVE_TITLE_KEY));
+        xml.append("</title>");
+    } else {
+        xml.append("<title>");
+        xml.append(metadata.get(Metadata.TITLE_KEY));
+        xml.append("</title>");
 
-	    if (metadata.has(Metadata.CREATOR_KEY)) {
-		xml.append("<creator>");
-		xml.append(metadata.get(Metadata.CREATOR_KEY));
-		xml.append("</creator>");
-	    }
-	}
+        if (metadata.has(Metadata.CREATOR_KEY)) {
+        xml.append("<creator>");
+        xml.append(metadata.get(Metadata.CREATOR_KEY));
+        xml.append("</creator>");
+        }
+    }
 
-	xml.append("<query>");
-	xml.append(query);
-	xml.append("</query>");
+    xml.append("<query>");
+    xml.append(query);
+    xml.append("</query>");
 
-	return xml.toString();
+    return xml.toString();
     }
 }

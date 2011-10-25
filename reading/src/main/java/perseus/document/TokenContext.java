@@ -18,15 +18,15 @@ public class TokenContext {
     int occurrence;
 
     public TokenContext(Query q, int occ) {
-	query = q;
-	occurrence = occ;
+    query = q;
+    occurrence = occ;
     }
 
     public Query getQuery() {
-	return query;
+    return query;
     }
 
     public int getOccurrence() {
-	return occurrence;
+    return occurrence;
     }
 }

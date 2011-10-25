@@ -12,7 +12,7 @@ public class AccentFilter extends TokenFilter {
     private static final LanguageAdapter adapter = new GreekAdapter();
 
     public AccentFilter(TokenStream in) {
-	super(in);
+    super(in);
     }
     
     public Token next() throws java.io.IOException {
@@ -24,29 +24,29 @@ public class AccentFilter extends TokenFilter {
         String newText = adapter.getLookupForm(oldText);
 
         /*
-	boolean changed = false;
+    boolean changed = false;
 
-	String text = t.termText();
-	Matcher m = graveAccentPattern.matcher(text);
-	if (m.find()) {
-	    text = m.replaceAll("/");
-	    changed = true;
-	}
+    String text = t.termText();
+    Matcher m = graveAccentPattern.matcher(text);
+    if (m.find()) {
+        text = m.replaceAll("/");
+        changed = true;
+    }
 
-	m = secondaryAccentPattern.matcher(text);
-	if (m.find()) {
-	    text = m.replaceFirst(m.group());
-	    changed = true;
-	}
-	*/
+    m = secondaryAccentPattern.matcher(text);
+    if (m.find()) {
+        text = m.replaceFirst(m.group());
+        changed = true;
+    }
+    */
 
-	if (!oldText.equals(newText)) {
-	    t = new Token(newText,
-			  t.startOffset(),
-			  t.endOffset(),
-			  t.type());
-	}
-	
+    if (!oldText.equals(newText)) {
+        t = new Token(newText,
+              t.startOffset(),
+              t.endOffset(),
+              t.type());
+    }
+    
         return t;
     }
 }

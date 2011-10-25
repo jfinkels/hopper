@@ -25,241 +25,241 @@ public class OldEnglishCodeGenerator implements MorphCodeGenerator {
      * appears in the database
     */
     public String getCode(Map<String, String> features) {
-	StringBuffer code = new StringBuffer();
+    StringBuffer code = new StringBuffer();
 
-	// part of speech
-	if (! features.containsKey(POSITIVE)) {
-	    code.append("-");
-	}
-	else {
-	    String value = features.get(POSITIVE);
-	    if (value.equals(NOUN)) {
-		code.append("n");
-	    }
-	    else if (value.equals(VERB)) {
-		code.append("v");
-	    }
-	    else if (value.equals(ADJECTIVE)) {
-		code.append("a");
-	    }
-	    else if (value.equals(ADVERB)) {
-		code.append("d");
-	    }
-	    else if (value.equals(CONJUNCTION)) {
-		code.append("c");
-	    }
-	    else if (value.equals(PREPOSITION)) {
-		code.append("r");
-	    }
-	    else if (value.equals(INTERJECTION)) {
-		code.append("i");
-	    }
-	    else if (value.equals(EXCLAMATION)) {
-		code.append("e");
-	    }
-	    else if (value.equals(PARTICIPLE)) {
-		code.append("p");
-	    }
-	    else if (value.equals(UNSPECIFIED)) {
-		code.append("-");
-	    }
-	    else {
-		logger.warn("Unrecognized pos code: " + value);
-		code.append("!");
-	    }
-	}
+    // part of speech
+    if (! features.containsKey(POSITIVE)) {
+        code.append("-");
+    }
+    else {
+        String value = features.get(POSITIVE);
+        if (value.equals(NOUN)) {
+        code.append("n");
+        }
+        else if (value.equals(VERB)) {
+        code.append("v");
+        }
+        else if (value.equals(ADJECTIVE)) {
+        code.append("a");
+        }
+        else if (value.equals(ADVERB)) {
+        code.append("d");
+        }
+        else if (value.equals(CONJUNCTION)) {
+        code.append("c");
+        }
+        else if (value.equals(PREPOSITION)) {
+        code.append("r");
+        }
+        else if (value.equals(INTERJECTION)) {
+        code.append("i");
+        }
+        else if (value.equals(EXCLAMATION)) {
+        code.append("e");
+        }
+        else if (value.equals(PARTICIPLE)) {
+        code.append("p");
+        }
+        else if (value.equals(UNSPECIFIED)) {
+        code.append("-");
+        }
+        else {
+        logger.warn("Unrecognized pos code: " + value);
+        code.append("!");
+        }
+    }
 
-	// person
-	if (! features.containsKey(PERSON)) {
-	    code.append("-");
-	}
-	else {
-	    String value = features.get(PERSON);
-	    if (value.equals(FIRST_PERSON)) {
-		code.append("1");
-	    }
-	    else if (value.equals(SECOND_PERSON)) {
-		code.append("2");
-	    }
-	    else if (value.equals(THIRD_PERSON)) {
-		code.append("3");
-	    }
-	    else {
-		logger.warn("Unrecognized person code: " + value);
-		code.append("!");
-	    }
-	}
+    // person
+    if (! features.containsKey(PERSON)) {
+        code.append("-");
+    }
+    else {
+        String value = features.get(PERSON);
+        if (value.equals(FIRST_PERSON)) {
+        code.append("1");
+        }
+        else if (value.equals(SECOND_PERSON)) {
+        code.append("2");
+        }
+        else if (value.equals(THIRD_PERSON)) {
+        code.append("3");
+        }
+        else {
+        logger.warn("Unrecognized person code: " + value);
+        code.append("!");
+        }
+    }
 
-	// number
-	if (! features.containsKey(NUMBER)) {
-	    code.append("-");
-	}
-	else {
-	    String value = features.get(NUMBER);
-	    if (value.equals(SINGULAR)) {
-		code.append("s");
-	    }
-	    else if (value.equals(PLURAL)) {
-		code.append("p");
-	    }
-	    else {
-		logger.warn("Unrecognized number code: " + value);
-		code.append("!");
-	    }
-	}
+    // number
+    if (! features.containsKey(NUMBER)) {
+        code.append("-");
+    }
+    else {
+        String value = features.get(NUMBER);
+        if (value.equals(SINGULAR)) {
+        code.append("s");
+        }
+        else if (value.equals(PLURAL)) {
+        code.append("p");
+        }
+        else {
+        logger.warn("Unrecognized number code: " + value);
+        code.append("!");
+        }
+    }
 
-	// tense
-	if (! features.containsKey(TENSE)) {
-	    code.append("-");
-	}
-	else {
-	    String value = features.get(TENSE);
-	    if (value.equals(PRESENT)) {
-		code.append("p");
-	    }
-	    else if (value.equals(PAST_ABSOLUTE)) {
-		code.append("r");
-	    }
-	    else if (value.equals(PLUPERFECT)) {
-		code.append("l");
-	    }
-	    else if (value.equals(FUTURE_PERFECT)) {
-		code.append("t");
-	    }
-	    else if (value.equals(FUTURE)) {
-		code.append("f");
-	    }
-	    else {
-		logger.warn("Unrecognized tense code: " + value);
-		code.append("!");
-	    }
-	}
+    // tense
+    if (! features.containsKey(TENSE)) {
+        code.append("-");
+    }
+    else {
+        String value = features.get(TENSE);
+        if (value.equals(PRESENT)) {
+        code.append("p");
+        }
+        else if (value.equals(PAST_ABSOLUTE)) {
+        code.append("r");
+        }
+        else if (value.equals(PLUPERFECT)) {
+        code.append("l");
+        }
+        else if (value.equals(FUTURE_PERFECT)) {
+        code.append("t");
+        }
+        else if (value.equals(FUTURE)) {
+        code.append("f");
+        }
+        else {
+        logger.warn("Unrecognized tense code: " + value);
+        code.append("!");
+        }
+    }
 
-	// mood
-	if (! features.containsKey(MOOD)) {
-	    code.append("-");
-	}
-	else {
-	    String value = features.get(MOOD);
-	    if (value.equals("indic")) {
-		code.append("i");
-	    }
-	    else if (value.equals(SUBJUNCTIVE)) {
-		code.append("s");
-	    }
-	    else if (value.equals(INFINITIVE)) {
-		code.append("n");
-	    }
-	    else if (value.equals(IMPERATIVE)) {
-		code.append("m");
-	    }
-	    else if (value.equals(PARTICIPLE)) {
-		code.append("p");
-	    }
-	    else {
-		logger.warn("Unrecognized mood code: " + value);
-		code.append("!");
-	    }
-	}
+    // mood
+    if (! features.containsKey(MOOD)) {
+        code.append("-");
+    }
+    else {
+        String value = features.get(MOOD);
+        if (value.equals("indic")) {
+        code.append("i");
+        }
+        else if (value.equals(SUBJUNCTIVE)) {
+        code.append("s");
+        }
+        else if (value.equals(INFINITIVE)) {
+        code.append("n");
+        }
+        else if (value.equals(IMPERATIVE)) {
+        code.append("m");
+        }
+        else if (value.equals(PARTICIPLE)) {
+        code.append("p");
+        }
+        else {
+        logger.warn("Unrecognized mood code: " + value);
+        code.append("!");
+        }
+    }
 
-	// voice
-	if (! features.containsKey(VOICE)) {
-	    code.append("-");
-	}
-	else {
-	    String value = features.get(VOICE);
-	    if (value.equals(ACTIVE)) {
-		code.append("a");
-	    }
-	    else if (value.equals(PASSIVE)) {
-		code.append("p");
-	    }
-	    else if (value.equals(MEDIO_PASSIVE)) {
-		code.append("e");
-	    }
-	    else {
-		logger.warn("Unrecognized voice code: " + value);
-		code.append("!");
-	    }
-	}
+    // voice
+    if (! features.containsKey(VOICE)) {
+        code.append("-");
+    }
+    else {
+        String value = features.get(VOICE);
+        if (value.equals(ACTIVE)) {
+        code.append("a");
+        }
+        else if (value.equals(PASSIVE)) {
+        code.append("p");
+        }
+        else if (value.equals(MEDIO_PASSIVE)) {
+        code.append("e");
+        }
+        else {
+        logger.warn("Unrecognized voice code: " + value);
+        code.append("!");
+        }
+    }
 
-	// gender
-	if (! features.containsKey(GENDER)) {
-	    code.append("-");
-	}
-	else {
-	    String value = features.get(GENDER);
-	    if (value.equals(MASCULINE)) {
-		code.append("m");
-	    }
-	    else if (value.equals(FEMININE)) {
-		code.append("f");
-	    }
-	    else if (value.equals(NEUTER)) {
-		code.append("n");
-	    }
-	    else {
-		logger.warn("Unrecognized gender code: [" + value + "]");
-		code.append("!");
-	    }
-	}
+    // gender
+    if (! features.containsKey(GENDER)) {
+        code.append("-");
+    }
+    else {
+        String value = features.get(GENDER);
+        if (value.equals(MASCULINE)) {
+        code.append("m");
+        }
+        else if (value.equals(FEMININE)) {
+        code.append("f");
+        }
+        else if (value.equals(NEUTER)) {
+        code.append("n");
+        }
+        else {
+        logger.warn("Unrecognized gender code: [" + value + "]");
+        code.append("!");
+        }
+    }
 
-	// case
-	if (! features.containsKey(CASE)) {
-	    code.append("-");
-	}
-	else {
-	    String value = features.get(CASE);
-	    if (value.equals(NOMINATIVE)) {
-		code.append("n");
-	    }
-	    else if (value.equals(GENITIVE)) {
-		code.append("g");
-	    }
-	    else if (value.equals(DATIVE)) {
-		code.append("d");
-	    }
-	    else if (value.equals(ACCUSATIVE)) {
-		code.append("a");
-	    }
-	    else if (value.equals(ABLATIVE)) {
-		code.append("b");
-	    }
-	    else if (value.equals(VOCATIVE)) {
-		code.append("v");
-	    }
-	    else if (value.equals(LOCATIVE)) {
-		code.append("l");
-	    }
-	    else if (value.equals(INSTRUMENTAL)) {
-		code.append("i");
-	    }
-	    else {
-		logger.warn("Unrecognized case code: " + value);
-		code.append("!");
-	    }
-	}
+    // case
+    if (! features.containsKey(CASE)) {
+        code.append("-");
+    }
+    else {
+        String value = features.get(CASE);
+        if (value.equals(NOMINATIVE)) {
+        code.append("n");
+        }
+        else if (value.equals(GENITIVE)) {
+        code.append("g");
+        }
+        else if (value.equals(DATIVE)) {
+        code.append("d");
+        }
+        else if (value.equals(ACCUSATIVE)) {
+        code.append("a");
+        }
+        else if (value.equals(ABLATIVE)) {
+        code.append("b");
+        }
+        else if (value.equals(VOCATIVE)) {
+        code.append("v");
+        }
+        else if (value.equals(LOCATIVE)) {
+        code.append("l");
+        }
+        else if (value.equals(INSTRUMENTAL)) {
+        code.append("i");
+        }
+        else {
+        logger.warn("Unrecognized case code: " + value);
+        code.append("!");
+        }
+    }
 
-	// degree
-	if (! features.containsKey(DEGREE)) {
-	    code.append("-");
-	}
-	else {
-	    String value = features.get(DEGREE);
-	    if (value.equals(COMPARATIVE)) {
-		code.append("c");
-	    }
-	    else if (value.equals(SUPERLATIVE)) {
-		code.append("s");
-	    }
-	    else {
-		logger.warn("Unrecognized degree code: " + value);
-		code.append("!");
-	    }
-	}
-	
+    // degree
+    if (! features.containsKey(DEGREE)) {
+        code.append("-");
+    }
+    else {
+        String value = features.get(DEGREE);
+        if (value.equals(COMPARATIVE)) {
+        code.append("c");
+        }
+        else if (value.equals(SUPERLATIVE)) {
+        code.append("s");
+        }
+        else {
+        logger.warn("Unrecognized degree code: " + value);
+        code.append("!");
+        }
+    }
+    
 
-	return code.toString();
+    return code.toString();
     }
 
     /**
@@ -433,6 +433,6 @@ public class OldEnglishCodeGenerator implements MorphCodeGenerator {
             features.put(DEGREE, SUPERLATIVE);
         }
         
-	return features;
+    return features;
     }
 }

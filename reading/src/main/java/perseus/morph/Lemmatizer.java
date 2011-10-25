@@ -24,8 +24,8 @@ import perseus.util.StringUtil;
  * for a given parse.
 */
 public class Lemmatizer {
-	
-	private static final Logger logger = Logger.getLogger(Lemmatizer.class);
+    
+    private static final Logger logger = Logger.getLogger(Lemmatizer.class);
 
     private static ParseDAO parseDAO = new HibernateParseDAO();
     
@@ -44,7 +44,7 @@ public class Lemmatizer {
     }
 
     public static List<Lemma> getLemmas(String word, String languageCode) {
-	return getLemmas(word, Language.forCode(languageCode));
+    return getLemmas(word, Language.forCode(languageCode));
     }
     
     /**
@@ -55,40 +55,40 @@ public class Lemmatizer {
      * @return a list of Lemma objects 
     */
     public static List<Lemma> getLemmas(String word, Language language) {
-	String lookupForm = language.getAdapter().getLookupForm(word);
-	return parseDAO.getLemmasByForm(lookupForm, language); 
+    String lookupForm = language.getAdapter().getLookupForm(word);
+    return parseDAO.getLemmasByForm(lookupForm, language); 
     }
 
     public static Set<String> getAllForms(String word, String languageCode) {
-	return getAllForms(word, Language.forCode(languageCode));
+    return getAllForms(word, Language.forCode(languageCode));
     }
 
     /**
      * Like getLemmas(), but returns all *forms* of lemmas that the given word
-	 * could belong to instead of actual Lemma objects.
+     * could belong to instead of actual Lemma objects.
      *
      * @param word the word to grab forms for
      * @param languageCode the language of the word
      * @return a set of forms
     */
     public static Set<String> getAllForms(String word, Language language) {
-	List<Lemma> lemmas = getLemmas(word, language);
-	Set<String> forms = new HashSet<String>();
-	
-	for (Lemma lemma : lemmas) {
-	    List<Parse> parses = parseDAO.getByLemma(lemma);
-	    for (Parse parse : parses) {
-		forms.add(parse.getForm());
-		HibernateUtil.getSession().evict(parse);
-	    }
-	}
-	
-	return getAllForms(lemmas);
+    List<Lemma> lemmas = getLemmas(word, language);
+    Set<String> forms = new HashSet<String>();
+    
+    for (Lemma lemma : lemmas) {
+        List<Parse> parses = parseDAO.getByLemma(lemma);
+        for (Parse parse : parses) {
+        forms.add(parse.getForm());
+        HibernateUtil.getSession().evict(parse);
+        }
+    }
+    
+    return getAllForms(lemmas);
     }
 
-	public static Set<String> getAllForms(Set<String> forms, Language language) {
-		return parseDAO.getAllForms(forms, language);
-	}
+    public static Set<String> getAllForms(Set<String> forms, Language language) {
+        return parseDAO.getAllForms(forms, language);
+    }
 
     /** 
      * This is a version of getLemmas that does not use a prepared statement.
@@ -101,89 +101,89 @@ public class Lemmatizer {
      * @deprecated
      */
     public static List getLemmasWithCruncher(String word, String languageCode) {
-	long startTime = System.currentTimeMillis();
+    long startTime = System.currentTimeMillis();
 
-	LanguageAdapter languageAdapter =
-	    LanguageAdapter.getLanguageAdapter(languageCode);
+    LanguageAdapter languageAdapter =
+        LanguageAdapter.getLanguageAdapter(languageCode);
 
-	word = languageAdapter.getLookupForm(word);
+    word = languageAdapter.getLookupForm(word);
 
-	List<Lemma> lemmas = new ArrayList<Lemma>();
+    List<Lemma> lemmas = new ArrayList<Lemma>();
 
-	ResultSet rs = null;
+    ResultSet rs = null;
         Connection con = null;
         SQLHandler sqlHandler = null;
 
         try {
             con = SQLHandler.getConnection();
 
-	    // First try to lemmatize the search term
-	    String sql = "SELECT l.* FROM word_parse wp, " +
-		"language_abbrev la, lemma l " + 
-		"WHERE wp.form = '" + StringUtil.sqlEscape(word) + "' " +
-		"AND la.abbrev='" + StringUtil.sqlEscape(languageCode) + "' " +
-		"AND la.lang_id = wp.lang_id AND wp.lemma_id = l.lemma_id";
+        // First try to lemmatize the search term
+        String sql = "SELECT l.* FROM word_parse wp, " +
+        "language_abbrev la, lemma l " + 
+        "WHERE wp.form = '" + StringUtil.sqlEscape(word) + "' " +
+        "AND la.abbrev='" + StringUtil.sqlEscape(languageCode) + "' " +
+        "AND la.lang_id = wp.lang_id AND wp.lemma_id = l.lemma_id";
 
             logger.debug(sql);
 
             sqlHandler = new SQLHandler(con);
             rs = sqlHandler.executeQuery(sql);
 
-	    while (rs.next()) {
-		// There is a bug such that unparsed forms get stuck into
-		// word_parse with a 0 lemma id. Don't add them.
+        while (rs.next()) {
+        // There is a bug such that unparsed forms get stuck into
+        // word_parse with a 0 lemma id. Don't add them.
 
-		int lemmaID = rs.getInt("lemma_id");
-		if (lemmaID == 0) {
-		    continue;
-		}
+        int lemmaID = rs.getInt("lemma_id");
+        if (lemmaID == 0) {
+            continue;
+        }
 
-		String lemma = rs.getString("lemma");
-		int sequenceNumber = rs.getInt("sequence_number");
-		String shortDefinition = rs.getString("short_def");
-		Lemma l = new Lemma(lemmaID, lemma, sequenceNumber,
-				    languageCode, shortDefinition);
+        String lemma = rs.getString("lemma");
+        int sequenceNumber = rs.getInt("sequence_number");
+        String shortDefinition = rs.getString("short_def");
+        Lemma l = new Lemma(lemmaID, lemma, sequenceNumber,
+                    languageCode, shortDefinition);
 
-		lemmas.add(l);
-	    }
-	    
-	    // For infrequent forms, the search term may be the dictionary
-	    // form, which may not be attested. If we have no lemmas, try
-	    // searching the lemma table directly.
+        lemmas.add(l);
+        }
+        
+        // For infrequent forms, the search term may be the dictionary
+        // form, which may not be attested. If we have no lemmas, try
+        // searching the lemma table directly.
 
-	    if (lemmas.size() == 0) {
-		sql = "SELECT l.* FROM lemma l, " +
-		    "language_abbrev la " + 
-		    "WHERE l.lemma = '" + StringUtil.sqlEscape(word) + "' " +
-		    "AND la.abbrev='" + StringUtil.sqlEscape(languageCode) + "' " +
-		    "AND la.lang_id = l.lang_id";
+        if (lemmas.size() == 0) {
+        sql = "SELECT l.* FROM lemma l, " +
+            "language_abbrev la " + 
+            "WHERE l.lemma = '" + StringUtil.sqlEscape(word) + "' " +
+            "AND la.abbrev='" + StringUtil.sqlEscape(languageCode) + "' " +
+            "AND la.lang_id = l.lang_id";
 
-		rs = sqlHandler.executeQuery(sql);
+        rs = sqlHandler.executeQuery(sql);
 
-		while (rs.next()) {
-		    int lemmaID = rs.getInt("lemma_id");
-		    String lemma = rs.getString("lemma");
-		    int sequenceNumber = rs.getInt("sequence_number");
-		    String shortDefinition = rs.getString("short_def");
-		    Lemma l = new Lemma(lemmaID, lemma, sequenceNumber,
-					languageCode, shortDefinition);
-		    
-		    lemmas.add(l);
-		}
-	    }
+        while (rs.next()) {
+            int lemmaID = rs.getInt("lemma_id");
+            String lemma = rs.getString("lemma");
+            int sequenceNumber = rs.getInt("sequence_number");
+            String shortDefinition = rs.getString("short_def");
+            Lemma l = new Lemma(lemmaID, lemma, sequenceNumber,
+                    languageCode, shortDefinition);
+            
+            lemmas.add(l);
+        }
+        }
 
-	    // Resort to a cruncher call.
+        // Resort to a cruncher call.
 
-	    /*
-	    if (lemmas.size() == 0) {
-		Cruncher cruncherWrapper = new Cruncher();
+        /*
+        if (lemmas.size() == 0) {
+        Cruncher cruncherWrapper = new Cruncher();
 
-		lemmas.addAll(cruncherWrapper.getLemmas(word, languageCode));
-	    }
-	    */
+        lemmas.addAll(cruncherWrapper.getLemmas(word, languageCode));
+        }
+        */
 
         } catch (SQLException e) {
-        	logger.error("Problem retrieving all forms for [" + word + "]", e);
+            logger.error("Problem retrieving all forms for [" + word + "]", e);
         } finally {
             try {
                 if (sqlHandler != null) {
@@ -198,8 +198,8 @@ public class Lemmatizer {
                 logger.fatal("Problem releasing connection", s);
             }
         }
-	
-	return lemmas;
+    
+    return lemmas;
     }
 
 
@@ -211,16 +211,16 @@ public class Lemmatizer {
      */
     public static Set<String> getAllForms(List<Lemma> lemmas) {
 
-	Set<String> forms = new HashSet<String>();
-	ParseDAO parseDAO = new HibernateParseDAO();
+    Set<String> forms = new HashSet<String>();
+    ParseDAO parseDAO = new HibernateParseDAO();
 
-	for (Lemma lemma : lemmas) {
-	    List<Parse> parses = parseDAO.getByLemma(lemma);
-	    for (Parse parse : parses) {
-		forms.add(parse.getForm());
-	    }
-	}
+    for (Lemma lemma : lemmas) {
+        List<Parse> parses = parseDAO.getByLemma(lemma);
+        for (Parse parse : parses) {
+        forms.add(parse.getForm());
+        }
+    }
 
-	return forms;
+    return forms;
     }
 }

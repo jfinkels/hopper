@@ -22,39 +22,39 @@ public class Namespaces {
     private static Map ns = new HashMap();
 
     static {
-	register(DUBLIN_CORE, "http://purl.org/dc/elements/1.1");
-	register(DC_TERMS, "http://purl.org/dc/terms/");
-	register(DC_TYPE, "http://purl.org/dc/dcmitype/");
-	register(PERSEUS, "http://www.perseus.org/meta/perseus.rdfs#");
-	register(PERSQ, "http://www.perseus.org/meta/petsq.rdfs#");
-	register(RDF, "http://www.w3.org/1999/02/22-rdf-syntax-ns#");
-	register(TUFTS, "http://www.tufts.edu/");
-	register(XHTML, "http://www.w3.org/1999/xhtml");
-	register(XSL, "http://www.w3.org/1999/XSL/Transform");
+    register(DUBLIN_CORE, "http://purl.org/dc/elements/1.1");
+    register(DC_TERMS, "http://purl.org/dc/terms/");
+    register(DC_TYPE, "http://purl.org/dc/dcmitype/");
+    register(PERSEUS, "http://www.perseus.org/meta/perseus.rdfs#");
+    register(PERSQ, "http://www.perseus.org/meta/petsq.rdfs#");
+    register(RDF, "http://www.w3.org/1999/02/22-rdf-syntax-ns#");
+    register(TUFTS, "http://www.tufts.edu/");
+    register(XHTML, "http://www.w3.org/1999/xhtml");
+    register(XSL, "http://www.w3.org/1999/XSL/Transform");
     }
 
     public static String get(String key) {
-	if (!ns.containsKey(key)) return null;
-	return (String) ns.get(key);
+    if (!ns.containsKey(key)) return null;
+    return (String) ns.get(key);
     }
 
     public static boolean isRecognized(String key) {
-	return ns.containsKey(key);
+    return ns.containsKey(key);
     }
 
     public static void register(String key, String namespace) {
-	ns.put(key, namespace);
+    ns.put(key, namespace);
     }
 
     public static String[] knownIdentifiers() {
-	return (String []) ns.keySet().toArray(new String[0]);
+    return (String []) ns.keySet().toArray(new String[0]);
     }
 
     public static void addToElement(Element element, String[] namespaces) {
-	for (int i = 0; i < namespaces.length; i++) {
-	    Namespace namespace =
-		Namespace.getNamespace(namespaces[i], get(namespaces[i]));
-	    element.addNamespaceDeclaration(namespace);
-	}
+    for (int i = 0; i < namespaces.length; i++) {
+        Namespace namespace =
+        Namespace.getNamespace(namespaces[i], get(namespaces[i]));
+        element.addNamespaceDeclaration(namespace);
+    }
     }
 }

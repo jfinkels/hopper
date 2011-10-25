@@ -197,16 +197,16 @@ div#word_count div.bar {
 
 /*================IMAGES====================*/
 div.images h4 {
-	margin: 2px auto;
-	padding: 0;
-	font-family: Times,serif;
-	font-size: large;
+    margin: 2px auto;
+    padding: 0;
+    font-family: Times,serif;
+    font-size: large;
 }
 
 div.images p{
-	font-family: Times, serif;
-	font-size: 14px;
-	margin-top: 0;
+    font-family: Times, serif;
+    font-size: 14px;
+    margin-top: 0;
 }
 
 /*============ TOOLS ==============*/
@@ -229,39 +229,39 @@ div.tool p {
 }
 
 /*===============Art Object ==================*/
-		div.artObjects{
-			position:relative;
-		}
+        div.artObjects{
+            position:relative;
+        }
 
-		div.artObject{
-			postion:absolute;
-			background-color: #cccccc;
-			margin:30px;			
-			padding: 5px;
-			border: solid black 1px;
-		}
+        div.artObject{
+            postion:absolute;
+            background-color: #cccccc;
+            margin:30px;			
+            padding: 5px;
+            border: solid black 1px;
+        }
 
-		div#margin{
-			margin-left: 7px;
-		}	
-		div.empty{
-			clear: both;
-			height:1px;
-		}
-		
-		div.image_box {
-			float: right;
-			width: 40%;
-		}
-		
-		div.thumbnail{
-			position:relative;
-			float:left;
-			width: 200px;
-		}
+        div#margin{
+            margin-left: 7px;
+        }	
+        div.empty{
+            clear: both;
+            height:1px;
+        }
+        
+        div.image_box {
+            float: right;
+            width: 40%;
+        }
+        
+        div.thumbnail{
+            position:relative;
+            float:left;
+            width: 200px;
+        }
 
-		div.thumbnail p{
-			text-align: center;
-			font-family: "Lucida grande", Verdana, Arial, Helvetica;
-			font-size: small;
-		}
+        div.thumbnail p{
+            text-align: center;
+            font-family: "Lucida grande", Verdana, Arial, Helvetica;
+            font-size: small;
+        }

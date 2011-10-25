@@ -27,33 +27,33 @@
 <div id="header">
     <a id="logo" href="/hopper/"></a>
     <div id="header_text">
-	<h1><c:out value="${title}" escapeXml="false"/></h1>
+    <h1><c:out value="${title}" escapeXml="false"/></h1>
     </div>
 <div id="header_side">
-	<%@ include file="/includes/head_search.html" %>
+    <%@ include file="/includes/head_search.html" %>
     </div>
 </div>
 <div id="main">
 <jsp:include page="/includes/index/indexNav.jsp">
-	<jsp:param name="tabActive" value=""/>
+    <jsp:param name="tabActive" value=""/>
 </jsp:include> 
 <div id="content" class="2column">
 <div id="side_col">
 <c:if test="${not empty artOccs}">
 <c:set var="thumbs" value="${5}"/>
 <c:if test="${fn:length(artOccs) < thumbs}">
-	<c:set var="thumbs" value="${fn:length(artOccs)}"/>
+    <c:set var="thumbs" value="${fn:length(artOccs)}"/>
 </c:if>
 <div style="font-size: small; text-align: center">
-	<c:forEach begin="0" end="${thumbs}" step="1" var="artOcc" items="${artOccs}">
-		<c:set var="img" value="${artOcc.image}"/>
-		<%@ include file="/includes/thumb.jspf" %>
-	</c:forEach>
+    <c:forEach begin="0" end="${thumbs}" step="1" var="artOcc" items="${artOccs}">
+        <c:set var="img" value="${artOcc.image}"/>
+        <%@ include file="/includes/thumb.jspf" %>
+    </c:forEach>
 </div>
 
 <form action="/hopper/imbrowser" method="POST" style="text-align:center">
 <c:forEach var="artOcc" items="${artOccs}">
-	<input type="hidden" name="archiveNumber" value="${artOcc.image.archiveNumber}"/>
+    <input type="hidden" name="archiveNumber" value="${artOcc.image.archiveNumber}"/>
 </c:forEach>
 <input type="hidden" name="name" value="${artifact.name}"/>
 <input type="submit" value="View Thumbnails (${fn:length(artOccs)})"/>
@@ -68,8 +68,8 @@
 <table cellspacing=5 cellpadding=2>
 <c:forEach var="tableProperty" items="${tableProperties}">
 <tr>
-	<td><b><c:out value="${tableProperty.key}"/>:</b></td>
-	<td><c:out value="${tableProperty.value}" escapeXml="false"/></td>
+    <td><b><c:out value="${tableProperty.key}"/>:</b></td>
+    <td><c:out value="${tableProperty.value}" escapeXml="false"/></td>
 </tr>
 </c:forEach>
 </table>

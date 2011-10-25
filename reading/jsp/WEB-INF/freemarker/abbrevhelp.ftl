@@ -14,11 +14,11 @@
 <p>To access a specific part of a document, add the relevant section/chapter/book information after the abbreviation (thus, to access the fifth chapter of the fourth book of Thucydides, enter <b>Thuc. 5.4</b>).</p>
 
 <ul>
-	<#list abbrevs as abbrev>
-		<#if abbrev.ABO.metadata.title??>
-		<li><a target="_new" href="text?doc=${abbrev.displayForm?url}">${abbrev.displayForm}</a>: <#if abbrev.ABO.metadata.creator??>${abbrev.ABO.metadata.creator}, </#if><cite>${abbrev.ABO.metadata.title}</cite></li>
-	    </#if>
-	</#list>
+    <#list abbrevs as abbrev>
+        <#if abbrev.ABO.metadata.title??>
+        <li><a target="_new" href="text?doc=${abbrev.displayForm?url}">${abbrev.displayForm}</a>: <#if abbrev.ABO.metadata.creator??>${abbrev.ABO.metadata.creator}, </#if><cite>${abbrev.ABO.metadata.title}</cite></li>
+        </#if>
+    </#list>
 </ul>
 <#include "analytics.ftl">
 </body>

@@ -35,84 +35,84 @@ public class EntityOccurrence implements Comparable<EntityOccurrence> {
 
     /** Comparator for sorting by document ID/offset */
     public static final Comparator<EntityOccurrence> LOCATION_COMPARATOR =
-	new Comparator<EntityOccurrence>() {
+    new Comparator<EntityOccurrence>() {
 
-	public int compare(EntityOccurrence eo1, EntityOccurrence eo2) {
-	    return eo1.getLocation().compareTo(eo2.getLocation());
-	}
+    public int compare(EntityOccurrence eo1, EntityOccurrence eo2) {
+        return eo1.getLocation().compareTo(eo2.getLocation());
+    }
     };
 
     /** Comparator for sorting by entity */
     public static final Comparator<EntityOccurrence> ENTITY_COMPARATOR =
-	new Comparator<EntityOccurrence>() {
+    new Comparator<EntityOccurrence>() {
 
-	public int compare(EntityOccurrence eo1, EntityOccurrence eo2) {
-	    return eo1.getEntity().compareTo(eo2.getEntity());
-	}
+    public int compare(EntityOccurrence eo1, EntityOccurrence eo2) {
+        return eo1.getEntity().compareTo(eo2.getEntity());
+    }
     };
 
     // Empty constructor for hibernate
     public EntityOccurrence() {}
 
     public EntityOccurrence(Entity ent, Location loc, String dispText) {
-	this(ent, loc, dispText, new HashMap());
+    this(ent, loc, dispText, new HashMap());
     }
 
     public EntityOccurrence(Entity ent, Location loc, String dispText,
-	    Map params) {
-	entity = ent;
-	location = loc;
-	displayText = dispText;
-	parameters = params;
+        Map params) {
+    entity = ent;
+    location = loc;
+    displayText = dispText;
+    parameters = params;
     }
     public Integer getId() {
-	return id;
+    return id;
     }
 
     public void setId(Integer id) {
-	this.id = id;
+    this.id = id;
     }
 
     public Entity getEntity() {
-	return entity;
+    return entity;
     }
 
     public void setEntity(Entity e) {
-	entity = e;
+    entity = e;
     }
 
     public Location getLocation() {
-	return location;
+    return location;
     }
 
     public void setLocation(Location loc) {
-	location = loc;
+    location = loc;
     }
 
     public String getDisplayText() {
-	return displayText;
+    return displayText;
     }
 
     public void setDisplayText(String dt) {
-	displayText = dt;
+    displayText = dt;
     }
 
     public Map getParameters() {
-	return parameters;
+    return parameters;
     }
 
     public void setParameters(Map params) {
-	parameters = params;
+    parameters = params;
     }
 
     public String toString() {
-	return String.format("%s @ [%s/%d]",
-		entity.getAuthorityName(), location.getQuery().getDocumentID(),
-		location.getPosition());
+    return String.format("%s @ [%s/%d]",
+        entity.getAuthorityName(), location.getQuery().getDocumentID(),
+        location.getPosition());
     }
     
     public int compareTo(EntityOccurrence other) {
-	return getLocation().compareTo(other.getLocation());
+    return getLocation().compareTo(other.getLocation());
     }
 
     public Set<Vote> getVotes() {

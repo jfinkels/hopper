@@ -20,191 +20,191 @@ import org.xml.sax.helpers.DefaultHandler;
  */
 
 public class OffsetReportingHandler extends DefaultHandler {
-	private static Logger logger = Logger.getLogger(OffsetReportingHandler.class);
+    private static Logger logger = Logger.getLogger(OffsetReportingHandler.class);
 
-	private String encoding;
-	private XMLRenderer renderer;
+    private String encoding;
+    private XMLRenderer renderer;
 
-	private String previousText = null;
+    private String previousText = null;
 
-	private String openTagText = null;
-	private String openTagName = null;
+    private String openTagText = null;
+    private String openTagName = null;
 
-	private boolean countingBytes = true;
-	private int bytesRead = 0;
+    private boolean countingBytes = true;
+    private int bytesRead = 0;
 
-	public OffsetReportingHandler(String enc) {
-		encoding = enc;
-		renderer = new XMLRenderer();
-	}
+    public OffsetReportingHandler(String enc) {
+        encoding = enc;
+        renderer = new XMLRenderer();
+    }
 
-	public OffsetReportingHandler(String enc, XMLRenderer rend) {
-		encoding = enc;
-		renderer = rend;
-	}
+    public OffsetReportingHandler(String enc, XMLRenderer rend) {
+        encoding = enc;
+        renderer = rend;
+    }
 
-	public void startElement(String namespaceURI,
-			String localName,
-			String qName,
-			Attributes attributes) throws SAXException {
-		// if we're waiting on an open tag, print it (now that we know it's
-		// not an empty tag)
-		flushOpenTag();
+    public void startElement(String namespaceURI,
+            String localName,
+            String qName,
+            Attributes attributes) throws SAXException {
+        // if we're waiting on an open tag, print it (now that we know it's
+        // not an empty tag)
+        flushOpenTag();
 
-		// then print the text from the previous element
-		flushPreviousText();
+        // then print the text from the previous element
+        flushPreviousText();
 
-		// now register this as a new possibly-empty tag
-		setOpenTag(namespaceURI, localName, qName, attributes);
-	}
+        // now register this as a new possibly-empty tag
+        setOpenTag(namespaceURI, localName, qName, attributes);
+    }
 
-	public void endElement(String namespaceURI,
-			String localName,
-			String qName) throws SAXException {
+    public void endElement(String namespaceURI,
+            String localName,
+            String qName) throws SAXException {
 
-		if (openTagText != null) {
-			handleOpenTag(qName);
-		} else {
-			String elementText = renderer.renderEndElement(
-					namespaceURI, localName, qName);
-			recordText(elementText);
-		}
-	}
+        if (openTagText != null) {
+            handleOpenTag(qName);
+        } else {
+            String elementText = renderer.renderEndElement(
+                    namespaceURI, localName, qName);
+            recordText(elementText);
+        }
+    }
 
-	public void endDocument() {
-		flushPreviousText();
-	}
+    public void endDocument() {
+        flushPreviousText();
+    }
 
-	public void characters(char[] chars, int startIndex, int length) 
-	throws SAXException {
+    public void characters(char[] chars, int startIndex, int length) 
+    throws SAXException {
 
-		flushOpenTag();
-		String charText = renderer.renderCharacters(chars, startIndex, length);
-		recordText(charText);
-	}
+        flushOpenTag();
+        String charText = renderer.renderCharacters(chars, startIndex, length);
+        recordText(charText);
+    }
 
-	public void ignorableWhitespace(char[] chars, int startIndex, int length)
-	throws SAXException {
+    public void ignorableWhitespace(char[] chars, int startIndex, int length)
+    throws SAXException {
 
-		flushOpenTag();
-		String spaceText = renderer.renderIgnorableWhitespace(
-				chars, startIndex, length);
-		recordText(spaceText);
-	}
+        flushOpenTag();
+        String spaceText = renderer.renderIgnorableWhitespace(
+                chars, startIndex, length);
+        recordText(spaceText);
+    }
 
-	private void recordText(String text) {
-		if (previousText != null && countingBytes) {
-			incrementOffset(previousText);
-		}
-		previousText = text;
-	}
+    private void recordText(String text) {
+        if (previousText != null && countingBytes) {
+            incrementOffset(previousText);
+        }
+        previousText = text;
+    }
 
-	private void incrementOffset(String text) {
-		try {
-			byte[] bytes = text.getBytes(encoding);
-			bytesRead += bytes.length;
-		} catch (UnsupportedEncodingException uee) {
-			logger.warn("Problem incrementing offset: " + text);
-		}
-	}
+    private void incrementOffset(String text) {
+        try {
+            byte[] bytes = text.getBytes(encoding);
+            bytesRead += bytes.length;
+        } catch (UnsupportedEncodingException uee) {
+            logger.warn("Problem incrementing offset: " + text);
+        }
+    }
 
-	private void handleOpenTag(String endQName) throws SAXException {
-		if (openTagText == null) return;
+    private void handleOpenTag(String endQName) throws SAXException {
+        if (openTagText == null) return;
 
-		if (endQName.equals(openTagName)) {
-			recordText(renderer.emptyElementFromText(openTagText));
-			clearOpenTag();
-		} else {
-			// This should never happen!
-			throw new SAXException("Ending tag " + endQName +
-					" doesn't match start tag " + openTagName);
-			//flushOpenTag();
-		}
-	}
+        if (endQName.equals(openTagName)) {
+            recordText(renderer.emptyElementFromText(openTagText));
+            clearOpenTag();
+        } else {
+            // This should never happen!
+            throw new SAXException("Ending tag " + endQName +
+                    " doesn't match start tag " + openTagName);
+            //flushOpenTag();
+        }
+    }
 
-	private void flushOpenTag() {
-		if (openTagText == null) return;
+    private void flushOpenTag() {
+        if (openTagText == null) return;
 
-		String prevTagText = renderer.startElementFromText(openTagText);
+        String prevTagText = renderer.startElementFromText(openTagText);
 
-		clearOpenTag();
-		recordText(prevTagText);
-	}
+        clearOpenTag();
+        recordText(prevTagText);
+    }
 
-	private void flushPreviousText() {
-		// May be slightly hackish, but... eh.
-		recordText("");
-	}
+    private void flushPreviousText() {
+        // May be slightly hackish, but... eh.
+        recordText("");
+    }
 
-	public void setOpenTag(String namespaceURI,
-			String localName,
-			String qName,
-			Attributes attributes) {
+    public void setOpenTag(String namespaceURI,
+            String localName,
+            String qName,
+            Attributes attributes) {
 
-		openTagText = renderer.renderElementText(namespaceURI, localName,
-				qName, attributes);
-		openTagName = qName;
-	}
+        openTagText = renderer.renderElementText(namespaceURI, localName,
+                qName, attributes);
+        openTagName = qName;
+    }
 
-	public void clearOpenTag() {
-		openTagText = null;
-		openTagName = null;
-	}
+    public void clearOpenTag() {
+        openTagText = null;
+        openTagName = null;
+    }
 
-	public int getByteOffset() {
-		return bytesRead;
-	}
+    public int getByteOffset() {
+        return bytesRead;
+    }
 
-	public void reset() {
-		bytesRead = 0;
-		previousText = null;
-		clearOpenTag();
-	}
+    public void reset() {
+        bytesRead = 0;
+        previousText = null;
+        clearOpenTag();
+    }
 
-	public String getEncoding() {
-		return encoding;
-	}
+    public String getEncoding() {
+        return encoding;
+    }
 
-	public void stopCountingBytes() {
-		countingBytes = false;
-	}
+    public void stopCountingBytes() {
+        countingBytes = false;
+    }
 
-	public void startCountingBytes() {
-		countingBytes = true;
-	}
+    public void startCountingBytes() {
+        countingBytes = true;
+    }
 
-	public boolean isCountingBytes() {
-		return countingBytes;
-	}
+    public boolean isCountingBytes() {
+        return countingBytes;
+    }
 
-	private class OpenTag {
-		String namespaceURI;
-		String localName;
-		String qName;
-		Attributes attributes;
+    private class OpenTag {
+        String namespaceURI;
+        String localName;
+        String qName;
+        Attributes attributes;
 
-		public OpenTag(String nsuri, String lName, String qName,
-				Attributes attrs) {
-			namespaceURI = nsuri;
-			localName = lName;
-			this.qName = qName;
-			attributes = attrs;
-		}
+        public OpenTag(String nsuri, String lName, String qName,
+                Attributes attrs) {
+            namespaceURI = nsuri;
+            localName = lName;
+            this.qName = qName;
+            attributes = attrs;
+        }
 
-		public String getNamespaceURI() {
-			return namespaceURI;
-		}
+        public String getNamespaceURI() {
+            return namespaceURI;
+        }
 
-		public Attributes getAttributes() {
-			return attributes;
-		}
+        public Attributes getAttributes() {
+            return attributes;
+        }
 
-		public String getLocalName() {
-			return localName;
-		}
+        public String getLocalName() {
+            return localName;
+        }
 
-		public String getQName() {
-			return qName;
-		}
-	}
+        public String getQName() {
+            return qName;
+        }
+    }
 }

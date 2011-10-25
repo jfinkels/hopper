@@ -82,7 +82,7 @@ public final class collection_jsp extends org.apache.jasper.runtime.HttpJspBase
     try {
       response.setContentType("text/html");
       pageContext = _jspxFactory.getPageContext(this, request, response,
-      			null, true, 8192, true);
+                null, true, 8192, true);
       _jspx_page_context = pageContext;
       application = pageContext.getServletContext();
       config = pageContext.getServletConfig();

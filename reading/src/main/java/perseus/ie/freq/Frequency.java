@@ -11,7 +11,7 @@ import perseus.ie.entity.Entity;
  */
 
 public abstract class Frequency implements Comparable<Frequency> {
-	
+    
     public enum FrequencyComparator implements Comparator<Frequency> {
         MAX_FREQ(true) {
             protected int doCompare(Frequency et1, Frequency et2) {
@@ -82,18 +82,18 @@ public abstract class Frequency implements Comparable<Frequency> {
     private double tfidf;
     
     public double getTfidf() {
-		return tfidf;
-	}
-	public void setTfidf(double tfidf) {
-		this.tfidf = tfidf;
-	}
-	public double getTermFreq() {
-		return termFreq;
-	}
-	public void setTermFreq(double termFreq) {
-		this.termFreq = termFreq;
-	}
-	public int getFirstPosition() {
+        return tfidf;
+    }
+    public void setTfidf(double tfidf) {
+        this.tfidf = tfidf;
+    }
+    public double getTermFreq() {
+        return termFreq;
+    }
+    public void setTermFreq(double termFreq) {
+        this.termFreq = termFreq;
+    }
+    public int getFirstPosition() {
         return firstPosition;
     }
     public void setFirstPosition(int firstPosition) {
@@ -125,25 +125,25 @@ public abstract class Frequency implements Comparable<Frequency> {
     }
     
     public int compareTo(Frequency f) {
-	int maxResult = getMaxFrequency() - f.getMaxFrequency();
-	if (maxResult != 0) return maxResult;
-	
-	return getMinFrequency() - f.getMinFrequency();
+    int maxResult = getMaxFrequency() - f.getMaxFrequency();
+    if (maxResult != 0) return maxResult;
+    
+    return getMinFrequency() - f.getMinFrequency();
     }
 
     public void count() {
-	count(1);
+    count(1);
     }
     public void count(int increment) {
-	maxFrequency += increment;
-	if (increment == 1) minFrequency += increment;
-	weightedFrequency += (double) 1 / increment;
+    maxFrequency += increment;
+    if (increment == 1) minFrequency += increment;
+    weightedFrequency += (double) 1 / increment;
     }
     
     public void add(Frequency addend) {
-	maxFrequency += addend.getMaxFrequency();
-	minFrequency += addend.getMinFrequency();
-	weightedFrequency += addend.getWeightedFrequency();
+    maxFrequency += addend.getMaxFrequency();
+    minFrequency += addend.getMinFrequency();
+    weightedFrequency += addend.getWeightedFrequency();
     }
     
     public abstract String getForm();
@@ -160,9 +160,9 @@ public abstract class Frequency implements Comparable<Frequency> {
     
     
     public String toString() {
-	return String.format("%s -> [%d/%d/%.2f]",
-		getForm(), getMaxFrequency(), getMinFrequency(),
-		getWeightedFrequency());
+    return String.format("%s -> [%d/%d/%.2f]",
+        getForm(), getMaxFrequency(), getMinFrequency(),
+        getWeightedFrequency());
     }
     
     public abstract String toXML();

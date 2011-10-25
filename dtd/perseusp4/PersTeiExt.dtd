@@ -12,7 +12,7 @@
 
 <!ELEMENT %n.lemma;	%om.RR; %paraContent;>
 <!ATTLIST %n.lemma;	%a.global;           
-			%a.xPointer;
+            %a.xPointer;
           TEIform CDATA 'lemma'>
 
 ]]>
@@ -22,7 +22,7 @@
 
 <!ELEMENT %n.tagStart;	%om.RO;	EMPTY>
 <!ATTLIST %n.tagStart;	gi	CDATA	#REQUIRED
-			atts	CDATA	#IMPLIED
+            atts	CDATA	#IMPLIED
           TEIform CDATA 'tagStart'>
 
 <!ELEMENT %n.tagEnd;	%om.RO;	EMPTY>
@@ -94,7 +94,7 @@
                    | %m.phrase; | %m.Incl; )* > 
 <!ATTLIST %n.placeName;      %a.global;
       type CDATA             #IMPLIED
-				%a.names;
+                %a.names;
       TEIform CDATA 'placeName'  >
 ]]>
 
@@ -112,9 +112,9 @@
 <![%PERSEUS.SENSE; [
 <!ELEMENT %n.sense; %om.RR;  ( #PCDATA | %n.sense; | %m.dictionaryTopLevel;
                           | %n.quote; | %n.cit; | %m.bibl; | %m.phrase;
-			  | %m.morphInfo; | %n.pron; | %n.tr;
-			  | %n.orth; | %n.pos; | %m.Incl; | %n.subc;
-			  | %n.lbl; )* > 
+              | %m.morphInfo; | %n.pron; | %n.tr;
+              | %n.orth; | %n.pos; | %m.Incl; | %n.subc;
+              | %n.lbl; )* > 
 <!ATTLIST %n.sense;
       %a.global;
       %a.dictionaries;
@@ -148,7 +148,7 @@
 
 <![%PERSEUS.HI; [
 <!ELEMENT %n.hi; %om.RR; ( #PCDATA | %m.phrase; | %m.inter; | %m.Incl;
-			    | %n.usg; | %n.orth; )* >
+                | %n.usg; | %n.orth; )* >
 <!ATTLIST %n.hi;
       %a.global;
       TEIform CDATA 'hi'  >

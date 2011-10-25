@@ -24,14 +24,14 @@ public class EntityType {
     public static final EntityType DATE = new EntityType("Date");
 
     public static EntityType getEntityType(HttpServletRequest request) {
-	String entity_type_str = request.getParameter("entityType");
-	if ( (entity_type_str == null) || (entity_type_str.equals("")) ) {
-	    return EntityType.LEMMA;
-	} else if (entity_type_str.equals(EntityType.LEMMA.getDisplayName())) {
-	    return EntityType.LEMMA;
-	} else {
-	    return EntityType.LEMMA;
-	}
+    String entity_type_str = request.getParameter("entityType");
+    if ( (entity_type_str == null) || (entity_type_str.equals("")) ) {
+        return EntityType.LEMMA;
+    } else if (entity_type_str.equals(EntityType.LEMMA.getDisplayName())) {
+        return EntityType.LEMMA;
+    } else {
+        return EntityType.LEMMA;
+    }
     }
 
 }

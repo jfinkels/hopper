@@ -14,11 +14,11 @@ public abstract class DocumentFrequency extends Frequency {
         this.documentID = documentID;
     }
 
-	public double getMaxPer10K(long totalWords) {
-		return ((double) getMaxFrequency() / totalWords) * 10000.0;
-	}	
+    public double getMaxPer10K(long totalWords) {
+        return ((double) getMaxFrequency() / totalWords) * 10000.0;
+    }	
 
-	public double getMinPer10K(long totalWords) {
-		return ((double) getMinFrequency() / totalWords) * 10000.0;
-	}
+    public double getMinPer10K(long totalWords) {
+        return ((double) getMinFrequency() / totalWords) * 10000.0;
+    }
 }

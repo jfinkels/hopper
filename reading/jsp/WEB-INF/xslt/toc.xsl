@@ -55,10 +55,10 @@
       <xsl:value-of select="ref"/>
     </xsl:variable>
     <a href="text?doc={$href}">
-	<xsl:if test="@isParent">
-	    <img border="0" src="/img/east.gif" />
-	</xsl:if>
-	<xsl:value-of select="head" />
+    <xsl:if test="@isParent">
+        <img border="0" src="/img/east.gif" />
+    </xsl:if>
+    <xsl:value-of select="head" />
     </a>
     </td>
     </tr></table>

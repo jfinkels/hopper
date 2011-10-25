@@ -24,9 +24,9 @@ public class ReferenceEntry {
     String displayName;
     
     public ReferenceEntry (int entryID) {
-	this.entryID = entryID;
+    this.entryID = entryID;
 
-	ResultSet rs = null;
+    ResultSet rs = null;
         Connection con = null;
         SQLHandler sqlHandler = null;
 
@@ -39,50 +39,50 @@ public class ReferenceEntry {
             rs = sqlHandler.executeQuery(sql);
 
             if (rs.next()) {
-		referenceList = ReferenceList.get(rs.getInt("list_id"));
+        referenceList = ReferenceList.get(rs.getInt("list_id"));
                 entryReference = rs.getString("entry_ref");
-		displayName = rs.getString("display_name");
+        displayName = rs.getString("display_name");
             }
-	    
-	} catch (SQLException e) {
-	    logger.fatal("Problem retrieving reference entry info for id [" + entryID + "]", e);
-	} finally {
-	    try {
-		if (sqlHandler != null) {
-		    sqlHandler.releaseAll();
-		}
-	    } catch (SQLWarning w) {
-		logger.fatal("Problem releasing resources", w);
-	    }
-	    try {
-		if (con != null) con.close();
-	    } catch (SQLException s) {
-		logger.fatal("Problem releasing connection", s);
-	    }
-	}
+        
+    } catch (SQLException e) {
+        logger.fatal("Problem retrieving reference entry info for id [" + entryID + "]", e);
+    } finally {
+        try {
+        if (sqlHandler != null) {
+            sqlHandler.releaseAll();
+        }
+        } catch (SQLWarning w) {
+        logger.fatal("Problem releasing resources", w);
+        }
+        try {
+        if (con != null) con.close();
+        } catch (SQLException s) {
+        logger.fatal("Problem releasing connection", s);
+        }
+    }
     }
 
     public ReferenceList getReferenceList() {
-	return referenceList;
+    return referenceList;
     }
 
     public int getEntryType () {
-	if (entryReference.startsWith("http:")) {
-	    return REMOTE_REFERENCE;
-	}
-	else {
-	    return LOCAL_REFERENCE;
-	}
+    if (entryReference.startsWith("http:")) {
+        return REMOTE_REFERENCE;
+    }
+    else {
+        return LOCAL_REFERENCE;
+    }
     }
 
     /** Returns the identifier (local query or remote URL) of the reference
-	entry */
+    entry */
     public String getEntryReference() {
-	return entryReference;
+    return entryReference;
     }
     
     public int getEntryID () {
-	return entryID;
+    return entryID;
     }
 }
 

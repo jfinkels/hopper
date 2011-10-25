@@ -8,17 +8,17 @@
 
 <div id="main">
     <jsp:include page="/includes/index/indexNav.jsp">
-	<jsp:param name="tabActive" value="about"/>
-	<jsp:param name="subtabActive" value="who"/>
+    <jsp:param name="tabActive" value="about"/>
+    <jsp:param name="subtabActive" value="who"/>
     </jsp:include> 	
     
     <div id="content" class="2column">
         <div id="index_main_col">
-		<div id="members">
-		<p>		
-		</p>
-		</div> <!-- members div -->
-	</div> <!-- main_col div -->
+        <div id="members">
+        <p>		
+        </p>
+        </div> <!-- members div -->
+    </div> <!-- main_col div -->
     
     <div id="img_side_col">    	
     </div> <!-- img_side_col -->

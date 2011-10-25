@@ -24,70 +24,70 @@ import perseus.util.HibernateUtil;
  *
  */
 public class ImageNameLoader {
-	
-	private static Logger logger = Logger.getLogger(ImageNameLoader.class);
-	private String dataPath;
-	ImageNameDAO inDAO = new HibernateImageNameDAO();
-	private int count;
-	
-	public ImageNameLoader(String dataPath) {
-		this.dataPath = dataPath;
-		count = 0;
-	}
+    
+    private static Logger logger = Logger.getLogger(ImageNameLoader.class);
+    private String dataPath;
+    ImageNameDAO inDAO = new HibernateImageNameDAO();
+    private int count;
+    
+    public ImageNameLoader(String dataPath) {
+        this.dataPath = dataPath;
+        count = 0;
+    }
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		if (args.length < 1) {
-			logger.error("ImageNameLoader Usage:  ImageNameLoader [dataPath(s)]");
-			System.exit(0);
-		}
-		
-		ImageNameDAO inDAO = new HibernateImageNameDAO();
-		inDAO.deleteImageNames();
-		
-		for (String arg : args) {
-			ImageNameLoader inl = new ImageNameLoader(arg);
-			inl.loadImageNames();
-		}
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        if (args.length < 1) {
+            logger.error("ImageNameLoader Usage:  ImageNameLoader [dataPath(s)]");
+            System.exit(0);
+        }
+        
+        ImageNameDAO inDAO = new HibernateImageNameDAO();
+        inDAO.deleteImageNames();
+        
+        for (String arg : args) {
+            ImageNameLoader inl = new ImageNameLoader(arg);
+            inl.loadImageNames();
+        }
 
-	}
+    }
 
-	public void loadImageNames() {
-		try {
-			SAXBuilder sb = new SAXBuilder();
-			File XMLdata = new File(dataPath);
-			Document doc = sb.build(XMLdata);
-			Element root = doc.getRootElement();
-			List rows = root.getChildren();
-			Iterator i = rows.iterator();
-			while (i.hasNext()) {
-				createAndWriteImageName((Element)i.next());
-			}		
-		} catch (JDOMException e) {
-			logger.error("Problem building document "+e);
-			e.printStackTrace(); 
-		} catch (IOException e) {
-			logger.error("Problem building document "+e);
-			e.printStackTrace();
-		}
-	}
+    public void loadImageNames() {
+        try {
+            SAXBuilder sb = new SAXBuilder();
+            File XMLdata = new File(dataPath);
+            Document doc = sb.build(XMLdata);
+            Element root = doc.getRootElement();
+            List rows = root.getChildren();
+            Iterator i = rows.iterator();
+            while (i.hasNext()) {
+                createAndWriteImageName((Element)i.next());
+            }		
+        } catch (JDOMException e) {
+            logger.error("Problem building document "+e);
+            e.printStackTrace(); 
+        } catch (IOException e) {
+            logger.error("Problem building document "+e);
+            e.printStackTrace();
+        }
+    }
 
-	private void createAndWriteImageName(Element imageName) {
-		ImageName in = new ImageName();
-		in.setArchiveNumber(imageName.getChildText("archive_number"));
-		in.setPrimaryName(StringEscapeUtils.escapeXml(imageName.getChildText("name")));
-		in.setSecondaryName(StringEscapeUtils.escapeXml(imageName.getChildText("secondary_name")));
-		in.setTertiaryName(StringEscapeUtils.escapeXml(imageName.getChildText("tertiary_name")));
-		in.setSchema(imageName.getChildText("image_schema"));
-		
-		inDAO.insertImageName(in);
-		count++;
-		if (count % 20 == 0) {
-			HibernateUtil.getSession().flush();
-			HibernateUtil.getSession().clear();
-		}
-	}
+    private void createAndWriteImageName(Element imageName) {
+        ImageName in = new ImageName();
+        in.setArchiveNumber(imageName.getChildText("archive_number"));
+        in.setPrimaryName(StringEscapeUtils.escapeXml(imageName.getChildText("name")));
+        in.setSecondaryName(StringEscapeUtils.escapeXml(imageName.getChildText("secondary_name")));
+        in.setTertiaryName(StringEscapeUtils.escapeXml(imageName.getChildText("tertiary_name")));
+        in.setSchema(imageName.getChildText("image_schema"));
+        
+        inDAO.insertImageName(in);
+        count++;
+        if (count % 20 == 0) {
+            HibernateUtil.getSession().flush();
+            HibernateUtil.getSession().clear();
+        }
+    }
 
 }

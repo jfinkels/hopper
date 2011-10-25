@@ -15,27 +15,27 @@ import perseus.document.TableOfContents;
 
 public class XmlTocController implements Controller {
 
-	public ModelAndView handleRequest(HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
-		
-		Query query = new Query(request.getParameter("doc"));
+    public ModelAndView handleRequest(HttpServletRequest request,
+            HttpServletResponse response) throws Exception {
+        
+        Query query = new Query(request.getParameter("doc"));
 
-		Metadata metadata = query.getMetadata();
+        Metadata metadata = query.getMetadata();
 
-		String chunkScheme = request.getParameter("scheme");
-		if (chunkScheme == null) {
-		    chunkScheme = metadata.getChunkSchemes().getDefaultScheme();
-		}
+        String chunkScheme = request.getParameter("scheme");
+        if (chunkScheme == null) {
+            chunkScheme = metadata.getChunkSchemes().getDefaultScheme();
+        }
 
-		TableOfContents toc = TableOfContents.forChunk(query.getChunk(), chunkScheme);
-		
-		Map<String, Object> myModel = new HashMap<String, Object>();
-		myModel.put("toc", toc);
+        TableOfContents toc = TableOfContents.forChunk(query.getChunk(), chunkScheme);
+        
+        Map<String, Object> myModel = new HashMap<String, Object>();
+        myModel.put("toc", toc);
 
-		response.setContentType("text/xml;charset=UTF-8"); 
-		response.setHeader("Access-Control-Allow-Origin","*");
+        response.setContentType("text/xml;charset=UTF-8"); 
+        response.setHeader("Access-Control-Allow-Origin","*");
 
-		return new ModelAndView("xmltoc", myModel);
-	}
+        return new ModelAndView("xmltoc", myModel);
+    }
 
 }

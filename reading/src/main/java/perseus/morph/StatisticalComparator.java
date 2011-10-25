@@ -21,17 +21,17 @@ public class StatisticalComparator implements Comparator {
     }
 
     private StatisticalComparator(String sk, Query query){
-	if(sk != null){
-	    sortKey = sk;
-	}
-	this.query = query;
+    if(sk != null){
+        sortKey = sk;
+    }
+    this.query = query;
     }
 
     /**
      * Get the sort key value
      */
     public String getSortKey(){
-	return sortKey;
+    return sortKey;
     }
 
     /**
@@ -41,7 +41,7 @@ public class StatisticalComparator implements Comparator {
      * @param return a Statistical comparator
      */
     public static StatisticalComparator getComparator(String sk, Query query){
-	return new StatisticalComparator(sk, query);
+    return new StatisticalComparator(sk, query);
     }
 
     /**
@@ -52,23 +52,23 @@ public class StatisticalComparator implements Comparator {
      * @return -1, 0, 1 if o1 is less than, equal to , or greater than o2
      */
     public int compare(Object o1, Object o2){
-	if(! (o1 instanceof Statistical) ||
-	   ! (o2 instanceof Statistical)){
-	    throw new ClassCastException("Unable to compare object");
-	}
+    if(! (o1 instanceof Statistical) ||
+       ! (o2 instanceof Statistical)){
+        throw new ClassCastException("Unable to compare object");
+    }
 
-	Statistical entity1 = (Statistical) o1;
-	Statistical entity2 = (Statistical) o2;
+    Statistical entity1 = (Statistical) o1;
+    Statistical entity2 = (Statistical) o2;
 
-	if(sortKey.equals(this.MIN_FREQ)){
-	    return entity1.getMinimumFrequency() - entity2.getMinimumFrequency();
-	}else if (sortKey.equals(this.MAX_FREQ)){
-	    return entity1.getMaximumFrequency() - entity2.getMaximumFrequency();
-	}else if (sortKey.equals(this.WEIGHTED_FREQ)){
-	    return Double.compare(entity1.getWeightedFrequency(), entity2.getWeightedFrequency());
-	}else{
-	    return Double.compare(entity1.getKeywordScore(), entity2.getKeywordScore());
-	}	
+    if(sortKey.equals(this.MIN_FREQ)){
+        return entity1.getMinimumFrequency() - entity2.getMinimumFrequency();
+    }else if (sortKey.equals(this.MAX_FREQ)){
+        return entity1.getMaximumFrequency() - entity2.getMaximumFrequency();
+    }else if (sortKey.equals(this.WEIGHTED_FREQ)){
+        return Double.compare(entity1.getWeightedFrequency(), entity2.getWeightedFrequency());
+    }else{
+        return Double.compare(entity1.getKeywordScore(), entity2.getKeywordScore());
+    }	
     }
 
 

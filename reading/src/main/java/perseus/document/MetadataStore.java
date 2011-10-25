@@ -22,21 +22,21 @@ public class MetadataStore implements Iterable<Map.Entry<Query,Metadata>> {
     public MetadataStore() {}
     
     private MetadataStore(MetadataStore ms) {
-	store = new TreeMap<Query,Metadata>(ms.store);
+    store = new TreeMap<Query,Metadata>(ms.store);
     }
     
     /** Special version for use with the metadata cache */
     public static MetadataStore synchronizedStore() {
-	MetadataStore synchedStore = new MetadataStore();
-	synchedStore.store =
-	    Collections.synchronizedMap(new LinkedHashMap<Query,Metadata>(){
-		private static final long serialVersionUID = 1L;
+    MetadataStore synchedStore = new MetadataStore();
+    synchedStore.store =
+        Collections.synchronizedMap(new LinkedHashMap<Query,Metadata>(){
+        private static final long serialVersionUID = 1L;
 
-		protected boolean removeEldestEntry(Map.Entry eldest) {
-		    return (size() > 1500);
-		}
-	    });
-	return synchedStore;
+        protected boolean removeEldestEntry(Map.Entry eldest) {
+            return (size() > 1500);
+        }
+        });
+    return synchedStore;
     }
     
     /**
@@ -46,7 +46,7 @@ public class MetadataStore implements Iterable<Map.Entry<Query,Metadata>> {
      * @param metadata a metadata object
      */
     public void put(Query query, Metadata metadata) {
-	store.put(query, metadata);
+    store.put(query, metadata);
     }
     
     /**
@@ -57,28 +57,28 @@ public class MetadataStore implements Iterable<Map.Entry<Query,Metadata>> {
      * @return the metadata referenced by query, or null if there is none
      */
     public Object remove(Query query) {
-	return store.remove(query);
+    return store.remove(query);
     }
     
     /**
      * Returns the total number of Metadata objects in this store.
      */
     public int size() {
-	return store.size();
+    return store.size();
     }
     
     /**
      * Returns true if this store is empty.
      */
     public boolean isEmpty() {
-	return store.isEmpty();
+    return store.isEmpty();
     }
     
     /**
      * Clears this MetadataStore.
      */
     public void clear() {
-	store.clear();
+    store.clear();
     }
     
     /**
@@ -86,12 +86,12 @@ public class MetadataStore implements Iterable<Map.Entry<Query,Metadata>> {
      * store; if there is none present, adds `newData`.
      */
     public void putOrMerge(Query query, Metadata newData) {
-	if (containsKey(query)) {
-	    Metadata existingData = store.get(query);
-	    store.put(query, existingData.merge(newData));
-	} else {
-	    put(query, newData);
-	}
+    if (containsKey(query)) {
+        Metadata existingData = store.get(query);
+        store.put(query, existingData.merge(newData));
+    } else {
+        put(query, newData);
+    }
     }
     
     /**
@@ -99,50 +99,50 @@ public class MetadataStore implements Iterable<Map.Entry<Query,Metadata>> {
      * store already contains matching entries.
      */
     public void putAll(MetadataStore otherStore) {
-	for (Map.Entry<Query,Metadata> me : otherStore) {
-	    Query query = me.getKey();
-	    Metadata mergend = me.getValue();
-	    
-	    putOrMerge(query, mergend);
-	}
+    for (Map.Entry<Query,Metadata> me : otherStore) {
+        Query query = me.getKey();
+        Metadata mergend = me.getValue();
+        
+        putOrMerge(query, mergend);
+    }
     }
     
     /**
      * Returns true if this MetadataStore contains metadata for `query`.
      */
     public boolean containsKey(Query query) {
-	return store.containsKey(query);
+    return store.containsKey(query);
     }
     
     /**
      * Returns the metadata associated with `query`, or null if there is none.
      */
     public Metadata get(Query query) {
-	if (containsKey(query)) {
-	    return store.get(query);
-	}
-	return null;
+    if (containsKey(query)) {
+        return store.get(query);
+    }
+    return null;
     }
     
     /**
      * Returns an iterator over all the queries in this store.
      */
     public Iterator<Query> queryIterator() {
-	return store.keySet().iterator();
+    return store.keySet().iterator();
     }
     
     /**
      * Returns an iterator over all the metadata objects in this store.
      */
     public Iterator<Metadata> metadataIterator() {
-	return store.values().iterator();
+    return store.values().iterator();
     }
     
     /**
      * Returns an iterator over all the query/metadata pairs in this store.
      */
     public Iterator<Map.Entry<Query,Metadata>> iterator() {
-	return store.entrySet().iterator();
+    return store.entrySet().iterator();
     }
     
     /**
@@ -150,41 +150,41 @@ public class MetadataStore implements Iterable<Map.Entry<Query,Metadata>> {
      * merged with those in `other`.
      */
     public MetadataStore merge(MetadataStore other) {
-	MetadataStore mergedStore = new MetadataStore(this);
-	
-	for (Map.Entry<Query,Metadata> me : other) {
-	    Query query = me.getKey();
-	    Metadata mergend = me.getValue();
-	    
-	    mergedStore.putOrMerge(query, mergend);
-	}
-	
-	return mergedStore;
+    MetadataStore mergedStore = new MetadataStore(this);
+    
+    for (Map.Entry<Query,Metadata> me : other) {
+        Query query = me.getKey();
+        Metadata mergend = me.getValue();
+        
+        mergedStore.putOrMerge(query, mergend);
+    }
+    
+    return mergedStore;
     }
     
     public String toString() {
-	StringBuffer output = new StringBuffer();
-	
-	output.append("[\n");
-	for (Query query : store.keySet()) {
-	    Metadata metadata = store.get(query);
-	    
-	    output.append(query).append(":\n").append(metadata).append("\n");
-	}
-	output.append("]\n");
-	
-	return output.toString();
+    StringBuffer output = new StringBuffer();
+    
+    output.append("[\n");
+    for (Query query : store.keySet()) {
+        Metadata metadata = store.get(query);
+        
+        output.append(query).append(":\n").append(metadata).append("\n");
+    }
+    output.append("]\n");
+    
+    return output.toString();
     }
     
     public String toXML() {
-	StringBuffer output = new StringBuffer();
-	
-	output.append("<metadata>\n");
-	for (Metadata metadata : store.values()) {
-	    output.append(metadata.toXML());
-	}
-	output.append("</metadata>");
-	
-	return output.toString();
+    StringBuffer output = new StringBuffer();
+    
+    output.append("<metadata>\n");
+    for (Metadata metadata : store.values()) {
+        output.append(metadata.toXML());
+    }
+    output.append("</metadata>");
+    
+    return output.toString();
     }
 }

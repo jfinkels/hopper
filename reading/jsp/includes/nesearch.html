@@ -6,18 +6,18 @@ Search places
 <div class="contents" id="places-contents" style="display:none">
 <form action="nebrowser" method="GET" onsubmit="return validate_form(this,keyword);">
     <table>
-	<tr>
-	    <td>Search for places:</td>
-	    <td><input name="keyword" size="20" /></td>
-	    <td>
-		<select name="placetype">
-		    <option value="siteName" default="yes">matching this name</option>
-		    <option value="state">within this state</option>
-		    <option value="nation">within this country</option>
-		</select>
-	    </td>
-	    <td><input type="submit" value="Browse" /></td>
-	</tr>
+    <tr>
+        <td>Search for places:</td>
+        <td><input name="keyword" size="20" /></td>
+        <td>
+        <select name="placetype">
+            <option value="siteName" default="yes">matching this name</option>
+            <option value="state">within this state</option>
+            <option value="nation">within this country</option>
+        </select>
+        </td>
+        <td><input type="submit" value="Browse" /></td>
+    </tr>
     </table>
     <input type="hidden" name="type" value="place" />
     <p class="description">Enter the name of a place, like "Springfield" or
@@ -40,19 +40,19 @@ Search people
 <div class="contents" id="people-contents" style="display:none">
 <form action="nebrowser" method="GET" onsubmit="return validate_form(this,keyword);">
     <table>
-	<tr>
-	    <td>Search for a person:</td>
-	    <td><input name="keyword" size="30" /></td>
-	    <td><input type="submit" value="Browse" /></td>
-	</tr>
-	<tr>
-	    <td style="text-align: right;">In:</td>
-	    <td colspan="2">
-		<input type="checkbox" name="first">Forenames</input>
-		<input type="checkbox" name="last">Surnames</input>
-		<input type="checkbox" name="full" checked="checked">Full name</input>
-	    </td>
-	</tr>
+    <tr>
+        <td>Search for a person:</td>
+        <td><input name="keyword" size="30" /></td>
+        <td><input type="submit" value="Browse" /></td>
+    </tr>
+    <tr>
+        <td style="text-align: right;">In:</td>
+        <td colspan="2">
+        <input type="checkbox" name="first">Forenames</input>
+        <input type="checkbox" name="last">Surnames</input>
+        <input type="checkbox" name="full" checked="checked">Full name</input>
+        </td>
+    </tr>
     </table>
     <p class="description">Searching for "Washington" in "Forenames" and
     "Surnames" will return all people with Washington as a first or last name,
@@ -71,79 +71,79 @@ Search dates
 <div class="contents" id="dates-contents" style="display:none">
 <form action="nebrowser" method="GET">
     <table>
-	<tr style="text-align: right;">
-		<td>From:</td>
-	    <td>
-		<select name="month">
-		    <option value="">[any]</option>
-		    <option value="1">January</option>
-		    <option value="2">February</option>
-		    <option value="3">March</option>
-		    <option value="4">April</option>
-		    <option value="5">May</option>
-		    <option value="6">June</option>
-		    <option value="7">July</option>
-		    <option value="8">August</option>
-		    <option value="9">September</option>
-		    <option value="10">October</option>
-		    <option value="11">November</option>
-		    <option value="12">December</option>
-		</select>
-	    </td>
-	    <td>
-		<input type="text" name="day"
-			maxlength="4" size="2" />,
-	    </td>
-	    <td>
-		<input type="text" name="year"
-			maxlength="5" size="4" />
-	    </td>
-	    <td>
-		<select name="era">
-		    <option value="AD">A.D.</option>
-		    <option value="BC">B.C.</option>
-		</select>
-	    </td>
-	    <td><input type="submit" value="Browse" /></td>
-	</tr>
-	<tr class="date_field_desc">
-	    <td></td>
-	    <td>Month</td>
-	    <td>Day</td>
-	    <td>Year</td>
-	</tr>
-	<tr style="text-align: right;"><td>To:</td>
-	    <td>
-		<select name="endmonth">
-		    <option value="">[any]</option>
-		    <option value="1">January</option>
-		    <option value="2">February</option>
-		    <option value="3">March</option>
-		    <option value="4">April</option>
-		    <option value="5">May</option>
-		    <option value="6">June</option>
-		    <option value="7">July</option>
-		    <option value="8">August</option>
-		    <option value="9">September</option>
-		    <option value="10">October</option>
-		    <option value="11">November</option>
-		    <option value="12">December</option>
-		</select>
-	    </td>
-	    <td>
-		<input name="endday" size="2" />,
-	    </td>
-	    <td>
-		<input name="endyear" size="4" />
-	    </td>
-	    <td>
-		<select name="endera">
-		    <option value="AD">A.D.</option>
-		    <option value="BC">B.C.</option>
-		</select>
-	    </td>
-	    <td><input type="submit" value="Browse" /></td>
-	</tr>
+    <tr style="text-align: right;">
+        <td>From:</td>
+        <td>
+        <select name="month">
+            <option value="">[any]</option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+        </td>
+        <td>
+        <input type="text" name="day"
+            maxlength="4" size="2" />,
+        </td>
+        <td>
+        <input type="text" name="year"
+            maxlength="5" size="4" />
+        </td>
+        <td>
+        <select name="era">
+            <option value="AD">A.D.</option>
+            <option value="BC">B.C.</option>
+        </select>
+        </td>
+        <td><input type="submit" value="Browse" /></td>
+    </tr>
+    <tr class="date_field_desc">
+        <td></td>
+        <td>Month</td>
+        <td>Day</td>
+        <td>Year</td>
+    </tr>
+    <tr style="text-align: right;"><td>To:</td>
+        <td>
+        <select name="endmonth">
+            <option value="">[any]</option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+        </td>
+        <td>
+        <input name="endday" size="2" />,
+        </td>
+        <td>
+        <input name="endyear" size="4" />
+        </td>
+        <td>
+        <select name="endera">
+            <option value="AD">A.D.</option>
+            <option value="BC">B.C.</option>
+        </select>
+        </td>
+        <td><input type="submit" value="Browse" /></td>
+    </tr>
     </table>
     <p>Enter a month, day and/or year to search for references to that date.
     You do not need to fill out every field: searching only for "1863" will

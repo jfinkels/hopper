@@ -20,31 +20,31 @@ public class BrowserDetector {
      * Class Constructor
      */
     public BrowserDetector(String ua) {
-	userAgent = ua;
+    userAgent = ua;
 
-	if (userAgent != null) {
-	    ie6 = (userAgent.indexOf("MSIE 6") != -1 &&
-		    userAgent.indexOf("Opera") == -1);
-	    ie5 = (userAgent.indexOf("MSIE 5") != -1 &&
-		    userAgent.indexOf("Mac_PowerPC") == -1);
-	    ie5Mac = (userAgent.indexOf("MSIE 5") != -1 &&
-		    userAgent.indexOf("Mac_PowerPC") != -1);
-	    webKit = (userAgent.indexOf("AppleWebKit") != -1);
-	    khtml = (userAgent.indexOf("KHTML") != -1);
+    if (userAgent != null) {
+        ie6 = (userAgent.indexOf("MSIE 6") != -1 &&
+            userAgent.indexOf("Opera") == -1);
+        ie5 = (userAgent.indexOf("MSIE 5") != -1 &&
+            userAgent.indexOf("Mac_PowerPC") == -1);
+        ie5Mac = (userAgent.indexOf("MSIE 5") != -1 &&
+            userAgent.indexOf("Mac_PowerPC") != -1);
+        webKit = (userAgent.indexOf("AppleWebKit") != -1);
+        khtml = (userAgent.indexOf("KHTML") != -1);
 
-	    netscape4 = (userAgent.indexOf("Mozilla/4") != -1 &&
-		    userAgent.indexOf("compatible") == -1);
+        netscape4 = (userAgent.indexOf("Mozilla/4") != -1 &&
+            userAgent.indexOf("compatible") == -1);
 
-	    gecko = (userAgent.indexOf("Mozilla/5") != -1 &&
-		    !isRunningKHTML() && !isRunningOpera());
+        gecko = (userAgent.indexOf("Mozilla/5") != -1 &&
+            !isRunningKHTML() && !isRunningOpera());
 
-	    opera = (userAgent.indexOf("Opera") != -1);
-	} else {
-	    // if something doesn't have a user-agent header, then
-	    // make a guess...
-	    ie6 = true;
-	    ie5 = true;
-	}
+        opera = (userAgent.indexOf("Opera") != -1);
+    } else {
+        // if something doesn't have a user-agent header, then
+        // make a guess...
+        ie6 = true;
+        ie5 = true;
+    }
     }
 
     /**
@@ -53,7 +53,7 @@ public class BrowserDetector {
      * @return true or false
     */
     public boolean isRunningIE6() {
-	return ie6;
+    return ie6;
     }
 
     /**
@@ -62,7 +62,7 @@ public class BrowserDetector {
      * @return true or false
      */
     public boolean isRunningIE5() {
-	return ie5;
+    return ie5;
     }
 
     /**
@@ -71,7 +71,7 @@ public class BrowserDetector {
      * @return true or false
     */
     public boolean isRunningIE5Mac() {
-	return ie5Mac;
+    return ie5Mac;
     }
 
     /** Test if running OmniWeb or Safari
@@ -79,7 +79,7 @@ public class BrowserDetector {
      * @return true or false
      */
     public boolean isRunningWebKit() {
-	return webKit;
+    return webKit;
     }
 
     /**
@@ -88,7 +88,7 @@ public class BrowserDetector {
      * @return true or false
      */
     public boolean isRunningKHTML() {
-	return khtml;
+    return khtml;
     }
 
     /**
@@ -97,7 +97,7 @@ public class BrowserDetector {
      * @return true or false
      */
     public boolean isRunningNetscape4() {
-	return netscape4;
+    return netscape4;
     }
 
     /**
@@ -106,7 +106,7 @@ public class BrowserDetector {
      * @return true or false
      */
     public boolean isRunningGecko() {
-	return gecko;
+    return gecko;
     }
 
     /**
@@ -115,7 +115,7 @@ public class BrowserDetector {
      * @return true or false
     */
     public boolean isRunningOpera() {
-	return opera;
+    return opera;
     }
 
     /**
@@ -124,10 +124,10 @@ public class BrowserDetector {
      * @return true or false
     */
     public boolean supportsXMLHttpRequest() {
-	return (isRunningWebKit() ||
-		isRunningGecko() ||
-		isRunningIE6() ||
-		isRunningIE5());
+    return (isRunningWebKit() ||
+        isRunningGecko() ||
+        isRunningIE6() ||
+        isRunningIE5());
     }
 
     /**
@@ -136,9 +136,9 @@ public class BrowserDetector {
      * @return true or false
      */
     public boolean supportsBorderBoxModel() {
-	return (isRunningIE5() ||
-		isRunningGecko() ||
-		isRunningIE5Mac());
+    return (isRunningIE5() ||
+        isRunningGecko() ||
+        isRunningIE5Mac());
     }
 
     /**
@@ -150,6 +150,6 @@ public class BrowserDetector {
      *	truncates them
      */
     public boolean supportsFractionalPercentages() {
-	return isRunningGecko();
+    return isRunningGecko();
     }
 }

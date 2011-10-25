@@ -27,19 +27,19 @@ public class WordCount implements Comparable<WordCount> {
     private long wordCount;
 
     public static Comparator<WordCount> COUNT_COMPARATOR =
-	new Comparator<WordCount>() {
+    new Comparator<WordCount>() {
 
-	public int compare(WordCount a, WordCount b) {
-	    return (int) (a.getWordCount() - b.getWordCount());
-	}
+    public int compare(WordCount a, WordCount b) {
+        return (int) (a.getWordCount() - b.getWordCount());
+    }
     };
     
     public WordCount() {}
 
     public WordCount(Language l, String id, long c) {
-	lang = l;
-	documentID = id;
-	wordCount = c;
+    lang = l;
+    documentID = id;
+    wordCount = c;
     }
 
     public String getDocumentID() {
@@ -75,27 +75,27 @@ public class WordCount implements Comparable<WordCount> {
     }
     
     public boolean equals(Object o) {
-	if (!getClass().isAssignableFrom(o.getClass())) return false;
-	
-	WordCount w = (WordCount) o;
-	return getDocumentID().equals(w.getDocumentID()) &&
-		getLang().equals(w.getLang());
+    if (!getClass().isAssignableFrom(o.getClass())) return false;
+    
+    WordCount w = (WordCount) o;
+    return getDocumentID().equals(w.getDocumentID()) &&
+        getLang().equals(w.getLang());
     }
     
     public int hashCode() {
-	int result = 17;
-	
-	result += 37 * getDocumentID().hashCode();
-	result += 37 * getLang().hashCode();
-	
-	return result;
+    int result = 17;
+    
+    result += 37 * getDocumentID().hashCode();
+    result += 37 * getLang().hashCode();
+    
+    return result;
     }
 
     public int compareTo(WordCount wc) {
-	int docResult = getDocumentID().compareTo(wc.getDocumentID());
-	if (docResult != 0) return docResult;
-	
-	return getLang().compareTo(wc.getLang());
+    int docResult = getDocumentID().compareTo(wc.getDocumentID());
+    if (docResult != 0) return docResult;
+    
+    return getLang().compareTo(wc.getLang());
     }
 
     /**
@@ -105,27 +105,27 @@ public class WordCount implements Comparable<WordCount> {
      * @return a Query representing this WordCount's document
      */
     public Query getQuery() {
-	return new Query(documentID);
+    return new Query(documentID);
     }	
     
     public String toString() {
-	return String.format("WordCount[%s,%s: %d]",
-		getDocumentID(), getLang(), getWordCount());
+    return String.format("WordCount[%s,%s: %d]",
+        getDocumentID(), getLang(), getWordCount());
     }
 
     private static SortedSet<WordCount> getSortedCounts(
-	Collection<WordCount> c) {
-	SortedSet<WordCount> sortedCounts =
-	    new TreeSet<WordCount>(COUNT_COMPARATOR);
-	sortedCounts.addAll(c);
-	return sortedCounts;
+    Collection<WordCount> c) {
+    SortedSet<WordCount> sortedCounts =
+        new TreeSet<WordCount>(COUNT_COMPARATOR);
+    sortedCounts.addAll(c);
+    return sortedCounts;
     }
 
     public static WordCount getLargest(Collection<WordCount> counts) {
-	return getSortedCounts(counts).last();
+    return getSortedCounts(counts).last();
     }
 
     public static WordCount getSmallest(Collection<WordCount> counts) {
-	return getSortedCounts(counts).first();
+    return getSortedCounts(counts).first();
     }
 }

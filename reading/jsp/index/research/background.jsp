@@ -8,14 +8,14 @@
 
 <div id="main">
     <jsp:include page="/includes/index/indexNav.jsp">
-	<jsp:param name="tabActive" value="research"/>
-	<jsp:param name="subtabActive" value="background"/>
+    <jsp:param name="tabActive" value="research"/>
+    <jsp:param name="subtabActive" value="background"/>
     </jsp:include> 	
     
     <div id="content" class="2column">
-    	<div id="index_main_col">
-		<div id="research">
-		
+        <div id="index_main_col">
+        <div id="research">
+        
 <p>
 When we began work on Perseus in 1985, <a target="_blank" 
 href="http://dl.tufts.edu/view_pdf.jsp?pid=tufts:PB.001.001.00005"
@@ -97,7 +97,7 @@ to advance our work on a cyberinfrastructure for the humanities in general.
 
 </div> <!-- 2column div -->
 </div> <!-- main div -->
-		
+        
 <!-- Google Analytics --> 
 <%@ include file="/includes/common/analytics.htm" %>
 

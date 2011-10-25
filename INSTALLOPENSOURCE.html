@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css">
   <title>Perseus Hopper Installation Directions</title>
   <style type="text/css">
-  	body {font-size: 14px}
+    body {font-size: 14px}
   </style>
 </head>
 <body>
@@ -17,14 +17,14 @@
 <ol>
 <li><a href="http://java.sun.com/javase/downloads/index.jsp"><code>JDK 1.5</code></a> or higher</li>
 <li><a href="http://dev.mysql.com/downloads/"><code>MySQL 5.0</code></a> or higher</li>
-	<ul>
-	<li>In <code>/etc/my.cnf</code> (create it if you do not have it):</li>
-	<ul>
+    <ul>
+    <li>In <code>/etc/my.cnf</code> (create it if you do not have it):</li>
+    <ul>
       <li>Add the following lines under <code>[mysqld]</code> (add <code>[mysqld]</code> if it does not exist):</li>
-	<ul>
-	  <li><code>innodb_data_file_path=ibdata1:500M</code> (or any size of your choice)</li>
-	  <li><code>character_set_server=utf8</code></li>
-	</ul>
+    <ul>
+      <li><code>innodb_data_file_path=ibdata1:500M</code> (or any size of your choice)</li>
+      <li><code>character_set_server=utf8</code></li>
+    </ul>
       <li>Under <code>[mysql]</code> add the following line: <code>default-character-set=utf8</code>
       <li>Comment out <code>skip-networking</code> and/or <code>collation_server=utf8_unicode_ci</code> if in the file</li>
       <li>Login in to MySQL as <code>root</code> and type:</li>
@@ -35,21 +35,21 @@
       </ul>
   </ul>
 <li><a href="http://ant.apache.org/bindownload.cgi"><code>Ant 1.7</code></a> or higher</li>
-	<ul>
-	<li>Download <a href="http://sourceforge.net/projects/ant-contrib/"><code>ant-contrib</code></a> and copy the <code>ant-contrib.jar</code> to <code>$ANT_HOME/lib</code></li>
-	</ul>
+    <ul>
+    <li>Download <a href="http://sourceforge.net/projects/ant-contrib/"><code>ant-contrib</code></a> and copy the <code>ant-contrib.jar</code> to <code>$ANT_HOME/lib</code></li>
+    </ul>
 <li>A servlet engine capable of handling WARs, such as <a href="http://tomcat.apache.org/download-60.cgi"><code>Tomcat 
 6.0</code></a> (Tomcat 5.5 is no longer supported.)
-	<ul>
-	<li>By default, the hopper looks for Tomcat (in <code>properties/hopper.properties</code>) at <code>/usr/local/tomcat/</code>, though this can be changed in <code>hopper.properties</code></li>
-	<li>Copy <code>catalina-ant.jar</code>, located in <code>$CATALINA_HOME/lib</code>, to <code>$ANT_HOME/lib</code></li>
-	<li>Add (if you don't have it) Tomcat manager information in <code>$CATALINA_HOME/conf/tomcat-users.xml</code>.  Modify <code>properties/hosts/localhost.properties</code>: 
-	  <code>localhost.tomcat.manager.username</code> and <code>localhost.tomcat.manager.password</code> to match what is in tomcat-users.xml</li>
-	</ul>
+    <ul>
+    <li>By default, the hopper looks for Tomcat (in <code>properties/hopper.properties</code>) at <code>/usr/local/tomcat/</code>, though this can be changed in <code>hopper.properties</code></li>
+    <li>Copy <code>catalina-ant.jar</code>, located in <code>$CATALINA_HOME/lib</code>, to <code>$ANT_HOME/lib</code></li>
+    <li>Add (if you don't have it) Tomcat manager information in <code>$CATALINA_HOME/conf/tomcat-users.xml</code>.  Modify <code>properties/hosts/localhost.properties</code>: 
+      <code>localhost.tomcat.manager.username</code> and <code>localhost.tomcat.manager.password</code> to match what is in tomcat-users.xml</li>
+    </ul>
 <li>A web server such as <a href="http://httpd.apache.org/download.cgi"><code>Apache</code></a></li>
-	<ul>
-	<li>Use the directions under <b>Displaying the Data</b> to set up the Apache server correctly</li>
-	</ul>
+    <ul>
+    <li>Use the directions under <b>Displaying the Data</b> to set up the Apache server correctly</li>
+    </ul>
 <li>All required Java libraries are included in the <code>/sgml/reading/lib/</code> directory within the distribution.</li>
 <li>Estimate about 7 GB for the <code>sgml</code> directory and about 7 GB for the <code>sor</code> database. The <code>sgml</code> directory can be anywhere so long as it is symbolically linked to <code>/sgml</code></li>
 <li>Estimated run times <code>(ERT)</code> have been included. They refer to the amount of time needed to process all of the texts and collections.</li>
@@ -80,7 +80,7 @@
         Perseus:collection:Greco-Roman
       </td>
       <td valign="middle">
-       	Greek and Roman Materials
+        Greek and Roman Materials
       </td>
       <td valign="middle">
         classics.xml, corpora.xml
@@ -91,7 +91,7 @@
         Perseus:collection:DDBDP
       </td>
       <td valign="middle">
-       	Duke Databank of Documentary Papyri
+        Duke Databank of Documentary Papyri
       </td>
       <td valign="middle">
         /sgml/texts/DDBDP/collection.xml
@@ -99,7 +99,7 @@
     </tr>
     <tr>
       <td valign="middle">
-       	Perseus:collection:Germanic
+        Perseus:collection:Germanic
       </td>
       <td valign="middle">
         Germanic Materials
@@ -132,7 +132,7 @@
     </tr>
     <tr>
       <td valign="middle">
-       	Perseus:collection:Renaissance
+        Perseus:collection:Renaissance
       </td>
       <td valign="middle">
         Renaissance Materials
@@ -143,7 +143,7 @@
     </tr>
     <tr>
       <td valign="middle">
-       	Perseus:collection:Arabic
+        Perseus:collection:Arabic
       </td>
       <td valign="middle">
         Arabic Materials
@@ -380,9 +380,9 @@ two modules (though you may choose to enable others):</p>
 <p>The <a href="http://tomcat.apache.org/tomcat-5.5-doc/proxy-howto.html">Tomcat documentation</a> provides 
 details on proxying from Apache to Tomcat. This allows you to drop the :8080 from the URL.</p>
 <p>Make sure all <code>LoadModule</code> directives for <code>mod_proxy</code> and <code>mod_rewrite</code> 
-	are in <code>httpd.conf</code> (this should automatically happen if you configured Apache to enable these 
-	modules during installation).
-	</p>
+    are in <code>httpd.conf</code> (this should automatically happen if you configured Apache to enable these 
+    modules during installation).
+    </p>
 <p>You then have to add some files to Apache's <code>DocumentRoot</code> and add a file with <code>ReWrite</code> rules.</p>
 <ol>
   <li>Determine the location of <code>DocumentRoot</code> by looking for it in <code>httpd.conf</code> (e.g. 

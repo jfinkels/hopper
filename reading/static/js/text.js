@@ -25,7 +25,7 @@ function loadVocabWgt(doc) {
         req = new XMLHttpRequest();
         req.onreadystatechange = processReqChange;
         req.open("GET", url, true);
-	req.setRequestHeader('If-Modified-Since','Wed, 15 Nov 1995 00:00:00 GMT');
+    req.setRequestHeader('If-Modified-Since','Wed, 15 Nov 1995 00:00:00 GMT');
         req.send(null);
     // branch for IE/Windows ActiveX version
     } else if (window.ActiveXObject) {
@@ -42,14 +42,14 @@ function loadVocabWgt(doc) {
 function loadXMLDoc(docID, query, docIndex) {
 
     if (loadingXML) {
-	return;
+    return;
     }
 
     loadingXML = true;
 
     var url = "loadquery?doc=" + query;
     if (docIndex != -1) {
-	url += "&num=" + docIndex;
+    url += "&num=" + docIndex;
     }
 
     // branch for native XMLHttpRequest object
@@ -65,7 +65,7 @@ function loadXMLDoc(docID, query, docIndex) {
         req = new XMLHttpRequest();
         req.onreadystatechange = processReqChange;
         req.open("GET", url, true);
-	req.setRequestHeader('If-Modified-Since','Wed, 15 Nov 1995 00:00:00 GMT');
+    req.setRequestHeader('If-Modified-Since','Wed, 15 Nov 1995 00:00:00 GMT');
         req.send(null);
     // branch for IE/Windows ActiveX version
     } else if (window.ActiveXObject) {
@@ -81,33 +81,33 @@ function loadXMLDoc(docID, query, docIndex) {
 
 function processReqChange() {
     if (req.readyState == 4) {
-	if (req.status == 200) {
-	    var textDisplay = document.getElementById(lastID + "-contents");
+    if (req.status == 200) {
+        var textDisplay = document.getElementById(lastID + "-contents");
 
-	    textDisplay.innerHTML = req.responseText;
-	    textDisplay.style.display = "block";
-	    
-	    var textLink = document.getElementById(lastID + "-link");
-	    textLink.className = "toggle";
-	    //textLink.style.textDecoration = "underline";
-	    textLink.style.color = "blue";
-	    textLink.innerHTML = "hide";
-	    textLink.setAttribute('href', 'javascript:toggle(\'' + lastID + '\')');
-	} else {
-	    alert("Problem! status = " + req.status + " " + req.statusText + " " + req.readyState);
-	    textLink.innerHTML = "hide";	    	    
-	    textLink.setAttribute('href', 'javascript:toggle(\'' + lastID + '\')');	
-	}
-	loadingXML = false;
+        textDisplay.innerHTML = req.responseText;
+        textDisplay.style.display = "block";
+        
+        var textLink = document.getElementById(lastID + "-link");
+        textLink.className = "toggle";
+        //textLink.style.textDecoration = "underline";
+        textLink.style.color = "blue";
+        textLink.innerHTML = "hide";
+        textLink.setAttribute('href', 'javascript:toggle(\'' + lastID + '\')');
+    } else {
+        alert("Problem! status = " + req.status + " " + req.statusText + " " + req.readyState);
+        textLink.innerHTML = "hide";	    	    
+        textLink.setAttribute('href', 'javascript:toggle(\'' + lastID + '\')');	
+    }
+    loadingXML = false;
     }
 }
 
 function showJumpHelp() {
-  	var div = document.getElementById('jumphelp');
-  	div.style.display = "";
+    var div = document.getElementById('jumphelp');
+    div.style.display = "";
 }
 
 function hideJumpHelp() {
-	var div = document.getElementById('jumphelp');
-  	div.style.display = "none";
+    var div = document.getElementById('jumphelp');
+    div.style.display = "none";
 }

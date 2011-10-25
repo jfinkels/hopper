@@ -28,72 +28,72 @@ public class SearchResults<T extends SearchResult> implements Iterable<T> {
     public SearchResults() {}
 
     public SearchResults(int thc) {
-	this(thc, Range.NONE);
+    this(thc, Range.NONE);
     }
 
     public SearchResults(int thc, Range<Integer> r) {
-	totalHitCount = thc;
-	range = r;
+    totalHitCount = thc;
+    range = r;
     }
 
     public T get(int idx) {
-	return hits.get(idx);
+    return hits.get(idx);
     }
     
     public List<T> getHits() {
-	return hits;
+    return hits;
     }
 
     public Range<Integer> getRange() {
-	return range;
+    return range;
     }
 
     public int getTotalHitCount() {
-	// Cover for ourselves if we forgot to set the total hit count
-	if (totalHitCount == 0 && !hits.isEmpty()) {
-	    return getReturnedHitCount();
-	}
-	
-	return totalHitCount;
+    // Cover for ourselves if we forgot to set the total hit count
+    if (totalHitCount == 0 && !hits.isEmpty()) {
+        return getReturnedHitCount();
+    }
+    
+    return totalHitCount;
     }
 
     public String getIdentifier() {
-	return identifier;
+    return identifier;
     }
     
     public String getType() {
-	return type;
+    return type;
     }
 
     public void setTotalHitCount(int count) {
-	totalHitCount = count;
+    totalHitCount = count;
     }
 
     public void setRange(Range<Integer> r) {
-	range = r;
+    range = r;
     }
 
     public int getReturnedHitCount() {
-	return hits.size();
+    return hits.size();
     }
 
     public void setIdentifier(String i) {
-	identifier = i;
+    identifier = i;
     }
 
     public void setType(String t) {
-	type = t;
+    type = t;
     }
 
     public void add(T hit) {
-	hits.add(hit);
+    hits.add(hit);
     }
 
     public void addAll(List<T> list) {
-	hits.addAll(list);
+    hits.addAll(list);
     }
 
     public Iterator<T> iterator() {
-	return hits.iterator();
+    return hits.iterator();
     }
 }

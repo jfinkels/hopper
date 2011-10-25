@@ -50,7 +50,7 @@ public interface Artifact extends Entity, Serializable {
     public void setOtherBibliography(String otherBibliography);
 
     public Node toXML(Map model, String rootName, HttpServletRequest req, HttpServletResponse res) 
-	throws Exception;
+    throws Exception;
 
     public Map<String,String> getPropertyDisplayNames();
     public Map<String,String> getPropertyNames();

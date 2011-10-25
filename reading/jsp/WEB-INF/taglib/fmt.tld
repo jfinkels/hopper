@@ -56,7 +56,7 @@ country code (as defined by ISO-3166).
 Language and country codes must be
 separated by hyphen (-) or underscore
 (_).        
-	</description>
+    </description>
         <name>value</name>
         <required>true</required>
         <rtexprvalue>true</rtexprvalue>

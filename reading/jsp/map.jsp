@@ -21,35 +21,35 @@
 <div id="header">
     <a id="logo" href="/hopper/"></a>
     <div id="header_text">
-	<h1>Most frequently mentioned places in<br/>
-    	<c:choose>
-    	<c:when test="${loadTextMap}">
-    		<c:if test="${not empty creator}">
-    		<c:out value="${creator}"/>, 
-			</c:if>
-			<span class="title"><c:out value="${title}"/></span>
-			<c:if test="${not empty language}">
-				(<c:out value="${language}"/>)
-			</c:if>
-    	</c:when>
-    	<c:otherwise>
-    		the Perseus Digital Library 	
-    	</c:otherwise>
-    	</c:choose></h1>
+    <h1>Most frequently mentioned places in<br/>
+        <c:choose>
+        <c:when test="${loadTextMap}">
+            <c:if test="${not empty creator}">
+            <c:out value="${creator}"/>, 
+            </c:if>
+            <span class="title"><c:out value="${title}"/></span>
+            <c:if test="${not empty language}">
+                (<c:out value="${language}"/>)
+            </c:if>
+        </c:when>
+        <c:otherwise>
+            the Perseus Digital Library 	
+        </c:otherwise>
+        </c:choose></h1>
     </div>
 <div id="header_side">
-	<%@ include file="/includes/head_search.html" %>
+    <%@ include file="/includes/head_search.html" %>
     </div>
 </div>
 <div id="main">
     <jsp:include page="includes/index/indexNav.jsp">
-	<jsp:param name="tabActive" value=""/>
+    <jsp:param name="tabActive" value=""/>
     </jsp:include> 	
     <div id="content" class="1column">
-    	<div style="text-align:center">
-    	<br/>
-    	<div id="map_canvas" style="width: 700px; height: 500px; margin-left:auto; margin-right:auto"></div>
-    	</div> <%-- main_col --%>
+        <div style="text-align:center">
+        <br/>
+        <div id="map_canvas" style="width: 700px; height: 500px; margin-left:auto; margin-right:auto"></div>
+        </div> <%-- main_col --%>
     </div> <%-- content --%>
     </div> <%-- main --%>
     

@@ -8,14 +8,14 @@
 
 <div id="main">
     <jsp:include page="/includes/index/indexNav.jsp">
-	<jsp:param name="tabActive" value="about"/>
-	<jsp:param name="subtabActive" value="research"/>
+    <jsp:param name="tabActive" value="about"/>
+    <jsp:param name="subtabActive" value="research"/>
     </jsp:include> 	
     
     <div id="content" class="2column">
-    	<div id="index_main_col">
-		<div id="research">
-		
+        <div id="index_main_col">
+        <div id="research">
+        
 <p>
 As a digital infrastructure for the humanities in general and classics in particular takes shape, 
 an unprecedented range of opportunities are emerging whereby students can contribute tangibly to 
@@ -55,84 +55,84 @@ designed to produce a treebank with 1,000,000 words of classical Greek.
 We urge classes and students of Greek and Latin to contribute to this larger effort in a variety of ways:
 </p>
 <ul>
-	<ol>
-	<p>
-	<b>Create treebanks for particular works or sections of Greek and Latin and contribute these to 
-	the larger Greek and Latin Treebanks</b>: Each sentence in the treebank lists who produced the 
-	syntactic analysis. These producers can be individuals or groups such as classes. In our work so 
-	far, two separate annotators have analyzed each sentence and an editor has gone through to resolve 
-	discrepancies to produce a single database with one best analysis per word.  Instructors can use 
-	this model with classes, providing a final set of syntactic analyses that cites the students 
-	individually or the class as a whole. Individual contributors can submit their own syntactic 
-	analyses for review and publication. This exercise will provide a mechanism with which students 
-	can think about Greek and Latin in new ways while contributing to the sum of knowledge about the 
-	languages themselves. Many passages of Greek and Latin admit, of course, of multiple syntactic 
-	interpretations.  We can accept data that includes multiple versions of the same sentence or 
-	alternate interpretations for sentences already in the treebank.
-	</p>
-	</ol>
-	<ol>
-	<p>
-	<b>Publish variant readings and accompanying annotations</b>: Some readings may have no impact 
-	upon the syntactic structure of a sentence (although substituting one verb or noun for another 
-	may have a huge impact on the meaning).  Other readings will require substantial revision of 
-	the syntactic analysis.  Adding syntactically interpreted analyses will allow us to evaluate 
-	the syntactic impact of different editorial choices between editions and thus provides an 
-	essential component for true digital editions.
-	</p>
-	</ol>
-	<ol>
-	<p>
-	<b>Publish documented annotations with alternate interpretations</b>: In this case, we do not 
-	simply list alternate interpretations but provide evidence that supports each interpretation. 
-	In practice, this involves comparing passages where the structure is uncertain with similar 
-	passages where the structure is less problematic.  As our treebanks grow in size, we will be 
-	able to use them to place our intepretations on a basis that not only allows for quantification 
-	but is transparent:  others can go beyond the numbers and check for themselves each passage 
-	on which the numbers are based. As the treebanks are still growing in size, however, we may 
-	find it easier to conduct the more focused studies listed next.
-	</p>
-	</ol>
-	<ol>
-	<p>
-	<b>Conduct original research on Greek and Latin lexicography, linguistics or stylistic analysis 
-	and publish the results with hypertextual links directly connecting your conclusions with the 
-	passages on which they comment</b>: Even a treebank with one million words covers only a small 
-	percentage of classical Greek or Latin. You can build on pre-existing treebanks and/or contribute 
-	new data to ask new questions that have never before been possible. The rising generation of 
-	students has an opportunity to develop a cumulative set of research projects that will shed 
-	increasing light upon Greek and Latin. Each research publication will be submitted to editorial 
-	review and, if accepted, stored permanently in the Perseus Digital Library and the emerging 
-	distributed Scaife Digital Library. This research can be as narrowly focused as "Does Cicero's 
-	use of the passive voice differ between his letters to Atticus and his Phillipics?" or as broad 
-	as "the use of &#960;&#959;&#953;&#941;&#969; in Greek."  Other options (to give you some ideas) include the following:
-	</p>
-	<ul>
-		<li>
-		<p>
-		<b>Lexicographical</b>: Traditional dictionaries like the Oxford Latin Dictionary and the 
-		LSJ provide plentiful citations to support their definitions of words, usually with the most 
-		frequent sense up front.  Are their judgments reflected in actual usage?  Does it differ 
-		between authors?
-		</p>
-		</li>
-		<li>
-		<p>
-		<b>Linguistic</b>: Classical Latin has been thought to use a word order in which the verb 
-		follows the direct object (SOV), but the word order of its daughter languages (like Italian 
-		and Spanish) puts the verb before the direct object (SVO).  Did Classical Latin actually 
-		have this SOV word order, and if so, can we chart how it changed?
-		</p>
-		</li>
-		<li>
-		<p>
-		<b>Stylistic</b>: What kind of verbs is Sallust's Catiline the subject of (i.e., what kind 
-		of actions does he undertake?)  How does this compare to the actions that Cicero attributes 
-		to him in his own text (<em>In Catilinam</em>)?  Is one more sympathetic than the other?
-		</p>
-		</li>
-	</ul>
-	</ol>
+    <ol>
+    <p>
+    <b>Create treebanks for particular works or sections of Greek and Latin and contribute these to 
+    the larger Greek and Latin Treebanks</b>: Each sentence in the treebank lists who produced the 
+    syntactic analysis. These producers can be individuals or groups such as classes. In our work so 
+    far, two separate annotators have analyzed each sentence and an editor has gone through to resolve 
+    discrepancies to produce a single database with one best analysis per word.  Instructors can use 
+    this model with classes, providing a final set of syntactic analyses that cites the students 
+    individually or the class as a whole. Individual contributors can submit their own syntactic 
+    analyses for review and publication. This exercise will provide a mechanism with which students 
+    can think about Greek and Latin in new ways while contributing to the sum of knowledge about the 
+    languages themselves. Many passages of Greek and Latin admit, of course, of multiple syntactic 
+    interpretations.  We can accept data that includes multiple versions of the same sentence or 
+    alternate interpretations for sentences already in the treebank.
+    </p>
+    </ol>
+    <ol>
+    <p>
+    <b>Publish variant readings and accompanying annotations</b>: Some readings may have no impact 
+    upon the syntactic structure of a sentence (although substituting one verb or noun for another 
+    may have a huge impact on the meaning).  Other readings will require substantial revision of 
+    the syntactic analysis.  Adding syntactically interpreted analyses will allow us to evaluate 
+    the syntactic impact of different editorial choices between editions and thus provides an 
+    essential component for true digital editions.
+    </p>
+    </ol>
+    <ol>
+    <p>
+    <b>Publish documented annotations with alternate interpretations</b>: In this case, we do not 
+    simply list alternate interpretations but provide evidence that supports each interpretation. 
+    In practice, this involves comparing passages where the structure is uncertain with similar 
+    passages where the structure is less problematic.  As our treebanks grow in size, we will be 
+    able to use them to place our intepretations on a basis that not only allows for quantification 
+    but is transparent:  others can go beyond the numbers and check for themselves each passage 
+    on which the numbers are based. As the treebanks are still growing in size, however, we may 
+    find it easier to conduct the more focused studies listed next.
+    </p>
+    </ol>
+    <ol>
+    <p>
+    <b>Conduct original research on Greek and Latin lexicography, linguistics or stylistic analysis 
+    and publish the results with hypertextual links directly connecting your conclusions with the 
+    passages on which they comment</b>: Even a treebank with one million words covers only a small 
+    percentage of classical Greek or Latin. You can build on pre-existing treebanks and/or contribute 
+    new data to ask new questions that have never before been possible. The rising generation of 
+    students has an opportunity to develop a cumulative set of research projects that will shed 
+    increasing light upon Greek and Latin. Each research publication will be submitted to editorial 
+    review and, if accepted, stored permanently in the Perseus Digital Library and the emerging 
+    distributed Scaife Digital Library. This research can be as narrowly focused as "Does Cicero's 
+    use of the passive voice differ between his letters to Atticus and his Phillipics?" or as broad 
+    as "the use of &#960;&#959;&#953;&#941;&#969; in Greek."  Other options (to give you some ideas) include the following:
+    </p>
+    <ul>
+        <li>
+        <p>
+        <b>Lexicographical</b>: Traditional dictionaries like the Oxford Latin Dictionary and the 
+        LSJ provide plentiful citations to support their definitions of words, usually with the most 
+        frequent sense up front.  Are their judgments reflected in actual usage?  Does it differ 
+        between authors?
+        </p>
+        </li>
+        <li>
+        <p>
+        <b>Linguistic</b>: Classical Latin has been thought to use a word order in which the verb 
+        follows the direct object (SOV), but the word order of its daughter languages (like Italian 
+        and Spanish) puts the verb before the direct object (SVO).  Did Classical Latin actually 
+        have this SOV word order, and if so, can we chart how it changed?
+        </p>
+        </li>
+        <li>
+        <p>
+        <b>Stylistic</b>: What kind of verbs is Sallust's Catiline the subject of (i.e., what kind 
+        of actions does he undertake?)  How does this compare to the actions that Cicero attributes 
+        to him in his own text (<em>In Catilinam</em>)?  Is one more sympathetic than the other?
+        </p>
+        </li>
+    </ul>
+    </ol>
 </ul>
 <p>
 You do not have to create a complete treebank for an author or work to generate important results 
@@ -153,7 +153,7 @@ Latin treebanks.
 
 </div> <!-- 2column div -->
 </div> <!-- main div -->
-		
+        
 <!-- Google Analytics --> 
 <%@ include file="/includes/common/analytics.htm" %>
 

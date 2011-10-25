@@ -50,25 +50,25 @@ function putVariable(key, value) {
 function doXMLHttpRequest(preCallback, callback, params) {
 
     if (loadingXML) {
-	return;
+    return;
     }
 
     var url = preCallback(params);
     if (url == null) {
-	return;
+    return;
     }
     loadingXML = true;
 
     if (window.XMLHttpRequest) {
         req = new XMLHttpRequest();
-	reqChangeFunc = createRecChangeFunc(req, params, callback);
+    reqChangeFunc = createRecChangeFunc(req, params, callback);
         req.onreadystatechange = reqChangeFunc;
         req.open("GET", url, true);
         req.send(null);
     // branch for IE/Windows ActiveX version
     } else if (window.ActiveXObject) {
         req = new ActiveXObject("Microsoft.XMLHTTP");
-	reqChangeFunc = createRecChangeFunc(req, params);
+    reqChangeFunc = createRecChangeFunc(req, params);
         if (req) {
             req.onreadystatechange = reqChangeFunc;
             req.open("GET", url, true);
@@ -81,10 +81,10 @@ function doXMLHttpRequest(preCallback, callback, params) {
 // and the parameters. It may be more complex than it needs to be.
 function createRecChangeFunc(req, params, callback) {
     reqChangeFunc = function() {
-	function callbackFunction() {
-	    callback(req, params);
-	}
-	processReqChange(callbackFunction);
+    function callbackFunction() {
+        callback(req, params);
+    }
+    processReqChange(callbackFunction);
     }
 
     return reqChangeFunc;
@@ -92,14 +92,14 @@ function createRecChangeFunc(req, params, callback) {
 
 function processReqChange(callback) {
     if (req.readyState == 4) {
-	callback();
-	/*
-	if (req.status == 200) {
-	    callback();
-	} else {
-	    alert("Problem! status = " + req.status + " " + req.statusText);
-	}
-	*/
-	loadingXML = false;
+    callback();
+    /*
+    if (req.status == 200) {
+        callback();
+    } else {
+        alert("Problem! status = " + req.status + " " + req.statusText);
+    }
+    */
+    loadingXML = false;
     }
 }

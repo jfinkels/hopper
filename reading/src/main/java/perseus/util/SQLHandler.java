@@ -30,9 +30,9 @@ public class SQLHandler {
     private static BasicDataSource offLineDataSource = null;
 
     private static final String DEFAULT_DATABASE_IDENTIFIER = 
-	"jdbc/PerseusDB";
+    "jdbc/PerseusDB";
     private static final String WRITABLE_DATABASE_IDENTIFIER =
-	"jdbc/PerseusWritableDB";
+    "jdbc/PerseusWritableDB";
     
     private static Logger logger = Logger.getLogger(SQLHandler.class);
 
@@ -43,10 +43,10 @@ public class SQLHandler {
     */
     public SQLHandler(Connection con) {
         if (con != null) {
-	      connection = con;
+          connection = con;
         } else {
-	    logger.error("Instantiated SQLHandler w/ a null connection!");
-	}
+        logger.error("Instantiated SQLHandler w/ a null connection!");
+    }
     }
 
     /**
@@ -61,7 +61,7 @@ public class SQLHandler {
      * @return a {@link java.sql.Connection}
      */
     public static Connection getWritableConnection() {
-	return doGetConnection(WRITABLE_DATABASE_IDENTIFIER);
+    return doGetConnection(WRITABLE_DATABASE_IDENTIFIER);
     }
 
     /**
@@ -72,7 +72,7 @@ public class SQLHandler {
      * @return a {@link java.sql.Connection}
      */
     public static Connection getConnection() {
-	return doGetConnection(DEFAULT_DATABASE_IDENTIFIER);
+    return doGetConnection(DEFAULT_DATABASE_IDENTIFIER);
     }
 
     /**
@@ -80,7 +80,7 @@ public class SQLHandler {
      * (e.g., QueryRunner) that handle connections themselves.
      */
     public static DataSource getDataSource() {
-	return getDataSource(DEFAULT_DATABASE_IDENTIFIER);
+    return getDataSource(DEFAULT_DATABASE_IDENTIFIER);
     }
 
     /**
@@ -88,56 +88,56 @@ public class SQLHandler {
      * callers (e.g., QueryRunner) that handle connections themselves.
      */
     public static DataSource getWritableDataSource() {
-	return getDataSource(WRITABLE_DATABASE_IDENTIFIER);
+    return getDataSource(WRITABLE_DATABASE_IDENTIFIER);
     }
 
     private static DataSource getDataSource(String dbIdentifier) {
-	try {
-	    if (offLineDataSource != null) {
-		return offLineDataSource;
-	    } else {
-		Context initialContext = new InitialContext();
-		Context envContext =
-		    (Context) initialContext.lookup("java:comp/env");
-		return (DataSource) envContext.lookup(dbIdentifier);
-	    }
-	} catch (NoInitialContextException nice) {
-	    // There was no initial context. This is a cheesy way of 
-	    // figuring out if we are running in a servlet engine or
-	    // in a standalone application.
-	    
-	    logger.info("Using offline data source");
+    try {
+        if (offLineDataSource != null) {
+        return offLineDataSource;
+        } else {
+        Context initialContext = new InitialContext();
+        Context envContext =
+            (Context) initialContext.lookup("java:comp/env");
+        return (DataSource) envContext.lookup(dbIdentifier);
+        }
+    } catch (NoInitialContextException nice) {
+        // There was no initial context. This is a cheesy way of 
+        // figuring out if we are running in a servlet engine or
+        // in a standalone application.
+        
+        logger.info("Using offline data source");
 
-	    String driver = Config.getProperty("hopper.database.driver");
-	    logger.info("driver = " + driver + "\n");
-	    String dbURL = Config.getProperty("hopper.database.url");
-	    logger.info("dbURL = " + dbURL + "\n");
-	    String login = Config.getProperty("hopper.database.username");
-	    logger.info("login = " + login + "\n");
-	    String passwd = Config.getProperty("hopper.database.password");
-	    logger.info("password = " + passwd + "\n");
+        String driver = Config.getProperty("hopper.database.driver");
+        logger.info("driver = " + driver + "\n");
+        String dbURL = Config.getProperty("hopper.database.url");
+        logger.info("dbURL = " + dbURL + "\n");
+        String login = Config.getProperty("hopper.database.username");
+        logger.info("login = " + login + "\n");
+        String passwd = Config.getProperty("hopper.database.password");
+        logger.info("password = " + passwd + "\n");
 
-	    offLineDataSource = new BasicDataSource();
-	    offLineDataSource.setDriverClassName(driver);
-	    offLineDataSource.setUsername(login);
-	    offLineDataSource.setPassword(passwd);
-	    offLineDataSource.setUrl(dbURL);
+        offLineDataSource = new BasicDataSource();
+        offLineDataSource.setDriverClassName(driver);
+        offLineDataSource.setUsername(login);
+        offLineDataSource.setPassword(passwd);
+        offLineDataSource.setUrl(dbURL);
 
-	    return offLineDataSource;
-	} catch (NamingException ne) {
-	    logger.error("Problem getting data source:" + ne);
-	    return null;
-	}
+        return offLineDataSource;
+    } catch (NamingException ne) {
+        logger.error("Problem getting data source:" + ne);
+        return null;
+    }
     }
 
     private static Connection doGetConnection(String dbIdentifier) {
-	try {
-	    DataSource dataSource = getDataSource(dbIdentifier);
-	    return dataSource.getConnection();
-	} catch (SQLException e) {
+    try {
+        DataSource dataSource = getDataSource(dbIdentifier);
+        return dataSource.getConnection();
+    } catch (SQLException e) {
             logger.fatal("Problem getting connection: " + e);
             throw new Error(e);
-	}
+    }
     }
 
     /**

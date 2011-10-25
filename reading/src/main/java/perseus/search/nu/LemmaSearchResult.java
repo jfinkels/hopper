@@ -13,13 +13,13 @@ public class LemmaSearchResult extends SearchResult<Lemma> {
         setTitle(lemma.getHeadword());
         setIdentifier(lemma.getDisplayForm());
         setContent(lemma);
-	setLexiconQueries(lemma.getLexiconQueries());
+    setLexiconQueries(lemma.getLexiconQueries());
     }
 
     private Set<Query> lexiconQueries;
 
     public Set<Query> getLexiconQueries() { return lexiconQueries; }
     public void setLexiconQueries(Set<Query> queries) {
-	lexiconQueries = queries;
+    lexiconQueries = queries;
     }
 }

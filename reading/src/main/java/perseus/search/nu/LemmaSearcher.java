@@ -15,37 +15,37 @@ public class LemmaSearcher implements Searcher {
     private List<Language> targetLanguages = new ArrayList<Language>();
 
     public SearchResults search(String keyword, Range<Integer> range) {
-	Set<Lemma> matchingLemmas = new HashSet<Lemma>();
-	for (Language language : targetLanguages) {
-	    if (!language.getHasMorphData()) continue;
-	    for (String token : keyword.split("\\s+")) {
-		matchingLemmas.addAll(Lemmatizer.getLemmas(token, language.getCode()));
-	    }
-	}
+    Set<Lemma> matchingLemmas = new HashSet<Lemma>();
+    for (Language language : targetLanguages) {
+        if (!language.getHasMorphData()) continue;
+        for (String token : keyword.split("\\s+")) {
+        matchingLemmas.addAll(Lemmatizer.getLemmas(token, language.getCode()));
+        }
+    }
 
-	SearchResults<LemmaSearchResult> results =
-	    new SearchResults<LemmaSearchResult>();
+    SearchResults<LemmaSearchResult> results =
+        new SearchResults<LemmaSearchResult>();
 
-	results.setIdentifier(keyword);
-	for (Lemma lemma : matchingLemmas) {
-	    // load chunks now, not after session has closed
-	    lemma.getLexiconChunks();
-	    results.add(new LemmaSearchResult(lemma));
-	}
+    results.setIdentifier(keyword);
+    for (Lemma lemma : matchingLemmas) {
+        // load chunks now, not after session has closed
+        lemma.getLexiconChunks();
+        results.add(new LemmaSearchResult(lemma));
+    }
 
-	return results;
+    return results;
     }
 
     public List<Language> getTargetLanguages() {
-	return targetLanguages;
+    return targetLanguages;
     }
 
     public void setTargetLanguages(List<Language> targetLanguages) {
-	this.targetLanguages = targetLanguages;
+    this.targetLanguages = targetLanguages;
     }
     
     public void setTargetLanguage(Language targetLanguage) {
-	targetLanguages = new ArrayList<Language>();
-	targetLanguages.add(targetLanguage);
+    targetLanguages = new ArrayList<Language>();
+    targetLanguages.add(targetLanguage);
     }
 }

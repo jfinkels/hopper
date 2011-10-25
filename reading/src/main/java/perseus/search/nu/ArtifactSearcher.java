@@ -37,118 +37,118 @@ import perseus.util.Config;
 import perseus.util.Range;
 
 public class ArtifactSearcher implements Searcher {
-	private static Logger logger = Logger.getLogger(ArtifactSearcher.class);
+    private static Logger logger = Logger.getLogger(ArtifactSearcher.class);
 
-	private List<String> artifactTypes = null;
+    private List<String> artifactTypes = null;
 
-	public ArtifactSearcher() {
-		setArtifactTypes(null);
-	}
-	
-	public ArtifactSearcher(List<String> artifactTypes) {
-		setArtifactTypes(artifactTypes);
-	}
+    public ArtifactSearcher() {
+        setArtifactTypes(null);
+    }
+    
+    public ArtifactSearcher(List<String> artifactTypes) {
+        setArtifactTypes(artifactTypes);
+    }
 
-	public List<String> getArtifactTypes() {
-		return artifactTypes;
-	}
+    public List<String> getArtifactTypes() {
+        return artifactTypes;
+    }
 
-	public void setArtifactTypes(List<String> artifactTypes) {
-		if (artifactTypes == null || artifactTypes.size() == 0) {
-			this.artifactTypes = Arrays.asList(Config.artifactTypes);
-		} else {
-			this.artifactTypes = artifactTypes;
-		}
-	}
+    public void setArtifactTypes(List<String> artifactTypes) {
+        if (artifactTypes == null || artifactTypes.size() == 0) {
+            this.artifactTypes = Arrays.asList(Config.artifactTypes);
+        } else {
+            this.artifactTypes = artifactTypes;
+        }
+    }
 
-	public SearchResults<ArtifactSearchResult> search(String query, Range<Integer> range) {
-		ArtifactSearchResults results = new ArtifactSearchResults();
-		String indexPath = Config.getSearchIndexPath() + "artifact";
-		QueryWrapperFilter filter = new QueryWrapperFilter(filterByArtifactType(this.artifactTypes));
-		int end = range.getEnd();
-		try {
-			IndexSearcher searcher = new IndexSearcher(indexPath);
-			QueryParser queryParser = new QueryParser(ArtifactIndexer.CONTENTS, new SimpleAnalyzer());
-			BooleanQuery mainQuery = new BooleanQuery();
-			mainQuery.add(queryParser.parse(query), MUST);
+    public SearchResults<ArtifactSearchResult> search(String query, Range<Integer> range) {
+        ArtifactSearchResults results = new ArtifactSearchResults();
+        String indexPath = Config.getSearchIndexPath() + "artifact";
+        QueryWrapperFilter filter = new QueryWrapperFilter(filterByArtifactType(this.artifactTypes));
+        int end = range.getEnd();
+        try {
+            IndexSearcher searcher = new IndexSearcher(indexPath);
+            QueryParser queryParser = new QueryParser(ArtifactIndexer.CONTENTS, new SimpleAnalyzer());
+            BooleanQuery mainQuery = new BooleanQuery();
+            mainQuery.add(queryParser.parse(query), MUST);
 
-			// Get counts for each artifact type
-			for (String artType : Config.artifactTypes) {
-				QueryWrapperFilter fil = new QueryWrapperFilter(filterByArtifactType(Arrays.asList(artType)));
-				results.setArtifactCount(artType, searcher.search(mainQuery, fil).length());
-			}
-			Hits hits = searcher.search(mainQuery, filter, new Sort(new String[] {ArtifactIndexer.TYPE, ArtifactIndexer.NAME}));
+            // Get counts for each artifact type
+            for (String artType : Config.artifactTypes) {
+                QueryWrapperFilter fil = new QueryWrapperFilter(filterByArtifactType(Arrays.asList(artType)));
+                results.setArtifactCount(artType, searcher.search(mainQuery, fil).length());
+            }
+            Hits hits = searcher.search(mainQuery, filter, new Sort(new String[] {ArtifactIndexer.TYPE, ArtifactIndexer.NAME}));
 
-			int totalHits = hits.length();
-			results.setTotalHitCount(totalHits);
+            int totalHits = hits.length();
+            results.setTotalHitCount(totalHits);
 
-			if (end > totalHits) {
-				end = totalHits;
-			}
+            if (end > totalHits) {
+                end = totalHits;
+            }
 
-			for (int i = range.getStart(); i < end; i++) {
-				Document artifactDoc = hits.doc(i);
-				Artifact artifact = getArtifact(artifactDoc);
-				ArtifactSearchResult result = new ArtifactSearchResult(artifact);
-				results.add(result);
-			}
-		} catch (IOException ioe) {
-			logger.error(ioe);
-		} catch (ParseException e) {
-			logger.error(e);
-		}
-		return results;
-	}
+            for (int i = range.getStart(); i < end; i++) {
+                Document artifactDoc = hits.doc(i);
+                Artifact artifact = getArtifact(artifactDoc);
+                ArtifactSearchResult result = new ArtifactSearchResult(artifact);
+                results.add(result);
+            }
+        } catch (IOException ioe) {
+            logger.error(ioe);
+        } catch (ParseException e) {
+            logger.error(e);
+        }
+        return results;
+    }
 
-	private Query filterByArtifactType(List<String> artifactTypes) {
-		BooleanQuery query = new BooleanQuery();
-		for (String artifactType : artifactTypes) {
-			query.add(new TermQuery(new Term(ArtifactIndexer.TYPE, artifactType)), SHOULD);
-		}
-		return query;
-	}
+    private Query filterByArtifactType(List<String> artifactTypes) {
+        BooleanQuery query = new BooleanQuery();
+        for (String artifactType : artifactTypes) {
+            query.add(new TermQuery(new Term(ArtifactIndexer.TYPE, artifactType)), SHOULD);
+        }
+        return query;
+    }
 
-	private Artifact getArtifact(Document doc) {
-		ArtifactDAO aDAO = new HibernateArtifactDAO();
-		Artifact result = null;
-		if (doc.get(ArtifactIndexer.TYPE).equals("Building")) {
-			result = (BuildingArtifact) aDAO.findArtifact(doc.get(ArtifactIndexer.NAME), doc.get(ArtifactIndexer.TYPE));
-		} else if (doc.get(ArtifactIndexer.TYPE).equals("Coin")) {
-			result = (CoinArtifact) aDAO.findArtifact(doc.get(ArtifactIndexer.NAME), doc.get(ArtifactIndexer.TYPE));
-		} else if (doc.get(ArtifactIndexer.TYPE).equals("Gem")) {
-			result = (GemArtifact) aDAO.findArtifact(doc.get(ArtifactIndexer.NAME), doc.get(ArtifactIndexer.TYPE));
-		} else if (doc.get(ArtifactIndexer.TYPE).equals("Sculpture")) {
-			result = (SculptureArtifact) aDAO.findArtifact(doc.get(ArtifactIndexer.NAME), doc.get(ArtifactIndexer.TYPE));
-		} else if (doc.get(ArtifactIndexer.TYPE).equals("Site")) {
-			result = (SiteArtifact) aDAO.findArtifact(doc.get(ArtifactIndexer.NAME), doc.get(ArtifactIndexer.TYPE));
-		} else if (doc.get(ArtifactIndexer.TYPE).equals("Vase")) {
-			result = (VaseArtifact) aDAO.findArtifact(doc.get(ArtifactIndexer.NAME), doc.get(ArtifactIndexer.TYPE));
-		}
-		return result;
-	}
+    private Artifact getArtifact(Document doc) {
+        ArtifactDAO aDAO = new HibernateArtifactDAO();
+        Artifact result = null;
+        if (doc.get(ArtifactIndexer.TYPE).equals("Building")) {
+            result = (BuildingArtifact) aDAO.findArtifact(doc.get(ArtifactIndexer.NAME), doc.get(ArtifactIndexer.TYPE));
+        } else if (doc.get(ArtifactIndexer.TYPE).equals("Coin")) {
+            result = (CoinArtifact) aDAO.findArtifact(doc.get(ArtifactIndexer.NAME), doc.get(ArtifactIndexer.TYPE));
+        } else if (doc.get(ArtifactIndexer.TYPE).equals("Gem")) {
+            result = (GemArtifact) aDAO.findArtifact(doc.get(ArtifactIndexer.NAME), doc.get(ArtifactIndexer.TYPE));
+        } else if (doc.get(ArtifactIndexer.TYPE).equals("Sculpture")) {
+            result = (SculptureArtifact) aDAO.findArtifact(doc.get(ArtifactIndexer.NAME), doc.get(ArtifactIndexer.TYPE));
+        } else if (doc.get(ArtifactIndexer.TYPE).equals("Site")) {
+            result = (SiteArtifact) aDAO.findArtifact(doc.get(ArtifactIndexer.NAME), doc.get(ArtifactIndexer.TYPE));
+        } else if (doc.get(ArtifactIndexer.TYPE).equals("Vase")) {
+            result = (VaseArtifact) aDAO.findArtifact(doc.get(ArtifactIndexer.NAME), doc.get(ArtifactIndexer.TYPE));
+        }
+        return result;
+    }
 
-	public class ArtifactSearchResults extends SearchResults<ArtifactSearchResult> {
-		Map<String, Integer> artifactCounts = new TreeMap<String, Integer>();
+    public class ArtifactSearchResults extends SearchResults<ArtifactSearchResult> {
+        Map<String, Integer> artifactCounts = new TreeMap<String, Integer>();
 
-		public Map<String, Integer> getArtifactCounts() {
-			return artifactCounts;
-		}
+        public Map<String, Integer> getArtifactCounts() {
+            return artifactCounts;
+        }
 
-		public void setArtifactCounts(Map<String, Integer> artifactCounts) {
-			this.artifactCounts = artifactCounts;
-		}
+        public void setArtifactCounts(Map<String, Integer> artifactCounts) {
+            this.artifactCounts = artifactCounts;
+        }
 
-		public void setArtifactCount(String artifactType, int count) {
-			artifactCounts.put(artifactType, count);
-		}
-	}
+        public void setArtifactCount(String artifactType, int count) {
+            artifactCounts.put(artifactType, count);
+        }
+    }
 
-	public class ArtifactSearchResult extends SearchResult<Artifact> {		
-		public ArtifactSearchResult(Artifact a) {
-			setTitle(a.getDisplayName());
-			setIdentifier(a.getAuthorityName());
-			setContent(a);
-		}		
-	}
+    public class ArtifactSearchResult extends SearchResult<Artifact> {		
+        public ArtifactSearchResult(Artifact a) {
+            setTitle(a.getDisplayName());
+            setIdentifier(a.getAuthorityName());
+            setContent(a);
+        }		
+    }
 
 }

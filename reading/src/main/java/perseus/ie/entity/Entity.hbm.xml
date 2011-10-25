@@ -6,18 +6,18 @@
 <hibernate-mapping package="perseus.ie.entity">
 
     <class name="Entity" table="hib_entities" batch-size="10" lazy="true">
-	<id name="id" type="int" column="id">
-	    <generator class="native" />
-	</id>
-	<discriminator column="entity_type" type="string" />
+    <id name="id" type="int" column="id">
+        <generator class="native" />
+    </id>
+    <discriminator column="entity_type" type="string" />
 
-	  <property name="authorityName" type="string"
-	      index="auth_name_idx" column="auth_name" length="75"/>
+      <property name="authorityName" type="string"
+          index="auth_name_idx" column="auth_name" length="75"/>
 
-	<property name="displayName" type="string" column="display_name"
-	    index="display_name_idx" length="150" />
-	<property name="sortableString" type="string" column="sort_string"
-	    index="sort_string_idx" length="150" />
+    <property name="displayName" type="string" column="display_name"
+        index="display_name_idx" length="150" />
+    <property name="sortableString" type="string" column="sort_string"
+        index="sort_string_idx" length="150" />
 
         <property name="maxOccurrenceCount" type="long" column="max_occ" />
         <property name="minOccurrenceCount" type="long" column="min_occ" />
@@ -104,32 +104,32 @@
             </subclass>
         </subclass>
 
-		<subclass name="perseus.morph.Lemma" discriminator-value="Lemma">
-		    <set name="lexiconChunks" table="hib_chunks" lazy="false" inverse="true">
-				<key column="lemma_id" />
-				<one-to-many class="perseus.document.dao.HibernateChunkDAO$ChunkRow" />
-	    	</set>
+        <subclass name="perseus.morph.Lemma" discriminator-value="Lemma">
+            <set name="lexiconChunks" table="hib_chunks" lazy="false" inverse="true">
+                <key column="lemma_id" />
+                <one-to-many class="perseus.document.dao.HibernateChunkDAO$ChunkRow" />
+            </set>
 
             <set name="parses" inverse="true" cascade="all" lazy="true">
                 <key column="lemma_id" on-delete="cascade" />
                 <one-to-many class="perseus.morph.Parse" />
             </set>
-			<join table="hib_lemmas">
-				<key column="lemma_id" />
-	    		<property name="headword" column="lemma_text" type="string"
-					index="lemma_idx" length="100" />
-				<property name="bareHeadword" column="bare_headword" type="string" length="100"
-					index="bare_idx" />
-	   			<property name="sequenceNumber"
-		    		column="lemma_sequence_number"
-		    		index="lemma_idx"
-		    		type="int" />
-	    		<many-to-one name="language" column="lemma_lang_id"
-		    		index="lemma_idx" />
-	    		<property name="shortDefinition"
-		    		column="lemma_short_def" type="string" />
-			</join>
-		</subclass>
+            <join table="hib_lemmas">
+                <key column="lemma_id" />
+                <property name="headword" column="lemma_text" type="string"
+                    index="lemma_idx" length="100" />
+                <property name="bareHeadword" column="bare_headword" type="string" length="100"
+                    index="bare_idx" />
+                <property name="sequenceNumber"
+                    column="lemma_sequence_number"
+                    index="lemma_idx"
+                    type="int" />
+                <many-to-one name="language" column="lemma_lang_id"
+                    index="lemma_idx" />
+                <property name="shortDefinition"
+                    column="lemma_short_def" type="string" />
+            </join>
+        </subclass>
 
         <!--
         <subclass name="perseus.voting.Sense">

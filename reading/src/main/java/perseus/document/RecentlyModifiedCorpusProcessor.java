@@ -42,56 +42,56 @@ public class RecentlyModifiedCorpusProcessor extends CorpusProcessor {
     private boolean documentSucceeded = true;
 
     public boolean shouldProcessDocument(Chunk documentChunk) {
-	Date lastProcessed = null;
+    Date lastProcessed = null;
 
-	String documentID = documentChunk.getDocumentID();
-	String taskName = getTaskName();
+    String documentID = documentChunk.getDocumentID();
+    String taskName = getTaskName();
 
-	try {
-	    lastProcessed = DocumentTaskManager.getManager()
-		.getTimestamp(documentID, taskName);
-	} catch (Exception e) {
-	    logger.warn(String.format("Couldn't get timestamp for document %s, task %s",
-		    documentID, taskName), e);
-	}
+    try {
+        lastProcessed = DocumentTaskManager.getManager()
+        .getTimestamp(documentID, taskName);
+    } catch (Exception e) {
+        logger.warn(String.format("Couldn't get timestamp for document %s, task %s",
+            documentID, taskName), e);
+    }
 
-	Date referenceDate = getReferenceDate(documentChunk);
-	boolean willProcess =
-	    lastProcessed == null ||
-	    referenceDate == null ||
-	    referenceDate.after(lastProcessed) ||
-	    ignoreModificationDate();
+    Date referenceDate = getReferenceDate(documentChunk);
+    boolean willProcess =
+        lastProcessed == null ||
+        referenceDate == null ||
+        referenceDate.after(lastProcessed) ||
+        ignoreModificationDate();
 
-	return willProcess;
+    return willProcess;
     }
     
     public void skippedDocument(Chunk documentChunk) {
-	logger.info(String.format("%s: skipping %s",
-		getClass().getSimpleName(),
-		documentChunk.getDocumentID()));
+    logger.info(String.format("%s: skipping %s",
+        getClass().getSimpleName(),
+        documentChunk.getDocumentID()));
     }
     
     public void startDocument(Chunk documentChunk) {
-	// Assume this document is successful until we're told otherwise
-	documentSucceeded = true;
-	
-	super.startDocument(documentChunk);
+    // Assume this document is successful until we're told otherwise
+    documentSucceeded = true;
+    
+    super.startDocument(documentChunk);
     }
     
     public boolean documentSucceeded() { return documentSucceeded; }
 
     public void endDocument(Chunk documentChunk) {
-	// Make sure to record that we completed the given task.
-	if (documentSucceeded) {
-	    try {
-		DocumentTaskManager.getManager().set(
-			documentChunk.getQuery().getDocumentID(), getTaskName());
-	    } catch (SQLException e) {
-		logger.warn("Problem setting timestamp", e);
-	    }
-	} else {
-	    logger.error("Document did not succeed!: " + documentChunk.getDocumentID());
-	}
+    // Make sure to record that we completed the given task.
+    if (documentSucceeded) {
+        try {
+        DocumentTaskManager.getManager().set(
+            documentChunk.getQuery().getDocumentID(), getTaskName());
+        } catch (SQLException e) {
+        logger.warn("Problem setting timestamp", e);
+        }
+    } else {
+        logger.error("Document did not succeed!: " + documentChunk.getDocumentID());
+    }
     }
 
     /**
@@ -99,7 +99,7 @@ public class RecentlyModifiedCorpusProcessor extends CorpusProcessor {
      * "chunkify" or "extract-entities"; will be the class name by default.
      */
     public String getTaskName() {
-	return getClass().getName();
+    return getClass().getName();
     }
 
     /**
@@ -107,11 +107,11 @@ public class RecentlyModifiedCorpusProcessor extends CorpusProcessor {
      * default, no, but subclasses can change this.
      */
     public boolean ignoreModificationDate() {
-	return ignoreModificationDate;
+    return ignoreModificationDate;
     }
 
     public void setIgnoreModificationDate(boolean imd) {
-	ignoreModificationDate = imd;
+    ignoreModificationDate = imd;
     }
 
     /**
@@ -125,30 +125,30 @@ public class RecentlyModifiedCorpusProcessor extends CorpusProcessor {
      * recently than "extract-entities".
      */
     public Date getReferenceDate(Chunk documentChunk) {
-	Set<String> requirements = new HashSet<String>();
-	for (String task : getRequiredTasks(documentChunk)) {
-	    requirements.add(task);
-	}
-	
-	for (Class dependency : getDependencies()) {
-	    requirements.add(dependency.getName());
-	}
-	if (!requirements.isEmpty()) {
-	    try {
-		return getMostRecentDate(
-			documentChunk.getQuery().getDocumentID(),
-			requirements);
-	    } catch (SQLException se) {
-		logger.warn("Problem getting timestamps:", se);
-		return new Date();
-	    }
-	}
+    Set<String> requirements = new HashSet<String>();
+    for (String task : getRequiredTasks(documentChunk)) {
+        requirements.add(task);
+    }
+    
+    for (Class dependency : getDependencies()) {
+        requirements.add(dependency.getName());
+    }
+    if (!requirements.isEmpty()) {
+        try {
+        return getMostRecentDate(
+            documentChunk.getQuery().getDocumentID(),
+            requirements);
+        } catch (SQLException se) {
+        logger.warn("Problem getting timestamps:", se);
+        return new Date();
+        }
+    }
 
-	Metadata metadata = documentChunk.getMetadata();
-	if (metadata.getSourceFile() == null) {
-	    return null;
-	}
-	return new Date(metadata.getSourceFile().lastModified());
+    Metadata metadata = documentChunk.getMetadata();
+    if (metadata.getSourceFile() == null) {
+        return null;
+    }
+    return new Date(metadata.getSourceFile().lastModified());
     }
 
     /**
@@ -161,7 +161,7 @@ public class RecentlyModifiedCorpusProcessor extends CorpusProcessor {
      * @return an array of names of tasks required by this task
      */
     public String[] getRequiredTasks(Chunk documentChunk) {
-	return new String[0];
+    return new String[0];
     }
     
     /**
@@ -171,29 +171,29 @@ public class RecentlyModifiedCorpusProcessor extends CorpusProcessor {
      * `getRequiredTasks()`.
      */
     protected Class[] getDependencies() {
-	return new Class[0];
+    return new Class[0];
     }
 
     private Date getMostRecentDate(String documentID, Set<String> taskNames)
-	throws SQLException {
+    throws SQLException {
 
-	// Default to the epoch--anything we have ought to be more recent than
+    // Default to the epoch--anything we have ought to be more recent than
         // the epoch...
-	Date mostRecent = new Date(0);
-	for (String task : taskNames) {
-	    Date taskCompleted = DocumentTaskManager.getManager()
-		.getTimestamp(documentID, task);
+    Date mostRecent = new Date(0);
+    for (String task : taskNames) {
+        Date taskCompleted = DocumentTaskManager.getManager()
+        .getTimestamp(documentID, task);
 
-	    if (taskCompleted != null && taskCompleted.after(mostRecent)) {
-		mostRecent = taskCompleted;
-	    }
-	}
+        if (taskCompleted != null && taskCompleted.after(mostRecent)) {
+        mostRecent = taskCompleted;
+        }
+    }
 
-	return mostRecent;
+    return mostRecent;
     }
     
     @Override
     public void reportException(Chunk c, Exception ex) {
-	super.reportException(c, ex);
+    super.reportException(c, ex);
     }
 }

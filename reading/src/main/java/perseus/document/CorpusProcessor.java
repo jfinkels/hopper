@@ -44,21 +44,21 @@ public class CorpusProcessor implements Runnable {
     private Query query;
 
     public Query getQuery() {
-		return query;
-	}
+        return query;
+    }
 
-	public void setQuery(Query query) {
-		this.query = query;
-	}
+    public void setQuery(Query query) {
+        this.query = query;
+    }
 
-	public CorpusProcessor() {
-		this(null);
+    public CorpusProcessor() {
+        this(null);
     }
     
     public CorpusProcessor(Query query) {
-    	setOption(CHUNK_TYPE, DEFAULT_TYPE);
-    	setOption(SUBDOC_METHOD, SEPARATE_DOCS);
-    	this.query = query;
+        setOption(CHUNK_TYPE, DEFAULT_TYPE);
+        setOption(SUBDOC_METHOD, SEPARATE_DOCS);
+        this.query = query;
     }
     
     /*
@@ -90,8 +90,8 @@ public class CorpusProcessor implements Runnable {
     public static final String ONE_DOC = "_one-doc_";
     
     public static void main (String args[]) {
-	CorpusProcessor processor = new CorpusProcessor();
-	processor.processCorpus();
+    CorpusProcessor processor = new CorpusProcessor();
+    processor.processCorpus();
     }
     
     /** 
@@ -103,26 +103,26 @@ public class CorpusProcessor implements Runnable {
      set to ONE_DOC.
      */
     public void processCorpus() {
-	List<String> documentIDs = Document.getTexts();
-	for (String documentID : documentIDs) {
-	    Query documentQuery = new Query(documentID);
-	    handleDocumentQuery(documentQuery);
-	}
+    List<String> documentIDs = Document.getTexts();
+    for (String documentID : documentIDs) {
+        Query documentQuery = new Query(documentID);
+        handleDocumentQuery(documentQuery);
+    }
     }
 
-	public void run() {
-		logger.info("Starting "+query.getDocumentID());
-		handleDocumentQuery(query);
-		logger.info("Ending "+query.getDocumentID());
-	}
+    public void run() {
+        logger.info("Starting "+query.getDocumentID());
+        handleDocumentQuery(query);
+        logger.info("Ending "+query.getDocumentID());
+    }
     
     /**
      An alternate starting point. Takes the same actions as processCorpus()
      but for a single document ID.
      */
     public void processDocument(String documentID) {
-	Query documentQuery = new Query(documentID);
-	handleDocumentQuery(documentQuery);
+    Query documentQuery = new Query(documentID);
+    handleDocumentQuery(documentQuery);
     }
     
     /**
@@ -131,15 +131,15 @@ public class CorpusProcessor implements Runnable {
      * "Perseus:collection:cwar".
      */
     public void processCollection(String collectionID) {
-	
-	List<Query> corpusDocuments = new Corpus(collectionID).getCorpusDocuments();
-	for (Query docQuery : corpusDocuments) {	
-	    // skip subdocuments, which will get taken care of when we
-	    // process the parent documents
-	    if (!docQuery.isJustDocumentID()) continue;
-	    
-	    handleDocumentQuery(docQuery);
-	}
+    
+    List<Query> corpusDocuments = new Corpus(collectionID).getCorpusDocuments();
+    for (Query docQuery : corpusDocuments) {	
+        // skip subdocuments, which will get taken care of when we
+        // process the parent documents
+        if (!docQuery.isJustDocumentID()) continue;
+        
+        handleDocumentQuery(docQuery);
+    }
     }
     
     /**
@@ -147,34 +147,34 @@ public class CorpusProcessor implements Runnable {
      * catalog (like "classics.xml").
      */
     public void processCatalog(String catalogFilename) {
-	File catalogFile = new File(catalogFilename);
-	if (!catalogFile.isAbsolute()) {
-	    catalogFile = new File(Config.getCatalogPath(), catalogFilename);
-	}
-	
-	try {
-	    MetadataStore store =
-		MetadataLoader.loadUncachedCatalog(catalogFile);
-	    for (Iterator it = store.queryIterator(); it.hasNext(); ) {
-		Query query = (Query) it.next();
-		if (!query.isJustDocumentID()) continue;
-		
-		// get the query from the database--don't use the catalog copy,
-		// which will lack some fields
-		Metadata metadata = MetadataCache.get(query);
-		if (metadata.has(Metadata.TYPE_KEY) &&
-			metadata.get(Metadata.TYPE_KEY).equals("text")) {
-		    
-		    // don't process collections within the file, which could
-		    // lead to problems for files that define both collections
-		    // and their constituent documents--only process texts
-		    processDocument(query.getDocumentID());
-		}
-	    }
-	} catch (MetadataExtractionException mee) {
-	    mee.printStackTrace();
-	    return;
-	}
+    File catalogFile = new File(catalogFilename);
+    if (!catalogFile.isAbsolute()) {
+        catalogFile = new File(Config.getCatalogPath(), catalogFilename);
+    }
+    
+    try {
+        MetadataStore store =
+        MetadataLoader.loadUncachedCatalog(catalogFile);
+        for (Iterator it = store.queryIterator(); it.hasNext(); ) {
+        Query query = (Query) it.next();
+        if (!query.isJustDocumentID()) continue;
+        
+        // get the query from the database--don't use the catalog copy,
+        // which will lack some fields
+        Metadata metadata = MetadataCache.get(query);
+        if (metadata.has(Metadata.TYPE_KEY) &&
+            metadata.get(Metadata.TYPE_KEY).equals("text")) {
+            
+            // don't process collections within the file, which could
+            // lead to problems for files that define both collections
+            // and their constituent documents--only process texts
+            processDocument(query.getDocumentID());
+        }
+        }
+    } catch (MetadataExtractionException mee) {
+        mee.printStackTrace();
+        return;
+    }
     }
     
     /**
@@ -198,132 +198,132 @@ public class CorpusProcessor implements Runnable {
      * </ul>
      */
     public void processAnything(String id) {
-	// Is it a document ID?
-	Query query = new Query(id);
-	Metadata metadata = query.getMetadata();
-	
-	// (if it's processable, it'll have a type)
-	if (metadata.has(Metadata.TYPE_KEY)) {
-	    String type = metadata.get(Metadata.TYPE_KEY);
-	    if (type.equals("text")) {
-		handleDocumentQuery(query);
-		return;
-	    } else if (type.equals("collection") || type.equals("corpus")) {
-		processCollection(id);
-		return;
-	    }
-	}
-	
-	// (although some corpora lack types but have corpus type keys; check
-	// for one before writing this off as a non-document)
-	if (metadata.has(Metadata.CORPUS_TYPE_KEY)) {
-	    processCollection(id);
-	    return;
-	}
-	
-	// Okay, is it a catalog we recognize?
-	String[] knownCatalogs = Config.getCatalogFiles();
-	for (int i = 0; i < knownCatalogs.length; i++) {
-	    if (id.equals(knownCatalogs[i])) {
-		processCatalog(id);
-		return;
-	    }
-	}
-	
-	// Okay, is it an XML source text for which we've loaded metadata?
-	// (Don't worry about those for which we haven't.)
-	try {
-	    MetadataDAO dao = new SQLMetadataDAO();
-	    List<Query> matchingDocuments =
-		dao.getDocuments(Metadata.SOURCE_TEXT_PATH_KEY,
-			id, null, true);
-	    
-	    if (matchingDocuments.isEmpty()) {
-	    	// if no matches, see if it was an absolute path.
-	    	// (remove the source-text path plus, possibly, a slash)
-	    	String sourcePath = Config.getSourceTextsPath();
-	    	if (id.startsWith(sourcePath)) {
-	    		String relativeId = id.replaceAll(
-	    				sourcePath + File.separatorChar + "?", "");
-	    		matchingDocuments = dao.getDocuments(
-	    				Metadata.SOURCE_TEXT_PATH_KEY,
-	    				relativeId, null, true);
-	    	}
-	    }
-	    else {
-	    	for (Query match : matchingDocuments) {
-	    		processDocument(match.getDocumentID());
-	    	}
-	    	return;
-	    }
-	} catch (Exception e) {
-	    // *shrug*
-	    e.printStackTrace();
-	}
-	
-	// Otherwise, give up!
-	throw new UnsupportedOperationException("Not sure how to process '"
-		+ id + "'");
+    // Is it a document ID?
+    Query query = new Query(id);
+    Metadata metadata = query.getMetadata();
+    
+    // (if it's processable, it'll have a type)
+    if (metadata.has(Metadata.TYPE_KEY)) {
+        String type = metadata.get(Metadata.TYPE_KEY);
+        if (type.equals("text")) {
+        handleDocumentQuery(query);
+        return;
+        } else if (type.equals("collection") || type.equals("corpus")) {
+        processCollection(id);
+        return;
+        }
+    }
+    
+    // (although some corpora lack types but have corpus type keys; check
+    // for one before writing this off as a non-document)
+    if (metadata.has(Metadata.CORPUS_TYPE_KEY)) {
+        processCollection(id);
+        return;
+    }
+    
+    // Okay, is it a catalog we recognize?
+    String[] knownCatalogs = Config.getCatalogFiles();
+    for (int i = 0; i < knownCatalogs.length; i++) {
+        if (id.equals(knownCatalogs[i])) {
+        processCatalog(id);
+        return;
+        }
+    }
+    
+    // Okay, is it an XML source text for which we've loaded metadata?
+    // (Don't worry about those for which we haven't.)
+    try {
+        MetadataDAO dao = new SQLMetadataDAO();
+        List<Query> matchingDocuments =
+        dao.getDocuments(Metadata.SOURCE_TEXT_PATH_KEY,
+            id, null, true);
+        
+        if (matchingDocuments.isEmpty()) {
+            // if no matches, see if it was an absolute path.
+            // (remove the source-text path plus, possibly, a slash)
+            String sourcePath = Config.getSourceTextsPath();
+            if (id.startsWith(sourcePath)) {
+                String relativeId = id.replaceAll(
+                        sourcePath + File.separatorChar + "?", "");
+                matchingDocuments = dao.getDocuments(
+                        Metadata.SOURCE_TEXT_PATH_KEY,
+                        relativeId, null, true);
+            }
+        }
+        else {
+            for (Query match : matchingDocuments) {
+                processDocument(match.getDocumentID());
+            }
+            return;
+        }
+    } catch (Exception e) {
+        // *shrug*
+        e.printStackTrace();
+    }
+    
+    // Otherwise, give up!
+    throw new UnsupportedOperationException("Not sure how to process '"
+        + id + "'");
     }
 
     /**
      * A helper method for our processing methods.
      */
     private void handleDocumentQuery(Query documentQuery) {
-	Chunk initialChunk = Chunk.getInitialChunk(documentQuery);
-	Metadata metadata = initialChunk.getMetadata();
-	
-	if (!shouldProcessDocument(initialChunk)) {
-	    skippedDocument(initialChunk);
-	    return;
-	}
-	
-	String subdocMethod = getOption(SUBDOC_METHOD);
+    Chunk initialChunk = Chunk.getInitialChunk(documentQuery);
+    Metadata metadata = initialChunk.getMetadata();
+    
+    if (!shouldProcessDocument(initialChunk)) {
+        skippedDocument(initialChunk);
+        return;
+    }
+    
+    String subdocMethod = getOption(SUBDOC_METHOD);
 
-	boolean hasSubdocs = false;
-	List<Chunk> subdocs = new ArrayList<Chunk>();
-	
-	if (metadata.has(SUBDOC_REF_KEY)) {
-	    hasSubdocs = true;
-	    subdocs = initialChunk.getSubTexts();
-	}
-	
-	// We need to fire the start(), end() and process() methods
-	// either only once for the whole document or for every 
-	// subdocument.
-	if (!hasSubdocs || subdocMethod.equals(ONE_DOC)) {
-	    startDocument(initialChunk);
-	}
-	
-	if (hasSubdocs) {
-	    for (Chunk chunk : subdocs) {				
-		if (subdocMethod.equals(SEPARATE_DOCS)) {
-		    startDocument(chunk);
-		}
-		
-		processDocument(chunk);
-		
-		if (subdocMethod.equals(SEPARATE_DOCS)) {
-		    endDocument(chunk);
-		}
-	    }
-	}
-	else {
-	    processDocument(initialChunk);
-	}
-	
-	if (!hasSubdocs || subdocMethod.equals(ONE_DOC)) {
-	    endDocument(initialChunk);
-	}
+    boolean hasSubdocs = false;
+    List<Chunk> subdocs = new ArrayList<Chunk>();
+    
+    if (metadata.has(SUBDOC_REF_KEY)) {
+        hasSubdocs = true;
+        subdocs = initialChunk.getSubTexts();
+    }
+    
+    // We need to fire the start(), end() and process() methods
+    // either only once for the whole document or for every 
+    // subdocument.
+    if (!hasSubdocs || subdocMethod.equals(ONE_DOC)) {
+        startDocument(initialChunk);
+    }
+    
+    if (hasSubdocs) {
+        for (Chunk chunk : subdocs) {				
+        if (subdocMethod.equals(SEPARATE_DOCS)) {
+            startDocument(chunk);
+        }
+        
+        processDocument(chunk);
+        
+        if (subdocMethod.equals(SEPARATE_DOCS)) {
+            endDocument(chunk);
+        }
+        }
+    }
+    else {
+        processDocument(initialChunk);
+    }
+    
+    if (!hasSubdocs || subdocMethod.equals(ONE_DOC)) {
+        endDocument(initialChunk);
+    }
 
-	// (is this a good idea? it hopefully prevents chunks from huge
-	// documents from causing OutOfMemoryErrors...)
-	logger.debug("Clearing session...");
-	HibernateUtil.getSession().clear();
-	logger.debug("Evicting chunks from SessionFactory...");
-	HibernateUtil.getSession().getSessionFactory().evict(
-	    HibernateChunkDAO.ChunkRow.class);
-	logger.debug("Continuing...");
+    // (is this a good idea? it hopefully prevents chunks from huge
+    // documents from causing OutOfMemoryErrors...)
+    logger.debug("Clearing session...");
+    HibernateUtil.getSession().clear();
+    logger.debug("Evicting chunks from SessionFactory...");
+    HibernateUtil.getSession().getSessionFactory().evict(
+        HibernateChunkDAO.ChunkRow.class);
+    logger.debug("Continuing...");
     }
 
     /**
@@ -344,19 +344,19 @@ public class CorpusProcessor implements Runnable {
      endDocument().
      */
     public void processDocument(Chunk documentChunk) {
-	
-	Metadata documentMetadata = documentChunk.getMetadata();
-	
-	String defaultScheme = documentMetadata.getChunkSchemes().getDefaultScheme();
-	
-	// the scheme would be null if this chunk was the wrapper for a 
-	// set of sub-documents.
-	if (defaultScheme == null) { return; }
-	
-	// We may want to access a document's chunks in one of two ways:
-	// (a) access every default chunk, or (b) access every "innermost"
-	// (i.e., smallest) chunk. (a) is the default, but check whether the
-	// user has set (b).
+    
+    Metadata documentMetadata = documentChunk.getMetadata();
+    
+    String defaultScheme = documentMetadata.getChunkSchemes().getDefaultScheme();
+    
+    // the scheme would be null if this chunk was the wrapper for a 
+    // set of sub-documents.
+    if (defaultScheme == null) { return; }
+    
+    // We may want to access a document's chunks in one of two ways:
+    // (a) access every default chunk, or (b) access every "innermost"
+    // (i.e., smallest) chunk. (a) is the default, but check whether the
+    // user has set (b).
 //	String chunkTypeOption = getOption(CHUNK_TYPE);
 //	String defaultChunkType;
 //	
@@ -367,35 +367,35 @@ public class CorpusProcessor implements Runnable {
 //	    defaultChunkType = ChunkSchemes.defaultTypeForScheme(defaultScheme);
 //	}
 
-	// Entry-based works are often exceptionally large, and retrieving all
-	// the chunks at once can cause us to run out of memory, as the LSJ
-	// tends to. If we need to deal with an entry-based work, use a
-	// ChunkFactory instead, and iterate through the chunks.
-	
-	List<String> possibleSchemes =
-	    documentMetadata.getChunkSchemes().schemesWithDefaultChunk();
-	if (possibleSchemes.isEmpty()) {
-	    possibleSchemes.add(defaultScheme);
-	}
-	
-	try {
-	    for (String scheme : possibleSchemes) {
-		try {
-		    ChunkFactory factory = ChunkFactory.forDocument(
-			    documentChunk.getQuery(), scheme);
-		    for (Chunk chunk : factory) {
-			processChunk(chunk);
-		    }
-		    break;
+    // Entry-based works are often exceptionally large, and retrieving all
+    // the chunks at once can cause us to run out of memory, as the LSJ
+    // tends to. If we need to deal with an entry-based work, use a
+    // ChunkFactory instead, and iterate through the chunks.
+    
+    List<String> possibleSchemes =
+        documentMetadata.getChunkSchemes().schemesWithDefaultChunk();
+    if (possibleSchemes.isEmpty()) {
+        possibleSchemes.add(defaultScheme);
+    }
+    
+    try {
+        for (String scheme : possibleSchemes) {
+        try {
+            ChunkFactory factory = ChunkFactory.forDocument(
+                documentChunk.getQuery(), scheme);
+            for (Chunk chunk : factory) {
+            processChunk(chunk);
+            }
+            break;
 
-		} catch (NoSuchElementException nsee) {
-		    continue;
-		}
-	    }
-	} catch (Exception e) {
-	    reportException(documentChunk, e);
+        } catch (NoSuchElementException nsee) {
+            continue;
+        }
+        }
+    } catch (Exception e) {
+        reportException(documentChunk, e);
 /*	} finally {
-	    if (factory != null) factory.cleanup();
+        if (factory != null) factory.cleanup();
 */	}
     }
     
@@ -406,30 +406,30 @@ public class CorpusProcessor implements Runnable {
      Finally it calls endChunk().
      */
     public void processChunk(Chunk chunk) {
-	
-	startChunk(chunk);
-	
-	// For each word in the chunk, find lemmas and record them.
-	
-	try {
-	    /*
-	    String chunkText =
-		StyleTransformer.transform(chunk.getText(), "striptext.xsl");
-	    
-	    TokenList tokens = TokenList.getTextTokens(
-		    chunkText, chunk.getMetadata().getLanguage());
-	    */
-	    TokenList tokens = TokenList.getTokensFromXML(chunk);
+    
+    startChunk(chunk);
+    
+    // For each word in the chunk, find lemmas and record them.
+    
+    try {
+        /*
+        String chunkText =
+        StyleTransformer.transform(chunk.getText(), "striptext.xsl");
+        
+        TokenList tokens = TokenList.getTextTokens(
+            chunkText, chunk.getMetadata().getLanguage());
+        */
+        TokenList tokens = TokenList.getTokensFromXML(chunk);
 
-	    for (Token token : tokens) {
-		processToken(token);
-	    }
-	    
-	} catch (Exception e) {
-	    reportException(chunk, e);
-	}
-	
-	endChunk(chunk);
+        for (Token token : tokens) {
+        processToken(token);
+        }
+        
+    } catch (Exception e) {
+        reportException(chunk, e);
+    }
+    
+    endChunk(chunk);
     }
     
     /** 
@@ -450,7 +450,7 @@ public class CorpusProcessor implements Runnable {
      every processable document.
      */
     public void startChunk(Chunk chunk) {
-	
+    
     }
     
     /** 
@@ -458,14 +458,14 @@ public class CorpusProcessor implements Runnable {
      every processable document.
      */
     public void endChunk(Chunk chunk) {
-	
+    
     }
     
     /**
      Called for every token in processable chunks
      */
     public void processToken(Token token) {
-	
+    
     }
     
     /**
@@ -475,7 +475,7 @@ public class CorpusProcessor implements Runnable {
      whether it is a primary document, etc.
      */
     public boolean shouldProcessDocument(Chunk documentChunk) {
-	return true;
+    return true;
     }
     
     /**
@@ -483,8 +483,8 @@ public class CorpusProcessor implements Runnable {
      calls to this method. There are try-catch blocks at 
      */
     public void reportException(Chunk chunk, Exception e) {
-	logger.warn(chunk + ": ", e);
-	e.printStackTrace();
+    logger.warn(chunk + ": ", e);
+    e.printStackTrace();
     }
     
     /**
@@ -494,7 +494,7 @@ public class CorpusProcessor implements Runnable {
      * subclasses.
      */
     public void setOption(String key, String value) {
-	options.put(key, value);
+    options.put(key, value);
     }
     
     /**
@@ -502,10 +502,10 @@ public class CorpusProcessor implements Runnable {
      * no such value has been set.
      */
     public String getOption(String key) {
-	if (options.containsKey(key)) {
-	    return options.get(key);
-	}
-	
-	return null;
+    if (options.containsKey(key)) {
+        return options.get(key);
+    }
+    
+    return null;
     }
 }

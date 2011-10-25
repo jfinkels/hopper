@@ -35,7 +35,7 @@ public interface ParseDAO extends DAO<Parse> {
      * possibly ignoring accents or matching case.
      */
     public List<Parse> getByForm(String form, String languageCode,
-	    boolean ignoreAccents, boolean matchCase);
+        boolean ignoreAccents, boolean matchCase);
     
     /**
      * Returns all parses matching `form` with lemmas in `language`.
@@ -47,7 +47,7 @@ public interface ParseDAO extends DAO<Parse> {
      * possibly ignoring accents or matching case.
      */
     public List<Parse> getByForm(String form, Language language,
-	    boolean ignoreAccents, boolean matchCase);
+        boolean ignoreAccents, boolean matchCase);
 
     /**
      * Returns all parses for the given lemma.

@@ -42,7 +42,7 @@ public final class indexNav_jsp extends org.apache.jasper.runtime.HttpJspBase
     try {
       response.setContentType("text/html;charset=utf-8");
       pageContext = _jspxFactory.getPageContext(this, request, response,
-      			null, true, 8192, true);
+                null, true, 8192, true);
       _jspx_page_context = pageContext;
       application = pageContext.getServletContext();
       config = pageContext.getServletConfig();
@@ -63,22 +63,22 @@ String subtabActive = request.getParameter("subtabActive");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "navigation.jsp" + (("navigation.jsp").indexOf('?')>0? '&': '?') + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("tabNames", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("who,publications,jobs,research", request.getCharacterEncoding()) + "&" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("dispNames", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("Who We Are,Publications,Job Opportunities,Research Opportunities", request.getCharacterEncoding()) + "&" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("tabActive", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode(String.valueOf( subtabActive ), request.getCharacterEncoding()) + "&" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("url", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("about/$1", request.getCharacterEncoding()), out, false);
       out.write("\n    </div>\n   ");
  } 
-   	if (tabActive.equalsIgnoreCase("research")) { 
+    if (tabActive.equalsIgnoreCase("research")) { 
       out.write("\n   \t<div id=\"subtabs\">\n   \t");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "navigation.jsp" + (("navigation.jsp").indexOf('?')>0? '&': '?') + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("tabNames", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("background,current", request.getCharacterEncoding()) + "&" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("dispNames", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("Background,Current", request.getCharacterEncoding()) + "&" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("tabActive", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode(String.valueOf( subtabActive ), request.getCharacterEncoding()) + "&" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("url", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("research/$1", request.getCharacterEncoding()), out, false);
       out.write("\n   \t</div>\n   \t");
  } 
-   	if (tabActive.equalsIgnoreCase("help")) { 
+    if (tabActive.equalsIgnoreCase("help")) { 
       out.write("\n   \t<div id=\"subtabs\">\n   \t");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "navigation.jsp" + (("navigation.jsp").indexOf('?')>0? '&': '?') + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("tabNames", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("quickstart,copyright,faq,startpoints,texts,searching,vocab,archives", request.getCharacterEncoding()) + "&" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("dispNames", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("Quick Start Guide,Copyright,FAQ,Starting Points,Texts Help,Search Help,Vocab Tool,Archived Help", request.getCharacterEncoding()) + "&" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("tabActive", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode(String.valueOf( subtabActive ), request.getCharacterEncoding()) + "&" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("url", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("help/$1", request.getCharacterEncoding()), out, false);
       out.write("\n   \t</div>\n   \t");
  }
-   	if (tabActive.equalsIgnoreCase("collections") && subtabActive != null && !subtabActive.equals("")) { 
+    if (tabActive.equalsIgnoreCase("collections") && subtabActive != null && !subtabActive.equals("")) { 
       out.write("\n   \t<div id=\"subtabs\">\n   \t");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "navigation.jsp" + (("navigation.jsp").indexOf('?')>0? '&': '?') + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("tabNames", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("Greco-Roman,Arabic,Germanic,cwar,Renaissance,RichTimes", request.getCharacterEncoding()) + "&" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("dispNames", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("Greek and Roman,Arabic,Germanic,19th-Century American,Renaissance,Richmond Times", request.getCharacterEncoding()) + "&" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("tabActive", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode(String.valueOf( subtabActive ), request.getCharacterEncoding()) + "&" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("url", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("collection?collection=Perseus:collection:$1", request.getCharacterEncoding()), out, false);
       out.write("\n   \t</div>\n   \t");
  } 
-   	if (tabActive.equalsIgnoreCase("opensource")) { 
+    if (tabActive.equalsIgnoreCase("opensource")) { 
       out.write("\n   \t<div id=\"subtabs\">\n   \t");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "navigation.jsp" + (("navigation.jsp").indexOf('?')>0? '&': '?') + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("tabNames", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("download", request.getCharacterEncoding()) + "&" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("dispNames", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("Download", request.getCharacterEncoding()) + "&" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("tabActive", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode(String.valueOf( subtabActive ), request.getCharacterEncoding()) + "&" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("url", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("opensource/$1", request.getCharacterEncoding()), out, false);
       out.write("\n   \t</div>\n   \t");

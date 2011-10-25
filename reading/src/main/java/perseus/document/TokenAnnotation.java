@@ -15,60 +15,60 @@ public class TokenAnnotation implements Comparable {
     public static final String LINK_TYPE = "link";
 
     public TokenAnnotation (int s, int e, String v) {
-	startToken = s;
-	endToken = e;
-	type = TERM_TYPE;
-	value = v;
+    startToken = s;
+    endToken = e;
+    type = TERM_TYPE;
+    value = v;
     }
 
     public void suppress() {
-	isSuppressed = true;
+    isSuppressed = true;
     }
 
     public int getStartToken() {
-	return startToken;
+    return startToken;
     }
 
     public int getEndToken() {
-	return endToken;
+    return endToken;
     }
 
     public String getType() {
-	return type;
+    return type;
     }
 
     public String getValue() {
-	return value;
+    return value;
     }
 
     public void apply(TokenList tokens, String preText, String postText) {
-	if (isSuppressed) {
-	    return;
-	}
+    if (isSuppressed) {
+        return;
+    }
 
-	Token token = (Token) tokens.get(startToken);
-	token.setDisplayText(preText + token.getDisplayText());
+    Token token = (Token) tokens.get(startToken);
+    token.setDisplayText(preText + token.getDisplayText());
 
-	token = (Token) tokens.get(endToken);
-	token.setDisplayText(token.getDisplayText() + postText);
+    token = (Token) tokens.get(endToken);
+    token.setDisplayText(token.getDisplayText() + postText);
     }
 
     public int compareTo (Object o) throws ClassCastException {
-	if (! (o instanceof TokenAnnotation)) {
-	    throw new ClassCastException("Unable to compare object to this TokenAnnotation");
-	}
+    if (! (o instanceof TokenAnnotation)) {
+        throw new ClassCastException("Unable to compare object to this TokenAnnotation");
+    }
 
-	TokenAnnotation other = (TokenAnnotation) o;
+    TokenAnnotation other = (TokenAnnotation) o;
 
-	if (startToken != other.startToken) {
-	    return startToken - other.startToken;
-	}
-	else if (endToken != other.endToken) {
-	    // This rule makes it so that if two terms start
-	    // at the same position, the longer one is sorted first.
-	    return other.endToken - endToken;
-	}
+    if (startToken != other.startToken) {
+        return startToken - other.startToken;
+    }
+    else if (endToken != other.endToken) {
+        // This rule makes it so that if two terms start
+        // at the same position, the longer one is sorted first.
+        return other.endToken - endToken;
+    }
 
-	return 0;
+    return 0;
     }
 }

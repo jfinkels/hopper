@@ -10,10 +10,10 @@
   </xsl:template>
 
   <xsl:template match="*">
-	<xsl:copy>
-	  <xsl:copy-of select="@*"/>
-	  <xsl:apply-templates/>
-	</xsl:copy>
+    <xsl:copy>
+      <xsl:copy-of select="@*"/>
+      <xsl:apply-templates/>
+    </xsl:copy>
   </xsl:template>
-	
+    
 </xsl:stylesheet>

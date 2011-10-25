@@ -12,8 +12,8 @@ public class DAOType {
     private final String displayName;
     
     private DAOType(String name, String displayName) {
-	this.name = name;
-	this.displayName = displayName;
+    this.name = name;
+    this.displayName = displayName;
     }
     
     public String getDisplayName() { return this.displayName;}

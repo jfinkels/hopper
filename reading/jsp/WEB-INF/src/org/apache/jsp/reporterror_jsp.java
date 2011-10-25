@@ -60,7 +60,7 @@ public final class reporterror_jsp extends org.apache.jasper.runtime.HttpJspBase
     try {
       response.setContentType("text/html;charset=utf-8");
       pageContext = _jspxFactory.getPageContext(this, request, response,
-      			null, true, 8192, true);
+                null, true, 8192, true);
       _jspx_page_context = pageContext;
       application = pageContext.getServletContext();
       config = pageContext.getServletConfig();
@@ -99,14 +99,14 @@ PrintWriter printer = new PrintWriter(new BufferedWriter(writer));
 printer.format("%tc%n%n", Calendar.getInstance())
     .format("Hello! This is an automated message from the website.%n%n")
     .format("%s (%s) has reported an error at the following URL: [%s].%n%n",
-		senderName, senderEmail, request.getParameter("url"))
+        senderName, senderEmail, request.getParameter("url"))
     .format("User-agent: %s%n%n", request.getHeader("User-Agent"))
     .format("Error details:%n%s: %s%n%nStack trace:%n%s",
-	request.getParameter("exception-class"),
-	request.getParameter("exception-message"),
-	request.getParameter("exception-stack-trace"))
+    request.getParameter("exception-class"),
+    request.getParameter("exception-message"),
+    request.getParameter("exception-stack-trace"))
     .format("%n%nAdditional information, if any:%n%s%n",
-	request.getParameter("additional_info"));
+    request.getParameter("additional_info"));
 
 printer.close();
 

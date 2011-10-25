@@ -10,15 +10,15 @@
 
     <div id="main">
       <jsp:include page="/includes/index/indexNav.jsp">
-	<jsp:param name="tabActive" value="help"/>
-	<jsp:param name="subtabActive" value="vocab"/>
+    <jsp:param name="tabActive" value="help"/>
+    <jsp:param name="subtabActive" value="vocab"/>
       </jsp:include>
 
       <div id="content" class="2column">
       <div id="index_main_col">
       <h3>Perseus Vocabulary Tool Help</h3>
-				<p>The Perseus Vocabulary Tool is designed to allow users to explore the vocabulary of the non-English texts in the Perseus Digital Library.  Using 
-				the Vocabulary Tool you can select a set of documents or document sections and then view a list of all of the words that appear in that selection.</p>
+                <p>The Perseus Vocabulary Tool is designed to allow users to explore the vocabulary of the non-English texts in the Perseus Digital Library.  Using 
+                the Vocabulary Tool you can select a set of documents or document sections and then view a list of all of the words that appear in that selection.</p>
 
 <ul>
 <li>Setting Up Your List</li>
@@ -168,20 +168,20 @@ words that your list contains, or, if you chose full texts, the option to select
 
 
 <ul>
-	<li><strong><a name="comp"></a>A Comprehensive Vocabulary List for a Work</strong>:  If you want a comprehensive vocabulary list that you can consult as you read and 
+    <li><strong><a name="comp"></a>A Comprehensive Vocabulary List for a Work</strong>:  If you want a comprehensive vocabulary list that you can consult as you read and 
 review a text, you should select the text that you are trying to read in the select box.  Use the alphabetical sort order and show all words for the list size.  This 
 will produce a comprehensive list of words in alphabetical order that you can annotate and consult easily as you are reading a text.</li>
-	<li><strong><a name="authess"></a>A List of Essential Words for an Author</strong>:  If you want to improve your mastery of a particular Greek or Latin author, you should 
+    <li><strong><a name="authess"></a>A List of Essential Words for an Author</strong>:  If you want to improve your mastery of a particular Greek or Latin author, you should 
 select all of the works by that author in the select box.  Select weighted frequency as your sort order and top 40% or top 50% as your list size option.  This will provide 
 you with a list of 'essential words' that you should memorize to maximize your understanding of that author.</li>
-	<li><strong><a name="inter"></a>A List of Basic Words for Intermediate-Level Reading</strong>:  If you are an intermediate-level student, beginning to read unadapted texts, 
+    <li><strong><a name="inter"></a>A List of Basic Words for Intermediate-Level Reading</strong>:  If you are an intermediate-level student, beginning to read unadapted texts, 
 select five or six texts of interest in the select box.  Select weighted frequency as your sort order and top 50% or top 60% as your list size option.  This will give you 
 a sense of the most important words in the language;  when you are familar with these words, you can begin reading, confident that you will know half to two-thirds of the 
 words on a typical page.
-	<li><strong><a name="compess"></a>A List of Essential Words for a Comprehensive Greek or Latin Exam</strong>:  If you are an advanced student preparing for comprehensive 
+    <li><strong><a name="compess"></a>A List of Essential Words for a Comprehensive Greek or Latin Exam</strong>:  If you are an advanced student preparing for comprehensive 
 exams, select a large list of authors that are appropriate for the requirements of your exam in the language box.  Select weighted frequency as your sort order and top 
 70% or top 80% as your list size option.  This will provide you with a list of important words to help you prepare for your exam.</li>
-	<li><strong><a name="keylist"></a>A List of Key Words for a Text</strong>:  If you want a quick overview of the potentially important words and concepts in a text, select 
+    <li><strong><a name="keylist"></a>A List of Key Words for a Text</strong>:  If you want a quick overview of the potentially important words and concepts in a text, select 
 the text that interests you with a sort order of key word score and a list size of top 10%.  This will provide a short list of potentially important words to be aware of 
 as you read the text.</li>
 </ul>
@@ -195,7 +195,7 @@ as you read the text.</li>
 <hr>
 <i>revised  22 Feb, LMC</i>
 </div> <!-- index_main_col -->
-	</div> <!-- content 2column -->
+    </div> <!-- content 2column -->
 </div> <!-- main -->
 
     <!-- Google Analytics --> 

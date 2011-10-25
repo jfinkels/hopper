@@ -11,23 +11,23 @@ import org.apache.lucene.analysis.standard.StandardAnalyzer;
  */
 public class DeaccentingAnalyzer extends StandardAnalyzer {
 
-	/**
-	 * Class Constructor
-	 */
-	public DeaccentingAnalyzer() {
-		super();
-	}
+    /**
+     * Class Constructor
+     */
+    public DeaccentingAnalyzer() {
+        super();
+    }
 
-	/**
-	 * Constructs a StandardTokenizer filtered by a DeaccentFilter.
-	 *
-	 * @param fieldName 
-	 * @param reader
-	 * @return TokenStream filtered by the DeaccentFilter
-	 */
-	public final TokenStream tokenStream(String fieldName, Reader reader) {
-		TokenStream result = super.tokenStream(fieldName, reader);
-		result = new DeaccentFilter(result);
-		return result;
-	}
+    /**
+     * Constructs a StandardTokenizer filtered by a DeaccentFilter.
+     *
+     * @param fieldName 
+     * @param reader
+     * @return TokenStream filtered by the DeaccentFilter
+     */
+    public final TokenStream tokenStream(String fieldName, Reader reader) {
+        TokenStream result = super.tokenStream(fieldName, reader);
+        result = new DeaccentFilter(result);
+        return result;
+    }
 }

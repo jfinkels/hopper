@@ -8,14 +8,14 @@
 
 <div id="main">
     <jsp:include page="/includes/index/indexNav.jsp">
-	<jsp:param name="tabActive" value="about"/>
-	<jsp:param name="subtabActive" value="jobs"/>
+    <jsp:param name="tabActive" value="about"/>
+    <jsp:param name="subtabActive" value="jobs"/>
     </jsp:include> 	
     
     <div id="content" class="2column">
-    	<div id="index_main_col">
-		<div id="jobs">
-		
+        <div id="index_main_col">
+        <div id="jobs">
+        
 <!-- <p>
 Current Job Opportunities at Perseus:
 </p>
@@ -39,7 +39,7 @@ in hand. Suitable candidates will will have an opportunity to teach one course a
 
 </div> <!-- 2column div -->
 </div> <!-- main div -->
-		
+        
 <!-- Google Analytics --> 
 <%@ include file="/includes/common/analytics.htm" %>
 

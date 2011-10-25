@@ -11,29 +11,29 @@ import perseus.util.StringUtil;
  */
 public class DeaccentFilter extends TokenFilter {
 
-	/**
-	 * Class Constructor
-	 */
-	public DeaccentFilter(TokenStream in) {
-		super(in);
-	}
+    /**
+     * Class Constructor
+     */
+    public DeaccentFilter(TokenStream in) {
+        super(in);
+    }
 
-	/**
-	 * Retrieves the next token in the TokenStream
-	 * 
-	 * @throws java.io.IOException
-	 * @return the next token in the TokenStream
-	 */
-	public Token next() throws java.io.IOException {
-		Token t = input.next();
+    /**
+     * Retrieves the next token in the TokenStream
+     * 
+     * @throws java.io.IOException
+     * @return the next token in the TokenStream
+     */
+    public Token next() throws java.io.IOException {
+        Token t = input.next();
 
-		if (t == null)
-			return null;
+        if (t == null)
+            return null;
 
-		String s = t.termText();
-		s = StringUtil.deaccent(s);
-		Token lemmaToken =
-			new Token(s, t.startOffset(), t.endOffset(), t.type());
-		return lemmaToken;
-	}
+        String s = t.termText();
+        s = StringUtil.deaccent(s);
+        Token lemmaToken =
+            new Token(s, t.startOffset(), t.endOffset(), t.type());
+        return lemmaToken;
+    }
 }

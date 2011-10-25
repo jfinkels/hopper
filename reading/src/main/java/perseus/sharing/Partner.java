@@ -15,138 +15,138 @@ import perseus.util.SQLHandler;
 
 public class Partner {
 
-	private static Logger logger = Logger.getLogger(Partner.class);
+    private static Logger logger = Logger.getLogger(Partner.class);
 
-	String partnerID;
-	String name;
-	String description;
-	String textURL;
-	String oaiProviderURL;
+    String partnerID;
+    String name;
+    String description;
+    String textURL;
+    String oaiProviderURL;
 
-	static HashMap cache = null;
-	static {
-		cache = new HashMap();
-	}
+    static HashMap cache = null;
+    static {
+        cache = new HashMap();
+    }
 
-	private Partner (String pid, String n, String d, String url, String oai) {
-		partnerID = pid;
-		name = n;
-		description = d;
-		textURL = url;
-		oaiProviderURL = oai;
-	}
+    private Partner (String pid, String n, String d, String url, String oai) {
+        partnerID = pid;
+        name = n;
+        description = d;
+        textURL = url;
+        oaiProviderURL = oai;
+    }
 
-	public String getPartnerID() {
-		return partnerID;
-	}
+    public String getPartnerID() {
+        return partnerID;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getTextURL(Query q) {
-		return textURL + q.toString();
-	}
+    public String getTextURL(Query q) {
+        return textURL + q.toString();
+    }
 
-	public String getOAIProviderURL() {
-		return oaiProviderURL;
-	}
+    public String getOAIProviderURL() {
+        return oaiProviderURL;
+    }
 
-	public static Partner getPartner(String partnerID) {
-		if (cache.containsKey(partnerID)) {
-			return (Partner) cache.get(partnerID);
-		}
+    public static Partner getPartner(String partnerID) {
+        if (cache.containsKey(partnerID)) {
+            return (Partner) cache.get(partnerID);
+        }
 
-		Partner partner = null;
+        Partner partner = null;
 
-		ResultSet rs = null;
-		Connection con = null;
-		SQLHandler sqlHandler = null;
+        ResultSet rs = null;
+        Connection con = null;
+        SQLHandler sqlHandler = null;
 
-		try {
-			con = SQLHandler.getConnection();
+        try {
+            con = SQLHandler.getConnection();
 
-			String sql = "SELECT * FROM partners WHERE partner_id = '" +
-			partnerID + "'";
+            String sql = "SELECT * FROM partners WHERE partner_id = '" +
+            partnerID + "'";
 
-			sqlHandler = new SQLHandler(con);
-			rs = sqlHandler.executeQuery(sql);
+            sqlHandler = new SQLHandler(con);
+            rs = sqlHandler.executeQuery(sql);
 
-			if (rs.next()) {
-				String name = rs.getString("partner_name");
-				String description = rs.getString("partner_desc");
-				String textURL = rs.getString("text_url");
-				String oaiURL = rs.getString("oai_provider_url");
+            if (rs.next()) {
+                String name = rs.getString("partner_name");
+                String description = rs.getString("partner_desc");
+                String textURL = rs.getString("text_url");
+                String oaiURL = rs.getString("oai_provider_url");
 
-				partner = new Partner(partnerID, name, description, textURL, oaiURL);
-			}
+                partner = new Partner(partnerID, name, description, textURL, oaiURL);
+            }
 
-		} catch (SQLException e) {
-			logger.fatal("Problem retrieving partner info for [" + partnerID + "]", e);
-		} finally {
-			try {
-				if (sqlHandler != null) {
-					sqlHandler.releaseAll();
-				}
-			} catch (SQLWarning w) {
-				logger.fatal("Problem releasing resources", w);
-			}
-			try {
-				if (con != null) con.close();
-			} catch (SQLException s) {
-				logger.fatal("Problem releasing connection", s);
-			}
-		}
+        } catch (SQLException e) {
+            logger.fatal("Problem retrieving partner info for [" + partnerID + "]", e);
+        } finally {
+            try {
+                if (sqlHandler != null) {
+                    sqlHandler.releaseAll();
+                }
+            } catch (SQLWarning w) {
+                logger.fatal("Problem releasing resources", w);
+            }
+            try {
+                if (con != null) con.close();
+            } catch (SQLException s) {
+                logger.fatal("Problem releasing connection", s);
+            }
+        }
 
-		cache.put(partnerID, partner);
+        cache.put(partnerID, partner);
 
-		return partner;
-	}
+        return partner;
+    }
 
-	public static List getPartners() {
+    public static List getPartners() {
 
-		List output = new ArrayList();
-		Partner partner = null;
+        List output = new ArrayList();
+        Partner partner = null;
 
-		ResultSet rs = null;
-		Connection con = null;
-		SQLHandler sqlHandler = null;
+        ResultSet rs = null;
+        Connection con = null;
+        SQLHandler sqlHandler = null;
 
-		try {
-			con = SQLHandler.getConnection();
+        try {
+            con = SQLHandler.getConnection();
 
-			String sql = "SELECT * FROM partners";
+            String sql = "SELECT * FROM partners";
 
-			sqlHandler = new SQLHandler(con);
-			rs = sqlHandler.executeQuery(sql);
+            sqlHandler = new SQLHandler(con);
+            rs = sqlHandler.executeQuery(sql);
 
-			while (rs.next()) {
-				String partnerID = rs.getString("partner_id");
-				String name = rs.getString("partner_name");
-				String description = rs.getString("partner_desc");
-				String textURL = rs.getString("text_url");
-				String oaiURL = rs.getString("oai_provider_url");
+            while (rs.next()) {
+                String partnerID = rs.getString("partner_id");
+                String name = rs.getString("partner_name");
+                String description = rs.getString("partner_desc");
+                String textURL = rs.getString("text_url");
+                String oaiURL = rs.getString("oai_provider_url");
 
-				partner = new Partner(partnerID, name, description, textURL, oaiURL);
-				output.add(partner);
-			}
+                partner = new Partner(partnerID, name, description, textURL, oaiURL);
+                output.add(partner);
+            }
 
-		} catch (SQLException e) {
-			logger.fatal("Problem retrieving partner info", e);
-		} finally {
-			try {
-				if (sqlHandler != null) {
-					sqlHandler.releaseAll();
-				}
-			} catch (SQLWarning w) {
-				logger.fatal("Problem releasing resources", w);
-			}
-			try {
-				if (con != null) con.close();
-			} catch (SQLException s) {
-				logger.fatal("Problem releasing connection", s);
-			}
-		}
-		return output;
-	}
+        } catch (SQLException e) {
+            logger.fatal("Problem retrieving partner info", e);
+        } finally {
+            try {
+                if (sqlHandler != null) {
+                    sqlHandler.releaseAll();
+                }
+            } catch (SQLWarning w) {
+                logger.fatal("Problem releasing resources", w);
+            }
+            try {
+                if (con != null) con.close();
+            } catch (SQLException s) {
+                logger.fatal("Problem releasing connection", s);
+            }
+        }
+        return output;
+    }
 }

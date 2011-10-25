@@ -10,15 +10,15 @@
 
     <div id="main">
       <jsp:include page="/includes/index/indexNav.jsp">
-	<jsp:param name="tabActive" value="help"/>
-	<jsp:param name="subtabActive" value="archives"/>
+    <jsp:param name="tabActive" value="help"/>
+    <jsp:param name="subtabActive" value="archives"/>
       </jsp:include>
 
       <div id="content" class="2column"><H3><A NAME="vocab">Perseus
       Vocabulary Tool Help (deprecated)</A></H3>
       <div id="index_main_col">
-				<b>last revised 10/25/02</b>
-				<P>The Perseus Vocabulary Tool is designed to allow users to explore the vocabulary of the Greek and Latin texts in the Perseus Digital Library.  Using the Vocabulary Tool you can select a set of documents or document sections and then view a list of all of the words that appear in those texts.</P>
+                <b>last revised 10/25/02</b>
+                <P>The Perseus Vocabulary Tool is designed to allow users to explore the vocabulary of the Greek and Latin texts in the Perseus Digital Library.  Using the Vocabulary Tool you can select a set of documents or document sections and then view a list of all of the words that appear in those texts.</P>
 
 <ul>
 <li><a href="#settingup">Setting Up Your List</a></li>
@@ -117,17 +117,17 @@ After you make your selection, the system will calculate a custom vocabulary lis
 <P>The Vocabulary Tool is very versatile and it can be used in several ways to help you read a text in the Perseus Digital Library.
 
 
-				<ul>
+                <ul>
 <li><STRONG><a name="comp">A Comprehensive Vocabulary List for a Work</a></STRONG>:  If you want a comprehensive vocabulary list that you can consult as you read and review a text, you should select the text that you are trying to read in the select box.  Use the alphabetical sort order and show all words for the list size.  This will produce a comprehensive list of words in alphabetical order that you can annotate and consult easily as you are reading a text.</li>
 <li><STRONG><a name="authess">A List of Essential Words for an Author</a></STRONG>:  If you want to improve your mastery of a particular Greek or Latin author, you should select all of the works by that author in the select box.  Select weighted frequency as your sort order and top 40% or top 50% as your list size option.  This will provide you with a list of 'essential words' that you should memorize to maximize your understanding of that author.</li>
 <li><strong><a name=inter>A List of Basic Words for Intermediate-Level Reading</a></strong>:  If you are an intermediate-level student, beginning to read unadapted texts, select five or six texts of interest in the select box.  Select weighted frequency as your sort order and top 50% or top 60% as your list size option.  This will give you a sense of the most important words in the language;  when you are familar with these words, you can begin reading, confident that you will know half to two-thirds of the words on a typical page.
 <li><STRONG><a name="compess">A List of Essential Words for a Comprehensive Greek or Latin Exam</a></STRONG>:  If you are an advanced student preparing for comprehensive exams, select a large list of authors that are appropriate for the requirements of your exam in the language box.  Select weighted frequency as your sort order and top 70% or top 80% as your list size option.  This will provide you with a list of important words to help you prepare for your exam.</li>
 <li><STRONG><a name="keylist">A List of Key Words for a Text</a></STRONG>:  If you want a quick overview of the potentially important words and concepts in a text, select the text that interests you with a sort order of key word score and a list size of top 10%.  This will provide a short list of potentially important words to be aware of as you read the text.</li>
 </ul>
-				<hr>
-				<i>revised  25-Oct-02, AEM</i>
+                <hr>
+                <i>revised  25-Oct-02, AEM</i>
 </div> <!-- index_main_col -->
-	</div> <!-- content 2column -->
+    </div> <!-- content 2column -->
 </div> <!-- main -->
 
     <!-- Google Analytics --> 

@@ -173,7 +173,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0001"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Volsunga_non.xml</text>
 </rdf:Description>
  
@@ -195,7 +195,7 @@
 <dcterms:available>2003-07-01</dcterms:available>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0001"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/volsunga_eng.xml</text>
 </rdf:Description>
  
@@ -204,7 +204,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0003"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/grettir_non.xml</text>
 </rdf:Description>
  
@@ -212,7 +212,7 @@
 <dcterms:available>2003-07-01</dcterms:available>
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0003"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/grettir_eng.xml</text>
 </rdf:Description>
  
@@ -221,7 +221,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0006"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Af_non.xml</text>
 </rdf:Description>
  
@@ -230,7 +230,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0007"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Ans_non.xml</text>
 </rdf:Description>
  
@@ -239,7 +239,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0008"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Asmundar_non.xml</text>
 </rdf:Description>
  
@@ -248,7 +248,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0009"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Bosa_non.xml</text>
 </rdf:Description>
  
@@ -257,7 +257,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0004"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Egils_non.xml</text>
 </rdf:Description>
  
@@ -266,7 +266,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0010"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Fra_non.xml</text>
 </rdf:Description>
  
@@ -275,7 +275,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0011"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Friththjofs_non.xml</text>
 </rdf:Description>
  
@@ -284,7 +284,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0012"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Gautreks_non.xml</text>
 </rdf:Description>
  
@@ -293,7 +293,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0013"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Gongu-Hrolfs_non.xml</text>
 </rdf:Description>
  
@@ -302,7 +302,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0014"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Grims_non.xml</text>
 </rdf:Description>
  
@@ -311,7 +311,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0015"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/HalfdanarBronufostra_non.xml</text>
 </rdf:Description>
  
@@ -320,7 +320,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0016"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/HalfdanarEysteinssonar_non.xml</text>
 </rdf:Description>
  
@@ -329,7 +329,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0017"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Halfs_non.xml</text>
 </rdf:Description>
  
@@ -338,7 +338,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0018"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Helga_non.xml</text>
 </rdf:Description>
  
@@ -347,7 +347,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0019"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Hervarar_non.xml</text>
 </rdf:Description>
  
@@ -356,7 +356,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0020"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Hjalmthes_non.xml</text>
 </rdf:Description>
  
@@ -365,7 +365,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0038"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/HrolfsGautrekssonar_non.xml</text>
 </rdf:Description>
  
@@ -374,7 +374,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0039"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Hrolfskraka_non.xml</text>
 </rdf:Description>
  
@@ -383,7 +383,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0021"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Hromundar_non.xml</text>
 </rdf:Description>
  
@@ -392,7 +392,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0022"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Illuga_non.xml</text>
 </rdf:Description>
  
@@ -401,7 +401,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0023"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Ketils_non.xml</text>
 </rdf:Description>
  
@@ -410,7 +410,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0024"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Norna_non.xml</text>
 </rdf:Description>
  
@@ -419,7 +419,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0025"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Orvar_non.xml</text>
 </rdf:Description>
  
@@ -428,7 +428,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0026"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Ragnarslothbrokar_non.xml</text>
 </rdf:Description>
  
@@ -437,7 +437,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0027"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Sogubrot_non.xml</text>
 </rdf:Description>
  
@@ -446,7 +446,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0028"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/SorlaSterka_non.xml</text>
 </rdf:Description>
  
@@ -455,7 +455,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0029"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/SorlaThattr_non.xml</text>
 </rdf:Description>
  
@@ -464,7 +464,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0030"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Sturlaugs_non.xml</text>
 </rdf:Description>
  
@@ -473,7 +473,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0032"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/ThattrRagnars_non.xml</text>
 </rdf:Description>
  
@@ -482,7 +482,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0033"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/ThorsteinsBaejarmagns_non.xml</text>
 </rdf:Description>
  
@@ -491,7 +491,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0034"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/ThorsteinsVikingssonar_non.xml</text>
 </rdf:Description>
  
@@ -500,7 +500,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0035"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Toka_non.xml</text>
 </rdf:Description>
  
@@ -509,7 +509,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0036"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Vithbaetir_non.xml</text>
 </rdf:Description>
  
@@ -518,7 +518,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:collection:Germanic"/>
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0037"/>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/Yngvars_non.xml</text>
 </rdf:Description>
 
@@ -528,7 +528,7 @@
 <dcterms:isPartOf rdf:resource="Perseus:corpus:germanic,Old Norse"/>
 <dcterms:isVersionOf rdf:resource="Perseus:abo:onc,0011"/>
 <persq:stylesheet>driscollsaga.xsl</persq:stylesheet>
-	<dc:Rights>nodownload</dc:Rights>
+    <dc:Rights>nodownload</dc:Rights>
 <text>Germanic/Saga/copyright/fridthjofssaga-perseus.xml</text>
 </rdf:Description>
  

@@ -9,8 +9,8 @@
 
  <div id="main">
 <jsp:include page="/includes/index/indexNav.jsp">
-	<jsp:param name="tabActive" value="help"/>
-	<jsp:param name="subtabActive" value="faq"/>
+    <jsp:param name="tabActive" value="help"/>
+    <jsp:param name="subtabActive" value="faq"/>
       </jsp:include>
       
   <div id="content" class="2column">

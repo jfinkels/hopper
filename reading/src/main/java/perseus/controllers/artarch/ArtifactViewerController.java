@@ -41,97 +41,97 @@ import perseus.util.Timekeeper;
  * (rather than using the Perseus catalog texts in the hopper).
  */
 public class ArtifactViewerController implements Controller {
-	private static Logger logger = Logger.getLogger(ArtifactViewerController.class);
+    private static Logger logger = Logger.getLogger(ArtifactViewerController.class);
 
-	/* (non-Javadoc)
-	 * @see org.springframework.web.servlet.mvc.Controller#handleRequest(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
-	 */
-	public ModelAndView handleRequest(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		Timekeeper keeper = new Timekeeper();
-		keeper.start();
-		
-		keeper.record("Beginning artifact processing");
+    /* (non-Javadoc)
+     * @see org.springframework.web.servlet.mvc.Controller#handleRequest(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+     */
+    public ModelAndView handleRequest(HttpServletRequest request,
+            HttpServletResponse response) throws ServletException, IOException {
+        Timekeeper keeper = new Timekeeper();
+        keeper.start();
+        
+        keeper.record("Beginning artifact processing");
 
-		String artifactName = request.getParameter("name");
-		String artifactType = request.getParameter("object");
-		
-		ArtifactDAO aDAO = new HibernateArtifactDAO();
-		Artifact artifact = null;
-		if (artifactType.equalsIgnoreCase("Building")) {
-			artifact = (BuildingArtifact) aDAO.findArtifact(artifactName, artifactType);
-		} else if (artifactType.equalsIgnoreCase("Coin")) {
-			artifact = (CoinArtifact) aDAO.findArtifact(artifactName, artifactType);
-		} else if (artifactType.equalsIgnoreCase("Gem")) {
-			artifact = (GemArtifact) aDAO.findArtifact(artifactName, artifactType);
-		} else if (artifactType.equalsIgnoreCase("Sculpture")) {
-			artifact = (SculptureArtifact) aDAO.findArtifact(artifactName, artifactType);
-		} else if (artifactType.equalsIgnoreCase("Site")) {
-			artifact = (SiteArtifact) aDAO.findArtifact(artifactName, artifactType);
-		} else if (artifactType.equalsIgnoreCase("Vase")) {
-			artifact = (VaseArtifact) aDAO.findArtifact(artifactName, artifactType);
-		}
-		
-		if (artifact == null) {
-			return new ModelAndView("artifact", "model", new HashMap<String, Object>());
-		}
-		keeper.record("Got artifact: "+artifact.getName());
-		
-		// If we're accessing the text from a search results page, highlight the
-		// words the user searched for. If the user searched for a phrase,
-		// highlight any occurrences of the whole phrase.
+        String artifactName = request.getParameter("name");
+        String artifactType = request.getParameter("object");
+        
+        ArtifactDAO aDAO = new HibernateArtifactDAO();
+        Artifact artifact = null;
+        if (artifactType.equalsIgnoreCase("Building")) {
+            artifact = (BuildingArtifact) aDAO.findArtifact(artifactName, artifactType);
+        } else if (artifactType.equalsIgnoreCase("Coin")) {
+            artifact = (CoinArtifact) aDAO.findArtifact(artifactName, artifactType);
+        } else if (artifactType.equalsIgnoreCase("Gem")) {
+            artifact = (GemArtifact) aDAO.findArtifact(artifactName, artifactType);
+        } else if (artifactType.equalsIgnoreCase("Sculpture")) {
+            artifact = (SculptureArtifact) aDAO.findArtifact(artifactName, artifactType);
+        } else if (artifactType.equalsIgnoreCase("Site")) {
+            artifact = (SiteArtifact) aDAO.findArtifact(artifactName, artifactType);
+        } else if (artifactType.equalsIgnoreCase("Vase")) {
+            artifact = (VaseArtifact) aDAO.findArtifact(artifactName, artifactType);
+        }
+        
+        if (artifact == null) {
+            return new ModelAndView("artifact", "model", new HashMap<String, Object>());
+        }
+        keeper.record("Got artifact: "+artifact.getName());
+        
+        // If we're accessing the text from a search results page, highlight the
+        // words the user searched for. If the user searched for a phrase,
+        // highlight any occurrences of the whole phrase.
 
-		String[] highlightedWords = null;
-		Set<String> searchTerms = null;
-		String highlighted = request.getParameter("highlight");
-		String searchPhrase = null;
+        String[] highlightedWords = null;
+        Set<String> searchTerms = null;
+        String highlighted = request.getParameter("highlight");
+        String searchPhrase = null;
 
-		if (highlighted != null) {
-		    if (highlighted.startsWith("\"") && highlighted.endsWith("\"")) {
-		        searchPhrase = highlighted;
-		    } else {
-		        highlightedWords = highlighted.split(",");
-		        searchTerms = new HashSet<String>();
+        if (highlighted != null) {
+            if (highlighted.startsWith("\"") && highlighted.endsWith("\"")) {
+                searchPhrase = highlighted;
+            } else {
+                highlightedWords = highlighted.split(",");
+                searchTerms = new HashSet<String>();
 
-		        for (int i = 0; i < highlightedWords.length; i++) {
-		        	logger.info("search term is "+highlightedWords[i]);
-		            searchTerms.add(highlightedWords[i]);
-		        }
-		    }
-		}
-		
-		keeper.record("Got search term(s)");
-		
-		Renderer renderer = new Renderer();
-		if (searchTerms != null) {
-			renderer.addTokenFilter(new SearchResultsTokenFilter(searchTerms, true));
-		}
-		if (searchPhrase != null) {
-			renderer.addTokenFilter(new PhraseSearchResultsTokenFilter(searchPhrase, true));
-		}
-		
-		//DisplayPreferences prefs = new DisplayPreferences(request, response);
-		//renderer.addLanguageTokenFilters(prefs);
-		
-		Map<String, String> tableProperties = artifact.getTableProperties(renderer);
-		keeper.record("got table properties");
-		
-		Map<String, String> paragraphProperties = artifact.getParagraphProperties(renderer);
-		keeper.record("got paragraph properties");
+                for (int i = 0; i < highlightedWords.length; i++) {
+                    logger.info("search term is "+highlightedWords[i]);
+                    searchTerms.add(highlightedWords[i]);
+                }
+            }
+        }
+        
+        keeper.record("Got search term(s)");
+        
+        Renderer renderer = new Renderer();
+        if (searchTerms != null) {
+            renderer.addTokenFilter(new SearchResultsTokenFilter(searchTerms, true));
+        }
+        if (searchPhrase != null) {
+            renderer.addTokenFilter(new PhraseSearchResultsTokenFilter(searchPhrase, true));
+        }
+        
+        //DisplayPreferences prefs = new DisplayPreferences(request, response);
+        //renderer.addLanguageTokenFilters(prefs);
+        
+        Map<String, String> tableProperties = artifact.getTableProperties(renderer);
+        keeper.record("got table properties");
+        
+        Map<String, String> paragraphProperties = artifact.getParagraphProperties(renderer);
+        keeper.record("got paragraph properties");
 
-		List<ArtifactOccurrence> artOccs = ArtifactOccurrence.getArtifactOccurrences(artifact, -1, request);
-		keeper.record("got artifact occurrences");
-		
-		Map<String, Object> myModel = new HashMap<String, Object>();
-		myModel.put("artifact", artifact);
-		myModel.put("tableProperties", tableProperties);
-		myModel.put("paragraphProperties", paragraphProperties);
-		myModel.put("artOccs", artOccs);
-		
-		keeper.stop();
-		logger.info(keeper.getResults());
-		
-		return new ModelAndView("artifact", "model", myModel);
-	}
+        List<ArtifactOccurrence> artOccs = ArtifactOccurrence.getArtifactOccurrences(artifact, -1, request);
+        keeper.record("got artifact occurrences");
+        
+        Map<String, Object> myModel = new HashMap<String, Object>();
+        myModel.put("artifact", artifact);
+        myModel.put("tableProperties", tableProperties);
+        myModel.put("paragraphProperties", paragraphProperties);
+        myModel.put("artOccs", artOccs);
+        
+        keeper.stop();
+        logger.info(keeper.getResults());
+        
+        return new ModelAndView("artifact", "model", myModel);
+    }
 
 }

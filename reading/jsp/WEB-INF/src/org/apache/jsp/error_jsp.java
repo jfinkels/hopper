@@ -53,7 +53,7 @@ public final class error_jsp extends org.apache.jasper.runtime.HttpJspBase
     try {
       response.setContentType("text/html;charset=utf-8");
       pageContext = _jspxFactory.getPageContext(this, request, response,
-      			null, true, 8192, true);
+                null, true, 8192, true);
       _jspx_page_context = pageContext;
       application = pageContext.getServletContext();
       config = pageContext.getServletConfig();
@@ -82,11 +82,11 @@ public final class error_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n\n\t\t<input type=\"hidden\" name=\"exception-stack-trace\"\n\t\t\tvalue=\"");
 
 
-		 StackTraceElement[] stackTrace = exception.getStackTrace();
-		 for (int i = 0; i < stackTrace.length; i++) {
-		    out.print(stackTrace[i]);
-		    if (i < stackTrace.length-1) out.print("\n");
-		 }
+         StackTraceElement[] stackTrace = exception.getStackTrace();
+         for (int i = 0; i < stackTrace.length; i++) {
+            out.print(stackTrace[i]);
+            if (i < stackTrace.length-1) out.print("\n");
+         }
       out.write("\" />\n\t    ");
  } 
       out.write("\n\n\t\t<table>\n\t\t    <tr>\n\t\t\t<td><label for=\"name\">Your name (optional):</label>\n\t\t\t<td><input type=\"text\" name=\"name\" />\n\t\t    </tr>\n\t\t    <tr>\n\t\t\t<td><label for=\"email\">Your email (optional):</label>\n\t\t\t<td><input type=\"text\" name=\"email\" />\n\t\t    </tr>\n\t\t    <tr>\n\t\t\t<td><label for=\"subject\">Email subject (optional):</label>\n\t\t\t<td><input type=\"text\" name=\"subject\" />\n\t\t    </tr>\n\t\t</table>\n\n\t\t<p><strong>Clicking \"Report Bug\" will automatically send us the URL\n\t\tyou were trying to access and a description of the error.</strong>\n\t\tIf you wish, you may provide some additional information below:</p>\n\n\t\t<textarea name=\"additional_info\">\n\t\t</textarea>\n\t\t<br />\n\t\t<input type=\"submit\" value=\"Report Bug\" />\n\t    </fieldset>\n\t</form>\n\n\t<p>Apologies for the problem, and thanks for your understanding.</p>\n\n\t<p><a href=\"/hopper/\">Perseus Home Page</a></p>\n    </div> ");

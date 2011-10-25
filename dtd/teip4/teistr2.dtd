@@ -53,7 +53,7 @@ upon it.-->
 <!ELEMENT %n.div; %om.RO;  ( (%m.divtop; | %m.Incl; )*, ((((%n.div;)|(%n.divGen;)), 
                     (%m.Incl;)*)+ | ((%component;, (%m.Incl;)*)+, 
                     (((%n.div;)|(%n.divGen;)), (%m.Incl;)*)*)),
-        		    ((%m.divbot;),(%m.Incl;)*)*)> 
+                    ((%m.divbot;),(%m.Incl;)*)*)> 
 <!ATTLIST %n.div;
       %a.global;
       %a.divn;

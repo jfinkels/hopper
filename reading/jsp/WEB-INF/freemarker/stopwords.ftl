@@ -14,18 +14,18 @@
 <div id="header">
     <a id="logo" href="/hopper/"></a>
     <div id="header_text">
-	<h1>Stop Words</h1>
+    <h1>Stop Words</h1>
     </div>
     <div id="header_side">
-	<#include "includes/head_search.ftl">
+    <#include "includes/head_search.ftl">
     </div>
 </div>
 <div id="main">
-	<#include "includes/indexNav.ftl">
+    <#include "includes/indexNav.ftl">
     <div id="content" class="2column">
-	<div id="side_col">
-	</div>
-	<div id="index_main_col">
+    <div id="side_col">
+    </div>
+    <div id="index_main_col">
             <p>The following words will not return any results:
             <ul>
                 <#list languages as lang>
@@ -34,7 +34,7 @@
                     </#if>
                 </#list> 
             </ul>
-	</div>
+    </div>
     </div>
 </div>
 <#include "analytics.ftl">

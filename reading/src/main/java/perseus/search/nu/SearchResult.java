@@ -9,61 +9,61 @@ public class SearchResult<T> implements Comparable<SearchResult> {
     public SearchResult() {}
 
     public SearchResult(String tl, String id, T desc) {
-	this(tl, id, desc, 0.0f);
+    this(tl, id, desc, 0.0f);
     }
 
     public SearchResult(String tl, String id, T desc, float rel) {
-	title = tl;
-	identifier = id;
-	content = desc;
-	relevance = rel;
+    title = tl;
+    identifier = id;
+    content = desc;
+    relevance = rel;
     }
 
     public String getTitle() {
-	return title;
+    return title;
     }
 
     public T getContent() {
-	return content;
+    return content;
     }
 
     public String getIdentifier() {
-	return identifier;
+    return identifier;
     }
 
     public float getRelevance() {
-	return relevance;
+    return relevance;
     }
 
     public void setTitle(String t) {
-	title = t;
+    title = t;
     }
 
     public void setContent(T c) {
-	content = c;
+    content = c;
     }
 
     public void setIdentifier(String i) {
-	identifier = i;
+    identifier = i;
     }
 
     public void setRelevance(float r) {
-	relevance = r;
+    relevance = r;
     }
 
     public String toString() {
-	return String.format("%s: %s", getIdentifier(), getTitle());
+    return String.format("%s: %s", getIdentifier(), getTitle());
     }
     
     public boolean equals(Object o) {
-	if (!(o instanceof SearchResult)) return false;
-	
-	SearchResult sr = (SearchResult) o;
-	
-	return (getIdentifier().equals(sr.getIdentifier()));
+    if (!(o instanceof SearchResult)) return false;
+    
+    SearchResult sr = (SearchResult) o;
+    
+    return (getIdentifier().equals(sr.getIdentifier()));
     }
     
     public int compareTo(SearchResult sr) {
-	return getIdentifier().compareTo(sr.getIdentifier());
+    return getIdentifier().compareTo(sr.getIdentifier());
     }
 }

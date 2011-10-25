@@ -14,14 +14,14 @@ import perseus.util.DisplayPreferences;
 
 public class StopWordsController implements Controller {
 
-	public ModelAndView handleRequest(HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
+    public ModelAndView handleRequest(HttpServletRequest request,
+            HttpServletResponse response) throws Exception {
 
-		Map<String,Object> myModel = new HashMap<String,Object>();
-		myModel.put("languages", Language.getAll());
-		myModel.put("prefs", new DisplayPreferences(request, response));
+        Map<String,Object> myModel = new HashMap<String,Object>();
+        myModel.put("languages", Language.getAll());
+        myModel.put("prefs", new DisplayPreferences(request, response));
 
-		return new ModelAndView("stopwords", myModel);
-	}
+        return new ModelAndView("stopwords", myModel);
+    }
 
 }

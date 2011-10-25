@@ -12,7 +12,7 @@
 
   <validator>
     <validator-class>
-	org.apache.taglibs.standard.tlv.JstlXmlTLV
+    org.apache.taglibs.standard.tlv.JstlXmlTLV
     </validator-class>
     <description>
         Provides validation features for JSTL XML tags.
@@ -35,7 +35,7 @@
     <tag-class>org.apache.taglibs.standard.tag.rt.xml.ExprTag</tag-class>
     <body-content>empty</body-content>
     <description>
-	Like &lt;%= ... &gt;, but for XPath expressions.
+    Like &lt;%= ... &gt;, but for XPath expressions.
     </description>
     <attribute>
         <name>select</name>
@@ -79,17 +79,17 @@
     <tag-class>org.apache.taglibs.standard.tag.common.xml.ForEachTag</tag-class>
     <body-content>JSP</body-content>
     <description>
-	XML iteration tag.
+    XML iteration tag.
     </description>
     <attribute>
-	<name>var</name>
-	<required>false</required>
-	<rtexprvalue>false</rtexprvalue>
+    <name>var</name>
+    <required>false</required>
+    <rtexprvalue>false</rtexprvalue>
     </attribute>
     <attribute>
-	<name>select</name>
-	<required>true</required>
-	<rtexprvalue>false</rtexprvalue>
+    <name>select</name>
+    <required>true</required>
+    <rtexprvalue>false</rtexprvalue>
     </attribute>
   </tag>
 
@@ -98,9 +98,9 @@
     <tag-class>org.apache.taglibs.standard.tag.common.core.OtherwiseTag</tag-class>
     <body-content>JSP</body-content>
     <description>
-	Subtag of &lt;choose&gt; that follows &lt;when&gt; tags
-	and runs only if all of the prior conditions evaluated to
-	'false'
+    Subtag of &lt;choose&gt; that follows &lt;when&gt; tags
+    and runs only if all of the prior conditions evaluated to
+    'false'
     </description>
   </tag>
 
@@ -129,7 +129,7 @@
     <tei-class>org.apache.taglibs.standard.tei.XmlParseTEI</tei-class>
     <body-content>JSP</body-content>
     <description>
-	Parses XML content from 'source' attribute or 'body'
+    Parses XML content from 'source' attribute or 'body'
     </description>
     <attribute>
         <name>var</name>
@@ -173,7 +173,7 @@
     <tag-class>org.apache.taglibs.standard.tag.common.xml.SetTag</tag-class>
     <body-content>empty</body-content>
     <description>
-	Saves the result of an XPath expression evaluation in a 'scope'
+    Saves the result of an XPath expression evaluation in a 'scope'
     </description>
     <attribute>
         <name>var</name>
@@ -181,7 +181,7 @@
         <rtexprvalue>false</rtexprvalue>
     </attribute>
     <attribute>
-	<name>select</name>
+    <name>select</name>
         <required>false</required>
         <rtexprvalue>false</rtexprvalue>
     </attribute>
@@ -198,8 +198,8 @@
     <tei-class>org.apache.taglibs.standard.tei.XmlTransformTEI</tei-class>
     <body-content>JSP</body-content>
     <description>
-	Conducts a transformation given a source XML document
-	and an XSLT stylesheet
+    Conducts a transformation given a source XML document
+    and an XSLT stylesheet
     </description>
     <attribute>
         <name>var</name>
@@ -227,12 +227,12 @@
         <rtexprvalue>true</rtexprvalue>
     </attribute>
     <attribute>
-	<name>xslt</name>
+    <name>xslt</name>
         <required>false</required>
         <rtexprvalue>true</rtexprvalue>
     </attribute>
     <attribute>
-	<name>xsltSystemId</name>
+    <name>xsltSystemId</name>
         <required>false</required>
         <rtexprvalue>true</rtexprvalue>
     </attribute>

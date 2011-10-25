@@ -22,16 +22,16 @@ public class SessionCloserFilter implements Filter {
     }
 
     public void doFilter(ServletRequest req, ServletResponse resp,
-	    FilterChain chain) throws IOException, ServletException {
-	chain.doFilter(req, resp);
+        FilterChain chain) throws IOException, ServletException {
+    chain.doFilter(req, resp);
 
-	logger.trace("About to close session...");
-	try {
-	    HibernateUtil.closeSession();
-	    logger.debug("Session closed!");
-	} catch (HibernateException he) {
-	    logger.warn("Error closing session", he);
-	}	
+    logger.trace("About to close session...");
+    try {
+        HibernateUtil.closeSession();
+        logger.debug("Session closed!");
+    } catch (HibernateException he) {
+        logger.warn("Error closing session", he);
+    }	
     }
 
     public void init(FilterConfig arg0) throws ServletException {

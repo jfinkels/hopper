@@ -9,7 +9,7 @@
 
     <div id="main">
     <jsp:include page="/includes/index/indexNav.jsp">
-	<jsp:param name="tabActive" value="opensource"/>
+    <jsp:param name="tabActive" value="opensource"/>
     </jsp:include>
 
 <div id="content" class="2column">

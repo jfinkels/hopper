@@ -25,7 +25,7 @@ public interface ChunkDAO {
     
     public void beginTransaction();
     public void endTransaction();
-	
+    
     /**
      * Returns the chunk with the corresponding Hibernate id.
      */
@@ -59,7 +59,7 @@ public interface ChunkDAO {
      * first member of each type of `scheme`, going no further than `type`.
      */
     public Chunk getFirstChunkForScheme(String documentID, String scheme,
-	    String type);
+        String type);
     
     /**
      * Returns all `chunk`'s child chunks of type `type`.
@@ -67,7 +67,7 @@ public interface ChunkDAO {
     public List<Chunk> getContainedChunks(Chunk chunk, String type);
     public List<Chunk> getContainedChunks(Chunk chunk, List<String> types);
     public List<Chunk> getContainedChunks(Chunk chunk,
-	    List<String> types, boolean includeOverlaps);
+        List<String> types, boolean includeOverlaps);
     
     /**
      * Returns all chunks belonging to the given document.

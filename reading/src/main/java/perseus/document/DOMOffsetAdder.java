@@ -36,12 +36,12 @@ public class DOMOffsetAdder {
     private long startingOffset = 0;
 
     private OffsetReportingHandler handler =
-	new OffsetReportingHandler("utf-8");
+    new OffsetReportingHandler("utf-8");
 
     public DOMOffsetAdder() {}
 
     public DOMOffsetAdder(long startOff) {
-	startingOffset = startOff;
+    startingOffset = startOff;
     }
 
     private static final Logger logger = Logger.getLogger(DOMOffsetAdder.class);
@@ -57,8 +57,8 @@ public class DOMOffsetAdder {
      * text, which hasn't been touched.
      */
     public void processDocument(Document document) {
-	processContent(document.getRootElement());
-	handler.endDocument();
+    processContent(document.getRootElement());
+    handler.endDocument();
     }
 
     /**
@@ -69,14 +69,14 @@ public class DOMOffsetAdder {
      */
     private void processContent(Content content) {
         if (content instanceof Element) {
-	    processElement((Element) content);
-	} else if (content instanceof Text) {
-	    processText((Text) content);
-	}
+        processElement((Element) content);
+    } else if (content instanceof Text) {
+        processText((Text) content);
+    }
     }
 
     private void processElement(Element element) {
-	AttributesImpl saxAttrs = new AttributesImpl();
+    AttributesImpl saxAttrs = new AttributesImpl();
 
         for (Object attrObj : element.getAttributes()) {
             Attribute attr = (Attribute) attrObj;
@@ -90,45 +90,45 @@ public class DOMOffsetAdder {
         String qName = element.getQualifiedName();
         String namespace = element.getNamespaceURI();
 
-	try {
-	    handler.startElement(namespace, localName, qName, saxAttrs);
-	} catch (SAXException se) {
-	    logger.error("Bad start element", se);
-	}
+    try {
+        handler.startElement(namespace, localName, qName, saxAttrs);
+    } catch (SAXException se) {
+        logger.error("Bad start element", se);
+    }
 
-	if (element.getAttribute("start_offset") == null) {
-	    element.setAttribute("start_offset",
-		    Long.toString(calculateByteOffset()));
-	}
+    if (element.getAttribute("start_offset") == null) {
+        element.setAttribute("start_offset",
+            Long.toString(calculateByteOffset()));
+    }
 
         for (Object child : element.getContent()) {
             processContent((Content) child);
         }
 
-	try {
-	    handler.endElement(namespace, localName, qName);
-	} catch (SAXException se) {
-	    logger.error("Bad end element", se);
-	}
+    try {
+        handler.endElement(namespace, localName, qName);
+    } catch (SAXException se) {
+        logger.error("Bad end element", se);
+    }
 
-	if (element.getAttribute("end_offset") == null) {
-	    element.setAttribute("end_offset",
-		    Long.toString(calculateByteOffset()));
-	}
+    if (element.getAttribute("end_offset") == null) {
+        element.setAttribute("end_offset",
+            Long.toString(calculateByteOffset()));
+    }
     }
 
     private void processText(Text text) {
-	String characters = text.getText();
-	try {
-	    handler.characters(characters.toCharArray(),
-				0, characters.length());
-	} catch (SAXException se) {
-	    logger.error("Bad text", se);
-	}
+    String characters = text.getText();
+    try {
+        handler.characters(characters.toCharArray(),
+                0, characters.length());
+    } catch (SAXException se) {
+        logger.error("Bad text", se);
+    }
     }
 
     private long calculateByteOffset() {
-	return handler.getByteOffset() + startingOffset;
+    return handler.getByteOffset() + startingOffset;
     }
 
     /**
@@ -136,11 +136,11 @@ public class DOMOffsetAdder {
      * used when the chunk is part of a larger XML document.
      */
     public void setStartingOffset(long newOffset) {
-	startingOffset = newOffset;
+    startingOffset = newOffset;
     }
 
     public long getStartingOffset() {
-	return startingOffset;
+    return startingOffset;
     }
 
     /**
@@ -154,19 +154,19 @@ public class DOMOffsetAdder {
     public static Document domFromChunk(Chunk chunk)
         throws IOException, JDOMException {
 
-	String chunkText = chunk.getText();
-	String openTags = chunk.getOpenTags();
+    String chunkText = chunk.getText();
+    String openTags = chunk.getOpenTags();
 
-	int startingOffset = chunk.getStartOffset() - openTags.length();
+    int startingOffset = chunk.getStartOffset() - openTags.length();
 
-	DOMOffsetAdder adder = new DOMOffsetAdder(startingOffset);
-	Document document = null;
+    DOMOffsetAdder adder = new DOMOffsetAdder(startingOffset);
+    Document document = null;
 
         StringReader reader = new StringReader(chunkText);
         document = new SAXBuilder().build(reader);
 
-	adder.processDocument(document);
+    adder.processDocument(document);
 
-	return document;
+    return document;
     }
 }

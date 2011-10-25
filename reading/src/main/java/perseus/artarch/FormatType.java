@@ -12,8 +12,8 @@ public class FormatType {
     private final String displayName;
 
     private FormatType(String name, String displayName) {
-	this.name = name;
-	this.displayName = displayName;
+    this.name = name;
+    this.displayName = displayName;
     }
 
     public String toString() { return displayName; }

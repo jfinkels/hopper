@@ -32,7 +32,7 @@
         <span class="en"><xsl:apply-templates /></span>
       </xsl:when>
       <xsl:when test="$default != ''">
-	<span class="{$default}"><xsl:apply-templates /></span>
+    <span class="{$default}"><xsl:apply-templates /></span>
       </xsl:when>
       <xsl:otherwise>
         <xsl:apply-templates /> 

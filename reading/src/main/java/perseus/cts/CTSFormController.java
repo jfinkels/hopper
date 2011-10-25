@@ -18,10 +18,10 @@ import org.springframework.web.servlet.ModelAndView;
 public class CTSFormController implements Controller {
 
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) 
-	throws ServletException, IOException {
-	
-	Map myModel = new HashMap();
-	return new ModelAndView("cts_form",  "model", myModel);
+    throws ServletException, IOException {
+    
+    Map myModel = new HashMap();
+    return new ModelAndView("cts_form",  "model", myModel);
     }
 
 }

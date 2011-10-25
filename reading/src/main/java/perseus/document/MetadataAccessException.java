@@ -5,10 +5,10 @@ package perseus.document;
 
 public class MetadataAccessException extends RuntimeException {
     public MetadataAccessException(Throwable t) {
-	super(t);
+    super(t);
     }
 
     public MetadataAccessException(Query q) {
-	super(q.toString());
+    super(q.toString());
     }
 }

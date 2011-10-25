@@ -25,132 +25,132 @@ public class VoteManager {
     private static Logger logger = Logger.getLogger(VoteManager.class);
 
     public static final Pattern ID_PATTERN =
-	Pattern.compile("n(\\d+)\\.(\\d+)");
+    Pattern.compile("n(\\d+)\\.(\\d+)");
 
     public static final Pattern LEMMA_PATTERN =
-	Pattern.compile("^(\\D+)(\\d+)$");
+    Pattern.compile("^(\\D+)(\\d+)$");
 
     public static boolean recordSenseVote(FormInstance form, String lexQuery,
-	    String vote, String ipAddress) {
+        String vote, String ipAddress) {
 
-	Connection con = null;
-	SQLHandler sqlHandler = null;
+    Connection con = null;
+    SQLHandler sqlHandler = null;
 
-	try {
+    try {
 
-	    con = SQLHandler.getWritableConnection();
-	    sqlHandler = new SQLHandler(con);
+        con = SQLHandler.getWritableConnection();
+        sqlHandler = new SQLHandler(con);
 
-	    int lemmaStart = lexQuery.indexOf("entry=");
-	    String lexiconID = lexQuery.substring(0, lemmaStart-1);
-	    String lemma = lexQuery.substring(lemmaStart);
-	    int entryID;
-	    int senseID;
+        int lemmaStart = lexQuery.indexOf("entry=");
+        String lexiconID = lexQuery.substring(0, lemmaStart-1);
+        String lemma = lexQuery.substring(lemmaStart);
+        int entryID;
+        int senseID;
 
-	    Matcher matcher = ID_PATTERN.matcher(vote);
-	    if (matcher.matches()) {
-		entryID = Integer.parseInt(matcher.group(1));
-		senseID = Integer.parseInt(matcher.group(2));
-	    } else {
-		throw new IllegalArgumentException("Bad ID: " + vote);
-	    }
+        Matcher matcher = ID_PATTERN.matcher(vote);
+        if (matcher.matches()) {
+        entryID = Integer.parseInt(matcher.group(1));
+        senseID = Integer.parseInt(matcher.group(2));
+        } else {
+        throw new IllegalArgumentException("Bad ID: " + vote);
+        }
 
-	    String[] parameters = {lexiconID, lemma, form.getDocument(),
-		StringUtil.sqlEscape(form.getSubquery()),
-		StringUtil.sqlEscape(form.getForm()),
-		Integer.toString(form.getOccurrence()),
-		Integer.toString(entryID), Integer.toString(senseID)};
+        String[] parameters = {lexiconID, lemma, form.getDocument(),
+        StringUtil.sqlEscape(form.getSubquery()),
+        StringUtil.sqlEscape(form.getForm()),
+        Integer.toString(form.getOccurrence()),
+        Integer.toString(entryID), Integer.toString(senseID)};
 
-	    // We want to give SQL an unquoted NULL instead of a quoted "null"
-	    String insertSenseStmt = "REPLACE INTO sense_votes VALUES ('"
-		+ StringUtil.join(parameters, "', '") + "', null, '"
-		+ ipAddress + "')";
+        // We want to give SQL an unquoted NULL instead of a quoted "null"
+        String insertSenseStmt = "REPLACE INTO sense_votes VALUES ('"
+        + StringUtil.join(parameters, "', '") + "', null, '"
+        + ipAddress + "')";
 
-	    /*insertSenseStmt.setString(1, lexiconID);
-	      insertSenseStmt.setString(2, lemma);
-	      insertSenseStmt.setString(3, form.getDocument());
-	      insertSenseStmt.setString(4, form.getSubquery());
-	      insertSenseStmt.setString(5, form.getForm());
-	      insertSenseStmt.setInt(6, form.getOccurrence());
-	      insertSenseStmt.setInt(7, entryID);
-	      insertSenseStmt.setInt(8, senseID);
-	    // Our timestamp will be set automatically
-	    insertSenseStmt.setString(9, ipAddress);
-	    */
+        /*insertSenseStmt.setString(1, lexiconID);
+          insertSenseStmt.setString(2, lemma);
+          insertSenseStmt.setString(3, form.getDocument());
+          insertSenseStmt.setString(4, form.getSubquery());
+          insertSenseStmt.setString(5, form.getForm());
+          insertSenseStmt.setInt(6, form.getOccurrence());
+          insertSenseStmt.setInt(7, entryID);
+          insertSenseStmt.setInt(8, senseID);
+        // Our timestamp will be set automatically
+        insertSenseStmt.setString(9, ipAddress);
+        */
 
-	    sqlHandler.executeUpdate(insertSenseStmt);
+        sqlHandler.executeUpdate(insertSenseStmt);
 
-	} catch (Exception e) {
-	    logger.fatal("Error storing sense vote: " + e);
-	    return false;
+    } catch (Exception e) {
+        logger.fatal("Error storing sense vote: " + e);
+        return false;
         } finally {
             try {
                 if (sqlHandler != null) {
                     sqlHandler.releaseAll();
                 }
             } catch (SQLWarning w) {
-		logger.fatal("Problem releasing resources", w);
+        logger.fatal("Problem releasing resources", w);
             }
             try {
                 if (con != null) con.close();
             } catch (SQLException s) {
-		logger.fatal("Problem releasing connection", s);
+        logger.fatal("Problem releasing connection", s);
             }
         }
 
-	return true;
+    return true;
     }
 
     public static boolean recordMorphVote(FormInstance instance, String lemma,
-	    String morphCode, String ipAddress) {
+        String morphCode, String ipAddress) {
 
-	Connection con = null;
-	SQLHandler sqlHandler = null;
+    Connection con = null;
+    SQLHandler sqlHandler = null;
 
-	try {
-	    con = SQLHandler.getWritableConnection();
-	    sqlHandler = new SQLHandler(con);
-	    Matcher matcher = LEMMA_PATTERN.matcher(lemma);
+    try {
+        con = SQLHandler.getWritableConnection();
+        sqlHandler = new SQLHandler(con);
+        Matcher matcher = LEMMA_PATTERN.matcher(lemma);
 
-	    int sequenceNumber = 1;
-	    if (matcher.matches()) {
-		lemma = matcher.group(1);
-		sequenceNumber = Integer.parseInt(matcher.group(2));
-	    }
+        int sequenceNumber = 1;
+        if (matcher.matches()) {
+        lemma = matcher.group(1);
+        sequenceNumber = Integer.parseInt(matcher.group(2));
+        }
 
-	    String[] parameters = {instance.getDocument(),
-		instance.getSubquery(), StringUtil.sqlEscape(instance.getForm()),
-		Integer.toString(instance.getOccurrence()),
-		Integer.toString(LanguageCode.getLanguageID(instance.getLanguageCode())), 
-		lemma,
-		Integer.toString(sequenceNumber), morphCode};
+        String[] parameters = {instance.getDocument(),
+        instance.getSubquery(), StringUtil.sqlEscape(instance.getForm()),
+        Integer.toString(instance.getOccurrence()),
+        Integer.toString(LanguageCode.getLanguageID(instance.getLanguageCode())), 
+        lemma,
+        Integer.toString(sequenceNumber), morphCode};
 
-	    // We want to give SQL an unquoted NULL instead of a quoted "null"
-	    String insertMorphStmt = "REPLACE INTO morph_votes VALUES ('"
-		+ StringUtil.join(parameters, "', '") + "', "
-		+ "NULL, '" + ipAddress + "')";
+        // We want to give SQL an unquoted NULL instead of a quoted "null"
+        String insertMorphStmt = "REPLACE INTO morph_votes VALUES ('"
+        + StringUtil.join(parameters, "', '") + "', "
+        + "NULL, '" + ipAddress + "')";
 
-	    sqlHandler.executeUpdate(insertMorphStmt);
+        sqlHandler.executeUpdate(insertMorphStmt);
 
-	} catch (Exception e) {
-	    logger.fatal("Error storing morph vote: " + e);
-	    return false;
+    } catch (Exception e) {
+        logger.fatal("Error storing morph vote: " + e);
+        return false;
         } finally {
             try {
                 if (sqlHandler != null) {
                     sqlHandler.releaseAll();
                 }
             } catch (SQLWarning w) {
-		logger.fatal("Problem releasing resources", w);
+        logger.fatal("Problem releasing resources", w);
             }
             try {
                 if (con != null) con.close();
             } catch (SQLException s) {
-		logger.fatal("Problem releasing connection", s);
+        logger.fatal("Problem releasing connection", s);
             }
         }
 
-	return true;
+    return true;
     }
 
     /**
@@ -160,244 +160,244 @@ public class VoteManager {
      * @deprecated lemma votes are not used
      */
     public static boolean recordLemmaVote(FormInstance instance, String lemma,
-	    String ipAddress) {
+        String ipAddress) {
 
-	Connection con = null;
-	SQLHandler sqlHandler = null;
+    Connection con = null;
+    SQLHandler sqlHandler = null;
 
-	try {
-	    con = SQLHandler.getWritableConnection();
-	    sqlHandler = new SQLHandler(con);
-	    Matcher matcher = LEMMA_PATTERN.matcher(lemma);
+    try {
+        con = SQLHandler.getWritableConnection();
+        sqlHandler = new SQLHandler(con);
+        Matcher matcher = LEMMA_PATTERN.matcher(lemma);
 
-	    int sequenceNumber = 1;
-	    if (matcher.matches()) {
-		lemma = matcher.group(1);
-		sequenceNumber = Integer.parseInt(matcher.group(2));
-	    }
+        int sequenceNumber = 1;
+        if (matcher.matches()) {
+        lemma = matcher.group(1);
+        sequenceNumber = Integer.parseInt(matcher.group(2));
+        }
 
-	    StringBuffer sql = new StringBuffer();
+        StringBuffer sql = new StringBuffer();
 
-	    sql.append("REPLACE INTO morph_votes VALUES ('")
-		.append(instance.getDocument()).append("','")
-		.append(instance.getSubquery()).append("','")
-		.append(StringUtil.sqlEscape(instance.getForm())).append("',")
-		.append(instance.getOccurrence()).append(",")
-		.append(LanguageCode.getLanguageID(instance.getLanguageCode()))
-		    .append(",'")
-		.append(lemma).append("',")
-		.append(sequenceNumber).append(",")
-		.append("NULL,") // morphCode would go here
-		.append("NULL,'") // timestamp goes here (defaults to current time)
-		.append(ipAddress)
-		.append("')");
+        sql.append("REPLACE INTO morph_votes VALUES ('")
+        .append(instance.getDocument()).append("','")
+        .append(instance.getSubquery()).append("','")
+        .append(StringUtil.sqlEscape(instance.getForm())).append("',")
+        .append(instance.getOccurrence()).append(",")
+        .append(LanguageCode.getLanguageID(instance.getLanguageCode()))
+            .append(",'")
+        .append(lemma).append("',")
+        .append(sequenceNumber).append(",")
+        .append("NULL,") // morphCode would go here
+        .append("NULL,'") // timestamp goes here (defaults to current time)
+        .append(ipAddress)
+        .append("')");
 
-	    logger.info(sql.toString());
+        logger.info(sql.toString());
 
-	    sqlHandler.executeUpdate(sql.toString());
-	} catch (Exception e) {
-	    logger.fatal("Error storing morph vote: " + e);
-	    return false;
+        sqlHandler.executeUpdate(sql.toString());
+    } catch (Exception e) {
+        logger.fatal("Error storing morph vote: " + e);
+        return false;
         } finally {
             try {
                 if (sqlHandler != null) {
                     sqlHandler.releaseAll();
                 }
             } catch (SQLWarning w) {
-		logger.fatal("Problem releasing resources", w);
+        logger.fatal("Problem releasing resources", w);
             }
             try {
                 if (con != null) con.close();
             } catch (SQLException s) {
-		logger.fatal("Problem releasing connection", s);
+        logger.fatal("Problem releasing connection", s);
             }
         }
 
-	return true;
+    return true;
     }
 
     public static int getTotalLemmaVotes(String lexiconID, String lemma, String identity) {
-	Connection con = null;
-	SQLHandler sqlHandler = null;
+    Connection con = null;
+    SQLHandler sqlHandler = null;
 
-	int voteCount = 0;
+    int voteCount = 0;
 
-	try {
-	    con = SQLHandler.getWritableConnection();
-	    sqlHandler = new SQLHandler(con);
+    try {
+        con = SQLHandler.getWritableConnection();
+        sqlHandler = new SQLHandler(con);
 
-	    if (!lemma.startsWith("entry=")) {
-		lemma = "entry=" + lemma;
-	    }
+        if (!lemma.startsWith("entry=")) {
+        lemma = "entry=" + lemma;
+        }
 
-	    logger.debug("lexiconID: " + lexiconID);
-	    logger.debug("lemma: " + lemma);
+        logger.debug("lexiconID: " + lexiconID);
+        logger.debug("lemma: " + lemma);
 
-	    String getSenseCountStmt = "SELECT COUNT(*) AS total FROM sense_votes"
-		+ " WHERE lexicon_id = '" + lexiconID + "' AND lemma = '" + StringUtil.sqlEscape(lemma)
-		+ "' AND identity = '" + identity + "'";
+        String getSenseCountStmt = "SELECT COUNT(*) AS total FROM sense_votes"
+        + " WHERE lexicon_id = '" + lexiconID + "' AND lemma = '" + StringUtil.sqlEscape(lemma)
+        + "' AND identity = '" + identity + "'";
 
-	    ResultSet rs = sqlHandler.executeQuery(getSenseCountStmt);
+        ResultSet rs = sqlHandler.executeQuery(getSenseCountStmt);
 
-	    while (rs.next()) {
-		voteCount = rs.getInt("total");
-	    }
-	} catch (Exception e) {
-	    logger.fatal("Problem getting vote counts");
-	    e.printStackTrace();
+        while (rs.next()) {
+        voteCount = rs.getInt("total");
+        }
+    } catch (Exception e) {
+        logger.fatal("Problem getting vote counts");
+        e.printStackTrace();
         } finally {
             try {
                 if (sqlHandler != null) {
                     sqlHandler.releaseAll();
                 }
             } catch (SQLWarning w) {
-		logger.fatal("Problem releasing resources", w);
+        logger.fatal("Problem releasing resources", w);
             }
             try {
                 if (con != null) con.close();
             } catch (SQLException s) {
-		logger.fatal("Problem releasing connection", s);
+        logger.fatal("Problem releasing connection", s);
             }
-	}
-	return voteCount;
+    }
+    return voteCount;
     }
 
     public static Map<Sense, Integer> getSenseVoteCounts(
-	    String lexQuery, FormInstance instance) {
+        String lexQuery, FormInstance instance) {
 
-	Map<Sense, Integer> voteCounts = new LinkedHashMap<Sense, Integer>();
+    Map<Sense, Integer> voteCounts = new LinkedHashMap<Sense, Integer>();
 
-	Connection con = null;
-	SQLHandler sqlHandler = null;
+    Connection con = null;
+    SQLHandler sqlHandler = null;
 
-	try {
-	    con = SQLHandler.getWritableConnection();
-	    sqlHandler = new SQLHandler(con);
-	    int lemmaStart = lexQuery.indexOf("entry=");
-	    String lexiconID = lexQuery.substring(0, lemmaStart-1);
-	    String lemma = lexQuery.substring(lemmaStart);
+    try {
+        con = SQLHandler.getWritableConnection();
+        sqlHandler = new SQLHandler(con);
+        int lemmaStart = lexQuery.indexOf("entry=");
+        String lexiconID = lexQuery.substring(0, lemmaStart-1);
+        String lemma = lexQuery.substring(lemmaStart);
 
-	    logger.debug("lexiconID: " + lexiconID);
-	    logger.debug("lemma: " + lemma);
+        logger.debug("lexiconID: " + lexiconID);
+        logger.debug("lemma: " + lemma);
 
-	    String getSenseCountsStmt = "SELECT s.sense_id, s.sense, s.level,"
-		+ " SUM(s.sense_id=sv.sense_id) AS num_votes, s.short_definition"
-		+ " FROM senses AS s LEFT JOIN sense_votes AS sv ON"
-		+ " s.document_id = sv.lexicon_id AND s.entry_id = sv.entry_id"
-		+ " WHERE sv.lexicon_id = '" + lexiconID + "' AND sv.lemma = '"
-		+ lemma + "' AND sv.document_id = '" + instance.getDocument()
-		+ "' AND sv.subquery = '" + instance.getSubquery() + "' AND"
-		+ " sv.form = '" + StringUtil.sqlEscape(instance.getForm()) + "' AND sv.occurrence = '"
-		+ instance.getOccurrence() + "' GROUP BY s.sense_id ASC";
+        String getSenseCountsStmt = "SELECT s.sense_id, s.sense, s.level,"
+        + " SUM(s.sense_id=sv.sense_id) AS num_votes, s.short_definition"
+        + " FROM senses AS s LEFT JOIN sense_votes AS sv ON"
+        + " s.document_id = sv.lexicon_id AND s.entry_id = sv.entry_id"
+        + " WHERE sv.lexicon_id = '" + lexiconID + "' AND sv.lemma = '"
+        + lemma + "' AND sv.document_id = '" + instance.getDocument()
+        + "' AND sv.subquery = '" + instance.getSubquery() + "' AND"
+        + " sv.form = '" + StringUtil.sqlEscape(instance.getForm()) + "' AND sv.occurrence = '"
+        + instance.getOccurrence() + "' GROUP BY s.sense_id ASC";
 
-	    logger.info("Executing " + getSenseCountsStmt);
+        logger.info("Executing " + getSenseCountsStmt);
 
-	    ResultSet rs = sqlHandler.executeQuery(getSenseCountsStmt);
+        ResultSet rs = sqlHandler.executeQuery(getSenseCountsStmt);
 
-	    while (rs.next()) {
-		int senseID = rs.getInt(1);
-		String sense = rs.getString(2);
-		int level = rs.getInt(3);
-		int numVotes = rs.getInt(4);
-		String shortDef = rs.getString(5);
+        while (rs.next()) {
+        int senseID = rs.getInt(1);
+        String sense = rs.getString(2);
+        int level = rs.getInt(3);
+        int numVotes = rs.getInt(4);
+        String shortDef = rs.getString(5);
 
-		// We don't care about the entry ID, so just set it to -1
-		Sense thisSense = new Sense(lemma, lexiconID, sense, -1,
-			senseID, level, shortDef);
-		voteCounts.put(thisSense, new Integer(numVotes));
-	    }
-	} catch (Exception e) {
-	    logger.fatal("Problem getting vote counts");
-	    e.printStackTrace();
+        // We don't care about the entry ID, so just set it to -1
+        Sense thisSense = new Sense(lemma, lexiconID, sense, -1,
+            senseID, level, shortDef);
+        voteCounts.put(thisSense, new Integer(numVotes));
+        }
+    } catch (Exception e) {
+        logger.fatal("Problem getting vote counts");
+        e.printStackTrace();
         } finally {
             try {
                 if (sqlHandler != null) {
                     sqlHandler.releaseAll();
                 }
             } catch (SQLWarning w) {
-		logger.fatal("Problem releasing resources", w);
+        logger.fatal("Problem releasing resources", w);
             }
             try {
                 if (con != null) con.close();
             } catch (SQLException s) {
-		logger.fatal("Problem releasing connection", s);
+        logger.fatal("Problem releasing connection", s);
             }
-	}
-	return voteCounts;
+    }
+    return voteCounts;
     }
 
     public static Map<Parse, Integer> getMorphVoteCounts(FormInstance instance) {
 
-	Map<Parse, Integer> voteCounts = new HashMap<Parse, Integer>();
-	String languageCode = null;
+    Map<Parse, Integer> voteCounts = new HashMap<Parse, Integer>();
+    String languageCode = null;
 
-	Connection con = null;
-	SQLHandler sqlHandler = null;
+    Connection con = null;
+    SQLHandler sqlHandler = null;
 
-	try {
-	    con = SQLHandler.getWritableConnection();
-	    sqlHandler = new SQLHandler(con);
-	    languageCode = instance.getLanguageCode();
+    try {
+        con = SQLHandler.getWritableConnection();
+        sqlHandler = new SQLHandler(con);
+        languageCode = instance.getLanguageCode();
 
-	    // FIXME! This is unwieldy. We should probably configure
-	    // morph_votes to use numeric lemma IDs instead of the lemmas
-	    // themselves.
-	    String getMorphCountsStmt =
-		"SELECT mv.lemma, mv.sequence_number, mv.morph_code, COUNT(*) FROM"
-		+ " morph_votes mv WHERE mv.lang_id = '"
-		+ LanguageCode.getLanguageID(languageCode) + "' AND"
-		+ " mv.morph_code IS NOT NULL AND"
-		+ " document_id = '" + instance.getDocument() + "' AND"
-		+ " subquery = '" + instance.getSubquery() + "' AND mv.form = '"
-		+ StringUtil.sqlEscape(instance.getForm())
-		+ "' AND occurrence = " + instance.getOccurrence()
-		+ " GROUP BY mv.lemma, mv.sequence_number, mv.morph_code";
+        // FIXME! This is unwieldy. We should probably configure
+        // morph_votes to use numeric lemma IDs instead of the lemmas
+        // themselves.
+        String getMorphCountsStmt =
+        "SELECT mv.lemma, mv.sequence_number, mv.morph_code, COUNT(*) FROM"
+        + " morph_votes mv WHERE mv.lang_id = '"
+        + LanguageCode.getLanguageID(languageCode) + "' AND"
+        + " mv.morph_code IS NOT NULL AND"
+        + " document_id = '" + instance.getDocument() + "' AND"
+        + " subquery = '" + instance.getSubquery() + "' AND mv.form = '"
+        + StringUtil.sqlEscape(instance.getForm())
+        + "' AND occurrence = " + instance.getOccurrence()
+        + " GROUP BY mv.lemma, mv.sequence_number, mv.morph_code";
 
-	    ResultSet rs = sqlHandler.executeQuery(getMorphCountsStmt);
+        ResultSet rs = sqlHandler.executeQuery(getMorphCountsStmt);
 
-	    ParseDAO parseDAO = new HibernateParseDAO();
-	    List<Parse> parses =
-		parseDAO.getByForm(instance.getForm(), languageCode);
+        ParseDAO parseDAO = new HibernateParseDAO();
+        List<Parse> parses =
+        parseDAO.getByForm(instance.getForm(), languageCode);
 
-	    while (rs.next()) {
-		String lemma = rs.getString(1);
-		int sequenceNumber = rs.getInt(2);
-		String morphCode = rs.getString(3);
-		int numVotes = rs.getInt(4);
+        while (rs.next()) {
+        String lemma = rs.getString(1);
+        int sequenceNumber = rs.getInt(2);
+        String morphCode = rs.getString(3);
+        int numVotes = rs.getInt(4);
 
-		// Out of all the parses we know of for this form, find one
-		// that corresponds with the fields we just found in the
-		// database.
+        // Out of all the parses we know of for this form, find one
+        // that corresponds with the fields we just found in the
+        // database.
 
-		for (Parse parse : parses) {
-		    if (parse.getMorphCode().equals(morphCode) &&
-			parse.getLemma().getHeadword().equals(lemma) &&
-			parse.getLemma().getSequenceNumber() == sequenceNumber) {
-			voteCounts.put(parse, numVotes);
-			break;
-		    }
-		}
-	    }
+        for (Parse parse : parses) {
+            if (parse.getMorphCode().equals(morphCode) &&
+            parse.getLemma().getHeadword().equals(lemma) &&
+            parse.getLemma().getSequenceNumber() == sequenceNumber) {
+            voteCounts.put(parse, numVotes);
+            break;
+            }
+        }
+        }
 
-	} catch (Exception e) {
-	    logger.fatal("Problem getting vote counts");
-	    logger.info("languageCode was " + languageCode);
-	    e.printStackTrace();
+    } catch (Exception e) {
+        logger.fatal("Problem getting vote counts");
+        logger.info("languageCode was " + languageCode);
+        e.printStackTrace();
         } finally {
             try {
                 if (sqlHandler != null) {
                     sqlHandler.releaseAll();
                 }
             } catch (SQLWarning w) {
-		logger.fatal("Problem releasing resources", w);
+        logger.fatal("Problem releasing resources", w);
             }
             try {
                 if (con != null) con.close();
             } catch (SQLException s) {
-		logger.fatal("Problem releasing connection", s);
+        logger.fatal("Problem releasing connection", s);
             }
         }
-	return voteCounts;
+    return voteCounts;
     }
 
     /**
@@ -407,69 +407,69 @@ public class VoteManager {
      */
     public static Map<Parse, Integer> getLemmaVoteCounts(FormInstance instance) {
 
-	Map<Parse, Integer> voteCounts = new LinkedHashMap<Parse, Integer>();
-	String languageCode = null;
+    Map<Parse, Integer> voteCounts = new LinkedHashMap<Parse, Integer>();
+    String languageCode = null;
 
-	Connection con = null;
-	SQLHandler sqlHandler = null;
+    Connection con = null;
+    SQLHandler sqlHandler = null;
 
-	try {
-	    con = SQLHandler.getWritableConnection();
-	    sqlHandler = new SQLHandler(con);
+    try {
+        con = SQLHandler.getWritableConnection();
+        sqlHandler = new SQLHandler(con);
 
-	    languageCode = instance.getLanguageCode();
+        languageCode = instance.getLanguageCode();
 
-	    String getMorphCountsStmt =
-		"SELECT lemma, sequence_number, COUNT(*) FROM"
-		+ " morph_votes WHERE morph_code IS NULL AND lang_id = '"
-		+ LanguageCode.getLanguageID(languageCode) + "' AND"
-		+ " document_id = '" + instance.getDocument() + "' AND"
-		+ " subquery = '" + instance.getSubquery() + "' AND form = '"
-		+ StringUtil.sqlEscape(instance.getForm())
-		+ "' AND occurrence = "
-		+ instance.getOccurrence()
-		+ " GROUP BY lemma, sequence_number";
+        String getMorphCountsStmt =
+        "SELECT lemma, sequence_number, COUNT(*) FROM"
+        + " morph_votes WHERE morph_code IS NULL AND lang_id = '"
+        + LanguageCode.getLanguageID(languageCode) + "' AND"
+        + " document_id = '" + instance.getDocument() + "' AND"
+        + " subquery = '" + instance.getSubquery() + "' AND form = '"
+        + StringUtil.sqlEscape(instance.getForm())
+        + "' AND occurrence = "
+        + instance.getOccurrence()
+        + " GROUP BY lemma, sequence_number";
 
-	    ResultSet rs = sqlHandler.executeQuery(getMorphCountsStmt);
-	    ParseDAO parseDAO = new HibernateParseDAO();
+        ResultSet rs = sqlHandler.executeQuery(getMorphCountsStmt);
+        ParseDAO parseDAO = new HibernateParseDAO();
 
-	    while (rs.next()) {
-		//String lemma = rs.getString(1);
-		//int sequenceNumber = rs.getInt(2);
-		int numVotes = rs.getInt(3);
+        while (rs.next()) {
+        //String lemma = rs.getString(1);
+        //int sequenceNumber = rs.getInt(2);
+        int numVotes = rs.getInt(3);
 
-		List<Parse> parses =
-		    parseDAO.getByForm(instance.getForm(), languageCode);
+        List<Parse> parses =
+            parseDAO.getByForm(instance.getForm(), languageCode);
 
-		/*
-		Parse parse = new Parse(languageCode, instance.getForm());
-		parse.setLemma(lemma + sequenceNumber);
-		*/
+        /*
+        Parse parse = new Parse(languageCode, instance.getForm());
+        parse.setLemma(lemma + sequenceNumber);
+        */
 
-		if (!parses.isEmpty()) {
-		    voteCounts.put(parses.get(0), numVotes);
-		}
-	    }
+        if (!parses.isEmpty()) {
+            voteCounts.put(parses.get(0), numVotes);
+        }
+        }
 
-	} catch (Exception e) {
-	    logger.fatal("Problem getting vote counts");
-	    logger.info("languageCode was " + languageCode);
-	    e.printStackTrace();
+    } catch (Exception e) {
+        logger.fatal("Problem getting vote counts");
+        logger.info("languageCode was " + languageCode);
+        e.printStackTrace();
         } finally {
             try {
                 if (sqlHandler != null) {
                     sqlHandler.releaseAll();
                 }
             } catch (SQLWarning w) {
-		logger.fatal("Problem releasing resources", w);
+        logger.fatal("Problem releasing resources", w);
             }
             try {
                 if (con != null) con.close();
             } catch (SQLException s) {
-		logger.fatal("Problem releasing connection", s);
+        logger.fatal("Problem releasing connection", s);
             }
         }
-	return voteCounts;
+    return voteCounts;
     }
 
     /**
@@ -484,40 +484,40 @@ public class VoteManager {
      */
     public static int getNumSenses(String lexiconID, String entry) {
 
-	int numSenses = -1;
+    int numSenses = -1;
 
-	Connection con = null;
-	SQLHandler sqlHandler = null;
+    Connection con = null;
+    SQLHandler sqlHandler = null;
 
-	try {
-	    con = SQLHandler.getWritableConnection();
-	    sqlHandler = new SQLHandler(con);
+    try {
+        con = SQLHandler.getWritableConnection();
+        sqlHandler = new SQLHandler(con);
 
-	    String getNumSensesStmt = "SELECT COUNT(*) FROM senses WHERE"
-		+ " document_id = '" + lexiconID + "' AND lemma = '" +
-		entry + "'";
+        String getNumSensesStmt = "SELECT COUNT(*) FROM senses WHERE"
+        + " document_id = '" + lexiconID + "' AND lemma = '" +
+        entry + "'";
 
-	    ResultSet rs = sqlHandler.executeQuery(getNumSensesStmt);
+        ResultSet rs = sqlHandler.executeQuery(getNumSensesStmt);
 
-	    while (rs.next()) {
-		numSenses = rs.getInt(1);
-	    }
-	} catch (SQLException sqle) {
-	    logger.warn("Problem getting number of senses" + " for entry " + entry + ": " + sqle);
+        while (rs.next()) {
+        numSenses = rs.getInt(1);
+        }
+    } catch (SQLException sqle) {
+        logger.warn("Problem getting number of senses" + " for entry " + entry + ": " + sqle);
         } finally {
             try {
                 if (sqlHandler != null) {
                     sqlHandler.releaseAll();
                 }
             } catch (SQLWarning w) {
-		logger.fatal("Problem releasing resources", w);
+        logger.fatal("Problem releasing resources", w);
             }
             try {
                 if (con != null) con.close();
             } catch (SQLException s) {
-		logger.fatal("Problem releasing connection", s);
+        logger.fatal("Problem releasing connection", s);
             }
         }
-	return numSenses;
+    return numSenses;
     }
 }

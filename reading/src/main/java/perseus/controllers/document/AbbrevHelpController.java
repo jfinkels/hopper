@@ -11,9 +11,9 @@ import perseus.document.Abbreviation;
 public class AbbrevHelpController implements Controller {
 
     public ModelAndView handleRequest(HttpServletRequest arg0,
-	    HttpServletResponse arg1) throws Exception {
-	
-	return new ModelAndView("abbrevhelp", "abbrevs", Abbreviation.getAll());
+        HttpServletResponse arg1) throws Exception {
+    
+    return new ModelAndView("abbrevhelp", "abbrevs", Abbreviation.getAll());
     }
 
 }

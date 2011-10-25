@@ -14,10 +14,10 @@ public class FormInstance {
     public FormInstance() {}
 
     public FormInstance(Query query, String form, int which) {
-	this.query = query;
+    this.query = query;
 
-	this.form = form;
-	this.occurrence = which;
+    this.form = form;
+    this.occurrence = which;
     }
 
     /**
@@ -26,11 +26,11 @@ public class FormInstance {
      * @deprecated
      */
     public FormInstance(String doc, String subq, String form, String which) {
-	this(new Query(doc, subq), form, Integer.parseInt(which));
+    this(new Query(doc, subq), form, Integer.parseInt(which));
     }
 
     public Query getQuery() {
-	return query;
+    return query;
     }
 
     public String getDocument() {
@@ -50,19 +50,19 @@ public class FormInstance {
     }
 
     public String getLanguageCode() {
-	return languageCode;
+    return languageCode;
     }
 
     public void setQuery(Query q) {
-	query = q;
+    query = q;
     }
 
     public void setDocument(String dcmnt) {
-	query = new Query(dcmnt, query.getQuery());
+    query = new Query(dcmnt, query.getQuery());
     }
 
     public void setSubquery(String sbqry) {
-	query = new Query(query.getDocumentID(), sbqry);
+    query = new Query(query.getDocumentID(), sbqry);
     }
 
     public void setForm(String frm) {
@@ -74,10 +74,10 @@ public class FormInstance {
     }
 
     public void setLanguageCode(String langCode) {
-	languageCode = langCode;
+    languageCode = langCode;
     }
 
     public String toString() {
-	return "[" + query + "] " + form + "(" + occurrence + ")";
+    return "[" + query + "] " + form + "(" + occurrence + ")";
     }
 }

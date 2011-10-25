@@ -30,49 +30,49 @@ import perseus.util.Timekeeper;
 public class SearchController implements Controller {
     private static Logger logger = Logger.getLogger(SearchController.class);
 
-	/* (non-Javadoc)
-	 * @see org.springframework.web.servlet.mvc.Controller#handleRequest(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
-	 */
-	public ModelAndView handleRequest(HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
-		
-		Timekeeper keeper = new Timekeeper();
-		keeper.start();
-		
-		Metadata metadata = null;
+    /* (non-Javadoc)
+     * @see org.springframework.web.servlet.mvc.Controller#handleRequest(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+     */
+    public ModelAndView handleRequest(HttpServletRequest request,
+            HttpServletResponse response) throws Exception {
+        
+        Timekeeper keeper = new Timekeeper();
+        keeper.start();
+        
+        Metadata metadata = null;
 
-		if (request.getParameter("doc") != null) {
-		    Query query = new Query(request.getParameter("doc"));
-		    metadata = query.getMetadata();
-		}
-		keeper.record("Checked if searching in context");
-				
-		Set<Language> searchableLanguages = Language.getSearchableLanguages();
-		Set<Language> definitionLookupLanguages = Language.getDefinitionLookupLanguages();
-		Set<Language> resolveFormLanguages = Language.getResolveFormLanguages();
-		keeper.record("Got different language sets");
-		
-		List<Corpus> corpusList = new ArrayList<Corpus>();
-		if (metadata == null) {
-			String[] allCollections = Config.getPrimaryCollections();
-			for (String coll : allCollections) { 
-				Corpus corpus = new Corpus(coll);
-				corpusList.add(corpus);
-			}
-			keeper.record("Got primary collections list");
-		}
+        if (request.getParameter("doc") != null) {
+            Query query = new Query(request.getParameter("doc"));
+            metadata = query.getMetadata();
+        }
+        keeper.record("Checked if searching in context");
+                
+        Set<Language> searchableLanguages = Language.getSearchableLanguages();
+        Set<Language> definitionLookupLanguages = Language.getDefinitionLookupLanguages();
+        Set<Language> resolveFormLanguages = Language.getResolveFormLanguages();
+        keeper.record("Got different language sets");
+        
+        List<Corpus> corpusList = new ArrayList<Corpus>();
+        if (metadata == null) {
+            String[] allCollections = Config.getPrimaryCollections();
+            for (String coll : allCollections) { 
+                Corpus corpus = new Corpus(coll);
+                corpusList.add(corpus);
+            }
+            keeper.record("Got primary collections list");
+        }
 
-		Map<String, Object> myModel = new HashMap<String, Object>();
-		myModel.put("metadata", metadata);
-		myModel.put("corpusList", corpusList);
-		myModel.put("searchLangs", searchableLanguages);
-		myModel.put("defLookupLangs", definitionLookupLanguages);
-		myModel.put("resolveFormLangs", resolveFormLanguages);
-		
-		keeper.stop();
-		logger.info(keeper.getResults());
-		
-		return new ModelAndView("search", "model", myModel);
-	}
+        Map<String, Object> myModel = new HashMap<String, Object>();
+        myModel.put("metadata", metadata);
+        myModel.put("corpusList", corpusList);
+        myModel.put("searchLangs", searchableLanguages);
+        myModel.put("defLookupLangs", definitionLookupLanguages);
+        myModel.put("resolveFormLangs", resolveFormLanguages);
+        
+        keeper.stop();
+        logger.info(keeper.getResults());
+        
+        return new ModelAndView("search", "model", myModel);
+    }
 
 }

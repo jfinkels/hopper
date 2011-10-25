@@ -46,13 +46,13 @@ var navbarText = "Your current position in the text is marked in blue."
 function showTitle(sender) {
     titleDiv = document.getElementById("navbar_title");
     titleDiv.innerHTML = navbarText + " Click to jump to <strong>"
-	+ sender.title + "</strong>.";
+    + sender.title + "</strong>.";
 }
 
 function clearTitle() {
     titleDiv = document.getElementById("navbar_title");
     titleDiv.innerHTML = navbarText + " Click anywhere in the line to jump "
-	+ "to another position."
+    + "to another position."
 }
 
 function vocab_window() {
@@ -90,10 +90,10 @@ function m(src, which, docIndex) {
     var linkText = src.getAttribute('href');
     var originalText = linkText;
     if (documents[docIndex]) {
-	linkText = linkText + '&d=' + documents[docIndex];
-	if (which != -1) {
-	    linkText = linkText + '&i=' + which;
-	}
+    linkText = linkText + '&d=' + documents[docIndex];
+    if (which != -1) {
+        linkText = linkText + '&i=' + which;
+    }
     }
 
     var theWindow = openPopupWindow(linkText, 'morph');
@@ -112,9 +112,9 @@ function openWordStudy(src) {
 }
 
 function abbrev_help() {
-	var theWindow = window.open('/hopper/abbrevhelp', 'abbrevHelp',
-	    'height=600,width=450,scrollbars=1,status=1,resizable=1,toolbar=1');
-	theWindow.focus();
+    var theWindow = window.open('/hopper/abbrevhelp', 'abbrevHelp',
+        'height=600,width=450,scrollbars=1,status=1,resizable=1,toolbar=1');
+    theWindow.focus();
 }
 
 function showNavbar() {
@@ -135,25 +135,25 @@ function hideNavbar() {
 }
 
 function validate_required(field,alerttxt) {
-	with (field) {
-		if (value==null||value=="") {
-			alert(alerttxt);return false;
-		}
-		else {
-			return true
-		}
-	}
+    with (field) {
+        if (value==null||value=="") {
+            alert(alerttxt);return false;
+        }
+        else {
+            return true
+        }
+    }
 }
 
 function validate_form(thisform,field,min) {
-	with (thisform) {
-		if (validate_required(field,"Please enter a search term")==false) {
-		field.focus();return false;
-		}
-		if (min != null && validate_min_size(field,min,"Please enter at least " + min + " characters")==false) {
+    with (thisform) {
+        if (validate_required(field,"Please enter a search term")==false) {
         field.focus();return false;
         }
-	}
+        if (min != null && validate_min_size(field,min,"Please enter at least " + min + " characters")==false) {
+        field.focus();return false;
+        }
+    }
 }
 
 function validate_min_size(field,min,alerttext)
@@ -170,68 +170,68 @@ function validate_min_size(field,min,alerttext)
 }
 
 function checkAll (field) {
-	for (var i = 0; i < field.length; i++) {
-		field[i].checked = true;
-	}
+    for (var i = 0; i < field.length; i++) {
+        field[i].checked = true;
+    }
 }
 
 function uncheckAll (field) {
-	for (var i = 0; i < field.length; i++) {
-		field[i].checked = false;
-	}
+    for (var i = 0; i < field.length; i++) {
+        field[i].checked = false;
+    }
 }
 
 function checkRedirect() {
-	var regexS = "[\\?&]redirect=true";
-	var regex = new RegExp( regexS );
-  	var results = regex.exec( window.location.href );
-  	if (results == null)
-    	return;
-  	else {
-  		var div = document.createElement('div');
-  		div.setAttribute('id', 'redirect');
-  		div.onclick=closeLayer;
-  		var message = document.createElement('p');
-  		message.innerHTML = "You have been automatically redirected to the new version of our website, Perseus 4.0."
-  		div.appendChild(message);
-  		
-  		var submessage1 = document.createElement('p');
-  		submessage1.setAttribute('class', 'greek');
-  		submessage1.innerHTML = "We have attempted to automatically redirect you to the corresponding page in the new version. If we encountered an error in the redirect process, we have sent you to our home page. For further help, please contact webmaster@perseus.tufts.edu."
-  		div.appendChild(submessage1);
-  		var submessage2 = document.createElement('p');
-  		submessage2.setAttribute('class', 'greek');
-  		submessage2.innerHTML = "Some special content previously hosted by Perseus, but not integrated into the digital library collections, may not appear in P4. This applies to coursework-related content and data from other sources and collections."
-		div.appendChild(submessage2);
-  	
-  		var greekReg = new RegExp("=[G|g]reek");
-  		var greekResults = greekReg.exec(window.location.href);
-  		if (greekResults != null) {
-  			var greekMessage = document.createElement('p');
-  			greekMessage.setAttribute('class', 'greek');
-  			greekMessage.innerHTML = "If the results are not what you expected, you may need to reenter the Greek."
-  			div.appendChild(greekMessage);
-  		}
+    var regexS = "[\\?&]redirect=true";
+    var regex = new RegExp( regexS );
+    var results = regex.exec( window.location.href );
+    if (results == null)
+        return;
+    else {
+        var div = document.createElement('div');
+        div.setAttribute('id', 'redirect');
+        div.onclick=closeLayer;
+        var message = document.createElement('p');
+        message.innerHTML = "You have been automatically redirected to the new version of our website, Perseus 4.0."
+        div.appendChild(message);
+        
+        var submessage1 = document.createElement('p');
+        submessage1.setAttribute('class', 'greek');
+        submessage1.innerHTML = "We have attempted to automatically redirect you to the corresponding page in the new version. If we encountered an error in the redirect process, we have sent you to our home page. For further help, please contact webmaster@perseus.tufts.edu."
+        div.appendChild(submessage1);
+        var submessage2 = document.createElement('p');
+        submessage2.setAttribute('class', 'greek');
+        submessage2.innerHTML = "Some special content previously hosted by Perseus, but not integrated into the digital library collections, may not appear in P4. This applies to coursework-related content and data from other sources and collections."
+        div.appendChild(submessage2);
+    
+        var greekReg = new RegExp("=[G|g]reek");
+        var greekResults = greekReg.exec(window.location.href);
+        if (greekResults != null) {
+            var greekMessage = document.createElement('p');
+            greekMessage.setAttribute('class', 'greek');
+            greekMessage.innerHTML = "If the results are not what you expected, you may need to reenter the Greek."
+            div.appendChild(greekMessage);
+        }
 
-  		var close = document.createElement('p');
-  		close.setAttribute('class', 'close');
-  		close.innerHTML = "Click anywhere in the box to close.";
-  		div.appendChild(close);
-  		document.body.appendChild(div);
-  	}
+        var close = document.createElement('p');
+        close.setAttribute('class', 'close');
+        close.innerHTML = "Click anywhere in the box to close.";
+        div.appendChild(close);
+        document.body.appendChild(div);
+    }
 }
 
 function closeLayer() {
-	var div = document.getElementById('redirect');
-	document.body.removeChild(div);
+    var div = document.getElementById('redirect');
+    document.body.removeChild(div);
 }
 
 function toggleGreekDisplay(selectForm) {
     var selIndex = selectForm.selectedIndex;
     var greekDisplay = document.getElementById("enter_greek");
     if (selectForm.options[selIndex].value == "greek") {
-	greekDisplay.style.display = "";
+    greekDisplay.style.display = "";
     } else {
-	greekDisplay.style.display = "none";
+    greekDisplay.style.display = "none";
     }
 }

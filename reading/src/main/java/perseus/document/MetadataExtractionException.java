@@ -11,18 +11,18 @@ public class MetadataExtractionException extends Exception {
     private static final long serialVersionUID = 1L;
 
     public MetadataExtractionException(File f) {
-	super(f.getAbsolutePath());
+    super(f.getAbsolutePath());
     }
 
     public MetadataExtractionException(String s) {
-	super(s);
+    super(s);
     }
 
     public MetadataExtractionException(String message, File f) {
-	super(message + ": " + f.getAbsolutePath());
+    super(message + ": " + f.getAbsolutePath());
     }
 
     public MetadataExtractionException(Throwable t) {
-	super(t);
+    super(t);
     }
 }

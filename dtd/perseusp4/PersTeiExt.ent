@@ -11,7 +11,7 @@
 
         These two classes are identified as follows:
 
-	- elements defined by entities labeled 'INCLUDE' below
+    - elements defined by entities labeled 'INCLUDE' below
           are included automatically in all documents
 
         - elements defined by entities labeled 'IGNORE' below

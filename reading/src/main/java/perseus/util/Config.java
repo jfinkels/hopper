@@ -34,22 +34,22 @@ public class Config {
     private static Configuration hopperConfig = reload();
     
     public static Configuration reload() {
-	return loadConfig();
+    return loadConfig();
     }
     
     private Config() {}
     
     private static Configuration loadConfig() {
-	try {
-	    return new PropertiesConfiguration("hopper.properties");
-	} catch (ConfigurationException ce) {
-	    // Okay, we can't read the configuration at all;
-	    // there's probably not much point in continuing, but this could
-	    // be an acceptable situation if, for instance, we're running
-	    // with all our parameters as system properties.
-	    logger.warn("Unable to read configuration file!", ce);
-	    return new PropertiesConfiguration();
-	}
+    try {
+        return new PropertiesConfiguration("hopper.properties");
+    } catch (ConfigurationException ce) {
+        // Okay, we can't read the configuration at all;
+        // there's probably not much point in continuing, but this could
+        // be an acceptable situation if, for instance, we're running
+        // with all our parameters as system properties.
+        logger.warn("Unable to read configuration file!", ce);
+        return new PropertiesConfiguration();
+    }
     }
     
     /** The path to the processed XML text files */
@@ -135,7 +135,7 @@ public class Config {
      * @return the stylesheet path for the hopper
      */
     public static String getStylesheetPath () {
-	return getProperty(STYLESHEET_PATH);
+    return getProperty(STYLESHEET_PATH);
     }
 
     /**
@@ -145,7 +145,7 @@ public class Config {
      * @return the system id
      */
     public static String getSystemID () {
-	return getProperty(SYSTEM_ID);
+    return getProperty(SYSTEM_ID);
     }
     
     /**
@@ -155,7 +155,7 @@ public class Config {
      * @return the cache path
      */
     public static String getCachePath () {
-	return getProperty(CACHE_PATH);
+    return getProperty(CACHE_PATH);
     }
     
     /**
@@ -165,7 +165,7 @@ public class Config {
      * @return the timeline image cache directory
      */
     public static String getTimelineImageCacheDirectory() {
-	return getProperty(CACHE_TIMELINE_DIRECTORY);
+    return getProperty(CACHE_TIMELINE_DIRECTORY);
     }
     
     /**
@@ -175,7 +175,7 @@ public class Config {
      * @return the stoplist path
      */
     public static String getStoplistPath () {
-	return getProperty(STOPLIST_PATH);
+    return getProperty(STOPLIST_PATH);
     }
 
     /**
@@ -185,7 +185,7 @@ public class Config {
      * @return the path to the XML catalogs
      */
     public static String getCatalogPath() {
-	return getProperty(CATALOG_PATH);
+    return getProperty(CATALOG_PATH);
     }
 
     /**
@@ -195,7 +195,7 @@ public class Config {
      * @return the path to the source texts
      */
     public static String getSourceTextsPath() {
-	return getProperty(SOURCE_TEXTS_PATH);
+    return getProperty(SOURCE_TEXTS_PATH);
     }
 
     /**
@@ -205,7 +205,7 @@ public class Config {
      * @return an array of catalog filenames
      */
     public static String[] getCatalogFiles() {
-	 return getStringArray(CATALOG_FILES);
+     return getStringArray(CATALOG_FILES);
     }
 
     /**
@@ -215,23 +215,23 @@ public class Config {
      * distinct from subcollections and corpora.
      */
      public static String[] getPrimaryCollections() {
-	 return getStringArray(PRIMARY_COLLECTIONS);
+     return getStringArray(PRIMARY_COLLECTIONS);
      }
 
      public static String getCruncherPath() {
-	 return getProperty(CRUNCHER_PATH);
+     return getProperty(CRUNCHER_PATH);
      }
 
      public static String getMorphlibPath() {
-	 return getProperty(MORPHLIB_PATH);
+     return getProperty(MORPHLIB_PATH);
      }
      
      public static String getDataPath() {
-    	 return getProperty(DATA_PATH);
+         return getProperty(DATA_PATH);
      }
      
      public static String getStaticPath() {
-    	 return getProperty(STATIC_PATH);
+         return getProperty(STATIC_PATH);
      }
      
      /**
@@ -244,44 +244,44 @@ public class Config {
      public static String[] getStringArray(String key) {
 //	 String value = getPropertyFromContext(key);
 //	 if (value != null) { return splitString(value); }
-	 
-	 if (hopperConfig.containsKey(key)) {
-	     return hopperConfig.getStringArray(key);
-	 }
-	 
-	 String value = System.getProperty(key);
-	 if (value != null) { return splitString(value); }
-	 
-	 return new String[0];
+     
+     if (hopperConfig.containsKey(key)) {
+         return hopperConfig.getStringArray(key);
+     }
+     
+     String value = System.getProperty(key);
+     if (value != null) { return splitString(value); }
+     
+     return new String[0];
      }
      
      private static String[] splitString(String value) {
-	 return value.split(",\\s*");
+     return value.split(",\\s*");
      }
 
      /*
      private static String getPropertyFromContext(String key) {
-	 String value = null;
-	 
-	 try {
-	     // Get the environment context
-	     Context ctx =
-		 new InitialContext();
-	     Context env =
-		 (Context) ctx.lookup("java:comp/env");
+     String value = null;
+     
+     try {
+         // Get the environment context
+         Context ctx =
+         new InitialContext();
+         Context env =
+         (Context) ctx.lookup("java:comp/env");
 
-	     // Find the property
-	     value = (String) env.lookup(key);
-	 } catch (NamingException ne) {
-	     // If Tomcat can't find it, it's really not that big a deal;
-	     // suppress the error and hope that we can look it up somewhere
-	     // else.
-	     
-	     //logger.severe(String.format(
-		     //"Problem finding environment variable %s: %s", key, ne));
-	 }
+         // Find the property
+         value = (String) env.lookup(key);
+     } catch (NamingException ne) {
+         // If Tomcat can't find it, it's really not that big a deal;
+         // suppress the error and hope that we can look it up somewhere
+         // else.
+         
+         //logger.severe(String.format(
+             //"Problem finding environment variable %s: %s", key, ne));
+     }
 
-	 return value;
+     return value;
      }
      */
      
@@ -293,16 +293,16 @@ public class Config {
      * @return the value of that property
      */
     public static String getProperty(String key) {
-	String value = System.getProperty(key);
-	if (value != null) return value;
+    String value = System.getProperty(key);
+    if (value != null) return value;
 
 //	value = getPropertyFromContext(key);
 //	if (value != null) return value;
-	
-	value = hopperConfig.getString(key);
-	if (value != null) return value;
+    
+    value = hopperConfig.getString(key);
+    if (value != null) return value;
 
-	return null;
+    return null;
     }
     
     /**
@@ -316,7 +316,7 @@ public class Config {
      * @param value the new value for the key
      */
     public void setProperty(String key, String value) {
-	System.setProperty(key, value);
+    System.setProperty(key, value);
     }
 
     /**
@@ -327,15 +327,15 @@ public class Config {
      * @return a list of URLs pointing to files containing abbreviations
      */
     public static List<URL> getAbbreviationFiles() {
-	String[] paths = getStringArray(ABBREVIATION_PATH);
-	
-	List<URL> output = new ArrayList<URL>();
-	for (String path : paths) {
-	    output.add(Thread.currentThread().getContextClassLoader()
-		.getResource("abbreviations" + File.separator + path));
-	}
+    String[] paths = getStringArray(ABBREVIATION_PATH);
+    
+    List<URL> output = new ArrayList<URL>();
+    for (String path : paths) {
+        output.add(Thread.currentThread().getContextClassLoader()
+        .getResource("abbreviations" + File.separator + path));
+    }
 
-	
-	return output;
+    
+    return output;
     }
 }

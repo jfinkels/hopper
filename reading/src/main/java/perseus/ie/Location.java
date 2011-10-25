@@ -15,50 +15,50 @@ public class Location implements Comparable<Location> {
     public Location() {}
 
     public Location(Query q, int p) {
-	query = q;
-	position = p;
+    query = q;
+    position = p;
     }
 
     public Query getQuery() {
-	return query;
+    return query;
     }
 
     public void setQuery(Query q) {
-	query = q;
+    query = q;
     }
 
     public int getPosition() {
-	return position;
+    return position;
     }
 
     public void setPosition(int p) {
-	position = p;
+    position = p;
     }
 
     public String toString() {
-	return query + " [pos " + position + "]";
+    return query + " [pos " + position + "]";
     }
 
     public boolean equals(Object o) {
-	if (!(o instanceof Location)) {
-	    return false;
-	}
+    if (!(o instanceof Location)) {
+        return false;
+    }
 
-	Location l = (Location) o;
+    Location l = (Location) o;
 
-	if (!query.equals(l.query)) {
-	    return false;
-	}
+    if (!query.equals(l.query)) {
+        return false;
+    }
 
-	return (position == l.position);
+    return (position == l.position);
     }
 
     public int compareTo(Location l) {
-	int queryResult = query.compareTo(l.query);
-	if (queryResult != 0) {
-	    return queryResult;
-	}
+    int queryResult = query.compareTo(l.query);
+    if (queryResult != 0) {
+        return queryResult;
+    }
 
-	return (position - l.position);
+    return (position - l.position);
     }
 }

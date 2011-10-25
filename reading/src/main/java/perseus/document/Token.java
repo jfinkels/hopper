@@ -33,12 +33,12 @@ public class Token implements Serializable {
     private TokenContext context;
     
     public enum Type {
-	WORD,
-	NON_WORD,
-	TAG,
-	ENTITY,
-	LINK_START,
-	LINK_END;
+    WORD,
+    NON_WORD,
+    TAG,
+    ENTITY,
+    LINK_START,
+    LINK_END;
     }
 
     /** Error flag returned by the find token helper methods */
@@ -46,89 +46,89 @@ public class Token implements Serializable {
     
     // This is used for extracting element names from tags
     public static final Pattern ELEMENT_NAME_PATTERN =
-	Pattern.compile("</?(\\w+)");
+    Pattern.compile("</?(\\w+)");
 
     public Token (Language lc, String text, Type t) {
-	this(lc, text, t, null);
+    this(lc, text, t, null);
     }
 
     public Token (Language lc, String text, Type t, TokenContext c) {
-	setLanguage(lc);
+    setLanguage(lc);
 
-	originalText = text;
-	displayText = text;
+    originalText = text;
+    displayText = text;
 
-	type = t;
+    type = t;
 
-	context = c;
+    context = c;
     }
 
     public String getLanguageCode() {
-	return language.getCode();
+    return language.getCode();
     }
     
     public Language getLanguage() {
-	return language;
+    return language;
     }
     
     public void setLanguage(Language l) {
-	language = l;
+    language = l;
     }
     
     public void setLanguageCode(String code) {
-	language = Language.forCode(code);
+    language = Language.forCode(code);
     }
 
     public String getOriginalText() {
-	return originalText;
+    return originalText;
     }
 
     public String getDisplayText() {
-	return displayText;
+    return displayText;
     }
 
     public void setDisplayText(String newText) {
-	displayText = newText;
+    displayText = newText;
     }
 
     public TokenContext getContext() {
-	return context;
+    return context;
     }
 
     public boolean hasContext() {
-	return (context != null);
+    return (context != null);
     }
 
     public void setContext(TokenContext ctxt) {
-	context = ctxt;
+    context = ctxt;
     }
 
     public Type getType() {
-	return type;
+    return type;
     }
 
     public static int findPreviousToken(TokenList tokens, int startingPosition,
-					Type type) {
-	for (int pos=startingPosition - 1; pos >= 0; pos--) {
-	    Token token = tokens.get(pos);
-	    if (token.getType() == type) {
-		return pos;
-	    }
-	}
+                    Type type) {
+    for (int pos=startingPosition - 1; pos >= 0; pos--) {
+        Token token = tokens.get(pos);
+        if (token.getType() == type) {
+        return pos;
+        }
+    }
 
-	return NOT_FOUND;
+    return NOT_FOUND;
     }
 
     public static int findNextToken(TokenList tokens, int startingPosition,
-				    Type type) {
-	for (int pos=startingPosition + 1; pos < tokens.size(); pos++) {
-	    Token token = tokens.get(pos);
-	    if (token.getType() == type) {
-		return pos;
-	    }
-	}
+                    Type type) {
+    for (int pos=startingPosition + 1; pos < tokens.size(); pos++) {
+        Token token = tokens.get(pos);
+        if (token.getType() == type) {
+        return pos;
+        }
+    }
 
-	return NOT_FOUND;
+    return NOT_FOUND;
     }
 
     /**
@@ -137,7 +137,7 @@ public class Token implements Serializable {
      * functionality.
      */
     public boolean isEndTag() {
-	return (type == Type.TAG && originalText.startsWith("</"));
+    return (type == Type.TAG && originalText.startsWith("</"));
     }
 
     /**
@@ -146,7 +146,7 @@ public class Token implements Serializable {
      * functionality.
      */
     public boolean isEmptyTag() {
-	return (type == Type.TAG && originalText.endsWith("/>"));
+    return (type == Type.TAG && originalText.endsWith("/>"));
     }
 
     /**
@@ -154,21 +154,21 @@ public class Token implements Serializable {
      * the token does not represent an element.
      */
     public String getElementName() {
-	if (type != Type.TAG) {
-	    return originalText;
-	}
+    if (type != Type.TAG) {
+        return originalText;
+    }
 
-	Matcher matcher = ELEMENT_NAME_PATTERN.matcher(originalText);
+    Matcher matcher = ELEMENT_NAME_PATTERN.matcher(originalText);
 
-	if (matcher.find()) {
-	    return matcher.group(1);
-	}
+    if (matcher.find()) {
+        return matcher.group(1);
+    }
 
-	return null;
+    return null;
     }
 
     public String toString() {
-	return String.format("%s %s [%s] -> [%s]",
-		type.name(), language.getCode(), originalText, displayText);
+    return String.format("%s %s [%s] -> [%s]",
+        type.name(), language.getCode(), originalText, displayText);
     }
 }

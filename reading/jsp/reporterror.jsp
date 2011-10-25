@@ -1,15 +1,15 @@
 <%@page import="
-	    java.io.BufferedWriter,
-	    java.io.PrintWriter,
-	    java.io.StringWriter,
-	    javax.mail.Message,
-	    javax.mail.Session,
-	    javax.mail.internet.AddressException,
-	    javax.mail.internet.MimeMessage,
-	    java.util.Calendar,
-	    java.util.Properties,
-	    javax.mail.internet.InternetAddress,
-	    javax.mail.Transport"
+        java.io.BufferedWriter,
+        java.io.PrintWriter,
+        java.io.StringWriter,
+        javax.mail.Message,
+        javax.mail.Session,
+        javax.mail.internet.AddressException,
+        javax.mail.internet.MimeMessage,
+        java.util.Calendar,
+        java.util.Properties,
+        javax.mail.internet.InternetAddress,
+        javax.mail.Transport"
         pageEncoding="utf-8"
         contentType="text/html;charset=utf-8"%>
 
@@ -42,14 +42,14 @@ PrintWriter printer = new PrintWriter(new BufferedWriter(writer));
 printer.format("%tc%n%n", Calendar.getInstance())
     .format("Hello! This is an automated message from the website.%n%n")
     .format("%s (%s) has reported an error at the following URL: [%s].%n%n",
-		senderName, senderEmail, request.getParameter("url"))
+        senderName, senderEmail, request.getParameter("url"))
     .format("User-agent: %s%n%n", request.getHeader("User-Agent"))
     .format("Error details:%n%s: %s%n%nStack trace:%n%s",
-	request.getParameter("exception-class"),
-	request.getParameter("exception-message"),
-	request.getParameter("exception-stack-trace"))
+    request.getParameter("exception-class"),
+    request.getParameter("exception-message"),
+    request.getParameter("exception-stack-trace"))
     .format("%n%nAdditional information, if any:%n%s%n",
-	request.getParameter("additional_info"));
+    request.getParameter("additional_info"));
 
 printer.close();
 
@@ -86,14 +86,14 @@ Transport.send(message);
 
 <div id="main">
     <jsp:include page="/includes/index/indexNav.jsp">
-	<jsp:param name="tabActive" value=""/>
+    <jsp:param name="tabActive" value=""/>
     </jsp:include>
     <div id="content" class="1column">
-	<h2>Thank you!</h2>
+    <h2>Thank you!</h2>
 
-	<p>Your report has been submitted. Thanks for your help!</p>
+    <p>Your report has been submitted. Thanks for your help!</p>
 
-	<p><a href="/hopper/">Perseus Home Page</a></p>
+    <p><a href="/hopper/">Perseus Home Page</a></p>
     </div> <%-- content --%>
 </div> <%-- main --%>
 

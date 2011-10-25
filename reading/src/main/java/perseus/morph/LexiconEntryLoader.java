@@ -45,7 +45,7 @@ public class LexiconEntryLoader extends RecentlyModifiedCorpusProcessor {
     private static final String ELEMENTARY_LEWIS = "Perseus:text:1999.04.0060";
     
     private static final Pattern HEADWORD_PATTERN = Pattern.compile(
-								    "(.*?)#?(\\d+)$");    
+                                    "(.*?)#?(\\d+)$");    
     
     private LemmaDAO dao = new HibernateLemmaDAO();
     private ChunkDAO chunkDAO = new HibernateChunkDAO();
@@ -55,31 +55,31 @@ public class LexiconEntryLoader extends RecentlyModifiedCorpusProcessor {
     
     @Override
     public String getTaskName() {
-	return "load-lexicon-entries";
+    return "load-lexicon-entries";
     }
     
     public static void main(String args[]) {
         LexiconEntryLoader loader = new LexiconEntryLoader();
         
-    	Options options = new Options()
-	    .addOption("f", "force", false, "force loading of all lexicon entries");
-    	
-    	CommandLineParser parser = new PosixParser();
-    	CommandLine cl;
-    	String[] workingArgs = args;
+        Options options = new Options()
+        .addOption("f", "force", false, "force loading of all lexicon entries");
+        
+        CommandLineParser parser = new PosixParser();
+        CommandLine cl;
+        String[] workingArgs = args;
 
-    	try{
-    	    cl = parser.parse(options, args);
-    	    if (cl.hasOption("force") || cl.hasOption('f')) {
-    		loader.logger.info("Forcing loading of all lexicon entries");
-    		loader.setIgnoreModificationDate(true);
-    	    }
-    	    workingArgs = cl.getArgs();
-    	} catch (ParseException e) {
-    	    loader.logger.error("Unable to parse command-line arguments", e);
-    	    System.exit(1);
-    	}
-    	
+        try{
+            cl = parser.parse(options, args);
+            if (cl.hasOption("force") || cl.hasOption('f')) {
+            loader.logger.info("Forcing loading of all lexicon entries");
+            loader.setIgnoreModificationDate(true);
+            }
+            workingArgs = cl.getArgs();
+        } catch (ParseException e) {
+            loader.logger.error("Unable to parse command-line arguments", e);
+            System.exit(1);
+        }
+        
         if (workingArgs.length > 0) {
             for (String arg : workingArgs) {
                 loader.processAnything(arg);
@@ -90,13 +90,13 @@ public class LexiconEntryLoader extends RecentlyModifiedCorpusProcessor {
     }
     
     public boolean shouldProcessDocument(Chunk documentChunk) {
-    	if (documentChunk.getMetadata().getDefaultChunk() != null) {
-    		return super.shouldProcessDocument(documentChunk) && 
-    		documentChunk.getMetadata().hasSubjectLanguage() &&
-    		documentChunk.getMetadata().getDefaultChunk().equalsIgnoreCase("entry");
-    	} else {
-    		return false;
-    	}
+        if (documentChunk.getMetadata().getDefaultChunk() != null) {
+            return super.shouldProcessDocument(documentChunk) && 
+            documentChunk.getMetadata().hasSubjectLanguage() &&
+            documentChunk.getMetadata().getDefaultChunk().equalsIgnoreCase("entry");
+        } else {
+            return false;
+        }
     }
 
     public void startDocument(Chunk documentChunk) {
@@ -113,22 +113,22 @@ public class LexiconEntryLoader extends RecentlyModifiedCorpusProcessor {
     
     public void processChunk(Chunk documentChunk) {
         if (!documentChunk.getType().equals("entry")) return;
-	
+    
         // Long marks (_) and syllable breaks (^) are in the
         // Latin lexicon, but not in the morphology output, 
         // so, regretfully, we need to remove them.
         String entryName = documentChunk.getValue().replaceAll("[_^]", "");
         org.jdom.Document chunkElement = null;
-	
-	
+    
+    
         try {
             chunkElement = DOMOffsetAdder.domFromChunk(documentChunk);
         } catch (Exception e) {
             logger.error("Unable to read chunk; no short def. available", e);
         }
-	
+    
         Matcher headwordMatcher = HEADWORD_PATTERN.matcher(entryName);
-	
+    
         String headword = entryName;
         int sequenceNumber = 1;
         if (headwordMatcher.matches()) {
@@ -136,13 +136,13 @@ public class LexiconEntryLoader extends RecentlyModifiedCorpusProcessor {
             sequenceNumber = Integer.parseInt(headwordMatcher.group(2));
         }
         String bareHeadword = Lemma.BARE_WORD_PATTERN.matcher(headword).replaceAll("");
-	
+    
         List<Lemma> matches = dao.getMatchingLemmas(
-						    headword, sequenceNumber, language.getCode(), false);
+                            headword, sequenceNumber, language.getCode(), false);
 
         String shortDef = null;
         if (chunkElement != null) {
-        	shortDef = Lemma.extractDefinition(chunkElement);
+            shortDef = Lemma.extractDefinition(chunkElement);
         }
         Lemma lemma;        
         if (matches.isEmpty()) {  
@@ -151,14 +151,14 @@ public class LexiconEntryLoader extends RecentlyModifiedCorpusProcessor {
             lemma.setBareHeadword(bareHeadword);
             lemma.setSequenceNumber(sequenceNumber);
             lemma.setLanguage(language);
-	    
+        
             lemma.setAuthorityName(
-				   String.format("%s%d(%s)", headword, sequenceNumber, language));
+                   String.format("%s%d(%s)", headword, sequenceNumber, language));
             lemma.setDisplayName(headword);
             lemma.setSortableString(
-				    String.format("%s%s", headword, sequenceNumber));
+                    String.format("%s%s", headword, sequenceNumber));
             lemma.setShortDefinition(shortDef);				
-	    
+        
             dao.save(lemma);
             matches.add(lemma);
         } else {
@@ -168,30 +168,30 @@ public class LexiconEntryLoader extends RecentlyModifiedCorpusProcessor {
              * Write over any short definitions added from Lewis & Short that 
              * are also in Elem. Lewis.
              * Update with the latest short def if the existing def is null
-	     */
-	    if (documentChunk.getDocumentID().equals(ELEMENTARY_LEWIS) || lemma.getShortDefinition() == null) {
-		if (shortDef != null) {
-        		lemma.setShortDefinition(shortDef);
-        		dao.update(lemma);
-        		HibernateUtil.getSession().flush();
-		}
-	    }
+         */
+        if (documentChunk.getDocumentID().equals(ELEMENTARY_LEWIS) || lemma.getShortDefinition() == null) {
+        if (shortDef != null) {
+                lemma.setShortDefinition(shortDef);
+                dao.update(lemma);
+                HibernateUtil.getSession().flush();
         }
-	
+        }
+        }
+    
         documentChunk.setLemma(lemma);
         HibernateUtil.getSession().refresh(lemma);
         chunkDAO.updateChunk(documentChunk);
-	
+    
         //lemma.addLexiconChunk(documentChunk);		
         //dao.update(lemma);
         entryCount++;
         if (entryCount % 20 == 0) {
-	    HibernateUtil.getSession().flush();
+        HibernateUtil.getSession().flush();
             HibernateUtil.getSession().clear();
         }
         if (entryCount % 5000 == 0) {
             logger.info(String.format("[%6d] %s -> chunk %d",
-				   entryCount, lemma.getHeadword(), documentChunk.getId()));
+                   entryCount, lemma.getHeadword(), documentChunk.getId()));
         }
     }
 }

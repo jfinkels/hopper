@@ -9,11 +9,11 @@
 <div id="main">
     <jsp:include page="/includes/index/indexNav.jsp">
     <jsp:param name="tabActive" value="about"/>
-	<jsp:param name="subtabActive" value="publications"/>
+    <jsp:param name="subtabActive" value="publications"/>
     </jsp:include> 	
     <div id="content" class="2column">
         <div id="index_main_col">
-		<div id="publications">
+        <div id="publications">
 
 <p>From Greece to Rome:  Building  a Roman Perseus<br>
 Gregory Crane<br>
@@ -264,8 +264,8 @@ opportunities.  Our fundamental job remains the same &#150; we need to learn as 
 the age in which we live has given us exciting new tools with which to pursue our job.  Technology by itself is never the answer, but it will surely be part of any long-term 
 strategy that promotes the study of classics.  Individual projects, however ambitious or modest, all seek to contribute to this larger goal.</p>
 
-		</div> <!-- Publications div -->	
-	</div> <!-- main_col div -->
+        </div> <!-- Publications div -->	
+    </div> <!-- main_col div -->
         
     </div> <!-- 2column div -->
 </div> <!-- main div -->

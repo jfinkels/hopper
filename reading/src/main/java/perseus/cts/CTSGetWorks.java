@@ -32,45 +32,45 @@ public class CTSGetWorks extends AbstractXsltView {
     public CTSGetWorks() {}
 
     public CTSGetWorks(Map requestMap) {
-	this.requestMap = requestMap;
+    this.requestMap = requestMap;
     }
 
     public String getContentType() {
-	return "text/xml; charset=UTF-8";
+    return "text/xml; charset=UTF-8";
     }
 
     public Element toXML() {
-	Element getWorks = new Element("GetWorks");
-	
-	Element requestElet = new Element("request");
-	Iterator requestMapIter = requestMap.keySet().iterator();
-	while (requestMapIter.hasNext()) {
-	    String param = (String)requestMapIter.next();
-	    String value = (String)requestMap.get(param);
-	    Element paramElet = new Element(param);
-	    paramElet.addContent(value);
-	    requestElet.addContent(paramElet);
-	}
-	getWorks.addContent(requestElet);
+    Element getWorks = new Element("GetWorks");
+    
+    Element requestElet = new Element("request");
+    Iterator requestMapIter = requestMap.keySet().iterator();
+    while (requestMapIter.hasNext()) {
+        String param = (String)requestMapIter.next();
+        String value = (String)requestMap.get(param);
+        Element paramElet = new Element(param);
+        paramElet.addContent(value);
+        requestElet.addContent(paramElet);
+    }
+    getWorks.addContent(requestElet);
 
-	CTSGetCapabilities cgc = new CTSGetCapabilities();
-	Element getCaps = cgc.toXML();
-	getWorks.addContent(getCaps);
-	
-	return getWorks;
+    CTSGetCapabilities cgc = new CTSGetCapabilities();
+    Element getCaps = cgc.toXML();
+    getWorks.addContent(getCaps);
+    
+    return getWorks;
     }
 
     protected Source createXsltSource(Map model, String rootName, HttpServletRequest req,
-				 HttpServletResponse res) throws Exception {
-	org.jdom.Document doc = new org.jdom.Document();
-	CTSGetWorks gw = (CTSGetWorks)((Map)model.get("model")).get("gw");
-	Node gwXML = new DOMOutputter().output(new org.jdom.Document(gw.toXML()));
-	return new DOMSource(gwXML);
+                 HttpServletResponse res) throws Exception {
+    org.jdom.Document doc = new org.jdom.Document();
+    CTSGetWorks gw = (CTSGetWorks)((Map)model.get("model")).get("gw");
+    Node gwXML = new DOMOutputter().output(new org.jdom.Document(gw.toXML()));
+    return new DOMSource(gwXML);
     }
 
     public Node toXML(Map model, String rootName, HttpServletRequest req, HttpServletResponse res) 
-	throws Exception {
-	return ((DOMSource) createXsltSource(model, rootName, req, res)).getNode();
+    throws Exception {
+    return ((DOMSource) createXsltSource(model, rootName, req, res)).getNode();
     }
 
 }

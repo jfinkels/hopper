@@ -11,10 +11,10 @@ import junit.framework.TestCase;
 public class SampleTest extends TestCase {
 
     public SampleTest(String name) {
-	super(name);
+    super(name);
     }
 
     public static void testSomething() {
-	assertEquals(2,2);
+    assertEquals(2,2);
     }
 }

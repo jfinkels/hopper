@@ -15,12 +15,12 @@ public interface CitationDAO {
      public boolean update(Citation cit);
      */
     public List<Citation> getCitations(Query source, Query destination,
-	    String linkType, int firstResult, int maxResults);
+        String linkType, int firstResult, int maxResults);
     
     public List<Citation> getOutgoingCitations(Query source, String linkType,
-	    int firstResult, int maxResults);
+        int firstResult, int maxResults);
     public List<Citation> getIncomingCitations(Query destination, String linkType,
-	    int firstResult, int maxResults);
+        int firstResult, int maxResults);
     public Citation getCitationById(int id);
     public int clear(Query source, Query destination, String linkType);
     

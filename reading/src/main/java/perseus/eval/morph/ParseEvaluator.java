@@ -28,85 +28,85 @@ public abstract class ParseEvaluator {
      * as values.
      */
     public Map<Parse,Number> evaluateParses(Map<Lemma,List<Parse>> parses) {
-	List<Parse> flattenedParses = flattenParses(parses);
-	Map<Parse,Number> parseScores = evaluate(flattenedParses);
+    List<Parse> flattenedParses = flattenParses(parses);
+    Map<Parse,Number> parseScores = evaluate(flattenedParses);
 
-	// HACK! Give user votes higher priority--don't normalize their scores.
-	if (!(this instanceof UserVotesEvaluator)) {
-	    parseScores = normalizeScores(parseScores);
-	}
+    // HACK! Give user votes higher priority--don't normalize their scores.
+    if (!(this instanceof UserVotesEvaluator)) {
+        parseScores = normalizeScores(parseScores);
+    }
 
-	return parseScores;
+    return parseScores;
     }
 
     protected Map<Parse,Number> normalizeScores(Map<Parse,Number> scores) {
 
-	Map<Parse,Number> normalizedScores = new HashMap<Parse,Number>();
+    Map<Parse,Number> normalizedScores = new HashMap<Parse,Number>();
 
-	//double denominator = calculateEuclideanDistance(scores);
-	double denominator = calculateSum(scores);
-	if (denominator == 0.0) {
-	    for (Parse parse : scores.keySet()) {
-		normalizedScores.put(parse, 0.0);
-	    }
+    //double denominator = calculateEuclideanDistance(scores);
+    double denominator = calculateSum(scores);
+    if (denominator == 0.0) {
+        for (Parse parse : scores.keySet()) {
+        normalizedScores.put(parse, 0.0);
+        }
 
-	    return normalizedScores;
-	}
-	
-	for (Parse parse : scores.keySet()) {
-	    if (scores.containsKey(parse)) {
-		double parseScore = scores.get(parse).doubleValue();
+        return normalizedScores;
+    }
+    
+    for (Parse parse : scores.keySet()) {
+        if (scores.containsKey(parse)) {
+        double parseScore = scores.get(parse).doubleValue();
 
-		double normalizedScore = parseScore / denominator;
+        double normalizedScore = parseScore / denominator;
 
-		normalizedScores.put(parse, normalizedScore);
-	    } else {
-		normalizedScores.put(parse, 0.0);
-	    }
-	}
+        normalizedScores.put(parse, normalizedScore);
+        } else {
+        normalizedScores.put(parse, 0.0);
+        }
+    }
 
-	return normalizedScores;
+    return normalizedScores;
     }
 
     private double calculateSum(Map<Parse,Number> scores) {
 
-	double total = 0.0;
+    double total = 0.0;
 
-	for (Number score : scores.values()) {
-	    total += score.doubleValue();
-	}
+    for (Number score : scores.values()) {
+        total += score.doubleValue();
+    }
 
-	return total;
+    return total;
     }
 
     protected List<Parse> flattenParses(Map<Lemma,List<Parse>> parses) {
 
-	List<Parse> flattenedParses = new ArrayList<Parse>();
+    List<Parse> flattenedParses = new ArrayList<Parse>();
 
-	for (List<Parse> lemmaParses : parses.values()) {
-	    flattenedParses.addAll(lemmaParses);
-	}
+    for (List<Parse> lemmaParses : parses.values()) {
+        flattenedParses.addAll(lemmaParses);
+    }
 
-	return flattenedParses;
+    return flattenedParses;
     }
 
     public String getProperty(String key) {
-	if (properties.containsKey(key)) {
-	    return properties.get(key);
-	}
-	return null;
+    if (properties.containsKey(key)) {
+        return properties.get(key);
+    }
+    return null;
     }
     
     public void setProperty(String key, String value) {
-	properties.put(key, value);
+    properties.put(key, value);
     }
 
     public boolean hasProperty(String key) {
-	return properties.containsKey(key);
+    return properties.containsKey(key);
     }
 
     public void removeProperty(String key) {
-	properties.remove(key);
+    properties.remove(key);
     }
 
     public abstract String getDescription();

@@ -5,9 +5,9 @@ function loadLexiconPreCallback(params) {
     var query = params["doc"];
     var url = "loadquery?doc=" + query;
     if (params["source"] != null) {
-	url += "&form=" + encodeURIComponent(params["form"])
-	    + "&which=" + params["which"]
-	    + "&source=" + params["source"];
+    url += "&form=" + encodeURIComponent(params["form"])
+        + "&which=" + params["which"]
+        + "&source=" + params["source"];
     }
 
     // branch for native XMLHttpRequest object
@@ -25,9 +25,9 @@ function loadLexiconPreCallback(params) {
 
 function loadLexiconCallback(req, params) {
     if (req.status != 200) {
-	document.alert("Problem getting lexicon entry! HTTP status: " 
-	    + req.statusText);
-	return;
+    document.alert("Problem getting lexicon entry! HTTP status: " 
+        + req.statusText);
+    return;
     }
     var query = params["doc"];
     var textDisplay = document.getElementById(query + "-contents");
@@ -47,7 +47,7 @@ function loadLexiconCallback(req, params) {
     textLink.innerHTML = getVariable("lex.lastInnerHTML");
     textLink.setAttribute('href', '#' + query + '-contents');
     textLink.setAttribute('onclick', 'javascript:showEntry(\''
-			    + query + '-contents\')');
+                + query + '-contents\')');
 }
  
 function showVotes() {

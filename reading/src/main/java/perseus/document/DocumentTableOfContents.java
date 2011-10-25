@@ -20,10 +20,10 @@ public class DocumentTableOfContents extends TableOfContents {
     public DocumentTableOfContents() {}
     
     public DocumentTableOfContents(Query query) {
-	super(query);
+    super(query);
     }
 
     public DocumentTableOfContents(Query query, String s) {
-	super(query, s);
+    super(query, s);
     }
 }

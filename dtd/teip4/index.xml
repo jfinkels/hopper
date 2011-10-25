@@ -160,22 +160,22 @@ Tables are listed in alphabetical order.
 <head>Core tag sets: enabled when any TEI base is enabled</head>
 <row><cell><xref url="teiback2.dtd">teiback2.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >Back
-	  Matter</ident></cell><cell><xref
-	  url="../DS.html#DSBACK">Section 7.6</xref></cell></row>
+      Matter</ident></cell><cell><xref
+      url="../DS.html#DSBACK">Section 7.6</xref></cell></row>
 <row>
 <cell><xref url="teiclas2.ent">teiclas2.ent</xref></cell>
 <cell>ENTITIES</cell><cell><ident >TEI ElementClasses</ident></cell>
 <cell><xref url="../ST.html#STEC">Section 3.7</xref></cell></row>
 <row><cell><xref url="teicore2.dtd">teicore2.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >Core
-	  Elements</ident></cell><cell><xref url="../CO.html">Chapter 6</xref></cell></row>
+      Elements</ident></cell><cell><xref url="../CO.html">Chapter 6</xref></cell></row>
 <row><cell><xref url="teifron2.dtd">teifron2.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >Front
-	  Matter</ident></cell><cell><xref
-	  url="../DS.html#DSFRONT">Section 7.4</xref></cell></row>
+      Matter</ident></cell><cell><xref
+      url="../DS.html#DSFRONT">Section 7.4</xref></cell></row>
 <row><cell><xref url="teihdr2.dtd">teihdr2.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >TEI
-	  Header</ident></cell><cell><xref url="../HD.html">Chapter 5</xref></cell></row>
+      Header</ident></cell><cell><xref url="../HD.html">Chapter 5</xref></cell></row>
 <row><cell><xref url="teistr2.dtd">teistr2.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >Default Text Structure</ident></cell><cell><xref
 url="../DS.html">Chapter 7</xref></cell></row></table>
@@ -185,8 +185,8 @@ url="../DS.html">Chapter 7</xref></cell></row></table>
 <ident >TEI.certainty</ident></head>
 <row id="ce"><cell><xref url="teicert2.dtd">teicert2.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >Additional Element Set for
-	  Certainty and Responsibility</ident></cell><cell><xref
-	  url="../CE.html">Chapter 17</xref></cell></row>
+      Certainty and Responsibility</ident></cell><cell><xref
+      url="../CE.html">Chapter 17</xref></cell></row>
 </table>
 
 <table rend="rules" id="tag-corp">
@@ -194,7 +194,7 @@ url="../DS.html">Chapter 7</xref></cell></row></table>
 <ident >TEI.corpus</ident></head>
 <row id="corpora"><cell><xref url="teicorp2.dtd">teicorp2.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >Additional Element Set for Language
-	  Corpora</ident></cell><cell><xref url="../CC.html">Chapter 23</xref></cell></row>
+      Corpora</ident></cell><cell><xref url="../CC.html">Chapter 23</xref></cell></row>
 </table>
 
 <table rend="rules" id="tag-dict">
@@ -202,8 +202,8 @@ url="../DS.html">Chapter 7</xref></cell></row></table>
 <ident >TEI.dictionary</ident></head>
 <row id="dict"><cell><xref url="teidict2.dtd">teidict2.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >Base Element Set for Print
-	  Dictionaries</ident></cell><cell><xref
-	  url="../DI.html">Chapter 12</xref></cell></row>
+      Dictionaries</ident></cell><cell><xref
+      url="../DI.html">Chapter 12</xref></cell></row>
 <row><cell><xref url="teidict2.ent">teidict2.ent</xref></cell>
 <cell>ENTITIES</cell><cell><ident >Element Classes
 for Print Dictionaries</ident></cell><cell><xref url="../DI.html">Chapter 12</xref></cell></row>
@@ -214,7 +214,7 @@ for Print Dictionaries</ident></cell><cell><xref url="../DI.html">Chapter 12</xr
 <ident >TEI.drama</ident></head>
 <row id="perf"><cell><xref url="teidram2.dtd">teidram2.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >Base Element Set for Drama
-	  2001-12</ident></cell><cell><xref url="../DR.html">Chapter 10</xref></cell></row>
+      2001-12</ident></cell><cell><xref url="../DR.html">Chapter 10</xref></cell></row>
 <row><cell><xref url="teidram2.ent">teidram2.ent</xref></cell>
 <cell>ENTITIES</cell><cell><ident >Element Classes for Drama</ident></cell><cell><xref url="../DR.html">Chapter 10</xref></cell></row>
 </table>
@@ -225,7 +225,7 @@ for Print Dictionaries</ident></cell><cell><xref url="../DI.html">Chapter 12</xr
 <row id="tables"><cell><xref url="teifig2.dtd">teifig2.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >Additional Element Set
 for Tables, Formulae, and Graphics</ident></cell><cell><xref
-	  url="../FT.html">Chapter 22</xref></cell></row>
+      url="../FT.html">Chapter 22</xref></cell></row>
 <row><cell><xref url="teifig2.ent">teifig2.ent</xref></cell>
 <cell>ENTITIES</cell><cell><ident >Formulae Notations and Contents</ident></cell><cell><xref url="../FT.html">Chapter 22</xref></cell></row>
 </table>
@@ -234,8 +234,8 @@ for Tables, Formulae, and Graphics</ident></cell><cell><xref
 <head>Auxiliary DTD for Feature System Declarations</head>
 <row id="fsd"><cell><xref url="teifsd2.dtd">teifsd2.dtd</xref></cell>
 <cell>DTD</cell><cell><ident >Auxiliary Document Type:  Feature System
-	  Declaration</ident></cell><cell><xref
-	  url="../FD.html">Chapter 26</xref></cell></row>
+      Declaration</ident></cell><cell><xref
+      url="../FD.html">Chapter 26</xref></cell></row>
 </table>
 
 <table rend="rules" id="tag-fs">
@@ -249,31 +249,31 @@ url="../FS.html">Chapter 16</xref></cell></row>
 tag sets: enabled by <ident >TEI.general</ident></head> 
 <row><cell><xref url="teigen2.dtd">teigen2.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >General Base Element
-	  Set</ident></cell><cell><xref url="../ST.html#STCO">Section 3.4</xref></cell></row>
+      Set</ident></cell><cell><xref url="../ST.html#STCO">Section 3.4</xref></cell></row>
 </table>
 
 <table rend="rules">
 <head>The TEI main DTD </head>
 <row><cell><xref url="tei2.dtd">tei2.dtd</xref></cell>
 <cell>DTD</cell><cell><ident >Main DTD Driver
-	  File</ident></cell><cell><xref
-	  url="../ST.html"></xref>Chapter 3</cell></row>
+      File</ident></cell><cell><xref
+      url="../ST.html"></xref>Chapter 3</cell></row>
 <row><cell><xref url="teigis2.ent">teigis2.ent</xref></cell>
 <cell>ENTITIES</cell><cell><ident >Generic
-	  Identifiers</ident></cell><cell><xref
-	  url="../ST.html#STPE">Section 3.8</xref></cell></row>
+      Identifiers</ident></cell><cell><xref
+      url="../ST.html#STPE">Section 3.8</xref></cell></row>
 <row><cell><xref url="teikey2.ent">teikey2.ent</xref></cell>
 <cell>ENTITIES</cell><cell><ident >TEI
-	  Keywords</ident></cell><cell><xref
-	  url="../ST.html#STPE">Section 3.8</xref></cell></row>
+      Keywords</ident></cell><cell><xref
+      url="../ST.html#STPE">Section 3.8</xref></cell></row>
 </table>
 
 <table rend="rules" id="tag-link">
 <head>Additional tag set for Linking and Segmentation: enabled by <ident >TEI.linking</ident></head>
 <row><cell><xref url="teilink2.dtd">teilink2.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >Additional Element Set for Linking,
-	  Segmentation, and Alignment</ident></cell><cell><xref
-	  url="../SA.html">Chapter 14</xref></cell></row>
+      Segmentation, and Alignment</ident></cell><cell><xref
+      url="../SA.html">Chapter 14</xref></cell></row>
 <row><cell><xref url="teilink2.ent">teilink2.ent</xref></cell>
 <cell>ENTITIES</cell><cell><ident >Element Classes for Linking, Segmentation, and Alignment</ident></cell><cell><xref url="../SA.html">Chapter 14</xref></cell></row>
 </table>
@@ -282,16 +282,16 @@ tag sets: enabled by <ident >TEI.general</ident></head>
 <head>Mixed base tag set, for use with one or more other base tag sets: enabled by <ident >TEI.mixed</ident></head>
 <row><cell><xref url="teimix2.dtd">teimix2.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >Base Element Set for Mixed Text
-	  Types</ident></cell><cell><xref
-	  url="../ST.html#STCO">Section 3.4</xref></cell></row>
+      Types</ident></cell><cell><xref
+      url="../ST.html#STCO">Section 3.4</xref></cell></row>
 </table>
 
 <table rend="rules" id="tag-names">
 <head>Additional tag set for Names and Dates:  enabled by <ident >TEI.names.dates</ident></head>
 <row><cell><xref url="teind2.dtd">teind2.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >Additional Element Set for Names
-	  and Dates</ident></cell><cell><xref url="../ND.html">Chapter
-	 20</xref></cell></row>
+      and Dates</ident></cell><cell><xref url="../ND.html">Chapter
+     20</xref></cell></row>
 <row><cell><xref url="teind2.ent">teind2.ent</xref></cell>
 <cell>ENTITIES</cell><cell><ident >Element Classes for Names and Dates</ident></cell><cell><xref
 url="../ND.html">Chapter 20</xref></cell></row>
@@ -301,8 +301,8 @@ url="../ND.html">Chapter 20</xref></cell></row>
 <head>Additional tag set for Graph Theory: enabled by <ident >TEI.nets</ident></head>
 <row id="graphs"><cell><xref url="teinet2.dtd">teinet2.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >Additional Element Set for Graphs,
-	  Networks, and Trees</ident></cell><cell><xref
-	  url="../GD.html">Chapter 21</xref></cell></row>
+      Networks, and Trees</ident></cell><cell><xref
+      url="../GD.html">Chapter 21</xref></cell></row>
 </table>
 
 
@@ -310,7 +310,7 @@ url="../ND.html">Chapter 20</xref></cell></row>
 <head>Base tag set for Prose: enabled by <ident >TEI.prose</ident></head>
 <row><cell><xref url="teipros2.dtd">teipros2.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >Base Element Set for
-	  Prose</ident></cell><cell><xref url="../PR.html">Chapter 8</xref></cell></row>
+      Prose</ident></cell><cell><xref url="../PR.html">Chapter 8</xref></cell></row>
 </table>
 
 <table rend="rules" id="tag-ihs">
@@ -324,8 +324,8 @@ url="../SH.html">Chapter 24</xref></cell></row>
 <head>Base tag set for Transcribed Speech: enabled by <ident >TEI.spoken</ident></head>
 <row id="ts"><cell><xref url="teispok2.dtd">teispok2.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >Base Element Set for Transcriptions
-	  of Speech</ident></cell><cell><xref url="../TS.html">Chapter
-	 18</xref></cell></row>
+      of Speech</ident></cell><cell><xref url="../TS.html">Chapter
+     18</xref></cell></row>
 <row><cell><xref url="teispok2.ent">teispok2.ent</xref></cell>
 <cell>ENTITIES</cell><cell><ident >Element Classes for Transcriptions of Speech</ident></cell><cell><xref
 url="../TS.html">Chapter 18</xref></cell></row>
@@ -335,8 +335,8 @@ url="../TS.html">Chapter 18</xref></cell></row>
 <head>Additional tag set for Textual Criticism: enabled by <ident >TEI.textcrit</ident></head>
 <row id="tc"><cell><xref url="teitc2.dtd">teitc2.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >Additional Element Set for
-	  Text-Critical Apparatus</ident></cell><cell><xref
-	  url="../TC.html">Chapter 19</xref></cell></row>
+      Text-Critical Apparatus</ident></cell><cell><xref
+      url="../TC.html">Chapter 19</xref></cell></row>
 <row><cell><xref url="teitc2.ent">teitc2.ent</xref></cell>
 <cell>ENTITIES</cell><cell><ident >Element Classes for Critical Apparatus</ident></cell><cell><xref
 url="../TC.html">Chapter 19</xref></cell></row>
@@ -346,14 +346,14 @@ url="../TC.html">Chapter 19</xref></cell></row>
 <head>Base tag sets for Terminological Data: enabled by <ident >TEI.terminology</ident></head>
 <row id="term"><cell><xref url="teiterm2.dtd">teiterm2.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >Base Element Set for Terminological
-	  Data</ident></cell><cell><xref url="../TE.html">Chapter 13</xref></cell></row>
+      Data</ident></cell><cell><xref url="../TE.html">Chapter 13</xref></cell></row>
 <row><cell><xref url="teiterm2.ent">teiterm2.ent</xref></cell><cell>ENTITIES</cell><cell><ident >Element Classes
 for Terminological Data</ident></cell><cell><xref url="../TE.html">Chapter 13</xref></cell></row>
 <row><cell><xref url="teite2f.dtd">teite2f.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >Terminological Databases (Flat)</ident></cell><cell><xref url="../TE.html">Chapter 13</xref></cell></row>
 <row><cell><xref url="teite2n.dtd">teite2n.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >Terminological Databases
-	  (Nested)</ident></cell><cell><xref url="../TE.html">Chapter 13</xref></cell></row>
+      (Nested)</ident></cell><cell><xref url="../TE.html">Chapter 13</xref></cell></row>
 </table>
 
 <table rend="rules" id="tag-mss">
@@ -361,43 +361,43 @@ for Terminological Data</ident></cell><cell><xref url="../TE.html">Chapter 13</x
 <ident >TEI.transcr</ident></head>
 <row id="ph"><cell><xref url="teitran2.dtd">teitran2.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >Additional Element Set for
-	  Transcription of Primary Sources</ident></cell><cell><xref
-	  url="../PH.html">Chapter 18</xref></cell></row>
+      Transcription of Primary Sources</ident></cell><cell><xref
+      url="../PH.html">Chapter 18</xref></cell></row>
 <row><cell><xref url="teitran2.ent">teitran2.ent</xref></cell>
 <cell>ENTITIES</cell><cell><ident >Element Classes for Transcription
-	  of Primary Sources</ident></cell><cell><xref
-	  url="../PH.html">Chapter 18</xref></cell></row>
+      of Primary Sources</ident></cell><cell><xref
+      url="../PH.html">Chapter 18</xref></cell></row>
 </table>
 
 <table rend="rules" id="tag-tsd">
 <head>Auxiliary DTD for Tag Set documentation</head>
 <row id="tsd"><cell><xref url="teitsd2.dtd">teitsd2.dtd</xref></cell>
 <cell>DTD</cell><cell><ident >Auxiliary Document Type: Tag Set
-	  Documentation</ident></cell><cell><xref
-	  url="../TD.html">Chapter 27</xref></cell></row>
+      Documentation</ident></cell><cell><xref
+      url="../TD.html">Chapter 27</xref></cell></row>
 </table>
 
 <table rend="rules" id="tag-ve">
 <head>Base tag set for Verse: enabled by <ident >TEI.verse</ident></head>
 <row id="verse"><cell><xref url="teivers2.dtd">teivers2.dtd</xref></cell>
 <cell>ELEMENTS</cell><cell><ident >Base Element Set for
-	  Verse</ident></cell><cell><xref url="../VE.html">Chapter 9</xref></cell></row>
+      Verse</ident></cell><cell><xref url="../VE.html">Chapter 9</xref></cell></row>
 <row><cell><xref url="teivers2.ent">teivers2.ent</xref></cell>
 <cell>ENTITIES</cell><cell><ident >Element Classes for
-	  Verse</ident></cell><cell><xref url="../VE.html">Chapter 9</xref></cell></row>
+      Verse</ident></cell><cell><xref url="../VE.html">Chapter 9</xref></cell></row>
 </table>
 
 <table rend="rules" id="tag-wsd">
 <head>Auxiliary tag set for Writing System Declarations</head>
 <row><cell><xref url="teiwsd2.dtd">teiwsd2.dtd</xref></cell>
 <cell>DTD</cell><cell><ident >Auxiliary Document Type: Writing System
-	  Declaration</ident></cell><cell><xref
-	  url="../WD.html">Chapter 25</xref></cell></row>
+      Declaration</ident></cell><cell><xref
+      url="../WD.html">Chapter 25</xref></cell></row>
 <!--
 <row><cell><xref url="wdgis2.ent">wdgis2.ent</xref></cell>
 <cell>ENTITIES</cell><cell><ident >Generic Identifiers for Writing
-	  System Declaration</ident></cell><cell><xref
-	  url="../WD.html#WDOV">Section 25.1</xref></cell></row>-->
+      System Declaration</ident></cell><cell><xref
+      url="../WD.html#WDOV">Section 25.1</xref></cell></row>-->
 </table>
 <table rend="rules" id="tag-con">
 <head>Auxiliary tag set for concurrent markup of pages and lines</head>

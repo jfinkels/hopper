@@ -55,8 +55,8 @@ public class HibernateVoteDAO extends HibernateDAO<Vote> implements VoteDAO {
         for (Object result : results) {
             Object[] resultArr = (Object[]) result;
             Entity entity = (resultArr[0] != null ?
-        	    (Entity) resultArr[0] :
-        		Vote.NONE_OF_THE_ABOVE);
+                (Entity) resultArr[0] :
+                Vote.NONE_OF_THE_ABOVE);
             long count = (Long) resultArr[1];
             
             counts.put(entity, count);

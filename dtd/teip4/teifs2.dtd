@@ -169,7 +169,7 @@ are available from the Consortium website at http://www.tei-c.org-->
 <!ELEMENT %n.vAlt; %om.RR;  (((%n.plus;) | %n.minus; | %n.any; | %n.none; | %n.dft; | %n.uncertain; | %n.null; |
                          %n.sym; | %n.nbr; | %n.msr; | %n.rate; | %n.str; | %n.vAlt; | %n.fs;),
                         ((%n.plus;) | %n.minus; | %n.any; | %n.none; | %n.dft; | %n.uncertain; | %n.null; |
-	                     %n.sym; | %n.nbr; | %n.msr; | %n.rate; | %n.str; | %n.vAlt; | %n.fs;)+) > 
+                         %n.sym; | %n.nbr; | %n.msr; | %n.rate; | %n.str; | %n.vAlt; | %n.fs;)+) > 
 <!ATTLIST %n.vAlt;
       %a.global;
       mutExcl (Y|N) #IMPLIED

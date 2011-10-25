@@ -13,31 +13,31 @@ import perseus.util.HibernateDAO;
 public class HibernateLanguageDAO extends HibernateDAO<Language> implements LanguageDAO {
 
     public Language getByAbbreviation(String abbrev) {
-	Query query = getSession().createQuery(
-		"from Language where :abbrev in elements(abbreviations)")
-		.setMaxResults(1)
-		.setCacheable(true)
-		.setString("abbrev", abbrev);
+    Query query = getSession().createQuery(
+        "from Language where :abbrev in elements(abbreviations)")
+        .setMaxResults(1)
+        .setCacheable(true)
+        .setString("abbrev", abbrev);
 
-	List<Language> results = query.list();
-	return results.isEmpty() ? null : results.get(0);
+    List<Language> results = query.list();
+    return results.isEmpty() ? null : results.get(0);
     }
 
     public Language getById(int id) {
-	try {
-	    return (Language) getSession().get(
-		    Language.class, new Integer(id));
-	} catch (ObjectNotFoundException onfe) {
-	    return null;
-	}
+    try {
+        return (Language) getSession().get(
+            Language.class, new Integer(id));
+    } catch (ObjectNotFoundException onfe) {
+        return null;
+    }
     }
     
     public Set<Language> getAllLanguages() {
-	return new HashSet<Language>(
-		getSession().createCriteria(Language.class).list());
+    return new HashSet<Language>(
+        getSession().createCriteria(Language.class).list());
     }
     
     public void clear() {
-	getSession().createQuery("delete from Language").executeUpdate();
+    getSession().createQuery("delete from Language").executeUpdate();
     }
 }

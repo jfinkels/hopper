@@ -96,7 +96,7 @@ size="12"/></td></tr>
 <input type="submit" value="Get request"/>
 </form>
 </p>
-	 <!-- Google Analytics --> 
-	<%@ include file="/includes/common/analytics.htm" %>
+     <!-- Google Analytics --> 
+    <%@ include file="/includes/common/analytics.htm" %>
   </body>
 </html>

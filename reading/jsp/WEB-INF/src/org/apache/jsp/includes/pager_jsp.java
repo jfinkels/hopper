@@ -42,7 +42,7 @@ public final class pager_jsp extends org.apache.jasper.runtime.HttpJspBase
     try {
       response.setContentType("text/html;charset=utf-8");
       pageContext = _jspxFactory.getPageContext(this, request, response,
-      			null, true, 8192, true);
+                null, true, 8192, true);
       _jspx_page_context = pageContext;
       application = pageContext.getServletContext();
       config = pageContext.getServletConfig();
@@ -62,39 +62,39 @@ String sourceURL = request.getParameter("sourceURL");
 String transformedURL;
 
 if ((hitCount-1) / hitsPerPage > 0) {
- 	int currentPage = firstHit / hitsPerPage;
+    int currentPage = firstHit / hitsPerPage;
     int lastPage = (hitCount-1) / hitsPerPage;
 
- 	if (currentPage > 0) {
- 		transformedURL = sourceURL.replaceAll("\\$1", "0");
+    if (currentPage > 0) {
+        transformedURL = sourceURL.replaceAll("\\$1", "0");
 
       out.write("\n    \t<a href=\"");
       out.print( transformedURL );
       out.write("\"><img src='/img/westend.gif' border='0'/></a>\n");
 
-    	transformedURL = sourceURL.replaceAll("\\$1", String.valueOf(firstHit-hitsPerPage));
+        transformedURL = sourceURL.replaceAll("\\$1", String.valueOf(firstHit-hitsPerPage));
 
       out.write("\n    \t<a href=\"");
       out.print( transformedURL );
       out.write("\"><img src='/img/west.gif' border='0'/></a>\n");
 
- 	}
-  	for (int thisPage = 0; thisPage <= lastPage; thisPage++) {
-		int distance;
-		if (thisPage < currentPage) {
-	    	distance = currentPage - thisPage;
-		} else {
-	    	distance = thisPage - currentPage;
-		}
-		
-		if (distance == 0) {
-	    	
+    }
+    for (int thisPage = 0; thisPage <= lastPage; thisPage++) {
+        int distance;
+        if (thisPage < currentPage) {
+            distance = currentPage - thisPage;
+        } else {
+            distance = thisPage - currentPage;
+        }
+        
+        if (distance == 0) {
+            
       out.write(' ');
       out.print( thisPage+1 );
       out.write(' ');
 
-		} else if (distance <= threshold) {
-			transformedURL = sourceURL.replaceAll("\\$1", String.valueOf(thisPage * hitsPerPage));
+        } else if (distance <= threshold) {
+            transformedURL = sourceURL.replaceAll("\\$1", String.valueOf(thisPage * hitsPerPage));
 
       out.write("\t\t\t<a href=\"");
       out.print( transformedURL );
@@ -103,20 +103,20 @@ if ((hitCount-1) / hitsPerPage > 0) {
       out.print( thisPage+1 );
       out.write("</a>");
 
-		} else if (distance == threshold+1) {
-	    	
+        } else if (distance == threshold+1) {
+            
       out.write(" ... ");
 
-		}
+        }
     }
     if (currentPage < lastPage) {
-    	transformedURL = sourceURL.replaceAll("\\$1", String.valueOf(firstHit+hitsPerPage));
+        transformedURL = sourceURL.replaceAll("\\$1", String.valueOf(firstHit+hitsPerPage));
 
       out.write("\n    \t<a href=\"");
       out.print( transformedURL );
       out.write("\"><img src='/img/east.gif' border='0'/></a>\n");
  
-     	transformedURL = sourceURL.replaceAll("\\$1", String.valueOf(lastPage*hitsPerPage));
+        transformedURL = sourceURL.replaceAll("\\$1", String.valueOf(lastPage*hitsPerPage));
 
       out.write("\n    \t<a href=\"");
       out.print( transformedURL );

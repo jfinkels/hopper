@@ -19,27 +19,27 @@ public class CorpusFrequencyAggregator {
     private Logger logger = Logger.getLogger(getClass());
 
     public void aggregate() {
-	List<Corpus> corpora = new ArrayList<Corpus>();
-	corpora.addAll(Corpus.getConglomerates());
-	corpora.addAll(Corpus.getAuthorCorpora());
-	
-	manager = new HibernateEntityManager();
-	manager.beginWrite();
-	for (Corpus corpus : corpora) {
-	    aggregate(corpus);
-	}
-	manager.endWrite();
-	
-	logger.info("Done aggregating");
+    List<Corpus> corpora = new ArrayList<Corpus>();
+    corpora.addAll(Corpus.getConglomerates());
+    corpora.addAll(Corpus.getAuthorCorpora());
+    
+    manager = new HibernateEntityManager();
+    manager.beginWrite();
+    for (Corpus corpus : corpora) {
+        aggregate(corpus);
+    }
+    manager.endWrite();
+    
+    logger.info("Done aggregating");
     }
     
     public void aggregate(Corpus corpus) {
-	logger.info("Aggregating " + corpus);
-	manager.aggregateCorpusFrequencies(corpus);
+    logger.info("Aggregating " + corpus);
+    manager.aggregateCorpusFrequencies(corpus);
     }
 
     public static void main(String[] args) {
-	CorpusFrequencyAggregator aggro = new CorpusFrequencyAggregator();
-	aggro.aggregate();
+    CorpusFrequencyAggregator aggro = new CorpusFrequencyAggregator();
+    aggro.aggregate();
     }
 }

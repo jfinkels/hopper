@@ -13,29 +13,29 @@ public class BagCountComparator implements Comparator {
     private static final int DESCENDING = 1;
 
     public BagCountComparator(Bag b) {
-	this(b, DESCENDING);
+    this(b, DESCENDING);
     }
 
     public BagCountComparator(Bag b, int order) {
-	bag = b;
-	sortOrder = order;
+    bag = b;
+    sortOrder = order;
     }
 
     public int compare(Object o1, Object o2) {
-	if (sortOrder == ASCENDING) {
-	    return bag.getCount(o1) - bag.getCount(o2);
-	} else {
-	    return bag.getCount(o2) - bag.getCount(o1);
-	}
+    if (sortOrder == ASCENDING) {
+        return bag.getCount(o1) - bag.getCount(o2);
+    } else {
+        return bag.getCount(o2) - bag.getCount(o1);
+    }
     }
 
     public boolean equals(Object o) {
-	if (!(o instanceof BagCountComparator)) {
-	    return false;
-	}
+    if (!(o instanceof BagCountComparator)) {
+        return false;
+    }
 
-	BagCountComparator bcc = (BagCountComparator) o;
+    BagCountComparator bcc = (BagCountComparator) o;
 
-	return (bag.equals(bcc.bag));
+    return (bag.equals(bcc.bag));
     }
 }

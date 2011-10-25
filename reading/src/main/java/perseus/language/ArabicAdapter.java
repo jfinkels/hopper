@@ -13,9 +13,9 @@ import java.util.regex.Pattern;
 public class ArabicAdapter extends DefaultLanguageAdapter {
     
     private static final Pattern nonWordPattern =
-	Pattern.compile("([^'|OWIAbptvjHx d*rzs$SDTZEg_fqklmnhwYyFNKaui~o`{}PJVG^=])");
+    Pattern.compile("([^'|OWIAbptvjHx d*rzs$SDTZEg_fqklmnhwYyFNKaui~o`{}PJVG^=])");
     private static final Pattern wordPattern =
-	Pattern.compile("(['|OWIAbptvjHx d*rzs$SDTZEg_fqklmnhwYyFNKaui~o`{}PJVG^=]+)");
+    Pattern.compile("(['|OWIAbptvjHx d*rzs$SDTZEg_fqklmnhwYyFNKaui~o`{}PJVG^=]+)");
 
     
     /**
@@ -25,11 +25,11 @@ public class ArabicAdapter extends DefaultLanguageAdapter {
     }
 
     public Pattern getNonWordPattern() {
-	return nonWordPattern;
+    return nonWordPattern;
     }
 
     public Pattern getWordPattern() {
-	return wordPattern;
+    return wordPattern;
     }
  
     /**
@@ -43,9 +43,9 @@ public class ArabicAdapter extends DefaultLanguageAdapter {
      
     public String getLookupForm(String s) {
     
-		s=ArabicAdapter.salmone2Buckwalter(s);
-		s=ArabicAdapter.toXMLFriendly(s.replaceAll("~", ""));
-		return AraMorph.romanizeWord(s);
+        s=ArabicAdapter.salmone2Buckwalter(s);
+        s=ArabicAdapter.toXMLFriendly(s.replaceAll("~", ""));
+        return AraMorph.romanizeWord(s);
     
     }
     
@@ -56,38 +56,38 @@ public class ArabicAdapter extends DefaultLanguageAdapter {
      */
     
     public static String salmone2Buckwalter(String s) {
-	
-		return s.replaceAll("A\\^", ">")
-		.replaceAll("y\\^", "}")
-		.replaceAll("w\\^", "&")
-		.replaceAll("A=", "|")
-		.replaceAll("A_", "<i");
-	
-	}
-	
-	/**
-	 * Buckwalter transliteration uses &, < and > characters; replace these
-	 *
-	 */
-	 
-	public static String toXMLFriendly(String s) {
-	
-		return s.replaceAll("&", "W").replaceAll("<", "I").replaceAll(">", "O");
-	}
+    
+        return s.replaceAll("A\\^", ">")
+        .replaceAll("y\\^", "}")
+        .replaceAll("w\\^", "&")
+        .replaceAll("A=", "|")
+        .replaceAll("A_", "<i");
+    
+    }
+    
+    /**
+     * Buckwalter transliteration uses &, < and > characters; replace these
+     *
+     */
+     
+    public static String toXMLFriendly(String s) {
+    
+        return s.replaceAll("&", "W").replaceAll("<", "I").replaceAll(">", "O");
+    }
 
-	
-	public static String devowelize(String s) {
-		
-		return s.replaceAll("[~FNKauio]", "");
-		
-	}
-	
+    
+    public static String devowelize(String s) {
+        
+        return s.replaceAll("[~FNKauio]", "");
+        
+    }
+    
     /**
      * Arabic words are ALL case sensitive
      *
      */
     public boolean matchCase() {
-    	return true;
+        return true;
     }
 
 

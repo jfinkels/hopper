@@ -110,84 +110,84 @@ public interface ArtifactDAO {
      * Get a list of one randomly chosen artifact from each artifact type
      * @return the list of randomly chosen artifacts
      */
-	public List<Artifact> getRandomArtifacts();
-	
-	/**
-	 * Find artifact based on a given image archive number (uses entity occurrences table)
-	 * @param archiveNumber
-	 * @return artifact associated with that image
-	 */
-	public Artifact findArtifact(String archiveNumber);
+    public List<Artifact> getRandomArtifacts();
+    
+    /**
+     * Find artifact based on a given image archive number (uses entity occurrences table)
+     * @param archiveNumber
+     * @return artifact associated with that image
+     */
+    public Artifact findArtifact(String archiveNumber);
 
-	/**
-	 * Delete existing keywords
-	 */
-	public void deleteKeywords();
+    /**
+     * Delete existing keywords
+     */
+    public void deleteKeywords();
 
-	/**
-	 * Get map of distinct keyclasses for a particular artifact type with keyword counts
-	 * @param artifactType
-	 * @return Map of of keyclasses and their keyword counts
-	 */
-	public Map<String, Integer> getDistinctKeyclasses(String artifactType);
+    /**
+     * Get map of distinct keyclasses for a particular artifact type with keyword counts
+     * @param artifactType
+     * @return Map of of keyclasses and their keyword counts
+     */
+    public Map<String, Integer> getDistinctKeyclasses(String artifactType);
 
-	/**
-	 * Get list of keywords for given artifact type and keyclass
-	 * @param artifactType
-	 * @param keyclass
-	 * @return distinct list of keywords
-	 */
-	public Map<String, Integer> getDistinctKeywords(String artifactType, String keyclass);
+    /**
+     * Get list of keywords for given artifact type and keyclass
+     * @param artifactType
+     * @param keyclass
+     * @return distinct list of keywords
+     */
+    public Map<String, Integer> getDistinctKeywords(String artifactType, String keyclass);
 
-	/**
-	 * Get total number of artifacts given artifact type, field and value
-	 * @param artType
-	 * @param field
-	 * @param value
-	 * @return count
-	 */
-	public int getArtifactCount(ArtifactType artType, String field, String value);
-	
-	/**
-	 * Get distinct field values and number of artifacts for that value
-	 * @param artifactType
-	 * @param fieldName
-	 * @return Map of field value and it's count
-	 */
-	public Map<String, Integer> findDistinctFieldValuesCounts(String artifactType, String fieldName);
+    /**
+     * Get total number of artifacts given artifact type, field and value
+     * @param artType
+     * @param field
+     * @param value
+     * @return count
+     */
+    public int getArtifactCount(ArtifactType artType, String field, String value);
+    
+    /**
+     * Get distinct field values and number of artifacts for that value
+     * @param artifactType
+     * @param fieldName
+     * @return Map of field value and it's count
+     */
+    public Map<String, Integer> findDistinctFieldValuesCounts(String artifactType, String fieldName);
 
-	/**
-	 * Save ArtifactKeyword object
-	 * @param ak
-	 */
-	public void saveArtifactKeyword(ArtifactKeyword ak);
+    /**
+     * Save ArtifactKeyword object
+     * @param ak
+     */
+    public void saveArtifactKeyword(ArtifactKeyword ak);
 
-	/**
-	 * Find all artifacts by artifact type, keyclass and keyword.  Also uses pagination.
-	 * @param artType
-	 * @param keyclass
-	 * @param keyword
-	 * @param page
-	 * @param pageSize
-	 * @return List of artifacts given the parameters
-	 */
-	public List<Artifact> getArtifactsByKeyword(String artType,
-			String keyclass, String keyword, int page, int pageSize);
+    /**
+     * Find all artifacts by artifact type, keyclass and keyword.  Also uses pagination.
+     * @param artType
+     * @param keyclass
+     * @param keyword
+     * @param page
+     * @param pageSize
+     * @return List of artifacts given the parameters
+     */
+    public List<Artifact> getArtifactsByKeyword(String artType,
+            String keyclass, String keyword, int page, int pageSize);
 
-	/**
-	 * Get total count of artifacts given artifact type, keyclass and keyword.
-	 * @param artType
-	 * @param keyclass
-	 * @param keyword
-	 * @return count of total artifacts
-	 */
-	public int getCountByKeyword(String artType, String keyclass, String keyword);
-	
-	/**
-	 * Search for artifact by name.
-	 * @param name
-	 * @return artifact object if there is only one by that name, otherwise null.
-	 */
-	public Artifact findArtifactByName(String name);
+    /**
+     * Get total count of artifacts given artifact type, keyclass and keyword.
+     * @param artType
+     * @param keyclass
+     * @param keyword
+     * @return count of total artifacts
+     */
+    public int getCountByKeyword(String artType, String keyclass, String keyword);
+    
+    /**
+     * Search for artifact by name.
+     * @param name
+     * @return artifact object if there is only one by that name, otherwise null.
+     */
+    public Artifact findArtifactByName(String name);
 
 }

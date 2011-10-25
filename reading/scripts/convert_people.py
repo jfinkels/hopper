@@ -31,9 +31,9 @@ def update_match_counts(query):
     s = str(query)
 
     if match_counts.has_key(s):
-	count = match_counts[s]
+    count = match_counts[s]
     else:
-	count = 0
+    count = 0
 
     match_counts[s] = count + 1
     return count
@@ -50,7 +50,7 @@ num_processed = 0
 while 1:
     line = data_file.readline()
     if len(line) == 0:
-	break
+    break
     line = line.strip()
     #print line
 
@@ -78,34 +78,34 @@ while 1:
 
     #print "%s -> %s" % (doc_id, subquery)
     if subquery != "\\n":
-	q = Query(doc_id, subquery)
+    q = Query(doc_id, subquery)
     else:
-	q = Query(doc_id)
+    q = Query(doc_id)
 
     try:
-	if offset_cache.has_key(q):
-	    sb = offset_cache[q]
-	else:
-	    c = q.getTextlessChunk()
-	    sb = c.getStartOffset()
-	    offset_cache[q] = sb
+    if offset_cache.has_key(q):
+        sb = offset_cache[q]
+    else:
+        c = q.getTextlessChunk()
+        sb = c.getStartOffset()
+        offset_cache[q] = sb
 
-	match_count = update_match_counts(q)
-	new_pos = sb + match_count
-	#sys.stderr.write("%s: %d -> %d+%d\n" % \
-	    #(str(q), byte_offset, sb, match_count))
-	
-	fields[2] = str(new_pos)
-	# break out the "forenames" field into individual fields
-	fields[-1] = fields[-1].replace(",", "\t")
-	print "\t".join(fields)
+    match_count = update_match_counts(q)
+    new_pos = sb + match_count
+    #sys.stderr.write("%s: %d -> %d+%d\n" % \
+        #(str(q), byte_offset, sb, match_count))
+    
+    fields[2] = str(new_pos)
+    # break out the "forenames" field into individual fields
+    fields[-1] = fields[-1].replace(",", "\t")
+    print "\t".join(fields)
     except InvalidQueryException:
-	bad_docs[q.getDocumentID()] = 1
-	sys.stderr.write("Oh no! Invalid query: %s\n" % str(q))
+    bad_docs[q.getDocumentID()] = 1
+    sys.stderr.write("Oh no! Invalid query: %s\n" % str(q))
     
     num_processed += 1
     if num_processed % 1000 == 0:
-	sys.stderr.write("%d\n" % num_processed)
+    sys.stderr.write("%d\n" % num_processed)
 
 sys.stderr.write("The following documents had problems:\n")
 for b in bad_docs.keys():

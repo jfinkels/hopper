@@ -20,14 +20,14 @@ public class EntityParseException extends RuntimeException {
      * @param dn the display text we were trying to parse
      */
     public EntityParseException(Class<? extends Entity> ac, String dn) {
-	super();
-	attemptedClass = ac;
-	displayName = dn;
+    super();
+    attemptedClass = ac;
+    displayName = dn;
     }
     
     public String toString() {
-	return String.format("invalid %s: [ %s ]",
-		attemptedClass.getSimpleName(),
-		displayName);
+    return String.format("invalid %s: [ %s ]",
+        attemptedClass.getSimpleName(),
+        displayName);
     }
 }

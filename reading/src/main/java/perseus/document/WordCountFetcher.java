@@ -24,11 +24,11 @@ public class WordCountFetcher {
     int max = 0;
 
     static {
-	init();
+    init();
     }
 
     private static void init() {
-	documentCounts = new HashMap();
+    documentCounts = new HashMap();
 
         ResultSet rs = null;
         Connection con = null;
@@ -45,74 +45,74 @@ public class WordCountFetcher {
             while (rs.next()) {
                 String documentID = rs.getString("id");
                 String languageCode = rs.getString("lang");
-		int words = rs.getInt("words");
-		WordCountFetcher documentWordCount =
-		    getDocumentWordCount(documentID);
-		documentWordCount.setCount(languageCode, words);
+        int words = rs.getInt("words");
+        WordCountFetcher documentWordCount =
+            getDocumentWordCount(documentID);
+        documentWordCount.setCount(languageCode, words);
             }
 
         } catch (SQLException e) {
-	    logger.fatal("Problem initializing word counts", e);
+        logger.fatal("Problem initializing word counts", e);
         } finally {
             try {
                 if (sqlHandler != null) {
                     sqlHandler.releaseAll();
                 }
             } catch (SQLWarning w) {
-		logger.fatal("Problem releasing resources", w);
+        logger.fatal("Problem releasing resources", w);
             }
             try {
                 if (con != null) con.close();
             } catch (SQLException s) {
-		logger.fatal("Problem releasing connection", s);
+        logger.fatal("Problem releasing connection", s);
             }
         }
 
     }
 
     public static WordCountFetcher getDocumentWordCount(String documentID) {   
-	if (! documentCounts.containsKey(documentID)) {
-	    documentCounts.put(documentID, new WordCountFetcher());
-	}
-	
-	return (WordCountFetcher) documentCounts.get(documentID);
+    if (! documentCounts.containsKey(documentID)) {
+        documentCounts.put(documentID, new WordCountFetcher());
+    }
+    
+    return (WordCountFetcher) documentCounts.get(documentID);
     }
 
     public WordCountFetcher () {
-	wordCountsByLanguage = new HashMap();
+    wordCountsByLanguage = new HashMap();
     }
 
     private void setCount (String languageCode, int words) {
-	wordCountsByLanguage.put(languageCode, new Integer(words));
-	total += words;
-	if (words > max) {
-	    max = words;
-	}
+    wordCountsByLanguage.put(languageCode, new Integer(words));
+    total += words;
+    if (words > max) {
+        max = words;
+    }
     }
 
     /** Return the total words in all languages in this document or collection */
     public int getTotal() {
-	return total;
+    return total;
     }
 
     /** Return the number of words in the language with the largest word count.
-	This is useful for formatting histograms */
+    This is useful for formatting histograms */
     public int getMax() {
-	return max;
+    return max;
     }
 
     /** Get the word count for a particular language */
     public int getCount(String languageCode) {
-	if (! wordCountsByLanguage.containsKey(languageCode)) {
-	    return 0;
-	}
-	
-	Integer count = (Integer) wordCountsByLanguage.get(languageCode);
-	return count.intValue();
+    if (! wordCountsByLanguage.containsKey(languageCode)) {
+        return 0;
+    }
+    
+    Integer count = (Integer) wordCountsByLanguage.get(languageCode);
+    return count.intValue();
     }
 
     public Set getLanguages() {
-	return wordCountsByLanguage.keySet();
+    return wordCountsByLanguage.keySet();
     }
     
     /**
@@ -121,16 +121,16 @@ public class WordCountFetcher {
      * map to get a Collection of WordCountFetcher objects
      */
     public static int getTotalWords(Collection documentCounts) {
-	int grandTotal = 0;
+    int grandTotal = 0;
 
-	Iterator iterator = documentCounts.iterator();
-	while (iterator.hasNext()) {
-	    WordCountFetcher wordCount = 
-		(WordCountFetcher) iterator.next();
-	    grandTotal += wordCount.getTotal();
-	}
+    Iterator iterator = documentCounts.iterator();
+    while (iterator.hasNext()) {
+        WordCountFetcher wordCount = 
+        (WordCountFetcher) iterator.next();
+        grandTotal += wordCount.getTotal();
+    }
 
-	return grandTotal;
+    return grandTotal;
     }
 
     /**
@@ -138,18 +138,18 @@ public class WordCountFetcher {
      * single largest collection.
      */
     public static int getMaxWords(Collection documentCounts) {
-	int max = 0;
+    int max = 0;
 
-	Iterator iterator = documentCounts.iterator();
-	while (iterator.hasNext()) {
-	    WordCountFetcher wordCount = 
-		(WordCountFetcher) iterator.next();
-	    if (wordCount.getTotal() > max) {
-		max = wordCount.getTotal();
-	    }
-	}
+    Iterator iterator = documentCounts.iterator();
+    while (iterator.hasNext()) {
+        WordCountFetcher wordCount = 
+        (WordCountFetcher) iterator.next();
+        if (wordCount.getTotal() > max) {
+        max = wordCount.getTotal();
+        }
+    }
 
-	return max;
+    return max;
     }
     
     /**
@@ -157,13 +157,13 @@ public class WordCountFetcher {
      * You get a Map of documentID strings -> WordCountFetcher objects
      */
     public static Map getCollectionWordCounts(String[] collections) {
-	Map results = new HashMap();
-	
-	for (int i=0;i<collections.length;i++) {
-	    results.put(collections[i], getDocumentWordCount(collections[i]));
-	}
+    Map results = new HashMap();
+    
+    for (int i=0;i<collections.length;i++) {
+        results.put(collections[i], getDocumentWordCount(collections[i]));
+    }
 
-	return results;
+    return results;
     }
 
 }

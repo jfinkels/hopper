@@ -18,207 +18,207 @@ import edu.unc.epidoc.transcoder.TransCoder;
  */
 public class MorphLinksTokenFilter extends TokenFilter {
 
-	private static Logger logger = Logger.getLogger(MorphLinksTokenFilter.class);
-	private static final Pattern UNICODE_PATTERN =
-		Pattern.compile("\\p{InGreek}|\\p{InGreekExtended}");
+    private static Logger logger = Logger.getLogger(MorphLinksTokenFilter.class);
+    private static final Pattern UNICODE_PATTERN =
+        Pattern.compile("\\p{InGreek}|\\p{InGreekExtended}");
 
-	private static Pattern filterPattern;
-	static {
-		Set<String> morphLanguages = new HashSet<String>();
-		for (String language : LanguageCode.getKnownLanguages()) {
-			if (LanguageCode.hasMorphData(language)) {
-				morphLanguages.add(language);
-			}
-		}
+    private static Pattern filterPattern;
+    static {
+        Set<String> morphLanguages = new HashSet<String>();
+        for (String language : LanguageCode.getKnownLanguages()) {
+            if (LanguageCode.hasMorphData(language)) {
+                morphLanguages.add(language);
+            }
+        }
 
-		String patternString = "class=\"[^\"]*\\b(?:"
-			+ StringUtil.join(morphLanguages, "|")
-			+ ")\\b[^\"]*\"";
-		filterPattern = Pattern.compile(patternString);
-	}
+        String patternString = "class=\"[^\"]*\\b(?:"
+            + StringUtil.join(morphLanguages, "|")
+            + ")\\b[^\"]*\"";
+        filterPattern = Pattern.compile(patternString);
+    }
 
-	private String serviceURL = "morph";
-	private String textLanguage;
+    private String serviceURL = "morph";
+    private String textLanguage;
 
-	private String documentID = null;
+    private String documentID = null;
 
-	private String previousWord = null;
-	private Stoplist previousWordStoplist = null;
+    private String previousWord = null;
+    private Stoplist previousWordStoplist = null;
 
-	private boolean opensInNewWindow = false;
+    private boolean opensInNewWindow = false;
 
-	private int documentsProcessed = 0;
+    private int documentsProcessed = 0;
 
-	public MorphLinksTokenFilter () {
-	}
+    public MorphLinksTokenFilter () {
+    }
 
-	public MorphLinksTokenFilter (Metadata metadata) {
-		textLanguage = metadata.get(Metadata.LANGUAGE_KEY);
-		documentID = metadata.getDocumentID();
-		opensInNewWindow = true;
-	}
+    public MorphLinksTokenFilter (Metadata metadata) {
+        textLanguage = metadata.get(Metadata.LANGUAGE_KEY);
+        documentID = metadata.getDocumentID();
+        opensInNewWindow = true;
+    }
 
-	public MorphLinksTokenFilter(Chunk chunk) {
-		textLanguage = chunk.getEffectiveLanguage();
-		documentID = chunk.getDocumentID();
-		opensInNewWindow = true;
-	}
+    public MorphLinksTokenFilter(Chunk chunk) {
+        textLanguage = chunk.getEffectiveLanguage();
+        documentID = chunk.getDocumentID();
+        opensInNewWindow = true;
+    }
 
-	public MorphLinksTokenFilter (String languageCode) {
-		textLanguage = languageCode;
-	}
+    public MorphLinksTokenFilter (String languageCode) {
+        textLanguage = languageCode;
+    }
 
-	public MorphLinksTokenFilter (Metadata metadata, String query) {
-		this(metadata);
+    public MorphLinksTokenFilter (Metadata metadata, String query) {
+        this(metadata);
 
-		//this.query = query;
-	}
+        //this.query = query;
+    }
 
-	public void setServiceURL(String s) {
-		serviceURL = s;
-	}
+    public void setServiceURL(String s) {
+        serviceURL = s;
+    }
 
-	public void setLanguage(String s) {
-		textLanguage = s;
-	}
+    public void setLanguage(String s) {
+        textLanguage = s;
+    }
 
-	public void setDocumentID(String s) {
-		documentID = s;
-	}
+    public void setDocumentID(String s) {
+        documentID = s;
+    }
 
-	public void setPreviousWordStoplist(Stoplist stoplist) {
-		previousWordStoplist = stoplist;
-	}
+    public void setPreviousWordStoplist(Stoplist stoplist) {
+        previousWordStoplist = stoplist;
+    }
 
-	public void process(Token token) {
-		if (token.getType() == Token.Type.WORD &&
-				! token.getLanguageCode().equals(LanguageCode.ENGLISH)) {
-			StringBuffer newToken = new StringBuffer();
-			String encodedToken = token.getOriginalText();
-			try {
-				if (UNICODE_PATTERN.matcher(encodedToken).find()) {
-					encodedToken = new TransCoder("Unicode", "BetaCode")
-					.getString(encodedToken).toLowerCase();
-				}
-				encodedToken = URLEncoder.encode(encodedToken, "utf-8");
-			} catch (UnsupportedEncodingException uee) {
-				logger.warn("Problem encoding token: " + token.getOriginalText());
-				encodedToken = token.getOriginalText();
-			} catch (Exception e) {
-				logger.warn("Problem transcoding: " + token.getOriginalText() + ": " + e);
-				encodedToken = token.getOriginalText();
-			}
+    public void process(Token token) {
+        if (token.getType() == Token.Type.WORD &&
+                ! token.getLanguageCode().equals(LanguageCode.ENGLISH)) {
+            StringBuffer newToken = new StringBuffer();
+            String encodedToken = token.getOriginalText();
+            try {
+                if (UNICODE_PATTERN.matcher(encodedToken).find()) {
+                    encodedToken = new TransCoder("Unicode", "BetaCode")
+                    .getString(encodedToken).toLowerCase();
+                }
+                encodedToken = URLEncoder.encode(encodedToken, "utf-8");
+            } catch (UnsupportedEncodingException uee) {
+                logger.warn("Problem encoding token: " + token.getOriginalText());
+                encodedToken = token.getOriginalText();
+            } catch (Exception e) {
+                logger.warn("Problem transcoding: " + token.getOriginalText() + ": " + e);
+                encodedToken = token.getOriginalText();
+            }
 
-			/*
-	    newToken.append("<w l=\"").append(encodedToken)
-		.append("\" la=\"").append(token.getLanguageCode());
-	    String normalizedText =
-		token.getOriginalText().replaceAll("\\\\","/");
+            /*
+        newToken.append("<w l=\"").append(encodedToken)
+        .append("\" la=\"").append(token.getLanguageCode());
+        String normalizedText =
+        token.getOriginalText().replaceAll("\\\\","/");
 
-	    if (previousWord != null) {
-		newToken.append("\" pr=\"").append(previousWord);
-	    }
-	    if (previousWordStoplist == null ||
-		    !previousWordStoplist.contains(normalizedText)) {
-		previousWord = token.getOriginalText();
-	    } else {
-		// it's a stopword; leave the previous word as it is
-	    }
+        if (previousWord != null) {
+        newToken.append("\" pr=\"").append(previousWord);
+        }
+        if (previousWordStoplist == null ||
+            !previousWordStoplist.contains(normalizedText)) {
+        previousWord = token.getOriginalText();
+        } else {
+        // it's a stopword; leave the previous word as it is
+        }
 
-	    if (token.hasContext()) {
-		TokenContext context = token.getContext();
-		int occurrence = context.getOccurrence();	    
-		newToken.append(occurrence);
-		newToken.append("\" n=\"").append(occurrence);
-	    }
+        if (token.hasContext()) {
+        TokenContext context = token.getContext();
+        int occurrence = context.getOccurrence();	    
+        newToken.append(occurrence);
+        newToken.append("\" n=\"").append(occurrence);
+        }
 
-	    newToken.append("\" onclick=\"m(this,");
+        newToken.append("\" onclick=\"m(this,");
 
-	    /*
-	    if (documentsProcessed != -1) {
-		newToken.append(",").append(documentsProcessed);
-	    }
-	    newToken.append("); return false\"");
+        /*
+        if (documentsProcessed != -1) {
+        newToken.append(",").append(documentsProcessed);
+        }
+        newToken.append("); return false\"");
 
-	    if (token.getLanguageCode().equals(textLanguage)) {
-		newToken.append(" class=\"text\"");
-	    }
-	    newToken.append("\">")
-		.append(token.getDisplayText())
-		.append("</w>");
-			 */
-			newToken.append("<a href=\"")
-			.append(serviceURL)
-			.append("?l=")
-			.append(encodedToken)
-			.append("&amp;la=")
-			.append(token.getLanguageCode());
+        if (token.getLanguageCode().equals(textLanguage)) {
+        newToken.append(" class=\"text\"");
+        }
+        newToken.append("\">")
+        .append(token.getDisplayText())
+        .append("</w>");
+             */
+            newToken.append("<a href=\"")
+            .append(serviceURL)
+            .append("?l=")
+            .append(encodedToken)
+            .append("&amp;la=")
+            .append(token.getLanguageCode());
 
-			// This is for prior probabilities
-			if (previousWord != null) {
-				newToken.append("&amp;prior=")
-				.append(previousWord);
-			}
+            // This is for prior probabilities
+            if (previousWord != null) {
+                newToken.append("&amp;prior=")
+                .append(previousWord);
+            }
 
-			// This isn't foolproof, but it's quicker than parsing the
-			// previous word again.
-			String normalizedText =
-				token.getOriginalText().replaceAll("\\\\","/");
+            // This isn't foolproof, but it's quicker than parsing the
+            // previous word again.
+            String normalizedText =
+                token.getOriginalText().replaceAll("\\\\","/");
 
-			if (previousWordStoplist == null ||
-					!previousWordStoplist.contains(normalizedText)) {
-				previousWord = token.getOriginalText();
-			} else {
-				// it's a stopword; leave the previous word as it is
-			}
+            if (previousWordStoplist == null ||
+                    !previousWordStoplist.contains(normalizedText)) {
+                previousWord = token.getOriginalText();
+            } else {
+                // it's a stopword; leave the previous word as it is
+            }
 
-			newToken.append("\" onclick=\"m(this,");
+            newToken.append("\" onclick=\"m(this,");
 
-			if (token.hasContext()) {
-				TokenContext context = token.getContext();
-				int occurrence = context.getOccurrence();	    
-				newToken.append(occurrence);
-			} else {
-				newToken.append("-1");
-			}
+            if (token.hasContext()) {
+                TokenContext context = token.getContext();
+                int occurrence = context.getOccurrence();	    
+                newToken.append(occurrence);
+            } else {
+                newToken.append("-1");
+            }
 
-			if (documentsProcessed != -1) {
-				newToken.append(",").append(documentsProcessed);
-			} else {
-				newToken.append(",").append(0);
-			}
+            if (documentsProcessed != -1) {
+                newToken.append(",").append(documentsProcessed);
+            } else {
+                newToken.append(",").append(0);
+            }
 
-			newToken.append("); return false\"");
+            newToken.append("); return false\"");
 
-			if (token.getLanguageCode().equals(textLanguage)) {
-				newToken.append(" class=\"text\"");
-			}
+            if (token.getLanguageCode().equals(textLanguage)) {
+                newToken.append(" class=\"text\"");
+            }
 
-			if (opensInNewWindow) {
-				newToken.append(" target=\"morph\"");
-			}
+            if (opensInNewWindow) {
+                newToken.append(" target=\"morph\"");
+            }
 
-			newToken.append(">")
-			.append(token.getDisplayText())
-			.append("</a>");
+            newToken.append(">")
+            .append(token.getDisplayText())
+            .append("</a>");
 
-			token.setDisplayText(newToken.toString());
-		}
-	}
+            token.setDisplayText(newToken.toString());
+        }
+    }
 
-	public void setDocumentsProcessed(int dp) {
-		documentsProcessed = dp;
-	}
+    public void setDocumentsProcessed(int dp) {
+        documentsProcessed = dp;
+    }
 
 
-	public boolean willFilter(String text, String defaultLanguage) {
-		// The MorphLinksTokenFilter wants to filter text if (a) it's in a
-		// language with morph-data or (b) it contains text in a language with
-		// morph-data, as represented by, say, <span class="greek">.
-		if (LanguageCode.hasMorphData(defaultLanguage)) {
-			return true;
-		}
+    public boolean willFilter(String text, String defaultLanguage) {
+        // The MorphLinksTokenFilter wants to filter text if (a) it's in a
+        // language with morph-data or (b) it contains text in a language with
+        // morph-data, as represented by, say, <span class="greek">.
+        if (LanguageCode.hasMorphData(defaultLanguage)) {
+            return true;
+        }
 
-		return filterPattern.matcher(text).find();
-	}
+        return filterPattern.matcher(text).find();
+    }
 }

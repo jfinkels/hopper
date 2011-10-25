@@ -13,9 +13,9 @@ import perseus.ie.freq.EntityDocumentFrequency;
 public interface EntityManager {
 
     public List<? extends Entity> getMatchingEntities(
-    		String keyword, Class cl, Map parameters);
+            String keyword, Class cl, Map parameters);
     public List<EntityOccurrence> getOccurrences(Entity entity,
-	    perseus.document.Query query);
+        perseus.document.Query query);
 
     public EntityDocumentFrequency getFrequency(Entity entity, String documentID);
     public List<EntityDocumentFrequency> getFrequencies(Entity entity);

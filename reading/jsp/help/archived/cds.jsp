@@ -10,8 +10,8 @@
 
     <div id="main">
       <jsp:include page="/includes/index/indexNav.jsp">
-	<jsp:param name="tabActive" value="help"/>
-	<jsp:param name="subtabActive" value="archives"/>
+    <jsp:param name="tabActive" value="help"/>
+    <jsp:param name="subtabActive" value="archives"/>
       </jsp:include>
 
 <div id="content" class="2column">
@@ -50,7 +50,7 @@ automatic reply to the originating e-mail address.<br>
 </UL>
 
 </div> <!-- index_main_col -->
-	</div> <!-- content 2column -->
+    </div> <!-- content 2column -->
 </div> <!-- main -->
 
     <!-- Google Analytics --> 

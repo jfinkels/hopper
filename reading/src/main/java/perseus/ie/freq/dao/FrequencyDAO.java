@@ -24,7 +24,7 @@ public interface FrequencyDAO extends DAO<Frequency> {
      * @param entityClasses delete entities of any of these classes
      */
     public void deleteByDocument(
-	    String documentID, List<Class<? extends Entity>> entityClasses);
+        String documentID, List<Class<? extends Entity>> entityClasses);
 
     /**
      * Deletes all the frequencies within the given chunk.
@@ -33,7 +33,7 @@ public interface FrequencyDAO extends DAO<Frequency> {
      * @param entityClasses delete entities of any of these classes
      */
     public void deleteByChunk(
-	    Chunk chunk, List<Class<? extends Entity>> entityClasses);
+        Chunk chunk, List<Class<? extends Entity>> entityClasses);
     
     /**
      * Deletes all the frequencies within the given chunk.
@@ -76,15 +76,15 @@ public interface FrequencyDAO extends DAO<Frequency> {
      */
     public long getResultCount(Entity entity);
 
-	/**
-	 * getVocabularyList
-	 * 
-	 * @param IDs chunkIDs or documentIDs to restrict the search to
-	 * @param cutoffFrequency return only as many results as needed to push the summed weighted
-	 *        frequency past this percent of the document's total weighted frequency
-	 * @param usingChunks so we know if we're searching chunks or documents
-	 * @return a list of Frequency objects for the given documents or chunks
-	 */
+    /**
+     * getVocabularyList
+     * 
+     * @param IDs chunkIDs or documentIDs to restrict the search to
+     * @param cutoffFrequency return only as many results as needed to push the summed weighted
+     *        frequency past this percent of the document's total weighted frequency
+     * @param usingChunks so we know if we're searching chunks or documents
+     * @return a list of Frequency objects for the given documents or chunks
+     */
     public List<Frequency> getVocabularyList(List<String> IDs, double cutoffFrequency, boolean usingChunks);
 
     /**

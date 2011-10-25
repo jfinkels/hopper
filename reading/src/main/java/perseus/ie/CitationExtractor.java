@@ -47,7 +47,7 @@ import perseus.ie.dao.HibernateCitationDAO;
 
 @SuppressWarnings("serial")
 public class CitationExtractor extends RecentlyModifiedCorpusProcessor {
-	private static final Logger logger = Logger.getLogger(CitationExtractor.class);
+    private static final Logger logger = Logger.getLogger(CitationExtractor.class);
 
     /** Are we in a lexicon or a normal text? */
     private boolean inLexicon;
@@ -61,14 +61,14 @@ public class CitationExtractor extends RecentlyModifiedCorpusProcessor {
     // *lot* of queries, which means a lot of database hits, which can cause
     // the program to run incredibly slowly.
     private static Map<String,Query> normalizedQueryCache = Collections.synchronizedMap(new LinkedHashMap<String,Query>() {
-	protected boolean removeEldestEntry(Map.Entry eldest) {
-	    return (size() > 15000);
-	}
+    protected boolean removeEldestEntry(Map.Entry eldest) {
+        return (size() > 15000);
+    }
     });
     private static Map<String,List<Query>> expandedQueryCache = Collections.synchronizedMap(new LinkedHashMap<String,List<Query>>() {
-	protected boolean removeEldestEntry(Map.Entry eldest) {
-	    return (size() > 15000);
-	}
+    protected boolean removeEldestEntry(Map.Entry eldest) {
+        return (size() > 15000);
+    }
     });
 
     private int chunksProcessed = 0;
@@ -78,55 +78,55 @@ public class CitationExtractor extends RecentlyModifiedCorpusProcessor {
     private int expandedCacheHits = 0;
 
     public CitationExtractor() {
-    	this(new Semaphore(1));
+        this(new Semaphore(1));
     }
     
     public CitationExtractor(Semaphore citSem) {
-	setOption(CorpusProcessor.SUBDOC_METHOD, CorpusProcessor.ONE_DOC);
-		this.citSem = citSem;
+    setOption(CorpusProcessor.SUBDOC_METHOD, CorpusProcessor.ONE_DOC);
+        this.citSem = citSem;
     }
     
     public String getTaskName() {
-		return "extract-citations";
-	}
+        return "extract-citations";
+    }
 
     public void startDocument(Chunk documentChunk) {
-	Metadata metadata = documentChunk.getMetadata();
+    Metadata metadata = documentChunk.getMetadata();
 
-	inLexicon = false;
-	inSpecificLexicon = false;
+    inLexicon = false;
+    inSpecificLexicon = false;
 
-	if (metadata.has(Metadata.FORM_KEY)
-		&& metadata.get(Metadata.FORM_KEY).equals("dictionary")) {
+    if (metadata.has(Metadata.FORM_KEY)
+        && metadata.get(Metadata.FORM_KEY).equals("dictionary")) {
 
-	    inLexicon = true;
+        inLexicon = true;
 
-	    List<String> textsCovered = metadata.getList(Metadata.LEXICON_KEY);
-	    if (textsCovered != null && !textsCovered.isEmpty()) {
-		inSpecificLexicon = true;
-	    }
-	}
-	citationsProcessed = 0;
-	chunksProcessed = 0;
+        List<String> textsCovered = metadata.getList(Metadata.LEXICON_KEY);
+        if (textsCovered != null && !textsCovered.isEmpty()) {
+        inSpecificLexicon = true;
+        }
+    }
+    citationsProcessed = 0;
+    chunksProcessed = 0;
 
-	expandedCacheSeeks = 0;
-	expandedCacheHits = 0;
+    expandedCacheSeeks = 0;
+    expandedCacheHits = 0;
 
-	logger.info("Clearing existing citations for document...");
-	try {
-		citSem.acquire();
-	} catch (InterruptedException e) {
-		logger.trace("Thread interrupted");
-	}
-	((HibernateCitationDAO) citDAO).deleteByDocumentID(documentChunk.getDocumentID());
-	citSem.release();
+    logger.info("Clearing existing citations for document...");
+    try {
+        citSem.acquire();
+    } catch (InterruptedException e) {
+        logger.trace("Thread interrupted");
+    }
+    ((HibernateCitationDAO) citDAO).deleteByDocumentID(documentChunk.getDocumentID());
+    citSem.release();
     }
 
     public void endDocument(Chunk documentChunk) {
-	super.endDocument(documentChunk);
+    super.endDocument(documentChunk);
 
-	logger.info("Finished document: " + documentChunk.getQuery());
-	logger.info(String.format("Found %d citations in %d chunks",
+    logger.info("Finished document: " + documentChunk.getQuery());
+    logger.info(String.format("Found %d citations in %d chunks",
                     citationsProcessed, chunksProcessed));
 
         logger.info(String.format("Expanded query cache: %d, with %d hits",
@@ -134,27 +134,27 @@ public class CitationExtractor extends RecentlyModifiedCorpusProcessor {
     }
 
     public void processChunk(Chunk documentChunk) {
-	Query currentQuery = documentChunk.getQuery();
+    Query currentQuery = documentChunk.getQuery();
 
-	Map<String,String> styleParameters = new HashMap<String,String>();
-	styleParameters.put("current_query", currentQuery.toString());
+    Map<String,String> styleParameters = new HashMap<String,String>();
+    styleParameters.put("current_query", currentQuery.toString());
 
-	boolean inCommentary = false;
-	if (currentQuery.getMetadata().has(Metadata.COMMENTARY_KEY)) {
-	    inCommentary = true;
-	}
+    boolean inCommentary = false;
+    if (currentQuery.getMetadata().has(Metadata.COMMENTARY_KEY)) {
+        inCommentary = true;
+    }
 
-	String defaultLinkType = Citation.REF_DEFAULT;
-	if (chunkInIndex(documentChunk)) {
-	    defaultLinkType = Citation.REF_INDEX;
-	} else if (inSpecificLexicon) {
-	    defaultLinkType = Citation.REF_SPECIFIC_LEXICON;
-	} else if (inLexicon) {
-	    defaultLinkType = Citation.REF_LEXICON;
-	} else if (inCommentary) {
-		defaultLinkType = Citation.REF_COMMENTARY;
-	}
-	styleParameters.put("default_link_type", defaultLinkType);
+    String defaultLinkType = Citation.REF_DEFAULT;
+    if (chunkInIndex(documentChunk)) {
+        defaultLinkType = Citation.REF_INDEX;
+    } else if (inSpecificLexicon) {
+        defaultLinkType = Citation.REF_SPECIFIC_LEXICON;
+    } else if (inLexicon) {
+        defaultLinkType = Citation.REF_LEXICON;
+    } else if (inCommentary) {
+        defaultLinkType = Citation.REF_COMMENTARY;
+    }
+    styleParameters.put("default_link_type", defaultLinkType);
 
         Document document = null;
         try {
@@ -170,53 +170,53 @@ public class CitationExtractor extends RecentlyModifiedCorpusProcessor {
                 currentQuery.getDocumentID(),
                 styleParameters);
 
-	String sourceHeader = documentChunk.getHasCustomHead() ?
-		documentChunk.getHead() :
-		currentQuery.getDisplayCitation();
+    String sourceHeader = documentChunk.getHasCustomHead() ?
+        documentChunk.getHead() :
+        currentQuery.getDisplayCitation();
 
-	List<Citation> citations = parseCitations(citationXML);
-	if (!citations.isEmpty()) {
-		logger.debug(String.format("%s: [%d]", currentQuery, citations.size()));
-	}
+    List<Citation> citations = parseCitations(citationXML);
+    if (!citations.isEmpty()) {
+        logger.debug(String.format("%s: [%d]", currentQuery, citations.size()));
+    }
 
         for (Citation citation : citations) {
-	    citation.setSourceHeader(sourceHeader);
+        citation.setSourceHeader(sourceHeader);
 
-	    List<Citation> expandedCits = expandCitation(citation);
+        List<Citation> expandedCits = expandCitation(citation);
             for (Citation expandedCit : expandedCits) {
-		recordCitation(expandedCit);
-	    }
-	}
+        recordCitation(expandedCit);
+        }
+    }
 
-	chunksProcessed++;
-	citationsProcessed += citations.size();
+    chunksProcessed++;
+    citationsProcessed += citations.size();
     }
 
     private List<Citation> parseCitations(String xml) {
-	List<Citation> output = new ArrayList<Citation>();
+    List<Citation> output = new ArrayList<Citation>();
 
-	try {
-	    Document citationTree = new SAXBuilder().build(new InputSource(
-			new StringReader(xml)));
+    try {
+        Document citationTree = new SAXBuilder().build(new InputSource(
+            new StringReader(xml)));
             Iterator elements =
                 citationTree.getDescendants(new ElementFilter("citation"));
             while (elements.hasNext()) {
                 Element element = (Element) elements.next();
 
-		Citation parsedCit = parseCitation(element);
-		if (parsedCit != null) output.add(parsedCit);
+        Citation parsedCit = parseCitation(element);
+        if (parsedCit != null) output.add(parsedCit);
             }
-	} catch (IOException ioe) {
+    } catch (IOException ioe) {
             logger.error("Bad document", ioe);
-	} catch (JDOMException jde) {
+    } catch (JDOMException jde) {
             logger.error("Bad document", jde);
-	}
+    }
 
-	return output;
+    return output;
     }
 
     private Citation parseCitation(Element element) {
-	Citation cit = new Citation();
+    Citation cit = new Citation();
 
         if (element.getChild("source") != null) {
             cit.setSource(new Query(element.getChildText("source")));
@@ -228,159 +228,159 @@ public class CitationExtractor extends RecentlyModifiedCorpusProcessor {
             cit.setLinkType(element.getChildText("linkType"));
         }
 
-	// the destination document ID will be null if we found an
-	// abbreviation we couldn't resolve
-	if (cit.getDestination() == null ||
-		cit.getDestination().getDocumentID() == null) {
-	    logger.debug("bad destination: skipping " + cit);
-	    return null;
-	}
-	return cit;
+    // the destination document ID will be null if we found an
+    // abbreviation we couldn't resolve
+    if (cit.getDestination() == null ||
+        cit.getDestination().getDocumentID() == null) {
+        logger.debug("bad destination: skipping " + cit);
+        return null;
+    }
+    return cit;
     }
 
     private void recordCitation(Citation citation) {
-	logger.debug("citation is "+citation);
-		try {
-			citSem.acquire();
-		} catch (InterruptedException e1) {
-			logger.trace("Thread interrupted");
-		}
-		citDAO.beginTransaction();
-	    citDAO.insert(citation);
-	    citDAO.endTransaction();
-	    citSem.release();
+    logger.debug("citation is "+citation);
+        try {
+            citSem.acquire();
+        } catch (InterruptedException e1) {
+            logger.trace("Thread interrupted");
+        }
+        citDAO.beginTransaction();
+        citDAO.insert(citation);
+        citDAO.endTransaction();
+        citSem.release();
     }
 
     private List<Citation> expandCitation(Citation citation) {
-	List<Query> destinationCits = doExpand(citation.getDestination().asABO());
+    List<Query> destinationCits = doExpand(citation.getDestination().asABO());
 
-	List<Citation> expandedCits = new ArrayList<Citation>();
+    List<Citation> expandedCits = new ArrayList<Citation>();
 
-	Query originalDestination = citation.getDestination().asABO();
+    Query originalDestination = citation.getDestination().asABO();
 
         for (Query destination : destinationCits) {
-	    assert !destination.isAbstract();
+        assert !destination.isAbstract();
 
-	    Citation expandedCit = new Citation(
-		    citation.getSource(), originalDestination,
-		    citation.getLinkType());
-	    expandedCit.setResolvedDestination(destination);
-	    expandedCit.setSourceHeader(citation.getSourceHeader());
-	    expandedCits.add(expandedCit);
-	}
+        Citation expandedCit = new Citation(
+            citation.getSource(), originalDestination,
+            citation.getLinkType());
+        expandedCit.setResolvedDestination(destination);
+        expandedCit.setSourceHeader(citation.getSourceHeader());
+        expandedCits.add(expandedCit);
+    }
 
-	return expandedCits;
+    return expandedCits;
     }
 
     private List<Query> doExpand(Query unexpandedQuery) {
-    	String cacheKey = unexpandedQuery.toString();
+        String cacheKey = unexpandedQuery.toString();
 
-    	expandedCacheSeeks++;
-    	List<Query> queryList = expandedQueryCache.get(cacheKey);
-    	if (queryList == null) {
-    		try {
-    			List<Query> queries = unexpandedQuery.expandABOQuery();
-    			List<Query> normalizedQueries = new ArrayList<Query>(queries.size());
+        expandedCacheSeeks++;
+        List<Query> queryList = expandedQueryCache.get(cacheKey);
+        if (queryList == null) {
+            try {
+                List<Query> queries = unexpandedQuery.expandABOQuery();
+                List<Query> normalizedQueries = new ArrayList<Query>(queries.size());
 
-    			for (Query query : queries) {
-    				normalizedQueries.add(normalizeQuery(query));
-    			}
-    			expandedQueryCache.put(cacheKey, normalizedQueries);
-    			return normalizedQueries;
-    		} catch (Exception e) {
-    			logger.trace("Problem expanding query " + unexpandedQuery, e);
-    			return Collections.singletonList(unexpandedQuery);
-    		}
-    	} else {
-    		logger.trace("Expanded-query cache hit: " + cacheKey);
-    		expandedCacheHits++;
-    		return queryList;
-    	}
+                for (Query query : queries) {
+                    normalizedQueries.add(normalizeQuery(query));
+                }
+                expandedQueryCache.put(cacheKey, normalizedQueries);
+                return normalizedQueries;
+            } catch (Exception e) {
+                logger.trace("Problem expanding query " + unexpandedQuery, e);
+                return Collections.singletonList(unexpandedQuery);
+            }
+        } else {
+            logger.trace("Expanded-query cache hit: " + cacheKey);
+            expandedCacheHits++;
+            return queryList;
+        }
     }
 
     private Query normalizeQuery(Query query) {
-	String cacheKey = query.toString();
-	
-	Query cacheQuery = normalizedQueryCache.get(cacheKey);
-	if (cacheQuery == null) {
-		try {
-			Chunk chunk = query.getChunk();
-			Query normalizedQuery = chunk.getQuery();
-			cacheQuery = normalizedQueryCache.put(cacheKey, normalizedQuery);
-			return normalizedQuery;
-		} catch (InvalidQueryException e) {
-			logger.debug("Problem normalizing query " + query, e);
-		    return query;
-		}
-	} else {
-		return cacheQuery;
-	}
+    String cacheKey = query.toString();
+    
+    Query cacheQuery = normalizedQueryCache.get(cacheKey);
+    if (cacheQuery == null) {
+        try {
+            Chunk chunk = query.getChunk();
+            Query normalizedQuery = chunk.getQuery();
+            cacheQuery = normalizedQueryCache.put(cacheKey, normalizedQuery);
+            return normalizedQuery;
+        } catch (InvalidQueryException e) {
+            logger.debug("Problem normalizing query " + query, e);
+            return query;
+        }
+    } else {
+        return cacheQuery;
+    }
     }
 
     private boolean chunkInIndex(Chunk documentChunk) {
-	// This is a horrendously clunky way of finding out whether we're
-	// inside an index. It's helpful to know whether a given citation comes
-	// from an index or not; unfortunately, such indices are usually not
-	// part of a document's chunk schemes. Make a guess based on the
-	// chunk's open-tags.
-	String openTags = documentChunk.getOpenTags();
-	return (openTags.indexOf("type=\"index\"") != -1 ||
-		openTags.indexOf("n=\"index\"") != -1);
+    // This is a horrendously clunky way of finding out whether we're
+    // inside an index. It's helpful to know whether a given citation comes
+    // from an index or not; unfortunately, such indices are usually not
+    // part of a document's chunk schemes. Make a guess based on the
+    // chunk's open-tags.
+    String openTags = documentChunk.getOpenTags();
+    return (openTags.indexOf("type=\"index\"") != -1 ||
+        openTags.indexOf("n=\"index\"") != -1);
     }
 
     public static void main(String[] args) {
-	CitationExtractor ce = new CitationExtractor();
+    CitationExtractor ce = new CitationExtractor();
 
-	String[] effectiveArgs = args;
-	Options options = new Options()
-	.addOption("f", "force", false, 
-	"force loading, even if file unchanged")
-	.addOption(OptionBuilder.withLongOpt("threads")
-			.withDescription("set number of threads to use")
-			.hasArg()
-			.withArgName("NUMBER")
-			.create());
+    String[] effectiveArgs = args;
+    Options options = new Options()
+    .addOption("f", "force", false, 
+    "force loading, even if file unchanged")
+    .addOption(OptionBuilder.withLongOpt("threads")
+            .withDescription("set number of threads to use")
+            .hasArg()
+            .withArgName("NUMBER")
+            .create());
 
-	CommandLineParser parser = new PosixParser();
-	boolean hasForce = false;
-	//use the minimum # of cpu's available to this machine, but allow user to change #
-	int THREADS = Runtime.getRuntime().availableProcessors();
-	
-	try {
-	    CommandLine cl = parser.parse(options, args);
-	    
-	    if (cl.hasOption("force") || cl.hasOption("f")) {
-	    	hasForce = true;
-		ce.setIgnoreModificationDate(true);
-	    }
-	    if (cl.hasOption("threads")) {
-			String option = cl.getOptionValue("threads");
-			if (option != null && !option.equals("")) {
-				THREADS = Integer.parseInt(option);
-			}
-		}
-	    effectiveArgs = cl.getArgs();
-	} catch (ParseException e) {
+    CommandLineParser parser = new PosixParser();
+    boolean hasForce = false;
+    //use the minimum # of cpu's available to this machine, but allow user to change #
+    int THREADS = Runtime.getRuntime().availableProcessors();
+    
+    try {
+        CommandLine cl = parser.parse(options, args);
+        
+        if (cl.hasOption("force") || cl.hasOption("f")) {
+            hasForce = true;
+        ce.setIgnoreModificationDate(true);
+        }
+        if (cl.hasOption("threads")) {
+            String option = cl.getOptionValue("threads");
+            if (option != null && !option.equals("")) {
+                THREADS = Integer.parseInt(option);
+            }
+        }
+        effectiveArgs = cl.getArgs();
+    } catch (ParseException e) {
             e.printStackTrace();
         }
-	
-	if (effectiveArgs.length > 0) {
-	    for (String arg : effectiveArgs) {
-		ce.processAnything(arg);
-	    }
-	} else {
-		ExecutorService exec = Executors.newFixedThreadPool(THREADS);
-		List<String> documentIDs = perseus.document.Document.getTexts();
-		Collections.shuffle(documentIDs);
-		Semaphore citSem = new Semaphore(1);
-		for (String documentID : documentIDs) {
-			Query documentQuery = new Query(documentID);
-			CitationExtractor loader = new CitationExtractor(citSem);
-			loader.setIgnoreModificationDate(hasForce);
-			loader.setQuery(documentQuery);
-			exec.execute(loader);
-		}
-		exec.shutdown();
-	}
+    
+    if (effectiveArgs.length > 0) {
+        for (String arg : effectiveArgs) {
+        ce.processAnything(arg);
+        }
+    } else {
+        ExecutorService exec = Executors.newFixedThreadPool(THREADS);
+        List<String> documentIDs = perseus.document.Document.getTexts();
+        Collections.shuffle(documentIDs);
+        Semaphore citSem = new Semaphore(1);
+        for (String documentID : documentIDs) {
+            Query documentQuery = new Query(documentID);
+            CitationExtractor loader = new CitationExtractor(citSem);
+            loader.setIgnoreModificationDate(hasForce);
+            loader.setQuery(documentQuery);
+            exec.execute(loader);
+        }
+        exec.shutdown();
+    }
     }
 }

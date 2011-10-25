@@ -38,8 +38,8 @@ import perseus.voting.Vote;
  *  ArtifactType
  */
 public class SimpleArtifact extends AbstractXsltView implements Artifact {
-	
-	private static Logger logger = Logger.getLogger(SimpleArtifact.class);
+    
+    private static Logger logger = Logger.getLogger(SimpleArtifact.class);
 
     private String authorityName;
     private String displayName;
@@ -70,91 +70,91 @@ public class SimpleArtifact extends AbstractXsltView implements Artifact {
 
 
     static {
-	String[] propertyNameArray = {"name", "type", "location", "summary", "perseusVersion",
-	"enteredBy", "sourcesUsed", "otherBibliography", "documentaryReferences"};
-	String[] propertyDisplayNameArray = {"Name", "Artifact Type", "Location", "Summary",
-	"Perseus Version", "Entered By", "Sources Used", "Other Bibliography", "Documentary References"};
-	
-	for (int i=0; i < propertyNameArray.length; i++) {
-	    propertyDisplayNames.put(propertyNameArray[i], propertyDisplayNameArray[i]);
-	    propertyNames.put(propertyDisplayNameArray[i], propertyNameArray[i]);
-	}
+    String[] propertyNameArray = {"name", "type", "location", "summary", "perseusVersion",
+    "enteredBy", "sourcesUsed", "otherBibliography", "documentaryReferences"};
+    String[] propertyDisplayNameArray = {"Name", "Artifact Type", "Location", "Summary",
+    "Perseus Version", "Entered By", "Sources Used", "Other Bibliography", "Documentary References"};
+    
+    for (int i=0; i < propertyNameArray.length; i++) {
+        propertyDisplayNames.put(propertyNameArray[i], propertyDisplayNameArray[i]);
+        propertyNames.put(propertyDisplayNameArray[i], propertyNameArray[i]);
+    }
     }
 
     public SimpleArtifact() {}
 
     // getter and setter methods for 'entity' attributes
     public String getAuthorityName() {
-    	return authorityName;
+        return authorityName;
     }
 
     public void setAuthorityName(String an) {
-    	authorityName = an;
+        authorityName = an;
     }
 
     public String getDisplayName() {
-    	return displayName;
+        return displayName;
     }
 
     public void setDisplayName(String dn) {
-    	displayName = dn;
+        displayName = dn;
     }
 
     public Integer getId() {
-    	return id;
+        return id;
     }
 
     public void setId(Integer id) {
-    	this.id = id;
+        this.id = id;
     }
 
     public String getSortableString() {
-    	return authorityName;
+        return authorityName;
     }
 
     public void setSortableString(String ss) {
-    	sortableString = ss;
+        sortableString = ss;
     }
 
     public boolean equals(Object o) {
-	if (!(o instanceof Entity)) {
-	    return false;
-	}
+    if (!(o instanceof Entity)) {
+        return false;
+    }
 
-	Entity e = (Entity) o;
+    Entity e = (Entity) o;
 
-	return getAuthorityName().equals(e.getAuthorityName());
+    return getAuthorityName().equals(e.getAuthorityName());
     }
 
     public int compareTo(Entity o) {
-	if (!(o instanceof Entity)) {
-	    throw new IllegalArgumentException();
-	}
+    if (!(o instanceof Entity)) {
+        throw new IllegalArgumentException();
+    }
 
-	return getSortableString().compareTo(o.getSortableString());
+    return getSortableString().compareTo(o.getSortableString());
     }
 
     public Set getOccurrences() { return occurrences; }
     public void setOccurrences(Set occs) { occurrences = occs; }
     public void addOccurrence(EntityOccurrence occ) {
-    	occurrences.add(occ);
-    	occ.setEntity(this);
+        occurrences.add(occ);
+        occ.setEntity(this);
     }
     public void clearOccurrences() { occurrences.clear(); }
 
     public Set getFrequencies() { return frequencies; }
     public void setFrequencies(Set<Frequency> freqs) { frequencies = freqs; }
     public void addFrequency(Frequency freq) {
-    	frequencies.add(freq);
-    	freq.setEntity(this);
+        frequencies.add(freq);
+        freq.setEntity(this);
     }
     public void clearFrequencies() { frequencies.clear(); }
 
     public Set getTuples() { return tuples; }
     public void setTuples(Set tups) { tuples = tups; }
     public void addTuple(EntityTuple tuple) {
-    	tuples.add(tuple);
-    	tuple.setEntity(this);
+        tuples.add(tuple);
+        tuple.setEntity(this);
     }
     public void clearTuples() { tuples.clear(); }
 
@@ -171,148 +171,148 @@ public class SimpleArtifact extends AbstractXsltView implements Artifact {
     // getter and setter methods for 'object' attributes
 
     public String getName() {
-    	return name;
+        return name;
     }
 
     public void setName(String name) {
-    	this.name = name;
+        this.name = name;
     }
 
     public String getType() {
-    	return type;
+        return type;
     }
 
     public void setType(String type) {
-    	this.type = type;
+        this.type = type;
     }
 
     public String getLocation() {
-    	return location;
+        return location;
     }
 
     public void setLocation(String location) {
-    	this.location = location;
+        this.location = location;
     }
 
     public String getSummary() {
-    	return summary;
+        return summary;
     }
 
     public void setSummary(String summary) {
-    	this.summary = summary;
+        this.summary = summary;
     }
 
     public String getPerseusVersion() {
-    	return perseusVersion;
+        return perseusVersion;
     }
 
     public void setPerseusVersion(String perseusVersion) {
-    	this.perseusVersion = perseusVersion;
+        this.perseusVersion = perseusVersion;
     }
 
     // getter and setter methods for 'documented' attributes
     public String getEnteredBy() {
-    	return enteredBy;
+        return enteredBy;
     }
 
     public void setEnteredBy(String enteredBy) {
-    	this.enteredBy = enteredBy;
+        this.enteredBy = enteredBy;
     }
 
     public String getSourcesUsed() {
-    	return sourcesUsed;
+        return sourcesUsed;
     }
 
     public void setSourcesUsed(String sourcesUsed) {
-    	this.sourcesUsed = sourcesUsed;
+        this.sourcesUsed = sourcesUsed;
     }
 
     public String getOtherBibliography() {
-    	return otherBibliography;
+        return otherBibliography;
     }
 
     public void setOtherBibliography(String otherBibliography) {
-    	this.otherBibliography = otherBibliography;
+        this.otherBibliography = otherBibliography;
     }
 
     public String getDocumentaryReferences() {
-    	return documentaryReferences;
+        return documentaryReferences;
     }
 
     public void setDocumentaryReferences(String documentaryReferences) {
-    	this.documentaryReferences = documentaryReferences;
+        this.documentaryReferences = documentaryReferences;
     }
 
     public String toHTTPRequest() {
-	StringBuffer request = new StringBuffer();
-	request.append("&name=" + this.name)
-	    .append("&type=" + this.type)
-	    .append("&location=" + this.location)
-	    .append("&summary=" + this.summary)
-	    .append("&perseusVersion=" + this.perseusVersion)
-	    .append("&enteredBy=" + this.enteredBy)
-	    .append("&sourcesUsed=" + this.sourcesUsed)
-	    .append("&otherBibliography=" + this.otherBibliography)
-	    .append("&documentaryReferences=" + this.documentaryReferences);
-	return request.toString().replaceAll("null", "");
+    StringBuffer request = new StringBuffer();
+    request.append("&name=" + this.name)
+        .append("&type=" + this.type)
+        .append("&location=" + this.location)
+        .append("&summary=" + this.summary)
+        .append("&perseusVersion=" + this.perseusVersion)
+        .append("&enteredBy=" + this.enteredBy)
+        .append("&sourcesUsed=" + this.sourcesUsed)
+        .append("&otherBibliography=" + this.otherBibliography)
+        .append("&documentaryReferences=" + this.documentaryReferences);
+    return request.toString().replaceAll("null", "");
     }
 
     public String toString() {
-	StringBuffer result = new StringBuffer();
-	String newLine = System.getProperty("line.separator");
+    StringBuffer result = new StringBuffer();
+    String newLine = System.getProperty("line.separator");
 
-	result.append( this.getClass().getName() );
-	result.append( " Object {" );
-	result.append(newLine);
+    result.append( this.getClass().getName() );
+    result.append( " Object {" );
+    result.append(newLine);
 
-	//determine fields declared in this class including superclasses
-	Method[] methods = this.getClass().getMethods();
-	
-	//print field names paired with their values
-	for (int i=0; i < methods.length;  i++) {
-	    Method method = methods[i];
-	    if (method.getName().startsWith("get")) {
-		result.append("  ");
-		try {
-		    result.append( method.getName() );
-		    result.append(": ");
-		    //requires access to private field:
-		    result.append(method.invoke(this, (java.lang.Object[]) null));
-		} catch (InvocationTargetException ite) {
-		   logger.error(ite);
-		} catch (Exception e) {
-		    logger.error(e);
-		}
-		result.append(newLine);
-	    }//then we have a getter
-	}
-	result.append("}");
-	return result.toString();	
+    //determine fields declared in this class including superclasses
+    Method[] methods = this.getClass().getMethods();
+    
+    //print field names paired with their values
+    for (int i=0; i < methods.length;  i++) {
+        Method method = methods[i];
+        if (method.getName().startsWith("get")) {
+        result.append("  ");
+        try {
+            result.append( method.getName() );
+            result.append(": ");
+            //requires access to private field:
+            result.append(method.invoke(this, (java.lang.Object[]) null));
+        } catch (InvocationTargetException ite) {
+           logger.error(ite);
+        } catch (Exception e) {
+            logger.error(e);
+        }
+        result.append(newLine);
+        }//then we have a getter
+    }
+    result.append("}");
+    return result.toString();	
     }
 
     protected Source createXsltSource(Map model, String rootName, HttpServletRequest req,
-    		HttpServletResponse res) 
+            HttpServletResponse res) 
     throws Exception {
-    	Node result = null;
+        Node result = null;
 
-    	Artifact ao = (Artifact)((Map)model.get("model")).get("artifact");
-    	String type = ao.getType();
-    	if ( (type != null)  && (!type.equals("")) ) {
-    		if (type.equals(ArtifactType.BUILDING.getDisplayName())) {
-    			result = ((BuildingArtifact)ao).toXML(model, rootName, req, res);
-    		} else if (type.equals(ArtifactType.COIN.getDisplayName())) {
-    			result = ((CoinArtifact)ao).toXML(model, rootName, req, res);
-    		} else if (type.equals(ArtifactType.GEM.getDisplayName())) {
-    			result = ((GemArtifact)ao).toXML(model, rootName, req, res);
-    		} else if (type.equals(ArtifactType.SCULPTURE.getDisplayName())) {
-    			result = ((SculptureArtifact)ao).toXML(model, rootName, req, res);
-    		} else if (type.equals(ArtifactType.SITE.getDisplayName())) {
-    			result = ((SiteArtifact)ao).toXML(model, rootName, req, res);
-    		} else if (type.equals(ArtifactType.VASE.getDisplayName())) {
-    			result = ((VaseArtifact)ao).toXML(model, rootName, req, res);
-    		} 	
-    	} 
-    	return new DOMSource(result);
+        Artifact ao = (Artifact)((Map)model.get("model")).get("artifact");
+        String type = ao.getType();
+        if ( (type != null)  && (!type.equals("")) ) {
+            if (type.equals(ArtifactType.BUILDING.getDisplayName())) {
+                result = ((BuildingArtifact)ao).toXML(model, rootName, req, res);
+            } else if (type.equals(ArtifactType.COIN.getDisplayName())) {
+                result = ((CoinArtifact)ao).toXML(model, rootName, req, res);
+            } else if (type.equals(ArtifactType.GEM.getDisplayName())) {
+                result = ((GemArtifact)ao).toXML(model, rootName, req, res);
+            } else if (type.equals(ArtifactType.SCULPTURE.getDisplayName())) {
+                result = ((SculptureArtifact)ao).toXML(model, rootName, req, res);
+            } else if (type.equals(ArtifactType.SITE.getDisplayName())) {
+                result = ((SiteArtifact)ao).toXML(model, rootName, req, res);
+            } else if (type.equals(ArtifactType.VASE.getDisplayName())) {
+                result = ((VaseArtifact)ao).toXML(model, rootName, req, res);
+            } 	
+        } 
+        return new DOMSource(result);
     }
 
     /*
@@ -323,106 +323,106 @@ public class SimpleArtifact extends AbstractXsltView implements Artifact {
      *  field is recovered, else return null.
      */  
     public Map<String, String> getPropertyDisplayNames() {
-	return propertyDisplayNames;
+    return propertyDisplayNames;
     }
 
     public Map<String, String> getPropertyNames() {
-	return propertyNames;
+    return propertyNames;
     }
   
     public String getPropertyDisplayName(String property) {
-	return (String)propertyDisplayNames.get(property);
+    return (String)propertyDisplayNames.get(property);
     }
 
     public String getPropertyName(String propertyDisplayName) {
-	return (String)propertyNames.get(propertyDisplayName);
+    return (String)propertyNames.get(propertyDisplayName);
     }
     
     public Node toXML(Map model, String rootName, HttpServletRequest req, 
-		      HttpServletResponse res) throws Exception {
-    	return ((DOMSource) createXsltSource(model, rootName, req, res)).getNode();
+              HttpServletResponse res) throws Exception {
+        return ((DOMSource) createXsltSource(model, rootName, req, res)).getNode();
     }
 
-	public Integer getDocumentCount() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public Integer getDocumentCount() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
-	public Double getInverseDocumentFrequency() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public Double getInverseDocumentFrequency() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
-	public Set<Vote> getVotes() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public Set<Vote> getVotes() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
-	public void setDocumentCount(Integer arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+    public void setDocumentCount(Integer arg0) {
+        // TODO Auto-generated method stub
+        
+    }
 
-	public void setInverseDocumentFrequency(Double arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+    public void setInverseDocumentFrequency(Double arg0) {
+        // TODO Auto-generated method stub
+        
+    }
 
-	public void setVotes(Set<Vote> arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+    public void setVotes(Set<Vote> arg0) {
+        // TODO Auto-generated method stub
+        
+    }
 
-	public String toXML() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public String toXML() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
-	public Map<String, String> getTableProperties(Renderer renderer) {
-		return null;		
-	}
+    public Map<String, String> getTableProperties(Renderer renderer) {
+        return null;		
+    }
 
-	public Map<String, String> getParagraphProperties(Renderer renderer) {
-		return null;
-	}
-	
-	public String getSummaryDisplay() {
-		if (summary != null && !summary.equals("")) {
-			return summary;
-		} else {
-			return "";
-		}
-	}
-	
-	public String getSourcesUsedDisplay() {
-		if (sourcesUsed != null && !sourcesUsed.equals("")) {
-			return sourcesUsed;
-		} else {
-			return "";
-		}
-	}
-	
-	public String getOtherBibliographyDisplay() {
-		if (otherBibliography != null && !otherBibliography.equals("")) {
-			return otherBibliography;
-		} else {
-			return "";
-		}
-	}
-	
-	public String createArtifactBrowserURL(String artifactType, String field, String value) {
-		String URL = "";
-		try {
-			URL = "<a href=\"/hopper/artifactBrowser?object=" + artifactType 
-			+ "&field=" + field + "&value=" + URLEncoder.encode(value, "UTF-8") + "\" >" + value + "</a>";
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
-		return URL;
-	}
+    public Map<String, String> getParagraphProperties(Renderer renderer) {
+        return null;
+    }
+    
+    public String getSummaryDisplay() {
+        if (summary != null && !summary.equals("")) {
+            return summary;
+        } else {
+            return "";
+        }
+    }
+    
+    public String getSourcesUsedDisplay() {
+        if (sourcesUsed != null && !sourcesUsed.equals("")) {
+            return sourcesUsed;
+        } else {
+            return "";
+        }
+    }
+    
+    public String getOtherBibliographyDisplay() {
+        if (otherBibliography != null && !otherBibliography.equals("")) {
+            return otherBibliography;
+        } else {
+            return "";
+        }
+    }
+    
+    public String createArtifactBrowserURL(String artifactType, String field, String value) {
+        String URL = "";
+        try {
+            URL = "<a href=\"/hopper/artifactBrowser?object=" + artifactType 
+            + "&field=" + field + "&value=" + URLEncoder.encode(value, "UTF-8") + "\" >" + value + "</a>";
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return URL;
+    }
 
-	public Element toXMLElement() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public Element toXMLElement() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }

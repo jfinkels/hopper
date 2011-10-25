@@ -12,10 +12,10 @@ import perseus.artarch.image.ImageName;
  *
  */
 public interface ImageNameDAO {
-	
-	public List getImagesByName(String name);
-	public int insertImageName(ImageName in);
-	public ImageName getImageName(String archiveNumber);
-	public boolean deleteImageNames();
+    
+    public List getImagesByName(String name);
+    public int insertImageName(ImageName in);
+    public ImageName getImageName(String archiveNumber);
+    public boolean deleteImageNames();
 
 }

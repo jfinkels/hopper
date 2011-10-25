@@ -7,8 +7,8 @@
 <h1>Perseus Classical Text Services</h1>
 RESULT <c:out value="${tocString}"/>
 
-	 <!-- Google Analytics --> 
+     <!-- Google Analytics --> 
 
-	<%@ include file="/includes/common/analytics.htm" %>
+    <%@ include file="/includes/common/analytics.htm" %>
   </body>
 </html>

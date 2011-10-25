@@ -4,15 +4,15 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
         
 <hibernate-mapping package="perseus.visualizations">
-	<class name="YearWordCount" table="hib_year_word_counts" batch-size="10">
-	
-	<id name="id" type="int" column="id">
-	    <generator class="native" />
-	</id>
-	
-	<property name="year" column="year" type="int" />
-	<property name="wordCount" column="word_count" type="long" />
-	<many-to-one name="lang" column="language_id" />
-	
-	</class>
+    <class name="YearWordCount" table="hib_year_word_counts" batch-size="10">
+    
+    <id name="id" type="int" column="id">
+        <generator class="native" />
+    </id>
+    
+    <property name="year" column="year" type="int" />
+    <property name="wordCount" column="word_count" type="long" />
+    <many-to-one name="lang" column="language_id" />
+    
+    </class>
 </hibernate-mapping>

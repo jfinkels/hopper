@@ -28,43 +28,43 @@ from NewEntityExtractor import NewEntityExtractor
 class NewPersonExtractor(NewEntityExtractor):
 
     def __init__(self):
-	NewEntityExtractor.__init__(self)
+    NewEntityExtractor.__init__(self)
 
-	self.person_re = re.compile(".*?:(?P<name>[^:]*)(?::.*)?")
+    self.person_re = re.compile(".*?:(?P<name>[^:]*)(?::.*)?")
 
     def getTaskName(self):
-	return "extract-people"
+    return "extract-people"
 
     def process_persName(self, element):
-	#print "Trying to process persname: %s" % element.getTextContent()
-	reg = element.getAttribute("reg")
-	if reg == "":
-	    print "Empty reg attribute for %s! Skipping..." % \
-		element.getTextContent()
-	    return None
-	match_result = self.person_re.match(reg)
-	name_string = match_result.group("name")
+    #print "Trying to process persname: %s" % element.getTextContent()
+    reg = element.getAttribute("reg")
+    if reg == "":
+        print "Empty reg attribute for %s! Skipping..." % \
+        element.getTextContent()
+        return None
+    match_result = self.person_re.match(reg)
+    name_string = match_result.group("name")
 
-	name_tokens = name_string.split(",")
-	surname = name_tokens[0]
-	forenames = filter(None, \
-			[n for n in name_tokens[1:] if n != "nomatch"])
+    name_tokens = name_string.split(",")
+    surname = name_tokens[0]
+    forenames = filter(None, \
+            [n for n in name_tokens[1:] if n != "nomatch"])
 
-	person = Person()
-	for f in forenames:
-	    if len(f.strip()) > 0: person.addName(person.FORENAME, f)
-	person.addName(person.SURNAME, surname)
+    person = Person()
+    for f in forenames:
+        if len(f.strip()) > 0: person.addName(person.FORENAME, f)
+    person.addName(person.SURNAME, surname)
 
-	print "%s -> %s" % (element.getTextContent(), person.getDisplayName())
-	return person
+    print "%s -> %s" % (element.getTextContent(), person.getDisplayName())
+    return person
 
     def get_entity_classes(self):
-	return [Person]
+    return [Person]
 
 if __name__ == "__main__":
     conv = NewPersonExtractor()
     if len(sys.argv) > 1:
-	for i in range(1, len(sys.argv)):
-	    conv.processAnything(sys.argv[i])
+    for i in range(1, len(sys.argv)):
+        conv.processAnything(sys.argv[i])
     else:
-	conv.processCorpus()
+    conv.processCorpus()

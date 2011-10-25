@@ -22,56 +22,56 @@ import perseus.ie.entity.HibernateEntityManager;
 import perseus.util.HibernateDAO;
 
 public class HibernateEntityOccurrenceDAO extends HibernateDAO<EntityOccurrence> implements EntityOccurrenceDAO {
-	private static final Logger logger = Logger.getLogger(HibernateEntityOccurrenceDAO.class);
+    private static final Logger logger = Logger.getLogger(HibernateEntityOccurrenceDAO.class);
 
-	private HibernateEntityManager hem = new HibernateEntityManager();
+    private HibernateEntityManager hem = new HibernateEntityManager();
 
-	public HibernateEntityOccurrenceDAO() {}
+    public HibernateEntityOccurrenceDAO() {}
 
-	public int insertEntityOccurrence(EntityOccurrence entityOccurrence) {
-		int result = -1;
-		try {
-			hem.addOccurrence(entityOccurrence);
-		} catch (Exception e) {
-			logger.error("insertEntityOccurrence: " + e);
-			logger.error(entityOccurrence);
-			hem.clearCache();
-		}
-		Integer id = entityOccurrence.getId();
-		if (id == null) {
-			result = -1;
-		} else {
-			result = id.intValue();
-		}
-		return result;
-	}
+    public int insertEntityOccurrence(EntityOccurrence entityOccurrence) {
+        int result = -1;
+        try {
+            hem.addOccurrence(entityOccurrence);
+        } catch (Exception e) {
+            logger.error("insertEntityOccurrence: " + e);
+            logger.error(entityOccurrence);
+            hem.clearCache();
+        }
+        Integer id = entityOccurrence.getId();
+        if (id == null) {
+            result = -1;
+        } else {
+            result = id.intValue();
+        }
+        return result;
+    }
 
-	public boolean deleteEntityOccurrence(Entity entity) {
-		int result = getSession().createQuery("delete from EntityOccurrence where entity = :e").setParameter("e", entity).executeUpdate();
-		if (result > 0) {
-			return true;
-		}
-		return false;
-	}
+    public boolean deleteEntityOccurrence(Entity entity) {
+        int result = getSession().createQuery("delete from EntityOccurrence where entity = :e").setParameter("e", entity).executeUpdate();
+        if (result > 0) {
+            return true;
+        }
+        return false;
+    }
 
 
-	public List<EntityOccurrence> findEntityOccurrence(Entity entity, perseus.document.Query query) {
-		return hem.getOccurrences(entity, query);
-	}
+    public List<EntityOccurrence> findEntityOccurrence(Entity entity, perseus.document.Query query) {
+        return hem.getOccurrences(entity, query);
+    }
 
-	public List<EntityOccurrence> findEntityOccurrence(Entity entity,
-			perseus.document.Query query, int offset, int maxResults) {
-		hem.setFirstResult(offset);
-		hem.setMaxResults(maxResults);
-		return hem.getOccurrences(entity, query);
-	}
+    public List<EntityOccurrence> findEntityOccurrence(Entity entity,
+            perseus.document.Query query, int offset, int maxResults) {
+        hem.setFirstResult(offset);
+        hem.setMaxResults(maxResults);
+        return hem.getOccurrences(entity, query);
+    }
 
-	public boolean updateEntityOccurrence(EntityOccurrence entityOccurrence) {
-		return false;
-	}
+    public boolean updateEntityOccurrence(EntityOccurrence entityOccurrence) {
+        return false;
+    }
 
-	public boolean deleteEntityOccurrence(EntityOccurrence entityOccurrence) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    public boolean deleteEntityOccurrence(EntityOccurrence entityOccurrence) {
+        // TODO Auto-generated method stub
+        return false;
+    }
 }

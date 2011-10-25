@@ -15,38 +15,38 @@ import perseus.document.dao.ChunkDAO;
 import perseus.document.dao.HibernateChunkDAO;
 
 public class ChunkLinker {
-	private static Logger logger = Logger.getLogger(ChunkLinker.class);
+    private static Logger logger = Logger.getLogger(ChunkLinker.class);
 
-	ChunkDAO dao = new HibernateChunkDAO();
+    ChunkDAO dao = new HibernateChunkDAO();
 
-	public ChunkLinker(String documentID) {
+    public ChunkLinker(String documentID) {
 
-		Query documentQuery = new Query(documentID);
-		Chunk initialChunk = Chunk.getInitialChunk(documentQuery);
+        Query documentQuery = new Query(documentID);
+        Chunk initialChunk = Chunk.getInitialChunk(documentQuery);
 
-		if (initialChunk.getMetadata().has(Metadata.SUBDOC_REF_KEY)) {
-			Iterator chunkIterator = initialChunk.getSubTexts().iterator();
-			while (chunkIterator.hasNext()) {
-				processChunk((Chunk) chunkIterator.next());
-			}
-		}
+        if (initialChunk.getMetadata().has(Metadata.SUBDOC_REF_KEY)) {
+            Iterator chunkIterator = initialChunk.getSubTexts().iterator();
+            while (chunkIterator.hasNext()) {
+                processChunk((Chunk) chunkIterator.next());
+            }
+        }
 
-		processChunk(initialChunk);
-	}
+        processChunk(initialChunk);
+    }
 
-	public void processChunk(Chunk chunk) {
-		logger.info("linking chunks for " + chunk.getQuery());
+    public void processChunk(Chunk chunk) {
+        logger.info("linking chunks for " + chunk.getQuery());
 
-		/*
-	while (chunkSchemes.hasNext()) {
-	    String scheme = (String) chunkSchemes.next();
-	    scheme = scheme.replaceAll("[*]", "");
-	    TableOfContents toc = TableOfContents.assemble(chunk, scheme);
+        /*
+    while (chunkSchemes.hasNext()) {
+        String scheme = (String) chunkSchemes.next();
+        scheme = scheme.replaceAll("[*]", "");
+        TableOfContents toc = TableOfContents.assemble(chunk, scheme);
 
-	    TableOfContentsDAO dao = new HibernateTableOfContentsDAO();
-	    dao.save(toc);
-	    dao.cleanup();
-	}
-		 */
-	}
+        TableOfContentsDAO dao = new HibernateTableOfContentsDAO();
+        dao.save(toc);
+        dao.cleanup();
+    }
+         */
+    }
 }

@@ -17,11 +17,11 @@ public class Renderer {
     List<TokenFilter> filtersList;
 
     public Renderer(Language language, TokenFilter... tokenFilters) {
-	filtersList = new ArrayList<TokenFilter>();
-	setDefaultLanguage(language);
-	for (TokenFilter filter : tokenFilters) {
-	    addTokenFilter(filter);
-	}
+    filtersList = new ArrayList<TokenFilter>();
+    setDefaultLanguage(language);
+    for (TokenFilter filter : tokenFilters) {
+        addTokenFilter(filter);
+    }
     }
 
     // Knowing the default language allows us to render the entire chunk in
@@ -34,7 +34,7 @@ public class Renderer {
      * Creates a new Renderer with English as the default language.
      */
     public Renderer() {
-	this(Language.ENGLISH);
+    this(Language.ENGLISH);
     }
     
     /**
@@ -42,15 +42,15 @@ public class Renderer {
      * language.
      */
     public Renderer(String languageCode) {
-	this(Language.forCode(languageCode));
+    this(Language.forCode(languageCode));
     }
     
     /**
      * Creates a new Renderer with `defLang` as the default language.
      */
     public Renderer(Language defLang) {
-	filtersList = new ArrayList<TokenFilter>();
-	defaultLanguage = defLang;
+    filtersList = new ArrayList<TokenFilter>();
+    defaultLanguage = defLang;
     }
     
     /**
@@ -58,7 +58,7 @@ public class Renderer {
      * string or TokenList passed to it.
      */
     public void addTokenFilter(TokenFilter filter) {
-	filtersList.add(filter);
+    filtersList.add(filter);
     }
     
     /**
@@ -66,8 +66,8 @@ public class Renderer {
      * @param prefs
      */
     public void addLanguageTokenFilters(DisplayPreferences prefs) {
-    	filtersList.add(new GreekTranscoderTokenFilter(prefs));
-    	filtersList.add(new ArabicTranscoderTokenFilter(prefs));
+        filtersList.add(new GreekTranscoderTokenFilter(prefs));
+        filtersList.add(new ArabicTranscoderTokenFilter(prefs));
     }
     
     /**
@@ -75,43 +75,43 @@ public class Renderer {
      * `getEffectiveLanguage()` method.
      */
     public synchronized String renderChunk(Chunk chunk) {
-	Language chunkLanguage =
-	    Language.forCode(chunk.getEffectiveLanguage());
-	String result;
-	if (!chunkLanguage.equals(defaultLanguage)) {
-	    Language oldLanguage = defaultLanguage;
-	    defaultLanguage = chunkLanguage;
-	    result = renderText(chunk.getText());
-	    defaultLanguage = oldLanguage;
-	} else {
-	    result = renderText(chunk.getText());	    
-	}
-	return result;
+    Language chunkLanguage =
+        Language.forCode(chunk.getEffectiveLanguage());
+    String result;
+    if (!chunkLanguage.equals(defaultLanguage)) {
+        Language oldLanguage = defaultLanguage;
+        defaultLanguage = chunkLanguage;
+        result = renderText(chunk.getText());
+        defaultLanguage = oldLanguage;
+    } else {
+        result = renderText(chunk.getText());	    
+    }
+    return result;
     }
     
     /**
      * Renders `text`, after first converting it into a TokenList.
      */
     public String renderText(String text) {
-	
-	List<TokenFilter> actingFilters = new ArrayList<TokenFilter>();
-	for (TokenFilter filter : filtersList) {
-	    if (filter.willFilter(text, defaultLanguage.getCode())) {
-		actingFilters.add(filter);
-	    }
-	}
-	
-	if (actingFilters.isEmpty()) {
-	    return text;
-	}
-	
-	TokenList tokens = TokenList.getTokens(text, defaultLanguage);
-	
-	for (TokenFilter filter : actingFilters) {
-	    filter.filter(tokens);
-	}
-	
-	return tokensToString(tokens);
+    
+    List<TokenFilter> actingFilters = new ArrayList<TokenFilter>();
+    for (TokenFilter filter : filtersList) {
+        if (filter.willFilter(text, defaultLanguage.getCode())) {
+        actingFilters.add(filter);
+        }
+    }
+    
+    if (actingFilters.isEmpty()) {
+        return text;
+    }
+    
+    TokenList tokens = TokenList.getTokens(text, defaultLanguage);
+    
+    for (TokenFilter filter : actingFilters) {
+        filter.filter(tokens);
+    }
+    
+    return tokensToString(tokens);
     }
     
     /**
@@ -122,8 +122,8 @@ public class Renderer {
      * @return the rendered string
      */
     public String render(String str) {
-	Token token = new Token(defaultLanguage, str, Token.Type.WORD);
-	return render(token);
+    Token token = new Token(defaultLanguage, str, Token.Type.WORD);
+    return render(token);
     }
     
     /**
@@ -133,9 +133,9 @@ public class Renderer {
      * @return the token's display text, filtered and rendered
      */
     public String render(Token token) {
-	TokenList tokenList = new TokenList();
-	tokenList.add(token);
-	return render(tokenList);
+    TokenList tokenList = new TokenList();
+    tokenList.add(token);
+    return render(tokenList);
     }
     
     /**
@@ -145,11 +145,11 @@ public class Renderer {
      * @return the tokens, with matching display text
      */
     public String render(TokenList tokens) {
-	for (TokenFilter filter : filtersList) {
-	    filter.filter(tokens);
-	}
-	
-	return tokensToString(tokens);
+    for (TokenFilter filter : filtersList) {
+        filter.filter(tokens);
+    }
+    
+    return tokensToString(tokens);
     }
     
     /**
@@ -157,20 +157,20 @@ public class Renderer {
      * tokens' display text.
      */
     public String tokensToString(TokenList tokens) {
-	StringBuilder output = new StringBuilder();
-	
-	for (Token token : tokens) {
-	    output.append(token.getDisplayText());
-	}
-	
-	return output.toString();
+    StringBuilder output = new StringBuilder();
+    
+    for (Token token : tokens) {
+        output.append(token.getDisplayText());
+    }
+    
+    return output.toString();
     }
     
     public Language getDefaultLanguage() {
-	return defaultLanguage;
+    return defaultLanguage;
     }
     
     public void setDefaultLanguage(Language defLang) {
-	defaultLanguage = defLang;
+    defaultLanguage = defLang;
     }
 }

@@ -12,20 +12,20 @@ import perseus.util.StringUtil;
 public class DefaultLanguageAdapter extends LanguageAdapter {
     
     private static Pattern WORD_PATTERN =
-	Pattern.compile("([\\p{Alpha}\\[\\]]+)");
+    Pattern.compile("([\\p{Alpha}\\[\\]]+)");
     private static Pattern NON_WORD_PATTERN =
-	Pattern.compile("([^\\p{Alpha}]+)");
+    Pattern.compile("([^\\p{Alpha}]+)");
     
     public Pattern getNonWordPattern() {
-	return NON_WORD_PATTERN;
+    return NON_WORD_PATTERN;
     }
 
     public Pattern getWordPattern() {
-	return WORD_PATTERN;
+    return WORD_PATTERN;
     }
 
     public String getLookupForm(String word) {
-	return StringUtil.deaccent(word);
+    return StringUtil.deaccent(word);
     }
 }
 

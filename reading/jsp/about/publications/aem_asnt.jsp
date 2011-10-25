@@ -9,17 +9,17 @@
 <div id="main">
     <jsp:include page="/includes/index/indexNav.jsp">
     <jsp:param name="tabActive" value="about"/>
-	<jsp:param name="subtabActive" value="publications"/>
+    <jsp:param name="subtabActive" value="publications"/>
     </jsp:include> 	
     <div id="content" class="2column">
         <div id="index_main_col">
-		<div id="publications">
-		
-		<p>Creating an Infrastructure for Scholarly Publication On Line<br/>
-		Anne Mahoney
-		</p>
-		
-		<h4>Abstract</h4>
+        <div id="publications">
+        
+        <p>Creating an Infrastructure for Scholarly Publication On Line<br/>
+        Anne Mahoney
+        </p>
+        
+        <h4>Abstract</h4>
 <p>The Stoa Consortium aims to promote collaborative scholarship, published on line and freely available to other scholars and general readers.  As a publisher, we must provide 
 the mechanisms for making these scholarly works available.  As an on-line publisher, we intend to provide more than what a good print publisher can provide: electronic texts can 
 be explicitly connected as books cannot. </p>
@@ -177,8 +177,8 @@ from the surrounding text, the  Stoa's standards require that the language be in
 for the main  language of the text or of foreign languages that might appear in it, can  often disambiguate italics as humans do.</p>
 <p><a href="#anch4" name="fn4"><sup>4</sup></a>&nbsp;e.g. Attic equivalents for the comic Spartan dialect  in <a href="/hopper/text?doc=Aristoph.+Lys."><i>Lysistrata</i></a>
 
-		</div> <!-- Publications div -->	
-	</div> <!-- main_col div -->
+        </div> <!-- Publications div -->	
+    </div> <!-- main_col div -->
         
     </div> <!-- 2column div -->
 </div> <!-- main div -->

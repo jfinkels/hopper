@@ -34,106 +34,106 @@ import perseus.util.StringUtil;
 
 public class DocumentTaskManager {
 
-	private static DocumentTaskManager manager = new DocumentTaskManager();
+    private static DocumentTaskManager manager = new DocumentTaskManager();
 
-	private static QueryRunner getQueryRunner() {
-		return new QueryRunner(SQLHandler.getDataSource());
-	}
+    private static QueryRunner getQueryRunner() {
+        return new QueryRunner(SQLHandler.getDataSource());
+    }
 
-	private static ResultSetHandler defaultHandler =
-		new ScalarHandler("last_run");
+    private static ResultSetHandler defaultHandler =
+        new ScalarHandler("last_run");
 
-	private DocumentTaskManager() {}
+    private DocumentTaskManager() {}
 
-	private static String TABLE_NAME = "document_tasks";
+    private static String TABLE_NAME = "document_tasks";
 
-	/**
-	 * Returns a DocumentTaskManager, ready to add new actions or check
-	 * for existing ones. As of now, this uses the Singleton design
-	 * pattern--all calls return the same manager instance.
-	 */ 
-	public static DocumentTaskManager getManager() {
-		return manager;
-	}
+    /**
+     * Returns a DocumentTaskManager, ready to add new actions or check
+     * for existing ones. As of now, this uses the Singleton design
+     * pattern--all calls return the same manager instance.
+     */ 
+    public static DocumentTaskManager getManager() {
+        return manager;
+    }
 
-	/**
-	 * Records a timestamp for the given identifier and task. Defaults to
-	 * the current time.
-	 */
-	public void set(String id, String task) throws SQLException {
-		set(id, task, new Date());
-	}
+    /**
+     * Records a timestamp for the given identifier and task. Defaults to
+     * the current time.
+     */
+    public void set(String id, String task) throws SQLException {
+        set(id, task, new Date());
+    }
 
-	/**
-	 * Records a timestamp for the given identifier and task.
-	 */
-	public void set(String id, String task, Date date)
-	throws SQLException {
+    /**
+     * Records a timestamp for the given identifier and task.
+     */
+    public void set(String id, String task, Date date)
+    throws SQLException {
 
-		Timestamp timestamp = new Timestamp(date.getTime());
-		Connection con = SQLHandler.getConnection();
-		QueryRunner runner = new QueryRunner();
-		runner.update(con,
-				"REPLACE INTO " + TABLE_NAME + " VALUES (?, ?, ?)",
-				new Object[] {id, task, timestamp});
-		DbUtils.close(con);
-	}
+        Timestamp timestamp = new Timestamp(date.getTime());
+        Connection con = SQLHandler.getConnection();
+        QueryRunner runner = new QueryRunner();
+        runner.update(con,
+                "REPLACE INTO " + TABLE_NAME + " VALUES (?, ?, ?)",
+                new Object[] {id, task, timestamp});
+        DbUtils.close(con);
+    }
 
-	/**
-	 * Removes the timestamp for the given identifier and task. Alternatively,
-	 * you can set id to null to delete everything of the given task, or
-	 * set task to null to delete everything with the given id. Or set both
-	 * parameters to null to remove everything.
-	 */
-	public void delete(String id, String task) throws SQLException {
-		List<String> conditions = new ArrayList<String>();
-		List<String> parameters = new ArrayList<String>();
+    /**
+     * Removes the timestamp for the given identifier and task. Alternatively,
+     * you can set id to null to delete everything of the given task, or
+     * set task to null to delete everything with the given id. Or set both
+     * parameters to null to remove everything.
+     */
+    public void delete(String id, String task) throws SQLException {
+        List<String> conditions = new ArrayList<String>();
+        List<String> parameters = new ArrayList<String>();
 
-		if (id != null) {
-			conditions.add("document_id = ?");
-			parameters.add(id);
-		}
+        if (id != null) {
+            conditions.add("document_id = ?");
+            parameters.add(id);
+        }
 
-		if (task != null) {
-			conditions.add("task = ?");
-			parameters.add(task);
-		}
+        if (task != null) {
+            conditions.add("task = ?");
+            parameters.add(task);
+        }
 
-		String queryString = "DELETE FROM " + TABLE_NAME +
-		(conditions.isEmpty() ? "" :
-			(" WHERE " + StringUtil.join(conditions, " AND ")));
+        String queryString = "DELETE FROM " + TABLE_NAME +
+        (conditions.isEmpty() ? "" :
+            (" WHERE " + StringUtil.join(conditions, " AND ")));
 
-		getQueryRunner().update(queryString, parameters.toArray());
-	}
+        getQueryRunner().update(queryString, parameters.toArray());
+    }
 
-	public Date getTimestamp(String id, String task) throws SQLException {
-		if (id == null || task == null) {
-			throw new IllegalArgumentException(
-					"getTimestamp() requires a non-null id and task!");
-		}
+    public Date getTimestamp(String id, String task) throws SQLException {
+        if (id == null || task == null) {
+            throw new IllegalArgumentException(
+                    "getTimestamp() requires a non-null id and task!");
+        }
 
-		// defaultHandler being a ScalarHandler, this will return the
-		// Timestamp we want. (If there is no such timestamp, it'll return
-		// null.)
-		Object resultStamp = (Date) getQueryRunner().query(
-				"SELECT last_run FROM " + TABLE_NAME +
-				" WHERE document_id = ? AND task = ?",
-				new Object[] {id, task}, defaultHandler);
+        // defaultHandler being a ScalarHandler, this will return the
+        // Timestamp we want. (If there is no such timestamp, it'll return
+        // null.)
+        Object resultStamp = (Date) getQueryRunner().query(
+                "SELECT last_run FROM " + TABLE_NAME +
+                " WHERE document_id = ? AND task = ?",
+                new Object[] {id, task}, defaultHandler);
 
-		if (resultStamp != null) {
-			// It's true that Timestamp is a subclass of Date, but the two
-			// classes have some implementation differences--see the Javadoc
-			// for Timestamp. In particular, checking whether a Date is equal
-			// to a Timestamp will always return false, which could confuse
-			// callers trying to compare these dates with dates from elsewhere.
-			// Return a normal date to avoid any weirdness.
-			return new Date(((Timestamp) resultStamp).getTime());
-		}
+        if (resultStamp != null) {
+            // It's true that Timestamp is a subclass of Date, but the two
+            // classes have some implementation differences--see the Javadoc
+            // for Timestamp. In particular, checking whether a Date is equal
+            // to a Timestamp will always return false, which could confuse
+            // callers trying to compare these dates with dates from elsewhere.
+            // Return a normal date to avoid any weirdness.
+            return new Date(((Timestamp) resultStamp).getTime());
+        }
 
-		return null;
-	}
+        return null;
+    }
 
-	public boolean hasTimestamp(String id, String task) throws SQLException {
-		return (getTimestamp(id, task) != null);
-	}
+    public boolean hasTimestamp(String id, String task) throws SQLException {
+        return (getTimestamp(id, task) != null);
+    }
 }

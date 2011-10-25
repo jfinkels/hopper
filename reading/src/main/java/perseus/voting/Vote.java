@@ -15,10 +15,10 @@ public class Vote<T extends Entity> implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final Entity NONE_OF_THE_ABOVE = new AbstractEntity() {
-	protected String toXMLHelper() { return ""; }
-	public String getDisplayName() { return "None of the Above"; }
-	public String getAuthorityName() { return "__NONE"; }
-	public String getSortableString() { return "zzzzzzzzzzznone"; }
+    protected String toXMLHelper() { return ""; }
+    public String getDisplayName() { return "None of the Above"; }
+    public String getAuthorityName() { return "__NONE"; }
+    public String getSortableString() { return "zzzzzzzzzzznone"; }
     };
     // Fields    
 

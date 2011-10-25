@@ -5,7 +5,7 @@ table.vote_results {
 }
 
 table.vote_results th {
-	border-bottom: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 table.vote_results tr.odd td {
@@ -21,7 +21,7 @@ table.vote_results tr.total {
 }
 
 table.vote_results tr.total th {
-	border-top: 1px solid black;
+    border-top: 1px solid black;
 }
 
 table.vote_results td.meaning {

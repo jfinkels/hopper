@@ -7,11 +7,11 @@ package perseus.document;
 public class InvalidQueryException extends Exception {
 
     public InvalidQueryException (Query query) {
-	super(query.toString());
+    super(query.toString());
     }
     
     public InvalidQueryException (String message) {
-	super(message);
+    super(message);
     }
 
 }

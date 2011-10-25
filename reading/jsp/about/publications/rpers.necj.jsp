@@ -9,11 +9,11 @@
 <div id="main">
     <jsp:include page="/includes/index/indexNav.jsp">
     <jsp:param name="tabActive" value="about"/>
-	<jsp:param name="subtabActive" value="publications"/>
+    <jsp:param name="subtabActive" value="publications"/>
     </jsp:include> 	
     <div id="content" class="2column">
         <div id="index_main_col">
-		<div id="publications">
+        <div id="publications">
 
 <b><font face="Helvetica" size="4"><p>Extending a Digital Library:  Beginning a Roman Perseus</p>
 </b></font><p>Gregory Crane</p>
@@ -566,8 +566,8 @@ work.  The elaborate OCR software that we acquired after most of the text entry 
 formatting to be done by hand.</p>
 
 
-		</div> <!-- Publications div -->	
-	</div> <!-- main_col div -->
+        </div> <!-- Publications div -->	
+    </div> <!-- main_col div -->
         
     </div> <!-- 2column div -->
 </div> <!-- main div -->

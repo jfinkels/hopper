@@ -23,7 +23,7 @@ import perseus.util.StringUtil;
 public class URLBuilder {
     private String url;
     private Map<String,Object> parameters;
-	
+    
 
     /**
      * Creates a new URLBuilder with no parameters, except those that may
@@ -32,7 +32,7 @@ public class URLBuilder {
      * @param url the target URL
      */
     public URLBuilder(String url) {
-	this(url, Collections.emptyMap());
+    this(url, Collections.emptyMap());
     }
 
     /**
@@ -46,20 +46,20 @@ public class URLBuilder {
      * @param params a map (String, Object) of parameters
      */
     public URLBuilder(String url, Map params) {
-	parameters = new HashMap<String,Object>(params);
+    parameters = new HashMap<String,Object>(params);
 
-	// Check for any parameters in the URL
-	String[] urlTokens = url.split("\\?");
-	if (urlTokens.length == 1) {
-	    this.url = url;
-	} else {
-	    this.url = urlTokens[0];
-	    String[] parameterTokens = urlTokens[1].split("&(amp;)?");
-	    for (int i = 0; i < parameterTokens.length; i++) {
-		String[] typeValue = parameterTokens[i].split("=");
-		setParameter(typeValue[0], typeValue[1]);
-	    }
-	}
+    // Check for any parameters in the URL
+    String[] urlTokens = url.split("\\?");
+    if (urlTokens.length == 1) {
+        this.url = url;
+    } else {
+        this.url = urlTokens[0];
+        String[] parameterTokens = urlTokens[1].split("&(amp;)?");
+        for (int i = 0; i < parameterTokens.length; i++) {
+        String[] typeValue = parameterTokens[i].split("=");
+        setParameter(typeValue[0], typeValue[1]);
+        }
+    }
     }
 
     /**
@@ -74,16 +74,16 @@ public class URLBuilder {
      * @return a properly-initialized URLBuilder
      */
     public static URLBuilder fromRequest(HttpServletRequest request, String[] paramNames) {
-	URLBuilder builder = new URLBuilder(request.getRequestURI());
-	
-	if (paramNames != null) {
-		for (String param : paramNames) {
-			builder.setParameter(param, request.getParameter(param));
-		}
-		return builder;
-	}
+    URLBuilder builder = new URLBuilder(request.getRequestURI());
+    
+    if (paramNames != null) {
+        for (String param : paramNames) {
+            builder.setParameter(param, request.getParameter(param));
+        }
+        return builder;
+    }
 
-		return new URLBuilder(request.getRequestURI(), request.getParameterMap());
+        return new URLBuilder(request.getRequestURI(), request.getParameterMap());
     }
     
    /**
@@ -96,8 +96,8 @@ public class URLBuilder {
      * @return this URLBuilder, with the parameter set
      */
     public URLBuilder setParameter(String param, String value) {
-	parameters.put(param, value);
-	return this;
+    parameters.put(param, value);
+    return this;
     }
 
     /**
@@ -105,7 +105,7 @@ public class URLBuilder {
      * This is a convenience method that calls setParameter(String, String).
      */
     public URLBuilder setParameter(String param, int value) {
-	return setParameter(param, Integer.toString(value));
+    return setParameter(param, Integer.toString(value));
     }
 
     /**
@@ -113,23 +113,23 @@ public class URLBuilder {
      * This is a convenience method that calls setParameter(String, String).
      */
     public URLBuilder setParameter(String param, double value) {
-	return setParameter(param, Double.toString(value));
+    return setParameter(param, Double.toString(value));
     }
 
     /**
      * Sets the given parameter to the specified list of string values.
      */
     public URLBuilder setParameter(String param, List<? extends Object> values) {
-		parameters.put(param, values);
-		return this;
+        parameters.put(param, values);
+        return this;
     }
 
     /**
      * Sets the given parameter to the specified array of string values.
      */
     public URLBuilder setParameter(String param, String[] values) {
-		parameters.put(param, Arrays.<String>asList(values));
-		return this;
+        parameters.put(param, Arrays.<String>asList(values));
+        return this;
     }
     /**
      * Returns true if this URLBuilder has a value for the given parameter.
@@ -138,7 +138,7 @@ public class URLBuilder {
      * @return true if this URLBuilder has param, otherwise false
      */
     public boolean hasParameter(String param) {
-	return parameters.containsKey(param);
+    return parameters.containsKey(param);
     }
 
     /**
@@ -148,30 +148,30 @@ public class URLBuilder {
      * @return the parameter's value, or null if we don't have the parameter
      */
     public String getParameter(String param) {
-	if (parameters.containsKey(param)) {
-	    return parameters.get(param).toString();
-	}
-	return null;
+    if (parameters.containsKey(param)) {
+        return parameters.get(param).toString();
+    }
+    return null;
     }
 
-	/**
-	 * getParameterList
-	 *
-	 * @param param the parameter whose value should be returned
-	 * @return the parameter's value as a list
-	 * @throws IllegalArgumentException if param's value is not a list
-	 */
-	public List<String> getParameterList(String param) {
-		Object value = parameters.containsKey(param);
-		if (!List.class.isAssignableFrom(value.getClass())) {
-			throw new IllegalArgumentException(
-				"parameter " + param + " is not stored as a list");
-		}
-		
-		return (List<String>) value;
-	}
+    /**
+     * getParameterList
+     *
+     * @param param the parameter whose value should be returned
+     * @return the parameter's value as a list
+     * @throws IllegalArgumentException if param's value is not a list
+     */
+    public List<String> getParameterList(String param) {
+        Object value = parameters.containsKey(param);
+        if (!List.class.isAssignableFrom(value.getClass())) {
+            throw new IllegalArgumentException(
+                "parameter " + param + " is not stored as a list");
+        }
+        
+        return (List<String>) value;
+    }
 
-	
+    
 
     /**
      * Removes the given parameter.
@@ -180,17 +180,17 @@ public class URLBuilder {
      * @return the parameter's value
      */
     public String removeParameter(String param) {
-	if (parameters.containsKey(param)) {
-	    return parameters.remove(param).toString();
-	}
-	return null;
+    if (parameters.containsKey(param)) {
+        return parameters.remove(param).toString();
+    }
+    return null;
     }
 
     /**
      * Returns the URL generated by the builder.
      */
     public String toString() {
-	return toString(true);
+    return toString(true);
     }
 
     /**
@@ -201,36 +201,36 @@ public class URLBuilder {
      */
     public String toString(boolean escapeAmpersands) {
 
-	StringBuilder buffer = new StringBuilder();
-	buffer.append(url);
-	if (parameters.isEmpty()) return buffer.toString();
+    StringBuilder buffer = new StringBuilder();
+    buffer.append(url);
+    if (parameters.isEmpty()) return buffer.toString();
 
-	Set<String> valueSet = new HashSet<String>();
+    Set<String> valueSet = new HashSet<String>();
 
-	buffer.append("?");
-	for (Iterator it = parameters.keySet().iterator(); it.hasNext(); ) {
-	    String parameter = (String) it.next();
-	    Object value = (Object) parameters.get(parameter);
+    buffer.append("?");
+    for (Iterator it = parameters.keySet().iterator(); it.hasNext(); ) {
+        String parameter = (String) it.next();
+        Object value = (Object) parameters.get(parameter);
 
-	    // [Http]ServletRequest's getParameterMap() method returns a
-	    // Map with String arrays as its values, which don't print out
-	    // very nicely when invoked with toString(). Check to see whether
-	    // we're dealing with arrays; if we are, print them properly.
-	    if (value instanceof Object[]) {
-		for (Object valuePart : (Object[]) value) {
-		    valueSet.add(formatValue(parameter, valuePart));
-		}
-	    } else if (value != null) {
-		valueSet.add(formatValue(parameter, value));
-	    }
-	}
+        // [Http]ServletRequest's getParameterMap() method returns a
+        // Map with String arrays as its values, which don't print out
+        // very nicely when invoked with toString(). Check to see whether
+        // we're dealing with arrays; if we are, print them properly.
+        if (value instanceof Object[]) {
+        for (Object valuePart : (Object[]) value) {
+            valueSet.add(formatValue(parameter, valuePart));
+        }
+        } else if (value != null) {
+        valueSet.add(formatValue(parameter, value));
+        }
+    }
 
-	String ampersand = (escapeAmpersands ? "&amp;" : "&");
-	return String.format("%s?%s", url, StringUtil.join(valueSet, ampersand));
+    String ampersand = (escapeAmpersands ? "&amp;" : "&");
+    return String.format("%s?%s", url, StringUtil.join(valueSet, ampersand));
     }
 
     private String formatValue(String param, Object value) {
-	return String.format("%s=%s", param, value);	
+    return String.format("%s=%s", param, value);	
     }
 
     /**
@@ -243,10 +243,10 @@ public class URLBuilder {
      * @param value the new value for the modified parameter
      */
     public URLBuilder withParameter(String param, String value) {
-	Map<String,Object> newParameters = new HashMap<String,Object>(parameters);
-	newParameters.put(param, value);
+    Map<String,Object> newParameters = new HashMap<String,Object>(parameters);
+    newParameters.put(param, value);
 
-	return new URLBuilder(url, newParameters);
+    return new URLBuilder(url, newParameters);
     }
 
     /**
@@ -255,7 +255,7 @@ public class URLBuilder {
      * withParamter(String, String).
      */
     public URLBuilder withParameter(String param, int value) {
-	return withParameter(param, Integer.toString(value));
+    return withParameter(param, Integer.toString(value));
     }
 
     /**
@@ -264,6 +264,6 @@ public class URLBuilder {
      * withParamter(String, String).
      */
     public URLBuilder withParameter(String param, double value) {
-	return withParameter(param, Double.toString(value));
+    return withParameter(param, Double.toString(value));
     }
 }

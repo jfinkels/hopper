@@ -37,22 +37,22 @@ public class LatinAnalyzer extends Analyzer {
 
     /** Builds an analyzer. */
     public LatinAnalyzer(boolean expand) {
-	stopSet = StopFilter.makeStopSet(STOP_WORDS);
-	this.expand = expand;
+    stopSet = StopFilter.makeStopSet(STOP_WORDS);
+    this.expand = expand;
     }
 
     /** Constructs a {@link StandardTokenizer} filtered by a {@link
         LatinFilter}, a {@link LowerCaseFilter} and a {@link StopFilter}. */
     public final TokenStream tokenStream(String fieldName, Reader reader) {
         TokenStream result = new StandardTokenizer(reader);
-	result = new DeaccentFilter(result);
+    result = new DeaccentFilter(result);
         result = new LowerCaseFilter(result);
         result = new StopFilter(result, stopSet);
-	/*
-	if (expand) {
-	    result = new LatinFilter(result);
-	}
-	*/
+    /*
+    if (expand) {
+        result = new LatinFilter(result);
+    }
+    */
         return result;
     }
 }

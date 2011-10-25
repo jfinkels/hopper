@@ -49,5 +49,5 @@ public interface TableOfContentsDAO extends DAO<TableOfContents> {
      * if such a chunk can be found.
      */
     public Chunk getChunkByQuery(TableOfContents toc, Query targetQuery)
-    	throws InvalidQueryException;
+        throws InvalidQueryException;
 }

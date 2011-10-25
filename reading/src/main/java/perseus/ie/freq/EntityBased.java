@@ -13,9 +13,9 @@ public interface EntityBased {
     public void setEntity(Entity e);
     
     public static final Comparator<? extends EntityBased> ENTITY_COMPARATOR =
-	new Comparator<EntityBased>() {
-	public int compare(EntityBased et1, EntityBased et2) {
-	    return et1.getEntity().compareTo(et2.getEntity());
-	}
+    new Comparator<EntityBased>() {
+    public int compare(EntityBased et1, EntityBased et2) {
+        return et1.getEntity().compareTo(et2.getEntity());
+    }
     };
 }

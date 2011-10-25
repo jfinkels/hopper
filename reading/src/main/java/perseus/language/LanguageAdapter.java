@@ -29,7 +29,7 @@ public abstract class LanguageAdapter implements Comparator<String> {
      * @return an analyzer to be used in indexing documents in this language
      */
     public Analyzer getAnalyzer() {
-	return new DeaccentingAnalyzer();
+    return new DeaccentingAnalyzer();
     }
     
     /**
@@ -40,7 +40,7 @@ public abstract class LanguageAdapter implements Comparator<String> {
      * @return a version of `s` that can be used for lookup
      */
     public String getLookupForm(String s) {
-	return s;
+    return s;
     }
 
     /**
@@ -51,18 +51,18 @@ public abstract class LanguageAdapter implements Comparator<String> {
      * @return a LanguageAdapter for the specified language
     */
     public static LanguageAdapter getLanguageAdapter(String langCode) {
-	return Language.forCode(langCode).getAdapter();
+    return Language.forCode(langCode).getAdapter();
     }
     
     /**
      * Compares two strings in the given language.
      */
     public int compare(String form1, String form2) {
-	return form1.compareTo(form2);
+    return form1.compareTo(form2);
     }
 
     public boolean equals(Object o) {
-	return o.getClass().equals(this.getClass());
+    return o.getClass().equals(this.getClass());
     }
     
     /**
@@ -71,7 +71,7 @@ public abstract class LanguageAdapter implements Comparator<String> {
      * to say, not Greek).
      */
     public String capitalize(String s) {
-	return Character.toUpperCase(s.charAt(0)) + s.substring(1);
+    return Character.toUpperCase(s.charAt(0)) + s.substring(1);
     }
     
     /**
@@ -80,7 +80,7 @@ public abstract class LanguageAdapter implements Comparator<String> {
      * is to say, not Greek).
      */
     public String uncapitalize(String s) {
-	return Character.toLowerCase(s.charAt(0)) + s.substring(1);	
+    return Character.toLowerCase(s.charAt(0)) + s.substring(1);	
     }
     
     /**
@@ -89,7 +89,7 @@ public abstract class LanguageAdapter implements Comparator<String> {
      * is to say, not Greek).
      */
     public String toUpperCase(String s) {
-	return s.toUpperCase();
+    return s.toUpperCase();
     }
     
     /**
@@ -98,11 +98,11 @@ public abstract class LanguageAdapter implements Comparator<String> {
      * is to say, not Greek).
      */
     public String toLowerCase(String s) {
-	return s.toLowerCase();
+    return s.toLowerCase();
     }
     
     public static LanguageAdapter getLanguageAdapter(Language language) {
-	return language.getAdapter();
+    return language.getAdapter();
     }
     
     /**
@@ -110,6 +110,6 @@ public abstract class LanguageAdapter implements Comparator<String> {
      *
      */
     public boolean matchCase() {
-    	return false;
+        return false;
     }
 }

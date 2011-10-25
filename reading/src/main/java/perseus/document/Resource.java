@@ -47,311 +47,311 @@ import perseus.util.StringUtil;
 
 public class Resource {
 
-	private static Logger logger = Logger.getLogger(Resource.class);
+    private static Logger logger = Logger.getLogger(Resource.class);
 
-	/**
-	 * An enumerated type representing the different available categories of
-	 * resources. Each instance includes various methods that determine what
-	 * resources of said category are available for a given query, among other
-	 * things.
-	 */
-	public enum ResourceType {
-		TRANSLATION {
-			protected String title(Chunk chunk) {
-				return Language.forCode(chunk.getEffectiveLanguage()).getName();
-			}
+    /**
+     * An enumerated type representing the different available categories of
+     * resources. Each instance includes various methods that determine what
+     * resources of said category are available for a given query, among other
+     * things.
+     */
+    public enum ResourceType {
+        TRANSLATION {
+            protected String title(Chunk chunk) {
+                return Language.forCode(chunk.getEffectiveLanguage()).getName();
+            }
 
-			protected String[] keysToFormat(Metadata metadata) {		
-				return new String[] { CONTRIBUTOR_KEY, DATE_COPYRIGHTED_KEY };
-			}
+            protected String[] keysToFormat(Metadata metadata) {		
+                return new String[] { CONTRIBUTOR_KEY, DATE_COPYRIGHTED_KEY };
+            }
 
-			protected Set<Query> getQueries(Query textQuery) {
-				String abo;
-				if (textQuery.getMetadata().has(SUMMARY_KEY)) {
-					abo = textQuery.getMetadata().get(SUMMARY_KEY);
-				} else {		    
-					abo = textQuery.getMetadata().get(ABO_KEY);
-				}
+            protected Set<Query> getQueries(Query textQuery) {
+                String abo;
+                if (textQuery.getMetadata().has(SUMMARY_KEY)) {
+                    abo = textQuery.getMetadata().get(SUMMARY_KEY);
+                } else {		    
+                    abo = textQuery.getMetadata().get(ABO_KEY);
+                }
 
-				if (abo == null) return Collections.emptySet();
+                if (abo == null) return Collections.emptySet();
 
-				MetadataDAO dao = new SQLMetadataDAO();
+                MetadataDAO dao = new SQLMetadataDAO();
 
-				Set<Query> queries = new HashSet<Query>();
-				List<Query> documents = dao.getDocuments(Metadata.ABO_KEY, null, abo);
-				for (Query document : documents) {
-					if (!document.getInnermostDocumentID().equals(
-							textQuery.getInnermostDocumentID())) {
-						queries.add(
-								document.appendSubquery(textQuery.getNonABOQuery()));
-					}
-				}
+                Set<Query> queries = new HashSet<Query>();
+                List<Query> documents = dao.getDocuments(Metadata.ABO_KEY, null, abo);
+                for (Query document : documents) {
+                    if (!document.getInnermostDocumentID().equals(
+                            textQuery.getInnermostDocumentID())) {
+                        queries.add(
+                                document.appendSubquery(textQuery.getNonABOQuery()));
+                    }
+                }
 
-				return queries;
-			}	    
-		},
+                return queries;
+            }	    
+        },
 
-		COMMENTARY {
-			protected String title(Chunk chunk) {
-				return "Notes";
-			}
+        COMMENTARY {
+            protected String title(Chunk chunk) {
+                return "Notes";
+            }
 
-			protected String[] keysToFormat(Metadata metadata) {
-				return new String[] {
-						metadata.has(CONTRIBUTOR_KEY) ? CONTRIBUTOR_KEY :
-							(metadata.has(CREATOR_KEY) &&
-									"secondary".equals(metadata.get(ARITY_KEY)) ?
-											CREATOR_KEY : null),
+            protected String[] keysToFormat(Metadata metadata) {
+                return new String[] {
+                        metadata.has(CONTRIBUTOR_KEY) ? CONTRIBUTOR_KEY :
+                            (metadata.has(CREATOR_KEY) &&
+                                    "secondary".equals(metadata.get(ARITY_KEY)) ?
+                                            CREATOR_KEY : null),
 
-											DATE_COPYRIGHTED_KEY
-				};
-			}
+                                            DATE_COPYRIGHTED_KEY
+                };
+            }
 
-			protected Set<Query> getQueries(Query textQuery) {
-				Set<Commentary> documentCommentaries =
-					Commentary.getCommentariesFor(textQuery);
+            protected Set<Query> getQueries(Query textQuery) {
+                Set<Commentary> documentCommentaries =
+                    Commentary.getCommentariesFor(textQuery);
 
-				Set<Query> output = new HashSet<Query>();
-				for (Commentary commentary : documentCommentaries) {
-					Query commentaryQuery = commentary.transformTextQuery(textQuery);
-					output.add(commentaryQuery);
-				}
+                Set<Query> output = new HashSet<Query>();
+                for (Commentary commentary : documentCommentaries) {
+                    Query commentaryQuery = commentary.transformTextQuery(textQuery);
+                    output.add(commentaryQuery);
+                }
 
-				return output;
-			}
+                return output;
+            }
 
-			public Set<Chunk> getChunks(Chunk textChunk) {
-				if (textChunk.getMetadata().has(Metadata.SUMMARY_KEY)) {
-					// If the user is looking at a summary, don't provide
-					// notes, which will only refer to chunks somewhere inside
-					// the summary
-					return Collections.emptySet();
-				}
+            public Set<Chunk> getChunks(Chunk textChunk) {
+                if (textChunk.getMetadata().has(Metadata.SUMMARY_KEY)) {
+                    // If the user is looking at a summary, don't provide
+                    // notes, which will only refer to chunks somewhere inside
+                    // the summary
+                    return Collections.emptySet();
+                }
 
-				return super.getChunks(textChunk);
-			}
-		},
+                return super.getChunks(textChunk);
+            }
+        },
 
-		SUMMARY {
-			protected String title(Chunk chunk) {
-				return "Summary";
-			}
+        SUMMARY {
+            protected String title(Chunk chunk) {
+                return "Summary";
+            }
 
-			protected String[] keysToFormat(Metadata metadata) {
-				return new String[] {
-						LANGUAGE_KEY, CONTRIBUTOR_KEY, DATE_COPYRIGHTED_KEY
-				};
-			}
+            protected String[] keysToFormat(Metadata metadata) {
+                return new String[] {
+                        LANGUAGE_KEY, CONTRIBUTOR_KEY, DATE_COPYRIGHTED_KEY
+                };
+            }
 
-			protected Set<Query> getQueries(Query textQuery) {
-				String targetDoc = textQuery.getMetadata().get(ABO_KEY);
-				if (targetDoc == null) return Collections.emptySet();
+            protected Set<Query> getQueries(Query textQuery) {
+                String targetDoc = textQuery.getMetadata().get(ABO_KEY);
+                if (targetDoc == null) return Collections.emptySet();
 
-				Set<Query> documents = new TreeSet<Query>();
+                Set<Query> documents = new TreeSet<Query>();
 
-				MetadataDAO dao = new SQLMetadataDAO();
-				List<Query> documentsFound =
-					dao.getDocuments(SUMMARY_KEY, null, targetDoc);
+                MetadataDAO dao = new SQLMetadataDAO();
+                List<Query> documentsFound =
+                    dao.getDocuments(SUMMARY_KEY, null, targetDoc);
 
-				for (Query doc : documentsFound) {
-					documents.add(doc);
-					//documents.add(doc.appendSubquery(textQuery.getNonABOQuery()));
-				}
-				return documents;
-			}
+                for (Query doc : documentsFound) {
+                    documents.add(doc);
+                    //documents.add(doc.appendSubquery(textQuery.getNonABOQuery()));
+                }
+                return documents;
+            }
 
-			public Chunk resolveQuery(Query query, Chunk originalChunk)
-			throws InvalidQueryException {
-				while (query.isWholeText()) {
-					try {
-						Chunk chunk = query.getChunk();
-						return chunk;
-					} catch (InvalidQueryException iqe) {
-						query = query.getContainingQuery();
-					}
-				}
-				throw new InvalidQueryException(query);
-			}
-		},
+            public Chunk resolveQuery(Query query, Chunk originalChunk)
+            throws InvalidQueryException {
+                while (query.isWholeText()) {
+                    try {
+                        Chunk chunk = query.getChunk();
+                        return chunk;
+                    } catch (InvalidQueryException iqe) {
+                        query = query.getContainingQuery();
+                    }
+                }
+                throw new InvalidQueryException(query);
+            }
+        },
 
-		SUMMARY_COMMENTARY {
-			protected String title(Chunk chunk) {
-				return "Summary Notes";
-			}
+        SUMMARY_COMMENTARY {
+            protected String title(Chunk chunk) {
+                return "Summary Notes";
+            }
 
-			protected String[] keysToFormat(Metadata metadata) {
-				return new String[] {
-						LANGUAGE_KEY, CONTRIBUTOR_KEY, DATE_COPYRIGHTED_KEY
-				};
-			}
+            protected String[] keysToFormat(Metadata metadata) {
+                return new String[] {
+                        LANGUAGE_KEY, CONTRIBUTOR_KEY, DATE_COPYRIGHTED_KEY
+                };
+            }
 
-			protected Set<Query> getQueries(Query textQuery) {
-				String targetDoc = textQuery.getMetadata().get(ABO_KEY);
-				if (targetDoc == null) return Collections.emptySet();
+            protected Set<Query> getQueries(Query textQuery) {
+                String targetDoc = textQuery.getMetadata().get(ABO_KEY);
+                if (targetDoc == null) return Collections.emptySet();
 
-				Set<Query> documents = new TreeSet<Query>();
+                Set<Query> documents = new TreeSet<Query>();
 
-				MetadataDAO dao = new SQLMetadataDAO();
-				List<Query> documentsFound =
-					dao.getDocuments(SUMMARY_COMMENTARY_KEY, null, targetDoc);
+                MetadataDAO dao = new SQLMetadataDAO();
+                List<Query> documentsFound =
+                    dao.getDocuments(SUMMARY_COMMENTARY_KEY, null, targetDoc);
 
-				for (Query doc : documentsFound) {
-					documents.add(doc.appendSubquery(textQuery.getNonABOQuery()));
-				}
-				return documents;
-			}
+                for (Query doc : documentsFound) {
+                    documents.add(doc.appendSubquery(textQuery.getNonABOQuery()));
+                }
+                return documents;
+            }
 
-			public Chunk resolveQuery(Query query, Chunk originalChunk)
-			throws InvalidQueryException {
-				while (!query.isWholeText()) {
-					try {
-						Chunk chunk = query.getChunk();
+            public Chunk resolveQuery(Query query, Chunk originalChunk)
+            throws InvalidQueryException {
+                while (!query.isWholeText()) {
+                    try {
+                        Chunk chunk = query.getChunk();
 
-						return chunk;
-					} catch (InvalidQueryException iqe) {
-						query = query.getContainingQuery();
-					}
-				}
+                        return chunk;
+                    } catch (InvalidQueryException iqe) {
+                        query = query.getContainingQuery();
+                    }
+                }
 
-				throw new InvalidQueryException(query);
-			}
-		},
-		
-		INTRODUCTION {
-			@Override
-			protected Set<Query> getQueries(Query textQuery) {
-				String targetDoc = textQuery.getMetadata().get(ABO_KEY);
-				if (targetDoc == null) return Collections.emptySet();
+                throw new InvalidQueryException(query);
+            }
+        },
+        
+        INTRODUCTION {
+            @Override
+            protected Set<Query> getQueries(Query textQuery) {
+                String targetDoc = textQuery.getMetadata().get(ABO_KEY);
+                if (targetDoc == null) return Collections.emptySet();
 
-				Set<Query> documents = new TreeSet<Query>();
+                Set<Query> documents = new TreeSet<Query>();
 
-				MetadataDAO dao = new SQLMetadataDAO();
-				List<Query> documentsFound =
-					dao.getDocuments(INTRODUCTION_KEY, null, targetDoc);
+                MetadataDAO dao = new SQLMetadataDAO();
+                List<Query> documentsFound =
+                    dao.getDocuments(INTRODUCTION_KEY, null, targetDoc);
 
-				for (Query doc : documentsFound) {
-					logger.info("doc is "+doc);
-					documents.add(doc);
-				}
-				return documents;
-			}
+                for (Query doc : documentsFound) {
+                    logger.info("doc is "+doc);
+                    documents.add(doc);
+                }
+                return documents;
+            }
 
-			@Override
-			protected String[] keysToFormat(Metadata metadata) {
-				return new String[] { CONTRIBUTOR_KEY, DATE_COPYRIGHTED_KEY };
-			}
+            @Override
+            protected String[] keysToFormat(Metadata metadata) {
+                return new String[] { CONTRIBUTOR_KEY, DATE_COPYRIGHTED_KEY };
+            }
 
-			@Override
-			protected String title(Chunk chunk) {
-				return "Introduction";
-			}
-			
-			public Chunk resolveQuery(Query query, Chunk originalChunk)
-			throws InvalidQueryException {
-				while (query.isWholeText()) {
-					try {
-						Chunk chunk = query.getChunk();
-						return chunk;
-					} catch (InvalidQueryException iqe) {
-						query = query.getContainingQuery();
-					}
-				}
-				throw new InvalidQueryException(query);
-			}
-		};
+            @Override
+            protected String title(Chunk chunk) {
+                return "Introduction";
+            }
+            
+            public Chunk resolveQuery(Query query, Chunk originalChunk)
+            throws InvalidQueryException {
+                while (query.isWholeText()) {
+                    try {
+                        Chunk chunk = query.getChunk();
+                        return chunk;
+                    } catch (InvalidQueryException iqe) {
+                        query = query.getContainingQuery();
+                    }
+                }
+                throw new InvalidQueryException(query);
+            }
+        };
 
-		protected abstract String title(Chunk chunk);
-		protected abstract String[] keysToFormat(Metadata metadata);
+        protected abstract String title(Chunk chunk);
+        protected abstract String[] keysToFormat(Metadata metadata);
 
-		public String format(Chunk chunk) {
-			StringBuilder output = new StringBuilder();
-			output.append(title(chunk));
+        public String format(Chunk chunk) {
+            StringBuilder output = new StringBuilder();
+            output.append(title(chunk));
 
-			Metadata metadata = chunk.getMetadata();
-			List<String> values = new ArrayList<String>();
-			for (String key : keysToFormat(metadata)) {
-				if (metadata.has(key)) {
-					if (key.equals(LANGUAGE_KEY)) {
-						values.add(Language.forCode(
-								chunk.getEffectiveLanguage()).getName());
-					} else {
-						values.add(metadata.get(key));
-					}
-				}
-			}
+            Metadata metadata = chunk.getMetadata();
+            List<String> values = new ArrayList<String>();
+            for (String key : keysToFormat(metadata)) {
+                if (metadata.has(key)) {
+                    if (key.equals(LANGUAGE_KEY)) {
+                        values.add(Language.forCode(
+                                chunk.getEffectiveLanguage()).getName());
+                    } else {
+                        values.add(metadata.get(key));
+                    }
+                }
+            }
 
-			if (!values.isEmpty()) {
-				output.append(" (").append(StringUtil.join(values, ", ")).append(")");
-			}
-			return output.toString();
-		}
+            if (!values.isEmpty()) {
+                output.append(" (").append(StringUtil.join(values, ", ")).append(")");
+            }
+            return output.toString();
+        }
 
-		protected abstract Set<Query> getQueries(Query textQuery);
+        protected abstract Set<Query> getQueries(Query textQuery);
 
-		public Chunk resolveQuery(Query query, Chunk originalChunk)
-		throws InvalidQueryException {
-			if (!originalChunk.getMetadata().has(SUMMARY_KEY)) {
-				return new HibernateTableOfContentsDAO().getChunkByQuery(null, query);
-			}
+        public Chunk resolveQuery(Query query, Chunk originalChunk)
+        throws InvalidQueryException {
+            if (!originalChunk.getMetadata().has(SUMMARY_KEY)) {
+                return new HibernateTableOfContentsDAO().getChunkByQuery(null, query);
+            }
 
-			// Special case: if we asked for a "translation" of a summary
-			// of a book, don't fetch the entire book--fetch the first
-			// chunk that it contains, which should be a chapter.
-			ChunkDAO dao = new HibernateChunkDAO();
-			Chunk matchingChunk = dao.getByQuery(query);
-			if (matchingChunk != null) {
-				return dao.getFirstContainedChunk(dao.getByQuery(query));
-			}
+            // Special case: if we asked for a "translation" of a summary
+            // of a book, don't fetch the entire book--fetch the first
+            // chunk that it contains, which should be a chapter.
+            ChunkDAO dao = new HibernateChunkDAO();
+            Chunk matchingChunk = dao.getByQuery(query);
+            if (matchingChunk != null) {
+                return dao.getFirstContainedChunk(dao.getByQuery(query));
+            }
 
-			throw new InvalidQueryException(query);
-		}
+            throw new InvalidQueryException(query);
+        }
 
-		public Set<Chunk> getChunks(Chunk textChunk) {
-			Set<Chunk> output = new HashSet<Chunk>();
+        public Set<Chunk> getChunks(Chunk textChunk) {
+            Set<Chunk> output = new HashSet<Chunk>();
 
-			for (Query query : getQueries(textChunk.getQuery())) {
-				try {
-					//		    Chunk chunk = tocDAO.getChunkByQuery(null, query);
-					Chunk chunk = resolveQuery(query, textChunk);
-					output.add(chunk);
-				} catch (InvalidQueryException iqe) {
-					// oh well; we lose
-				}
-			}
+            for (Query query : getQueries(textChunk.getQuery())) {
+                try {
+                    //		    Chunk chunk = tocDAO.getChunkByQuery(null, query);
+                    Chunk chunk = resolveQuery(query, textChunk);
+                    output.add(chunk);
+                } catch (InvalidQueryException iqe) {
+                    // oh well; we lose
+                }
+            }
 
-			// Make sure we don't have a copy of the original chunk...
-			output.remove(textChunk);
-			return output;
-		}
-	}
+            // Make sure we don't have a copy of the original chunk...
+            output.remove(textChunk);
+            return output;
+        }
+    }
 
-	private Resource() {}
+    private Resource() {}
 
-	/**
-	 * Returns an EnumMap containing every known resource for `chunk` and, for
-	 * each resource, a set of chunks.
-	 *
-	 * @param chunk the chunk to return resources for
-	 * @return a Map pointing resource-types to sets of chunks
-	 */
-	public static Map<ResourceType,Set<Chunk>> getResources(Chunk chunk) {
-		Map<ResourceType,Set<Chunk>> chunks =
-			new EnumMap<ResourceType,Set<Chunk>>(ResourceType.class);
-		for (ResourceType type : ResourceType.values()) {
-			chunks.put(type, type.getChunks(chunk));
-		}
+    /**
+     * Returns an EnumMap containing every known resource for `chunk` and, for
+     * each resource, a set of chunks.
+     *
+     * @param chunk the chunk to return resources for
+     * @return a Map pointing resource-types to sets of chunks
+     */
+    public static Map<ResourceType,Set<Chunk>> getResources(Chunk chunk) {
+        Map<ResourceType,Set<Chunk>> chunks =
+            new EnumMap<ResourceType,Set<Chunk>>(ResourceType.class);
+        for (ResourceType type : ResourceType.values()) {
+            chunks.put(type, type.getChunks(chunk));
+        }
 
-		return chunks;
-	}
+        return chunks;
+    }
 
-	/**
-	 * Returns all known resources for `chunk` of type `type`.
-	 *
-	 * @param chunk the chunk to return resources for
-	 * @param type the ResourceType to return
-	 * @return a set of all resources of the given type for `chunk`
-	 */
-	public static Set<Chunk> getResources(Chunk chunk, ResourceType type) {
-		return type.getChunks(chunk);
-	}
+    /**
+     * Returns all known resources for `chunk` of type `type`.
+     *
+     * @param chunk the chunk to return resources for
+     * @param type the ResourceType to return
+     * @return a set of all resources of the given type for `chunk`
+     */
+    public static Set<Chunk> getResources(Chunk chunk, ResourceType type) {
+        return type.getChunks(chunk);
+    }
 }

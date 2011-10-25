@@ -16,7 +16,7 @@ public class Cache {
     static File cachePath = new File(Config.getCachePath());
 
     private static final Cache timelineImageCache =
-	newCache(Config.getTimelineImageCacheDirectory());
+    newCache(Config.getTimelineImageCacheDirectory());
 
     File cacheDirectory;
 
@@ -28,7 +28,7 @@ public class Cache {
      * @param directory create cache file here
      */
     private Cache(File directory) {
-	cacheDirectory = directory;
+    cacheDirectory = directory;
     }
 
     /**
@@ -40,34 +40,34 @@ public class Cache {
      * @return a new Cache object
     */
     public static Cache newCache(String subdirectory) {
-	File fullPath = new File(cachePath, subdirectory);
-	boolean success = true;
+    File fullPath = new File(cachePath, subdirectory);
+    boolean success = true;
 
-	if (!fullPath.exists()) {
-	    success = fullPath.mkdirs();
-	    if (!success) {
-		logger.error("Couldn't create cache directory: " + fullPath);
+    if (!fullPath.exists()) {
+        success = fullPath.mkdirs();
+        if (!success) {
+        logger.error("Couldn't create cache directory: " + fullPath);
 
-		return null;
-	    }
-	}
+        return null;
+        }
+    }
 
-	if (!fullPath.canRead()) {
-	    logger.error("Couldn't read cache at " + fullPath);
-	    success = false;
-	}
+    if (!fullPath.canRead()) {
+        logger.error("Couldn't read cache at " + fullPath);
+        success = false;
+    }
 
-	if (!fullPath.canWrite()) {
-	    logger.error("Couldn't write cache at " + fullPath);
-	    success = false;
-	}
+    if (!fullPath.canWrite()) {
+        logger.error("Couldn't write cache at " + fullPath);
+        success = false;
+    }
 
-	if (!success) {
-	    // Problem!
-	    return null;
-	}
+    if (!success) {
+        // Problem!
+        return null;
+    }
 
-	return new Cache(fullPath);
+    return new Cache(fullPath);
     }
 
     /**
@@ -78,24 +78,24 @@ public class Cache {
      * successfully cached
     */
     public boolean write(Cacheable value) {
-	String key = value.getCacheFilename();
-	File file = new File(cacheDirectory, key);
-	File parentDir = file.getParentFile();
+    String key = value.getCacheFilename();
+    File file = new File(cacheDirectory, key);
+    File parentDir = file.getParentFile();
 
-	if (!parentDir.exists()) {
-	    parentDir.mkdirs();
-	}
+    if (!parentDir.exists()) {
+        parentDir.mkdirs();
+    }
 
-	try {
-	    FileOutputStream fos = new FileOutputStream(file);
-	    value.writeCacheableData(fos);
-	    fos.close();
-	} catch (IOException ioe) {
-	    logger.error("Problem writing to cache file: " + ioe);
-	    return false;
-	}
+    try {
+        FileOutputStream fos = new FileOutputStream(file);
+        value.writeCacheableData(fos);
+        fos.close();
+    } catch (IOException ioe) {
+        logger.error("Problem writing to cache file: " + ioe);
+        return false;
+    }
 
-	return true;
+    return true;
     }
     
     /**
@@ -105,10 +105,10 @@ public class Cache {
      * @return true if the value is in the cache, false if it is not in the cache
     */
     public boolean contains(Cacheable value) {
-	String key = value.getCacheFilename();
-	File file = new File(cacheDirectory, key);
+    String key = value.getCacheFilename();
+    File file = new File(cacheDirectory, key);
 
-	return file.exists() && file.canRead();
+    return file.exists() && file.canRead();
     }
 
     /**
@@ -118,23 +118,23 @@ public class Cache {
      * @return true or false if the value can be read from the cache
     */
     public boolean read(Cacheable value) {
-	String key = value.getCacheFilename();
-	File file = new File(cacheDirectory, key);
+    String key = value.getCacheFilename();
+    File file = new File(cacheDirectory, key);
 
-	if (!file.exists()) {
-	    logger.error("Attempt to read from non-existent cache " + "file " + file);
-	    return false;
-	}
+    if (!file.exists()) {
+        logger.error("Attempt to read from non-existent cache " + "file " + file);
+        return false;
+    }
 
-	try {
-	    FileInputStream fis = new FileInputStream(file);
-	    value.readCacheableData(fis);
-	    fis.close();
-	} catch (IOException ioe) {
-	    logger.error("Problem reading cache file: " + file);
-	    return false;
-	}
-	return true;
+    try {
+        FileInputStream fis = new FileInputStream(file);
+        value.readCacheableData(fis);
+        fis.close();
+    } catch (IOException ioe) {
+        logger.error("Problem reading cache file: " + file);
+        return false;
+    }
+    return true;
     }
 
     /**
@@ -143,6 +143,6 @@ public class Cache {
      * @return Cache   for the timeline images
      */
     public static Cache getTimelineImageCache() {
-	return timelineImageCache;
+    return timelineImageCache;
     }
 }

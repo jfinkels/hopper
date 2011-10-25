@@ -49,54 +49,54 @@ public abstract class AbstractEntity implements Entity, Serializable {
     public AbstractEntity() {}
 
     public AbstractEntity(String an, String dn) {
-	authorityName = an;
-	displayName = dn;
+    authorityName = an;
+    displayName = dn;
     }
 
     public String getAuthorityName() {
-	return authorityName;
+    return authorityName;
     }
 
     public void setAuthorityName(String an) {
-	authorityName = an;
+    authorityName = an;
     }
 
     public String getDisplayName() {
-	return displayName;
+    return displayName;
     }
 
     public void setDisplayName(String dn) {
-	displayName = dn;
+    displayName = dn;
     }
 
     public Integer getId() {
-	return id;
+    return id;
     }
 
     public void setId(Integer id) {
-	this.id = id;
+    this.id = id;
     }
 
     public String getSortableString() {
-	return authorityName;
+    return authorityName;
     }
 
     public void setSortableString(String ss) {
-	sortableString = ss;
+    sortableString = ss;
     }
 
     public boolean equals(Object o) {
-	if (!(o instanceof Entity)) {
-	    return false;
-	}
+    if (!(o instanceof Entity)) {
+        return false;
+    }
 
-	Entity e = (Entity) o;
+    Entity e = (Entity) o;
 
-	return getAuthorityName().equals(e.getAuthorityName());
+    return getAuthorityName().equals(e.getAuthorityName());
     }
 
     public int compareTo(Entity e) {
-	return getSortableString().compareTo(e.getSortableString());
+    return getSortableString().compareTo(e.getSortableString());
     }
 
     // By default, we really don't care what's going to happen to us.
@@ -112,16 +112,16 @@ public abstract class AbstractEntity implements Entity, Serializable {
     protected abstract String toXMLHelper();
 
     public String toXML() {
-    	return new XMLOutputter(Format.getPrettyFormat()).outputString(toXMLElement());
+        return new XMLOutputter(Format.getPrettyFormat()).outputString(toXMLElement());
     }
     
     public Element toXMLElement() {
-    	Element entity = new Element("entity");
-    	entity.setAttribute("id", authorityName);
-    	entity.addContent(new Element("displayName").addContent(displayName));
-    	entity.addContent(toXMLHelper());
-    	
-    	return entity;
+        Element entity = new Element("entity");
+        entity.setAttribute("id", authorityName);
+        entity.addContent(new Element("displayName").addContent(displayName));
+        entity.addContent(toXMLHelper());
+        
+        return entity;
     }
 
     public Integer getDocumentCount() {

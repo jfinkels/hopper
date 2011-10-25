@@ -51,20 +51,20 @@ public class LanguageCode {
      * </languages>
      */
     public static String toXML() {
-	StringBuffer output = new StringBuffer();
-	output.append("<languages>\n");
-	for (String code : getKnownLanguages()) {
-	    output.append("<language name=\"")
-		.append(getDisplayName(code)).append("\"");
-	    output.append(" abbrev=\"").append(code).append("\"");
-	    if (hasMorphData(code)) {
-		output.append(" morph=\"yes\"");
-	    }
-	    output.append("/>\n");
-	}
+    StringBuffer output = new StringBuffer();
+    output.append("<languages>\n");
+    for (String code : getKnownLanguages()) {
+        output.append("<language name=\"")
+        .append(getDisplayName(code)).append("\"");
+        output.append(" abbrev=\"").append(code).append("\"");
+        if (hasMorphData(code)) {
+        output.append(" morph=\"yes\"");
+        }
+        output.append("/>\n");
+    }
 
-	output.append("</languages>");
-	return output.toString();
+    output.append("</languages>");
+    return output.toString();
     }
 
     /** 
@@ -75,7 +75,7 @@ public class LanguageCode {
      * @return the corresponding language id
     */
     public static int getLanguageID(String languageCode) {
-	return Language.forCode(languageCode).getId();
+    return Language.forCode(languageCode).getId();
     }
 
     /** 
@@ -100,7 +100,7 @@ public class LanguageCode {
      * @return true or false depending on if morph data is present
     */
     public static boolean hasMorphData(int languageID) {
-	return Language.forId(languageID).getHasMorphData();
+    return Language.forId(languageID).getHasMorphData();
     }
   
     /**

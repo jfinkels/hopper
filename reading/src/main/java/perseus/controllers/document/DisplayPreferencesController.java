@@ -19,18 +19,18 @@ import perseus.util.DisplayPreferences;
  */
 public class DisplayPreferencesController implements Controller {
 
-	public ModelAndView handleRequest(HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
+    public ModelAndView handleRequest(HttpServletRequest request,
+            HttpServletResponse response) throws Exception {
 
-		DisplayPreferences prefs = new DisplayPreferences(request, response);
-		prefs.updatePreferences();
-		String url = request.getParameter("url");
-		//this should never be the case, but just in case
-		if (url == null || url.equals("")) {
-			url = "/hopper";
-		}
+        DisplayPreferences prefs = new DisplayPreferences(request, response);
+        prefs.updatePreferences();
+        String url = request.getParameter("url");
+        //this should never be the case, but just in case
+        if (url == null || url.equals("")) {
+            url = "/hopper";
+        }
 
-		return new ModelAndView(new RedirectView(url));
-	}
+        return new ModelAndView(new RedirectView(url));
+    }
 
 }

@@ -12,24 +12,24 @@
 
   <validator>
     <validator-class>
-	org.apache.taglibs.standard.tlv.JstlFmtTLV
+    org.apache.taglibs.standard.tlv.JstlFmtTLV
     </validator-class>
     <init-param>
-	<param-name>expressionAttributes</param-name>
-	<param-value>
+    <param-name>expressionAttributes</param-name>
+    <param-value>
             requestEncoding:value 
-	    setLocale:value
-	    setLocale:variant
-	    timeZone:value
-	    setTimeZone:value
-	    bundle:basename
-	    bundle:prefix
+        setLocale:value
+        setLocale:variant
+        timeZone:value
+        setTimeZone:value
+        bundle:basename
+        bundle:prefix
             setBundle:basename
-	    message:key
-	    message:bundle
-	    param:value
-	    formatNumber:value
-	    formatNumber:pattern
+        message:key
+        message:bundle
+        param:value
+        formatNumber:value
+        formatNumber:pattern
             formatNumber:currencyCode
             formatNumber:currencySymbol
             formatNumber:groupingUsed
@@ -37,24 +37,24 @@
             formatNumber:minIntegerDigits
             formatNumber:maxFractionDigits
             formatNumber:minFractionDigits
-	    parseNumber:value
-	    parseNumber:pattern
-	    parseNumber:parseLocale
+        parseNumber:value
+        parseNumber:pattern
+        parseNumber:parseLocale
             parseNumber:integerOnly
-	    formatDate:value
-	    formatDate:pattern
-	    formatDate:timeZone
-	    parseDate:value
-	    parseDate:pattern
-	    parseDate:timeZone
-	    parseDate:parseLocale
-	</param-value>
-	<description>
-	    Whitespace-separated list of colon-separated token pairs
-	    describing tag:attribute combinations that accept expressions.
-	    The validator uses this information to determine which
-	    attributes need their syntax validated.
-	</description>
+        formatDate:value
+        formatDate:pattern
+        formatDate:timeZone
+        parseDate:value
+        parseDate:pattern
+        parseDate:timeZone
+        parseDate:parseLocale
+    </param-value>
+    <description>
+        Whitespace-separated list of colon-separated token pairs
+        describing tag:attribute combinations that accept expressions.
+        The validator uses this information to determine which
+        attributes need their syntax validated.
+    </description>
      </init-param>
   </validator>
 

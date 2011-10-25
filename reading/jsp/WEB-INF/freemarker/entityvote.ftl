@@ -22,8 +22,8 @@
     </style>
 </head>
 <body>
-	<div id="main">
-		<div id="content" class="1column">
+    <div id="main">
+        <div id="content" class="1column">
     <#if votedParam??>
         <p>Thank you for your vote!</p>
     </#if>

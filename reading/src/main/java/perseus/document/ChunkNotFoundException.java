@@ -11,17 +11,17 @@ public class ChunkNotFoundException extends RuntimeException {
     private String searchString;
 
     public ChunkNotFoundException(TableOfContents toc, Query badQuery) {
-	this(toc, badQuery.toString());
+    this(toc, badQuery.toString());
     }
     
     public ChunkNotFoundException(TableOfContents toc, String ss) {
-	tableOfContents = toc;
-	searchString = ss;
+    tableOfContents = toc;
+    searchString = ss;
     }
     
     public String toString() {
-	return super.toString() + ": " + tableOfContents.toString() +
-		" -> " + searchString;
+    return super.toString() + ": " + tableOfContents.toString() +
+        " -> " + searchString;
     }
 
 }

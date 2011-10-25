@@ -23,46 +23,46 @@ import perseus.util.Config;
 public class IndexCollectionsController implements Controller {
     private static Logger logger = Logger.getLogger(IndexCollectionsController.class);
 
-	public ModelAndView handleRequest(HttpServletRequest arg0,
-			HttpServletResponse arg1) throws Exception {
+    public ModelAndView handleRequest(HttpServletRequest arg0,
+            HttpServletResponse arg1) throws Exception {
 
-		Map<String, Object> myModel = new HashMap<String, Object>();
+        Map<String, Object> myModel = new HashMap<String, Object>();
 
-		String[] collections = Config.getPrimaryCollections();
-		WordCountDAO wcDAO = new HibernateWordCountDAO();
+        String[] collections = Config.getPrimaryCollections();
+        WordCountDAO wcDAO = new HibernateWordCountDAO();
 
-		long maxWords = wcDAO.getMaxWords(collections);
+        long maxWords = wcDAO.getMaxWords(collections);
 
-		NumberFormat commaFormatter = NumberFormat.getInstance();
-		Map<String, String> collCounts = new TreeMap<String, String>();
-		Map<String, Integer> collBars = new TreeMap<String, Integer>();
-		List<Metadata> collMetadata = new ArrayList<Metadata>();
-		
-		for (String collection : collections) {
-			try {
-				Metadata metadata = new Query(collection).getMetadata();
-				String displayName = metadata.getAlternativeTitle();
+        NumberFormat commaFormatter = NumberFormat.getInstance();
+        Map<String, String> collCounts = new TreeMap<String, String>();
+        Map<String, Integer> collBars = new TreeMap<String, Integer>();
+        List<Metadata> collMetadata = new ArrayList<Metadata>();
+        
+        for (String collection : collections) {
+            try {
+                Metadata metadata = new Query(collection).getMetadata();
+                String displayName = metadata.getAlternativeTitle();
 
-				if (displayName == null) {
-					continue;
-				} 
-				collMetadata.add(metadata);
+                if (displayName == null) {
+                    continue;
+                } 
+                collMetadata.add(metadata);
 
-				long words = wcDAO.getTotalCount(collection);
-				int barLength = (int) (((double) words / maxWords) * 100);
-				collCounts.put(displayName, commaFormatter.format(words));
-				collBars.put(displayName, barLength);
-			} catch (Exception e) {
-				// Something went wrong; skip this collection!
-				logger.warn("Couldn't access coll "+collection, e);
-			}
-		}
-		
-		myModel.put("collCounts", collCounts);
-		myModel.put("collBars", collBars);
-		myModel.put("collMetadata", collMetadata);
+                long words = wcDAO.getTotalCount(collection);
+                int barLength = (int) (((double) words / maxWords) * 100);
+                collCounts.put(displayName, commaFormatter.format(words));
+                collBars.put(displayName, barLength);
+            } catch (Exception e) {
+                // Something went wrong; skip this collection!
+                logger.warn("Couldn't access coll "+collection, e);
+            }
+        }
+        
+        myModel.put("collCounts", collCounts);
+        myModel.put("collBars", collBars);
+        myModel.put("collMetadata", collMetadata);
 
-		return new ModelAndView("index/collections", "model", myModel);
-	}
+        return new ModelAndView("index/collections", "model", myModel);
+    }
 
 }

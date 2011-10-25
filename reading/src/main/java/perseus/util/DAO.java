@@ -16,6 +16,6 @@ public interface DAO<T> {
 
     public void delete(T obj);
 
-	public List<T> findByExample(T example);
-	public long countByExample(T exemplar);
+    public List<T> findByExample(T example);
+    public long countByExample(T exemplar);
 }

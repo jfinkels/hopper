@@ -8,13 +8,13 @@
 
 <div id="main">
     <jsp:include page="/includes/index/indexNav.jsp">
-	<jsp:param name="tabActive" value="research"/>
+    <jsp:param name="tabActive" value="research"/>
     </jsp:include> 	
     
     <div id="content" class="2column">
         <div id="index_main_col">
-		<div id="research">
-		
+        <div id="research">
+        
 <p>
 Our larger mission is to help make the full record for humanity as intellectually 
 accessible as possible to every human being, providing information adapted to as 
@@ -115,7 +115,7 @@ to Antonius the triumvir).
 
 </div> <!-- 2column div -->
 </div> <!-- main div -->
-		
+        
 <!-- Google Analytics --> 
 <%@ include file="/includes/common/analytics.htm" %>
 
